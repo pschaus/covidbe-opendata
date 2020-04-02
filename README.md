@@ -1,2 +1,11 @@
-# covidbe-opendata
-MAPS with open-data visualisation
+# Install requirements
+
+```
+pip install -r requirements.txt
+```
+
+# Start app
+
+```
+run app.py
+````
