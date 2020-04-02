@@ -25,7 +25,9 @@ fig = px.choropleth_mapbox(df, geojson=geojson,
 
 fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 
-app = dash.Dash()
+app = dash.Dash(__name__)
+server = app.server
+
 colors = {
     'background': '#111111',
     'text': '#7FDBFF'
