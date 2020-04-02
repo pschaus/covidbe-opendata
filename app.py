@@ -15,7 +15,7 @@ with open('static/json/be-geojson.json') as json_file:
     geojson = json.load(json_file)
 
 
-fig = px.choropleth_mapbox(df, geojson=geojson,
+map_cases = px.choropleth_mapbox(df, geojson=geojson,
                            locations="NIS5",
                            color='CASES',color_continuous_scale="Viridis",
                             range_color=(0, 300),
@@ -23,7 +23,17 @@ fig = px.choropleth_mapbox(df, geojson=geojson,
                            center={"lat": 50.85045, "lon": 4.34878},
                            mapbox_style="carto-positron", zoom=7,height=900)
 
-fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+map_cases.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+
+bubble_chart = px.scatter(px.data.gapminder(), x="gdpPercap", y="lifeExp", animation_frame="year",
+                          animation_group="country",
+                          size="pop", color="country", hover_name="country",
+                          log_x=True,
+                          size_max=45, range_x=[100, 100000], range_y=[25, 90])
+
+
+
+
 
 app = dash.Dash()
 colors = {
@@ -47,7 +57,8 @@ app.layout = html.Div(style={'backgroundColor': colors['background']}, children=
     html.Div(
         className="map",
         children=[
-            dcc.Graph(figure=fig)
+            dcc.Graph(figure=map_cases),
+            dcc.Graph(figure=bubble_chart)
         ],
     )
 
