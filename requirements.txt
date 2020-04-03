@@ -7,3 +7,4 @@ plotly-geo==1.0.0
 geopandas==0.3.0
 pyshp==1.2.10
 shapely==1.7.0
+gunicorn
