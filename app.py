@@ -10,7 +10,7 @@ import plotly.express as px
 
 import pandas as pd
 
-df = pd.read_csv("static/csv/be-covid.csv", dtype={"NIS5": str})
+df = pd.read_csv("static/csv/be-covid-totcases.csv", dtype={"NIS5": str})
 
 with open('static/json/be-geojson.json') as json_file:
     geojson = json.load(json_file)
@@ -21,7 +21,7 @@ map_cases = px.choropleth_mapbox(df, geojson=geojson,
                                  range_color=(0, 300),
                                  featureidkey="properties.shn",
                                  center={"lat": 50.85045, "lon": 4.34878},
-                                 hover_name="RANGE",
+                                 hover_name="CASES",
                                  hover_data=["FR", "NL"],
                                  mapbox_style="carto-positron", zoom=7, height=900)
 
@@ -87,7 +87,10 @@ def callback_image(hoverData):
         return "place your mouse on a municipality"
     else:
         idx = hoverData["points"][0]["pointIndex"]
-        return df.iloc[[idx]]['FR']+" "+df.iloc[[idx]]['NL']+" #cases:"+df.iloc[[idx]]['RANGE']
+        if df.iloc[[idx]]['FR'].item() != df.iloc[[idx]]['NL'].item():
+            return df.iloc[[idx]]['FR']+"     "+df.iloc[[idx]]['NL']+"    cases:"+ str(df.iloc[[idx]]['CASES'].item())
+        else:
+            return df.iloc[[idx]]['FR'] + "    cases:"+ str(df.iloc[[idx]]['CASES'].item())
 
 
 
