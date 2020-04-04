@@ -26,6 +26,7 @@ for k in centers.keys():
 
 
 
+
 with urllib.request.urlopen("https://epistat.sciensano.be/Data/COVID19BE_CASES_MUNI.json") as url:
         data = json.loads(url.read().decode('latin-1'))
         # some entries have no NIS5 or DATE

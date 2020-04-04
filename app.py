@@ -3,6 +3,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 import plotly.graph_objs as go
+import dash_bootstrap_components as dbc
 
 
 import urllib.request, json
@@ -28,55 +29,24 @@ map_cases = px.choropleth_mapbox(df, geojson=geojson,
                                  hover_name="CASES",
                                  hover_data=["FR", "NL"],
                                  custom_data=["NIS5"],
+                                 height=900,
                                  mapbox_style="carto-positron", zoom=7)
-
-#map_cases.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 
 
 app = dash.Dash(__name__)
 server = app.server
 
-colors = {
-    'background': '#111111',
-    'text': '#7FDBFF'
-}
-app.layout = html.Div(style={'backgroundColor': colors['background']}, children=[
-    html.H1(
-        children='COVID-DATA',
-        style={
-            'textAlign': 'center',
-            'color': colors['text']
-        }
+
+app.layout = html.Div(children=[
+    html.H1(children='COVID-DATA',),
+    html.H2(children='COVID-DATA',id='my-hoverdata'),
+    dbc.Row(
+        [
+            dbc.Col(dcc.Graph(id='my-graph', figure=map_cases),),
+            dbc.Col(dcc.Graph(id='histogram', figure=map_cases),),
+        ]
     ),
-    #html.Div(children='#UCLouvain #INGI Visualization', style={
-    #    'textAlign': 'center',
-    #    'color': colors['text']
-    #}),
 
-    html.Div(
-        className="row",
-        children=[
-
-            html.Div(
-                className="height columns div-map",
-                children=[
-                    dcc.Graph(id='my-graph', figure=map_cases),
-                ]),
-
-            html.Div(
-                className="four columns div-hist",
-                children=[
-                    dcc.Graph(id='histogram', figure=map_cases),
-                ]),
-        ]),
-
-    html.Div(id='my-hoverdata',
-             style={
-                 'textAlign': 'center',
-                 'color': colors['text'],
-                 'font-size': 20
-             }
-             ),
 ])
 
 
@@ -101,10 +71,13 @@ def callback_image(hoverData):
 def callback_barplot(hoverData):
     if hoverData == None:
          return go.Figure([go.Bar(x=dft['DATE'], y=dft[str(73006)])])
-    print(hoverData)
-    nis = hoverData['points'][0]['customdata'][0]
-    print(nis)
-    return go.Figure([go.Bar(x=dft['DATE'], y=dft[str(nis)])])
+    #print(hoverData)
+    custom = hoverData['points'][0]['customdata']
+    [nis,fr,nl] = custom
+    title = title_text=fr+" / "+nl
+    fig = go.Figure([go.Bar(x=dft['DATE'], y=dft[str(nis)], text ='cases')])
+    fig.update_layout(title_text=title)
+    return fig
 
 
 
