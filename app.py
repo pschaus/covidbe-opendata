@@ -2,6 +2,7 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
+import plotly.graph_objs as go
 
 
 import urllib.request, json
@@ -11,6 +12,9 @@ import plotly.express as px
 import pandas as pd
 
 df = pd.read_csv("static/csv/be-covid-totcases.csv", dtype={"NIS5": str})
+
+dft = pd.read_csv('static/csv/be-covid-timeseries.csv')
+
 
 with open('static/json/be-geojson.json') as json_file:
     geojson = json.load(json_file)
@@ -23,18 +27,10 @@ map_cases = px.choropleth_mapbox(df, geojson=geojson,
                                  center={"lat": 50.85045, "lon": 4.34878},
                                  hover_name="CASES",
                                  hover_data=["FR", "NL"],
-                                 mapbox_style="carto-positron", zoom=7, height=900)
+                                 custom_data=["NIS5"],
+                                 mapbox_style="carto-positron", zoom=7)
 
-map_cases.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
-
-#bubble_chart = px.scatter(px.data.gapminder(), x="gdpPercap", y="lifeExp", animation_frame="year",
-#                          animation_group="country",
-#                          size="pop", color="country", hover_name="country",
-#                          log_x=True,
-#                          size_max=45, range_x=[100, 100000], range_y=[25, 90])
-
-
-
+#map_cases.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 
 
 app = dash.Dash(__name__)
@@ -52,19 +48,27 @@ app.layout = html.Div(style={'backgroundColor': colors['background']}, children=
             'color': colors['text']
         }
     ),
-    html.Div(children='#UCLouvain #INGI Visualization', style={
-        'textAlign': 'center',
-        'color': colors['text']
-    }),
+    #html.Div(children='#UCLouvain #INGI Visualization', style={
+    #    'textAlign': 'center',
+    #    'color': colors['text']
+    #}),
 
-    # Column for app graphs and plots
     html.Div(
-        className="map",
+        className="row",
         children=[
-            dcc.Graph(id='my-graph',figure=map_cases),
-            #dcc.Graph(figure=bubble_chart)
-        ],
-    ),
+
+            html.Div(
+                className="height columns div-map",
+                children=[
+                    dcc.Graph(id='my-graph', figure=map_cases),
+                ]),
+
+            html.Div(
+                className="four columns div-hist",
+                children=[
+                    dcc.Graph(id='histogram', figure=map_cases),
+                ]),
+        ]),
 
     html.Div(id='my-hoverdata',
              style={
@@ -72,10 +76,7 @@ app.layout = html.Div(style={'backgroundColor': colors['background']}, children=
                  'color': colors['text'],
                  'font-size': 20
              }
-             )
-
-
-
+             ),
 ])
 
 
@@ -91,6 +92,19 @@ def callback_image(hoverData):
             return df.iloc[[idx]]['FR']+"     "+df.iloc[[idx]]['NL']+"    cases:"+ str(df.iloc[[idx]]['CASES'].item())
         else:
             return df.iloc[[idx]]['FR'] + "    cases:"+ str(df.iloc[[idx]]['CASES'].item())
+
+
+# Update Histogram Figure based on Month, Day and Times Chosen
+@app.callback(
+    Output("histogram", "figure"),
+    [Input('my-graph', 'hoverData')])
+def callback_barplot(hoverData):
+    if hoverData == None:
+         return go.Figure([go.Bar(x=dft['DATE'], y=dft[str(73006)])])
+    print(hoverData)
+    nis = hoverData['points'][0]['customdata'][0]
+    print(nis)
+    return go.Figure([go.Bar(x=dft['DATE'], y=dft[str(nis)])])
 
 
 
