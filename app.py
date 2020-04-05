@@ -16,11 +16,13 @@ df = pd.read_csv("static/csv/be-covid-totcases.csv", dtype={"NIS5": str})
 
 dft = pd.read_csv('static/csv/be-covid-timeseries.csv')
 
+df_prov = pd.read_csv('static/csv/be-covid-provinces_tot.csv')
+
 
 with open('static/json/be-geojson.json') as json_file:
-    geojson = json.load(json_file)
+    geojson_communes = json.load(json_file)
 
-map_cases = px.choropleth_mapbox(df, geojson=geojson,
+map_cases = px.choropleth_mapbox(df, geojson=geojson_communes,
                                  locations="NIS5",
                                  color='CASES', color_continuous_scale="Viridis",
                                  range_color=(0, 300),
@@ -29,6 +31,20 @@ map_cases = px.choropleth_mapbox(df, geojson=geojson,
                                  hover_name="CASES",
                                  hover_data=["FR", "NL"],
                                  custom_data=["NIS5"],
+                                 height=900,
+                                 mapbox_style="carto-positron", zoom=7)
+
+
+with open('static/json/be-provinces-geojson.json') as json_file:
+    geojson_provinces = json.load(json_file)
+
+map_provinces = px.choropleth_mapbox(df_prov, geojson=geojson_provinces,
+                                 locations="PROVINCE",
+                                 color='CASES', color_continuous_scale="Rainbow",
+                                 range_color=(0, 2500),
+                                 featureidkey="properties.proviso",
+                                 center={"lat": 50.85045, "lon": 4.34878},
+                                 hover_name="CASES",
                                  height=900,
                                  mapbox_style="carto-positron", zoom=7)
 
@@ -42,8 +58,15 @@ app.layout = html.Div(children=[
     html.H2(children='COVID-DATA',id='my-hoverdata'),
     dbc.Row(
         [
-            dbc.Col(dcc.Graph(id='my-graph', figure=map_cases),),
+            dbc.Col(dcc.Graph(id='map-communes', figure=map_cases),),
             dbc.Col(dcc.Graph(id='histogram', figure=map_cases),),
+
+        ]
+    ),
+    dbc.Row(
+        [
+            dbc.Col(dcc.Graph(id='map-prov', figure=map_provinces), ),
+
         ]
     ),
 
@@ -52,7 +75,7 @@ app.layout = html.Div(children=[
 
 @app.callback(
 Output('my-hoverdata', 'children'),
-[Input('my-graph', 'hoverData')])
+[Input('map-communes', 'hoverData')])
 def callback_image(hoverData):
     if hoverData == None:
         return "place your mouse on a municipality"
@@ -67,7 +90,7 @@ def callback_image(hoverData):
 # Update Histogram Figure based on Month, Day and Times Chosen
 @app.callback(
     Output("histogram", "figure"),
-    [Input('my-graph', 'hoverData')])
+    [Input('map-communes', 'hoverData')])
 def callback_barplot(hoverData):
     if hoverData == None:
          return go.Figure([go.Bar(x=dft['DATE'], y=dft[str(73006)])])
