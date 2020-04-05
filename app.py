@@ -40,11 +40,11 @@ with open('static/json/be-provinces-geojson.json') as json_file:
 
 map_provinces = px.choropleth_mapbox(df_prov, geojson=geojson_provinces,
                                  locations="PROVINCE",
-                                 color='CASES', color_continuous_scale="Rainbow",
-                                 range_color=(0, 2500),
+                                 color='CASES_PER_THOUSAND', color_continuous_scale="Viridis",
+                                 range_color=(0, 2.8),
                                  featureidkey="properties.proviso",
                                  center={"lat": 50.85045, "lon": 4.34878},
-                                 hover_name="CASES",
+                                 hover_name="CASES_PER_THOUSAND",
                                  height=900,
                                  mapbox_style="carto-positron", zoom=7)
 
