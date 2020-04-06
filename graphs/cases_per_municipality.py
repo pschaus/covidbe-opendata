@@ -29,3 +29,4 @@ def barplot_communes(commune_nis=73006):
         [go.Bar(x=df_communes_timeseries['DATE'], y=df_communes_timeseries[str(commune_nis)], text='cases')])
     fig.update_layout(title_text=title,height=900)
     return fig
+
