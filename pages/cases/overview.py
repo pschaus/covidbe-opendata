@@ -14,7 +14,7 @@ def overview():
         dbc.Row([
             dbc.Col(dcc.Graph(id='cases-overview-map-communes', figure=map_communes), ),
             dbc.Col(dcc.Graph(id='cases-overview-histogram', figure=barplot_communes()), )
-        ])
+        ]),
     ]
 
 
