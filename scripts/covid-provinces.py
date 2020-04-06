@@ -54,6 +54,6 @@ df_tot_provinces["CASES_PER_THOUSAND"] = df_tot_provinces["CASES"]*1000/df_tot_p
 print(df_tot_provinces)
 
 
-df_tot_provinces.to_csv('../static/csv/be-covid-provinces_tot.csv',index=True)
+#df_tot_provinces.to_csv('../static/csv/be-covid-provinces_tot.csv',index=True)
 
 

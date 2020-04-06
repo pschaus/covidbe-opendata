@@ -90,12 +90,11 @@ def callback_image(hoverData):
 # Update Histogram Figure based on Month, Day and Times Chosen
 @app.callback(
     Output("histogram", "figure"),
-    [Input('map-communes', 'hoverData')])
-def callback_barplot(hoverData):
-    if hoverData == None:
+    [Input('map-communes', 'clickData')])
+def callback_barplot(clickData):
+    if clickData == None:
          return go.Figure([go.Bar(x=dft['DATE'], y=dft[str(73006)])])
-    #print(hoverData)
-    custom = hoverData['points'][0]['customdata']
+    custom = clickData['points'][0]['customdata']
     [nis,fr,nl] = custom
     title = title_text=fr+" / "+nl
     fig = go.Figure([go.Bar(x=dft['DATE'], y=dft[str(nis)], text ='cases')])
