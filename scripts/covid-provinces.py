@@ -33,27 +33,31 @@ prov_population = {"VBR":1129849,
 
 
 
-
-
 url="https://epistat.sciensano.be/Data/COVID19BE_CASES_AGESEX.csv"
 s=requests.get(url).content
-df=pd.read_csv(io.StringIO(s.decode('latin-1')),skipfooter=1) # last line is NaN
+df=pd.read_csv(io.StringIO(s.decode('latin-1'))) # last line is NaN
 
+# MAP PROVINCE CODES
 df['PROVINCE']= df['PROVINCE'].map(prov_codes)
 
+# Filter NaN (yes the data is not totally clean)
+df.dropna(inplace=True)
+df.DATE = pd.to_datetime(df.DATE)
 
-print(df)
+df.to_csv('../static/csv/be-covid-provinces.csv',index=True)
+
+
+# total number per provinces
 df_tot_provinces = df.groupby('PROVINCE').agg({'CASES': 'sum'})
-
-
 df_tot_provinces["POPULATION"] = df_tot_provinces.index.map(mapper=prov_population)
-
 df_tot_provinces["CASES_PER_THOUSAND"] = df_tot_provinces["CASES"]*1000/df_tot_provinces["POPULATION"]
+df_tot_provinces.to_csv('../static/csv/be-covid-provinces_tot.csv',index=True)
 
 
-print(df_tot_provinces)
 
 
-#df_tot_provinces.to_csv('../static/csv/be-covid-provinces_tot.csv',index=True)
+
+
+
 
 
