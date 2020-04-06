@@ -19,6 +19,8 @@ prov_codes = {"VlaamsBrabant": "VBR",
               "Luxembourg": "WLX",
               "BrabantWallon": "WBR"}
 
+prov_codes_ = {v:k for k,v in prov_codes.items()}
+
 prov_population = {"VBR":1129849,
               "WNA":491285,
               "WHT":1339562,
@@ -72,7 +74,11 @@ df_hospi.to_csv('../static/csv/be-covid-hospi.csv', index=True)
 
 
 # total number of cases per provinces
-df_tot_provinces = df_prov.groupby('PROVINCE').agg({'CASES': 'sum'})
+df_tot_provinces = df_prov.groupby(['PROVINCE']).agg({'CASES': 'sum'})
+
+
+df_tot_provinces['PROVINCE_NAME'] = df_tot_provinces.index.map(prov_codes_)
+
 df_tot_provinces["POPULATION"] = df_tot_provinces.index.map(mapper=prov_population)
 df_tot_provinces["CASES_PER_THOUSAND"] = df_tot_provinces["CASES"]*1000/df_tot_provinces["POPULATION"]
 
@@ -84,7 +90,6 @@ df_tot_provinces["NEW_IN_PER_CASES"] = df_tot_provinces_hospi['NEW_IN']/df_tot_p
 df_tot_provinces.to_csv('../static/csv/be-covid-provinces_tot.csv',index=True)
 
 
-print(df_tot_provinces)
 
 
 
