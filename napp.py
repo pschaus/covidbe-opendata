@@ -27,7 +27,7 @@ from pages.deaths import deaths_menu
 
 FA = "https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 
-app = dash.Dash(
+app = dash.Dash(__name__, 
     external_stylesheets=[dbc.themes.BOOTSTRAP, FA],
     # these meta_tags ensure content is scaled correctly on different devices
     # see: https://www.w3schools.com/css/css_rwd_viewport.asp for more
@@ -35,6 +35,7 @@ app = dash.Dash(
         {"name": "viewport", "content": "width=device-width, initial-scale=1"}
     ],
 )
+server = app.server
 
 # we use the Row and Col components to construct the sidebar header
 # it consists of a title, and a toggle, the latter is hidden on large screens
