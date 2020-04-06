@@ -49,6 +49,28 @@ map_provinces = px.choropleth_mapbox(df_prov, geojson=geojson_provinces,
                                  mapbox_style="carto-positron", zoom=7)
 
 
+
+df_prov_all = pd.read_csv('static/csv/be-covid-provinces.csv')
+idx = pd.date_range(df_prov_all.DATE.min(), df_prov_all.DATE.max())
+
+# bar plot with bars per age groups
+bars_age_groups = []
+age_groups = sorted(df_prov_all.AGEGROUP.unique())
+for ag in age_groups:
+    df_ag = df_prov_all.loc[df_prov_all['AGEGROUP'] == ag]
+    df_ag = df_ag.groupby(['DATE']).agg({'CASES': 'sum'})
+    df_ag.index = pd.DatetimeIndex(df_ag.index)
+    df_ag = df_ag.reindex(idx, fill_value=0)
+    bars_age_groups.append(go.Bar(
+        x=df_ag.index,
+        y=df_ag['CASES'],
+        name=ag
+    ))
+fig_age_groups = go.Figure(data=bars_age_groups,
+                                       layout=go.Layout(barmode='group'),)
+fig_age_groups.update_layout(height=1000,)
+
+
 app = dash.Dash(__name__)
 server = app.server
 
@@ -69,6 +91,12 @@ app.layout = html.Div(children=[
 
         ]
     ),
+    dbc.Row(
+        [
+            dcc.Graph(id='bar_age_groups',
+                      figure=fig_age_groups
+                      )
+        ]),
 
 ])
 
