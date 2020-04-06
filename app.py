@@ -16,7 +16,7 @@ df_communes_tot = pd.read_csv("static/csv/be-covid-totcases.csv", dtype={"NIS5":
 df_communes_timeseries = pd.read_csv('static/csv/be-covid-timeseries.csv')
 df_prov_tot = pd.read_csv('static/csv/be-covid-provinces_tot.csv')
 df_prov_timeseries = pd.read_csv('static/csv/be-covid-provinces.csv')
-
+df_mortality = pd.read_csv('static/csv/be-covid-mortality.csv')
 
 # ------------plot of cases per communes-----------------------
 
@@ -60,7 +60,29 @@ def barplot(commune_nis = 73006):
 
 barplot_communes = barplot()
 
-# ---------bar plot age groups---------------------------
+
+# ---------bar plot age groups cases---------------------------
+
+idx = pd.date_range(df_prov_timeseries.DATE.min(), df_prov_timeseries.DATE.max())
+# bar plot with bars per age groups
+bars_provinces = []
+provinces = sorted(df_prov_timeseries.PROVINCE_NAME.unique())
+for p in provinces:
+    df_p = df_prov_timeseries.loc[df_prov_timeseries['PROVINCE_NAME'] == p]
+    df_p = df_p.groupby(['DATE']).agg({'CASES': 'sum'})
+    df_p.index = pd.DatetimeIndex(df_p.index)
+    df_p = df_p.reindex(idx, fill_value=0)
+    bars_provinces.append(go.Bar(
+        x=df_p.index,
+        y=df_p['CASES'],
+        name=p
+    ))
+fig_provinces_cases = go.Figure(data=bars_provinces,
+                                 layout=go.Layout(barmode='group'), )
+fig_provinces_cases.update_layout(height=1000, )
+
+
+# ---------bar plot age groups cases---------------------------
 
 idx = pd.date_range(df_prov_timeseries.DATE.min(), df_prov_timeseries.DATE.max())
 # bar plot with bars per age groups
@@ -76,9 +98,34 @@ for ag in age_groups:
         y=df_ag['CASES'],
         name=ag
     ))
-fig_age_groups = go.Figure(data=bars_age_groups,
+fig_age_groups_cases = go.Figure(data=bars_age_groups,
+                                 layout=go.Layout(barmode='group'), )
+fig_age_groups_cases.update_layout(height=1000, )
+
+
+
+
+# ---------bar plot age groups death---------------------------
+
+idx = pd.date_range(df_mortality.DATE.min(), df_mortality.DATE.max())
+# bar plot with bars per age groups
+bars_age_groups_deaths = []
+age_groups = sorted(df_mortality.AGEGROUP.unique())
+for ag in age_groups:
+    df_ag = df_mortality.loc[df_mortality['AGEGROUP'] == ag]
+    df_ag = df_ag.groupby(['DATE']).agg({'DEATHS': 'sum'})
+    df_ag.index = pd.DatetimeIndex(df_ag.index)
+    df_ag = df_ag.reindex(idx, fill_value=0)
+    print(df_ag.index)
+    print(df_ag['DEATHS'])
+    bars_age_groups_deaths.append(go.Bar(
+        x=df_ag.index,
+        y=df_ag['DEATHS'],
+        name=ag
+    ))
+fig_age_groups_deaths = go.Figure(data=bars_age_groups_deaths,
                                        layout=go.Layout(barmode='group'),)
-fig_age_groups.update_layout(height=1000,)
+fig_age_groups_deaths.update_layout(height=1000,)
 
 
 # ---------------------------------------------
@@ -106,11 +153,22 @@ app.layout = html.Div(children=[
     ),
     dbc.Row(
         [
-            dcc.Graph(id='bar_age_groups',
-                      figure=fig_age_groups
+            dbc.Col(dcc.Graph(id='barplot-prov', figure=fig_provinces_cases), ),
+
+        ]
+    ),
+    dbc.Row(
+        [
+            dcc.Graph(id='bar_age_groups_cases',
+                      figure=fig_age_groups_cases
                       )
         ]),
-
+    dbc.Row(
+        [
+            dcc.Graph(id='bar_age_groups_deaths',
+                      figure=fig_age_groups_deaths
+                      )
+        ]),
 ])
 
 
