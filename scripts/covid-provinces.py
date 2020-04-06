@@ -38,7 +38,11 @@ s=requests.get(url).content
 df=pd.read_csv(io.StringIO(s.decode('latin-1'))) # last line is NaN
 
 # MAP PROVINCE CODES
+df['PROVINCE_NAME']= df['PROVINCE']
 df['PROVINCE']= df['PROVINCE'].map(prov_codes)
+
+
+
 
 # Filter NaN (yes the data is not totally clean)
 df.dropna(inplace=True)
