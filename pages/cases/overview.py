@@ -41,7 +41,7 @@ def overview_callbacks(app):
     def callback_barplot(clickData):
         if clickData is None:
             return barplot_communes()
-        nis = clickData['points'][0]['customdata'][0]
+        nis = clickData['points'][0]['customdata'][2]
         return barplot_communes(commune_nis=nis)
 
 
