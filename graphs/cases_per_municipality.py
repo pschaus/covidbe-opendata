@@ -5,7 +5,7 @@ import plotly.graph_objs as go
 
 df_communes_tot = pd.read_csv("static/csv/be-covid-totcases.csv", dtype={"NIS5": str})
 df_communes_timeseries = pd.read_csv('static/csv/be-covid-timeseries.csv')
-with open('static/json/be-geojson.json') as json_file:
+with open('static/json/communes/be-geojson.json') as json_file:
     geojson_communes = json.load(json_file)
 
 map_communes = px.choropleth_mapbox(df_communes_tot, geojson=geojson_communes,

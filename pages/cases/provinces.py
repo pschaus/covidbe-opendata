@@ -9,8 +9,7 @@ def display_provinces():
     return [
         html.H2("Number of cases / 1000 inhabitants"),
         dbc.Row([
-            dbc.Col(dcc.Graph(id='cases-province-map', figure=map_provinces), ),
-            dbc.Col(dcc.Graph(id='cases-province-barplot', figure=barplot_provinces_cases), ),
-
+            dbc.Col(dcc.Graph(id='cases-province-map', figure=map_provinces), className="col-12"),
+            dbc.Col(dcc.Graph(id='cases-province-barplot', figure=barplot_provinces_cases), className="col-12"),
         ])
     ]
