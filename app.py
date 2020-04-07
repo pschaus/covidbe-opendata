@@ -41,15 +41,15 @@ map_provinces = px.choropleth_mapbox(df_prov_tot, geojson=geojson_provinces,
 
 with open('static/json/be-provinces-geojson.json') as json_file:
     geojson_provinces = json.load(json_file)
-range_min = df_prov_tot.HOSPI_PER_CASES.min()
-range_max = df_prov_tot.HOSPI_PER_CASES.max()
+range_min = df_prov_tot.NEW_IN_PER_CASES.min()
+range_max = df_prov_tot.NEW_IN_PER_CASES.max()
 map_provinces_hospi_per_cases = px.choropleth_mapbox(df_prov_tot, geojson=geojson_provinces,
                                      locations="PROVINCE",
-                                     color='HOSPI_PER_CASES', color_continuous_scale="Viridis",
+                                     color='NEW_IN_PER_CASES', color_continuous_scale="Viridis",
                                      range_color=(range_min,range_max),
                                      featureidkey="properties.proviso",
                                      center={"lat": 50.85045, "lon": 4.34878},
-                                     hover_name="HOSPI_PER_CASES",
+                                     hover_name="NEW_IN_PER_CASES",
                                      height=900,
                                      mapbox_style="carto-positron", zoom=7)
 
