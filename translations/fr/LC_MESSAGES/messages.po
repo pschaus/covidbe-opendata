@@ -56,7 +56,7 @@ msgstr "<b>%{customdata[0]}</b><br>%{customdata[1]} cas"
 
 #: graphs/cases_per_municipality.py:68
 msgid "Number of cases in {title}: {cases}"
-msgstr "Nombre de cases à {title}: {cases}"
+msgstr "Nombre de cas à {title}: {cases}"
 
 #: graphs/cases_per_municipality.py:72
 msgid "<b>%{x}</b><extra>%{y} cases</extra>"
