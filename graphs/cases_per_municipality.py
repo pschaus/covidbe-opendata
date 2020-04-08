@@ -1,4 +1,6 @@
 import json
+from datetime import datetime, timedelta, date
+
 import plotly.express as px
 import pandas as pd
 import plotly.graph_objs as go
@@ -38,11 +40,26 @@ map_communes.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=5, b
 
 # ---------bar plot cases time series per commune-----------------
 def barplot_communes(commune_nis=73006):
+
     [nis, case, fr, nl, _, title_text] = df_communes_tot.loc[df_communes_tot['NIS5'] == str(commune_nis)].values[0]
     title = title_text
-    fig = go.Figure(
-        [go.Bar(x=df_communes_timeseries['DATE'], y=df_communes_timeseries[str(commune_nis)], text='cases')])
-    fig.update_layout(title_text=title, height=500)
-    fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=5, b=0))
+
+    orig_first_date = datetime.strptime(df_communes_timeseries.loc[df_communes_timeseries[str(commune_nis)] > 0]["DATE"].min(), "%Y-%m-%d").date()
+    first_date = date(year=orig_first_date.year, month=orig_first_date.month, day=1)
+    last_date = datetime.strptime(df_communes_timeseries["DATE"].max(), "%Y-%m-%d").date()
+
+    range_y_stop = max(10, df_communes_timeseries[str(commune_nis)].max())
+
+    fig = px.bar(df_communes_timeseries, x='DATE', y=str(commune_nis), height=400,
+                 range_x=(first_date, last_date),
+                 range_y=(0, range_y_stop),
+                 color=str(commune_nis), color_continuous_scale="deep", labels={"DATE": "Date", str(commune_nis): "# Cases"})
+
+    fig.update_layout(title_text=f"Number of cases in {title}: {case}", height=500,
+                      template="plotly_white", margin=dict(l=20, r=0, t=60, b=0))
+    fig.layout.coloraxis.showscale = False
+    fig.update_traces(
+        hovertemplate="<b>%{x}</b><extra>%{y} cases</extra>",
+    )
     return fig
 
