@@ -3,21 +3,24 @@ import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output, State
+from flask_babel import get_locale, gettext
 
-from graphs.cases_per_municipality import map_communes, barplot_communes, df_communes_tot
+from graphs.cases_per_municipality import map_communes, barplot_communes
 from pages import AppLink
 
 
 def overview():
 
     return [
-        html.H2("Cases per municipality"),
-        html.H4("Click on a municipality to see a plot of its cases over time"),
+        html.H2(gettext("Cases per municipality")),
+        html.H4(gettext("Click on a municipality to see a plot of its cases over time")),
         dbc.Row([
-            dbc.Col(dcc.Graph(id='cases-overview-map-communes', figure=map_communes), ),
+            dbc.Col(dcc.Graph(id='cases-overview-map-communes', figure=map_communes(),
+                              config=dict(locale=str(get_locale()))))
         ]),
         dbc.Row([
-            dbc.Col(dcc.Graph(id='cases-overview-histogram', figure=barplot_communes(), style={"display": "none"}))
+            dbc.Col(dcc.Graph(id='cases-overview-histogram', figure=barplot_communes(),
+                              style={"display": "none"}, config=dict(locale=str(get_locale()))))
         ]),
     ]
 

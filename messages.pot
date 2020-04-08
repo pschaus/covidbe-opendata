@@ -1,0 +1,91 @@
+# Translations template for PROJECT.
+# Copyright (C) 2020 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2020-04-08 14:54+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: graphs/cases_age_groups.py:33
+msgid "Cases per day per age group"
+msgstr ""
+
+#: graphs/cases_age_groups.py:48 graphs/cases_age_groups.py:55
+msgid "Wallonia"
+msgstr ""
+
+#: graphs/cases_age_groups.py:49 graphs/cases_age_groups.py:59
+msgid "Flanders"
+msgstr ""
+
+#: graphs/cases_age_groups.py:50 graphs/cases_age_groups.py:63
+msgid "Brussels"
+msgstr ""
+
+#: graphs/cases_age_groups.py:51
+msgid "Belgium"
+msgstr ""
+
+#: graphs/cases_age_groups.py:67
+msgid "Total"
+msgstr ""
+
+#: graphs/cases_age_groups.py:71
+msgid "Cases per age group, per region"
+msgstr ""
+
+#: graphs/cases_per_municipality.py:36
+msgid "Number of cases"
+msgstr ""
+
+#: graphs/cases_per_municipality.py:44
+msgid "<b>%{customdata[0]}</b><br>%{customdata[1]} cases"
+msgstr ""
+
+#: graphs/cases_per_municipality.py:68
+msgid "Number of cases in {title}: {cases}"
+msgstr ""
+
+#: graphs/cases_per_municipality.py:72
+msgid "<b>%{x}</b><extra>%{y} cases</extra>"
+msgstr ""
+
+#: graphs/cases_per_province.py:31 graphs/cases_per_province.py:53
+msgid "Cases per thousand inhabitants"
+msgstr ""
+
+#: graphs/cases_per_province.py:37
+msgid "<b>%{properties.name}</b><br>%{z:.3f} cases per 1000 inhabitants"
+msgstr ""
+
+#: graphs/cases_per_province.py:56
+msgid "<b>%{y}</b><br>%{x:.3f} cases per 1000 inhabitants"
+msgstr ""
+
+#: pages/cases/age_groups.py:12
+msgid "Age groups"
+msgstr ""
+
+#: pages/cases/overview.py:15
+msgid "Cases per municipality"
+msgstr ""
+
+#: pages/cases/overview.py:16
+msgid "Click on a municipality to see a plot of its cases over time"
+msgstr ""
+
+#: pages/cases/provinces.py:12
+msgid "Number of cases / 1000 inhabitants"
+msgstr ""
+
