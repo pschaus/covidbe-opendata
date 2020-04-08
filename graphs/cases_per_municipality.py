@@ -65,8 +65,8 @@ def barplot_communes(commune_nis=73006):
                  color=str(commune_nis), color_continuous_scale="deep",
                  labels={"DATE": "Date", str(commune_nis): "# Cases"})
 
-    fig.update_layout(title_text=gettext("Number of cases in {title}: {cases}").format(title=title, case=cases), height=500,
-                      template="plotly_white", margin=dict(l=20, r=0, t=60, b=0))
+    fig.update_layout(title_text=gettext("Number of cases in {title}: {cases}").format(title=title, cases=cases),
+                      height=500, template="plotly_white", margin=dict(l=20, r=0, t=60, b=0))
     fig.layout.coloraxis.showscale = False
     fig.update_traces(
         hovertemplate=gettext("<b>%{x}</b><extra>%{y} cases</extra>"),
