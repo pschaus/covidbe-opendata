@@ -49,7 +49,7 @@ def map_communes():
 
 # this does not need translated_graph as it is regenerated at each request
 def barplot_communes(commune_nis=73006):
-    [nis, case, fr, nl, _, title_text] = df_communes_tot.loc[df_communes_tot['NIS5'] == str(commune_nis)].values[0]
+    [nis, cases, fr, nl, _, title_text] = df_communes_tot.loc[df_communes_tot['NIS5'] == str(commune_nis)].values[0]
     title = title_text
 
     orig_first_date = datetime.strptime(
