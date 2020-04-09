@@ -6,8 +6,6 @@ from plotly.subplots import make_subplots
 
 from graphs import translated_graph
 
-df_prov_timeseries = pd.read_csv('static/csv/be-covid-provinces.csv')
-
 
 df_mortality = pd.read_csv('static/csv/be-covid-mortality.csv')
 
@@ -45,35 +43,38 @@ def age_groups_death():
 
 @translated_graph
 def age_groups_death_pie():
+
     region_age = df_mortality.groupby(['REGION', 'AGEGROUP']).agg({'DEATHS': 'sum'})
     total_age = df_mortality.groupby(['AGEGROUP']).agg({'DEATHS': 'sum'})
 
-    labels = sorted(df_mortality.AGEGROUP.unique())
-
     fig_age_groups_deaths_pie = make_subplots(rows=2, cols=2,
-                                             specs=[[{'type': 'domain'}, {'type': 'domain'}],
-                                                    [{'type': 'domain'}, {'type': 'domain'}]],
-                                             subplot_titles=[
-                                                 gettext('Wallonia'),
-                                                 gettext('Flanders'),
-                                                 gettext("Brussels"),
-                                                 gettext("Belgium")
-                                             ],
-                                             horizontal_spacing=0.01, vertical_spacing=0.2)
+                                              specs=[[{'type': 'domain'}, {'type': 'domain'}],
+                                                     [{'type': 'domain'}, {'type': 'domain'}]],
+                                              subplot_titles=[
+                                                  gettext('Wallonia'),
+                                                  gettext('Flanders'),
+                                                  gettext("Brussels"),
+                                                  gettext("Belgium")
+                                              ],
+                                              horizontal_spacing=0.01, vertical_spacing=0.2)
     fig_age_groups_deaths_pie.add_trace(
-        go.Pie(labels=labels, values=region_age['DEATHS']['Wallonia'].values, name=gettext("Wallonia"), sort=False,
+        go.Pie(labels=region_age['DEATHS']['Wallonia'].index.values, values=region_age['DEATHS']['Wallonia'].values,
+               name=gettext("Wallonia"), sort=False,
                textposition="inside"),
         1, 1)
     fig_age_groups_deaths_pie.add_trace(
-        go.Pie(labels=labels, values=region_age['DEATHS']['Flanders'].values, name=gettext("Flanders"), sort=False,
+        go.Pie(labels=region_age['DEATHS']['Flanders'].index.values, values=region_age['DEATHS']['Flanders'].values,
+               name=gettext("Flanders"), sort=False,
                textposition="inside"),
         1, 2)
     fig_age_groups_deaths_pie.add_trace(
-        go.Pie(labels=labels, values=region_age['DEATHS']['Brussels'].values, name=gettext("Brussels"), sort=False,
+        go.Pie(labels=region_age['DEATHS']['Brussels'].index.values, values=region_age['DEATHS']['Brussels'].values,
+               name=gettext("Brussels"), sort=False,
                textposition="inside"),
         2, 1)
     fig_age_groups_deaths_pie.add_trace(
-        go.Pie(labels=labels, values=total_age['DEATHS'], name=gettext("Total"), sort=False, textposition="inside"),
+        go.Pie(labels=total_age['DEATHS'].index.values, values=total_age['DEATHS'], name=gettext("Total"), sort=False,
+               textposition="inside"),
         2, 2)
 
     fig_age_groups_deaths_pie.update_layout(
