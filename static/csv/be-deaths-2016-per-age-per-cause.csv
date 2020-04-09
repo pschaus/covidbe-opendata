@@ -1,0 +1,374 @@
+﻿CAUSE,CAUSEIDX,AGEGROUP,DEATHS
+Other infectious and parasitic diseases,A00-B99,0-4,13
+Other infectious and parasitic diseases,A00-B99,5-9,4
+Other infectious and parasitic diseases,A00-B99,10-14,0
+Other infectious and parasitic diseases,A00-B99,15-19,1
+Other infectious and parasitic diseases,A00-B99,20-24,0
+Other infectious and parasitic diseases,A00-B99,25-29,3
+Other infectious and parasitic diseases,A00-B99,30-34,12
+Other infectious and parasitic diseases,A00-B99,35-39,7
+Other infectious and parasitic diseases,A00-B99,40-44,11
+Other infectious and parasitic diseases,A00-B99,45-49,19
+Other infectious and parasitic diseases,A00-B99,50-54,52
+Other infectious and parasitic diseases,A00-B99,55-59,68
+Other infectious and parasitic diseases,A00-B99,60-64,90
+Other infectious and parasitic diseases,A00-B99,65-69,141
+Other infectious and parasitic diseases,A00-B99,70-74,150
+Other infectious and parasitic diseases,A00-B99,75-79,228
+Other infectious and parasitic diseases,A00-B99,80-84,397
+Other infectious and parasitic diseases,A00-B99,85-89,444
+Other infectious and parasitic diseases,A00-B99,90-94,341
+Other infectious and parasitic diseases,A00-B99,95-99,103
+Other infectious and parasitic diseases,A00-B99,100+,12
+Tumors,C00-D48,0-4,12
+Tumors,C00-D48,5-9,17
+Tumors,C00-D48,10-14,9
+Tumors,C00-D48,15-19,21
+Tumors,C00-D48,20-24,24
+Tumors,C00-D48,25-29,37
+Tumors,C00-D48,30-34,69
+Tumors,C00-D48,35-39,139
+Tumors,C00-D48,40-44,254
+Tumors,C00-D48,45-49,513
+Tumors,C00-D48,50-54,1064
+Tumors,C00-D48,55-59,1668
+Tumors,C00-D48,60-64,2590
+Tumors,C00-D48,65-69,3413
+Tumors,C00-D48,70-74,3605
+Tumors,C00-D48,75-79,4125
+Tumors,C00-D48,80-84,4564
+Tumors,C00-D48,85-89,3958
+Tumors,C00-D48,90-94,1974
+Tumors,C00-D48,95-99,472
+Tumors,C00-D48,100+,32
+Blood and immunity-related diseases,D50-D89,0-4,4
+Blood and immunity-related diseases,D50-D89,5-9,2
+Blood and immunity-related diseases,D50-D89,10-14,1
+Blood and immunity-related diseases,D50-D89,15-19,0
+Blood and immunity-related diseases,D50-D89,20-24,2
+Blood and immunity-related diseases,D50-D89,25-29,0
+Blood and immunity-related diseases,D50-D89,30-34,1
+Blood and immunity-related diseases,D50-D89,35-39,1
+Blood and immunity-related diseases,D50-D89,40-44,6
+Blood and immunity-related diseases,D50-D89,45-49,4
+Blood and immunity-related diseases,D50-D89,50-54,6
+Blood and immunity-related diseases,D50-D89,55-59,13
+Blood and immunity-related diseases,D50-D89,60-64,18
+Blood and immunity-related diseases,D50-D89,65-69,26
+Blood and immunity-related diseases,D50-D89,70-74,14
+Blood and immunity-related diseases,D50-D89,75-79,33
+Blood and immunity-related diseases,D50-D89,80-84,60
+Blood and immunity-related diseases,D50-D89,85-89,85
+Blood and immunity-related diseases,D50-D89,90-94,70
+Blood and immunity-related diseases,D50-D89,95-99,28
+Blood and immunity-related diseases,D50-D89,100+,5
+Endocrinian nutritionnal and metabolic diseases,E00-E88,0-4,12
+Endocrinian nutritionnal and metabolic diseases,E00-E88,5-9,2
+Endocrinian nutritionnal and metabolic diseases,E00-E88,10-14,2
+Endocrinian nutritionnal and metabolic diseases,E00-E88,15-19,5
+Endocrinian nutritionnal and metabolic diseases,E00-E88,20-24,3
+Endocrinian nutritionnal and metabolic diseases,E00-E88,25-29,4
+Endocrinian nutritionnal and metabolic diseases,E00-E88,30-34,9
+Endocrinian nutritionnal and metabolic diseases,E00-E88,35-39,10
+Endocrinian nutritionnal and metabolic diseases,E00-E88,40-44,20
+Endocrinian nutritionnal and metabolic diseases,E00-E88,45-49,21
+Endocrinian nutritionnal and metabolic diseases,E00-E88,50-54,41
+Endocrinian nutritionnal and metabolic diseases,E00-E88,55-59,78
+Endocrinian nutritionnal and metabolic diseases,E00-E88,60-64,104
+Endocrinian nutritionnal and metabolic diseases,E00-E88,65-69,167
+Endocrinian nutritionnal and metabolic diseases,E00-E88,70-74,184
+Endocrinian nutritionnal and metabolic diseases,E00-E88,75-79,257
+Endocrinian nutritionnal and metabolic diseases,E00-E88,80-84,457
+Endocrinian nutritionnal and metabolic diseases,E00-E88,85-89,583
+Endocrinian nutritionnal and metabolic diseases,E00-E88,90-94,434
+Endocrinian nutritionnal and metabolic diseases,E00-E88,95-99,139
+Endocrinian nutritionnal and metabolic diseases,E00-E88,100+,16
+Mental and behavioral disorders,F00-F99,0-4,0
+Mental and behavioral disorders,F00-F99,5-9,2
+Mental and behavioral disorders,F00-F99,10-14,1
+Mental and behavioral disorders,F00-F99,15-19,0
+Mental and behavioral disorders,F00-F99,20-24,6
+Mental and behavioral disorders,F00-F99,25-29,9
+Mental and behavioral disorders,F00-F99,30-34,11
+Mental and behavioral disorders,F00-F99,35-39,27
+Mental and behavioral disorders,F00-F99,40-44,37
+Mental and behavioral disorders,F00-F99,45-49,50
+Mental and behavioral disorders,F00-F99,50-54,67
+Mental and behavioral disorders,F00-F99,55-59,98
+Mental and behavioral disorders,F00-F99,60-64,122
+Mental and behavioral disorders,F00-F99,65-69,151
+Mental and behavioral disorders,F00-F99,70-74,190
+Mental and behavioral disorders,F00-F99,75-79,443
+Mental and behavioral disorders,F00-F99,80-84,898
+Mental and behavioral disorders,F00-F99,85-89,1514
+Mental and behavioral disorders,F00-F99,90-94,1221
+Mental and behavioral disorders,F00-F99,95-99,403
+Mental and behavioral disorders,F00-F99,100+,43
+Nervous system diseases,G00-G99,0-4,22
+Nervous system diseases,G00-G99,5-9,7
+Nervous system diseases,G00-G99,10-14,4
+Nervous system diseases,G00-G99,15-19,8
+Nervous system diseases,G00-G99,20-24,12
+Nervous system diseases,G00-G99,25-29,15
+Nervous system diseases,G00-G99,30-34,15
+Nervous system diseases,G00-G99,35-39,22
+Nervous system diseases,G00-G99,40-44,25
+Nervous system diseases,G00-G99,45-49,50
+Nervous system diseases,G00-G99,50-54,63
+Nervous system diseases,G00-G99,55-59,113
+Nervous system diseases,G00-G99,60-64,181
+Nervous system diseases,G00-G99,65-69,262
+Nervous system diseases,G00-G99,70-74,409
+Nervous system diseases,G00-G99,75-79,762
+Nervous system diseases,G00-G99,80-84,1172
+Nervous system diseases,G00-G99,85-89,1319
+Nervous system diseases,G00-G99,90-94,839
+Nervous system diseases,G00-G99,95-99,195
+Nervous system diseases,G00-G99,100+,16
+Eye-related diseases,H00-H59,0-4,0
+Eye-related diseases,H00-H59,5-9,0
+Eye-related diseases,H00-H59,10-14,0
+Eye-related diseases,H00-H59,15-19,0
+Eye-related diseases,H00-H59,20-24,0
+Eye-related diseases,H00-H59,25-29,0
+Eye-related diseases,H00-H59,30-34,0
+Eye-related diseases,H00-H59,35-39,0
+Eye-related diseases,H00-H59,40-44,0
+Eye-related diseases,H00-H59,45-49,0
+Eye-related diseases,H00-H59,50-54,0
+Eye-related diseases,H00-H59,55-59,0
+Eye-related diseases,H00-H59,60-64,0
+Eye-related diseases,H00-H59,65-69,1
+Eye-related diseases,H00-H59,70-74,0
+Eye-related diseases,H00-H59,75-79,0
+Eye-related diseases,H00-H59,80-84,0
+Eye-related diseases,H00-H59,85-89,3
+Eye-related diseases,H00-H59,90-94,2
+Eye-related diseases,H00-H59,95-99,1
+Eye-related diseases,H00-H59,100+,0
+Ear and mastoid-related diseases,H60-H95 ,0-4,0
+Ear and mastoid-related diseases,H60-H95 ,5-9,0
+Ear and mastoid-related diseases,H60-H95 ,10-14,0
+Ear and mastoid-related diseases,H60-H95 ,15-19,0
+Ear and mastoid-related diseases,H60-H95 ,20-24,0
+Ear and mastoid-related diseases,H60-H95 ,25-29,0
+Ear and mastoid-related diseases,H60-H95 ,30-34,0
+Ear and mastoid-related diseases,H60-H95 ,35-39,0
+Ear and mastoid-related diseases,H60-H95 ,40-44,0
+Ear and mastoid-related diseases,H60-H95 ,45-49,0
+Ear and mastoid-related diseases,H60-H95 ,50-54,0
+Ear and mastoid-related diseases,H60-H95 ,55-59,0
+Ear and mastoid-related diseases,H60-H95 ,60-64,0
+Ear and mastoid-related diseases,H60-H95 ,65-69,0
+Ear and mastoid-related diseases,H60-H95 ,70-74,1
+Ear and mastoid-related diseases,H60-H95 ,75-79,1
+Ear and mastoid-related diseases,H60-H95 ,80-84,1
+Ear and mastoid-related diseases,H60-H95 ,85-89,1
+Ear and mastoid-related diseases,H60-H95 ,90-94,0
+Ear and mastoid-related diseases,H60-H95 ,95-99,0
+Ear and mastoid-related diseases,H60-H95 ,100+,0
+Diseases of the circulatory system,I00-I99 ,0-4,7
+Diseases of the circulatory system,I00-I99 ,5-9,2
+Diseases of the circulatory system,I00-I99 ,10-14,4
+Diseases of the circulatory system,I00-I99 ,15-19,6
+Diseases of the circulatory system,I00-I99 ,20-24,11
+Diseases of the circulatory system,I00-I99 ,25-29,21
+Diseases of the circulatory system,I00-I99 ,30-34,34
+Diseases of the circulatory system,I00-I99 ,35-39,53
+Diseases of the circulatory system,I00-I99 ,40-44,119
+Diseases of the circulatory system,I00-I99 ,45-49,202
+Diseases of the circulatory system,I00-I99 ,50-54,440
+Diseases of the circulatory system,I00-I99 ,55-59,631
+Diseases of the circulatory system,I00-I99 ,60-64,1091
+Diseases of the circulatory system,I00-I99 ,65-69,1509
+Diseases of the circulatory system,I00-I99 ,70-74,1986
+Diseases of the circulatory system,I00-I99 ,75-79,3230
+Diseases of the circulatory system,I00-I99 ,80-84,5375
+Diseases of the circulatory system,I00-I99 ,85-89,7208
+Diseases of the circulatory system,I00-I99 ,90-94,5872
+Diseases of the circulatory system,I00-I99 ,95-99,1801
+Diseases of the circulatory system,I00-I99 ,100+,332
+Diseases of the respiratory system,J00-J99,0-4,12
+Diseases of the respiratory system,J00-J99,5-9,2
+Diseases of the respiratory system,J00-J99,10-14,0
+Diseases of the respiratory system,J00-J99,15-19,3
+Diseases of the respiratory system,J00-J99,20-24,0
+Diseases of the respiratory system,J00-J99,25-29,5
+Diseases of the respiratory system,J00-J99,30-34,7
+Diseases of the respiratory system,J00-J99,35-39,15
+Diseases of the respiratory system,J00-J99,40-44,28
+Diseases of the respiratory system,J00-J99,45-49,65
+Diseases of the respiratory system,J00-J99,50-54,120
+Diseases of the respiratory system,J00-J99,55-59,285
+Diseases of the respiratory system,J00-J99,60-64,434
+Diseases of the respiratory system,J00-J99,65-69,714
+Diseases of the respiratory system,J00-J99,70-74,865
+Diseases of the respiratory system,J00-J99,75-79,1359
+Diseases of the respiratory system,J00-J99,80-84,2088
+Diseases of the respiratory system,J00-J99,85-89,2481
+Diseases of the respiratory system,J00-J99,90-94,1971
+Diseases of the respiratory system,J00-J99,95-99,632
+Diseases of the respiratory system,J00-J99,100+,117
+Diseases of the digestive system,K00-K93,0-4,3
+Diseases of the digestive system,K00-K93,5-9,0
+Diseases of the digestive system,K00-K93,10-14,0
+Diseases of the digestive system,K00-K93,15-19,4
+Diseases of the digestive system,K00-K93,20-24,4
+Diseases of the digestive system,K00-K93,25-29,5
+Diseases of the digestive system,K00-K93,30-34,6
+Diseases of the digestive system,K00-K93,35-39,33
+Diseases of the digestive system,K00-K93,40-44,66
+Diseases of the digestive system,K00-K93,45-49,100
+Diseases of the digestive system,K00-K93,50-54,209
+Diseases of the digestive system,K00-K93,55-59,283
+Diseases of the digestive system,K00-K93,60-64,399
+Diseases of the digestive system,K00-K93,65-69,421
+Diseases of the digestive system,K00-K93,70-74,419
+Diseases of the digestive system,K00-K93,75-79,511
+Diseases of the digestive system,K00-K93,80-84,710
+Diseases of the digestive system,K00-K93,85-89,838
+Diseases of the digestive system,K00-K93,90-94,621
+Diseases of the digestive system,K00-K93,95-99,168
+Diseases of the digestive system,K00-K93,100+,25
+Skin diseases,L00-L99,0-4,0
+Skin diseases,L00-L99,5-9,0
+Skin diseases,L00-L99,10-14,0
+Skin diseases,L00-L99,15-19,0
+Skin diseases,L00-L99,20-24,0
+Skin diseases,L00-L99,25-29,0
+Skin diseases,L00-L99,30-34,0
+Skin diseases,L00-L99,35-39,0
+Skin diseases,L00-L99,40-44,1
+Skin diseases,L00-L99,45-49,2
+Skin diseases,L00-L99,50-54,1
+Skin diseases,L00-L99,55-59,4
+Skin diseases,L00-L99,60-64,3
+Skin diseases,L00-L99,65-69,12
+Skin diseases,L00-L99,70-74,17
+Skin diseases,L00-L99,75-79,34
+Skin diseases,L00-L99,80-84,57
+Skin diseases,L00-L99,85-89,82
+Skin diseases,L00-L99,90-94,71
+Skin diseases,L00-L99,95-99,31
+Skin diseases,L00-L99,100+,6
+Muscle and articulation diseases,M00-M99,0-4,1
+Muscle and articulation diseases,M00-M99,5-9,0
+Muscle and articulation diseases,M00-M99,10-14,1
+Muscle and articulation diseases,M00-M99,15-19,2
+Muscle and articulation diseases,M00-M99,20-24,3
+Muscle and articulation diseases,M00-M99,25-29,0
+Muscle and articulation diseases,M00-M99,30-34,2
+Muscle and articulation diseases,M00-M99,35-39,2
+Muscle and articulation diseases,M00-M99,40-44,2
+Muscle and articulation diseases,M00-M99,45-49,5
+Muscle and articulation diseases,M00-M99,50-54,7
+Muscle and articulation diseases,M00-M99,55-59,13
+Muscle and articulation diseases,M00-M99,60-64,26
+Muscle and articulation diseases,M00-M99,65-69,39
+Muscle and articulation diseases,M00-M99,70-74,42
+Muscle and articulation diseases,M00-M99,75-79,68
+Muscle and articulation diseases,M00-M99,80-84,118
+Muscle and articulation diseases,M00-M99,85-89,144
+Muscle and articulation diseases,M00-M99,90-94,94
+Muscle and articulation diseases,M00-M99,95-99,30
+Muscle and articulation diseases,M00-M99,100+,2
+Diseases of the genitourinary system,N00-N99,0-4,1
+Diseases of the genitourinary system,N00-N99,5-9,0
+Diseases of the genitourinary system,N00-N99,10-14,0
+Diseases of the genitourinary system,N00-N99,15-19,0
+Diseases of the genitourinary system,N00-N99,20-24,0
+Diseases of the genitourinary system,N00-N99,25-29,0
+Diseases of the genitourinary system,N00-N99,30-34,0
+Diseases of the genitourinary system,N00-N99,35-39,3
+Diseases of the genitourinary system,N00-N99,40-44,6
+Diseases of the genitourinary system,N00-N99,45-49,10
+Diseases of the genitourinary system,N00-N99,50-54,17
+Diseases of the genitourinary system,N00-N99,55-59,28
+Diseases of the genitourinary system,N00-N99,60-64,47
+Diseases of the genitourinary system,N00-N99,65-69,109
+Diseases of the genitourinary system,N00-N99,70-74,138
+Diseases of the genitourinary system,N00-N99,75-79,241
+Diseases of the genitourinary system,N00-N99,80-84,569
+Diseases of the genitourinary system,N00-N99,85-89,847
+Diseases of the genitourinary system,N00-N99,90-94,671
+Diseases of the genitourinary system,N00-N99,95-99,197
+Diseases of the genitourinary system,N00-N99,100+,27
+Pregnancy-linked diseases,O00-O99,15-19,0
+Pregnancy-linked diseases,O00-O99,20-24,0
+Pregnancy-linked diseases,O00-O99,25-29,1
+Pregnancy-linked diseases,O00-O99,30-34,0
+Pregnancy-linked diseases,O00-O99,35-39,3
+Pregnancy-linked diseases,O00-O99,40-44,0
+Pregnancy-linked diseases,O00-O99,45-49,0
+Perinatal period diseases,P00-P96,0-4,204
+Perinatal period diseases,P00-P96,5-9,0
+Perinatal period diseases,P00-P96,10-14,0
+Perinatal period diseases,P00-P96,15-19,0
+Perinatal period diseases,P00-P96,20-24,0
+Perinatal period diseases,P00-P96,25-29,0
+Perinatal period diseases,P00-P96,30-34,0
+Perinatal period diseases,P00-P96,35-39,0
+Perinatal period diseases,P00-P96,40-44,1
+Birth defects,Q00-Q99,0-4,106
+Birth defects,Q00-Q99,5-9,6
+Birth defects,Q00-Q99,10-14,3
+Birth defects,Q00-Q99,15-19,3
+Birth defects,Q00-Q99,20-24,8
+Birth defects,Q00-Q99,25-29,3
+Birth defects,Q00-Q99,30-34,4
+Birth defects,Q00-Q99,35-39,1
+Birth defects,Q00-Q99,40-44,3
+Birth defects,Q00-Q99,45-49,11
+Birth defects,Q00-Q99,50-54,11
+Birth defects,Q00-Q99,55-59,23
+Birth defects,Q00-Q99,60-64,30
+Birth defects,Q00-Q99,65-69,11
+Birth defects,Q00-Q99,70-74,9
+Birth defects,Q00-Q99,75-79,4
+Birth defects,Q00-Q99,80-84,4
+Birth defects,Q00-Q99,85-89,4
+Birth defects,Q00-Q99,90-94,2
+Birth defects,Q00-Q99,95-99,1
+Birth defects,Q00-Q99,100+,0
+Other diseases,R00-R99,0-4,38
+Other diseases,R00-R99,5-9,4
+Other diseases,R00-R99,10-14,6
+Other diseases,R00-R99,15-19,8
+Other diseases,R00-R99,20-24,26
+Other diseases,R00-R99,25-29,29
+Other diseases,R00-R99,30-34,25
+Other diseases,R00-R99,35-39,47
+Other diseases,R00-R99,40-44,65
+Other diseases,R00-R99,45-49,122
+Other diseases,R00-R99,50-54,159
+Other diseases,R00-R99,55-59,261
+Other diseases,R00-R99,60-64,357
+Other diseases,R00-R99,65-69,397
+Other diseases,R00-R99,70-74,424
+Other diseases,R00-R99,75-79,572
+Other diseases,R00-R99,80-84,906
+Other diseases,R00-R99,85-89,1252
+Other diseases,R00-R99,90-94,1267
+Other diseases,R00-R99,95-99,572
+Other diseases,R00-R99,100+,178
+External causes,V01-Y98,0-4,24
+External causes,V01-Y98,5-9,16
+External causes,V01-Y98,10-14,12
+External causes,V01-Y98,15-19,88
+External causes,V01-Y98,20-24,165
+External causes,V01-Y98,25-29,223
+External causes,V01-Y98,30-34,258
+External causes,V01-Y98,35-39,235
+External causes,V01-Y98,40-44,304
+External causes,V01-Y98,45-49,402
+External causes,V01-Y98,50-54,405
+External causes,V01-Y98,55-59,435
+External causes,V01-Y98,60-64,366
+External causes,V01-Y98,65-69,420
+External causes,V01-Y98,70-74,365
+External causes,V01-Y98,75-79,459
+External causes,V01-Y98,80-84,697
+External causes,V01-Y98,85-89,847
+External causes,V01-Y98,90-94,719
+External causes,V01-Y98,95-99,221
+External causes,V01-Y98,100+,31
