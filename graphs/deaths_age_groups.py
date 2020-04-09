@@ -57,29 +57,21 @@ def age_groups_death_pie():
                                                   gettext("Belgium")
                                               ],
                                               horizontal_spacing=0.01, vertical_spacing=0.2)
+
     fig_age_groups_deaths_pie.add_trace(
-        go.Pie(labels=region_age['DEATHS']['Wallonia'].index.values, values=region_age['DEATHS']['Wallonia'].values,
-               name=gettext("Wallonia"), sort=False,
-               textposition="inside"),
+        go.Pie(labels=total_age['DEATHS'].index.values, values=total_age['DEATHS'], name=gettext("Total"), sort=False, textposition="inside"),
         1, 1)
     fig_age_groups_deaths_pie.add_trace(
-        go.Pie(labels=region_age['DEATHS']['Flanders'].index.values, values=region_age['DEATHS']['Flanders'].values,
-               name=gettext("Flanders"), sort=False,
+        go.Pie(labels=region_age['DEATHS']['Wallonia'].index.values, values=region_age['DEATHS']['Wallonia'].values, name=gettext("Wallonia"), sort=False,
                textposition="inside"),
         1, 2)
     fig_age_groups_deaths_pie.add_trace(
-        go.Pie(labels=region_age['DEATHS']['Brussels'].index.values, values=region_age['DEATHS']['Brussels'].values,
-               name=gettext("Brussels"), sort=False,
+        go.Pie(labels=region_age['DEATHS']['Flanders'].index.values, values=region_age['DEATHS']['Flanders'].values, name=gettext("Flanders"), sort=False,
                textposition="inside"),
         2, 1)
     fig_age_groups_deaths_pie.add_trace(
-        go.Pie(labels=total_age['DEATHS'].index.values, values=total_age['DEATHS'], name=gettext("Total"), sort=False,
+        go.Pie(labels=region_age['DEATHS']['Brussels'].index.values, values=region_age['DEATHS']['Brussels'].values, name=gettext("Brussels"), sort=False,
                textposition="inside"),
         2, 2)
-
-    fig_age_groups_deaths_pie.update_layout(
-        title_text=gettext("Deaths per age group, per region"),
-        margin=dict(l=0, r=0, t=60, b=0)
-    )
 
     return fig_age_groups_deaths_pie
