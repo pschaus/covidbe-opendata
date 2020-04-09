@@ -184,6 +184,7 @@ def overmortality_estimates_repartition():
     fig.layout.yaxis.title = "Average number of deceased per day"
     fig.layout.template = "plotly_white"
     fig.layout.title = "Mortality taking into account covid-19 overmortality (estimate 2020-04-06), per age group"
+    fig.update_layout(legend_orientation="h", legend_y=-0.2, height=700)
 
     pie_data = out.groupby(["CAUSE", "CAUSEIDX", "PCT_CAUSE"], as_index=False).agg({"DEATHS": "sum"}).sort_values(
         ["PCT_CAUSE"], ascending=False)
@@ -192,4 +193,6 @@ def overmortality_estimates_repartition():
                                  )])
     pie.layout.title = "Mortality taking into account covid-19 overmortality (estimate 2020-04-06), global"
     pie.update_traces(textposition='inside')
+    pie.update_layout(legend_orientation="h", height=700)
+
     return fig, pie
