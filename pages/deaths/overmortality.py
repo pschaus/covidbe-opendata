@@ -62,12 +62,12 @@ def display_overmortality():
                 - The actual overmortality in the respiratory illness category is actually higher (everyone is not dying 
                   from the Covid-19 in that category);
                 - there will be undermortality due to the coronavirus in other categories (car accidents, for example, 
-                  occurs less due to confinement). Additionally, some people dying from coronavirus infection would have 
+                  occur less due to confinement). Additionally, some people dying from coronavirus infection would have 
                   died from other causes;
                 - there will be overmortality in other categories, for example an increase in suicides, and problems due to 
                   people going less often to the doctor and the hospital for other illnesses.
         
-                All-in-all, we can make the hypothesis that the respiratory surmotality is a good estimate or the effective 
+                All-in-all, we can make the hypothesis that the respiratory surmotality is a good estimate of the effective 
                 overmortality (we actually expect it to be lower than the truth). This overmortality is to be compared with 
                 the other sources of mortality. Let us take an example for a specific day:
             """)),
