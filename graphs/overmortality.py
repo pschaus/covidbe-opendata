@@ -191,4 +191,5 @@ def overmortality_estimates_repartition():
                                  marker_colors=[colors[x] for x in pie_data.CAUSE]
                                  )])
     pie.layout.title = "Mortality taking into account covid-19 surmortality (estimate 2020-04-06), global"
+    pie.update_traces(textposition='inside')
     return fig, pie
