@@ -74,8 +74,8 @@ def daily_deaths_respiratory():
 
     td = df_mortality.loc[df_mortality.DATE == "2020-04-06"].groupby(["AGEGROUP"]).agg({"DEATHS": "sum"})
     td = [td.loc[x].DEATHS if x in td.index else 0 for x in agegroups]
-    surmortality_a = td - df_resp_deaths_2018_ag.DEATHS
-    surmortality_a.loc[surmortality_a < 0] = 0
+    overmortality_a = td - df_resp_deaths_2018_ag.DEATHS
+    overmortality_a.loc[overmortality_a < 0] = 0
 
     fig = go.Figure(data=[
         go.Bar(name='Deaths Covid-19 2020-04-06', x=agegroups, y=td, offsetgroup=0,
@@ -85,18 +85,18 @@ def daily_deaths_respiratory():
                x=agegroups, y=df_resp_deaths_2018_ag.DEATHS, offsetgroup=1,
                hovertemplate="%{y:.1f}<extra>Expected respiratory deaths %{x}</extra>"
                ),
-        go.Bar(name='Respiratory-related Surmortality estimate 2020-04-06',
-               x=agegroups, y=surmortality_a,
+        go.Bar(name='Respiratory-related overmortality estimate 2020-04-06',
+               x=agegroups, y=overmortality_a,
                offsetgroup=1,
                base=df_resp_deaths_2018_ag.DEATHS,
                opacity=0.3,
                marker_color='black',
-               customdata=surmortality_a,
-               hovertemplate="%{customdata:.1f}<extra>Respiratory Surmortality %{x}</extra>")
+               customdata=overmortality_a,
+               hovertemplate="%{customdata:.1f}<extra>Respiratory overmortality %{x}</extra>")
     ])
     # Change the bar mode
     fig.update_layout(barmode='group')
-    fig.layout.title = "Respiratory-related surmortality estimates 2020-04-06"
+    fig.layout.title = "Respiratory-related overmortality estimates 2020-04-06"
     fig.layout.xaxis.title = "Age group"
     fig.layout.yaxis.title = "Number of deaths per day"
     fig.layout.template = "plotly_white"
@@ -142,7 +142,7 @@ def overmortality_estimates_repartition():
     tmp.loc[tmp.DEATHS < 0, 'DEATHS'] = 0
     del tmp["DEATHS_x"]
     del tmp["DEATHS_y"]
-    tmp.CAUSE = "Covid-19 surmortality"
+    tmp.CAUSE = "Covid-19 overmortality"
     tmp.CAUSEIDX = "X"
 
     out = pd.concat([df_mortality_causes_2016, tmp], sort=False, ignore_index=True)
@@ -157,12 +157,12 @@ def overmortality_estimates_repartition():
         opa = 0.3
         return f"rgba({r * 255 * opa + (1.0 - opa) * 255},{g * 255 * opa + (1.0 - opa) * 255},{b * 255 * opa + (1.0 - opa) * 255},1)"
 
-    colors = {x: gen_color(idx, x == "Covid-19 surmortality") for idx, x in enumerate(out.CAUSE.unique())}
+    colors = {x: gen_color(idx, x == "Covid-19 overmortality") for idx, x in enumerate(out.CAUSE.unique())}
 
     def gen_bar(cause):
 
         cause_data = out.loc[out.CAUSE == cause]
-        if cause == "Covid-19 surmortality":
+        if cause == "Covid-19 overmortality":
             texttemplate = "%{customdata:.2f}%"
         else:
             texttemplate = None
@@ -183,13 +183,13 @@ def overmortality_estimates_repartition():
     fig.layout.xaxis.title = "Age group"
     fig.layout.yaxis.title = "Average number of deceased per day"
     fig.layout.template = "plotly_white"
-    fig.layout.title = "Mortality taking into account covid-19 surmortality (estimate 2020-04-06), per age group"
+    fig.layout.title = "Mortality taking into account covid-19 overmortality (estimate 2020-04-06), per age group"
 
     pie_data = out.groupby(["CAUSE", "CAUSEIDX", "PCT_CAUSE"], as_index=False).agg({"DEATHS": "sum"}).sort_values(
         ["PCT_CAUSE"], ascending=False)
     pie = go.Figure(data=[go.Pie(labels=pie_data.CAUSE, values=pie_data.DEATHS, sort=False,
                                  marker_colors=[colors[x] for x in pie_data.CAUSE]
                                  )])
-    pie.layout.title = "Mortality taking into account covid-19 surmortality (estimate 2020-04-06), global"
+    pie.layout.title = "Mortality taking into account covid-19 overmortality (estimate 2020-04-06), global"
     pie.update_traces(textposition='inside')
     return fig, pie
