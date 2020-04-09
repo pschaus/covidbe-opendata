@@ -18,6 +18,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
+
+msgid "Deaths per day per age group"
+msgstr "Décès par jour par groupe d'âge"
+
 #: graphs/cases_age_groups.py:33
 msgid "Cases per day per age group"
 msgstr "Cas par jour par groupe d'âge"
@@ -45,6 +49,10 @@ msgstr "Total"
 #: graphs/cases_age_groups.py:71
 msgid "Cases per age group, per region"
 msgstr "Cas par groupe d'âge, par région"
+
+msgid "Deaths per age group, per region"
+msgstr "Décès par groupe d'âge, par région"
+
 
 #: graphs/cases_per_municipality.py:36
 msgid "Number of cases"
