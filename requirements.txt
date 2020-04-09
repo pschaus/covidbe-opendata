@@ -3,10 +3,11 @@ dash-renderer>=1.3.0
 dash-core-components>=1.9.0
 dash-bootstrap-components
 plotly>=4.6.0
-panda>=0.3.1
+pandas>=1.0.3
 plotly-geo>=1.0.0
 geopandas>=0.3.0
 pyshp>=1.2.10
 shapely>=1.7.0
 gunicorn
 flask-babel
+colorcet>=2.0.2
