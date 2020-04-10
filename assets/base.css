@@ -1,17 +1,20 @@
 #sidebar {
   text-align: center;
-  padding: 2rem 1rem;
   background-color: #f8f9fa;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 #sidebar h2 {
   text-align: left;
   margin-bottom: 0;
+  padding: 1rem 1rem;
 }
 
 /* Hide the blurb on a small screen */
 #blurb {
   display: none;
+  padding: 0 1rem;
 }
 
 #sidebar-toggle {
@@ -142,4 +145,10 @@ li.open .fa-chevron-right {
   display: block;
   position: absolute;
   left: -20px;
+}
+
+#language-switcher {
+  background: none;
+  font-size: 1em;
+  margin-top: 15px;
 }

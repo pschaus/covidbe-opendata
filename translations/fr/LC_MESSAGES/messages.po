@@ -245,7 +245,7 @@ msgid ""
 "**WARNING**: We enter in the realm of models and estimates. Everything "
 "below is **wrong**, but **may** give an idea of the reality."
 msgstr ""
-"**ATTENTION**: Nous rentrons dans le royaume fantatisque des modèles et "
+"**ATTENTION**: Nous rentrons dans le royaume fantastique des modèles et "
 "des estimations. Tout ce qui se trouve ci-dessous est **faux**, mais "
 "**pourrait** donner une idée de la réalité."
 

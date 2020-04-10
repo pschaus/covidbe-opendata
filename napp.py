@@ -3,9 +3,11 @@ import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
 import flask
+import flask_babel
 from dash.dependencies import Input, Output, State
+from dash.exceptions import PreventUpdate
 from flask import request, g
-from flask_babel import Babel, lazy_gettext
+from flask_babel import Babel, lazy_gettext, gettext
 
 from pages import ThreadSafeCache, lang_cache, get_translation
 from pages.cases import cases_menu
@@ -33,9 +35,9 @@ babel = Babel(app.server)
 
 @babel.localeselector
 def get_locale():
-    g.locale = "fr"
+    g.locale = request.cookies.get("lang")
     if not g.get('locale', None):
-        translations = [str(translation) for translation in babel.list_translations()]
+        translations = ["en", "fr"]
         g.locale = request.accept_languages.best_match(translations)
     return g.locale
 
@@ -65,17 +67,6 @@ def generate_sidebar():
                             "borderColor": "rgba(0,0,0,.1)",
                         },
                         id="navbar-toggle",
-                    ),
-                    html.Button(
-                        # use the Bootstrap navbar-toggler classes to style
-                        html.Span(className="navbar-toggler-icon"),
-                        className="navbar-toggler",
-                        # the navbar-toggler classes don't set color
-                        style={
-                            "color": "rgba(0,0,0,.5)",
-                            "borderColor": "rgba(0,0,0,.1)",
-                        },
-                        id="sidebar-toggle",
                     ),
                 ],
                 # the column containing the toggle will be only as wide as the
@@ -118,6 +109,17 @@ def generate_sidebar():
             ),
         ]
 
+    menus_components.append(html.Li(
+        dbc.Row(
+            [
+                dbc.Col(gettext("Language"), className="navbar-text"),
+                dbc.Col(dbc.Button("EN", color="link", id="en-lang", disabled=str(get_locale()) == "en")),
+                dbc.Col(dbc.Button("FR", color="link", id="fr-lang", disabled=str(get_locale()) == "fr"))
+            ],
+            className="my-1",
+        ),
+        id="language-switcher"
+    ))
     return [
         sidebar_header,
         # we wrap the horizontal rule and short blurb in a div that can be
@@ -137,17 +139,19 @@ def generate_sidebar():
         ),
         # use the Collapse component to animate hiding / revealing links
         dbc.Collapse(
-            dbc.Nav(menus_components, vertical=True),
+            [
+                dbc.Nav(menus_components, vertical=True)
+            ],
             id="collapse",
-        ),
+        )
     ]
     return sidebar
-
 
 @lang_cache
 def gen_layout():
     #print(f"REGENERATE LAYOUT {get_locale()}")
     return html.Div([
+        dcc.Store(id="memory", data={"lang": str(get_locale())}),
         dcc.Location(id="url"),
         html.Div(generate_sidebar(), id="sidebar"),
         dcc.Loading(children=html.Div(id="page-content"))
@@ -196,8 +200,15 @@ page_generators = {menu.base_link+page.link: page.display_fn for menu in menus f
 page_cache = ThreadSafeCache()
 
 
-@app.callback(Output("page-content", "children"), [Input("url", "pathname")])
-def render_page_content(pathname):
+@app.callback(Output("sidebar", "children"),
+              [Input("memory", "data")])
+def update_sidebar_lang(ignore):
+    return generate_sidebar()
+
+
+@app.callback(Output("page-content", "children"),
+              [Input("url", "pathname"), Input("memory", "data")])
+def render_page_content(pathname, lang_data):
     if pathname == "/":
         pathname = "/cases/overview"
 
@@ -215,17 +226,6 @@ def render_page_content(pathname):
 
 
 @app.callback(
-    Output("sidebar", "className"),
-    [Input("sidebar-toggle", "n_clicks")],
-    [State("sidebar", "className")],
-)
-def toggle_classname(n, classname):
-    if n and classname == "":
-        return "collapsed"
-    return ""
-
-
-@app.callback(
     Output("collapse", "is_open"),
     [Input("navbar-toggle", "n_clicks")],
     [State("collapse", "is_open")],
@@ -238,6 +238,29 @@ def toggle_collapse(n, is_open):
 for menu in menus:
     for page in menu.children:
         page.callback_fn(app)
+
+
+@app.callback(Output('memory', 'data'),
+              [Input('{}-lang'.format(lang), 'n_clicks') for lang in ["fr", "en"]],
+              [State('memory', 'data')])
+def on_click(*args):
+    current = args[-1]
+    ctx = dash.callback_context
+    if not ctx.triggered or all(x is None for x in args[:-1]):
+        raise PreventUpdate
+
+    lang = ctx.triggered[0]['prop_id'].split('.')[0].split("-")[0]
+
+    if current.get("lang") == lang:
+        # prevent the None callbacks is important with the store component.
+        # you don't want to update the store for nothing.
+        raise PreventUpdate
+
+    dash.callback_context.response.set_cookie('lang', lang)
+    g.locale = lang
+    flask_babel.refresh()
+    return {"lang": lang}
+
 
 if __name__ == "__main__":
     app.run_server(port=8888, debug=True)
