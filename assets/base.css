@@ -31,7 +31,7 @@
   padding: 2rem 1rem;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 60em) {
   #sidebar {
     position: fixed;
     top: 0;
@@ -115,4 +115,31 @@ li.open .fa-chevron-right {
 .nav-link.active {
     background-color: #cce5ff;
     color: #004085;
+}
+
+.model-warning {
+    padding: 10px;
+    background: repeating-linear-gradient(45deg, #F8C420, #F8C420 10px, black 10px, black 20px );
+    font-size: 20px;
+}
+
+.model-warning p {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 5px;
+  margin: 0;
+}
+
+.model-warning-content {
+  margin-left: 20px;
+  position: relative;
+  margin-top: 10px;
+}
+
+.model-warning-content-left {
+  width: 10px;
+  height: 100%;
+  background: repeating-linear-gradient(225deg, #F8C420, #F8C420 10px, black 10px, black 20px );
+  display: block;
+  position: absolute;
+  left: -20px;
 }

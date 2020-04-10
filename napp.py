@@ -1,42 +1,42 @@
-"""
-This app creates a collapsible, responsive sidebar layout with
-dash-bootstrap-components and some custom css with media queries.
-
-When the screen is small, the sidebar moved to the top of the page, and the
-links get hidden in a collapse element. We use a callback to toggle the
-collapse when on a small screen, and the custom CSS to hide the toggle, and
-force the collapse to stay open when the screen is large.
-
-dcc.Location is used to track the current location. There are two callbacks,
-one uses the current location to render the appropriate page content, the other
-uses the current location to toggle the "active" properties of the navigation
-links.
-
-For more details on building multi-page Dash applications, check out the Dash
-documentation: https://dash.plot.ly/urls
-"""
 import dash
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output, State
-from dash.development.base_component import Component
+from flask import request, g
+from flask_babel import Babel, lazy_gettext
 
 from pages.cases import cases_menu
 from pages.deaths import deaths_menu
 from pages.international import international_menu
+from pages.hospitals import hospitals_menu
 
 FA = "https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 
 app = dash.Dash(__name__, 
     external_stylesheets=[dbc.themes.BOOTSTRAP, FA],
+    external_scripts=["https://cdn.plot.ly/plotly-locale-fr-latest.js", "https://cdn.plot.ly/plotly-locale-nl-latest.js", "https://cdn.plot.ly/plotly-locale-de-latest.js"],
     # these meta_tags ensure content is scaled correctly on different devices
     # see: https://www.w3schools.com/css/css_rwd_viewport.asp for more
     meta_tags=[
         {"name": "viewport", "content": "width=device-width, initial-scale=1"}
     ],
 )
+
 server = app.server
+
+# Hook Flask-Babel to the app
+babel = Babel(app.server)
+
+
+@babel.localeselector
+def get_locale():
+    g.locale = "fr"
+    if not g.get('locale', None):
+        translations = [str(translation) for translation in babel.list_translations()]
+        g.locale = request.accept_languages.best_match(translations)
+    return g.locale
+
 
 # we use the Row and Col components to construct the sidebar header
 # it consists of a title, and a toggle, the latter is hidden on large screens
@@ -77,7 +77,8 @@ sidebar_header = dbc.Row(
     ]
 )
 
-menus = [cases_menu, deaths_menu, international_menu]
+
+menus = [cases_menu, deaths_menu, hospitals_menu, international_menu]
 menus_components = []
 menu_links = []
 for menu_idx, menu in enumerate(menus):
@@ -137,7 +138,7 @@ sidebar = html.Div(
 
 content = html.Div(id="page-content")
 
-app.layout = html.Div([dcc.Location(id="url"), sidebar, content])
+app.layout = html.Div([dcc.Location(id="url"), sidebar, dcc.Loading(children=content)])
 
 
 # # this callback uses the current pathname to set the active state of the
@@ -180,14 +181,20 @@ for i in range(len(menus)):
         [Input(f"submenu-{i}-collapse", "is_open")],
     )(set_navitem_class)
 
-possible_pages = {menu.base_link+page.link: page.display_fn for menu in menus for page in menu.children}
+page_generators = {menu.base_link+page.link: page.display_fn for menu in menus for page in menu.children}
+page_cache = {}
+
 
 @app.callback(Output("page-content", "children"), [Input("url", "pathname")])
 def render_page_content(pathname):
     if pathname == "/":
         pathname = "/cases/overview"
-    if pathname in possible_pages:
-        return possible_pages[pathname]()
+
+    if pathname in page_generators:
+        if (pathname, str(get_locale())) not in page_cache:
+            page_cache[pathname, str(get_locale())] = page_generators[pathname]()
+        return page_cache[pathname, str(get_locale())]
+
     # If the user tries to reach a different page, return a 404 message
     return dbc.Jumbotron(
         [
