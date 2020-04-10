@@ -12,7 +12,7 @@
 }
 
 /* Hide the blurb on a small screen */
-#blurb {
+.blurb {
   display: none;
   padding: 0 1rem;
 }
@@ -76,7 +76,7 @@
   }
 
   /* reveal the blurb on a large screen */
-  #blurb {
+  .blurb {
     display: block;
   }
 
