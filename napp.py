@@ -7,6 +7,7 @@ from dash.dependencies import Input, Output, State
 from flask import request, g
 from flask_babel import Babel, lazy_gettext
 
+from pages import ThreadSafeCache, lang_cache
 from pages.cases import cases_menu
 from pages.deaths import deaths_menu
 from pages.international import international_menu
@@ -139,22 +140,20 @@ def generate_sidebar():
     ]
     return sidebar
 
+
+@lang_cache
 def gen_layout():
-    print(f"REGENERATE LAYOUT {get_locale()}")
+    #print(f"REGENERATE LAYOUT {get_locale()}")
     return html.Div([
         dcc.Location(id="url"),
         html.Div(generate_sidebar(), id="sidebar"),
         dcc.Loading(children=html.Div(id="page-content"))
     ])
 
-layout_lang_cache = {}
+
 def serve_layout():
     if flask.has_request_context():
-        key = str(get_locale())
-        print(f"SERVE {get_locale()}")
-        if key not in layout_lang_cache:
-            layout_lang_cache[key] = gen_layout()
-        return layout_lang_cache[key]
+        return gen_layout()
     return html.Div([dcc.Location(id="url")])
 
 
@@ -191,7 +190,7 @@ for i in range(len(menus)):
     )(set_navitem_class)
 
 page_generators = {menu.base_link+page.link: page.display_fn for menu in menus for page in menu.children}
-page_cache = {}
+page_cache = ThreadSafeCache()
 
 
 @app.callback(Output("page-content", "children"), [Input("url", "pathname")])
@@ -200,9 +199,7 @@ def render_page_content(pathname):
         pathname = "/cases/overview"
 
     if pathname in page_generators:
-        if (pathname, str(get_locale())) not in page_cache:
-            page_cache[pathname, str(get_locale())] = page_generators[pathname]()
-        return page_cache[pathname, str(get_locale())]
+        return page_cache.get((pathname, str(get_locale())), page_generators[pathname])
 
     # If the user tries to reach a different page, return a 404 message
     return dbc.Jumbotron(
