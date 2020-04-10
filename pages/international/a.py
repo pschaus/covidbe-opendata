@@ -16,7 +16,7 @@ from app import app
 #https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv
 #baseURL = "../COVID-19/csse_covid_19_data/csse_covid_19_time_series/"
 baseURL = "static/csv/"
-fileNamePickle = "allData.pkl"
+fileNamePickle = "tmp/allData.pkl"
 
 #external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 #app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
