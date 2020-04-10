@@ -8,6 +8,7 @@ from flask_babel import Babel, lazy_gettext
 
 from pages.cases import cases_menu
 from pages.deaths import deaths_menu
+from pages.hospitals import hospitals_menu
 
 FA = "https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 
@@ -75,7 +76,7 @@ sidebar_header = dbc.Row(
     ]
 )
 
-menus = [cases_menu, deaths_menu]
+menus = [cases_menu, deaths_menu, hospitals_menu]
 menus_components = []
 menu_links = []
 for menu_idx, menu in enumerate(menus):
