@@ -1,25 +1,25 @@
 import json
+import time
 from datetime import datetime, timedelta, date
 
+import geopandas
 import plotly.express as px
 import pandas as pd
 import plotly.graph_objs as go
 import numpy as np
 from flask_babel import gettext
 
-from graphs import translated_graph
-
 df_communes_tot = pd.read_csv("static/csv/be-covid-totcases.csv", dtype={"NIS5": str})
 df_communes_timeseries = pd.read_csv('static/csv/be-covid-timeseries.csv')
-with open('static/json/communes/be-geojson.json') as json_file:
-    geojson_communes = json.load(json_file)
+geojson_communes = geopandas.read_file('static/json/communes/be-geojson.json')
+
 df_communes_tot['colorbase'] = df_communes_tot.apply(lambda row: np.log2(row.CASES) if row.CASES != 0 else 0, axis=1)
 df_communes_tot['name'] = df_communes_tot.apply(
     lambda row: (row.FR if row.FR == row.NL else f"{row.FR}/{row.NL}").replace("_", " "), axis=1)
 
 
-@translated_graph
 def map_communes():
+    start_time = time.time()
     fig = px.choropleth_mapbox(df_communes_tot, geojson=geojson_communes,
                                locations="NIS5",
                                color='colorbase', color_continuous_scale="deep",
@@ -30,6 +30,7 @@ def map_communes():
                                hover_data=["name", "CASES", "NIS5"],
                                height=500,
                                mapbox_style="carto-positron", zoom=6)
+    mid_time = time.time()
     fig.update_geos(fitbounds="locations")
     NB_TICKS = 12
     fig.layout.coloraxis.colorbar = dict(
@@ -44,10 +45,12 @@ def map_communes():
         hovertemplate=gettext("<b>%{customdata[0]}</b><br>%{customdata[1]} cases")
     )
     fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=5, b=0))
+
+    end_time = time.time()
+    print("CHECK ", mid_time - start_time, end_time - mid_time, end_time - start_time)
     return fig
 
 
-# this does not need translated_graph as it is regenerated at each request
 def barplot_communes(commune_nis=73006):
     [nis, cases, fr, nl, _, title_text] = df_communes_tot.loc[df_communes_tot['NIS5'] == str(commune_nis)].values[0]
     title = title_text

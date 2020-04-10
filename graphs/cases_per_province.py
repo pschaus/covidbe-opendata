@@ -5,8 +5,6 @@ import plotly.express as px
 # ---------plot of cases per province------------------------
 from flask_babel import gettext
 
-from graphs import translated_graph
-
 df_prov_tot = pd.read_csv('static/csv/be-covid-provinces_tot.csv')
 
 with open('static/json/provinces/be-provinces-geojson.json') as json_file:
@@ -15,7 +13,6 @@ range_min = df_prov_tot.CASES_PER_THOUSAND.min()
 range_max = df_prov_tot.CASES_PER_THOUSAND.max()
 
 
-@translated_graph
 def map_provinces():
     fig = px.choropleth_mapbox(df_prov_tot,
                                geojson=geojson_provinces,
@@ -40,7 +37,6 @@ def map_provinces():
     return fig
 
 
-@translated_graph
 def barplot_provinces_cases():
     fig = px.bar(df_prov_tot,
                  y='PROVINCE_NAME',
