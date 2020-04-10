@@ -2,6 +2,7 @@ import dash
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
+import flask
 from dash.dependencies import Input, Output, State
 from flask import request, g
 from flask_babel import Babel, lazy_gettext
@@ -20,7 +21,7 @@ app = dash.Dash(__name__,
         {"name": "viewport", "content": "width=device-width, initial-scale=1"}
     ],
 )
-
+app.config['suppress_callback_exceptions'] = True
 server = app.server
 
 # Hook Flask-Babel to the app
@@ -36,81 +37,85 @@ def get_locale():
     return g.locale
 
 
-# we use the Row and Col components to construct the sidebar header
-# it consists of a title, and a toggle, the latter is hidden on large screens
-sidebar_header = dbc.Row(
-    [
-        dbc.Col(html.H2("Covidata.be", className="display-6")),
-        dbc.Col(
-            [
-                html.Button(
-                    # use the Bootstrap navbar-toggler classes to style
-                    html.Span(className="navbar-toggler-icon"),
-                    className="navbar-toggler",
-                    # the navbar-toggler classes don't set color
-                    style={
-                        "color": "rgba(0,0,0,.5)",
-                        "borderColor": "rgba(0,0,0,.1)",
-                    },
-                    id="navbar-toggle",
-                ),
-                html.Button(
-                    # use the Bootstrap navbar-toggler classes to style
-                    html.Span(className="navbar-toggler-icon"),
-                    className="navbar-toggler",
-                    # the navbar-toggler classes don't set color
-                    style={
-                        "color": "rgba(0,0,0,.5)",
-                        "borderColor": "rgba(0,0,0,.1)",
-                    },
-                    id="sidebar-toggle",
-                ),
-            ],
-            # the column containing the toggle will be only as wide as the
-            # toggle, resulting in the toggle being right aligned
-            width="auto",
-            # vertically align the toggle in the center
-            align="center",
-        ),
-    ]
-)
-
 menus = [cases_menu, deaths_menu]
-menus_components = []
-menu_links = []
+menu_links = {}
 for menu_idx, menu in enumerate(menus):
-    this_menu_links = [
-        dbc.NavLink(
-            [html.I(className="fas fa-arrow-right mr-3"), x.link_name],
-            id=f"menu_{len(menu_links)+i}", href=menu.base_link+x.link
-        )
-        for i, x in enumerate(menu.children)]
+    for x in menu.children:
+        menu_links[x] = {"id": f"menu_{len(menu_links)}", "href": menu.base_link+x.link}
 
-    menus_components += [
-        html.Li(
-            # use Row and Col components to position the chevrons
-            dbc.Row(
+
+def generate_sidebar():
+    # we use the Row and Col components to construct the sidebar header
+    # it consists of a title, and a toggle, the latter is hidden on large screens
+    sidebar_header = dbc.Row(
+        [
+            dbc.Col(html.H2("Covidata.be", className="display-6")),
+            dbc.Col(
                 [
-                    dbc.Col(dcc.Link(menu.name, href=menu.base_link+menu.children[0].link)),
-                    dbc.Col(
-                        html.I(className="fas fa-chevron-right mr-3"), width="auto"
+                    html.Button(
+                        # use the Bootstrap navbar-toggler classes to style
+                        html.Span(className="navbar-toggler-icon"),
+                        className="navbar-toggler",
+                        # the navbar-toggler classes don't set color
+                        style={
+                            "color": "rgba(0,0,0,.5)",
+                            "borderColor": "rgba(0,0,0,.1)",
+                        },
+                        id="navbar-toggle",
+                    ),
+                    html.Button(
+                        # use the Bootstrap navbar-toggler classes to style
+                        html.Span(className="navbar-toggler-icon"),
+                        className="navbar-toggler",
+                        # the navbar-toggler classes don't set color
+                        style={
+                            "color": "rgba(0,0,0,.5)",
+                            "borderColor": "rgba(0,0,0,.1)",
+                        },
+                        id="sidebar-toggle",
                     ),
                 ],
-                className="my-1",
+                # the column containing the toggle will be only as wide as the
+                # toggle, resulting in the toggle being right aligned
+                width="auto",
+                # vertically align the toggle in the center
+                align="center",
             ),
-            id=f"submenu-{menu_idx}",
-        ),
-        # we use the Collapse component to hide and reveal the navigation links
-        dbc.Collapse(
-            this_menu_links,
-            id=f"submenu-{menu_idx}-collapse",
-        ),
-    ]
+        ]
+    )
 
-    menu_links += this_menu_links
+    menus_components = []
+    for menu_idx, menu in enumerate(menus):
+        this_menu_links = [
+            dbc.NavLink(
+                [html.I(className="fas fa-arrow-right mr-3"), str(x.link_name)],
+                id=menu_links[x]["id"], href=menu_links[x]["href"]
+            )
+            for x in menu.children
+        ]
 
-sidebar = html.Div(
-    [
+        menus_components += [
+            html.Li(
+                # use Row and Col components to position the chevrons
+                dbc.Row(
+                    [
+                        dbc.Col(dcc.Link(str(menu.name), href=menu.base_link+menu.children[0].link)),
+                        dbc.Col(
+                            html.I(className="fas fa-chevron-right mr-3"), width="auto"
+                        ),
+                    ],
+                    className="my-1",
+                ),
+                id=f"submenu-{menu_idx}",
+            ),
+            # we use the Collapse component to hide and reveal the navigation links
+            dbc.Collapse(
+                this_menu_links,
+                id=f"submenu-{menu_idx}-collapse",
+            ),
+        ]
+
+    return [
         sidebar_header,
         # we wrap the horizontal rule and short blurb in a div that can be
         # hidden on a small screen
@@ -129,40 +134,45 @@ sidebar = html.Div(
             dbc.Nav(menus_components, vertical=True),
             id="collapse",
         ),
-    ],
-    id="sidebar",
-)
+    ]
+    return sidebar
 
-content = html.Div(id="page-content")
+def gen_layout():
+    print(f"REGENERATE LAYOUT {get_locale()}")
+    return html.Div([
+        dcc.Location(id="url"),
+        html.Div(generate_sidebar(), id="sidebar"),
+        dcc.Loading(children=html.Div(id="page-content"))
+    ])
 
-app.layout = html.Div([dcc.Location(id="url"), sidebar, dcc.Loading(children=content)])
+layout_lang_cache = {}
+def serve_layout():
+    if flask.has_request_context():
+        key = str(get_locale())
+        print(f"SERVE {get_locale()}")
+        if key not in layout_lang_cache:
+            layout_lang_cache[key] = gen_layout()
+        return layout_lang_cache[key]
+    return html.Div([dcc.Location(id="url")])
 
 
-# # this callback uses the current pathname to set the active state of the
-# # corresponding nav link to true, allowing users to tell see page they are on
-# @app.callback(
-#     [Output(f"page-{i}-link", "active") for i in range(1, 4)],
-#     [Input("url", "pathname")],
-# )
-# def toggle_active_links(pathname):
-#     if pathname == "/":
-#         # Treat page 1 as the homepage / index
-#         return True, False, False
-#     return [pathname == f"/page-{i}" for i in range(1, 4)]
+app.layout = serve_layout
 
-for link_comp in menu_links:
+for link_comp in menu_links.values():
     def gen_f(link):
         return lambda x: x == link or ((x == "/" or x == "/index") and link == "/cases/overview")
     app.callback(
-        Output(link_comp.id, "active"),
+        Output(link_comp["id"], "active"),
         [Input("url", "pathname")]
-    )(gen_f(link_comp.href))
+    )(gen_f(link_comp["href"]))
+
 
 # this function applies the "open" class to rotate the chevron
 def set_navitem_class(is_open):
     if is_open:
         return "open"
     return ""
+
 
 for i in range(len(menus)):
     def toggle_collapse(menu):
@@ -223,8 +233,6 @@ def toggle_collapse(n, is_open):
         return not is_open
     return is_open
 
-
-app.config['suppress_callback_exceptions']=True
 for menu in menus:
     for page in menu.children:
         page.callback_fn(app)
