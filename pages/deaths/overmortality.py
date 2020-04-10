@@ -7,23 +7,36 @@ from flask_babel import gettext, get_locale
 
 from graphs.overmortality import daily_deaths, daily_deaths_respiratory, overmortality_respiratory_line, \
     overmortality_estimates_repartition
-from pages import model_warning
+from pages import model_warning, get_translation
 
 
 def display_overmortality():
     age_estimate, pie_estimate = overmortality_estimates_repartition()
 
     return [
-        dcc.Markdown(gettext("""
-            ## Overmortality analysis
-            
-            Many persons have died from Covid-19, but some of them would have died even in the absence of the coronavirus
-            in Belgium. The amount of deceased people that are not in this category is called the **overmortality**.
-            
-            This page attempts at giving ideas and estimates about the overmortality attributable to the Covid-19.
-            
-            ### 1. Covid-19 daily deaths against *all* expected deaths
-        """)),
+        dcc.Markdown(get_translation(
+            en="""
+                ## Overmortality analysis
+                
+                Many persons have died from Covid-19, but some of them would have died even in the absence of the coronavirus
+                in Belgium. The amount of deceased people that are not in this category is called the **overmortality**.
+                
+                This page attempts at giving ideas and estimates about the overmortality attributable to the Covid-19.
+                
+                ### 1. Covid-19 daily deaths against *all* expected deaths
+                """,
+            fr="""
+                ## Analyse de la surmortalité
+
+                Beaucoup de personnes sont décédées du Covid-19, mais plusieurs d'entre elles seraient décédées 
+                d'autres causes si le coronavirus n'était pas présent en Belgique. Le nombre de personnes qui ne sont
+                pas dans ce cas est appelé la **surmortalité** imputable au coronavirus.
+                
+                Cette page tente de donner une idée et une estimation de la surmortalité due au coronavirus.
+
+                ### 1. Décès journaliers liés au Covid-19 comparés aux décès attendus
+            """,
+        )),
         dcc.Graph(figure=daily_deaths(), config=dict(locale=str(get_locale()))),
         dcc.Markdown(gettext("""
             This graphic plots side-by-side the amount of expected death during an average day in Belgium (in 2018, this
