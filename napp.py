@@ -17,15 +17,18 @@ from pages.hospitals import hospitals_menu
 
 FA = "https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 
-app = dash.Dash(__name__, 
-    external_stylesheets=[dbc.themes.BOOTSTRAP, FA],
-    external_scripts=["https://cdn.plot.ly/plotly-locale-fr-latest.js", "https://cdn.plot.ly/plotly-locale-nl-latest.js", "https://cdn.plot.ly/plotly-locale-de-latest.js"],
-    # these meta_tags ensure content is scaled correctly on different devices
-    # see: https://www.w3schools.com/css/css_rwd_viewport.asp for more
-    meta_tags=[
-        {"name": "viewport", "content": "width=device-width, initial-scale=1"}
-    ],
+app = dash.Dash(__name__,
+                external_stylesheets=[dbc.themes.BOOTSTRAP, FA],
+                external_scripts=["https://cdn.plot.ly/plotly-locale-fr-latest.js",
+                                  "https://cdn.plot.ly/plotly-locale-nl-latest.js",
+                                  "https://cdn.plot.ly/plotly-locale-de-latest.js"],
+                # these meta_tags ensure content is scaled correctly on different devices
+                # see: https://www.w3schools.com/css/css_rwd_viewport.asp for more
+                meta_tags=[
+                    {"name": "viewport", "content": "width=device-width, initial-scale=1"}
+                ],
 )
+
 app.config['suppress_callback_exceptions'] = True
 server = app.server
 
@@ -46,7 +49,7 @@ menus = [cases_menu, deaths_menu, hospitals_menu, international_menu]
 menu_links = {}
 for menu_idx, menu in enumerate(menus):
     for x in menu.children:
-        menu_links[x] = {"id": f"menu_{len(menu_links)}", "href": menu.base_link+x.link}
+        menu_links[x] = {"id": f"menu_{len(menu_links)}", "href": menu.base_link + x.link}
 
 
 def generate_sidebar():
@@ -93,7 +96,7 @@ def generate_sidebar():
                 # use Row and Col components to position the chevrons
                 dbc.Row(
                     [
-                        dbc.Col(dcc.Link(str(menu.name), href=menu.base_link+menu.children[0].link)),
+                        dbc.Col(dcc.Link(str(menu.name), href=menu.base_link + menu.children[0].link)),
                         dbc.Col(
                             html.I(className="fas fa-chevron-right mr-3"), width="auto"
                         ),
@@ -147,9 +150,10 @@ def generate_sidebar():
     ]
     return sidebar
 
+
 @lang_cache
 def gen_layout():
-    #print(f"REGENERATE LAYOUT {get_locale()}")
+    # print(f"REGENERATE LAYOUT {get_locale()}")
     return html.Div([
         dcc.Store(id="memory", data={"lang": str(get_locale())}),
         dcc.Location(id="url"),
@@ -169,6 +173,8 @@ app.layout = serve_layout
 for link_comp in menu_links.values():
     def gen_f(link):
         return lambda x: x == link or ((x == "/" or x == "/index") and link == "/cases/overview")
+
+
     app.callback(
         Output(link_comp["id"], "active"),
         [Input("url", "pathname")]
@@ -186,6 +192,7 @@ for i in range(len(menus)):
     def toggle_collapse(menu):
         return lambda x: x.startswith(menu.base_link) or ((x == "/" or x == "/index") and menu.base_link == "/cases")
 
+
     app.callback(
         Output(f"submenu-{i}-collapse", "is_open"),
         [Input("url", "pathname")]
@@ -196,7 +203,7 @@ for i in range(len(menus)):
         [Input(f"submenu-{i}-collapse", "is_open")],
     )(set_navitem_class)
 
-page_generators = {menu.base_link+page.link: page.display_fn for menu in menus for page in menu.children}
+page_generators = {menu.base_link + page.link: page.display_fn for menu in menus for page in menu.children}
 page_cache = ThreadSafeCache()
 
 
@@ -234,6 +241,7 @@ def toggle_collapse(n, is_open):
     if n:
         return not is_open
     return is_open
+
 
 for menu in menus:
     for page in menu.children:
