@@ -5,13 +5,14 @@ import plotly.graph_objs as go
 from flask_babel import gettext
 import colorcet as cc
 
-from graphs import translated_graph
+NORMAL_COLOR = "#779ecb"
+COVID_COLOR = "#ff6961"
+OVERMORTALITY_COLOR = "#B2B2B2"
 
 df_mortality = pd.read_csv('static/csv/be-covid-mortality.csv')
 df_mortality_ag = df_mortality.groupby(["AGEGROUP"]).agg({"DEATHS": "sum"})
 df_mortality_ag_ratio = df_mortality_ag.copy()
 df_mortality_ag_ratio.DEATHS /= df_mortality_ag.DEATHS.sum()
-
 
 df_deaths_2018 = pd.read_csv('static/csv/be-deaths-2018-per-age.csv')
 df_deaths_2018_ag = pd.DataFrame({
@@ -28,30 +29,29 @@ df_resp_deaths_2018_ag = pd.DataFrame({
     'DEATHS': [0.04, 0.15, 2.47, 4.31, 9.41, 14.21]
 })
 
-
-
 df_mortality_causes_2016 = pd.read_csv('static/csv/be-deaths-2016-per-age-per-cause.csv')
 causes = df_mortality_causes_2016.CAUSE.unique()
-map_to_covid_agegroups = {  '0-4':  '0-24',   '5-9':  '0-24', '10-14':  '0-24', '15-19':  '0-24', '20-24':  '0-24',
+map_to_covid_agegroups = {'0-4': '0-24', '5-9': '0-24', '10-14': '0-24', '15-19': '0-24', '20-24': '0-24',
                           '25-29': '25-44', '30-34': '25-44', '35-39': '25-44', '40-44': '25-44',
                           '45-49': '45-64', '50-54': '45-64', '55-59': '45-64', '60-64': '45-64',
                           '65-69': '65-74', '70-74': '65-74',
                           '75-79': '75-84', '80-84': '75-84',
                           '85-89': '85+', '90-94': '85+', '95-99': '85+', '100+': '85+'}
 df_mortality_causes_2016.AGEGROUP = df_mortality_causes_2016.AGEGROUP.apply(lambda x: map_to_covid_agegroups[x])
-df_mortality_causes_2016 = df_mortality_causes_2016.groupby(["CAUSE", "AGEGROUP", "CAUSEIDX"], as_index=False).agg({"DEATHS": "sum"})
+df_mortality_causes_2016 = df_mortality_causes_2016.groupby(["CAUSE", "AGEGROUP", "CAUSEIDX"], as_index=False).agg(
+    {"DEATHS": "sum"})
 df_mortality_causes_2016.DEATHS /= 365
 df_mortality_causes_2016.sort_values(["CAUSEIDX", "AGEGROUP"])
 
 
-@translated_graph
 def daily_deaths():
     agegroups = df_mortality_ag_ratio.index
     td = df_mortality.loc[df_mortality.DATE == "2020-04-06"].groupby(["AGEGROUP"]).agg({"DEATHS": "sum"})
     td = [td.loc[x].DEATHS if x in td.index else 0 for x in agegroups]
     fig = go.Figure(data=[
-        go.Bar(name='Deaths Covid-19 2020-04-06', x=agegroups, y=td),
-        go.Bar(name='Mean deaths per day 2018', x=agegroups, y=df_deaths_2018_ag.DEATHS/365)
+        go.Bar(name='Deaths Covid-19 2020-04-06', x=agegroups, y=td, marker_color=COVID_COLOR),
+        go.Bar(name='Mean deaths per day 2018', x=agegroups, y=df_deaths_2018_ag.DEATHS / 365,
+               marker_color=NORMAL_COLOR)
     ])
     # Change the bar mode
     fig.update_layout(barmode='group')
@@ -68,7 +68,6 @@ def daily_deaths():
     return fig
 
 
-@translated_graph
 def daily_deaths_respiratory():
     agegroups = df_mortality_ag_ratio.index
 
@@ -79,18 +78,19 @@ def daily_deaths_respiratory():
 
     fig = go.Figure(data=[
         go.Bar(name='Deaths Covid-19 2020-04-06', x=agegroups, y=td, offsetgroup=0,
-               hovertemplate="%{y}<extra>COVID-19 Deaths %{x}</extra>"
+               hovertemplate="%{y}<extra>COVID-19 Deaths %{x}</extra>",
+               marker_color=COVID_COLOR
                ),
         go.Bar(name='Mean respiratory-related deaths per day (2016)',
                x=agegroups, y=df_resp_deaths_2018_ag.DEATHS, offsetgroup=1,
-               hovertemplate="%{y:.1f}<extra>Expected respiratory deaths %{x}</extra>"
+               hovertemplate="%{y:.1f}<extra>Expected respiratory deaths %{x}</extra>",
+               marker_color=NORMAL_COLOR
                ),
         go.Bar(name='Respiratory-related overmortality estimate 2020-04-06',
                x=agegroups, y=overmortality_a,
                offsetgroup=1,
                base=df_resp_deaths_2018_ag.DEATHS,
-               opacity=0.3,
-               marker_color='black',
+               marker_color=OVERMORTALITY_COLOR,
                customdata=overmortality_a,
                hovertemplate="%{customdata:.1f}<extra>Respiratory overmortality %{x}</extra>")
     ])
@@ -110,7 +110,6 @@ def daily_deaths_respiratory():
     return fig
 
 
-@translated_graph
 def overmortality_respiratory_line():
     out = pd.merge(df_mortality.groupby(["DATE", "AGEGROUP"], as_index=False).agg({"DEATHS": "sum"}),
                    df_resp_deaths_2018_ag,
@@ -131,7 +130,6 @@ def overmortality_respiratory_line():
     return fig
 
 
-@translated_graph
 def overmortality_estimates_repartition():
     covid_mortality_day = df_mortality.loc[df_mortality.DATE == "2020-04-06"].groupby(["AGEGROUP"]).agg(
         {"DEATHS": "sum"})
@@ -152,7 +150,7 @@ def overmortality_estimates_repartition():
 
     def gen_color(idx, is_covid):
         if is_covid:
-            return "red"
+            return COVID_COLOR
         r, g, b = cc.glasbey_bw_minc_20_hue_150_280[idx]
         opa = 0.3
         return f"rgba({r * 255 * opa + (1.0 - opa) * 255},{g * 255 * opa + (1.0 - opa) * 255},{b * 255 * opa + (1.0 - opa) * 255},1)"
@@ -174,7 +172,10 @@ def overmortality_estimates_repartition():
                       texttemplate=texttemplate,
                       textposition="inside",
                       customdata=cause_data.PCT,
-                      hovertemplate="%{y:.2f} deaths <br>%{customdata:.2f}% <extra>%{x}<br>" + cause + "</extra>"
+                      hovertemplate=gettext("<b>%{x} years</b><br>") +
+                                    "<b>" + cause + "</b><br>" +
+                                    gettext("%{y:.2f} deaths <br>%{customdata:.2f}%") +
+                                    "<extra></extra>"
                       )
 
     fig = go.Figure(data=[gen_bar(cause) for cause in out.CAUSE.unique()])

@@ -4,13 +4,10 @@ import plotly.express as px
 from flask_babel import gettext
 from plotly.subplots import make_subplots
 
-from graphs import translated_graph
-
 
 df_mortality = pd.read_csv('static/csv/be-covid-mortality.csv')
 
 
-@translated_graph
 def age_groups_death():
     """
     bar plot age groups cases
@@ -36,12 +33,9 @@ def age_groups_death():
                                       layout=go.Layout(barmode='group'), )
     fig_age_groups_deaths.update_layout(template="plotly_white", height=500, barmode="stack",margin=dict(l=0, r=0, t=30, b=0), title=gettext("Deaths per day per age group"))
 
-
     return fig_age_groups_deaths
 
 
-
-@translated_graph
 def age_groups_death_pie():
 
     region_age = df_mortality.groupby(['REGION', 'AGEGROUP']).agg({'DEATHS': 'sum'})

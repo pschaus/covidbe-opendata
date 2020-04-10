@@ -135,7 +135,7 @@ sidebar = html.Div(
 
 content = html.Div(id="page-content")
 
-app.layout = html.Div([dcc.Location(id="url"), sidebar, content])
+app.layout = html.Div([dcc.Location(id="url"), sidebar, dcc.Loading(children=content)])
 
 
 # # this callback uses the current pathname to set the active state of the
@@ -178,14 +178,20 @@ for i in range(len(menus)):
         [Input(f"submenu-{i}-collapse", "is_open")],
     )(set_navitem_class)
 
-possible_pages = {menu.base_link+page.link: page.display_fn for menu in menus for page in menu.children}
+page_generators = {menu.base_link+page.link: page.display_fn for menu in menus for page in menu.children}
+page_cache = {}
+
 
 @app.callback(Output("page-content", "children"), [Input("url", "pathname")])
 def render_page_content(pathname):
     if pathname == "/":
         pathname = "/cases/overview"
-    if pathname in possible_pages:
-        return possible_pages[pathname]()
+
+    if pathname in page_generators:
+        if (pathname, str(get_locale())) not in page_cache:
+            page_cache[pathname, str(get_locale())] = page_generators[pathname]()
+        return page_cache[pathname, str(get_locale())]
+
     # If the user tries to reach a different page, return a 404 message
     return dbc.Jumbotron(
         [
@@ -224,4 +230,4 @@ for menu in menus:
         page.callback_fn(app)
 
 if __name__ == "__main__":
-    app.run_server(port=8888, debug=True)
+    app.run_server(port=8888, debug=False)
