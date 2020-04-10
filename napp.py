@@ -24,6 +24,7 @@ from dash.development.base_component import Component
 
 from pages.cases import cases_menu
 from pages.deaths import deaths_menu
+from pages.international import international_menu
 
 FA = "https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 
@@ -76,7 +77,7 @@ sidebar_header = dbc.Row(
     ]
 )
 
-menus = [cases_menu, deaths_menu]
+menus = [cases_menu, deaths_menu, international_menu]
 menus_components = []
 menu_links = []
 for menu_idx, menu in enumerate(menus):
