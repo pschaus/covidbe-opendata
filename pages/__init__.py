@@ -21,10 +21,16 @@ class AppMenu:
 
 def model_warning(*elems):
     return [
-        html.Div([dcc.Markdown(gettext(
-            "**WARNING**: We enter in the realm of models and estimates. Everything below is **wrong**, but **may** give an idea of the reality."))],
-                 className="model-warning"),
-        html.Div([html.Div([], className="model-warning-content-left")] + list(elems), className="model-warning-content")
+        html.Div([
+                dcc.Markdown(gettext(
+                    "**WARNING**: We enter in the realm of models and estimates. Everything below is **wrong**, "
+                    "but **may** give an idea of the reality."
+                ))
+            ],
+            className="model-warning"
+        ),
+        html.Div([html.Div([], className="model-warning-content-left")] + list(elems),
+                 className="model-warning-content")
     ]
 
 

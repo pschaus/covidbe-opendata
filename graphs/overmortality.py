@@ -2,7 +2,7 @@ import json
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objs as go
-from flask_babel import gettext
+from flask_babel import gettext, _
 import colorcet as cc
 
 NORMAL_COLOR = "#779ecb"
@@ -43,20 +43,41 @@ df_mortality_causes_2016 = df_mortality_causes_2016.groupby(["CAUSE", "AGEGROUP"
 df_mortality_causes_2016.DEATHS /= 365
 df_mortality_causes_2016.sort_values(["CAUSEIDX", "AGEGROUP"])
 
+### This is not actually used; it is made to ensure that babel find that these strings need translation
+if False:
+    _('Birth defects')
+    _('Blood and immunity-related diseases')
+    _('Diseases of the circulatory system')
+    _('Diseases of the digestive system')
+    _('Diseases of the genitourinary system')
+    _('Diseases of the respiratory system')
+    _('Ear and mastoid-related diseases')
+    _('Endocrinian nutritionnal and metabolic diseases')
+    _('External causes')
+    _('Eye-related diseases')
+    _('Mental and behavioral disorders')
+    _('Muscle and articulation diseases')
+    _('Nervous system diseases')
+    _('Other diseases')
+    _('Other infectious and parasitic diseases')
+    _('Perinatal period diseases')
+    _('Pregnancy-linked diseases')
+    _('Skin diseases')
+    _('Tumors')
 
-def daily_deaths():
+def daily_deaths(date="2020-04-06"):
     agegroups = df_mortality_ag_ratio.index
-    td = df_mortality.loc[df_mortality.DATE == "2020-04-06"].groupby(["AGEGROUP"]).agg({"DEATHS": "sum"})
+    td = df_mortality.loc[df_mortality.DATE == date].groupby(["AGEGROUP"]).agg({"DEATHS": "sum"})
     td = [td.loc[x].DEATHS if x in td.index else 0 for x in agegroups]
     fig = go.Figure(data=[
-        go.Bar(name='Deaths Covid-19 2020-04-06', x=agegroups, y=td, marker_color=COVID_COLOR),
-        go.Bar(name='Mean deaths per day 2018', x=agegroups, y=df_deaths_2018_ag.DEATHS / 365,
+        go.Bar(name=gettext('Deaths Covid-19 {date}').format(date=date), x=agegroups, y=td, marker_color=COVID_COLOR),
+        go.Bar(name=gettext('Mean deaths per day 2018'), x=agegroups, y=df_deaths_2018_ag.DEATHS / 365,
                marker_color=NORMAL_COLOR)
     ])
     # Change the bar mode
     fig.update_layout(barmode='group')
-    fig.layout.xaxis.title = "Age group"
-    fig.layout.yaxis.title = "Number of deaths per day"
+    fig.layout.xaxis.title = gettext("Age group")
+    fig.layout.yaxis.title = gettext("Number of deaths per day")
     fig.layout.template = "plotly_white"
     fig.update_layout(
         legend=dict(
@@ -68,37 +89,37 @@ def daily_deaths():
     return fig
 
 
-def daily_deaths_respiratory():
+def daily_deaths_respiratory(date="2020-04-06"):
     agegroups = df_mortality_ag_ratio.index
 
-    td = df_mortality.loc[df_mortality.DATE == "2020-04-06"].groupby(["AGEGROUP"]).agg({"DEATHS": "sum"})
+    td = df_mortality.loc[df_mortality.DATE == date].groupby(["AGEGROUP"]).agg({"DEATHS": "sum"})
     td = [td.loc[x].DEATHS if x in td.index else 0 for x in agegroups]
     overmortality_a = td - df_resp_deaths_2018_ag.DEATHS
     overmortality_a.loc[overmortality_a < 0] = 0
 
     fig = go.Figure(data=[
-        go.Bar(name='Deaths Covid-19 2020-04-06', x=agegroups, y=td, offsetgroup=0,
-               hovertemplate="%{y}<extra>COVID-19 Deaths %{x}</extra>",
+        go.Bar(name=gettext('Deaths Covid-19 {date}').format(date=date), x=agegroups, y=td, offsetgroup=0,
+               hovertemplate=gettext("%{y}<extra>COVID-19 Deaths %{x}</extra>"),
                marker_color=COVID_COLOR
                ),
-        go.Bar(name='Mean respiratory-related deaths per day (2016)',
+        go.Bar(name=gettext('Mean respiratory-related deaths per day (2016)'),
                x=agegroups, y=df_resp_deaths_2018_ag.DEATHS, offsetgroup=1,
-               hovertemplate="%{y:.1f}<extra>Expected respiratory deaths %{x}</extra>",
+               hovertemplate=gettext("%{y:.1f}<extra>Expected respiratory deaths %{x}</extra>"),
                marker_color=NORMAL_COLOR
                ),
-        go.Bar(name='Respiratory-related overmortality estimate 2020-04-06',
+        go.Bar(name=gettext('Respiratory-related overmortality estimate {date}').format(date=date),
                x=agegroups, y=overmortality_a,
                offsetgroup=1,
                base=df_resp_deaths_2018_ag.DEATHS,
                marker_color=OVERMORTALITY_COLOR,
                customdata=overmortality_a,
-               hovertemplate="%{customdata:.1f}<extra>Respiratory overmortality %{x}</extra>")
+               hovertemplate=gettext("%{customdata:.1f}<extra>Respiratory overmortality %{x}</extra>"))
     ])
     # Change the bar mode
     fig.update_layout(barmode='group')
-    fig.layout.title = "Respiratory-related overmortality estimates 2020-04-06"
-    fig.layout.xaxis.title = "Age group"
-    fig.layout.yaxis.title = "Number of deaths per day"
+    fig.layout.title = gettext("Respiratory-related overmortality estimates {date}").format(date=date)
+    fig.layout.xaxis.title = gettext("Age group")
+    fig.layout.yaxis.title = gettext("Number of deaths per day")
     fig.layout.template = "plotly_white"
     fig.update_layout(
         legend=dict(
@@ -120,18 +141,29 @@ def overmortality_respiratory_line():
     out.loc[out.OVERMORTALITY < 0, 'OVERMORTALITY'] = 0
     out = out.groupby(["DATE"], as_index=False).agg({"OVERMORTALITY": "sum"})
 
-    fig = px.line(out, x="DATE", y="OVERMORTALITY", title='Respiratory-related overmortality for each day')
-    fig.layout.xaxis.title = "Date"
-    fig.layout.yaxis.title = "Number of deceased"
+    fig = px.line(out, x="DATE", y="OVERMORTALITY", title=gettext('Respiratory-related overmortality for each day'))
+    fig.layout.xaxis.title = gettext("Date")
+    fig.layout.yaxis.title = gettext("Number of deceased")
     fig.layout.template = "plotly_white"
     fig.update_traces(
-        hovertemplate="%{y:.1f} persons<extra><b>%{x}</b></extra>"
+        hovertemplate=gettext("%{y:.1f} persons<extra><b>%{x}</b></extra>")
     )
     return fig
 
 
-def overmortality_estimates_repartition():
-    covid_mortality_day = df_mortality.loc[df_mortality.DATE == "2020-04-06"].groupby(["AGEGROUP"]).agg(
+def overmortality_respiratory_count():
+    out = pd.merge(df_mortality.groupby(["DATE", "AGEGROUP"], as_index=False).agg({"DEATHS": "sum"}),
+                   df_resp_deaths_2018_ag,
+                   left_on='AGEGROUP',
+                   right_on='AGEGROUP',
+                   how='left')
+    out['OVERMORTALITY'] = (out.DEATHS_x - out.DEATHS_y)
+    out.loc[out.OVERMORTALITY < 0, 'OVERMORTALITY'] = 0
+    return out.OVERMORTALITY.sum()
+
+
+def overmortality_estimates_repartition(date="2020-04-06"):
+    covid_mortality_day = df_mortality.loc[df_mortality.DATE == date].groupby(["AGEGROUP"]).agg(
         {"DEATHS": "sum"})
 
     tmp = pd.merge(covid_mortality_day, df_mortality_causes_2016.loc[df_mortality_causes_2016.CAUSEIDX == "J00-J99"],
@@ -148,6 +180,8 @@ def overmortality_estimates_repartition():
     out["PCT_CAUSE"] = out.groupby(["CAUSE"]).DEATHS.transform("sum") / out.DEATHS.sum()
     out = out.sort_values(["PCT_CAUSE", "CAUSEIDX", "AGEGROUP"], ascending=[True, True, True])
 
+    out["CAUSE_TR"] = out.CAUSE.apply(gettext)
+
     def gen_color(idx, is_covid):
         if is_covid:
             return COVID_COLOR
@@ -158,14 +192,13 @@ def overmortality_estimates_repartition():
     colors = {x: gen_color(idx, x == "Covid-19 overmortality") for idx, x in enumerate(out.CAUSE.unique())}
 
     def gen_bar(cause):
-
         cause_data = out.loc[out.CAUSE == cause]
         if cause == "Covid-19 overmortality":
             texttemplate = "%{customdata:.2f}%"
         else:
             texttemplate = None
 
-        return go.Bar(name=cause,
+        return go.Bar(name=gettext(cause),
                       x=cause_data.AGEGROUP,
                       y=cause_data.DEATHS,
                       marker_color=colors[cause],
@@ -173,7 +206,7 @@ def overmortality_estimates_repartition():
                       textposition="inside",
                       customdata=cause_data.PCT,
                       hovertemplate=gettext("<b>%{x} years</b><br>") +
-                                    "<b>" + cause + "</b><br>" +
+                                    "<b>" + gettext(cause) + "</b><br>" +
                                     gettext("%{y:.2f} deaths <br>%{customdata:.2f}%") +
                                     "<extra></extra>"
                       )
@@ -181,18 +214,18 @@ def overmortality_estimates_repartition():
     fig = go.Figure(data=[gen_bar(cause) for cause in out.CAUSE.unique()])
     # Change the bar mode
     fig.update_layout(barmode='stack')
-    fig.layout.xaxis.title = "Age group"
-    fig.layout.yaxis.title = "Average number of deceased per day"
+    fig.layout.xaxis.title = gettext("Age group")
+    fig.layout.yaxis.title = gettext("Average number of deceased per day")
     fig.layout.template = "plotly_white"
-    fig.layout.title = "Mortality taking into account covid-19 overmortality (estimate 2020-04-06), per age group"
+    fig.layout.title = gettext("Mortality taking into account covid-19 overmortality (estimate {date}), per age group").format(date=date)
     fig.update_layout(legend_orientation="h", legend_y=-0.2, height=700)
 
-    pie_data = out.groupby(["CAUSE", "CAUSEIDX", "PCT_CAUSE"], as_index=False).agg({"DEATHS": "sum"}).sort_values(
+    pie_data = out.groupby(["CAUSE", "CAUSEIDX", "PCT_CAUSE", "CAUSE_TR"], as_index=False).agg({"DEATHS": "sum"}).sort_values(
         ["PCT_CAUSE"], ascending=False)
-    pie = go.Figure(data=[go.Pie(labels=pie_data.CAUSE, values=pie_data.DEATHS, sort=False,
+    pie = go.Figure(data=[go.Pie(labels=pie_data.CAUSE_TR, values=pie_data.DEATHS, sort=False,
                                  marker_colors=[colors[x] for x in pie_data.CAUSE]
                                  )])
-    pie.layout.title = "Mortality taking into account covid-19 overmortality (estimate 2020-04-06), global"
+    pie.layout.title = gettext("Mortality taking into account covid-19 overmortality (estimate {date}), global").format(date=date)
     pie.update_traces(textposition='inside')
     pie.update_layout(legend_orientation="h", height=700)
 
