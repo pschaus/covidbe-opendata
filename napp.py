@@ -4,7 +4,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 import flask
 import flask_babel
-from dash.dependencies import Input, Output, State
+from dash.dependencies import Input, Output, State, ClientsideFunction
 from dash.exceptions import PreventUpdate
 from flask import request, g
 from flask_babel import Babel, lazy_gettext, gettext
@@ -19,9 +19,12 @@ FA = "https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 
 app = dash.Dash(__name__,
                 external_stylesheets=[dbc.themes.BOOTSTRAP, FA],
-                external_scripts=["https://cdn.plot.ly/plotly-locale-fr-latest.js",
-                                  "https://cdn.plot.ly/plotly-locale-nl-latest.js",
-                                  "https://cdn.plot.ly/plotly-locale-de-latest.js"],
+                external_scripts=[
+                    "https://cdn.plot.ly/plotly-locale-fr-latest.js",
+                    "https://cdn.plot.ly/plotly-locale-nl-latest.js",
+                    "https://cdn.plot.ly/plotly-locale-de-latest.js",
+                    "https://platform.twitter.com/widgets.js"
+                ],
                 # these meta_tags ensure content is scaled correctly on different devices
                 # see: https://www.w3schools.com/css/css_rwd_viewport.asp for more
                 meta_tags=[
@@ -138,7 +141,7 @@ def generate_sidebar():
                     className="lead",
                 ),
             ],
-            id="blurb",
+            className="blurb"
         ),
         # use the Collapse component to animate hiding / revealing links
         dbc.Collapse(
@@ -146,6 +149,13 @@ def generate_sidebar():
                 dbc.Nav(menus_components, vertical=True)
             ],
             id="collapse",
+        ),
+        html.Div(
+            [
+                html.A("Tweets by Covidatabe", className="twitter-timeline", href="https://twitter.com/Covidatabe?ref_src=twsrc%5Etfw")
+            ],
+            id="twitterdiv",
+            className="blurb"
         )
     ]
     return sidebar
@@ -190,12 +200,12 @@ def set_navitem_class(is_open):
 
 for i in range(len(menus)):
     def toggle_collapse(menu):
-        return lambda x: x.startswith(menu.base_link) or ((x == "/" or x == "/index") and menu.base_link == "/cases")
+        return lambda x, _ignore: x.startswith(menu.base_link) or ((x == "/" or x == "/index") and menu.base_link == "/cases")
 
 
     app.callback(
         Output(f"submenu-{i}-collapse", "is_open"),
-        [Input("url", "pathname")]
+        [Input("url", "pathname"), Input("sidebar", "children")]
     )(toggle_collapse(menus[i]))
 
     app.callback(
@@ -268,6 +278,13 @@ def on_click(*args):
     g.locale = lang
     flask_babel.refresh()
     return {"lang": lang}
+
+
+app.clientside_callback(
+    ClientsideFunction('twitter_upd', 'twitter_upd'),
+    Output("twitterdiv", "upd"),
+    [Input("url", "pathname"), Input("memory", "data"), Input("sidebar", "children")]
+)
 
 
 if __name__ == "__main__":
