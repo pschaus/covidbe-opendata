@@ -70,7 +70,7 @@ def display_overmortality():
         dcc.Graph(figure=daily_deaths_respiratory(), config=dict(locale=str(get_locale()))),
         dcc.Markdown(get_translation(
             en="""
-            As death induced by the coronavirus will be attributed to the respiratory illness category, we can computed
+            As death induced by the coronavirus will be attributed to the respiratory illness category, we can compute
             the overmortality in that particular category (shown in grey in the plot). The overmortality computed this 
             way is thus a **lower bound** on the effective overmortality: some people die from respiratory diseases 
             not linked to the coronavirus, even during this period.
