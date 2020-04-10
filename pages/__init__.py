@@ -1,7 +1,7 @@
 from typing import List
 import dash_core_components as dcc
 import dash_html_components as html
-from flask_babel import gettext
+from flask_babel import gettext, get_locale
 
 
 class AppLink:
@@ -26,3 +26,13 @@ def model_warning(*elems):
                  className="model-warning"),
         html.Div([html.Div([], className="model-warning-content-left")] + list(elems), className="model-warning-content")
     ]
+
+
+def get_translation(**kwargs):
+    key = str(get_locale())
+    if key in kwargs:
+        return kwargs[key]
+    # fallback to "en" if available
+    if "en" in kwargs:
+        return kwargs["en"]
+    return list(kwargs.keys())[0]
