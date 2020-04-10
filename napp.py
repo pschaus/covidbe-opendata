@@ -7,7 +7,7 @@ from dash.dependencies import Input, Output, State
 from flask import request, g
 from flask_babel import Babel, lazy_gettext
 
-from pages import ThreadSafeCache, lang_cache
+from pages import ThreadSafeCache, lang_cache, get_translation
 from pages.cases import cases_menu
 from pages.deaths import deaths_menu
 from pages.international import international_menu
@@ -126,7 +126,10 @@ def generate_sidebar():
             [
                 html.Hr(),
                 html.P(
-                    "Select any link below to learn more about the virus and how Belgium handles it.",
+                    get_translation(
+                        en="Select any link below to learn more about the virus and how Belgium handles it.",
+                        fr="Cliquez sur les liens ci-dessous pour en apprendre plus sur le virus et sur la manière dont la Belgique gère cette crise."
+                    ),
                     className="lead",
                 ),
             ],
