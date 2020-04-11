@@ -19,7 +19,7 @@ df_communes_tot['name'] = df_communes_tot.apply(
 
 
 def map_communes():
-    start_time = time.time()
+    #start_time = time.time()
     fig = px.choropleth_mapbox(df_communes_tot, geojson=geojson_communes,
                                locations="NIS5",
                                color='colorbase', color_continuous_scale="deep",
@@ -30,7 +30,7 @@ def map_communes():
                                hover_data=["name", "CASES", "NIS5"],
                                height=500,
                                mapbox_style="carto-positron", zoom=6)
-    mid_time = time.time()
+    #mid_time = time.time()
     fig.update_geos(fitbounds="locations")
     NB_TICKS = 12
     fig.layout.coloraxis.colorbar = dict(
@@ -46,8 +46,8 @@ def map_communes():
     )
     fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=5, b=0))
 
-    end_time = time.time()
-    print("CHECK ", mid_time - start_time, end_time - mid_time, end_time - start_time)
+    #end_time = time.time()
+    #print("CHECK ", mid_time - start_time, end_time - mid_time, end_time - start_time)
     return fig
 
 
