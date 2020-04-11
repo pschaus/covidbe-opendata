@@ -51,21 +51,21 @@ def display_a():
     return [
         html.H1('Case History of the Coronavirus (COVID-19)'),
         html.Div(className="row", children=[
-            html.Div(className="four columns", children=[
+            html.Div(className="four columns", style={'width': '30.6666666667%'}, children=[
                 html.H5('Country'),
                 dcc.Dropdown(
                     id='country',
                     options=[{'label':c, 'value':c} for c in countries],
-                    value='Italy'
+                    value='China'
                 )
             ]),
-            html.Div(className="four columns", children=[
+            html.Div(className="four columns", style={'width': '30.6666666667%'}, children=[
                 html.H5('State / Province'),
                 dcc.Dropdown(
                     id='state'
                 )
             ]),
-            html.Div(className="four columns", children=[
+            html.Div(className="four columns", style={'width': '30.6666666667%'}, children=[
                 html.H5('Selected Metrics'),
                 dcc.Checklist(
                     id='metrics',
