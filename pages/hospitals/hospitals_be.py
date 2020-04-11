@@ -11,7 +11,7 @@ def display_hospitals():
     return [
         html.H2(gettext("Hospitalization")),
         dbc.Row([
-            dbc.Col(dcc.Graph(id='hospitalization',
+            dbc.Col(dcc.Graph(id='hospitalization-be',
                               figure=bar_hospitalization(),
                               config=dict(locale=str(get_locale())))),
         ]),
