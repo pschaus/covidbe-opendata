@@ -141,8 +141,9 @@ def lines_cases_per_million():
     
     plot1= (
     (trend_4d + trend_12d + trend_label + lines)
-    .configure_title(fontSize=20)
-    .configure_axis(labelFontSize=15,titleFontSize=18)
+    .configure(font='Verdana')
+    .configure_title(fontSize=20, fontWeight='normal', font='Verdana')
+    .configure_axis(labelFontSize=12,titleFontSize=14)
     )
     
     return plot1
