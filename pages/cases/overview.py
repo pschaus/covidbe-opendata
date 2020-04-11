@@ -3,7 +3,7 @@ import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output, State
-from flask_babel import get_locale, gettext
+from flask_babel import get_locale, gettext, lazy_gettext
 
 from graphs.cases_per_municipality import map_communes, barplot_communes
 from pages import AppLink
@@ -60,4 +60,4 @@ def overview_callbacks(app):
         return {"display": "block"}
 
 
-overview_link = AppLink("Overview", "/overview", overview, overview_callbacks)
+overview_link = AppLink(lazy_gettext("Overview"), "/overview", overview, overview_callbacks)
