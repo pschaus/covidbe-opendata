@@ -16,7 +16,7 @@ from pages import get_translation
 import io
 
 import numpy as np
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import altair as alt
 #config InlineBackend.figure_format = 'retina'
 
