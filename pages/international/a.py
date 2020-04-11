@@ -10,6 +10,7 @@ import pandas as pd
 from datetime import datetime
 from os.path import isfile
 from app import app
+from pages import get_translation
 
 
 #https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/allData.pkl
@@ -49,7 +50,10 @@ countries.sort()
 
 def display_a():
     return [
-        html.H1('Case History of the Coronavirus (COVID-19)'),
+        html.H1(get_translation(
+            en='Case History of the Coronavirus (COVID-19)',
+            fr='Historique des cas de coronavirus (COVID-19)', 
+            )),
         html.Div(className="row", children=[
             html.Div(className="four columns", style={'width': '30.6666666667%'}, children=[
                 html.H5('Country'),
