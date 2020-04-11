@@ -23,7 +23,7 @@ chart_width = 550
 chart_height= 400
 
 #hide 
-data = pd.read_csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv", 
+data = pd.read_csv("static/csv/time_series_covid19_deaths_global.csv", 
                    error_bad_lines=False)
 data = data.drop(columns=["Lat", "Long"])
 data = data.melt(id_vars= ["Province/State", "Country/Region"])

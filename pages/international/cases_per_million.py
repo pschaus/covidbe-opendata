@@ -16,7 +16,6 @@ from pages import get_translation
 import io
 
 import numpy as np
-#import matplotlib.pyplot as plt
 import altair as alt
 #config InlineBackend.figure_format = 'retina'
 
@@ -24,7 +23,7 @@ chart_width = 550
 chart_height= 400
 
 #hide 
-data = pd.read_csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv", error_bad_lines=False)
+data = pd.read_csv("static/csv/time_series_covid19_confirmed_global.csv", error_bad_lines=False)
 data = data.drop(columns=["Lat", "Long"])
 data = data.melt(id_vars= ["Province/State", "Country/Region"])
 data = pd.DataFrame(data.groupby(['Country/Region', "variable"]).sum())
