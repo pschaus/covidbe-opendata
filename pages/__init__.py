@@ -1,3 +1,4 @@
+import threading
 from typing import List
 import dash_core_components as dcc
 import dash_html_components as html
@@ -21,10 +22,16 @@ class AppMenu:
 
 def model_warning(*elems):
     return [
-        html.Div([dcc.Markdown(gettext(
-            "**WARNING**: We enter in the realm of models and estimates. Everything below is **wrong**, but **may** give an idea of the reality."))],
-                 className="model-warning"),
-        html.Div([html.Div([], className="model-warning-content-left")] + list(elems), className="model-warning-content")
+        html.Div([
+                dcc.Markdown(gettext(
+                    "**WARNING**: We enter in the realm of models and estimates. Everything below is **wrong**, "
+                    "but **may** give an idea of the reality."
+                ))
+            ],
+            className="model-warning"
+        ),
+        html.Div([html.Div([], className="model-warning-content-left")] + list(elems),
+                 className="model-warning-content")
     ]
 
 
@@ -36,3 +43,37 @@ def get_translation(**kwargs):
     if "en" in kwargs:
         return kwargs["en"]
     return list(kwargs.keys())[0]
+
+
+class ThreadSafeCache:
+    def __init__(self):
+        self.lock = threading.Lock()
+        self.cache = {}
+
+    def get(self, key, creator):
+        is_creating = False
+        with self.lock:
+            if key not in self.cache:
+                #print("CREATING", key, creator)
+                self.cache[key] = threading.Event()
+                is_creating = True
+
+        obj = self.cache[key]
+
+        if is_creating:
+            newobj = creator()
+            self.cache[key] = newobj
+            obj.set()
+            return newobj
+
+        while isinstance(obj, threading.Event):
+            #print("WAIT", key, creator)
+            obj.wait()
+            obj = self.cache[key]
+
+        return obj
+
+
+def lang_cache(f):
+    cache = ThreadSafeCache()
+    return lambda: cache.get(str(get_locale()), f)
