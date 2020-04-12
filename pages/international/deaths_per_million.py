@@ -20,7 +20,7 @@ import altair as alt
 #config InlineBackend.figure_format = 'retina'
 
 from graphs.deaths_per_million import lines_deaths_per_million
-
+from pages.sources import display_source_providers, source_hopkins
 
 
 def display_deaths_per_million():
@@ -53,7 +53,8 @@ def display_deaths_per_million():
 
         # Get rid of the border box
         style={'border-width': '0px'}
-    )
+    ),
+        display_source_providers(source_hopkins)
     ]
 
 def callback_deaths_per_million(app):

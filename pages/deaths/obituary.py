@@ -5,6 +5,7 @@ import dash_html_components as html
 from flask_babel import get_locale, gettext
 
 from graphs.obituary import inmemoriam_plot, sudpresse_plot
+from pages.sources import *
 
 
 def display_obituary():
@@ -18,4 +19,5 @@ def display_obituary():
                               figure=sudpresse_plot(),
                               config=dict(locale=str(get_locale())))),
         ]),
+        display_source_providers(source_inmemoriam, source_necro_sudpress)
     ]

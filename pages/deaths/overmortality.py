@@ -8,6 +8,7 @@ from flask_babel import get_locale
 from graphs.overmortality import daily_deaths, daily_deaths_respiratory, overmortality_respiratory_line, \
     overmortality_estimates_repartition, overmortality_respiratory_count
 from pages import model_warning, get_translation
+from pages.sources import *
 
 
 def display_overmortality():
@@ -143,6 +144,7 @@ def display_overmortality():
                 """
             )),
             dcc.Graph(figure=age_estimate, config=dict(locale=str(get_locale()))),
-            dcc.Graph(figure=pie_estimate, config=dict(locale=str(get_locale())))
-        )
+            dcc.Graph(figure=pie_estimate, config=dict(locale=str(get_locale()))),
+        ),
+        display_source_providers(source_sciensano, source_death_causes)
     ]

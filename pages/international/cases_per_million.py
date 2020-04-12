@@ -20,6 +20,7 @@ import altair as alt
 #config InlineBackend.figure_format = 'retina'
 
 from graphs.cases_per_million import lines_cases_per_million
+from pages.sources import source_hopkins, display_source_providers
 
 
 def display_cases_per_million():
@@ -52,7 +53,8 @@ def display_cases_per_million():
 
         # Get rid of the border box
         style={'border-width': '0px'}
-    )
+    ),
+        display_source_providers(source_hopkins)
     ]
 
 def callback_cases_per_million(app):

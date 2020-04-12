@@ -7,6 +7,7 @@ from flask_babel import get_locale, gettext, lazy_gettext
 
 from graphs.cases_per_municipality import map_communes, barplot_communes
 from pages import AppLink
+from pages.sources import *
 
 
 def overview():
@@ -22,6 +23,7 @@ def overview():
             dbc.Col(dcc.Graph(id='cases-overview-histogram', figure=barplot_communes(),
                               style={"display": "none"}, config=dict(locale=str(get_locale()))))
         ]),
+        display_source_providers(source_sciensano, source_map_communes)
     ]
 
 
