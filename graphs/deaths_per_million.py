@@ -97,7 +97,7 @@ def lines_deaths_per_million():
                 )).encode(
         x = alt.X('n_days:Q', title = get_translation(
                 en="""Days passed since reaching 1 reported death per million""",
-                fr="""Morts par million d\'habitants dus au Covid-19""",
+                fr="""Jours écoulés depuis que 1 décès par million a été signalé""",
                 )),
         y = alt.Y("log_deaths:Q",title = get_translation(
                 en="Log₁₀ of cases per million",
