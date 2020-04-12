@@ -17,15 +17,3 @@ df.dropna(inplace=True)
 df.DATE = pd.to_datetime(df.DATE)
 
 df.to_csv('../static/csv/be-covid-mortality.csv',index=True)
-
-
-
-
-
-
-
-
-
-
-
-

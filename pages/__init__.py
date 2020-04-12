@@ -14,10 +14,11 @@ class AppLink:
 
 
 class AppMenu:
-    def __init__(self, name: str, base_link: str, children: List[AppLink]):
+    def __init__(self, name: str, base_link: str, children: List[AppLink], fake_menu=False):
         self.name = name
         self.base_link = base_link
         self.children = children
+        self.fake_menu = fake_menu
 
 
 def model_warning(*elems):
