@@ -33,10 +33,6 @@ def bar_hospitalization():
     return fig_hospi
 
 
-
-
-
-
 df_prov = pd.read_csv('static/csv/be-covid-provinces.csv')
 
 # compute number of hospi / case in each province
