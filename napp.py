@@ -12,6 +12,7 @@ from flask_babel import Babel, lazy_gettext, gettext
 from pages import ThreadSafeCache, lang_cache, get_translation
 from pages.cases import cases_menu
 from pages.deaths import deaths_menu
+from pages.index import index_menu
 from pages.international import international_menu
 from pages.hospitals import hospitals_menu
 
@@ -48,7 +49,7 @@ def get_locale():
     return g.locale
 
 
-menus = [cases_menu, deaths_menu, hospitals_menu, international_menu]
+menus = [index_menu, cases_menu, deaths_menu, hospitals_menu, international_menu]
 menu_links = {}
 for menu_idx, menu in enumerate(menus):
     for x in menu.children:
@@ -60,7 +61,7 @@ def generate_sidebar():
     # it consists of a title, and a toggle, the latter is hidden on large screens
     sidebar_header = dbc.Row(
         [
-            dbc.Col(html.H2("Covidata.be", className="display-6")),
+            dbc.Col(html.H2([html.Img(src='/assets/covidata.png', style={"height": "70px", "margin-right": "5px"}), "Covidata.be"], id="sidebar-title", className="display-6")),
             dbc.Col(
                 [
                     html.Button(
@@ -94,26 +95,29 @@ def generate_sidebar():
             for x in menu.children
         ]
 
-        menus_components += [
-            html.Li(
-                # use Row and Col components to position the chevrons
-                dbc.Row(
-                    [
-                        dbc.Col(dcc.Link(str(menu.name), href=menu.base_link + menu.children[0].link)),
-                        dbc.Col(
-                            html.I(className="fas fa-chevron-right mr-3"), width="auto"
-                        ),
-                    ],
-                    className="my-1",
+        if not menu.fake_menu:
+            menus_components += [
+                html.Li(
+                    # use Row and Col components to position the chevrons
+                    dbc.Row(
+                        [
+                            dbc.Col(dcc.Link(str(menu.name), href=menu.base_link + menu.children[0].link)),
+                            dbc.Col(
+                                html.I(className="fas fa-chevron-right mr-3"), width="auto"
+                            ),
+                        ],
+                        className="my-1",
+                    ),
+                    id=f"submenu-{menu_idx}",
                 ),
-                id=f"submenu-{menu_idx}",
-            ),
-            # we use the Collapse component to hide and reveal the navigation links
-            dbc.Collapse(
-                this_menu_links,
-                id=f"submenu-{menu_idx}-collapse",
-            ),
-        ]
+                # we use the Collapse component to hide and reveal the navigation links
+                dbc.Collapse(
+                    this_menu_links,
+                    id=f"submenu-{menu_idx}-collapse",
+                ),
+            ]
+        else:
+            menus_components += this_menu_links
 
     menus_components.append(html.Li(
         dbc.Row(
@@ -132,7 +136,7 @@ def generate_sidebar():
         # hidden on a small screen
         html.Div(
             [
-                html.Hr(),
+                #html.Hr(),
                 html.P(
                     get_translation(
                         en="Select any link below to learn more about the virus and how Belgium handles it.",
@@ -182,7 +186,7 @@ app.layout = serve_layout
 
 for link_comp in menu_links.values():
     def gen_f(link):
-        return lambda x: x == link or ((x == "/" or x == "/index") and link == "/cases/overview")
+        return lambda x: x == link or (x == "/" and link == "/index")
 
 
     app.callback(
@@ -200,7 +204,7 @@ def set_navitem_class(is_open):
 
 for i in range(len(menus)):
     def toggle_collapse(menu):
-        return lambda x, _ignore: x.startswith(menu.base_link) or ((x == "/" or x == "/index") and menu.base_link == "/cases")
+        return lambda x, _ignore: x.startswith(menu.base_link)
 
 
     app.callback(
@@ -227,7 +231,7 @@ def update_sidebar_lang(ignore):
               [Input("url", "pathname"), Input("memory", "data")])
 def render_page_content(pathname, lang_data):
     if pathname == "/":
-        pathname = "/cases/overview"
+        pathname = "/index"
 
     if pathname in page_generators:
         return page_cache.get((pathname, str(get_locale())), page_generators[pathname])

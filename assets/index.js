@@ -1,5 +1,5 @@
-if(location.pathname === "/" || location.pathname=== "/index" || location.pathname === "")
-    location.pathname = "/cases/overview";
+if(location.pathname === "/" || location.pathname === "")
+    location.pathname = "/index";
 
 window.dash_clientside = window.dash_clientside || {};
 window.dash_clientside.twitter_upd = {
