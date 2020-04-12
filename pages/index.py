@@ -2,6 +2,7 @@ import dash
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
+import dash_bootstrap_components as dbc
 from flask_babel import get_locale, gettext
 
 from pages import AppMenu, AppLink, get_translation
@@ -9,13 +10,15 @@ from pages import AppMenu, AppLink, get_translation
 
 def display_index():
     return [
-        html.H1([html.Img(src='/assets/covidata.png'), "Covidata.be"], className="logo_index"),
-        html.Div([
-            dcc.Markdown("""
-                             We gather data about the Coronavirus in Belgium, and attempt to extract meaningful information from it.
-
-                             Each menu on the left (or above the page if you are on a phone) shows a different analysis.""")
-        ], className="index_first"),
+        dbc.Jumbotron([
+            html.H1([html.Img(src='/assets/covidata.png'), "Covidata.be"], className="logo_index"),
+            html.Div([
+                dcc.Markdown("""
+                                 We gather data about the Coronavirus in Belgium, and attempt to extract meaningful information from it.
+    
+                                 Each menu on the left (or above the page if you are on a phone) shows a different analysis.""")
+            ], className="index_first")
+        ]),
         html.H3(["Open Data"]),
         dcc.Markdown("""
                 We use open and/or public data to enable these analyses. Our sources are indicated below each analysis.
