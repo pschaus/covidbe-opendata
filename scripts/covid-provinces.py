@@ -88,8 +88,3 @@ df_tot_provinces["NEW_IN"] = df_tot_provinces_hospi['NEW_IN']
 
 df_tot_provinces["NEW_IN_PER_CASES"] = df_tot_provinces_hospi['NEW_IN']/df_tot_provinces["CASES"] #nombre d'hospi/nombre de cas
 df_tot_provinces.to_csv('../static/csv/be-covid-provinces_tot.csv',index=True)
-
-
-
-
-
