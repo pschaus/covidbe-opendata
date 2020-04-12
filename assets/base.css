@@ -152,3 +152,19 @@ li.open .fa-chevron-right {
   font-size: 1em;
   margin-top: 15px;
 }
+
+h1.logo_index {
+  text-align: center;
+  font-size: 100px;
+  vertical-align: center;
+}
+
+h1.logo_index img {
+  height: 210px;
+  margin-right: 20px;
+}
+
+.index_first {
+  font-size: 1.4em;
+  text-align: center;
+}
