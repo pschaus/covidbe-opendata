@@ -103,7 +103,10 @@ def lines_cases_per_million():
                 en="Log₁₀ of cases per million",
                 fr="Log₁₀ des cas par million",
                 )),
-        color = alt.Color('location:N', legend=alt.Legend(title="Country", labelFontSize=15, titleFontSize=17),
+        color = alt.Color('location:N', legend=alt.Legend(title=get_translation(
+                en="Country",
+                fr="Pays",
+                ), labelFontSize=14, titleFontSize=16),
                          scale=alt.Scale(scheme='tableau20')),
         opacity = alt.condition(selection, alt.value(1), alt.value(0.1))
     )
@@ -117,8 +120,7 @@ def lines_cases_per_million():
         height=chart_height
     )
     
-    
-    labels = pd.DataFrame([{'label': 'Doubles every 4 days', 'x_coord': 32, 'y_coord': 1.8},
+    labels = pd.DataFrame([{'label': 'Doubles every 4 days', 'x_coord': 36, 'y_coord': 1.8},
                            {'label': 'Doubles every 12 days', 'x_coord': 45, 'y_coord': 0.7},
                           ])
     trend_label = (alt.Chart(labels)
@@ -141,9 +143,9 @@ def lines_cases_per_million():
     
     plot1= (
     (trend_4d + trend_12d + trend_label + lines)
-    .configure(font='Verdana')
-    .configure_title(fontSize=20, fontWeight='normal', font='Verdana')
-    .configure_axis(labelFontSize=12,titleFontSize=14)
+    .configure(font='Helvetica Neue')
+    .configure_title(fontSize=18, fontWeight='normal')
+    .configure_axis(labelFontSize=14,titleFontSize=14, titleFontWeight='normal')
     )
     
     return plot1
