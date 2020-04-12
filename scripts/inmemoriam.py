@@ -11,7 +11,7 @@ def get_link(start, end, page):
         page = ""
     else:
         page = f"page={page}&"
-    return f'https://www.inmemoriam.be/fr/avis-de-deces/?{page}filter=&periodStart={start}&periodEnd={end}&yearOfBirth=&undertakerId=&placeOfResidence=&provinceId=&newsPaper=&obituary=1'
+    return f'https://www.inmemoriam.be/fr/avis-de-deces/?{page}filter=&periodStart={start}&periodEnd={end}&yearOfBirth=&undertakerId=&placeOfResidence=&provinceId=&newsPaper=&obituary=1&limit=100'
 
 
 def gather_for_month(year, month):
