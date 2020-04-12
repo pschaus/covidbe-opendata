@@ -11,3 +11,4 @@ shapely>=1.7.0
 gunicorn
 flask-babel
 colorcet>=2.0.2
+altair
