@@ -61,7 +61,7 @@ def generate_sidebar():
     # it consists of a title, and a toggle, the latter is hidden on large screens
     sidebar_header = dbc.Row(
         [
-            dbc.Col(html.H2([html.Img(src='/assets/covidata.png', style={"height": "70px", "margin-right": "5px"}), "Covidata.be"], id="sidebar-title", className="display-6")),
+            dbc.Col(html.A([html.H2([html.Img(src='/assets/covidata.png', style={"height": "70px", "margin-right": "5px"}), "Covidata.be"], id="sidebar-title", className="display-6")], href="http://www.covidata.be/", style={"color":"black","text-decoration": "none"})),
             dbc.Col(
                 [
                     html.Button(
