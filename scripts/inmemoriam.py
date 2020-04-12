@@ -1,3 +1,4 @@
+import hashlib
 import time
 from calendar import monthrange
 from bs4 import BeautifulSoup
@@ -45,6 +46,7 @@ def gather_for_month(year, month):
         assert len(soup.find_all('a', attrs={"class": "c-deceased"})) > 0
 
         for person in soup.find_all('a', attrs={"class": "c-deceased"}):
+            link = person.get('href')
             age_span = person.find('span', attrs={"class": "c-deceased__age"})
             if age_span is not None:
                 age = int(age_span.text.split(" ")[0])
@@ -53,7 +55,10 @@ def gather_for_month(year, month):
             location = person.find('div', attrs={"class": "c-deceased__location"}).text.strip()
             departed = person.find('time', attrs={"class": "c-deceased__date"}).text
             departed = datetime.strptime(departed, "%d/%m/%Y").date()
-            data.append((departed, age, location))
+
+            id = hashlib.sha224((link + str(location) + str(age)).encode()).hexdigest()
+
+            data.append((id, departed, age, location))
         page += 1
 
     return data
@@ -61,15 +66,21 @@ def gather_for_month(year, month):
 
 gather_for_years = [
     ("../static/csv/inmemoriam_2019.csv", [2019], range(1, 13), False),
-    ("../static/csv/inmemoriam_2020.csv", [2020], range(1, (date.today().month+1) if date.today().year == 2020 else 13), True),
+    ("../static/csv/inmemoriam_2020.csv", [2020], range((date.today().month-1) if date.today().year == 2020 else 13,
+                                                        (date.today().month+1) if date.today().year == 2020 else 13),
+     True),
 ]
 
-for filename, years, months, overwrite in gather_for_years:
-    if not overwrite and os.path.exists(filename):
+for filename, years, months, upd in gather_for_years:
+    if not upd and os.path.exists(filename):
         continue
-    data = []
+
+    if os.path.exists(filename):
+        data = {d["id"]: (d["Date"], d["Age"], d["Location"]) for d in pd.read_csv(filename).to_dict('records')}
+    else:
+        data = {}
     for y in years:
         for m in months:
-            data += gather_for_month(y, m)
-
-    pd.DataFrame(data, columns=['Date', 'Age', 'Location']).to_csv(filename)
+            for entry in gather_for_month(y, m):
+                data[entry[0]] = entry[1:]
+            pd.DataFrame([(a, b, c, d) for a, (b, c, d) in data.items()], columns=['id', 'Date', 'Age', 'Location']).to_csv(filename)
