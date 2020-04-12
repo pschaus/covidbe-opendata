@@ -18,7 +18,7 @@ df.index = pd.to_datetime(df.index)
 import urllib.request, json
 
 
-with open('../static/json/communes/be-centers.json') as json_file:
+with open('../static/json/maps/be-centers-covid.json') as json_file:
     centers = json.load(json_file)
 
 for k in centers.keys():
