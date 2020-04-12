@@ -138,12 +138,13 @@ def callback_a(app):
                 marker_color={ 'Deaths':'rgb(200,30,30)', 'Recovered':'rgb(30,200,30)', 'Confirmed':'rgb(100,140,240)'}[metric]
             ) for metric in metrics
         ])
+        step=max(data.date.count()//30,1)
         figure.update_layout( 
                   barmode='group', legend=dict(x=.05, y=0.95, font={'size':15}, bgcolor='rgba(240,240,240,0.5)'), 
-                  plot_bgcolor='#FFFFFF', font=tickFont) \
+                  plot_bgcolor='#FFFFFF') \
               .update_xaxes( 
                   title="", tickangle=-90, type='category', showgrid=True, gridcolor='#DDDDDD', 
-                  tickfont=tickFont, ticktext=data.dateStr, tickvals=data.date) \
+                  ticktext=data.dateStr[::step], tickvals=data.date[::step]) \
               .update_yaxes(
                   title=yaxisTitle, showgrid=True, gridcolor='#DDDDDD')
         return figure

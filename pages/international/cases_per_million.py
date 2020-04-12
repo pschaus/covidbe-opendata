@@ -38,7 +38,7 @@ def display_cases_per_million():
                 The number of reported cases per million is a lower bound on the actual number of infected persons per million inhabitants. Countries have had different testing capabilities and approaches.
                 """,
             fr="""
-            Le nombre de cas signalés par million est une limite inférieure du nombre réel de personnes infectées par million d'habitants. Les pays ont eu différentes capacités et approches pour réaliser les tests de dépistages.
+            Le nombre de cas signalés par million est une limite inférieure du nombre réel de personnes infectées par million d'habitants. Les pays ont eu différentes capacités et approches pour réaliser les tests de dépistage.
             """,
         )),
     html.Iframe(
