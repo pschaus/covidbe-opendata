@@ -4,13 +4,13 @@ import dash_core_components as dcc
 import dash_html_components as html
 from flask_babel import get_locale, gettext
 
-from graphs.obituary import inmemoriam_plot, sudpresse_plot, dansnospensees_plot, allbeobituary_plot, avideces_plot
+from graphs.obituary import inmemoriam_plot, sudpresse_plot, dansnospensees_plot, allbeobituary_plot, avideces_plot, rolling_ratio_plot
 from pages.sources import *
 
 
 def display_obituary():
     return [
-        html.H2(gettext("Evolution of the number of deaths published on obituary websites")),
+        html.H2(gettext("Evolution of the number of deaths published on obituary websites 2020 vs 2019")),
         dbc.Row([
             dbc.Col(dcc.Graph(id='inmemoriam',
                               figure=inmemoriam_plot(),
@@ -28,6 +28,12 @@ def display_obituary():
                               figure=avideces_plot,
                               config=dict(locale=str(get_locale())))),
 
+        ]),
+        html.H2(gettext("Ratio of number of deaths published on obituary websites 2020/2019")),
+        dbc.Row([
+            dbc.Col(dcc.Graph(id='rollinrationobituary',
+                              figure=rolling_ratio_plot(),
+                              config=dict(locale=str(get_locale())))),
         ]),
         display_source_providers(source_inmemoriam, source_necro_sudpress)
     ]
