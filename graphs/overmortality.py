@@ -239,5 +239,5 @@ def overmortality_estimates_repartition_bar(date="2020-04-06"):
 
 
 @register_plot_for_embedding("overmortality_estimates_repartition_pie")
-def overmortality_estimates_repartition_bar(date="2020-04-06"):
+def overmortality_estimates_repartition_pie(date="2020-04-06"):
     return overmortality_estimates_repartition(date)[1]
