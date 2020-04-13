@@ -32,7 +32,7 @@ def s3_get_link_and_create_if_needed(filename, content_gen, content_type):
     except botocore.exceptions.ClientError as e:
         if e.response['Error']['Code'] == "404":
             print(f"Uploading {filename} to s3")
-            obj.put(Body=content_gen(), Metadata={"Content-Type": content_type})
+            obj.put(Body=content_gen(), ContentType=content_type)
         else:
             raise
 
