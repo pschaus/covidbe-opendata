@@ -4,10 +4,12 @@ import plotly.express as px
 from flask_babel import gettext
 from plotly.subplots import make_subplots
 
+from graphs import register_plot_for_embedding
 
 df_mortality = pd.read_csv('static/csv/be-covid-mortality.csv')
 
 
+@register_plot_for_embedding("deaths_per_age_group")
 def age_groups_death():
     """
     bar plot age groups cases
@@ -36,6 +38,7 @@ def age_groups_death():
     return fig_age_groups_deaths
 
 
+@register_plot_for_embedding("deaths_per_age_group_pie")
 def age_groups_death_pie():
 
     region_age = df_mortality.groupby(['REGION', 'AGEGROUP']).agg({'DEATHS': 'sum'})
