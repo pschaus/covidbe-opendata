@@ -1,16 +1,8 @@
 # Inspired from https://covid19dashboards.com/covid-compare-permillion/
 # and https://gist.github.com/gschivley/578c344461100071b7eef158efccce95
 
-import dash
-import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
-from dash.dependencies import Input, Output, State
-import plotly.graph_objects as go
-import pandas as pd
-from datetime import datetime
-from os.path import isfile
-from app import app
 from pages import get_translation
 
 import io
