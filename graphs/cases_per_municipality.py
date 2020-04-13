@@ -6,6 +6,8 @@ import pandas as pd
 import numpy as np
 from flask_babel import gettext
 
+from graphs import register_plot_for_embedding
+
 df_communes_tot = pd.merge(pd.read_csv("static/csv/be-covid-totcases.csv", dtype={"NIS5": str}),
                            pd.read_csv("static/csv/ins_pop.csv", dtype={"NIS5": str}),
                            left_on='NIS5',
@@ -20,6 +22,7 @@ df_communes_tot['name'] = df_communes_tot.apply(
     lambda row: (row.FR if row.FR == row.NL else f"{row.FR}/{row.NL}").replace("_", " "), axis=1)
 
 
+@register_plot_for_embedding("cases_per_municipality_per_inhabitant")
 def map_communes_per_inhabitant():
     fig = px.choropleth_mapbox(df_communes_tot, geojson=geojson_communes,
                                locations="NIS5",
@@ -44,6 +47,7 @@ def map_communes_per_inhabitant():
     return fig
 
 
+@register_plot_for_embedding("cases_per_municipality")
 def map_communes():
     fig = px.choropleth_mapbox(df_communes_tot, geojson=geojson_communes,
                                locations="NIS5",

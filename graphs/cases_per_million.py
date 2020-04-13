@@ -1,18 +1,7 @@
 import pandas as pd
-import plotly.graph_objs as go
-import plotly.express as px
-from flask_babel import gettext
-from plotly.subplots import make_subplots
-
 import numpy as np
 import altair as alt
 from pages import get_translation
-from flask_babel import lazy_gettext
-
-
-
-#data = pd.read_csv("static/csv/time_series_covid19_deaths_global.csv", 
-#                       error_bad_lines=False)
 
 
 def lines_cases_per_million():

@@ -6,9 +6,11 @@ import flask
 import flask_babel
 from dash.dependencies import Input, Output, State, ClientsideFunction
 from dash.exceptions import PreventUpdate
-from flask import request, g
+from flask import request, g, abort
 from flask_babel import Babel, lazy_gettext, gettext
 
+from graphs import registered_plots
+from graphs.cases_per_municipality import map_communes_per_inhabitant
 from pages import ThreadSafeCache, lang_cache, get_translation
 from pages.cases import cases_menu
 from pages.deaths import deaths_menu
@@ -297,5 +299,34 @@ app.clientside_callback(
 )
 
 
+@app.server.route("/embed/html/<which>")
+def plot_embed_html(which):
+    if which not in registered_plots:
+        abort(404)
+    return registered_plots[which].get_html_link()
+
+
+@app.server.route("/embed/image/<which>")
+def plot_embed_image(which):
+    if which not in registered_plots:
+        abort(404)
+    return registered_plots[which].get_image_link()
+
+
+def memory_summary():
+    # Only import Pympler when we need it. We don't want it to
+    # affect our process if we never call memory_summary.
+    from pympler import summary, muppy
+    mem_summary = summary.summarize(muppy.get_objects())
+    rows = summary.format_(mem_summary)
+    return '\n'.join(rows)
+
+#print(memory_summary())
+
 if __name__ == "__main__":
+    @app.server.route("/memory")
+    def memory_check():
+        print(memory_summary())
+        return "see logs"
+
     app.run_server(port=8888, debug=True)

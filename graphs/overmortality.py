@@ -4,6 +4,7 @@ import plotly.express as px
 import plotly.graph_objs as go
 from flask_babel import gettext, _
 import colorcet as cc
+from graphs import register_plot_for_embedding
 
 NORMAL_COLOR = "#779ecb"
 COVID_COLOR = "#ff6961"
@@ -162,6 +163,7 @@ def overmortality_respiratory_count():
     return out.OVERMORTALITY.sum()
 
 
+@register_plot_for_embedding("overmortality_estimates_repartition")
 def overmortality_estimates_repartition(date="2020-04-06"):
     covid_mortality_day = df_mortality.loc[df_mortality.DATE == date].groupby(["AGEGROUP"]).agg(
         {"DEATHS": "sum"})

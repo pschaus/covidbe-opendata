@@ -4,10 +4,12 @@ import plotly.express as px
 from plotly.subplots import make_subplots
 import urllib.request, json
 
+from graphs import register_plot_for_embedding
 
 start = '03-10'
 end = '04-08'
 
+@register_plot_for_embedding("obituary_inmemoriam")
 def get_df_im(year):
     necro = pd.read_csv(f'static/csv/inmemoriam_{year}.csv')
     necro_count = necro.groupby(['Date'])['Date'].agg(['count'])
@@ -24,6 +26,7 @@ df2019im = get_df_im('2019')
 df2020im = get_df_im('2020')
 
 
+@register_plot_for_embedding("obituary_sudpresse")
 def get_df_sudpresse(year):
     necro = pd.read_csv(f'static/csv/necrosudpresse.csv')
 
