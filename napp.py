@@ -36,11 +36,7 @@ app = dash.Dash(__name__,
                     {"name": "viewport", "content": "width=device-width, initial-scale=1"}
                 ],
 )
-app.scripts
-
-
-
-
+app.title = "Covidata.be"
 app.config['suppress_callback_exceptions'] = True
 server = app.server
 
@@ -225,7 +221,7 @@ for i in range(len(menus)):
         [Input(f"submenu-{i}-collapse", "is_open")],
     )(set_navitem_class)
 
-page_generators = {menu.base_link + page.link: page.display_fn for menu in menus for page in menu.children}
+page_objects = {menu.base_link + page.link: (menu, page) for menu in menus for page in menu.children}
 page_cache = ThreadSafeCache()
 
 
@@ -241,8 +237,8 @@ def render_page_content(pathname, lang_data):
     if pathname == "/":
         pathname = "/index"
 
-    if pathname in page_generators:
-        return page_cache.get((pathname, str(get_locale())), page_generators[pathname])
+    if pathname in page_objects:
+        return page_cache.get((pathname, str(get_locale())), page_objects[pathname][1].display_fn)
 
     # If the user tries to reach a different page, return a 404 message
     return dbc.Jumbotron(
@@ -321,6 +317,29 @@ def memory_summary():
     rows = summary.format_(mem_summary)
     return '\n'.join(rows)
 
+original_interpolate_index = app.interpolate_index
+def layout(metas="", title="", css="", config="", scripts="", app_entry="", favicon="", renderer=""):
+    try:
+        pathname = flask.request.path
+        menu, page = page_objects[pathname]
+        title += " - " + page.title
+
+        if page.plot is not None:
+            link_html = page.plot.get_html_link()
+            #link_image = page.graph.get_image_link()
+            metas += f"""
+            <meta name="twitter:card" content="player">
+            <meta name="twitter:site" content="@covidatabe">
+            <meta name="twitter:title" content="Covidata.be - {page.title}">
+            <meta name="twitter:player" content="{link_html}">
+            <meta name="twitter:player:width" content="600">
+            <meta name="twitter:player:height" content="400">
+            """
+            # <meta name="twitter:image" content="{link_image}">
+    except:
+        pass
+    return original_interpolate_index(metas, title, css, config, scripts, app_entry, favicon, renderer)
+app.interpolate_index = layout
 
 if __name__ == "__main__":
     @app.server.route("/memory")
