@@ -339,7 +339,7 @@ def layout(metas="", title="", css="", config="", scripts="", app_entry="", favi
             <meta name="twitter:image" content="{link_image}">
             """
     except:
-        raise
+        pass  # ignore
     return original_interpolate_index(metas, title, css, config, scripts, app_entry, favicon, renderer)
 app.interpolate_index = layout
 
