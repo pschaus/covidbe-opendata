@@ -3,7 +3,7 @@ import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
 import dash_bootstrap_components as dbc
-from flask_babel import get_locale, gettext
+from flask_babel import get_locale, gettext, lazy_gettext
 
 from pages import AppMenu, AppLink, get_translation
 
@@ -116,6 +116,6 @@ def display_about():
 
 
 index_menu = AppMenu('index', '', [
-    AppLink("Home", "Home", '/index', display_index),
-    AppLink("About", "About", '/about', display_about)
+    AppLink(lazy_gettext("Home"), lazy_gettext("Home"), '/index', display_index),
+    AppLink(lazy_gettext("About"), lazy_gettext("About"), '/about', display_about)
 ], fake_menu=True)
