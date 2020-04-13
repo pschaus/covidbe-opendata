@@ -6,7 +6,7 @@ import flask
 import flask_babel
 from dash.dependencies import Input, Output, State, ClientsideFunction
 from dash.exceptions import PreventUpdate
-from flask import request, g, abort
+from flask import request, g, abort, redirect
 from flask_babel import Babel, lazy_gettext, gettext
 
 from graphs import registered_plots
@@ -303,14 +303,14 @@ app.clientside_callback(
 def plot_embed_html(which):
     if which not in registered_plots:
         abort(404)
-    return registered_plots[which].get_html_link()
+    return redirect(registered_plots[which].get_html_link())
 
 
-@app.server.route("/embed/image/<which>")
-def plot_embed_image(which):
-    if which not in registered_plots:
-        abort(404)
-    return registered_plots[which].get_image_link()
+# @app.server.route("/embed/image/<which>")
+# def plot_embed_image(which):
+#     if which not in registered_plots:
+#         abort(404)
+#     return registered_plots[which].get_image_link()
 
 
 def memory_summary():
@@ -321,7 +321,6 @@ def memory_summary():
     rows = summary.format_(mem_summary)
     return '\n'.join(rows)
 
-#print(memory_summary())
 
 if __name__ == "__main__":
     @app.server.route("/memory")
