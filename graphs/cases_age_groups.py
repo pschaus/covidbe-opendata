@@ -4,9 +4,12 @@ import plotly.express as px
 from flask_babel import gettext
 from plotly.subplots import make_subplots
 
+from graphs import register_plot_for_embedding
+
 df_prov_timeseries = pd.read_csv('static/csv/be-covid-provinces.csv')
 
 
+@register_plot_for_embedding("cases_age_groups")
 def age_groups_cases():
     """
     bar plot age groups cases
@@ -31,6 +34,7 @@ def age_groups_cases():
     return fig_age_groups_cases
 
 
+@register_plot_for_embedding("cases_age_groups_pie")
 def age_groups_cases_pie():
     region_age = df_prov_timeseries.groupby(['REGION', 'AGEGROUP']).agg({'CASES': 'sum'})
     total_age = df_prov_timeseries.groupby(['AGEGROUP']).agg({'CASES': 'sum'})

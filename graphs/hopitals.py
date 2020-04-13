@@ -4,11 +4,12 @@ import plotly.express as px
 from flask_babel import gettext
 from plotly.subplots import make_subplots
 
-
+from graphs import register_plot_for_embedding
 
 df_hospi = pd.read_csv('static/csv/be-covid-hospi.csv')
 
 
+@register_plot_for_embedding("hospi_bar")
 def bar_hospitalization():
     """
     bar plot hospitalization
@@ -45,7 +46,7 @@ range_min = df_tot_provinces_hospi["NEW_IN_PER_CASES"].min()
 range_max = df_tot_provinces_hospi["NEW_IN_PER_CASES"].max()
 
 
-
+@register_plot_for_embedding("hospi_per_case_per_province")
 def bar_hospi_per_case_per_province():
     fig = px.bar(df_tot_provinces_hospi,
                  y='PROVINCE_NAME',

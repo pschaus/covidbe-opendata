@@ -57,26 +57,41 @@ def display_a():
             fr='Historique des cas de coronavirus (COVID-19)', 
             )),
         html.Div(className="row", children=[
-            html.Div(className="four columns", style={'width': '30.6666666667%'}, children=[
-                html.H5('Country'),
+            html.Div(className="four columns", style={'width': '25%', 'margin-right': '5%'}, children=[
+                html.H5(get_translation(
+            en='Country',
+            fr='Pays',
+            )),
                 dcc.Dropdown(
                     id='country',
                     options=[{'label':c, 'value':c} for c in countries],
                     value='China'
                 )
             ]),
-            html.Div(className="four columns", style={'width': '30.6666666667%'}, children=[
-                html.H5('State / Province'),
+            html.Div(className="four columns", style={'width': '25%', 'margin-right': '5%'}, children=[
+                html.H5(get_translation(
+            en='State / Province',
+            fr='Etat / Province',
+            )),
                 dcc.Dropdown(
                     id='state'
                 )
             ]),
-            html.Div(className="four columns", style={'width': '30.6666666667%'}, children=[
-                html.H5('Selected Metrics'),
+            html.Div(className="four columns", style={'width': '25%', 'height': '150px', 'margin-right': '5%'}, children=[
+                html.H5(get_translation(
+            en='Criteria',
+            fr='Critères',
+            )),
                 dcc.Checklist(
                     id='metrics',
-                    options=[{'label':m, 'value':m} for m in ['Confirmed', 'Deaths', 'Recovered']],
-                    value=['Confirmed', 'Deaths']
+                    options=[{'label':l, 'value':v} for (l,v) in [  (get_translation(en='Confirmed',fr='Confirmés', ),'Confirmed'),
+                                                                (get_translation(en='Deaths',fr='Décès', ),'Deaths'),
+                                                                (get_translation(en='Recovered',fr='Rétablis', ), 'Recovered',)
+                                                                ]],
+                    value=['Confirmed', 'Deaths'],
+                    inputStyle={"vertical-align":"middle", 'margin': '2%', "margin":"auto"},
+                    labelStyle={"vertical-align":"middle", 'margin': '2%'},
+                    style={"display":"inline-flex", "flex-wrap":"wrap", "justify-content":"space-between","line-height":"28px"}
                 )
             ])
         ]),
@@ -158,8 +173,8 @@ def callback_a(app):
     def update_plots(country, state, metrics, n):
         refreshData()
         data = filtered_data(country, state)
-        barchart_new = barchart(data, metrics, prefix="New", yaxisTitle="New Cases per Day")
-        barchart_cum = barchart(data, metrics, prefix="Cum", yaxisTitle="Cumulated Cases")
+        barchart_new = barchart(data, metrics, prefix="New", yaxisTitle=get_translation(en="New Cases per Day",fr="Nouveaux Cas par Jour", ))
+        barchart_cum = barchart(data, metrics, prefix="Cum", yaxisTitle=get_translation(en="Cumulated Cases",fr="Cas Cumulés", ))
         return barchart_new, barchart_cum        
 
             

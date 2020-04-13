@@ -4,12 +4,16 @@ import dash_core_components as dcc
 import dash_html_components as html
 from flask_babel import gettext, get_locale
 
+from utils import ThreadSafeCache
+
 
 class AppLink:
-    def __init__(self, link_name: str, link: str, display_fn, callback_fn=(lambda app: None)):
+    def __init__(self, title: str, link_name: str, link: str, display_fn, plot=None, callback_fn=(lambda app: None)):
+        self.title = title
         self.link_name = link_name
         self.link = link
         self.display_fn = display_fn
+        self.plot = plot
         self.callback_fn = callback_fn
 
 
@@ -44,35 +48,6 @@ def get_translation(**kwargs):
     if "en" in kwargs:
         return kwargs["en"]
     return list(kwargs.keys())[0]
-
-
-class ThreadSafeCache:
-    def __init__(self):
-        self.lock = threading.Lock()
-        self.cache = {}
-
-    def get(self, key, creator):
-        is_creating = False
-        with self.lock:
-            if key not in self.cache:
-                #print("CREATING", key, creator)
-                self.cache[key] = threading.Event()
-                is_creating = True
-
-        obj = self.cache[key]
-
-        if is_creating:
-            newobj = creator()
-            self.cache[key] = newobj
-            obj.set()
-            return newobj
-
-        while isinstance(obj, threading.Event):
-            #print("WAIT", key, creator)
-            obj.wait()
-            obj = self.cache[key]
-
-        return obj
 
 
 def lang_cache(f):
