@@ -32,7 +32,7 @@ while last_date >= date(year=2020, month=3, day=1):  # first pass must be done w
                 print(person)
                 print("----------------")
         page += 1
-        pd.DataFrame([(a, b, c, d) for a, (b, c, d) in data.items()], columns=['id', 'birth', 'death', 'location']).set_index(["id"]).to_csv(FNAME)
+        pd.DataFrame([(a, b, c, d) for a, (b, c, d) in data.items()], columns=['id', 'birth', 'date', 'location']).set_index(["id"]).to_csv(FNAME)
     except Exception as e:
         # repeat!
         print(e)
