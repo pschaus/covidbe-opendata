@@ -70,6 +70,6 @@ def display_about():
 
 
 index_menu = AppMenu('index', '', [
-    AppLink("Home", '/index', display_index),
-    AppLink("About", '/about', display_about)
+    AppLink("Home", "Home", '/index', display_index),
+    AppLink("About", "About", '/about', display_about)
 ], fake_menu=True)
