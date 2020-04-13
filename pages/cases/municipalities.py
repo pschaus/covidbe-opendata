@@ -48,4 +48,7 @@ def municipalities_callbacks(app):
         return {"display": "block"}
 
 
-municipalities_link = AppLink(lazy_gettext("Per municipality"), "/municipalities", municipalities, municipalities_callbacks)
+municipalities_link = AppLink(lazy_gettext("Cases per municipality"), lazy_gettext("Per municipality"),
+                              "/municipalities", municipalities,
+                              map_communes_per_inhabitant,
+                              municipalities_callbacks)

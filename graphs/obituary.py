@@ -4,66 +4,105 @@ import plotly.express as px
 from plotly.subplots import make_subplots
 import urllib.request, json
 
+from graphs import register_plot_for_embedding
 
-start = '03-10'
+start = '01-10'
+
+start_covid = '03-10'
+end = '04-08'
+
 end = '04-08'
 
 
-def necro_count_per_day(df,year):
-    necro_count = df.groupby(['Date'])['Date'].agg(['count'])
+def necro_count_per_day(df, year):
+    necro_count = df.groupby(['date'])['date'].agg(['count'])
     necro_count.reset_index(level=0, inplace=True)
 
     basedate = pd.Timestamp(f'{year}-{start}')
-    necro_count['days'] = necro_count.apply(lambda x: (pd.to_datetime(x.Date) - basedate).days, axis=1)
+    necro_count['days'] = necro_count.apply(lambda x: (pd.to_datetime(x.date) - basedate).days, axis=1)
 
-    mask = (necro_count['Date'] >= f'{year}-{start}') & (necro_count['Date'] <= f'{year}-{end}')
+    mask = (necro_count['date'] >= f'{year}-{start}') & (necro_count['date'] <= f'{year}-{end}')
     necro_count = necro_count.loc[mask]
+
+    necro_count.reset_index(level=0, inplace=True)
+
     return necro_count
 
 
 def get_df_im(year):
     necro = pd.read_csv(f'static/csv/inmemoriam_{year}.csv')
-    return necro_count_per_day(necro,year)
+    return necro_count_per_day(necro, year)
+
+
+def get_df_dansnopensees(year):
+    necro = pd.read_csv(f'static/csv/dansnopensees.csv')
+    return necro_count_per_day(necro, year)
 
 
 def get_df_sudpresse(year):
     necro = pd.read_csv(f'static/csv/necrosudpresse.csv')
     return necro_count_per_day(necro, year)
 
+
 def get_df_avisdecesfr(year):
     necro = pd.read_csv(f'static/csv/avisdedecesfr_{year}.csv')
     return necro_count_per_day(necro, year)
 
+
 df2019sp = get_df_sudpresse('2019')
 df2020sp = get_df_sudpresse('2020')
-
 df2019im = get_df_im('2019')
 df2020im = get_df_im('2020')
-
+df2019dp = get_df_dansnopensees('2019')
+df2020dp = get_df_dansnopensees('2020')
+df2019totbe = pd.DataFrame(
+    [df2019sp['date'], df2019sp['days'], df2019sp['count'] + df2019im['count'] + df2019dp['count']]).transpose()
+df2020totbe = pd.DataFrame(
+    [df2020sp['date'], df2020sp['days'], df2020sp['count'] + df2020im['count'] + df2020dp['count']]).transpose()
+convert_dict = {'count': int, 'days': int}
+df2019totbe = df2019totbe.astype(convert_dict)
+df2020totbe = df2020totbe.astype(convert_dict)
 df2019av = get_df_avisdecesfr('2019')
 df2020av = get_df_avisdecesfr('2020')
 
 
+def plot(df2019, df2020, website):
+    mask2019 = (df2019['date'] >= f'2019-{start_covid}') & (df2019['date'] <= f'2019-{end}')
+    mask2020 = (df2020['date'] >= f'2020-{start_covid}') & (df2019['date'] <= f'2020-{end}')
+    df2019 = df2019.loc[mask2019]
+    df2020 = df2020.loc[mask2020]
 
-
-def plot(df2019,df2020,website):
     fig = go.Figure(data=[go.Scatter(x=df2019.days, y=df2019['count'].cumsum(), name='2019'),
-                      go.Scatter(x=df2020.days, y=df2020['count'].cumsum(), name='2020'),
-                     ])
-    fig.update_layout(xaxis_title='#Days',
+                          go.Scatter(x=df2020.days, y=df2020['count'].cumsum(), name='2020'),
+                          ])
+    fig.update_layout(xaxis_title='Date',
                       yaxis_title='#Deaths',
-                      xaxis = dict(tickmode = 'array', tickvals = df2019['days'], ticktext = df2019['date']),
+                      xaxis=dict(tickmode='array', tickvals=df2019['days'], ticktext=df2019['date']),
                       title=f"Cumulated Deaths on {website}", height=500, )
 
     return fig
 
+
+
+@register_plot_for_embedding("obituary_inmemoriam")
 def inmemoriam_plot():
-    return plot(df2019im,"inmemoriam.be")
+    return plot(df2019im, df2020im, "inmemoriam.be")
 
-
+@register_plot_for_embedding("obituary_sudpresse")
 def sudpresse_plot():
-    return plot(df2019sp, "necro.sudpresse.be")
+    return plot(df2019sp, df2020sp, "necro.sudpresse.be")
+
+@register_plot_for_embedding("obituary_dansnospensees.be")
+def dansnospensees_plot():
+    return plot(df2019dp, df2020dp, "dansnopensees.be")
+
+@register_plot_for_embedding("obituary_allbe.be")
+def allbeobituary_plot():
+    return plot(df2019totbe, df2020totbe, "dansnopensees.be+inmemoriam.be+necro.sudpresse.be")
+
+@register_plot_for_embedding("obituary_avideces.fr")
+def avideces_plot():
+    return plot(df2019av, df2020av, "avicedes.fr")
 
 
-def sudpresse_plot():
-    return plot(df2019av, "avicedes.fr")
+

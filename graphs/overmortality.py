@@ -4,6 +4,7 @@ import plotly.express as px
 import plotly.graph_objs as go
 from flask_babel import gettext, _
 import colorcet as cc
+from graphs import register_plot_for_embedding
 
 NORMAL_COLOR = "#779ecb"
 COVID_COLOR = "#ff6961"
@@ -230,3 +231,13 @@ def overmortality_estimates_repartition(date="2020-04-06"):
     pie.update_layout(legend_orientation="h", height=700)
 
     return fig, pie
+
+
+@register_plot_for_embedding("overmortality_estimates_repartition_bar")
+def overmortality_estimates_repartition_bar(date="2020-04-06"):
+    return overmortality_estimates_repartition(date)[0]
+
+
+@register_plot_for_embedding("overmortality_estimates_repartition_pie")
+def overmortality_estimates_repartition_bar(date="2020-04-06"):
+    return overmortality_estimates_repartition(date)[1]

@@ -4,11 +4,12 @@ import plotly.express as px
 from flask_babel import gettext
 from plotly.subplots import make_subplots
 
-
+from graphs import register_plot_for_embedding
 
 df_testing = pd.read_csv('static/csv/be-covid-testing.csv')
 
 
+@register_plot_for_embedding("testing_bar_plot")
 def bart_plot_cases_testing():
     """
     bar plot cases and testing everyday
@@ -28,7 +29,7 @@ def bart_plot_cases_testing():
     return fig_testing
 
 
-
+@register_plot_for_embedding("testing_testing_over_cases")
 def plot_ration_cases_over_testing():
     """
     plot of the ration cases over testing everyday
@@ -39,6 +40,7 @@ def plot_ration_cases_over_testing():
     return fig
 
 
+@register_plot_for_embedding("testing_cumulative")
 def plot_cumulated_testing():
     """
     plot of the cumulated tests cases of days everyday
@@ -50,9 +52,3 @@ def plot_cumulated_testing():
                       yaxis_title='#Cases/#Tests', title="Cumulated number of Tests and Cases")
 
     return fig
-
-
-
-
-
-
