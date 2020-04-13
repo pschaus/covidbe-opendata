@@ -242,7 +242,8 @@ def render_page_content(pathname, lang_data):
         pathname = "/index"
 
     if pathname in page_generators:
-        return page_cache.get((pathname, str(get_locale())), page_generators[pathname])
+        return page_generators[pathname]()
+        #return page_cache.get((pathname, str(get_locale())), page_generators[pathname])
 
     # If the user tries to reach a different page, return a 404 message
     return dbc.Jumbotron(
