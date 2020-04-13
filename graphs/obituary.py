@@ -7,10 +7,6 @@ import urllib.request, json
 from graphs import register_plot_for_embedding
 
 start = '01-10'
-
-start_covid = '03-10'
-end = '04-08'
-
 end = '04-08'
 
 
@@ -67,11 +63,11 @@ df2020av = get_df_avisdecesfr('2020')
 
 
 def plot(df2019, df2020, website):
+    start_covid = '03-10'
     mask2019 = (df2019['date'] >= f'2019-{start_covid}') & (df2019['date'] <= f'2019-{end}')
     mask2020 = (df2020['date'] >= f'2020-{start_covid}') & (df2019['date'] <= f'2020-{end}')
     df2019 = df2019.loc[mask2019]
     df2020 = df2020.loc[mask2020]
-
     fig = go.Figure(data=[go.Scatter(x=df2019.days, y=df2019['count'].cumsum(), name='2019'),
                           go.Scatter(x=df2020.days, y=df2020['count'].cumsum(), name='2020'),
                           ])
@@ -103,6 +99,32 @@ def allbeobituary_plot():
 @register_plot_for_embedding("obituary_avideces.fr")
 def avideces_plot():
     return plot(df2019av, df2020av, "avicedes.fr")
+
+
+horizon = 7
+
+
+def rolling_ratio_scatter(df2019, df2020, website):
+    df2019r = df2019.rolling(horizon, min_periods=7).sum()
+    df2020r = df2020.rolling(horizon, min_periods=7).sum()
+    df2019r['date'] = df2019['date']
+
+    return go.Scatter(x=df2019r.date, y=df2020r['count'] / df2019r['count'], name=website)
+
+
+@register_plot_for_embedding("obituary_rolling_ratio")
+def rolling_ratio_plot():
+    fig = go.Figure(data=[rolling_ratio_scatter(df2019im, df2020im, "inmemoriam.be"),
+                       rolling_ratio_scatter(df2019dp, df2020dp, "dansnopensees.be"),
+                       rolling_ratio_scatter(df2019sp, df2020sp, "necro.sudpresse.be"),
+                       rolling_ratio_scatter(df2019totbe, df2020totbe,
+                                             "dansnopensees.be+ninmemoriam.be+necro.sudpresse.be"),
+                       rolling_ratio_scatter(df2019av, df2020av, "avideces.fr")])
+    fig.update_layout(xaxis_title='Date',
+                   yaxis_title='Ratio 2020/2019',
+                   title="Ratio reported death 2020/1019 with rolling horizon of 1 week", height=500, )
+
+    return fig
 
 
 
