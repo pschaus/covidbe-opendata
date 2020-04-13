@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-04-10 18:40+0200\n"
+"POT-Creation-Date: 2020-04-13 19:11+0200\n"
 "PO-Revision-Date: 2020-04-08 14:55+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr\n"
@@ -18,215 +18,285 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: graphs/cases_age_groups.py:30
+#: napp.py:130
+msgid "Language"
+msgstr "Langue"
+
+#: napp.py:330
+msgid "Click here to open the interactive visualization"
+msgstr "Cliquez ici pour ouvrir la visualisation interactive"
+
+#: graphs/cases_age_groups.py:33
 msgid "Cases per day per age group"
 msgstr "Cas par jour par groupe d'âge"
 
-#: graphs/cases_age_groups.py:44 graphs/cases_age_groups.py:51
-#: graphs/deaths_age_groups.py:48 graphs/deaths_age_groups.py:59
+#: graphs/cases_age_groups.py:48 graphs/cases_age_groups.py:55
+#: graphs/deaths_age_groups.py:51 graphs/deaths_age_groups.py:62
 msgid "Wallonia"
 msgstr "Wallonie"
 
-#: graphs/cases_age_groups.py:45 graphs/cases_age_groups.py:55
-#: graphs/deaths_age_groups.py:49 graphs/deaths_age_groups.py:63
+#: graphs/cases_age_groups.py:49 graphs/cases_age_groups.py:59
+#: graphs/deaths_age_groups.py:52 graphs/deaths_age_groups.py:66
 msgid "Flanders"
 msgstr "Flandre"
 
-#: graphs/cases_age_groups.py:46 graphs/cases_age_groups.py:59
-#: graphs/deaths_age_groups.py:50 graphs/deaths_age_groups.py:67
+#: graphs/cases_age_groups.py:50 graphs/cases_age_groups.py:63
+#: graphs/deaths_age_groups.py:53 graphs/deaths_age_groups.py:70
 msgid "Brussels"
 msgstr "Bruxelles"
 
-#: graphs/cases_age_groups.py:47 graphs/deaths_age_groups.py:51
+#: graphs/cases_age_groups.py:51 graphs/deaths_age_groups.py:54
+#: pages/hospitals/__init__.py:9
 msgid "Belgium"
 msgstr "Belgique"
 
-#: graphs/cases_age_groups.py:63 graphs/deaths_age_groups.py:56
+#: graphs/cases_age_groups.py:67 graphs/deaths_age_groups.py:59
 msgid "Total"
 msgstr "Total"
 
-#: graphs/cases_age_groups.py:67
+#: graphs/cases_age_groups.py:71
 msgid "Cases per age group, per region"
 msgstr "Cas par groupe d'âge, par région"
 
-#: graphs/cases_per_municipality.py:37
+#: graphs/cases_per_municipality.py:38
+msgid "Number of cases per 1000 inhabitants"
+msgstr "Nombre de cas pour 1000 habitants"
+
+#: graphs/cases_per_municipality.py:43
+msgid "<b>%{customdata[0]}</b><br>%{customdata[1]:.2f} cases per 1000 inhabitants"
+msgstr "<b>%{customdata[0]}</b><br>%{customdata[1]:.2f} cas pour 1000 habitants"
+
+#: graphs/cases_per_municipality.py:65
 msgid "Number of cases"
 msgstr "Nombre de cas"
 
-#: graphs/cases_per_municipality.py:45
+#: graphs/cases_per_municipality.py:73
 msgid "<b>%{customdata[0]}</b><br>%{customdata[1]} cases"
 msgstr "<b>%{customdata[0]}</b><br>%{customdata[1]} cas"
 
-#: graphs/cases_per_municipality.py:71
+#: graphs/cases_per_municipality.py:96
 msgid "Number of cases in {title}: {cases}"
 msgstr "Nombre de cas à {title}: {cases}"
 
-#: graphs/cases_per_municipality.py:75
+#: graphs/cases_per_municipality.py:100
 msgid "<b>%{x}</b><extra>%{y} cases</extra>"
 msgstr "<b>%{x}</b><extra>%{y} cas</extra>"
 
-#: graphs/cases_per_province.py:28 graphs/cases_per_province.py:49
+#: graphs/cases_per_province.py:31 graphs/cases_per_province.py:53
 msgid "Cases per thousand inhabitants"
 msgstr "Cas pour 1000 habitants"
 
-#: graphs/cases_per_province.py:34
+#: graphs/cases_per_province.py:37
 msgid "<b>%{properties.name}</b><br>%{z:.3f} cases per 1000 inhabitants"
 msgstr "<b>%{properties.name}</b><br>%{z:.3f} cas pour 1000 habitants"
 
-#: graphs/cases_per_province.py:52
+#: graphs/cases_per_province.py:56
 msgid "<b>%{y}</b><br>%{x:.3f} cases per 1000 inhabitants"
 msgstr "<b>%{y}</b><br>%{x:.3f} cas pour 1000 habitants"
 
-#: graphs/deaths_age_groups.py:34
+#: graphs/deaths_age_groups.py:36
 msgid "Deaths per day per age group"
 msgstr "Décès par jour par groupe d'âge"
 
-#: graphs/overmortality.py:48
-msgid "Birth defects"
-msgstr "Malformations congénitales"
+#: graphs/hopitals.py:19
+msgid "#New Hospitalized"
+msgstr "#Nouvelles hospitalisations"
 
-#: graphs/overmortality.py:49
-msgid "Blood and immunity-related diseases"
-msgstr "Maladies du sang et de l'immunité"
+#: graphs/hopitals.py:22
+msgid "#New Discharged"
+msgstr "#Nouveaux déchargés"
 
-#: graphs/overmortality.py:50
-msgid "Diseases of the circulatory system"
-msgstr "Maladies du système circulatoire"
+#: graphs/hopitals.py:25
+msgid "#Total Hospitalized"
+msgstr "#Hospitalisés total"
 
-#: graphs/overmortality.py:51
-msgid "Diseases of the digestive system"
-msgstr "Maladies du système digestif"
+#: graphs/hopitals.py:29
+msgid "Hospitalizations"
+msgstr "Hospitalisations"
 
-#: graphs/overmortality.py:52
-msgid "Diseases of the genitourinary system"
-msgstr "Maladies du système genito-urinaire"
+#: graphs/hopitals.py:31 graphs/testing.py:26 graphs/testing.py:38
+#: graphs/testing.py:51
+msgid "Day"
+msgstr "Jour"
 
-#: graphs/overmortality.py:53
-msgid "Diseases of the respiratory system"
-msgstr "Maladies du système respiratoire"
+#: graphs/hopitals.py:32 graphs/testing.py:27
+msgid "Number of / Day"
+msgstr "Nombre de _ par jour"
 
-#: graphs/overmortality.py:54
-msgid "Ear and mastoid-related diseases"
-msgstr "Maladie de l'oreille et de l'apophyse mastoïde"
+#: graphs/hopitals.py:59
+msgid "Total Hospitalisation per positive case"
+msgstr "Hospitalisations totales, par cas positif"
 
-#: graphs/overmortality.py:55
-msgid "Endocrinian nutritionnal and metabolic diseases"
-msgstr "Maladies endocriniennes nutritionnelles et metaboliques"
+#: graphs/hopitals.py:62
+msgid "<b>%{y}</b><br>%{x:.3f} hospitalisation per positive case"
+msgstr "<b>%{y}</b><br>%{x:.3f} hospitalisations par cas positifs"
 
-#: graphs/overmortality.py:56
-msgid "External causes"
-msgstr "Causes externes"
-
-#: graphs/overmortality.py:57
-msgid "Eye-related diseases"
-msgstr "Maladies des yeux"
-
-#: graphs/overmortality.py:58
-msgid "Mental and behavioral disorders"
-msgstr "Troubles mentaux et du comportement"
-
-#: graphs/overmortality.py:59
-msgid "Muscle and articulation diseases"
-msgstr "Maladies du système ostéo-articulaire, des muscles et du tissu conjonctif"
-
-#: graphs/overmortality.py:60
-msgid "Nervous system diseases"
-msgstr "Maladies du système nerveux"
-
-#: graphs/overmortality.py:61
-msgid "Other diseases"
-msgstr "Autres maladies"
-
-#: graphs/overmortality.py:62
-msgid "Other infectious and parasitic diseases"
-msgstr "Autres maladies infectieuses ou parasitaires"
-
-#: graphs/overmortality.py:63
-msgid "Perinatal period diseases"
-msgstr "Maladies de la période périnatale"
-
-#: graphs/overmortality.py:64
-msgid "Pregnancy-linked diseases"
-msgstr "Grossesse. accouchement et puerpéralité"
-
-#: graphs/overmortality.py:65
-msgid "Skin diseases"
-msgstr "Maladies de la peau"
-
-#: graphs/overmortality.py:66
-msgid "Tumors"
-msgstr "Tumeurs"
-
-#: graphs/overmortality.py:73 graphs/overmortality.py:101
-msgid "Deaths Covid-19 {date}"
-msgstr "Décès Covid-19 {date}"
-
-#: graphs/overmortality.py:74
-msgid "Mean deaths per day 2018"
-msgstr "Nombre de décès moyens par jour (2018)"
-
-#: graphs/overmortality.py:79 graphs/overmortality.py:121
-#: graphs/overmortality.py:206
-msgid "Age group"
-msgstr "Groupe d'âge"
-
-#: graphs/overmortality.py:80 graphs/overmortality.py:122
-msgid "Number of deaths per day"
-msgstr "Nombre de décès par jour"
-
-#: graphs/overmortality.py:102
-msgid "%{y}<extra>COVID-19 Deaths %{x}</extra>"
-msgstr "%{y}<extra>COVID-19 décès %{x}</extra>"
-
-#: graphs/overmortality.py:105
-msgid "Mean respiratory-related deaths per day (2016)"
-msgstr "Nombre moyen de décès liés à des problèmes respiratoires par jour (2016)"
-
-#: graphs/overmortality.py:107
-msgid "%{y:.1f}<extra>Expected respiratory deaths %{x}</extra>"
-msgstr "%{y:.1f}<extra>Décès respiratoires attendus %{x}</extra>"
-
-#: graphs/overmortality.py:110
-msgid "Respiratory-related overmortality estimate {date}"
-msgstr "Estimation de la surmortalité respiratoire {date}"
-
-#: graphs/overmortality.py:116
-msgid "%{customdata:.1f}<extra>Respiratory overmortality %{x}</extra>"
-msgstr "%{customdata:.1f}<extra>Surmortalité respiratoire %{x}</extra>"
-
-#: graphs/overmortality.py:120
-msgid "Respiratory-related overmortality estimates {date}"
-msgstr "Estimation de la surmortalité respiratoire {date}"
-
-#: graphs/overmortality.py:144
-msgid "Respiratory-related overmortality for each day"
-msgstr "Surmortalité respiratoire pour chaque jour"
-
-#: graphs/overmortality.py:145
+#: graphs/obituary.py:75 graphs/obituary.py:123 graphs/overmortality.py:146
 msgid "Date"
 msgstr "Date"
 
-#: graphs/overmortality.py:146
+#: graphs/obituary.py:76
+msgid "#Deaths"
+msgstr "#Décès"
+
+#: graphs/obituary.py:78
+msgid "Cumulated Deaths on {website}"
+msgstr "Décès cumulés sur {website}"
+
+#: graphs/obituary.py:98 graphs/obituary.py:121
+msgid "All belgian website, summed"
+msgstr "Tous les sites belges, additionnés"
+
+#: graphs/obituary.py:124
+msgid "Ratio 2020/2019"
+msgstr "Ratio 2020/2019"
+
+#: graphs/obituary.py:125
+msgid "Ratio reported death 2020/2019 with rolling horizon of 1 week"
+msgstr "Ratio de décès reportés 2020/2019 avec une moyenne roulante de une semaine"
+
+#: graphs/overmortality.py:49
+msgid "Birth defects"
+msgstr "Malformations congénitales"
+
+#: graphs/overmortality.py:50
+msgid "Blood and immunity-related diseases"
+msgstr "Maladies du sang et de l'immunité"
+
+#: graphs/overmortality.py:51
+msgid "Diseases of the circulatory system"
+msgstr "Maladies du système circulatoire"
+
+#: graphs/overmortality.py:52
+msgid "Diseases of the digestive system"
+msgstr "Maladies du système digestif"
+
+#: graphs/overmortality.py:53
+msgid "Diseases of the genitourinary system"
+msgstr "Maladies du système genito-urinaire"
+
+#: graphs/overmortality.py:54
+msgid "Diseases of the respiratory system"
+msgstr "Maladies du système respiratoire"
+
+#: graphs/overmortality.py:55
+msgid "Ear and mastoid-related diseases"
+msgstr "Maladie de l'oreille et de l'apophyse mastoïde"
+
+#: graphs/overmortality.py:56
+msgid "Endocrinian nutritionnal and metabolic diseases"
+msgstr "Maladies endocriniennes nutritionnelles et metaboliques"
+
+#: graphs/overmortality.py:57
+msgid "External causes"
+msgstr "Causes externes"
+
+#: graphs/overmortality.py:58
+msgid "Eye-related diseases"
+msgstr "Maladies des yeux"
+
+#: graphs/overmortality.py:59
+msgid "Mental and behavioral disorders"
+msgstr "Troubles mentaux et du comportement"
+
+#: graphs/overmortality.py:60
+msgid "Muscle and articulation diseases"
+msgstr "Maladies du système ostéo-articulaire, des muscles et du tissu conjonctif"
+
+#: graphs/overmortality.py:61
+msgid "Nervous system diseases"
+msgstr "Maladies du système nerveux"
+
+#: graphs/overmortality.py:62
+msgid "Other diseases"
+msgstr "Autres maladies"
+
+#: graphs/overmortality.py:63
+msgid "Other infectious and parasitic diseases"
+msgstr "Autres maladies infectieuses ou parasitaires"
+
+#: graphs/overmortality.py:64
+msgid "Perinatal period diseases"
+msgstr "Maladies de la période périnatale"
+
+#: graphs/overmortality.py:65
+msgid "Pregnancy-linked diseases"
+msgstr "Grossesse. accouchement et puerpéralité"
+
+#: graphs/overmortality.py:66
+msgid "Skin diseases"
+msgstr "Maladies de la peau"
+
+#: graphs/overmortality.py:67
+msgid "Tumors"
+msgstr "Tumeurs"
+
+#: graphs/overmortality.py:74 graphs/overmortality.py:102
+msgid "Deaths Covid-19 {date}"
+msgstr "Décès Covid-19 {date}"
+
+#: graphs/overmortality.py:75
+msgid "Mean deaths per day 2018"
+msgstr "Nombre de décès moyens par jour (2018)"
+
+#: graphs/overmortality.py:80 graphs/overmortality.py:122
+#: graphs/overmortality.py:218
+msgid "Age group"
+msgstr "Groupe d'âge"
+
+#: graphs/overmortality.py:81 graphs/overmortality.py:123
+msgid "Number of deaths per day"
+msgstr "Nombre de décès par jour"
+
+#: graphs/overmortality.py:103
+msgid "%{y}<extra>COVID-19 Deaths %{x}</extra>"
+msgstr "%{y}<extra>COVID-19 décès %{x}</extra>"
+
+#: graphs/overmortality.py:106
+msgid "Mean respiratory-related deaths per day (2016)"
+msgstr "Nombre moyen de décès liés à des problèmes respiratoires par jour (2016)"
+
+#: graphs/overmortality.py:108
+msgid "%{y:.1f}<extra>Expected respiratory deaths %{x}</extra>"
+msgstr "%{y:.1f}<extra>Décès respiratoires attendus %{x}</extra>"
+
+#: graphs/overmortality.py:111
+msgid "Respiratory-related overmortality estimate {date}"
+msgstr "Estimation de la surmortalité respiratoire {date}"
+
+#: graphs/overmortality.py:117
+msgid "%{customdata:.1f}<extra>Respiratory overmortality %{x}</extra>"
+msgstr "%{customdata:.1f}<extra>Surmortalité respiratoire %{x}</extra>"
+
+#: graphs/overmortality.py:121
+msgid "Respiratory-related overmortality estimates {date}"
+msgstr "Estimation de la surmortalité respiratoire {date}"
+
+#: graphs/overmortality.py:145
+msgid "Respiratory-related overmortality for each day"
+msgstr "Surmortalité respiratoire pour chaque jour"
+
+#: graphs/overmortality.py:147
 msgid "Number of deceased"
 msgstr "Nombre de décès"
 
-#: graphs/overmortality.py:149
+#: graphs/overmortality.py:150
 msgid "%{y:.1f} persons<extra><b>%{x}</b></extra>"
 msgstr "%{y:.1f} personnes<extra><b>%{x}</b></extra>"
 
-#: graphs/overmortality.py:197
+#: graphs/overmortality.py:209
 msgid "<b>%{x} years</b><br>"
 msgstr "<b>%{x} ans</b><br>"
 
-#: graphs/overmortality.py:199
+#: graphs/overmortality.py:211
 msgid "%{y:.2f} deaths <br>%{customdata:.2f}%"
 msgstr "%{y:.2f} décès <br>%{customdata:.2f}%"
 
-#: graphs/overmortality.py:207
+#: graphs/overmortality.py:219
 msgid "Average number of deceased per day"
 msgstr "Nombre moyen de décès par jour"
 
-#: graphs/overmortality.py:209
+#: graphs/overmortality.py:221
 msgid ""
 "Mortality taking into account covid-19 overmortality (estimate {date}), "
 "per age group"
@@ -234,13 +304,45 @@ msgstr ""
 "Mortalité (estimée au {date}) prenant en compte le Covid-19, par groupes "
 "d'âges"
 
-#: graphs/overmortality.py:217
+#: graphs/overmortality.py:229
 msgid ""
 "Mortality taking into account covid-19 overmortality (estimate {date}), "
 "global"
 msgstr "Mortalité (estimée au {date}) prenant en compte le Covid-19, globale"
 
-#: pages/__init__.py:25
+#: graphs/testing.py:19
+msgid "#Tests"
+msgstr "#Tests"
+
+#: graphs/testing.py:20
+msgid "#Cases"
+msgstr "#Cas"
+
+#: graphs/testing.py:24
+msgid "Number of Tests and Cases each day"
+msgstr "Nombre de tests et cas chaque jour"
+
+#: graphs/testing.py:37
+msgid "#Cases/#Tests each day"
+msgstr "#Cas/#Tests chaque jour"
+
+#: graphs/testing.py:39 graphs/testing.py:52
+msgid "#Cases/#Tests"
+msgstr "#Cas/#Tests"
+
+#: graphs/testing.py:48
+msgid "Cumulated #Test"
+msgstr "Nombre de tests cumulés"
+
+#: graphs/testing.py:49
+msgid "Cumulated #Cases"
+msgstr "Nombre de cas cumulés"
+
+#: graphs/testing.py:52
+msgid "Cumulated number of Tests and Cases"
+msgstr "Nombre de tests et de cas cumulés"
+
+#: pages/__init__.py:31
 msgid ""
 "**WARNING**: We enter in the realm of models and estimates. Everything "
 "below is **wrong**, but **may** give an idea of the reality."
@@ -249,46 +351,176 @@ msgstr ""
 "des estimations. Tout ce qui se trouve ci-dessous est **faux**, mais "
 "**pourrait** donner une idée de la réalité."
 
-#: pages/cases/__init__.py:8
+#: pages/index.py:119
+msgid "Home"
+msgstr "Accueil"
+
+#: pages/index.py:120
+msgid "About"
+msgstr "Le projet"
+
+#: pages/sources.py:20
+msgid "Sources"
+msgstr "Sources"
+
+#: pages/sources.py:21
+msgid "The following data sources were used to produce this page:"
+msgstr "Les sources suivantes ont été utilisées pour produire cette page:"
+
+#: pages/sources.py:33
+msgid ""
+"The processed data, along with the software used to process it, is "
+"available on GitHub."
+msgstr ""
+"Les données traitées, ainsi que les logiciels utilisés pour les traiter, "
+"sont disponibles sur GitHub."
+
+#: pages/sources.py:45
+msgid "Official Belgian data"
+msgstr "Données belges officielles"
+
+#: pages/sources.py:46
+msgid "FPS Finance"
+msgstr "SPF Finance"
+
+#: pages/sources.py:48 pages/sources.py:51
+msgid "Administrative limits"
+msgstr "Limites administratives"
+
+#: pages/sources.py:54
+msgid "Causes of death"
+msgstr "Causes de décès"
+
+#: pages/sources.py:57
+msgid "Population per municipality"
+msgstr "Population par commune"
+
+#: pages/sources.py:59
+msgid "Sudpresse obituary"
+msgstr "Nécrologies Sudpresse"
+
+#: pages/sources.py:60
+msgid "Johns Hopkins CSSE & others"
+msgstr "Johns Hopkins CSSE & autres"
+
+#: pages/sources.py:62
+msgid "See link for full list of sources"
+msgstr "Voir le lien pour la liste complète des sources"
+
+#: pages/cases/__init__.py:9
 msgid "Cases"
 msgstr "Cas"
 
-#: pages/cases/__init__.py:10
-msgid "Provinces"
-msgstr "Provinces"
+#: pages/cases/__init__.py:11
+msgid "Cases per province"
+msgstr "Cas par province"
 
-#: pages/cases/__init__.py:11 pages/deaths/__init__.py:9
+#: pages/cases/__init__.py:11
+msgid "Per province"
+msgstr "Par province"
+
+#: pages/cases/__init__.py:12
+msgid "Cases per age groups"
+msgstr "Cas par groupe d'âge"
+
+#: pages/cases/__init__.py:12 pages/deaths/__init__.py:10
 msgid "Age Groups"
 msgstr "Groupe d'âges"
 
-#: pages/cases/age_groups.py:12 pages/deaths/age_groups.py:12
+#: pages/cases/__init__.py:13
+msgid "Testing"
+msgstr "Tests"
+
+#: pages/cases/age_groups.py:13 pages/deaths/age_groups.py:13
 msgid "Age groups"
 msgstr "Groupes d'âge"
 
-#: pages/cases/overview.py:15
+#: pages/cases/municipalities.py:15
+msgid "Municipalities"
+msgstr "Communes"
+
+#: pages/cases/municipalities.py:16
+msgid "Where are the epidemic focuses?"
+msgstr "Où sont les foyers de l'épidemie?"
+
+#: pages/cases/municipalities.py:18 pages/cases/municipalities.py:51
 msgid "Cases per municipality"
 msgstr "Cas par commune"
 
-#: pages/cases/overview.py:16
+#: pages/cases/municipalities.py:19
 msgid "Click on a municipality to see a plot of its cases over time"
 msgstr "Cliquez sur une commune pour voir un graphique des cas dans la commune"
 
-#: pages/cases/overview.py:63
-msgid "Overview"
-msgstr "Vue d'ensemble"
+#: pages/cases/municipalities.py:51
+msgid "Per municipality"
+msgstr "Par commune"
 
-#: pages/cases/provinces.py:12
+#: pages/cases/provinces.py:14
 msgid "Number of cases / 1000 inhabitants"
 msgstr "Nombre de cas / 1000 habitants"
 
-#: pages/deaths/__init__.py:7
+#: pages/cases/testing.py:14
+msgid "Number of cases and tests each day"
+msgstr "Nombre de cas et de tests chaque jour"
+
+#: pages/cases/testing.py:19
+msgid "Ratio #Cases/#Tests each day"
+msgstr "Ratio #Cas/#Tests chaque jour"
+
+#: pages/cases/testing.py:24
+msgid "Cumulated #Tests and #Cases"
+msgstr "Nombre de tests et de cas cumulés"
+
+#: pages/deaths/__init__.py:9
 msgid "Deaths"
 msgstr "Décès"
 
-#: pages/deaths/__init__.py:8
+#: pages/deaths/__init__.py:10
+msgid "Death per age group"
+msgstr "Décès par groupe d'âge"
+
+#: pages/deaths/__init__.py:11
 msgid "Overmortality"
 msgstr "Surmortalité"
 
-#~ msgid "Covid-19 overmortality"
-#~ msgstr "Surmortalité dûe au Covid-19"
+#: pages/deaths/__init__.py:12
+msgid "Obituary evolution"
+msgstr "Evolution des nécrologies"
 
+#: pages/deaths/obituary.py:13
+msgid ""
+"Evolution of the number of deaths published on obituary websites 2020 vs "
+"2019"
+msgstr ""
+"Evolution du nombre de décès publiés sur les sites d'annonces "
+"nécrologiques, 2019 et 2020"
+
+#: pages/deaths/obituary.py:32
+msgid "Ratio of number of deaths published on obituary websites 2020/2019"
+msgstr ""
+"Ratio du nombre de décès publiés sur les sites d'annonces nécrologiques "
+"2020/2019"
+
+#: pages/hospitals/__init__.py:8 pages/hospitals/hospitals_be.py:13
+msgid "Hospitalization"
+msgstr "Hospitalisations"
+
+#: pages/hospitals/__init__.py:10
+msgid "Provinces"
+msgstr "Provinces"
+
+#: pages/hospitals/hospitals_prov.py:13
+msgid "Hospitalizations per province"
+msgstr "Hospitalisations par province"
+
+#: pages/international/__init__.py:9
+msgid "Evolution per country"
+msgstr "Evolution par pays"
+
+#: pages/international/__init__.py:10
+msgid "Cases per million"
+msgstr "Cas par million"
+
+#: pages/international/__init__.py:11
+msgid "Deaths per million"
+msgstr "Décès par million"

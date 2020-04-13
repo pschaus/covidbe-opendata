@@ -16,20 +16,20 @@ def bar_hospitalization():
     """
 
     newin_dates = df_hospi.groupby(['DATE']).agg({'NEW_IN': 'sum'})
-    newin_bar = go.Bar(x=newin_dates.index, y=newin_dates.NEW_IN, name='#New Hospitalized')
+    newin_bar = go.Bar(x=newin_dates.index, y=newin_dates.NEW_IN, name=gettext('#New Hospitalized'))
 
     newout_dates = df_hospi.groupby(['DATE']).agg({'NEW_OUT': 'sum'})
-    newout_bar = go.Bar(x=newout_dates.index, y=newout_dates.NEW_OUT, name='#New Discharged')
+    newout_bar = go.Bar(x=newout_dates.index, y=newout_dates.NEW_OUT, name=gettext('#New Discharged'))
 
     totin_dates = df_hospi.groupby(['DATE']).agg({'TOTAL_IN': 'sum'})
-    totin_bar = go.Bar(x=totin_dates.index, y=totin_dates.TOTAL_IN, name='#Total Hospitalized')
+    totin_bar = go.Bar(x=totin_dates.index, y=totin_dates.TOTAL_IN, name=gettext('#Total Hospitalized'))
 
     fig_hospi = go.Figure(data=[newin_bar, newout_bar, totin_bar], layout=go.Layout(barmode='group'), )
     fig_hospi.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0),
-                            title="Hospitalizations")
+                            title=gettext("Hospitalizations"))
 
-    fig_hospi.update_layout(xaxis_title='Day',
-                            yaxis_title='Number of / Day')
+    fig_hospi.update_layout(xaxis_title=gettext('Day'),
+                            yaxis_title=gettext('Number of / Day'))
 
     return fig_hospi
 
@@ -56,10 +56,10 @@ def bar_hospi_per_case_per_province():
                  color_continuous_scale="deep",
                  range_color=(range_min, range_max),
                  hover_name="PROVINCE_NAME",
-                 labels={'NEW_IN_PER_CASES': 'Total Hospitalisation per positive case'},
+                 labels={'NEW_IN_PER_CASES': gettext('Total Hospitalisation per positive case')},
                  height=400)
     fig.update_traces(
-        hovertemplate=gettext("<b>%{y}</b><br>%{x:.3f} hospitalisation per postive case"),
+        hovertemplate=gettext("<b>%{y}</b><br>%{x:.3f} hospitalisation per positive case"),
         textposition='outside',
         texttemplate='%{x:.3f}'
     )
