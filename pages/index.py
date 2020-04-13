@@ -31,7 +31,7 @@ def display_index():
                 All the source code [Github repository](https://github.com/pschaus/covidbe-opendata), graphics and data
                 we produce are available under the [OPEN COVID LICENSE 1.0](https://opencovidpledge.org/license/v1-0/).
                 In short, feel free to use them without any restriction.
-                
+                    
             """),
         html.H3(["Contributing to the project"]),
         dcc.Markdown("""
