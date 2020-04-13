@@ -338,6 +338,7 @@ def layout(metas="", title="", css="", config="", scripts="", app_entry="", favi
             <meta name="twitter:description" content="{desc}"/>
             <meta name="twitter:image" content="{link_image}"/>
             <meta property="og:url" content="https://www.covidata.be/{pathname}"/>
+            <meta property="og:type" content="article"/>
             <meta property="og:title" content="{page.title}"/>
             <meta property="og:description" content="{desc}"/>
             <meta property="og:image" content="{link_image}"/>
