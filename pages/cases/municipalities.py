@@ -5,15 +5,17 @@ import dash_html_components as html
 from dash.dependencies import Input, Output, State
 from flask_babel import get_locale, gettext, lazy_gettext
 
-from graphs.cases_per_municipality import map_communes, barplot_communes
+from graphs.cases_per_municipality import map_communes, barplot_communes, map_communes_per_inhabitant
 from pages import AppLink
 from pages.sources import *
 
 
-def overview():
-
+def municipalities():
     return [
-        html.H2(gettext("Cases per municipality")),
+        html.H2(gettext("Municipalities")),
+        html.H3(gettext("Where are the epidemic focuses?")),
+        dcc.Graph(id='cases-overview-map-communes-p', figure=map_communes_per_inhabitant(), config=dict(locale=str(get_locale()))),
+        html.H3(gettext("Cases per municipality")),
         html.H4(gettext("Click on a municipality to see a plot of its cases over time")),
         dbc.Row([
             dbc.Col(dcc.Graph(id='cases-overview-map-communes', figure=map_communes(),
@@ -23,27 +25,11 @@ def overview():
             dbc.Col(dcc.Graph(id='cases-overview-histogram', figure=barplot_communes(),
                               style={"display": "none"}, config=dict(locale=str(get_locale()))))
         ]),
-        display_source_providers(source_sciensano, source_map_communes)
+        display_source_providers(source_sciensano, source_map_communes, source_pop)
     ]
 
 
-def overview_callbacks(app):
-
-    # @app.callback(
-    #     Output('cases-overview-hoverdata', 'children'),
-    #     [Input('cases-overview-map-communes', 'hoverData')])
-    # def callback_image(hover_data):
-    #     if hover_data is None:
-    #         return "place your mouse on a municipality"
-    #     else:
-    #         idx = hover_data["points"][0]["pointIndex"]
-    #         if df_communes_tot.iloc[[idx]]['FR'].item() != df_communes_tot.iloc[[idx]]['NL'].item():
-    #             return df_communes_tot.iloc[[idx]]['FR'] + "     " + df_communes_tot.iloc[[idx]]['NL'] + "    cases:" + \
-    #                    str(df_communes_tot.iloc[[idx]]['CASES'].item())
-    #         else:
-    #             return df_communes_tot.iloc[[idx]]['FR'] + "    cases:" + str(df_communes_tot.iloc[[idx]]['CASES'].item())
-
-    # Update Histogram Figure based on Month, Day and Times Chosen
+def municipalities_callbacks(app):
     @app.callback(
         Output("cases-overview-histogram", "figure"),
         [Input('cases-overview-map-communes', 'clickData')])
@@ -62,4 +48,4 @@ def overview_callbacks(app):
         return {"display": "block"}
 
 
-overview_link = AppLink(lazy_gettext("Overview"), "/overview", overview, overview_callbacks)
+municipalities_link = AppLink(lazy_gettext("Per municipality"), "/municipalities", municipalities, municipalities_callbacks)
