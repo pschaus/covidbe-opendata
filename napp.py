@@ -334,7 +334,7 @@ def layout(metas="", title="", css="", config="", scripts="", app_entry="", favi
             <meta name="twitter:title" content="Covidata.be - {page.title}">
             <meta name="twitter:player" content="{link_html}">
             <meta name="twitter:player:width" content="600">
-            <meta name="twitter:player:height" content="400">
+            <meta name="twitter:player:height" content="500">
             <meta name="twitter:description" content="{desc}">
             <meta name="twitter:image" content="{link_image}">
             """
