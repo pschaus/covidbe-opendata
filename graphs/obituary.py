@@ -1,6 +1,7 @@
 import pandas as pd
 import plotly.graph_objs as go
 import plotly.express as px
+from flask_babel import gettext
 from plotly.subplots import make_subplots
 import urllib.request, json
 
@@ -71,10 +72,10 @@ def plot(df2019, df2020, website):
     fig = go.Figure(data=[go.Scatter(x=df2019.days, y=df2019['count'].cumsum(), name='2019'),
                           go.Scatter(x=df2020.days, y=df2020['count'].cumsum(), name='2020'),
                           ])
-    fig.update_layout(xaxis_title='Date',
-                      yaxis_title='#Deaths',
+    fig.update_layout(xaxis_title=gettext('Date'),
+                      yaxis_title=gettext('#Deaths'),
                       xaxis=dict(tickmode='array', tickvals=df2019['days'], ticktext=df2019['date']),
-                      title=f"Cumulated Deaths on {website}", height=500, )
+                      title=gettext("Cumulated Deaths on {website}").format(website=website), height=500)
 
     return fig
 
@@ -94,11 +95,11 @@ def dansnospensees_plot():
 
 @register_plot_for_embedding("obituary_allbe.be")
 def allbeobituary_plot():
-    return plot(df2019totbe, df2020totbe, "dansnopensees.be+inmemoriam.be+necro.sudpresse.be")
+    return plot(df2019totbe, df2020totbe, gettext("All belgian website, summed"))
 
 @register_plot_for_embedding("obituary_avideces.fr")
 def avideces_plot():
-    return plot(df2019av, df2020av, "avicedes.fr")
+    return plot(df2019av, df2020av, "avisdeces.fr")
 
 
 horizon = 7
@@ -115,14 +116,13 @@ def rolling_ratio_scatter(df2019, df2020, website):
 @register_plot_for_embedding("obituary_rolling_ratio")
 def rolling_ratio_plot():
     fig = go.Figure(data=[rolling_ratio_scatter(df2019im, df2020im, "inmemoriam.be"),
-                       rolling_ratio_scatter(df2019dp, df2020dp, "dansnopensees.be"),
-                       rolling_ratio_scatter(df2019sp, df2020sp, "necro.sudpresse.be"),
-                       rolling_ratio_scatter(df2019totbe, df2020totbe,
-                                             "dansnopensees.be+ninmemoriam.be+necro.sudpresse.be"),
-                       rolling_ratio_scatter(df2019av, df2020av, "avideces.fr")])
-    fig.update_layout(xaxis_title='Date',
-                   yaxis_title='Ratio 2020/2019',
-                   title="Ratio reported death 2020/1019 with rolling horizon of 1 week", height=500, )
+                          rolling_ratio_scatter(df2019dp, df2020dp, "dansnopensees.be"),
+                          rolling_ratio_scatter(df2019sp, df2020sp, "necro.sudpresse.be"),
+                          rolling_ratio_scatter(df2019totbe, df2020totbe, gettext("All belgian website, summed")),
+                          rolling_ratio_scatter(df2019av, df2020av, "avideces.fr")])
+    fig.update_layout(xaxis_title=gettext('Date'),
+                      yaxis_title=gettext('Ratio 2020/2019'),
+                      title=gettext("Ratio reported death 2020/2019 with rolling horizon of 1 week"), height=500)
 
     return fig
 

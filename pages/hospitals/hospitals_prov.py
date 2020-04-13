@@ -10,7 +10,7 @@ from pages.sources import display_source_providers, source_sciensano
 
 def display_hospitals_prov():
     return [
-        html.H2(gettext("Hospitalization Per Provinces")),
+        html.H2(gettext("Hospitalizations per province")),
         dbc.Row([
             dbc.Col(dcc.Graph(id='hospitalization-prov',
                               figure=bar_hospi_per_case_per_province(),
