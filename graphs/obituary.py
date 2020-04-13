@@ -120,10 +120,14 @@ def rolling_ratio_plot():
                           rolling_ratio_scatter(df2019sp, df2020sp, "necro.sudpresse.be"),
                           rolling_ratio_scatter(df2019totbe, df2020totbe, gettext("All belgian website, summed")),
                           rolling_ratio_scatter(df2019av, df2020av, "avideces.fr")])
-    fig.update_layout(xaxis_title=gettext('Date'),
+    fig.update_layout(xaxis_title="",
                       yaxis_title=gettext('Ratio 2020/2019'),
-                      title=gettext("Ratio reported death 2020/2019 with rolling horizon of 1 week"), height=500)
-
+                      title=gettext("Ratio reported death 2020/2019 with rolling horizon of 1 week"), height=500,
+                      legend_orientation="h")
+    fig.update_layout(
+        xaxis_tickformat='%d/%m'
+    )
+    fig.update_layout(hovermode="x")
     return fig
 
 
