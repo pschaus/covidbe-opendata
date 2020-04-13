@@ -6,6 +6,8 @@ from dash.dependencies import Input, Output, State
 from flask_babel import get_locale, gettext
 
 from graphs.testing import bart_plot_cases_testing, plot_ration_cases_over_testing, plot_cumulated_testing
+from pages.sources import display_source_providers, source_sciensano
+
 
 def display_testing():
     return [
@@ -23,7 +25,6 @@ def display_testing():
         dbc.Row([
             dbc.Col(dcc.Graph(id='cases-province-map', figure=plot_cumulated_testing(),
                               config=dict(locale=str(get_locale()))), className="col-12"),
-        ])
-
-
+        ]),
+        display_source_providers(source_sciensano)
     ]

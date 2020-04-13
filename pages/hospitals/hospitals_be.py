@@ -5,6 +5,7 @@ import dash_html_components as html
 from flask_babel import get_locale, gettext
 
 from graphs.hopitals import bar_hospitalization
+from pages.sources import display_source_providers, source_sciensano
 
 
 def display_hospitals():
@@ -15,4 +16,5 @@ def display_hospitals():
                               figure=bar_hospitalization(),
                               config=dict(locale=str(get_locale())))),
         ]),
+        display_source_providers(source_sciensano)
     ]
