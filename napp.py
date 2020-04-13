@@ -24,7 +24,8 @@ app = dash.Dash(__name__,
                     "https://cdn.plot.ly/plotly-locale-fr-latest.js",
                     "https://cdn.plot.ly/plotly-locale-nl-latest.js",
                     "https://cdn.plot.ly/plotly-locale-de-latest.js",
-                    "https://platform.twitter.com/widgets.js"
+                    "https://platform.twitter.com/widgets.js",
+                    "https://http://www.covidata.be/assets/gtag.js",
                 ],
                 # these meta_tags ensure content is scaled correctly on different devices
                 # see: https://www.w3schools.com/css/css_rwd_viewport.asp for more
