@@ -1,7 +1,7 @@
 import logging
 import boto3
 from datetime import date
-
+import pandas as pd
 import botocore
 from botocore.exceptions import ClientError
 
@@ -9,13 +9,14 @@ from utils import ThreadSafeCache
 
 registered_plots = {}
 __html_cache = ThreadSafeCache()
-__image_cache = ThreadSafeCache()
+__images = pd.read_csv("static/csv/last_plot_images.csv").set_index("name")
+
 
 def register_plot_for_embedding(name):
     def inside(f):
         f.name = name
         f.get_html_link = lambda: __html_cache.get(name, lambda: __gen_html(name, f))
-        f.get_image_link = lambda: __image_cache.get(name, lambda: __gen_image(name, f))
+        f.get_image_link = lambda: __images.loc[name].link
         registered_plots[name] = f
         return f
     return inside
@@ -43,9 +44,3 @@ def __gen_html(name, f):
     d = date.today()
     key = f"{d}/{name}.html"
     return s3_get_link_and_create_if_needed(key, lambda: f().to_html().encode(), "text/html")
-
-
-def __gen_image(name, f):
-    d = date.today()
-    key = f"{d}/{name}.png"
-    return s3_get_link_and_create_if_needed(key, lambda: f().to_image(format="png", width=600, height=350), "image/png")
