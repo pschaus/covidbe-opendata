@@ -26,6 +26,7 @@ class ThreadSafeCache:
                 newobj = self.__ErrorMarker(e)
             self.cache[key] = newobj
             obj.set()
+            obj = newobj
 
         while isinstance(obj, threading.Event):
             obj.wait()
