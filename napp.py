@@ -329,14 +329,18 @@ def layout(metas="", title="", css="", config="", scripts="", app_entry="", favi
             desc = gettext("Click here to open the interactive visualization")
             link_image = page.plot.get_image_link()
             metas += f"""
-            <meta name="twitter:card" content="player">
-            <meta name="twitter:site" content="@covidatabe">
-            <meta name="twitter:title" content="Covidata.be - {page.title}">
-            <meta name="twitter:player" content="{link_html}">
-            <meta name="twitter:player:width" content="600">
-            <meta name="twitter:player:height" content="500">
-            <meta name="twitter:description" content="{desc}">
-            <meta name="twitter:image" content="{link_image}">
+            <meta name="twitter:card" content="player"/>
+            <meta name="twitter:site" content="@covidatabe"/>
+            <meta name="twitter:title" content="Covidata.be - {page.title}"/>
+            <meta name="twitter:player" content="{link_html}"/>
+            <meta name="twitter:player:width" content="600"/>
+            <meta name="twitter:player:height" content="500"/>
+            <meta name="twitter:description" content="{desc}"/>
+            <meta name="twitter:image" content="{link_image}"/>
+            <meta property="og:url" content="https://www.covidata.be/{pathname}"/>
+            <meta property="og:title" content="{page.title}"/>
+            <meta property="og:description" content="{desc}"/>
+            <meta property="og:image" content="{link_image}"/>
             """
     except:
         pass  # ignore
