@@ -36,7 +36,7 @@ def s3_get_link_and_create_if_needed(filename, content_gen, content_type):
         else:
             raise
 
-    return f"http://covidatabe.s3-website.eu-central-1.amazonaws.com/{filename}"
+    return f"https://covidatabe.s3.eu-central-1.amazonaws.com/{filename}"
 
 
 def __gen_html(name, f):
