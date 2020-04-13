@@ -6,6 +6,8 @@ from dash.dependencies import Input, Output, State
 from flask_babel import get_locale, gettext
 
 from graphs.cases_per_province import map_provinces, barplot_provinces_cases
+from pages.sources import *
+
 
 def display_provinces():
     return [
@@ -15,5 +17,6 @@ def display_provinces():
                               config=dict(locale=str(get_locale()))), className="col-12"),
             dbc.Col(dcc.Graph(id='cases-province-barplot', figure=barplot_provinces_cases(),
                               config=dict(locale=str(get_locale()))), className="col-12"),
-        ])
+        ]),
+        display_source_providers(source_sciensano, source_map_provinces)
     ]

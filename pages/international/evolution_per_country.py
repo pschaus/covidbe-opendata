@@ -16,6 +16,8 @@ from pages import get_translation
 #https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/allData.pkl
 #https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv
 #baseURL = "../COVID-19/csse_covid_19_data/csse_covid_19_time_series/"
+from pages.sources import display_source_providers, source_hopkins
+
 baseURL = "static/csv/"
 fileNamePickle = "tmp/allData.pkl"
 
@@ -105,8 +107,8 @@ def display_a():
             id='interval-component',
             interval=3600*1000, # Refresh data each hour.
             n_intervals=0
-        )
-
+        ),
+        display_source_providers(source_hopkins)
     ]
 
 

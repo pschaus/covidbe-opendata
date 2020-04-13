@@ -78,3 +78,5 @@ class ThreadSafeCache:
 def lang_cache(f):
     cache = ThreadSafeCache()
     return lambda: cache.get(str(get_locale()), f)
+
+
