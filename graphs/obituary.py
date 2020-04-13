@@ -9,7 +9,6 @@ from graphs import register_plot_for_embedding
 start = '03-10'
 end = '04-08'
 
-@register_plot_for_embedding("obituary_inmemoriam")
 def get_df_im(year):
     necro = pd.read_csv(f'static/csv/inmemoriam_{year}.csv')
     necro_count = necro.groupby(['Date'])['Date'].agg(['count'])
@@ -26,7 +25,6 @@ df2019im = get_df_im('2019')
 df2020im = get_df_im('2020')
 
 
-@register_plot_for_embedding("obituary_sudpresse")
 def get_df_sudpresse(year):
     necro = pd.read_csv(f'static/csv/necrosudpresse.csv')
 
@@ -46,7 +44,7 @@ df2020sp = get_df_sudpresse(2020)
 
 
 
-
+@register_plot_for_embedding("obituary_inmemoriam")
 def inmemoriam_plot():
     fig = go.Figure(data=[go.Scatter(x=df2019im.days, y=df2019im['count'].cumsum(), name='2019'),
                       go.Scatter(x=df2020im.days, y=df2020im['count'].cumsum(), name='2020'),
@@ -59,8 +57,7 @@ def inmemoriam_plot():
     return fig
 
 
-
-
+@register_plot_for_embedding("obituary_sudpresse")
 def sudpresse_plot():
 
     fig = go.Figure(data=[go.Scatter(x=df2019sp.days, y=df2019sp['count'].cumsum(), name='2019'),
@@ -70,7 +67,6 @@ def sudpresse_plot():
                   yaxis_title='#Deaths',
                   xaxis = dict(tickmode = 'array',tickvals = df2020sp['days'],ticktext = df2020sp['date']),
                   title=f"Cumulated Deaths on necro.sudpresse.be",height=500,)
-
 
     return fig
 

@@ -163,7 +163,6 @@ def overmortality_respiratory_count():
     return out.OVERMORTALITY.sum()
 
 
-@register_plot_for_embedding("overmortality_estimates_repartition")
 def overmortality_estimates_repartition(date="2020-04-06"):
     covid_mortality_day = df_mortality.loc[df_mortality.DATE == date].groupby(["AGEGROUP"]).agg(
         {"DEATHS": "sum"})
@@ -232,3 +231,13 @@ def overmortality_estimates_repartition(date="2020-04-06"):
     pie.update_layout(legend_orientation="h", height=700)
 
     return fig, pie
+
+
+@register_plot_for_embedding("overmortality_estimates_repartition_bar")
+def overmortality_estimates_repartition_bar(date="2020-04-06"):
+    return overmortality_estimates_repartition(date)[0]
+
+
+@register_plot_for_embedding("overmortality_estimates_repartition_pie")
+def overmortality_estimates_repartition_bar(date="2020-04-06"):
+    return overmortality_estimates_repartition(date)[1]

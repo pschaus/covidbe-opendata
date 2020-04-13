@@ -326,7 +326,8 @@ def layout(metas="", title="", css="", config="", scripts="", app_entry="", favi
 
         if page.plot is not None:
             link_html = page.plot.get_html_link()
-            #link_image = page.graph.get_image_link()
+            desc = gettext("Click here to open the interactive visualization")
+            link_image = page.plot.get_image_link()
             metas += f"""
             <meta name="twitter:card" content="player">
             <meta name="twitter:site" content="@covidatabe">
@@ -334,10 +335,11 @@ def layout(metas="", title="", css="", config="", scripts="", app_entry="", favi
             <meta name="twitter:player" content="{link_html}">
             <meta name="twitter:player:width" content="600">
             <meta name="twitter:player:height" content="400">
+            <meta name="twitter:description" content="{desc}">
+            <meta name="twitter:image" content="{link_image}">
             """
-            # <meta name="twitter:image" content="{link_image}">
     except:
-        pass
+        raise
     return original_interpolate_index(metas, title, css, config, scripts, app_entry, favicon, renderer)
 app.interpolate_index = layout
 
