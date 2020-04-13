@@ -8,7 +8,7 @@ def get_link(page):
 
 
 FNAME = "../static/csv/dansnopensees.csv"
-data = {d["id"]: (d["birth"], d["death"], d["location"]) for d in pd.read_csv(FNAME).to_dict('records')}
+data = {d["id"]: (d["birth"], d["date"], d["location"]) for d in pd.read_csv(FNAME).to_dict('records')}
 last_date = date.today()
 page = 1
 while last_date >= date(year=2020, month=3, day=1):  # first pass must be done with date(year=2019, month=1, day=1)
