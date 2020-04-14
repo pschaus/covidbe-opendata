@@ -1,17 +1,15 @@
-import urllib.request, json
+import urllib.request
+import json
+import pandas as pd
 
-
-with open('../static/json/communes/be-centers.json') as json_file:
+with open('../static/json/maps/be-centers-covid.json') as json_file:
     centers = json.load(json_file)
 
 cases = {k:0 for k in centers.keys()}
 
 names_fr = {k:v["fr"] for k,v in centers.items()}
 names_nl = {k:v["nl"] for k,v in centers.items()}
-
-
-
-
+out = []
 with urllib.request.urlopen("https://epistat.sciensano.be/Data/COVID19BE_CASES_MUNI_CUM.json") as url:
         data = json.loads(url.read().decode('latin-1'))
         # some entries have no NIS5
@@ -20,17 +18,9 @@ with urllib.request.urlopen("https://epistat.sciensano.be/Data/COVID19BE_CASES_M
             NIS5 = entry['NIS5']
             ncases = entry['CASES']
             if ncases == "<5":
-                cases[NIS5] = 4
+                ncases = 4
             else:
-                cases[NIS5] = int(ncases)
+                ncases = int(ncases)
+            out.append((NIS5, ncases, names_fr[NIS5], names_nl[NIS5]))
 
-
-import csv
-with open('../static/csv/be-covid.csv', 'w') as csvfile:
-    csv_writer = csv.writer(csvfile, delimiter=',',
-                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
-    csv_writer.writerow(["NIS5","CASES","FR","NL"])
-    for k,v in cases.items():
-        csv_writer.writerow([k,v,names_fr[k],names_nl[k]])
-
-
+pd.DataFrame(out, columns=["NIS5", "CASES", "FR", "NL"]).to_csv('../static/csv/be-covid-totcases.csv', index=False)
