@@ -88,7 +88,7 @@ def display_about():
     return [html.H1([html.Img(src='/assets/covidata.png'), "Covidata.be"], className="logo_index"),
             dcc.Markdown(get_translation(
             en="""
-            We are a team specialized in [AI, Analytics](https://aia.info.ucl.ac.be/people/) and [Computer Science](https://uclouvain.be/fr/instituts-recherche/icteam/ingi) from @UCLouvain_be and @EPL_ECLouvain.
+            We are a team specialized in [AI, Analytics](https://aia.info.ucl.ac.be/people/) and [Computer Science](https://uclouvain.be/fr/instituts-recherche/icteam/ingi) from @UCLouvain_be and @EPL_UCLouvain.
             We produce this website with the hope it can help you to better understand and objectively analyze the impact of the COVID crisis on Belgium and his sub-regions.
             
             The current main contributors to this project are:
@@ -99,7 +99,7 @@ def display_about():
             
             """,
             fr="""
-            Nous sommes une équipe spécialisée en [AI, Analytics] (https://aia.info.ucl.ac.be/people/) et [Informatique] (https://uclouvain.be/fr/instituts-recherche/icteam / ingi) de @UCLouvain_be et @EPL_ECLouvain.
+            Nous sommes une équipe spécialisée en [AI, Analytics] (https://aia.info.ucl.ac.be/people/) et [Informatique] (https://uclouvain.be/fr/instituts-recherche/icteam / ingi) de @UCLouvain_be et @EPL_UCLouvain.
             Nous produisons ce site Internet dans l'espoir qu'il puisse vous aider à mieux comprendre et analyser objectivement l'impact de la crise COVID sur la Belgique et ses régions.
 
             Les principaux contributeurs actuels de ce projet sont:
