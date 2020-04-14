@@ -49,7 +49,7 @@ babel = Babel(app.server)
 def get_locale():
     g.locale = request.cookies.get("lang")
     if not g.get('locale', None):
-        translations = ["en", "fr"]
+        translations = ["en", "fr", "nl"]
         g.locale = request.accept_languages.best_match(translations)
     return g.locale
 
@@ -129,7 +129,8 @@ def generate_sidebar():
             [
                 dbc.Col(gettext("Language"), className="navbar-text"),
                 dbc.Col(dbc.Button("EN", color="link", id="en-lang", disabled=str(get_locale()) == "en")),
-                dbc.Col(dbc.Button("FR", color="link", id="fr-lang", disabled=str(get_locale()) == "fr"))
+                dbc.Col(dbc.Button("FR", color="link", id="fr-lang", disabled=str(get_locale()) == "fr")),
+                dbc.Col(dbc.Button("NL", color="link", id="nl-lang", disabled=str(get_locale()) == "nl"))
             ],
             className="my-1",
         ),
