@@ -74,7 +74,7 @@ def plot(df2019, df2020, website):
                           ])
     fig.update_layout(xaxis_title=gettext('Date'),
                       yaxis_title=gettext('#Deaths'),
-                      xaxis=dict(tickmode='array', tickvals=df2019['days'], ticktext=df2019['date']),
+                      xaxis=dict(tickmode='array', tickvals=df2019['days'][0::5], ticktext=df2019['date'][0::5]),
                       title=gettext("Cumulated Deaths on {website}").format(website=website), height=500)
 
     return fig
@@ -138,6 +138,7 @@ def bar_daily(df2019, df2020, website):
 
     fig_bar_be = go.Figure(data=[bar19, bar20], )
     fig_bar_be.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0),
+                             xaxis=dict(tickmode='array', tickvals=df2019['days'][0::10], ticktext=df2019['date'][0::10]),
                              title=gettext(f"Daily deaths {website}"))
     return fig_bar_be
 
