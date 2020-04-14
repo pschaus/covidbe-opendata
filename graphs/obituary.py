@@ -74,7 +74,7 @@ def plot(df2019, df2020, website):
                           ])
     fig.update_layout(xaxis_title=gettext('Date'),
                       yaxis_title=gettext('#Deaths'),
-                      xaxis=dict(tickmode='array', tickvals=df2019['days'], ticktext=df2019['date']),
+                      xaxis=dict(tickmode='array', tickvals=df2019['days'][0::5], ticktext=df2019['date'][0::5]),
                       title=gettext("Cumulated Deaths on {website}").format(website=website), height=500)
 
     return fig
@@ -132,3 +132,22 @@ def rolling_ratio_plot():
 
 
 
+def bar_daily(df2019, df2020, website):
+    bar19 = go.Bar(x=df2019.index, y=df2019['count'], name='Number of deaths 2019')
+    bar20 = go.Bar(x=df2020.index, y=df2020['count'], name='Number of deaths 2020')
+
+    fig_bar_be = go.Figure(data=[bar19, bar20], )
+    fig_bar_be.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0),
+                             xaxis=dict(tickmode='array', tickvals=df2019['days'][0::10], ticktext=df2019['date'][0::10]),
+                             title=gettext(f"Daily deaths {website}"))
+    return fig_bar_be
+
+
+@register_plot_for_embedding("obituary_bar_plot_be")
+def bar_plot_be():
+    return bar_daily(df2019totbe,df2020totbe, gettext("All belgian website"))
+
+
+@register_plot_for_embedding("obituary_bar_plot_fr")
+def bar_plot_fr():
+    return bar_daily(df2019av,df2020av, gettext("avisdeces.fr"))
