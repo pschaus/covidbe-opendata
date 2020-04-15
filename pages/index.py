@@ -43,7 +43,7 @@ def display_index():
                 Nous utilisons des données ouvertes et/ou publiques pour permettre ces analyses. Nos sources sont indiquées sous chaque analyse.
                 
                 Tout le code source [référentiel Github] (https://github.com/pschaus/covidbe-opendata), graphiques et données
-                que nous produisons sont disponibles sous [license CC0 "domaine public"](https://creativecommons.org/share-your-work/public-domain/cc0/).
+                que nous produisons sont disponibles sous [licence CC0 "domaine public"](https://creativecommons.org/share-your-work/public-domain/cc0/).
                 En résumé, vous pouvez les utiliser sans aucune restriction.
             """,)),
         html.H3([get_translation(
