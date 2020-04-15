@@ -35,20 +35,16 @@ def display_index():
             en="""
                 We use open and/or public data to enable these analyses. Our sources are indicated below each analysis.
                 
-                
                 All the source code [Github repository](https://github.com/pschaus/covidbe-opendata), graphics and data
-                we produce are available under the [OPEN COVID LICENSE 1.0](https://opencovidpledge.org/license/v1-0/).
+                we produce are available under the [CC0 license "no rights reserved"](https://creativecommons.org/share-your-work/public-domain/cc0/).
                 In short, feel free to use them without any restriction.
-                    
             """,
             fr="""
                 Nous utilisons des données ouvertes et/ou publiques pour permettre ces analyses. Nos sources sont indiquées sous chaque analyse.
                 
-                
                 Tout le code source [référentiel Github] (https://github.com/pschaus/covidbe-opendata), graphiques et données
-                que nous produisons sont disponibles sous [OPEN COVID LICENSE 1.0] (https://opencovidpledge.org/license/v1-0/).
+                que nous produisons sont disponibles sous [license CC0 "domaine public"](https://creativecommons.org/share-your-work/public-domain/cc0/).
                 En résumé, vous pouvez les utiliser sans aucune restriction.
-                    
             """,)),
         html.H3([get_translation(
                 en="Contributing to the project",
