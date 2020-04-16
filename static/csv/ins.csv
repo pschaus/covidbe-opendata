@@ -1,0 +1,639 @@
+INS,FR,Langue,NL
+1000,ROYAUME,,HET RIJK
+4000,RÉGION DE BRUXELLES-CAPITALE,,BRUSSELS HOOFDSTEDELIJK GEWEST
+21000,Arrondissement de Bruxelles-Capitale,,Arrondissement Brussel Hoofdstad
+21001,Anderlecht,FN,Anderlecht
+21002,Auderghem,FN,Oudergem
+21003,Berchem-Sainte-Agathe,FN,Sint-Agatha-Berchem
+21004,Bruxelles,FN,Brussel
+21005,Etterbeek,FN,Etterbeek
+21006,Evere,FN,Evere
+21007,Forest,FN,Vorst
+21008,Ganshoren,FN,Ganshoren
+21009,Ixelles,FN,Elsene
+21010,Jette,FN,Jette
+21011,Koekelberg,FN,Koekelberg
+21012,Molenbeek-Saint-Jean,FN,Sint-Jans-Molenbeek
+21013,Saint-Gilles,FN,Sint-Gillis
+21014,Saint-Josse-ten-Noode,FN,Sint-Joost-ten-Node
+21015,Schaerbeek,FN,Schaarbeek
+21016,Uccle,FN,Ukkel
+21017,Watermael-Boitsfort,FN,Watermaal-Bosvoorde
+21018,Woluwe-Saint-Lambert,FN,Sint-Lambrechts-Woluwe
+21019,Woluwe-Saint-Pierre,FN,Sint-Pieters-Woluwe
+2000,RÉGION FLAMANDE,,VLAAMS GEWEST
+10000,Province d'Anvers,,Provincie Antwerpen
+11000,Arrondissement d'Anvers,,Arrondissement Antwerpen
+11001,Aartselaar,N,Aartselaar
+11002,Anvers,N,Antwerpen
+11004,Boechout,N,Boechout
+11005,Boom,N,Boom
+11007,Borsbeek,N,Borsbeek
+11008,Brasschaat,N,Brasschaat
+11009,Brecht,N,Brecht
+11013,Edegem,N,Edegem
+11016,Essen,N,Essen
+11018,Hemiksem,N,Hemiksem
+11021,Hove,N,Hove
+11022,Kalmthout,N,Kalmthout
+11023,Kapellen,N,Kapellen
+11024,Kontich,N,Kontich
+11025,Lint,N,Lint
+11057,Malle,N,Malle
+11029,Mortsel,N,Mortsel
+11030,Niel,N,Niel
+11035,Ranst,N,Ranst
+11037,Rumst,N,Rumst
+11038,Schelle,N,Schelle
+11039,Schilde,N,Schilde
+11040,Schoten,N,Schoten
+11044,Stabroek,N,Stabroek
+11050,Wijnegem,N,Wijnegem
+11052,Wommelgem,N,Wommelgem
+11053,Wuustwezel,N,Wuustwezel
+11054,Zandhoven,N,Zandhoven
+11055,Zoersel,N,Zoersel
+11056,Zwijndrecht,N,Zwijndrecht
+12000,Arrondissement de Malines,,Arrondissement Mechelen
+12002,Berlaar,N,Berlaar
+12005,Bonheiden,N,Bonheiden
+12007,Bornem,N,Bornem
+12009,Duffel,N,Duffel
+12014,Heist-op-den-Berg,N,Heist-op-den-Berg
+12021,Lierre,N,Lier
+12025,Malines,N,Mechelen
+12026,Nijlen,N,Nijlen
+12029,Putte,N,Putte
+12041,Puurs-Sint-Amands,N,Puurs-Sint-Amands
+12035,Sint-Katelijne-Waver,N,Sint-Katelijne-Waver
+12040,Willebroek,N,Willebroek
+13000,Arrondissement de Turnhout,,Arrondissement Turnhout
+13001,Arendonk,N,Arendonk
+13002,Baerle-Duc,N,Baarle-Hertog
+13003,Balen,N,Balen
+13004,Beerse,N,Beerse
+13006,Dessel,N,Dessel
+13008,Geel,N,Geel
+13010,Grobbendonk,N,Grobbendonk
+13011,Herentals,N,Herentals
+13012,Herenthout,N,Herenthout
+13013,Herselt,N,Herselt
+13014,Hoogstraten,N,Hoogstraten
+13016,Hulshout,N,Hulshout
+13017,Kasterlee,N,Kasterlee
+13053,Laakdal,N,Laakdal
+13019,Lille,N,Lille
+13021,Meerhout,N,Meerhout
+13023,Merksplas,N,Merksplas
+13025,Mol,N,Mol
+13029,Olen,N,Olen
+13031,Oud-Turnhout,N,Oud-Turnhout
+13035,Ravels,N,Ravels
+13036,Retie,N,Retie
+13037,Rijkevorsel,N,Rijkevorsel
+13040,Turnhout,N,Turnhout
+13044,Vorselaar,N,Vorselaar
+13046,Vosselaar,N,Vosselaar
+13049,Westerlo,N,Westerlo
+20001,Province du Brabant Flamand,,Provincie Vlaams-Brabant
+23000,Arrondissement de Hal-Vilvorde,,Arrondissement Halle-Vilvoorde
+23105,Affligem,N,Affligem
+23002,Asse,N,Asse
+23003,Beersel,N,Beersel
+23009,Biévène,N,Bever
+23016,Dilbeek,N,Dilbeek
+23098,Drogenbos,N,Drogenbos
+23023,Gammerages,N,Galmaarden
+23024,Gooik,N,Gooik
+23025,Grimbergen,N,Grimbergen
+23027,Hal,N,Halle
+23032,Herne,N,Herne
+23033,Hoeilaart,N,Hoeilaart
+23038,Kampenhout,N,Kampenhout
+23039,Kapelle-op-den-Bos,N,Kapelle-op-den-Bos
+23099,Kraainem,N,Kraainem
+23104,Lennik,N,Lennik
+23044,Liedekerke,N,Liedekerke
+23100,Linkebeek,N,Linkebeek
+23045,Londerzeel,N,Londerzeel
+23047,Machelen,N,Machelen
+23050,Meise,N,Meise
+23052,Merchtem,N,Merchtem
+23060,Opwijk,N,Opwijk
+23062,Overijse,N,Overijse
+23064,Pepingen,N,Pepingen
+23101,Rhode-Saint-Genèse,N,Sint-Genesius-Rode
+23097,Roosdaal,N,Roosdaal
+23077,Sint-Pieters-Leeuw,N,Sint-Pieters-Leeuw
+23081,Steenokkerzeel,N,Steenokkerzeel
+23086,Ternat,N,Ternat
+23088,Vilvorde,N,Vilvoorde
+23102,Wemmel,N,Wemmel
+23103,Wezembeek-Oppem,N,Wezembeek-Oppem
+23094,Zaventem,N,Zaventem
+23096,Zemst,N,Zemst
+24000,Arrondissement de Louvain,,Arrondissement Leuven
+24001,Aarschot,N,Aarschot
+24007,Begijnendijk,N,Begijnendijk
+24008,Bekkevoort,N,Bekkevoort
+24009,Bertem,N,Bertem
+24011,Bierbeek,N,Bierbeek
+24014,Boortmeerbeek,N,Boortmeerbeek
+24016,Boutersem,N,Boutersem
+24020,Diest,N,Diest
+24028,Geetbets,N,Geetbets
+24137,Glabbeek,N,Glabbeek
+24033,Haacht,N,Haacht
+24038,Herent,N,Herent
+24041,Hoegaarden,N,Hoegaarden
+24043,Holsbeek,N,Holsbeek
+24045,Huldenberg,N,Huldenberg
+24048,Keerbergen,N,Keerbergen
+24054,Kortenaken,N,Kortenaken
+24055,Kortenberg,N,Kortenberg
+24059,Landen,N,Landen
+24130,Léau,N,Zoutleeuw
+24133,Linter,N,Linter
+24062,Louvain,N,Leuven
+24066,Lubbeek,N,Lubbeek
+24134,Montaigu-Zichem,N,Scherpenheuvel-Zichem
+24086,Oud-Heverlee,N,Oud-Heverlee
+24094,Rotselaar,N,Rotselaar
+24104,Tervuren,N,Tervuren
+24135,Tielt-Winge,N,Tielt-Winge
+24107,Tirlemont,N,Tienen
+24109,Tremelo,N,Tremelo
+30000,Province de Flandre Occidentale,,Provincie West-Vlaanderen
+31000,Arrondissement de Bruges,,Arrondissement Brugge
+31003,Beernem,N,Beernem
+31004,Blankenberge,N,Blankenberge
+31005,Bruges,N,Brugge
+31006,Damme,N,Damme
+31012,Jabbeke,N,Jabbeke
+31043,Knokke-Heist,N,Knokke-Heist
+31022,Oostkamp,N,Oostkamp
+31033,Torhout,N,Torhout
+31040,Zedelgem,N,Zedelgem
+31042,Zuienkerke,N,Zuienkerke
+34000,Arrondissement de Courtrai,,Arrondissement Kortrijk
+34002,Anzegem,N,Anzegem
+34003,Avelgem,N,Avelgem
+34022,Courtrai,N,Kortrijk
+34009,Deerlijk,N,Deerlijk
+34043,Espierres-Helchin,N,Spiere-Helkijn
+34013,Harelbeke,N,Harelbeke
+34023,Kuurne,N,Kuurne
+34025,Lendelede,N,Lendelede
+34027,Menin,N,Menen
+34040,Waregem,N,Waregem
+34041,Wevelgem,N,Wevelgem
+34042,Zwevegem,N,Zwevegem
+32000,Arrondissement de Dixmude,,Arrondissement Diksmuide
+32003,Dixmude,N,Diksmuide
+32006,Houthulst,N,Houthulst
+32010,Koekelare,N,Koekelare
+32011,Kortemark,N,Kortemark
+32030,Lo-Reninge,N,Lo-Reninge
+38000,Arrondissement de Furnes,,Arrondissement Veurne
+38002,Alveringem,N,Alveringem
+38025,Furnes,N,Veurne
+38014,Koksijde,N,Koksijde
+38008,La Panne,N,De Panne
+38016,Nieuport,N,Nieuwpoort
+35000,Arrondissement d'Ostende,,Arrondissement Oostende
+35002,Bredene,N,Bredene
+35029,De Haan,N,De Haan
+35005,Gistel,N,Gistel
+35006,Ichtegem,N,Ichtegem
+35011,Middelkerke,N,Middelkerke
+35013,Ostende,N,Oostende
+35014,Oudenburg,N,Oudenburg
+36000,Arrondissement de Roulers,,Arrondissement Roeselare
+36006,Hooglede,N,Hooglede
+36007,Ingelmunster,N,Ingelmunster
+36008,Izegem,N,Izegem
+36010,Ledegem,N,Ledegem
+36011,Lichtervelde,N,Lichtervelde
+36012,Moorslede,N,Moorslede
+36015,Roulers,N,Roeselare
+36019,Staden,N,Staden
+37000,Arrondissement de Tielt,,Arrondissement Tielt
+37020,Ardooie,N,Ardooie
+37002,Dentergem,N,Dentergem
+37007,Meulebeke,N,Meulebeke
+37010,Oostrozebeke,N,Oostrozebeke
+37011,Pittem,N,Pittem
+37012,Ruiselede,N,Ruiselede
+37015,Tielt,N,Tielt
+37017,Wielsbeke,N,Wielsbeke
+37018,Wingene,N,Wingene
+33000,Arrondissement d'Ypres,,Arrondissement Ieper
+33039,Heuvelland,N,Heuvelland
+33040,Langemark-Poelkapelle,N,Langemark-Poelkapelle
+33016,Messines,N,Mesen
+33021,Poperinge,N,Poperinge
+33041,Vleteren,N,Vleteren
+33029,Wervik,N,Wervik
+33011,Ypres,N,Ieper
+33037,Zonnebeke,N,Zonnebeke
+40000,Province de Flandre Orientale,,Provincie Oost-Vlaanderen
+41000,Arrondissement d'Alost,,Arrondissement Aalst
+41002,Alost,N,Aalst
+41011,Denderleeuw,N,Denderleeuw
+41082,Erpe-Mere,N,Erpe-Mere
+41018,Grammont,N,Geraardsbergen
+41024,Haaltert,N,Haaltert
+41027,Herzele,N,Herzele
+41034,Lede,N,Lede
+41048,Ninove,N,Ninove
+41063,Sint-Lievens-Houtem,N,Sint-Lievens-Houtem
+41081,Zottegem,N,Zottegem
+45000,Arrondissement d'Audenarde,,Arrondissement Oudenaarde
+45035,Audenarde,N,Oudenaarde
+45059,Brakel,N,Brakel
+45062,Horebeke,N,Horebeke
+45060,Kluisbergen,N,Kluisbergen
+45068,Kruisem,N,Kruisem
+45063,Lierde,N,Lierde
+45064,Maarkedal,N,Maarkedal
+45041,Renaix,N,Ronse
+45061,Wortegem-Petegem,N,Wortegem-Petegem
+45065,Zwalm,N,Zwalm
+43000,Arrondissement d'Eeklo,,Arrondissement Eeklo
+43002,Assenede,N,Assenede
+43005,Eeklo,N,Eeklo
+43007,Kaprijke,N,Kaprijke
+43010,Maldegem,N,Maldegem
+43014,Sint-Laureins,N,Sint-Laureins
+43018,Zelzate,N,Zelzate
+44000,Arrondissement de Gand,,Arrondissement Gent
+44084,Aalter,N,Aalter
+44012,De Pinte,N,De Pinte
+44083,Deinze,N,Deinze
+44013,Destelbergen,N,Destelbergen
+44019,Evergem,N,Evergem
+44021,Gand,N,Gent
+44020,Gavere,N,Gavere
+44085,Lievegem,N,Lievegem
+44034,Lochristi,N,Lochristi
+44040,Melle,N,Melle
+44043,Merelbeke,N,Merelbeke
+44045,Moerbeke,N,Moerbeke
+44048,Nazareth,N,Nazareth
+44052,Oosterzele,N,Oosterzele
+44064,Sint-Martens-Latem,N,Sint-Martens-Latem
+44073,Wachtebeke,N,Wachtebeke
+44081,Zulte,N,Zulte
+46000,Arrondissement de Saint-Nicolas,,Arrondissement Sint-Niklaas
+46003,Beveren,N,Beveren
+46013,Kruibeke,N,Kruibeke
+46014,Lokeren,N,Lokeren
+46021,Saint-Nicolas,N,Sint-Niklaas
+46020,Sint-Gillis-Waas,N,Sint-Gillis-Waas
+46024,Stekene,N,Stekene
+46025,Tamise,N,Temse
+42000,Arrondissement de Termonde,,Arrondissement Dendermonde
+42003,Berlare,N,Berlare
+42004,Buggenhout,N,Buggenhout
+42008,Hamme,N,Hamme
+42010,Laarne,N,Laarne
+42011,Lebbeke,N,Lebbeke
+42006,Termonde,N,Dendermonde
+42023,Waasmunster,N,Waasmunster
+42025,Wetteren,N,Wetteren
+42026,Wichelen,N,Wichelen
+42028,Zele,N,Zele
+70000,Province du Limbourg,,Provincie Limburg
+71000,Arrondissement de Hasselt,,Arrondissement Hasselt
+71002,As,N,As
+71004,Beringen,N,Beringen
+71034,Bourg-Léopold,N,Leopoldsburg
+71011,Diepenbeek,N,Diepenbeek
+71016,Genk,N,Genk
+71017,Gingelom,N,Gingelom
+71020,Halen,N,Halen
+71069,Ham,N,Ham
+71022,Hasselt,N,Hasselt
+71024,Herck-la-Ville,N,Herk-de-Stad
+71070,Heusden-Zolder,N,Heusden-Zolder
+71037,Lummen,N,Lummen
+71045,Nieuwerkerken,N,Nieuwerkerken
+71053,Saint-Trond,N,Sint-Truiden
+71057,Tessenderlo,N,Tessenderlo
+71066,Zonhoven,N,Zonhoven
+71067,Zutendaal,N,Zutendaal
+72000,Arrondissement de Maaseik,,Arrondissement Maaseik
+72003,Bocholt,N,Bocholt
+72004,Bree,N,Bree
+72041,Dilsen-Stokkem,N,Dilsen-Stokkem
+72037,Hamont-Achel,N,Hamont-Achel
+72038,Hechtel-Eksel,N,Hechtel-Eksel
+72039,Houthalen-Helchteren,N,Houthalen-Helchteren
+72018,Kinrooi,N,Kinrooi
+72020,Lommel,N,Lommel
+72021,Maaseik,N,Maaseik
+72042,Oudsbergen,N,Oudsbergen
+72030,Peer,N,Peer
+72043,Pelt,N,Pelt
+73000,Arrondissement de Tongres,,Arrondissement Tongeren
+73001,Alken,N,Alken
+73006,Bilzen,N,Bilzen
+73109,Fourons,N,Voeren
+73022,Heers,N,Heers
+73028,Herstappe,N,Herstappe
+73032,Hoeselt,N,Hoeselt
+73040,Kortessem,N,Kortessem
+73042,Lanaken,N,Lanaken
+73009,Looz,N,Borgloon
+73107,Maasmechelen,N,Maasmechelen
+73066,Riemst,N,Riemst
+73083,Tongres,N,Tongeren
+73098,Wellen,N,Wellen
+3000,RÉGION WALLONNE,,WAALS GEWEST
+20002,Province du Brabant Wallon,,Provincie Waals-Brabant
+25000,Arrondissement de Nivelles,,Arrondissement Nijvel
+25005,Beauvechain,F,Bevekom
+25014,Braine-l'Alleud,F,Eigenbrakel
+25015,Braine-le-Château,F,Kasteelbrakel
+25117,Chastre,F,Chastre
+25018,Chaumont-Gistoux,F,Chaumont-Gistoux
+25023,Court-Saint-Etienne,F,Court-Saint-Etienne
+25031,Genappe,F,Genepien
+25037,Grez-Doiceau,F,Graven
+25118,Hélécine,F,Hélécine
+25043,Incourt,F,Incourt
+25044,Ittre,F,Itter
+25048,Jodoigne,F,Geldenaken
+25050,La Hulpe,F,Terhulpen
+25119,Lasne,F,Lasne
+25068,Mont-Saint-Guibert,F,Mont-Saint-Guibert
+25072,Nivelles,F,Nijvel
+25120,Orp-Jauche,F,Orp-Jauche
+25121,Ottignies-Louvain-la-Neuve,F,Ottignies-Louvain-la-Neuve
+25084,Perwez,F,Perwijs
+25122,Ramillies,F,Ramillies
+25123,Rebecq,F,Rebecq
+25091,Rixensart,F,Rixensart
+25105,Tubize,F,Tubeke
+25107,Villers-la-Ville,F,Villers-la-Ville
+25124,Walhain,F,Walhain
+25110,Waterloo,F,Waterloo
+25112,Wavre,F,Waver
+50000,Province du Hainaut,,Provincie Henegouwen
+51000,Arrondissement d'Ath,,Arrondissement Aat
+51004,Ath,F,Aat
+51008,Beloeil,F,Beloeil
+51009,Bernissart,F,Bernissart
+51012,Brugelette,F,Brugelette
+51014,Chièvres,F,Chièvres
+51017,Ellezelles,F,Elzele
+51067,Enghien,F,Edingen
+51019,Flobecq,F,Vloesberg
+51065,Frasnes-lez-Anvaing,F,Frasnes-lez-Anvaing
+51069,Lessines,F,Lessen
+51068,Silly,F,Opzullik
+52000,Arrondissement de Charleroi,,Arrondissement Charleroi
+52074,Aiseau-Presles,F,Aiseau-Presles
+52010,Chapelle-lez-Herlaimont,F,Chapelle-lez-Herlaimont
+52011,Charleroi,F,Charleroi
+52012,Châtelet,F,Châtelet
+52015,Courcelles,F,Courcelles
+52018,Farciennes,F,Farciennes
+52021,Fleurus,F,Fleurus
+52022,Fontaine-l'Evêque,F,Fontaine-l'Evêque
+52025,Gerpinnes,F,Gerpinnes
+52075,Les Bons Villers,F,Les Bons Villers
+52048,Montigny-le-Tilleul,F,Montigny-le-Tilleul
+52055,Pont-à-celles,F,Pont-à-celles
+53000,Arrondissement de Mons,,Arrondissement Bergen
+53014,Boussu,F,Boussu
+53082,Colfontaine,F,Colfontaine
+53020,Dour,F,Dour
+53028,Frameries,F,Frameries
+53039,Hensies,F,Hensies
+53083,Honnelles,F,Honnelles
+53044,Jurbise,F,Jurbeke
+53046,Lens,F,Lens
+53053,Mons,F,Bergen
+53065,Quaregnon,F,Quaregnon
+53084,Quévy,F,Quévy
+53068,Quiévrain,F,Quiévrain
+53070,Saint-Ghislain,F,Saint-Ghislain
+55000,Arrondissement de Soignies,,Arrondissement Zinnik
+55004,Braine-le-Comte,F,'s Gravenbrakel
+55050,Ecaussinnes,F,Ecaussinnes
+55035,Le Roeulx,F,Le Roeulx
+55086,Manage,F,Manage
+55085,Seneffe,F,Seneffe
+55040,Soignies,F,Zinnik
+56000,Arrondissement de Thuin,,Arrondissement Thuin
+56001,Anderlues,F,Anderlues
+56005,Beaumont,F,Beaumont
+56016,Chimay,F,Chimay
+56022,Erquelinnes,F,Erquelinnes
+56029,Froidchapelle,F,Froidchapelle
+56086,Ham-sur-Heure-Nalinnes,F,Ham-sur-Heure-Nalinnes
+56044,Lobbes,F,Lobbes
+56049,Merbes-le-Château,F,Merbes-le-Château
+56051,Momignies,F,Momignies
+56088,Sivry-Rance,F,Sivry-Rance
+56078,Thuin,F,Thuin
+57000,Arrondissement de Tournai-Mouscron,,Arrondissement Doornik-Moeskroen
+57003,Antoing,F,Antoing
+57093,Brunehaut,F,Brunehaut
+57018,Celles,F,Celles
+57097,Comines-Warneton,F,Komen-Waasten
+57027,Estaimpuis,F,Estaimpuis
+57094,Leuze-en-Hainaut,F,Leuze-en-Hainaut
+57095,Mont-de-l'Enclus,F,Mont-de-l'Enclus
+57096,Mouscron,F,Moeskroen
+57062,Pecq,F,Pecq
+57064,Péruwelz,F,Péruwelz
+57072,Rumes,F,Rumes
+57081,Tournai,F,Doornik
+58000,Arrondissement de La Louvière,,Arrondissement La Louvière
+58001,La Louvière,F,La Louvière
+58002,Binche,F,Binche
+58003,Estinnes,F,Estinnes
+58004,Morlanwelz,F,Morlanwelz
+60000,Province de Liège,,Provincie Luik
+61000,Arrondissement de Huy,,Arrondissement Hoei
+61003,Amay,F,Amay
+61079,Anthisnes,F,Anthisnes
+61010,Burdinne,F,Burdinne
+61012,Clavier,F,Clavier
+61080,Engis,F,Engis
+61019,Ferrières,F,Ferrières
+61024,Hamoir,F,Hamoir
+61028,Héron,F,Héron
+61031,Huy,F,Hoei
+61039,Marchin,F,Marchin
+61041,Modave,F,Modave
+61043,Nandrin,F,Nandrin
+61048,Ouffet,F,Ouffet
+61081,Tinlot,F,Tinlot
+61063,Verlaine,F,Verlaine
+61068,Villers-le-Bouillet,F,Villers-le-Bouillet
+61072,Wanze,F,Wanze
+62000,Arrondissement de Liège,,Arrondissement Luik
+62003,Ans,F,Ans
+62006,Awans,F,Awans
+62009,Aywaille,F,Aywaille
+62011,Bassenge,F,Bitsingen
+62015,Beyne-Heusay,F,Beyne-Heusay
+62119,Blégny,F,Blégny
+62022,Chaudfontaine,F,Chaudfontaine
+62026,Comblain-au-Pont,F,Comblain-au-Pont
+62027,Dalhem,F,Dalhem
+62032,Esneux,F,Esneux
+62120,Flémalle,F,Flémalle
+62038,Fléron,F,Fléron
+62118,Grâce-Hollogne,F,Grâce-Hollogne
+62051,Herstal,F,Herstal
+62060,Juprelle,F,Juprelle
+62063,Liège,F,Luik
+62121,Neupré,F,Neupré
+62079,Oupeye,F,Oupeye
+62093,Saint-Nicolas,F,Saint-Nicolas
+62096,Seraing,F,Seraing
+62099,Soumagne,F,Soumagne
+62100,Sprimont,F,Sprimont
+62122,Trooz,F,Trooz
+62108,Visé,F,Wezet
+63000,Arrondissement de Verviers,,Arrondissement Verviers
+63001,Amblève,D,Amel
+63003,Aubel,F,Aubel
+63004,Baelen,F,Baelen
+63012,Bullange,D,Büllingen
+63087,Burg-Reuland,D,Burg-Reuland
+63013,Butgenbach,D,Bütgenbach
+63020,Dison,F,Dison
+63023,Eupen,D,Eupen
+63035,Herve,F,Herve
+63038,Jalhay,F,Jalhay
+63040,La Calamine,D,Kelmis
+63045,Lierneux,F,Lierneux
+63046,Limbourg,F,Limburg
+63048,Lontzen,D,Lontzen
+63049,Malmedy,F,Malmedy
+63057,Olne,F,Olne
+63058,Pepinster,F,Pepinster
+63088,Plombières,F,Plombières
+63061,Raeren,D,Raeren
+63067,Saint-Vith,D,Sankt Vith
+63072,Spa,F,Spa
+63073,Stavelot,F,Stavelot
+63075,Stoumont,F,Stoumont
+63076,Theux,F,Theux
+63089,Thimister-Clermont,F,Thimister-Clermont
+63086,Trois-Ponts,F,Trois-Ponts
+63079,Verviers,F,Verviers
+63080,Waimes,F,Weismes
+63084,Welkenraedt,F,Welkenraedt
+64000,Arrondissement de Waremme,,Arrondissement Borgworm
+64008,Berloz,F,Berloz
+64015,Braives,F,Braives
+64021,Crisnée,F,Crisnée
+64023,Donceel,F,Donceel
+64076,Faimes,F,Faimes
+64025,Fexhe-le-Haut-Clocher,F,Fexhe-le-Haut-Clocher
+64029,Geer,F,Geer
+64034,Hannut,F,Hannuit
+64047,Lincent,F,Lijsem
+64056,Oreye,F,Oerle
+64063,Remicourt,F,Remicourt
+64065,Saint-Georges-sur-Meuse,F,Saint-Georges-sur-Meuse
+64074,Waremme,F,Borgworm
+64075,Wasseiges,F,Wasseiges
+80000,Province du Luxembourg,,Provincie Luxemburg
+81000,Arrondissement d'Arlon,,Arrondissement Aarlen
+81001,Arlon,F,Aarlen
+81003,Attert,F,Attert
+81004,Aubange,F,Aubange
+81013,Martelange,F,Martelange
+81015,Messancy,F,Messancy
+82000,Arrondissement de Bastogne,,Arrondissement Bastenaken
+82003,Bastogne,F,Bastenaken
+82005,Bertogne,F,Bertogne
+82009,Fauvillers,F,Fauvillers
+82037,Gouvy,F,Gouvy
+82014,Houffalize,F,Houffalize
+82038,Sainte-Ode,F,Sainte-Ode
+82036,Vaux-sur-Sûre,F,Vaux-sur-Sûre
+82032,Vielsalm,F,Vielsalm
+83000,Arrondissement de Marche-en-Famenne,,Arrondissement Marche-en-Famenne
+83012,Durbuy,F,Durbuy
+83013,Erezée,F,Erezée
+83028,Hotton,F,Hotton
+83031,La Roche-en-Ardenne,F,La Roche-en-Ardenne
+83055,Manhay,F,Manhay
+83034,Marche-en-Famenne,F,Marche-en-Famenne
+83040,Nassogne,F,Nassogne
+83044,Rendeux,F,Rendeux
+83049,Tenneville,F,Tenneville
+84000,Arrondissement de Neufchâteau,,Arrondissement Neufchâteau
+84009,Bertrix,F,Bertrix
+84010,Bouillon,F,Bouillon
+84016,Daverdisse,F,Daverdisse
+84029,Herbeumont,F,Herbeumont
+84033,Léglise,F,Léglise
+84035,Libin,F,Libin
+84077,Libramont-Chevigny,F,Libramont-Chevigny
+84043,Neufchâteau,F,Neufchâteau
+84050,Paliseul,F,Paliseul
+84059,Saint-Hubert,F,Saint-Hubert
+84068,Tellin,F,Tellin
+84075,Wellin,F,Wellin
+85000,Arrondissement de Virton,,Arrondissement Virton
+85007,Chiny,F,Chiny
+85009,Etalle,F,Etalle
+85011,Florenville,F,Florenville
+85046,Habay,F,Habay
+85024,Meix-devant-Virton,F,Meix-devant-Virton
+85026,Musson,F,Musson
+85047,Rouvroy,F,Rouvroy
+85034,Saint-Léger,F,Saint-Léger
+85039,Tintigny,F,Tintigny
+85045,Virton,F,Virton
+90000,Province de Namur,,Provincie Namen
+91000,Arrondissement de Dinant,,Arrondissement Dinant
+91005,Anhée,F,Anhée
+91013,Beauraing,F,Beauraing
+91015,Bièvre,F,Bièvre
+91030,Ciney,F,Ciney
+91034,Dinant,F,Dinant
+91054,Gedinne,F,Gedinne
+91059,Hamois,F,Hamois
+91142,Hastière,F,Hastière
+91064,Havelange,F,Havelange
+91072,Houyet,F,Houyet
+91103,Onhaye,F,Onhaye
+91114,Rochefort,F,Rochefort
+91120,Somme-Leuze,F,Somme-Leuze
+91143,Vresse-sur-Semois,F,Vresse-sur-Semois
+91141,Yvoir,F,Yvoir
+92000,Arrondissement de Namur,,Arrondissement Namen
+92003,Andenne,F,Andenne
+92006,Assesse,F,Assesse
+92035,Eghezée,F,Eghezée
+92138,Fernelmont,F,Fernelmont
+92045,Floreffe,F,Floreffe
+92048,Fosses-la-Ville,F,Fosses-la-Ville
+92142,Gembloux,F,Gembloux
+92054,Gesves,F,Gesves
+92140,Jemeppe-sur-Sambre,F,Jemeppe-sur-Sambre
+92141,La Bruyère,F,La Bruyère
+92087,Mettet,F,Mettet
+92094,Namur,F,Namen
+92097,Ohey,F,Ohey
+92101,Profondeville,F,Profondeville
+92137,Sambreville,F,Sambreville
+92114,Sombreffe,F,Sombreffe
+93000,Arrondissement de Philippeville,,Arrondissement Philippeville
+93010,Cerfontaine,F,Cerfontaine
+93014,Couvin,F,Couvin
+93018,Doische,F,Doische
+93022,Florennes,F,Florennes
+93056,Philippeville,F,Philippeville
+93090,Viroinval,F,Viroinval
+93088,Walcourt,F,Walcourt
