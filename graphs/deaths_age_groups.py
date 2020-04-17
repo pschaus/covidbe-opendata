@@ -48,10 +48,10 @@ def age_groups_death_pie():
                                               specs=[[{'type': 'domain'}, {'type': 'domain'}],
                                                      [{'type': 'domain'}, {'type': 'domain'}]],
                                               subplot_titles=[
+                                                  gettext("Belgium"),
                                                   gettext('Wallonia'),
                                                   gettext('Flanders'),
-                                                  gettext("Brussels"),
-                                                  gettext("Belgium")
+                                                  gettext("Brussels")
                                               ],
                                               horizontal_spacing=0.01, vertical_spacing=0.2)
 
