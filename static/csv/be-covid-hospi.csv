@@ -9,7 +9,7 @@
 7,2020-03-15,VOV,Flanders,14,16,5,1,0,5,1,OostVlaanderen
 8,2020-03-15,VBR,Flanders,6,14,2,0,0,2,0,VlaamsBrabant
 9,2020-03-15,WBR,Wallonia,2,5,2,2,0,1,0,BrabantWallon
-10,2020-03-15,VWV,Flanders,11,18,3,1,0,6,2,WestVlaanderen
+10,2020-03-15,VWV,Flanders,11,19,3,1,0,6,2,WestVlaanderen
 11,2020-03-16,VAN,Flanders,14,63,12,5,0,12,1,Antwerpen
 12,2020-03-16,BRU,Brussels,15,81,14,11,0,11,4,Brussels
 13,2020-03-16,WHT,Wallonia,13,87,19,14,1,28,0,Hainaut
@@ -42,7 +42,7 @@
 40,2020-03-18,VOV,Flanders,14,52,12,10,0,24,3,OostVlaanderen
 41,2020-03-18,VBR,Flanders,5,36,7,4,0,5,2,VlaamsBrabant
 42,2020-03-18,WBR,Wallonia,2,14,3,3,0,5,0,BrabantWallon
-43,2020-03-18,VWV,Flanders,11,49,9,6,0,25,1,WestVlaanderen
+43,2020-03-18,VWV,Flanders,11,50,9,6,0,25,1,WestVlaanderen
 44,2020-03-19,VAN,Flanders,14,155,22,16,1,35,6,Antwerpen
 45,2020-03-19,BRU,Brussels,16,156,35,24,2,33,12,Brussels
 46,2020-03-19,WHT,Wallonia,14,165,36,29,1,33,11,Hainaut
@@ -53,7 +53,7 @@
 51,2020-03-19,VOV,Flanders,14,59,16,12,0,22,6,OostVlaanderen
 52,2020-03-19,VBR,Flanders,6,50,11,7,0,10,1,VlaamsBrabant
 53,2020-03-19,WBR,Wallonia,2,15,4,4,0,2,1,BrabantWallon
-54,2020-03-19,VWV,Flanders,11,74,10,8,0,22,4,WestVlaanderen
+54,2020-03-19,VWV,Flanders,11,75,10,8,0,22,4,WestVlaanderen
 55,2020-03-20,VAN,Flanders,14,185,32,26,1,40,13,Antwerpen
 56,2020-03-20,BRU,Brussels,16,193,46,32,2,29,4,Brussels
 57,2020-03-20,WHT,Wallonia,14,214,38,36,2,42,5,Hainaut
@@ -64,7 +64,7 @@
 62,2020-03-20,VOV,Flanders,14,84,20,14,0,50,4,OostVlaanderen
 63,2020-03-20,VBR,Flanders,6,67,18,11,0,17,2,VlaamsBrabant
 64,2020-03-20,WBR,Wallonia,2,19,4,4,0,4,0,BrabantWallon
-65,2020-03-20,VWV,Flanders,11,98,17,13,0,25,8,WestVlaanderen
+65,2020-03-20,VWV,Flanders,11,99,17,13,0,25,8,WestVlaanderen
 66,2020-03-21,VAN,Flanders,14,219,38,30,1,46,16,Antwerpen
 67,2020-03-21,BRU,Brussels,16,248,56,34,2,40,11,Brussels
 68,2020-03-21,WHT,Wallonia,14,221,50,42,1,31,10,Hainaut
@@ -75,7 +75,7 @@
 73,2020-03-21,VOV,Flanders,14,126,29,19,0,52,8,OostVlaanderen
 74,2020-03-21,VBR,Flanders,6,84,20,12,0,17,6,VlaamsBrabant
 75,2020-03-21,WBR,Wallonia,2,24,5,4,0,6,0,BrabantWallon
-76,2020-03-21,VWV,Flanders,11,130,23,17,0,33,7,WestVlaanderen
+76,2020-03-21,VWV,Flanders,11,131,23,17,0,33,7,WestVlaanderen
 77,2020-03-22,VAN,Flanders,14,258,42,32,1,46,6,Antwerpen
 78,2020-03-22,BRU,Brussels,16,283,58,42,2,41,13,Brussels
 79,2020-03-22,WHT,Wallonia,14,266,59,46,2,37,5,Hainaut
@@ -86,7 +86,7 @@
 84,2020-03-22,VOV,Flanders,14,153,37,24,0,20,2,OostVlaanderen
 85,2020-03-22,VBR,Flanders,5,91,17,12,0,20,5,VlaamsBrabant
 86,2020-03-22,WBR,Wallonia,2,29,5,5,0,6,0,BrabantWallon
-87,2020-03-22,VWV,Flanders,11,155,27,21,0,27,7,WestVlaanderen
+87,2020-03-22,VWV,Flanders,11,156,27,21,0,27,7,WestVlaanderen
 88,2020-03-23,VAN,Flanders,14,308,56,42,1,46,7,Antwerpen
 89,2020-03-23,BRU,Brussels,16,298,67,48,3,21,9,Brussels
 90,2020-03-23,WHT,Wallonia,14,306,65,48,1,44,8,Hainaut
@@ -108,7 +108,7 @@
 106,2020-03-24,VOV,Flanders,13,186,57,29,1,51,12,OostVlaanderen
 107,2020-03-24,VBR,Flanders,6,148,37,19,0,23,14,VlaamsBrabant
 108,2020-03-24,WBR,Wallonia,2,37,9,9,0,8,3,BrabantWallon
-109,2020-03-24,VWV,Flanders,10,215,37,27,0,48,9,WestVlaanderen
+109,2020-03-24,VWV,Flanders,10,216,37,27,0,48,9,WestVlaanderen
 110,2020-03-25,VAN,Flanders,14,495,98,72,1,99,10,Antwerpen
 111,2020-03-25,BRU,Brussels,15,415,98,67,4,69,25,Brussels
 112,2020-03-25,WHT,Wallonia,14,374,83,62,2,46,19,Hainaut
@@ -119,7 +119,7 @@
 117,2020-03-25,VOV,Flanders,14,263,76,47,1,53,10,OostVlaanderen
 118,2020-03-25,VBR,Flanders,6,172,42,23,1,31,5,VlaamsBrabant
 119,2020-03-25,WBR,Wallonia,2,40,10,10,0,9,3,BrabantWallon
-120,2020-03-25,VWV,Flanders,11,295,55,35,0,83,12,WestVlaanderen
+120,2020-03-25,VWV,Flanders,11,298,55,35,0,83,12,WestVlaanderen
 121,2020-03-26,VAN,Flanders,13,522,96,79,1,74,25,Antwerpen
 122,2020-03-26,BRU,Brussels,16,482,114,83,3,76,30,Brussels
 123,2020-03-26,WHT,Wallonia,14,411,95,69,2,50,19,Hainaut
@@ -130,7 +130,7 @@
 128,2020-03-26,VOV,Flanders,14,326,85,56,1,43,20,OostVlaanderen
 129,2020-03-26,VBR,Flanders,6,187,43,30,1,38,9,VlaamsBrabant
 130,2020-03-26,WBR,Wallonia,2,41,14,12,0,7,5,BrabantWallon
-131,2020-03-26,VWV,Flanders,11,348,66,42,0,58,23,WestVlaanderen
+131,2020-03-26,VWV,Flanders,11,352,66,42,0,58,23,WestVlaanderen
 132,2020-03-27,VAN,Flanders,14,627,122,100,2,76,39,Antwerpen
 133,2020-03-27,BRU,Brussels,16,581,118,92,4,93,37,Brussels
 134,2020-03-27,WHT,Wallonia,14,451,102,74,2,55,22,Hainaut
@@ -141,7 +141,7 @@
 139,2020-03-27,VOV,Flanders,14,393,99,64,2,53,28,OostVlaanderen
 140,2020-03-27,VBR,Flanders,6,217,51,36,2,23,11,VlaamsBrabant
 141,2020-03-27,WBR,Wallonia,2,56,14,13,0,12,1,BrabantWallon
-142,2020-03-27,VWV,Flanders,11,409,77,46,0,70,22,WestVlaanderen
+142,2020-03-27,VWV,Flanders,11,413,77,46,0,70,22,WestVlaanderen
 143,2020-03-28,VAN,Flanders,14,725,140,109,1,118,45,Antwerpen
 144,2020-03-28,BRU,Brussels,16,630,136,108,5,90,52,Brussels
 145,2020-03-28,WHT,Wallonia,14,540,115,99,4,84,28,Hainaut
@@ -152,7 +152,7 @@
 150,2020-03-28,VOV,Flanders,14,456,103,70,2,77,39,OostVlaanderen
 151,2020-03-28,VBR,Flanders,6,247,50,41,3,47,22,VlaamsBrabant
 152,2020-03-28,WBR,Wallonia,2,56,13,11,0,8,6,BrabantWallon
-153,2020-03-28,VWV,Flanders,11,455,89,53,0,74,37,WestVlaanderen
+153,2020-03-28,VWV,Flanders,11,459,89,53,0,74,37,WestVlaanderen
 154,2020-03-29,VAN,Flanders,14,770,151,125,1,64,30,Antwerpen
 155,2020-03-29,BRU,Brussels,15,656,131,104,5,98,23,Brussels
 156,2020-03-29,WHT,Wallonia,14,602,126,103,5,69,18,Hainaut
@@ -163,7 +163,7 @@
 161,2020-03-29,VOV,Flanders,14,514,113,78,1,72,21,OostVlaanderen
 162,2020-03-29,VBR,Flanders,6,269,66,42,3,29,15,VlaamsBrabant
 163,2020-03-29,WBR,Wallonia,2,60,15,12,0,7,3,BrabantWallon
-164,2020-03-29,VWV,Flanders,11,512,94,53,0,61,17,WestVlaanderen
+164,2020-03-29,VWV,Flanders,11,516,94,53,0,61,17,WestVlaanderen
 165,2020-03-30,VAN,Flanders,14,818,162,128,1,77,31,Antwerpen
 166,2020-03-30,BRU,Brussels,15,790,164,132,6,53,31,Brussels
 167,2020-03-30,WHT,Wallonia,14,637,131,112,4,54,19,Hainaut
@@ -174,7 +174,7 @@
 172,2020-03-30,VOV,Flanders,14,570,121,80,1,78,28,OostVlaanderen
 173,2020-03-30,VBR,Flanders,6,290,62,46,4,26,8,VlaamsBrabant
 174,2020-03-30,WBR,Wallonia,2,69,18,15,0,9,1,BrabantWallon
-175,2020-03-30,VWV,Flanders,11,534,91,58,0,49,13,WestVlaanderen
+175,2020-03-30,VWV,Flanders,11,538,91,58,0,49,13,WestVlaanderen
 176,2020-03-31,VAN,Flanders,14,816,179,146,1,88,98,Antwerpen
 177,2020-03-31,BRU,Brussels,16,818,176,139,7,101,71,Brussels
 178,2020-03-31,WHT,Wallonia,14,627,132,114,5,54,55,Hainaut
@@ -185,7 +185,7 @@
 183,2020-03-31,VOV,Flanders,14,591,130,87,1,67,50,OostVlaanderen
 184,2020-03-31,VBR,Flanders,6,289,66,49,4,22,30,VlaamsBrabant
 185,2020-03-31,WBR,Wallonia,2,64,18,17,0,6,4,BrabantWallon
-186,2020-03-31,VWV,Flanders,11,537,103,63,0,48,38,WestVlaanderen
+186,2020-03-31,VWV,Flanders,11,541,103,63,0,48,38,WestVlaanderen
 187,2020-04-01,VAN,Flanders,14,862,202,168,1,96,64,Antwerpen
 188,2020-04-01,BRU,Brussels,16,843,183,144,10,85,45,Brussels
 189,2020-04-01,WHT,Wallonia,14,667,139,123,6,70,37,Hainaut
@@ -196,7 +196,7 @@
 194,2020-04-01,VOV,Flanders,14,614,132,88,1,67,53,OostVlaanderen
 195,2020-04-01,VBR,Flanders,6,330,72,56,4,42,22,VlaamsBrabant
 196,2020-04-01,WBR,Wallonia,2,61,17,15,0,5,10,BrabantWallon
-197,2020-04-01,VWV,Flanders,11,562,104,66,0,61,42,WestVlaanderen
+197,2020-04-01,VWV,Flanders,11,566,104,66,0,61,42,WestVlaanderen
 198,2020-04-02,VAN,Flanders,14,875,211,166,1,85,64,Antwerpen
 199,2020-04-02,BRU,Brussels,15,902,196,158,7,107,50,Brussels
 200,2020-04-02,WHT,Wallonia,14,662,150,125,7,47,50,Hainaut
@@ -207,7 +207,7 @@
 205,2020-04-02,VOV,Flanders,14,616,142,96,3,56,50,OostVlaanderen
 206,2020-04-02,VBR,Flanders,6,343,79,55,5,31,23,VlaamsBrabant
 207,2020-04-02,WBR,Wallonia,2,65,19,16,0,7,4,BrabantWallon
-208,2020-04-02,VWV,Flanders,11,574,109,67,0,60,40,WestVlaanderen
+208,2020-04-02,VWV,Flanders,11,578,109,67,0,60,40,WestVlaanderen
 209,2020-04-03,VAN,Flanders,13,851,214,175,1,76,64,Antwerpen
 210,2020-04-03,BRU,Brussels,16,914,196,164,11,62,80,Brussels
 211,2020-04-03,WHT,Wallonia,15,689,155,128,7,47,25,Hainaut
@@ -218,7 +218,7 @@
 216,2020-04-03,VOV,Flanders,14,642,150,111,3,52,49,OostVlaanderen
 217,2020-04-03,VBR,Flanders,6,344,84,59,5,26,25,VlaamsBrabant
 218,2020-04-03,WBR,Wallonia,2,64,17,15,0,6,4,BrabantWallon
-219,2020-04-03,VWV,Flanders,11,634,115,80,0,108,43,WestVlaanderen
+219,2020-04-03,VWV,Flanders,11,639,115,80,0,108,43,WestVlaanderen
 220,2020-04-04,VAN,Flanders,14,916,230,191,2,68,81,Antwerpen
 221,2020-04-04,BRU,Brussels,16,888,197,164,12,75,99,Brussels
 222,2020-04-04,WHT,Wallonia,14,689,154,125,7,58,51,Hainaut
@@ -229,7 +229,7 @@
 227,2020-04-04,VOV,Flanders,14,644,153,115,2,73,67,OostVlaanderen
 228,2020-04-04,VBR,Flanders,6,307,69,56,5,23,27,VlaamsBrabant
 229,2020-04-04,WBR,Wallonia,2,57,17,15,0,7,9,BrabantWallon
-230,2020-04-04,VWV,Flanders,11,660,121,77,0,66,43,WestVlaanderen
+230,2020-04-04,VWV,Flanders,11,665,121,77,0,66,43,WestVlaanderen
 231,2020-04-05,VAN,Flanders,14,939,222,185,2,59,39,Antwerpen
 232,2020-04-05,BRU,Brussels,15,899,203,164,14,66,44,Brussels
 233,2020-04-05,WHT,Wallonia,14,714,149,123,9,41,16,Hainaut
@@ -240,7 +240,7 @@
 238,2020-04-05,VOV,Flanders,14,659,151,117,2,41,28,OostVlaanderen
 239,2020-04-05,VBR,Flanders,6,313,71,52,5,26,16,VlaamsBrabant
 240,2020-04-05,WBR,Wallonia,2,63,19,17,0,6,1,BrabantWallon
-241,2020-04-05,VWV,Flanders,11,655,128,83,1,36,28,WestVlaanderen
+241,2020-04-05,VWV,Flanders,11,661,128,83,1,36,28,WestVlaanderen
 242,2020-04-06,VAN,Flanders,14,965,223,188,2,46,36,Antwerpen
 243,2020-04-06,BRU,Brussels,15,921,203,165,15,47,31,Brussels
 244,2020-04-06,WHT,Wallonia,14,711,145,121,8,32,16,Hainaut
@@ -251,7 +251,7 @@
 249,2020-04-06,VOV,Flanders,14,691,154,116,2,50,16,OostVlaanderen
 250,2020-04-06,VBR,Flanders,6,320,72,58,5,17,7,VlaamsBrabant
 251,2020-04-06,WBR,Wallonia,2,66,19,14,0,4,1,BrabantWallon
-252,2020-04-06,VWV,Flanders,11,670,127,77,1,33,25,WestVlaanderen
+252,2020-04-06,VWV,Flanders,11,676,127,77,1,33,25,WestVlaanderen
 253,2020-04-07,VAN,Flanders,14,960,230,183,2,86,79,Antwerpen
 254,2020-04-07,BRU,Brussels,16,938,202,172,18,79,78,Brussels
 255,2020-04-07,WHT,Wallonia,15,691,147,120,9,48,78,Hainaut
@@ -262,7 +262,7 @@
 260,2020-04-07,VOV,Flanders,14,691,157,122,2,61,75,OostVlaanderen
 261,2020-04-07,VBR,Flanders,6,311,73,56,5,31,33,VlaamsBrabant
 262,2020-04-07,WBR,Wallonia,2,66,16,13,0,5,3,BrabantWallon
-263,2020-04-07,VWV,Flanders,11,666,132,76,1,63,53,WestVlaanderen
+263,2020-04-07,VWV,Flanders,11,673,132,76,1,63,53,WestVlaanderen
 264,2020-04-08,VAN,Flanders,14,940,229,181,2,52,75,Antwerpen
 265,2020-04-08,BRU,Brussels,15,911,193,161,18,68,79,Brussels
 266,2020-04-08,WHT,Wallonia,14,663,150,125,9,52,53,Hainaut
@@ -273,7 +273,7 @@
 271,2020-04-08,VOV,Flanders,14,670,161,116,2,48,62,OostVlaanderen
 272,2020-04-08,VBR,Flanders,6,303,74,57,6,22,23,VlaamsBrabant
 273,2020-04-08,WBR,Wallonia,2,67,15,11,0,9,7,BrabantWallon
-274,2020-04-08,VWV,Flanders,11,645,131,76,1,45,55,WestVlaanderen
+274,2020-04-08,VWV,Flanders,11,652,131,76,1,45,55,WestVlaanderen
 275,2020-04-09,VAN,Flanders,14,917,219,184,2,60,69,Antwerpen
 276,2020-04-09,BRU,Brussels,15,907,198,156,17,80,72,Brussels
 277,2020-04-09,WHT,Wallonia,14,694,154,125,9,67,44,Hainaut
@@ -284,7 +284,7 @@
 282,2020-04-09,VOV,Flanders,14,677,163,116,2,49,45,OostVlaanderen
 283,2020-04-09,VBR,Flanders,6,303,78,53,6,22,20,VlaamsBrabant
 284,2020-04-09,WBR,Wallonia,2,69,13,11,0,9,4,BrabantWallon
-285,2020-04-09,VWV,Flanders,11,636,122,72,0,45,48,WestVlaanderen
+285,2020-04-09,VWV,Flanders,11,644,122,72,0,45,48,WestVlaanderen
 286,2020-04-10,VAN,Flanders,14,907,216,181,3,44,78,Antwerpen
 287,2020-04-10,BRU,Brussels,16,902,197,158,18,59,82,Brussels
 288,2020-04-10,WHT,Wallonia,14,723,146,119,11,57,29,Hainaut
@@ -295,7 +295,7 @@
 293,2020-04-10,VOV,Flanders,14,691,167,127,2,61,49,OostVlaanderen
 294,2020-04-10,VBR,Flanders,6,298,73,51,5,29,27,VlaamsBrabant
 295,2020-04-10,WBR,Wallonia,2,68,15,10,0,5,5,BrabantWallon
-296,2020-04-10,VWV,Flanders,11,631,116,71,0,49,50,WestVlaanderen
+296,2020-04-10,VWV,Flanders,11,641,116,71,0,49,50,WestVlaanderen
 297,2020-04-11,VAN,Flanders,14,895,208,164,4,60,83,Antwerpen
 298,2020-04-11,BRU,Brussels,14,798,179,142,14,43,61,Brussels
 299,2020-04-11,WHT,Wallonia,14,746,145,116,11,64,67,Hainaut
@@ -306,7 +306,7 @@
 304,2020-04-11,VOV,Flanders,14,652,172,120,3,53,68,OostVlaanderen
 305,2020-04-11,VBR,Flanders,6,285,74,49,4,17,22,VlaamsBrabant
 306,2020-04-11,WBR,Wallonia,2,67,15,11,0,5,5,BrabantWallon
-307,2020-04-11,VWV,Flanders,11,623,119,69,0,42,46,WestVlaanderen
+307,2020-04-11,VWV,Flanders,11,633,119,69,0,42,46,WestVlaanderen
 308,2020-04-12,VAN,Flanders,14,877,212,170,4,34,56,Antwerpen
 309,2020-04-12,BRU,Brussels,15,819,179,140,14,49,30,Brussels
 310,2020-04-12,WHT,Wallonia,14,730,140,110,10,40,27,Hainaut
@@ -317,15 +317,37 @@
 315,2020-04-12,VOV,Flanders,14,673,179,124,3,26,38,OostVlaanderen
 316,2020-04-12,VBR,Flanders,6,293,75,49,4,20,9,VlaamsBrabant
 317,2020-04-12,WBR,Wallonia,2,71,15,11,0,8,2,BrabantWallon
-318,2020-04-12,VWV,Flanders,11,601,113,73,0,80,23,WestVlaanderen
+318,2020-04-12,VWV,Flanders,11,631,113,73,0,40,23,WestVlaanderen
 319,2020-04-13,VAN,Flanders,14,856,212,165,4,33,51,Antwerpen
 320,2020-04-13,BRU,Brussels,15,908,189,138,15,37,35,Brussels
 321,2020-04-13,WHT,Wallonia,14,740,137,108,9,25,10,Hainaut
 322,2020-04-13,VLI,Flanders,7,450,95,71,2,23,12,Limburg
-323,2020-04-13,WLG,Wallonia,12,582,150,129,2,20,14,Liège
+323,2020-04-13,WLG,Wallonia,12,582,153,129,2,20,14,Liège
 324,2020-04-13,WLX,Wallonia,3,109,20,17,1,6,2,Luxembourg
 325,2020-04-13,WNA,Wallonia,6,190,48,35,4,10,1,Namur
 326,2020-04-13,VOV,Flanders,14,680,164,119,4,31,16,OostVlaanderen
 327,2020-04-13,VBR,Flanders,6,295,70,48,4,14,3,VlaamsBrabant
 328,2020-04-13,WBR,Wallonia,2,70,15,11,0,2,3,BrabantWallon
 329,2020-04-13,VWV,Flanders,11,656,123,74,0,41,14,WestVlaanderen
+330,2020-04-14,VAN,Flanders,14,843,207,168,4,41,50,Antwerpen
+331,2020-04-14,BRU,Brussels,15,897,187,143,16,31,41,Brussels
+332,2020-04-14,WHT,Wallonia,14,746,134,101,8,34,17,Hainaut
+333,2020-04-14,VLI,Flanders,7,463,98,71,2,30,13,Limburg
+334,2020-04-14,WLG,Wallonia,12,575,150,123,2,8,36,Liège
+335,2020-04-14,WLX,Wallonia,3,112,22,18,1,10,3,Luxembourg
+336,2020-04-14,WNA,Wallonia,6,191,48,32,4,9,5,Namur
+337,2020-04-14,VOV,Flanders,14,666,152,109,4,39,28,OostVlaanderen
+338,2020-04-14,VBR,Flanders,6,298,69,43,4,11,11,VlaamsBrabant
+339,2020-04-14,WBR,Wallonia,2,70,14,11,0,2,2,BrabantWallon
+340,2020-04-14,VWV,Flanders,11,654,123,70,0,35,33,WestVlaanderen
+341,2020-04-15,VAN,Flanders,14,803,205,167,4,33,78,Antwerpen
+342,2020-04-15,BRU,Brussels,16,857,174,139,14,45,71,Brussels
+343,2020-04-15,WHT,Wallonia,14,708,137,104,8,29,58,Hainaut
+344,2020-04-15,VLI,Flanders,7,439,93,69,2,32,46,Limburg
+345,2020-04-15,WLG,Wallonia,12,552,147,117,2,31,54,Liège
+346,2020-04-15,WLX,Wallonia,3,101,21,18,1,7,15,Luxembourg
+347,2020-04-15,WNA,Wallonia,6,189,49,33,5,7,12,Namur
+348,2020-04-15,VOV,Flanders,14,650,155,107,4,43,50,OostVlaanderen
+349,2020-04-15,VBR,Flanders,6,287,66,40,3,18,18,VlaamsBrabant
+350,2020-04-15,WBR,Wallonia,2,67,12,10,0,2,4,BrabantWallon
+351,2020-04-15,VWV,Flanders,11,656,123,64,0,63,49,WestVlaanderen
