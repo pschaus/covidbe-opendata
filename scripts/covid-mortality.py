@@ -8,12 +8,8 @@ import requests
 
 url="https://epistat.sciensano.be/Data/COVID19BE_MORT.csv"
 s=requests.get(url).content
-df=pd.read_csv(io.StringIO(s.decode('latin-1'))) # last line is NaN
+df=pd.read_csv(io.StringIO(s.decode('latin-1')), keep_default_na=False)
 
-
-
-# Filter NaN (yes the data is not totally clean)
-df.dropna(inplace=True)
 df.DATE = pd.to_datetime(df.DATE)
 
 df.to_csv('../static/csv/be-covid-mortality.csv',index=True)
