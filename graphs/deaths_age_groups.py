@@ -6,7 +6,7 @@ from plotly.subplots import make_subplots
 
 from graphs import register_plot_for_embedding
 
-df_mortality = pd.read_csv('static/csv/be-covid-mortality.csv')
+df_mortality = pd.read_csv('static/csv/be-covid-mortality.csv', keep_default_na=False)
 
 
 @register_plot_for_embedding("deaths_per_age_group")

@@ -76,11 +76,11 @@ for filename, years, months, upd in gather_for_years:
         continue
 
     if os.path.exists(filename):
-        data = {d["id"]: (d["date"], d["Age"], d["Location"]) for d in pd.read_csv(filename).to_dict('records')}
+        data = {d["id"]: (d["date"], d["Age"], d["location"]) for d in pd.read_csv(filename).to_dict('records')}
     else:
         data = {}
     for y in years:
         for m in months:
             for entry in gather_for_month(y, m):
                 data[entry[0]] = entry[1:]
-            pd.DataFrame([(a, b, c, d) for a, (b, c, d) in data.items()], columns=['id', 'date', 'Age', 'Location']).to_csv(filename)
+            pd.DataFrame([(a, b, c, d) for a, (b, c, d) in data.items()], columns=['id', 'date', 'Age', 'location']).to_csv(filename)
