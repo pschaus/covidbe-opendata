@@ -16,7 +16,7 @@ def get_link(page):
     return f"https://www.avis-de-deces.net/avis-de-deces/{page}?nomprenomdefunt&periodedudeces=01%2F01%2F{YEAR}+-+31%2F12%2F{YEAR}&communedudeces&communedudecesDpt&loc"
 
 
-FNAME = f"../static/csv/avisdedecesfr_{YEAR}.csv"
+FNAME = f"../../static/csv/avisdedecesfr_{YEAR}.csv"
 if os.path.exists(FNAME):
     data = {d["id"]: (d["age"], d["location"].strip(), d["date"], d["publication"]) for d in pd.read_csv(FNAME).to_dict('records')}
     UPDATE_UNTIL = datetime.strptime(max(d[3] for d in data.values()), "%Y-%m-%d").date() - timedelta(days=1)
