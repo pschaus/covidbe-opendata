@@ -7,7 +7,7 @@ def get_link(page):
     return f"https://www.dansnospensees.be/handlers/memorialsearch.ashx?lang=fr&period=&name=&bo=00000000-0000-0000-0000-000000000000&m=&postalcode=0&city=&p=100&celeb=false&cp={page}"
 
 
-FNAME = "../static/csv/dansnopensees.csv"
+FNAME = "../../static/csv/dansnopensees.csv"
 data = {d["id"]: (d["birth"], d["date"], d["location"]) for d in pd.read_csv(FNAME).to_dict('records')}
 last_date = date.today()
 page = 1
