@@ -17,6 +17,7 @@ from pages.deaths import deaths_menu
 from pages.index import index_menu
 from pages.international import international_menu
 from pages.hospitals import hospitals_menu
+from pages.lockdown import lockdown_menu
 
 FA = "https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 
@@ -54,7 +55,7 @@ def get_locale():
     return g.locale
 
 
-menus = [index_menu, cases_menu, deaths_menu, hospitals_menu, international_menu]
+menus = [index_menu, cases_menu, deaths_menu, hospitals_menu, lockdown_menu, international_menu]
 menu_links = {}
 for menu_idx, menu in enumerate(menus):
     for x in menu.children:
