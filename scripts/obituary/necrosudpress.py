@@ -12,7 +12,7 @@ def get_link(page):
     return f"http://necro.sudpresse.be/annonces_par_region/toutes_regions?page={page}"
 
 
-FNAME = "../static/csv/necrosudpresse.csv"
+FNAME = "../../static/csv/necrosudpresse.csv"
 data = {d["id"]: (d["age"], d["location"], d["date"]) for d in pd.read_csv(FNAME).to_dict('records')}
 last_date = date.today()
 page = 0
