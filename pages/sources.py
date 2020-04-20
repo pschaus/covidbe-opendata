@@ -47,6 +47,9 @@ source_sciensano = SourceProvider("Sciensano - Covid19", "https://epistat.wiv-is
 source_google_traffic = SourceProvider("Google Traffic Data", "https://transparencyreport.google.com/traffic/overview and https://github.com/Jigsaw-Code/net-analysis/tree/master/netanalysis/traffic",
                                   lazy_gettext("Google Traffic Data"))
 
+source_google_mobility = SourceProvider("Google Mobility Report", "https://www.google.com/covid19/mobility/",
+                                  lazy_gettext("Google Mobility Report"))
+
 source_map_communes = SourceProvider(lazy_gettext("FPS Finance"),
                                      "https://finances.belgium.be/fr/particuliers/habitation/cadastre/plan-cadastral/lambert-2008/2019",
                                      lazy_gettext("Administrative limits"))
