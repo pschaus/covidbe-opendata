@@ -26,7 +26,7 @@ graphs = ['workplaces_percent_change_from_baseline', 'residential_percent_change
 @register_plot_for_embedding("mobility_plot_eu")
 def mobility_plot_eu():
     large_fig = make_subplots(rows=len(graphs), cols=1, subplot_titles=graphs, horizontal_spacing=0.05,
-                              vertical_spacing=0.1, shared_yaxes=True)
+                              vertical_spacing=0.1, shared_yaxes=True,row_heights=[800]*len(graphs))
     r = 1
     for g in graphs:
 
