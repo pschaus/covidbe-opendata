@@ -22,8 +22,8 @@ graphs = ['workplaces_percent_change_from_baseline', 'residential_percent_change
           'parks_percent_change_from_baseline', 'transit_stations_percent_change_from_baseline', ]
 
 
-@register_plot_for_embedding("mobility_plot_eu")
-def mobility_plot_eu():
+@register_plot_for_embedding("google_mobility_plot_eu")
+def google_mobility_plot_eu():
     colors = [
         '#1f77b4',  # muted blue
         '#ff7f0e',  # safety orange

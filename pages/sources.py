@@ -50,6 +50,9 @@ source_google_traffic = SourceProvider("Google Traffic Data", "https://transpare
 source_google_mobility = SourceProvider("Google Mobility Report", "https://www.google.com/covid19/mobility/",
                                   lazy_gettext("Google Mobility Report"))
 
+source_apple_mobility = SourceProvider("Apple Mobility Trends Report", "https://www.apple.com/covid19/mobility",
+                                  lazy_gettext("Apple Mobility Report"))
+
 source_map_communes = SourceProvider(lazy_gettext("FPS Finance"),
                                      "https://finances.belgium.be/fr/particuliers/habitation/cadastre/plan-cadastral/lambert-2008/2019",
                                      lazy_gettext("Administrative limits"))
