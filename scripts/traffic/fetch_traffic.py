@@ -25,7 +25,7 @@ logging.getLogger().setLevel(logging.INFO)
 
 os.system('rm -rf ../../static/csv/traffic')
 
-countries = ['BE','GB','FR','NL','DE']
+countries = ['BE','GB','FR','NL','DE','US','SE','ES']
 services= "MAPS"
 
 def fetch(args):
