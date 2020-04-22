@@ -51,7 +51,7 @@ def google_mobility_plot_eu():
             a += 1
 
         r += 1
-    large_fig['layout'].update(height=1500, width=1000, title='Google Mobility Reports')
+    large_fig['layout'].update(height=1500, title='Google Mobility Reports')
     return large_fig
 
 
