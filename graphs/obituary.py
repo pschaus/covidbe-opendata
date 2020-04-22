@@ -8,7 +8,7 @@ import urllib.request, json
 from graphs import register_plot_for_embedding
 
 start = '01-10'
-end = '04-14'
+end = '04-19'
 
 
 def necro_count_per_day(df, year):
@@ -112,6 +112,11 @@ def rolling_ratio_scatter(df2019, df2020, website):
 
     return go.Scatter(x=df2019r.date, y=df2020r['count'] / df2019r['count'], name=website)
 
+def ratio_scatter(df2019, df2020, website):
+    df2020r = df2020.rolling(horizon, min_periods=7).sum()
+    avg2019 = df2019['count'].mean()
+    return go.Scatter(x=df2020.date, y=df2020r['count'] / (avg2019*7), name=website)
+
 
 @register_plot_for_embedding("obituary_rolling_ratio")
 def rolling_ratio_plot():
@@ -131,6 +136,23 @@ def rolling_ratio_plot():
     return fig
 
 
+@register_plot_for_embedding("obituary_rolling_ratio_fixed_division")
+def ratio_plot():
+    fig = go.Figure(data=[ratio_scatter(df2019im, df2020im, "inmemoriam.be"),
+                          ratio_scatter(df2019dp, df2020dp, "dansnopensees.be"),
+                          ratio_scatter(df2019sp, df2020sp, "necro.sudpresse.be"),
+                          ratio_scatter(df2019totbe, df2020totbe, gettext("All belgian website, summed")),
+                          ratio_scatter(df2019av, df2020av, "avideces.fr")])
+    fig.update_layout(xaxis_title="",
+                      yaxis_title=gettext('Ratio 2020 / avg2019'),
+                      title=gettext("Ratio reported death 2020/ avg 2019 with rolling horizon of 1 week"), height=500,
+                      legend_orientation="h")
+    fig.update_layout(
+        xaxis_tickformat='%d/%m'
+    )
+    fig.update_layout(hovermode="x")
+    return fig
+
 
 def bar_daily(df2019, df2020, website):
     bar19 = go.Bar(x=df2019.index, y=df2019['count'], name='Number of deaths 2019')
@@ -138,7 +160,7 @@ def bar_daily(df2019, df2020, website):
 
     fig_bar_be = go.Figure(data=[bar19, bar20], )
     fig_bar_be.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0),
-                             xaxis=dict(tickmode='array', tickvals=df2019['days'][0::10], ticktext=df2019['date'][0::10]),
+                             xaxis=dict(tickmode='array', tickvals=df2019['days'][0::5], ticktext=df2019['date'][0::5]),
                              title=gettext(f"Daily deaths {website}"))
     return fig_bar_be
 
