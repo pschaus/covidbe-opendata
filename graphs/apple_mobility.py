@@ -65,7 +65,7 @@ def apple_mobility_plot_eu():
 
         r += 1
 
-    large_fig['layout'].update(height=1000, width=1000, title='Apple Mobility Reports')
+    large_fig['layout'].update(height=1000, title='Apple Mobility Reports')
     return large_fig
 
 
