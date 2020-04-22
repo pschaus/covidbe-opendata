@@ -9,7 +9,7 @@ from graphs import register_plot_for_embedding
 start = '03-01'
 
 
-countries = ['BE','FR','DE','NL']
+countries = ['BE','FR','DE','NL','GB','SE','ES']
 
 def get_df(country):
     df = pd.read_csv(f'static/csv/traffic/{country}/MAPS.csv',parse_dates = ['date'])
@@ -18,8 +18,8 @@ def get_df(country):
     df = df.between_time('08:00', '08:00')
     df = df[df.index.dayofweek < 5]
     df.reset_index(level=0, inplace=True)
-    tot = df['value'].sum()
-    df['value'] =df['value']/tot
+    mean = df['value'][:10].mean()
+    df['value'] =df['value']/mean
     return df
 
 dfmap = {c:get_df(c) for c in countries}
