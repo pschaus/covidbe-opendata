@@ -5,22 +5,27 @@ import dash_html_components as html
 from dash.dependencies import Input, Output, State
 from flask_babel import get_locale, gettext
 
-from graphs.Re import plot_ration_cases_over_testing
-from pages.sources import display_source_providers, source_sciensano
-
+from graphs.Re import plot_Re
+from pages.sources import display_source_providers, source_sciensano, source_SI_modelRe
+from pages import model_warning, get_translation
 
 def display_Re():
     return [
-        html.H2(gettext("Effective number of secondary infections (Re factor)")),
-        html.P("As we only have access to the cases tested positive at time t (without knowing exactly when they are not active anymore), we have to make some hypotheses to estimate the Re."), 
+        *model_warning(
+html.H2(gettext("Effective number of secondary infections (Re factor)")),
+        html.P("R0, pronounced “R naught,” is a mathematical term that indicates how contagious an infectious disease is. R0 directly depends on the nature of the infectious disease. When specific actions are taken to ensure protection and social distancing, the concept of effective number of secondary infections Re is often used (even though sometimes stills referred to as R0)."),
+        html.P("If Re is greater than one then the number of infected persons grows faster than the number of recovered or deceased persons and this leads to an outbreak of the epidemic. If Re is less than one then the outbreak will become extinct because less and less people are infected. It is thus important that the Re factor is not higher than 1 for a long period."),
+        html.P("As we only have access to the cases tested positive at time t (without knowing exactly when they are not active anymore), we have to make some hypotheses to estimate the Re:"), 
         dcc.Markdown('''
-        * If we consider that it takes n days for an active patient to recover, 
-        * If we make a moving average over 7 days of the positive patients, 
+        * if we consider that it takes n days for an active patient to recover (n is thus a parameter of our model), 
+        * if we make a moving average over 7 days of the positive patients, and
+        * if we consider that the number of persons tested positive is proportional to the actual number of positive persons.
         '''), 
         html.P("Then here are the curves that we obtain since the lockdown in Belgium:"), 
         dbc.Row([
-            dbc.Col(dcc.Graph(id='cases-province-map', figure=plot_ration_cases_over_testing(),
+            dbc.Col(dcc.Graph(id='cases-province-map', figure=plot_Re(),
                               config=dict(locale=str(get_locale()))), className="col-12"),
         ]),
-        display_source_providers(source_sciensano)
+        display_source_providers(source_sciensano,source_SI_modelRe)
+        )
     ]
