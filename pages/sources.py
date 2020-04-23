@@ -70,3 +70,7 @@ source_necro_sudpress = SourceProvider(lazy_gettext("Sudpresse obituary"), "http
 source_hopkins = SourceProvider(lazy_gettext("Johns Hopkins CSSE & others"),
                                 "https://github.com/CSSEGISandData/COVID-19",
                                 lazy_gettext("See link for full list of sources"))
+
+source_SI_modelRe = SourceProvider(lazy_gettext("Theory versus Data: How to Calculate R0?, Breban et al."),
+                        "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0000282&type=printable",
+                        lazy_gettext("See link for details on the assumptions"))

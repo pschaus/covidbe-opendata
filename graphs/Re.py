@@ -68,7 +68,7 @@ def Re_estimate2(cases,n,delay_test=0):
 
 
 @register_plot_for_embedding("testing_testing_over_cases")
-def plot_ration_cases_over_testing():
+def plot_Re():
     """
     We make the hypotheses that 
     - any person diagnosed positive to Covid-19 will on average be positive for 14 days.
@@ -90,7 +90,6 @@ def plot_ration_cases_over_testing():
                           #go.Scatter(x=df_testing.DATE[10+7:], y=Re_estimate12, name=gettext("n=12")),                    
                           ],                    
 )
-#    fig = px.line(x=df_testing.DATE[14+7:],y=Re_estimate10, title=gettext("Evolution of the average number of new patients infected per positive case"))
     fig.update_layout(xaxis_title=gettext('Day'),
                    yaxis_title=gettext('Effective number of secondary infections Re'),
                    title=gettext("Evolution of the average number of new patients infected per positive case"))
