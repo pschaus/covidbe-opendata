@@ -8,13 +8,14 @@ from utils import ThreadSafeCache
 
 
 class AppLink:
-    def __init__(self, title: str, link_name: str, link: str, display_fn, plot=None, callback_fn=(lambda app: None)):
+    def __init__(self, title: str, link_name: str, link: str, display_fn, plot=None, callback_fn=(lambda app: None), invisible=False):
         self.title = title
         self.link_name = link_name
         self.link = link
         self.display_fn = display_fn
         self.plot = plot
         self.callback_fn = callback_fn
+        self.invisible = invisible
 
 
 class AppMenu:
