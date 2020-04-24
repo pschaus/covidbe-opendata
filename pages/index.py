@@ -27,7 +27,7 @@ def display_index():
 
                                  Chaque menu à gauche (ou au-dessus de la page si vous êtes sur un smartphone) montre une analyse différente.
 
-                                 La plupart de nos visualisations sont interactives, utilisez votre souris et vos doigts pour interagir avec.""",))
+                                 La plupart de nos visualisations sont interactives (souris ou doigts sur écran tactile) """,))
             ], className="index_first")
         ]),
         html.H3(["Open Data"]),
