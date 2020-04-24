@@ -98,7 +98,7 @@ def generate_sidebar():
                 [html.I(className="fas fa-arrow-right mr-3"), str(x.link_name)],
                 id=menu_links[x]["id"], href=menu_links[x]["href"]
             )
-            for x in menu.children
+            for x in menu.children if not x.invisible
         ]
 
         if not menu.fake_menu:
