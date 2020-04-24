@@ -17,32 +17,38 @@ def Re_estimate(cases,n,delay_test=0):
     """
     Re estimate under the hypotheses that 
     - any person diagnosed positive to Covid-19 will be positive for n days.
-    - we have a moving average of the positive cases
+    - we have a moving average over 7 days of the positive cases (important because testing is done less during weekends)
     """
-    #print (df_testing.CASES)
     cases=moving_average(cases.values,7)
     all_declared_cases=np.cumsum(cases)
     active_cases=all_declared_cases[n:-1] - np.cumsum(cases[0:-n-1])
-    #print ( active_cases )
     rate_increase=cases[n+1:]/active_cases
-    #print (rate_increase)
-    # hypothesis: 
     rate_decrease=cases[1:-n]/active_cases
-    #print (rate_decrease)
     Re=(rate_increase)/(rate_decrease)
-    #print (Re)
-    moving_average_Re = moving_average(Re,1)
-    #print (moving_average_Re)
     
-    return moving_average_Re[10-n:]
+    return Re[10-n:]
+
+def estimate_of_daily_exp_factor(cases,n):
+    """
+    Estimate of the exponential increase rate of the active base (on a daily basis)
+    - any person diagnosed positive to Covid-19 will be positive for n days.
+    - we have a moving average over 7 days of the positive cases (important because testing is done less during weekends)
+    """
+    cases=moving_average(cases.values,7)
+    all_declared_cases=np.cumsum(cases)
+    all_no_more_active_cases=np.zeros(all_declared_cases.shape)
+    all_no_more_active_cases[n:]=all_declared_cases[:-n]
+    active_cases=all_declared_cases - all_no_more_active_cases
+    exp_factor=active_cases[1:]/active_cases[:-1]
+    
+    return exp_factor
 
 def Re_estimate2(cases,n,delay_test=0):
     """
     Re estimate under the hypotheses that 
     - any person diagnosed positive to Covid-19 will have a chance 1/n to heal (or die actually)
-    - we have a moving average of the positive cases
+    - we have a moving average over 7 days of the positive cases (important because testing is done less during weekends)
     """
-    #print (df_testing.CASES)
     cases=moving_average(cases.values,7)
     all_declared_cases=np.cumsum(cases)
     active_cases=[all_declared_cases[0]]
@@ -53,46 +59,58 @@ def Re_estimate2(cases,n,delay_test=0):
 
     active_cases=np.array(active_cases)
     no_more_active=np.array(no_more_active)
-    #print ( active_cases )
     rate_increase=cases[1:]/active_cases[:-1]
-    #print (rate_increase)
-    # hypothesis 2: among all active cases, 1/n of the declared cases heal (or die actually)
     rate_decrease=no_more_active[:]/active_cases[:-1]
-    #print (rate_decrease)
     Re=(rate_increase)/(rate_decrease)
-    #print (Re)
-    moving_average_Re = moving_average(Re,1)
-    #print (moving_average_Re)
     
-    return moving_average_Re[10-n:]
+    return Re[10-n:]
 
 
 @register_plot_for_embedding("testing_testing_over_cases")
 def plot_Re():
     """
     We make the hypotheses that 
-    - any person diagnosed positive to Covid-19 will on average be positive for 14 days.
+    - any person diagnosed positive to Covid-19 will on average be positive for n days.
 
     """
-    #Re_estimate14 = Re_estimate(df_testing.CASES,n=14)
-    #Re_estimate12 = Re_estimate(df_testing.CASES,n=12)
     Re_estimate10 = Re_estimate(df_testing.CASES,n=10)
     Re_estimate8 = Re_estimate(df_testing.CASES,n=8)
     Re_estimate6 = Re_estimate(df_testing.CASES,n=6)
     Re_estimate4 = Re_estimate(df_testing.CASES,n=4)
     
     
-    
     fig = go.Figure(data=[go.Scatter(x=df_testing.DATE[10+3:-4], y=Re_estimate4, name="n=4"), # +3:-4 takes into account the moving average
                           go.Scatter(x=df_testing.DATE[10+3:-4], y=Re_estimate6, name="n=6"),
                           go.Scatter(x=df_testing.DATE[10+3:-4], y=Re_estimate8, name="n=8"),
                           go.Scatter(x=df_testing.DATE[10+3:-4], y=Re_estimate10, name="n=10"),                    
-                          #go.Scatter(x=df_testing.DATE[10+7:], y=Re_estimate12, name=gettext("n=12")),                    
                           ],                    
 )
     fig.update_layout(xaxis_title=gettext('Day'),
-                   yaxis_title=gettext('Effective number of secondary infections Re'),
+                   yaxis_title=gettext('Estimated effective infection rate Re'),
                    title=gettext("Evolution of the average number of new patients infected per positive case"))
     fig.update_yaxes(range=[0, 5])
     return fig
 
+def plot_daily_exp_factor():
+    """
+    We make the hypotheses that 
+    - any person diagnosed positive to Covid-19 will on average be positive for n days.
+
+    """
+    exp_factor10 = estimate_of_daily_exp_factor(df_testing.CASES,n=10)
+    exp_factor8 = estimate_of_daily_exp_factor(df_testing.CASES,n=8)
+    exp_factor6 = estimate_of_daily_exp_factor(df_testing.CASES,n=6)
+    exp_factor4 = estimate_of_daily_exp_factor(df_testing.CASES,n=4)    
+    
+    
+    fig = go.Figure(data=[go.Scatter(x=df_testing.DATE[3:-4], y=exp_factor4, name="n=4"), # +3:-4 takes into account the moving average
+                          go.Scatter(x=df_testing.DATE[3:-4], y=exp_factor6, name="n=6"),
+                          go.Scatter(x=df_testing.DATE[3:-4], y=exp_factor8, name="n=8"),
+                          go.Scatter(x=df_testing.DATE[3:-4], y=exp_factor10, name="n=10"),                    
+                          ],                    
+)
+    fig.update_layout(xaxis_title=gettext('Day'),
+                   yaxis_title=gettext('Daily exponential factor'),
+                   title=gettext("Estimate of the daily exponential rate of the number of active cases, >1 is an increase, <1 is a decrease"))
+    return fig
+    
