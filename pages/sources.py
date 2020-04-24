@@ -62,6 +62,10 @@ source_map_provinces = SourceProvider("STATBEL",
 source_death_causes = SourceProvider("STATBEL",
                                      "https://statbel.fgov.be/en/themes/population/mortality-life-expectancy-and-causes-death/causes-death#figures",
                                      lazy_gettext("Causes of death"))
+
+source_brussels_mobility = SourceProvider("Brussels Mobility",
+                                     "https://mobilite-mobiliteit.brussels/fr",
+                                     lazy_gettext("Brussels Mobility"))
 source_pop = SourceProvider("STATBEL",
                             "https://statbel.fgov.be/fr/themes/population/structure-de-la-population#panel-12",
                             lazy_gettext("Population per municipality"))

@@ -12,5 +12,5 @@ cases_menu = AppMenu(lazy_gettext("Cases"), "/cases", [
     AppLink(lazy_gettext("Cases per province"), lazy_gettext("Per province"), "/provinces", display_provinces),
     AppLink(lazy_gettext("Cases per age groups"), lazy_gettext("Age Groups"), "/age_groups", display_age_groups),
     AppLink(lazy_gettext("Testing"), lazy_gettext("Testing"), "/testing", display_testing),
-    AppLink(lazy_gettext("Re"), lazy_gettext("Re"), "/Re", display_Re)
+    AppLink(lazy_gettext("Re"), lazy_gettext("Re"), "/Re", display_Re, invisible=True)
 ])
