@@ -53,8 +53,16 @@ def update(country):
     df.head()
 
     df_ = pd.read_csv(f"../static/csv/tomtom/{country}.csv", index_col=0, parse_dates=True)
-    df = pd.concat([df,df_]).drop_duplicates()
 
+    #print("bebore:"+str(len(df_)))
+    #print(df_.index.min())
+    df = pd.concat([df,df_])#.drop_duplicates()
+
+    df = df.reset_index().drop_duplicates(subset='Time', keep='last').set_index('Time')
+
+    #print("after:" + str(len(df)))
+    #print(df.index.min())
+    df = df.sort_values(by=['Time'])
     df.to_csv(f"../static/csv/tomtom/{country}.csv")
 
 
