@@ -5,7 +5,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output, State
 from flask_babel import get_locale, gettext
 
-from graphs.Re import plot_Re, plot_daily_exp_factor#, plot_Re_div_n
+from graphs.Re import plot_Re, plot_daily_exp_factor, plot_Re_div_n
 from pages.sources import display_source_providers, source_sciensano, source_SI_modelRe
 from pages import model_warning, get_translation
 
@@ -18,7 +18,8 @@ html.H2(gettext("Effective number of secondary infections (Re factor)")),
         html.P("As we only have access to the cases tested positive at time t (without knowing exactly when they are not active anymore), we have to make some hypotheses to estimate the Re:"), 
         dcc.Markdown('''
         * if we consider that it takes n days for an active patient to recover (n is thus a parameter of our model), 
-        * if we make a moving average over 7 days of the positive patients, and
+        * if we make a moving average over 7 days of the positive patients,
+        * if we consider that the population that has developed is not significant (<<10\%-20\%), and
         * if we consider that the number of persons tested positive is proportional to the actual number of positive persons.
         '''), 
         html.P("Then here are the curves that we obtain since the lockdown in Belgium:"), 
@@ -26,14 +27,16 @@ html.H2(gettext("Effective number of secondary infections (Re factor)")),
             dbc.Col(dcc.Graph(id='Re', figure=plot_Re(),
                               config=dict(locale=str(get_locale()))), className="col-12"),
         ]),
+        html.P("The number of secundary infections Re can be understood as the exponential factor of the number of infected persons, with the specificity that the time scale for that exponential increase is related to the period of the infection. If we look at the exponential increase of active cases on a daily basis, we have to look at Re^(1/n)."),
+        dbc.Row([
+            dbc.Col(dcc.Graph(id='daily_exp_factor_from_Re', figure=plot_Re_div_n(),
+                              config=dict(locale=str(get_locale()))), className="col-12"),
+        ]),
+        html.P("We can then check that it is similar to the daily exponential factor that would be calculated directly by the relative daily increase/decrease of postive cases."),
         dbc.Row([
             dbc.Col(dcc.Graph(id='daily_exp_factor', figure=plot_daily_exp_factor(),
                               config=dict(locale=str(get_locale()))), className="col-12"),
         ]),
-#        dbc.Row([
-#            dbc.Col(dcc.Graph(id='daily_exp_factor_from_Re', figure=plot_Re_div_n(),
-#                              config=dict(locale=str(get_locale()))), className="col-12"),
-#        ]),
         display_source_providers(source_sciensano,source_SI_modelRe)
         )
     ]
