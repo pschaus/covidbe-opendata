@@ -8,19 +8,12 @@ import pandas as pd
 
 from datetime import date
 from datetime import timedelta
-today = date.today()
 
-# dd/mm/YY
-d = (today - timedelta(days=2)).strftime("%Y-%m-%d")
-print("day =", d)
+import urllib.request, json
+with urllib.request.urlopen("https://covid19-static.cdn-apple.com/covid19-mobility-data/current/v1/index.json") as url:
+    data = json.loads(url.read().decode())
 
+    DOWNLOAD_URL = "https://covid19-static.cdn-apple.com"+data['basePath']+data['regions']['en-us']['csvPath']
 
-
-DOWNLOAD_URL = f"https://covid19-static.cdn-apple.com/covid19-mobility-data/2006HotfixDev13/v1/en-us/applemobilitytrends-{d}.csv"
-DOWNLOAD_PATH ="../static/csv/applemobilitytrends.csv"
-urllib.request.urlretrieve(DOWNLOAD_URL,DOWNLOAD_PATH)
-
-
-
-
-
+    DOWNLOAD_PATH ="../static/csv/applemobilitytrends.csv"
+    urllib.request.urlretrieve(DOWNLOAD_URL,DOWNLOAD_PATH)
