@@ -17,4 +17,3 @@ botocore>=1.15.3
 unidecode>=1.1.1
 #git+git://github.com/Jigsaw-Code/net-analysis.git@master#egg=net-analysis
 regex
-urllib
