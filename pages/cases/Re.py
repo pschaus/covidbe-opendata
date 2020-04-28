@@ -8,7 +8,6 @@ from flask_babel import get_locale, gettext
 from graphs.Re import plot_Re, plot_daily_exp_factor, plot_Re_div_n
 from pages.sources import display_source_providers, source_sciensano, source_SI_modelRe
 from pages import model_warning, get_translation
-from IPython.display import display, Math, Latex
 import urllib.parse
 import re
 
