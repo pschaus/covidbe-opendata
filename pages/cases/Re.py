@@ -27,23 +27,19 @@ def convert(text):
 
 
 Markdown_text = r"""
-$\beta$ and $\mu$ are respectively the inflow and the outflow of infectious individuals per infectious capita. 
-"""
-
-Markdown_text2 = r"""
-When the outflow is higher than the outflow, which is when $Re<1$, then 
-
+We can also define $\beta$ and $\mu$ that are respectively the inflow and the outflow of infectious individuals per infectious capita. 
+When the outflow is higher than the outflow, then $Re<1$.
 An individual is expected to infect a number of $\frac{\beta}{\mu}$ secondary cases, which represents the $Re$.
 """
 
-formula_Re = r"""
-$Re = \frac{\beta}{\mu}$
-"""
+#formula_Re = r"""
+#$Re = \frac{\beta}{\mu}$
+#"""
 
 
 Markdown_text = convert(Markdown_text)
-Markdown_text2 = convert(Markdown_text2)
-formula_Re = convert(formula_Re)
+#Markdown_text2 = convert(Markdown_text2)
+#formula_Re = convert(formula_Re)
 
 
 #app.layout = html.Div([
@@ -61,7 +57,6 @@ def display_Re():
             dbc.Col(dcc.Graph(id='daily_exp_factor', figure=plot_daily_exp_factor(),
                               config=dict(locale=str(get_locale()))), className="col-12"),
         ]),
-
         html.H2(gettext("Effective number of secondary infections (Re factor)")),
             html.P(
                 """
@@ -85,16 +80,17 @@ def display_Re():
     * if we consider that the number of persons tested positive is proportional to the actual number of positive persons.
     '''),
         html.P("We can also visualize the Re factor:"),
-        html.P("Here are the curves that we obtain since the lockdown in Belgium:"), 
+        html.P("Here are the curves that we obtain since the lockdown in Belgium:"),
         dbc.Row([
             dbc.Col(dcc.Graph(id='Re', figure=plot_Re()[2],
                               config=dict(locale=str(get_locale()))), className="col-12"),
         ]),
 
-        dcc.Markdown(Markdown_text, dangerously_allow_html=True),
-        dcc.Markdown(Markdown_text2, dangerously_allow_html=True),
 
-        html.P("Then here are the curves that we obtain since the lockdown in Belgium:"), 
+        html.H2(gettext("Additional visualisations")),
+        dcc.Markdown(Markdown_text, dangerously_allow_html=True),
+
+        #html.P("Here are the curves that we obtain since the lockdown in Belgium:"), 
         dbc.Row([
             dbc.Col(dcc.Graph(id='Re', figure=plot_Re()[0],
                               config=dict(locale=str(get_locale()))), className="col-12"),
