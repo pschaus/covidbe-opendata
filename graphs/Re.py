@@ -113,4 +113,31 @@ def plot_daily_exp_factor():
                    yaxis_title=gettext('Daily exponential factor'),
                    title=gettext("Estimate of the daily exponential rate of the number of active cases, >1 is an increase, <1 is a decrease"))
     return fig
+
+
+def plot_Re_div_n():
+    """
+    We make the hypotheses that 
+    - any person diagnosed positive to Covid-19 will on average be positive for n days.
+
+    """
+    Re_estimate10 = Re_estimate(df_testing.CASES,n=10)
+    Re_estimate8 = Re_estimate(df_testing.CASES,n=8)
+    Re_estimate6 = Re_estimate(df_testing.CASES,n=6)
+    Re_estimate4 = Re_estimate(df_testing.CASES,n=4)
     
+    
+    
+    fig = go.Figure(data=[go.Scatter(x=df_testing.DATE[10+3:-4], y=Re_estimate4**(1/4), name="n=4"), # +3:-4 takes into account the moving average
+                          go.Scatter(x=df_testing.DATE[10+3:-4], y=Re_estimate6**(1/6), name="n=6"),
+                          go.Scatter(x=df_testing.DATE[10+3:-4], y=Re_estimate8**(1/8), name="n=8"),
+                          go.Scatter(x=df_testing.DATE[10+3:-4], y=Re_estimate10**(1/10), name="n=10"),                    
+                          ],                    
+)
+    fig.update_layout(xaxis_title=gettext('Day'),
+                   yaxis_title=gettext('Re^(1/n)'),
+                   title=gettext("Estimate of the exponential increase rate of the active base (on a daily basis) from the Re factor"))
+    #fig.update_yaxes(range=[0, 2])
+    return fig
+
+
