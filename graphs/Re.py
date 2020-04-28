@@ -105,7 +105,7 @@ def plot_Re():
                           go.Scatter(x=df_testing.DATE[10+3:-4], y=Re_estimate6, name="n=6"),
                           go.Scatter(x=df_testing.DATE[10+3:-4], y=Re_estimate8, name="n=8"),
                           go.Scatter(x=df_testing.DATE[10+3:-4], y=Re_estimate10, name="n=10"),                    
-                          go.Scatter(x=df_testing.DATE[10+3:-4], y=np.array([1 for n in range((df_testing.DATE[10+3:-4].shape[0]))]), name="n=10", line=dict(width=3,color='orange')),                    
+                          go.Scatter(x=df_testing.DATE[10+3:-4], y=np.array([1 for n in range((df_testing.DATE[10+3:-4].shape[0]))]), showlegend=False, line=dict(width=3,color='orange')),                    
                           ],                    
 )
     figRe.update_layout(xaxis_title=gettext('Day'),
@@ -130,7 +130,7 @@ def plot_daily_exp_factor():
                           go.Scatter(x=df_testing.DATE[3:-4], y=exp_factor6, name="n=6"),
                           go.Scatter(x=df_testing.DATE[3:-4], y=exp_factor8, name="n=8"),
                           go.Scatter(x=df_testing.DATE[3:-4], y=exp_factor10, name="n=10"),                    
-                          go.Scatter(x=df_testing.DATE[3:-4], y=np.array([1 for n in range((df_testing.DATE[3:-4].shape[0]))]), name="n=10", line=dict(width=3,color='orange')),                    
+                          go.Scatter(x=df_testing.DATE[3:-4], y=np.array([1 for n in range((df_testing.DATE[3:-4].shape[0]))]), showlegend=False, line=dict(width=3,color='orange')),                    
                           ],                    
 )
     fig.update_layout(xaxis_title=gettext('Day'),
@@ -156,7 +156,7 @@ def plot_Re_div_n():
                           go.Scatter(x=df_testing.DATE[10+3:-4], y=Re_estimate6**(1/6), name="n=6"),
                           go.Scatter(x=df_testing.DATE[10+3:-4], y=Re_estimate8**(1/8), name="n=8"),
                           go.Scatter(x=df_testing.DATE[10+3:-4], y=Re_estimate10**(1/10), name="n=10"),                    
-                          go.Scatter(x=df_testing.DATE[10+3:-4], y=np.array([1 for n in range((df_testing.DATE[10+3:-4].shape[0]))]), name="n=10", line=dict(width=3,color='orange')),                    
+                          go.Scatter(x=df_testing.DATE[10+3:-4], y=np.array([1 for n in range((df_testing.DATE[10+3:-4].shape[0]))]), showlegend=False, line=dict(width=3,color='orange')),                    
                           ],                    
 )
     fig.update_layout(xaxis_title=gettext('Day'),
