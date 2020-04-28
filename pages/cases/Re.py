@@ -53,23 +53,37 @@ formula_Re = convert(formula_Re)
 def display_Re():
     return [
         *model_warning(
-html.H2(gettext("Effective number of secondary infections (Re factor)")),
-        html.P("The term R0 (pronounced “R naught”) indicates how contagious an infectious disease is. R0 directly depends on the nature of the infectious disease. When specific actions are taken to ensure protection and social distancing, the concept of effective number of secondary infections Re is often used (even though sometimes stills referred to as R0)."),
-        html.P("If Re is greater than one then the number of infected persons grows faster than the number of recovered or deceased persons and this leads to an outbreak of the epidemic. It is thus crucial that the Re factor is not higher than 1 for a long period. If Re is less than one then the outbreak will tend to  extinct because less and less people are infected."),
-        html.P("As we only have access to the cases tested positive at time t (without knowing exactly when they are not active anymore), we have to make some hypotheses to estimate the Re:"), 
-        dcc.Markdown('''
-        * if we consider that it takes n days for an active patient to recover (n is thus a parameter of our model), 
-        * if we make a moving average over 7 days of the positive patients,
-        * if we consider that the population that has developed is not significant (<<10\%-20\%), and
-        * if we consider that the number of persons tested positive is proportional to the actual number of positive persons.
-        '''),
+        html.Iframe(src="https://www.youtube.com/embed/TXZW5Q7p2tk", style = dict(border=0), width ="100%", height ="600"),
 
-        html.P("The daily exponential factor gives the relative daily increase/decrease of positive cases. When >1, the strength of the epidemy is increasing, when <1, the strength of the epidemy is decreasing."),
+        html.H2(gettext("Daily multiplicative factor")),
+        html.P("The daily multiplicative factor gives the relative daily increase/decrease of positive cases. When >1, the strength of the epidemy is increasing, when <1, the strength of the epidemy is decreasing."),
         dbc.Row([
             dbc.Col(dcc.Graph(id='daily_exp_factor', figure=plot_daily_exp_factor(),
                               config=dict(locale=str(get_locale()))), className="col-12"),
         ]),
 
+        html.H2(gettext("Effective number of secondary infections (Re factor)")),
+            html.P(
+                """
+                The concept of effective number of secondary infections per infection case Re is an interesting indicator to compute easily interpretable for everyone.
+                When specific actions are taken to ensure protection and social distancing or when the number of immune persons grows up, Re is supposed to decrease.
+
+                It should not be confused with R0 (pronounced, “R naught”) indicating how contagious the disease  is when everyone is susceptible.
+                R0 directly depends on the nature of the infectious disease.
+                """),
+            html.P(
+                """
+                If Re is greater than one then the number of infected persons grows faster than the number of recovered or deceased persons and this leads to an outbreak of the epidemic. 
+                It is thus crucial that the Re factor is not higher than 1 for a long period. 
+                If Re is less than one then the outbreak will tend to  extinct because fewer and fewer people are infected."""),
+        html.P(
+                "As we only have access to the cases tested positive at time t (without knowing exactly when they are not active anymore), we have to make some hypotheses to estimate the Re:"),
+        dcc.Markdown('''
+    * if we consider that it takes n days for an active patient to recover (n is thus a parameter of our model), 
+    * if we make a moving average over 7 days of the positive patients,
+    * if we consider that the population that has developed is not significant (<<10\%-20\%), and
+    * if we consider that the number of persons tested positive is proportional to the actual number of positive persons.
+    '''),
         html.P("We can also visualize the Re factor:"),
         html.P("Here are the curves that we obtain since the lockdown in Belgium:"), 
         dbc.Row([

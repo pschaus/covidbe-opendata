@@ -35,7 +35,7 @@ def estimate_of_daily_exp_factor(cases,n):
     - we have a moving average over 7 days of the positive cases (important because testing is done less during weekends)
     """
     cases=moving_average(cases.values,7)
-    all_declared_cases=np.cumsum(cases)
+    all_declared_cases=np   .cumsum(cases)
     all_no_more_active_cases=np.zeros(all_declared_cases.shape)
     all_no_more_active_cases[n:]=all_declared_cases[:-n]
     active_cases=all_declared_cases - all_no_more_active_cases
@@ -77,9 +77,7 @@ def plot_Re():
     rate_increase8,rate_decrease8,Re_estimate8 = Re_estimate(df_testing.CASES,n=8)
     rate_increase6,rate_decrease6,Re_estimate6 = Re_estimate(df_testing.CASES,n=6)
     rate_increase4,rate_decrease4,Re_estimate4 = Re_estimate(df_testing.CASES,n=4)
-    
-    print(df_testing.DATE[10+3:-4].shape[0])
-    print([1 for n in range((df_testing.DATE[10+3:-4].shape[0]))])
+
     
     fig_rate_increase = go.Figure(data=[go.Scatter(x=df_testing.DATE[10+3:-4], y=rate_increase4, name="n=4"), # +3:-4 takes into account the moving average
                           go.Scatter(x=df_testing.DATE[10+3:-4], y=rate_increase6, name="n=6"),
