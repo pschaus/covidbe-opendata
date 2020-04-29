@@ -26,16 +26,16 @@ def Re_estimate(cases,n,delay_test=0):
     rate_decrease=cases[1:-n]/active_cases
     Re=(rate_increase)/(rate_decrease)
     
-    return Re[10-n:]
+    return rate_increase,rate_decrease,Re[10-n:]
 
 def estimate_of_daily_exp_factor(cases,n):
     """
-    Estimate of the exponential increase rate of the active base (on a daily basis)
+    Estimate of the multiplicative increase rate of the active base (on a daily basis)
     - any person diagnosed positive to Covid-19 will be positive for n days.
     - we have a moving average over 7 days of the positive cases (important because testing is done less during weekends)
     """
     cases=moving_average(cases.values,7)
-    all_declared_cases=np.cumsum(cases)
+    all_declared_cases=np   .cumsum(cases)
     all_no_more_active_cases=np.zeros(all_declared_cases.shape)
     all_no_more_active_cases[n:]=all_declared_cases[:-n]
     active_cases=all_declared_cases - all_no_more_active_cases
@@ -73,23 +73,46 @@ def plot_Re():
     - any person diagnosed positive to Covid-19 will on average be positive for n days.
 
     """
-    Re_estimate10 = Re_estimate(df_testing.CASES,n=10)
-    Re_estimate8 = Re_estimate(df_testing.CASES,n=8)
-    Re_estimate6 = Re_estimate(df_testing.CASES,n=6)
-    Re_estimate4 = Re_estimate(df_testing.CASES,n=4)
+    rate_increase10,rate_decrease10,Re_estimate10 = Re_estimate(df_testing.CASES,n=10)
+    rate_increase8,rate_decrease8,Re_estimate8 = Re_estimate(df_testing.CASES,n=8)
+    rate_increase6,rate_decrease6,Re_estimate6 = Re_estimate(df_testing.CASES,n=6)
+    rate_increase4,rate_decrease4,Re_estimate4 = Re_estimate(df_testing.CASES,n=4)
+
     
-    
-    fig = go.Figure(data=[go.Scatter(x=df_testing.DATE[10+3:-4], y=Re_estimate4, name="n=4"), # +3:-4 takes into account the moving average
+    fig_rate_increase = go.Figure(data=[go.Scatter(x=df_testing.DATE[10+3:-4], y=rate_increase4, name="n=4"), # +3:-4 takes into account the moving average
+                          go.Scatter(x=df_testing.DATE[10+3:-4], y=rate_increase6, name="n=6"),
+                          go.Scatter(x=df_testing.DATE[10+3:-4], y=rate_increase8, name="n=8"),
+                          go.Scatter(x=df_testing.DATE[10+3:-4], y=rate_increase10, name="n=10"),                    
+                          ],                    
+)
+    fig_rate_increase.update_layout(xaxis_title=gettext('Day'),
+                   yaxis_title=gettext('Estimated effective infection rate increase'),
+                   title=gettext("Evolution of the infection rate increase"))
+    #fig_rate_increase.update_yaxes(range=[0, 5])
+
+    fig_rate_decrease = go.Figure(data=[go.Scatter(x=df_testing.DATE[10+3:-4], y=rate_decrease4, name="n=4"), # +3:-4 takes into account the moving average
+                          go.Scatter(x=df_testing.DATE[10+3:-4], y=rate_decrease6, name="n=6"),
+                          go.Scatter(x=df_testing.DATE[10+3:-4], y=rate_decrease8, name="n=8"),
+                          go.Scatter(x=df_testing.DATE[10+3:-4], y=rate_decrease10, name="n=10"),                    
+                          ],                    
+)
+    fig_rate_decrease.update_layout(xaxis_title=gettext('Day'),
+                   yaxis_title=gettext('Estimated effective infection rate decrease'),
+                   title=gettext("Evolution of the infection rate decrease"))
+    #fig_rate_decrease.update_yaxes(range=[0, 5])
+
+    figRe = go.Figure(data=[go.Scatter(x=df_testing.DATE[10+3:-4], y=Re_estimate4, name="n=4"), # +3:-4 takes into account the moving average
                           go.Scatter(x=df_testing.DATE[10+3:-4], y=Re_estimate6, name="n=6"),
                           go.Scatter(x=df_testing.DATE[10+3:-4], y=Re_estimate8, name="n=8"),
                           go.Scatter(x=df_testing.DATE[10+3:-4], y=Re_estimate10, name="n=10"),                    
+                          go.Scatter(x=df_testing.DATE[10+3:-4], y=np.array([1 for n in range((df_testing.DATE[10+3:-4].shape[0]))]), showlegend=False, line=dict(width=3,color='orange')),                    
                           ],                    
 )
-    fig.update_layout(xaxis_title=gettext('Day'),
+    figRe.update_layout(xaxis_title=gettext('Day'),
                    yaxis_title=gettext('Estimated effective infection rate Re'),
                    title=gettext("Evolution of the average number of new patients infected per positive case"))
-    fig.update_yaxes(range=[0, 5])
-    return fig
+    figRe.update_yaxes(range=[0, 5])
+    return fig_rate_increase,fig_rate_decrease,figRe
 
 def plot_daily_exp_factor():
     """
@@ -107,11 +130,12 @@ def plot_daily_exp_factor():
                           go.Scatter(x=df_testing.DATE[3:-4], y=exp_factor6, name="n=6"),
                           go.Scatter(x=df_testing.DATE[3:-4], y=exp_factor8, name="n=8"),
                           go.Scatter(x=df_testing.DATE[3:-4], y=exp_factor10, name="n=10"),                    
+                          go.Scatter(x=df_testing.DATE[3:-4], y=np.array([1 for n in range((df_testing.DATE[3:-4].shape[0]))]), showlegend=False, line=dict(width=3,color='orange')),                    
                           ],                    
 )
     fig.update_layout(xaxis_title=gettext('Day'),
-                   yaxis_title=gettext('Daily exponential factor'),
-                   title=gettext("Estimate of the daily exponential rate of the number of active cases, >1 is an increase, <1 is a decrease"))
+                   yaxis_title=gettext('Daily multiplicative factor'),
+                   title=gettext("Estimate of the daily multiplicative rate of the number of active cases, >1 is an increase, <1 is a decrease"))
     return fig
 
 
@@ -121,10 +145,10 @@ def plot_Re_div_n():
     - any person diagnosed positive to Covid-19 will on average be positive for n days.
 
     """
-    Re_estimate10 = Re_estimate(df_testing.CASES,n=10)
-    Re_estimate8 = Re_estimate(df_testing.CASES,n=8)
-    Re_estimate6 = Re_estimate(df_testing.CASES,n=6)
-    Re_estimate4 = Re_estimate(df_testing.CASES,n=4)
+    rate_increase10,rate_decrease10,Re_estimate10 = Re_estimate(df_testing.CASES,n=10)
+    rate_increase8,rate_decrease8,Re_estimate8 = Re_estimate(df_testing.CASES,n=8)
+    rate_increase6,rate_decrease6,Re_estimate6 = Re_estimate(df_testing.CASES,n=6)
+    rate_increase4,rate_decrease4,Re_estimate4 = Re_estimate(df_testing.CASES,n=4)
     
     
     
@@ -132,11 +156,12 @@ def plot_Re_div_n():
                           go.Scatter(x=df_testing.DATE[10+3:-4], y=Re_estimate6**(1/6), name="n=6"),
                           go.Scatter(x=df_testing.DATE[10+3:-4], y=Re_estimate8**(1/8), name="n=8"),
                           go.Scatter(x=df_testing.DATE[10+3:-4], y=Re_estimate10**(1/10), name="n=10"),                    
+                          go.Scatter(x=df_testing.DATE[10+3:-4], y=np.array([1 for n in range((df_testing.DATE[10+3:-4].shape[0]))]), showlegend=False, line=dict(width=3,color='orange')),                    
                           ],                    
 )
     fig.update_layout(xaxis_title=gettext('Day'),
                    yaxis_title=gettext('Re^(1/n)'),
-                   title=gettext("Estimate of the exponential increase rate of the active base (on a daily basis) from the Re factor"))
+                   title=gettext("Estimate of the multiplicative increase rate of the active base (on a daily basis) from the Re factor"))
     #fig.update_yaxes(range=[0, 2])
     return fig
 
