@@ -38,25 +38,30 @@ def week(date):
     return date.isocalendar()[1]
 
 
-print(len(df))
-print("==>",list(df.columns))
+
 
 df['week'] = df.apply(lambda x: week(x['Date_evenement']), axis=1)
 
 
 df = df.loc[:, ['week', 'Total_deces_2020','Total_deces_2019','Total_deces_2018']]
 
-df_week = df.groupby(['week'])['Total_deces_2020','Total_deces_2019','Total_deces_2018'].sum().reset_index()
 
-df2018 = df.loc[:, ['week','Total_deces_2018']]
+def aggr_week(series):
+    return series.max()-series.min()
+
+df_week = df.groupby(['week'])['Total_deces_2020','Total_deces_2019','Total_deces_2018'].agg(aggr_week).reset_index()#.sum().reset_index()
+
+df2018 = df_week.loc[:, ['week','Total_deces_2018']]
 df2018["year"]=2018
 df2018.rename(columns={'Total_deces_2018': "tot"},inplace=True)
 
-df2019 = df.loc[:, ['week','Total_deces_2019']]
+
+
+df2019 = df_week.loc[:, ['week','Total_deces_2019']]
 df2019["year"]=2019
 df2019.rename(columns={'Total_deces_2019': "tot"},inplace=True)
 
-df2020 = df.loc[:, ['week','Total_deces_2020']]
+df2020 = df_week.loc[:, ['week','Total_deces_2020']]
 df2020["year"]=2020
 df2020.rename(columns={'Total_deces_2020': "tot"},inplace=True)
 
