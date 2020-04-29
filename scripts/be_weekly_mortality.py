@@ -35,7 +35,7 @@ df['observed'].replace('', np.nan, inplace=True)
 
 
 #todo, dropline with missing values
-df = df[df['date'] <= datetime.today() - timedelta(days=20)]
+df = df[df['date'] <= datetime.today() - timedelta(days=22)]
 
 
 df = df.astype({"observed": int})
