@@ -14,16 +14,11 @@ def bar_hospitalization():
     """
     bar plot hospitalization
     """
+    df = df_hospi.groupby(['DATE']).agg({'TOTAL_IN': 'sum', 'NEW_OUT': 'sum', 'NEW_IN': 'sum'})
 
-    newin_dates = df_hospi.groupby(['DATE']).agg({'NEW_IN': 'sum'})
-    newin_bar = go.Bar(x=newin_dates.index, y=newin_dates.NEW_IN, name=gettext('#New Hospitalized'))
-
-    newout_dates = df_hospi.groupby(['DATE']).agg({'NEW_OUT': 'sum'})
-    newout_bar = go.Bar(x=newout_dates.index, y=newout_dates.NEW_OUT, name=gettext('#New Discharged'))
-
-    totin_dates = df_hospi.groupby(['DATE']).agg({'TOTAL_IN': 'sum'})
-    totin_bar = go.Bar(x=totin_dates.index, y=totin_dates.TOTAL_IN, name=gettext('#Total Hospitalized'))
-
+    newin_bar = go.Bar(x=df.index, y=df.NEW_IN, name=gettext('#New Hospitalized'))
+    newout_bar = go.Bar(x=df.index, y=df.NEW_OUT, name=gettext('#New Discharged'))
+    totin_bar = go.Bar(x=df.index, y=df.TOTAL_IN, name=gettext('#Total Hospitalized'))
     fig_hospi = go.Figure(data=[newin_bar, newout_bar, totin_bar], layout=go.Layout(barmode='group'), )
     fig_hospi.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0),
                             title=gettext("Hospitalizations"))
