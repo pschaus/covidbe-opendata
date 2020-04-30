@@ -26,16 +26,16 @@ class AppMenu:
         self.fake_menu = fake_menu
 
 
+def custom_warning_box(content):
+    return html.Div(html.Div(content, className="model-warning-inner"), className="model-warning")
+
+
 def model_warning(*elems):
     return [
-        html.Div([
-                dcc.Markdown(gettext(
-                    "**WARNING**: We enter in the realm of models and estimates. Everything below is **wrong**, "
-                    "but **may** give an idea of the reality."
-                ))
-            ],
-            className="model-warning"
-        ),
+        custom_warning_box(dcc.Markdown(gettext(
+            "**WARNING**: We enter in the realm of models and estimates. Everything below is **wrong**, "
+            "but **may** give an idea of the reality."
+        ))),
         html.Div([html.Div([], className="model-warning-content-left")] + list(elems),
                  className="model-warning-content")
     ]
