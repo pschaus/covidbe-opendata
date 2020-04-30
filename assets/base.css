@@ -126,9 +126,13 @@ li.open .fa-chevron-right {
     font-size: 20px;
 }
 
-.model-warning p {
+.model-warning .model-warning-inner {
   background-color: rgba(255, 255, 255, 0.9);
   padding: 5px;
+  margin: 0;
+}
+
+.model-warning .model-warning-inner p {
   margin: 0;
 }
 
