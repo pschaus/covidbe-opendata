@@ -78,3 +78,5 @@ source_hopkins = SourceProvider(lazy_gettext("Johns Hopkins CSSE & others"),
 source_SI_modelRe = SourceProvider(lazy_gettext("Theory versus Data: How to Calculate R0?, Breban et al."),
                         "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0000282&type=printable",
                         lazy_gettext("See link for details on the assumptions"))
+
+source_euromomo = SourceProvider("EUROMOMO", "https://www.euromomo.eu")
