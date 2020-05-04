@@ -14,14 +14,14 @@ def display_obituary():
         html.H2(gettext("Evolution of the number of deaths published on obituary websites 2020 vs 2019")),
         dcc.Markdown(get_translation(
             fr="""
-            Les données rapportées sont téléchargées des sites mortuaires belges (inmemoriam.be, necro.sudpress.be, dansnospensees.be) et français (avisdeces.fr) quotidiennement. 
-            Au total, nous capturons environ 1/3 des décès en Belgique et en France avec ces données. 
+            Les données rapportées sont téléchargées des sites mortuaires belges (inmemoriam.be, necro.sudpress.be, dansnospensees.be). 
+            Au total, nous capturons environ 1/3 des décès en Belgique. 
             Nous pensons que cela est suffisamment représentatif de la situation de surmortalité due au COVID19. 
             La Flandre et Bruxelles semblent sous représentés dans les sites belges et reflète dès lors davantage la situation en Wallonie.
             """,
             en="""
-            The reported data are crawled from the Belgian (inmemoriam.be, necro.sudpress.be, dansnospensees.be) and French (avisdeces.fr) mortuary sites daily.
-            In total, we capture around 1/3 of the daily deaths in Belgium and France with these data.
+            The reported data are crawled from the Belgian (inmemoriam.be, necro.sudpress.be, dansnospensees.be) mortuary sites daily.
+            In total, we capture around 1/3 of the daily deaths in Belgium with these data.
             We believe that this is sufficiently representative of the excess mortality situation due to COVID19.
             Flanders and Brussels seem underrepresented in Belgian sites and therefore more closely reflect the situation in Wallonia.
             """, )),
@@ -42,21 +42,21 @@ def display_obituary():
                               figure=allbeobituary_plot(),
                               config=dict(locale=str(get_locale()))),
                     width=12, lg=6),
-            dbc.Col(dcc.Graph(id='avisdeces',
-                              figure=avideces_plot(),
-                              config=dict(locale=str(get_locale()))),
-                    width=12, lg=6),
+            #dbc.Col(dcc.Graph(id='avisdeces',
+            #                  figure=avideces_plot(),
+            #                  config=dict(locale=str(get_locale()))),
+            #        width=12, lg=6),
 
         ]),
         html.H2(gettext("Ratio of number of deaths published on obituary websites 2020/2019")),
         dcc.Markdown(get_translation(
             fr="""
-        Ce graphique montre la surmortalité instantanée en Belgique et en France par rapport à 2019.
+        Ce graphique montre la surmortalité instantanée en Belgique par rapport à 2019.
         Un ratio de 2 signifie que nous avons 2x plus de morts qu'en 2019 et un ratio de 1 signie le même nombre de morts.
         Afin de réduire l'effet due au fluctuation journalière, ce ratio est calculé sur une fenêtre (glissante) de 7 jours.
         """,
             en="""
-        This graph shows the instant excess mortality in Belgium and France compared to 2019.
+        This graph shows the instant excess mortality in Belgium compared to 2019.
         A ratio of 2 means that we have 2x more deaths than in 2019 and a ratio of 1 means the same number of deaths.
         In order to reduce the effect due to the daily fluctuation, this ratio is calculated on a (sliding) window of 7 days.
             """, )),
@@ -84,10 +84,10 @@ def display_obituary():
                               figure=bar_plot_be(),
                               config=dict(locale=str(get_locale()))),
                     width=12, lg=6),
-            dbc.Col(dcc.Graph(id='allfrobituarybar',
-                              figure=bar_plot_fr(),
-                              config=dict(locale=str(get_locale()))),
-                    width=12, lg=6)
+            #dbc.Col(dcc.Graph(id='allfrobituarybar',
+            #                  figure=bar_plot_fr(),
+            #                  config=dict(locale=str(get_locale()))),
+            #        width=12, lg=6)
         ]),
 
 
