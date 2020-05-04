@@ -44,6 +44,10 @@ def display_source_providers(*providers: SourceProvider):
 source_sciensano = SourceProvider("Sciensano - Covid19", "https://epistat.wiv-isp.be/covid/",
                                   lazy_gettext("Official Belgian data"))
 
+
+source_statbel = SourceProvider("STATBEL", "https://statbel.fgov.be/en/open-data/number-deaths-day-sex-region-age",
+                                  lazy_gettext("Statbel, the Belgian statistical office"))
+
 source_google_traffic = SourceProvider("Google Traffic Data", "https://transparencyreport.google.com/traffic/overview and https://github.com/Jigsaw-Code/net-analysis/tree/master/netanalysis/traffic",
                                   lazy_gettext("Google Traffic Data"))
 
