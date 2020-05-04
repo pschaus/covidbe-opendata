@@ -10,7 +10,7 @@ df_mortality = pd.read_csv('static/csv/be-covid-mortality.csv', keep_default_na=
 
 
 @register_plot_for_embedding("deaths_per_age_group")
-def age_groups_death():
+def age_groups_death(barmode = 'group'):
     """
     bar plot age groups cases
     """
@@ -33,7 +33,7 @@ def age_groups_death():
 
     fig_age_groups_deaths = go.Figure(data=bars_age_groups_deaths,
                                       layout=go.Layout(barmode='group'), )
-    fig_age_groups_deaths.update_layout(template="plotly_white", height=500, barmode="stack",margin=dict(l=0, r=0, t=30, b=0), title=gettext("Deaths per day per age group"))
+    fig_age_groups_deaths.update_layout(template="plotly_white", height=500, barmode=barmode,margin=dict(l=0, r=0, t=30, b=0), title=gettext("Deaths per day per age group"))
 
     return fig_age_groups_deaths
 
