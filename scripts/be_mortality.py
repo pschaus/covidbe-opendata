@@ -24,7 +24,6 @@ content = requests.get(url)
 zf = ZipFile(BytesIO(content.content))
 
 
-
 # find the first matching csv file in the zip:
 match = [s for s in zf.namelist() if ".txt" in s][0]
 # the first line of the file contains a string - that line shall de     ignored, hence skiprows
@@ -32,26 +31,7 @@ match = [s for s in zf.namelist() if ".txt" in s][0]
 mydateparser = lambda x: datetime.strptime(x, "%d/%m/%Y")
 
 
-
 df = pandas.read_csv(zf.open(match), parse_dates=['DT_DATE'],date_parser=mydateparser, low_memory=False,sep=";")
-df.dropna(thresh=1,inplace=True)
-
-def week(date):
-    return date.isocalendar()[1]
 
 
-
-df = df[df['DT_DATE'] >= '2018-01-01']
-
-
-df['week'] = df.apply(lambda x: week(x['DT_DATE']), axis=1)
-df_week = df.groupby(['NR_YEAR','week'])["MS_NUM_DEATH"].sum().reset_index()
-df_week.rename(columns={"MS_NUM_DEATH": "tot","NR_YEAR": "year"},inplace=True)
-
-
-df_week.to_csv("../static/csv/eu_weekly_mortality/be.csv",index=False)
-
-
-
-
-# mortality belgium
+df.to_csv("../static/csv/mortality_statbel.csv",index=False)
