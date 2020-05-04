@@ -12,7 +12,11 @@ def get_link(start, end, page):
         page = ""
     else:
         page = f"page={page}&"
-    return f'https://www.inmemoriam.be/fr/avis-de-deces/?{page}filter=&periodStart={start}&periodEnd={end}&yearOfBirth=&undertakerId=&placeOfResidence=&provinceId=&newsPaper=&obituary=1&limit=100'
+
+
+    res = f'https://www.inmemoriam.be/fr/avis-de-deces/?{page}filter=&periodStart={start}&periodEnd={end}&yearOfBirth=&undertakerId=&placeOfResidence=&provinceId=&newsPaper=&obituary=1&limit=100'
+    #print(res)
+    return res
 
 
 def gather_for_month(year, month):
@@ -66,7 +70,7 @@ def gather_for_month(year, month):
 
 gather_for_years = [
     ("../../static/csv/inmemoriam_2019.csv", [2019], range(1, 13), False),
-    ("../../static/csv/inmemoriam_2020.csv", [2020], range(date.today().month if date.today().year == 2020 else 13,
+    ("../../static/csv/inmemoriam_2020.csv", [2020], range(date.today().month-1 if date.today().year == 2020 else 13,
                                                         (date.today().month+1) if date.today().year == 2020 else 13),
      True),
 ]
