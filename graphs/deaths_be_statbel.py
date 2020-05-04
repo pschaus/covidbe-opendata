@@ -12,8 +12,6 @@ from pages import get_translation
 from datetime import datetime
 
 import pandas
-import requests
-
 
 dateparse = lambda x: datetime.strptime(x, '%Y-%m-%d')
 
