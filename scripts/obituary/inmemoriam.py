@@ -14,7 +14,7 @@ def get_link(start, end, page):
         page = f"page={page}&"
 
 
-    res = f'https://www.inmemoriam.be/fr/avis-de-deces/?{page}filter=&periodStart={start}&periodEnd={end}&yearOfBirth=&undertakerId=&placeOfResidence=&provinceId=&newsPaper=&obituary=1&limit=100'
+    res = f'https://www.inmemoriam.be/fr/avis-de-deces/?{page}filter=&periodStart={start}&periodEnd={end}&yearOfBirth=&undertakerId=&placeOfResidence=&provinceId=&newsPaper=&obituary=1'
     #print(res)
     return res
 
