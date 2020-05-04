@@ -7,48 +7,49 @@ import numpy as np
 
 
 from datetime import date
-from datetime import timedelta
 from datetime import datetime
+from datetime import timedelta
 import urllib.request, json
 
+from io import BytesIO
+from zipfile import ZipFile
+import pandas
+import requests
 
 
-DOWNLOAD_URL = "https://epistat.wiv-isp.be/data/Belgium_DailyepistatPub_Riskfactors.csv"
-DOWNLOAD_PATH ="../static/csv/be-mortality.csv"
 
-urllib.request.urlretrieve(DOWNLOAD_URL,DOWNLOAD_PATH)
 
-mydateparser = lambda x: datetime.strptime(x, "%Y%m%d")
-df = pd.read_csv(DOWNLOAD_PATH,usecols=["date", "observed"], parse_dates=['date'],date_parser=mydateparser,dtype={"observed":'string'})
+url = "https://statbel.fgov.be/sites/default/files/files/opendata/deathday/DEMO_DEATH_OPEN.zip"
+content = requests.get(url)
+zf = ZipFile(BytesIO(content.content))
 
+
+
+# find the first matching csv file in the zip:
+match = [s for s in zf.namelist() if ".txt" in s][0]
+# the first line of the file contains a string - that line shall de     ignored, hence skiprows
+
+mydateparser = lambda x: datetime.strptime(x, "%d/%m/%Y")
+
+
+
+df = pandas.read_csv(zf.open(match), parse_dates=['DT_DATE'],date_parser=mydateparser, low_memory=False,sep=";")
+df.dropna(thresh=1,inplace=True)
 
 def week(date):
     return date.isocalendar()[1]
 
-df['week'] = df.apply(lambda x: week(x['date']), axis=1)
-
-df['year'] = df.apply(lambda x: x['date'].year, axis=1)
-
-df = df[df['year'] >= 2018]
-
-df['observed'].replace('', np.nan, inplace=True)
 
 
-#todo, dropline with missing values
-#df = df[df['date'] <= datetime.today() - timedelta(days=23)]
-
-df = df[df['date'] <= '2020-04-07']
-
-df = df.astype({"observed": int})
+df = df[df['DT_DATE'] >= '2018-01-01']
 
 
-df_week = df.groupby(['year','week'])["observed"].sum().reset_index()
-df_week.rename(columns={"observed": "tot"},inplace=True)
+df['week'] = df.apply(lambda x: week(x['DT_DATE']), axis=1)
+df_week = df.groupby(['NR_YEAR','week'])["MS_NUM_DEATH"].sum().reset_index()
+df_week.rename(columns={"MS_NUM_DEATH": "tot","NR_YEAR": "year"},inplace=True)
+
 
 df_week.to_csv("../static/csv/eu_weekly_mortality/be.csv",index=False)
-
-
-
 
 
 
