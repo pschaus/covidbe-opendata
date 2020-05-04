@@ -79,10 +79,10 @@ def plot_Re():
     rate_increase4,rate_decrease4,Re_estimate4 = Re_estimate(df_testing.CASES,n=4)
 
     
-    fig_rate_increase = go.Figure(data=[go.Scatter(x=df_testing.DATE[10+3:-4], y=rate_increase4, name="n=4"), # +3:-4 takes into account the moving average
-                          go.Scatter(x=df_testing.DATE[10+3:-4], y=rate_increase6, name="n=6"),
-                          go.Scatter(x=df_testing.DATE[10+3:-4], y=rate_increase8, name="n=8"),
-                          go.Scatter(x=df_testing.DATE[10+3:-4], y=rate_increase10, name="n=10"),                    
+    fig_rate_increase = go.Figure(data=[go.Scatter(x=df_testing.DATE[10+7:], y=rate_increase4, name="n=4"), # +7: takes into account the moving average
+                          go.Scatter(x=df_testing.DATE[10+7:], y=rate_increase6, name="n=6"),
+                          go.Scatter(x=df_testing.DATE[10+7:], y=rate_increase8, name="n=8"),
+                          go.Scatter(x=df_testing.DATE[10+7:], y=rate_increase10, name="n=10"),                    
                           ],                    
 )
     fig_rate_increase.update_layout(xaxis_title=gettext('Day'),
@@ -90,10 +90,10 @@ def plot_Re():
                    title=gettext("Evolution of the infection rate increase"))
     #fig_rate_increase.update_yaxes(range=[0, 5])
 
-    fig_rate_decrease = go.Figure(data=[go.Scatter(x=df_testing.DATE[10+3:-4], y=rate_decrease4, name="n=4"), # +3:-4 takes into account the moving average
-                          go.Scatter(x=df_testing.DATE[10+3:-4], y=rate_decrease6, name="n=6"),
-                          go.Scatter(x=df_testing.DATE[10+3:-4], y=rate_decrease8, name="n=8"),
-                          go.Scatter(x=df_testing.DATE[10+3:-4], y=rate_decrease10, name="n=10"),                    
+    fig_rate_decrease = go.Figure(data=[go.Scatter(x=df_testing.DATE[10+7:], y=rate_decrease4, name="n=4"), # +7: takes into account the moving average
+                          go.Scatter(x=df_testing.DATE[10+7:], y=rate_decrease6, name="n=6"),
+                          go.Scatter(x=df_testing.DATE[10+7:], y=rate_decrease8, name="n=8"),
+                          go.Scatter(x=df_testing.DATE[10+7:], y=rate_decrease10, name="n=10"),                    
                           ],                    
 )
     fig_rate_decrease.update_layout(xaxis_title=gettext('Day'),
@@ -101,11 +101,11 @@ def plot_Re():
                    title=gettext("Evolution of the infection rate decrease"))
     #fig_rate_decrease.update_yaxes(range=[0, 5])
 
-    figRe = go.Figure(data=[go.Scatter(x=df_testing.DATE[10+3:-4], y=Re_estimate4, name="n=4"), # +3:-4 takes into account the moving average
-                          go.Scatter(x=df_testing.DATE[10+3:-4], y=Re_estimate6, name="n=6"),
-                          go.Scatter(x=df_testing.DATE[10+3:-4], y=Re_estimate8, name="n=8"),
-                          go.Scatter(x=df_testing.DATE[10+3:-4], y=Re_estimate10, name="n=10"),                    
-                          go.Scatter(x=df_testing.DATE[10+3:-4], y=np.array([1 for n in range((df_testing.DATE[10+3:-4].shape[0]))]), showlegend=False, line=dict(width=3,color='orange')),                    
+    figRe = go.Figure(data=[go.Scatter(x=df_testing.DATE[10+7:], y=Re_estimate4, name="n=4"), # +7: takes into account the moving average
+                          go.Scatter(x=df_testing.DATE[10+7:], y=Re_estimate6, name="n=6"),
+                          go.Scatter(x=df_testing.DATE[10+7:], y=Re_estimate8, name="n=8"),
+                          go.Scatter(x=df_testing.DATE[10+7:], y=Re_estimate10, name="n=10"),                    
+                          go.Scatter(x=df_testing.DATE[10+7:], y=np.array([1 for n in range((df_testing.DATE[10+7:].shape[0]))]), showlegend=False, line=dict(width=3,color='orange')),                    
                           ],                    
 )
     figRe.update_layout(xaxis_title=gettext('Day'),
@@ -126,11 +126,11 @@ def plot_daily_exp_factor():
     exp_factor4 = estimate_of_daily_exp_factor(df_testing.CASES,n=4)    
     
     
-    fig = go.Figure(data=[go.Scatter(x=df_testing.DATE[3:-4], y=exp_factor4, name="n=4"), # +3:-4 takes into account the moving average
-                          go.Scatter(x=df_testing.DATE[3:-4], y=exp_factor6, name="n=6"),
-                          go.Scatter(x=df_testing.DATE[3:-4], y=exp_factor8, name="n=8"),
-                          go.Scatter(x=df_testing.DATE[3:-4], y=exp_factor10, name="n=10"),                    
-                          go.Scatter(x=df_testing.DATE[3:-4], y=np.array([1 for n in range((df_testing.DATE[3:-4].shape[0]))]), showlegend=False, line=dict(width=3,color='orange')),                    
+    fig = go.Figure(data=[go.Scatter(x=df_testing.DATE[7:], y=exp_factor4, name="n=4"), # +7: takes into account the moving average
+                          go.Scatter(x=df_testing.DATE[7:], y=exp_factor6, name="n=6"),
+                          go.Scatter(x=df_testing.DATE[7:], y=exp_factor8, name="n=8"),
+                          go.Scatter(x=df_testing.DATE[7:], y=exp_factor10, name="n=10"),                    
+                          go.Scatter(x=df_testing.DATE[7:], y=np.array([1 for n in range((df_testing.DATE[7:].shape[0]))]), showlegend=False, line=dict(width=3,color='orange')),                    
                           ],                    
 )
     fig.update_layout(xaxis_title=gettext('Day'),
@@ -152,11 +152,11 @@ def plot_Re_div_n():
     
     
     
-    fig = go.Figure(data=[go.Scatter(x=df_testing.DATE[10+3:-4], y=Re_estimate4**(1/4), name="n=4"), # +3:-4 takes into account the moving average
-                          go.Scatter(x=df_testing.DATE[10+3:-4], y=Re_estimate6**(1/6), name="n=6"),
-                          go.Scatter(x=df_testing.DATE[10+3:-4], y=Re_estimate8**(1/8), name="n=8"),
-                          go.Scatter(x=df_testing.DATE[10+3:-4], y=Re_estimate10**(1/10), name="n=10"),                    
-                          go.Scatter(x=df_testing.DATE[10+3:-4], y=np.array([1 for n in range((df_testing.DATE[10+3:-4].shape[0]))]), showlegend=False, line=dict(width=3,color='orange')),                    
+    fig = go.Figure(data=[go.Scatter(x=df_testing.DATE[10+7:], y=Re_estimate4**(1/4), name="n=4"), # +7: takes into account the moving average
+                          go.Scatter(x=df_testing.DATE[10+7:], y=Re_estimate6**(1/6), name="n=6"),
+                          go.Scatter(x=df_testing.DATE[10+7:], y=Re_estimate8**(1/8), name="n=8"),
+                          go.Scatter(x=df_testing.DATE[10+7:], y=Re_estimate10**(1/10), name="n=10"),                    
+                          go.Scatter(x=df_testing.DATE[10+7:], y=np.array([1 for n in range((df_testing.DATE[10+7:].shape[0]))]), showlegend=False, line=dict(width=3,color='orange')),                    
                           ],                    
 )
     fig.update_layout(xaxis_title=gettext('Day'),

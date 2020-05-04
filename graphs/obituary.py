@@ -8,7 +8,7 @@ import urllib.request, json
 from graphs import register_plot_for_embedding
 
 start = '01-10'
-end = '04-26'
+end = '05-01'
 
 
 def necro_count_per_day(df, year):
@@ -52,6 +52,8 @@ df2019im = get_df_im('2019')
 df2020im = get_df_im('2020')
 df2019dp = get_df_dansnopensees('2019')
 df2020dp = get_df_dansnopensees('2020')
+
+
 df2019totbe = pd.DataFrame(
     [df2019sp['date'], df2019sp['days'], df2019sp['count'] + df2019im['count'] + df2019dp['count']]).transpose()
 df2020totbe = pd.DataFrame(
@@ -123,8 +125,7 @@ def rolling_ratio_plot():
     fig = go.Figure(data=[rolling_ratio_scatter(df2019im, df2020im, "inmemoriam.be"),
                           rolling_ratio_scatter(df2019dp, df2020dp, "dansnopensees.be"),
                           rolling_ratio_scatter(df2019sp, df2020sp, "necro.sudpresse.be"),
-                          rolling_ratio_scatter(df2019totbe, df2020totbe, gettext("All belgian website, summed")),
-                          rolling_ratio_scatter(df2019av, df2020av, "avideces.fr")])
+                          rolling_ratio_scatter(df2019totbe, df2020totbe, gettext("All belgian website, summed"))])
     fig.update_layout(xaxis_title="",
                       yaxis_title=gettext('Ratio 2020/2019'),
                       title=gettext("Ratio reported death 2020/2019 with rolling horizon of 1 week"), height=500,
@@ -141,8 +142,7 @@ def ratio_plot():
     fig = go.Figure(data=[ratio_scatter(df2019im, df2020im, "inmemoriam.be"),
                           ratio_scatter(df2019dp, df2020dp, "dansnopensees.be"),
                           ratio_scatter(df2019sp, df2020sp, "necro.sudpresse.be"),
-                          ratio_scatter(df2019totbe, df2020totbe, gettext("All belgian website, summed")),
-                          ratio_scatter(df2019av, df2020av, "avideces.fr")])
+                          ratio_scatter(df2019totbe, df2020totbe, gettext("All belgian website, summed"))])
     fig.update_layout(xaxis_title="",
                       yaxis_title=gettext('Ratio 2020 / avg2019'),
                       title=gettext("Ratio reported death 2020/ avg 2019 with rolling horizon of 1 week"), height=500,
