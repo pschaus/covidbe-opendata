@@ -14,7 +14,7 @@ from pages.sources import *
 def municipalities():
     return [
         html.H2(gettext("Municipalities")),
-        html.P("Nombre of cases par 1000 inhabitants since beginning of March"),
+        html.P("Numbre of cases par 1000 inhabitants since beginning of March"),
         html.Div([ Gif.GifPlayer(gif='/assets/media/map_cases1000.gif',still='/assets/media/2020-03-01_per1000.png',) ]),
         html.H3(gettext("Where are the epidemic focuses?")),
         dcc.Graph(id='cases-overview-map-communes-p', figure=map_communes_per_inhabitant(), config=dict(locale=str(get_locale()))),
