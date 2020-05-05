@@ -13,7 +13,11 @@ df_communes_tot = pd.merge(pd.read_csv("static/csv/be-covid-totcases.csv", dtype
                            left_on='NIS5',
                            right_on='NIS5',
                            how='left')
-df_communes_tot["CASES_PER_1000_POP"] = 1000.0*df_communes_tot.CASES/df_communes_tot.POP
+
+# We take the third highest number of cases per 1000 as the max value to represent on the map
+upper_df_communes_tot = np.sort(1000.0*df_communes_tot.CASES/df_communes_tot.POP)[-3]
+df_communes_tot["CASES_PER_1000_POP"] = pd.DataFrame.clip( 1000.0*df_communes_tot.CASES/df_communes_tot.POP , upper=upper_df_communes_tot)
+
 df_communes_timeseries = pd.read_csv('static/csv/be-covid-timeseries.csv')
 geojson_communes = geopandas.read_file('static/json/communes/be-geojson.json')
 
