@@ -2,17 +2,24 @@ import dash
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
+import dash_gif_component as Gif
 from dash.dependencies import Input, Output, State
 from flask_babel import get_locale, gettext, lazy_gettext
 
 from graphs.cases_per_municipality import map_communes, barplot_communes, map_communes_per_inhabitant
-from pages import AppLink
+from pages import AppLink, get_translation
+
 from pages.sources import *
 
 
 def municipalities():
     return [
         html.H2(gettext("Municipalities")),
+        html.P(get_translation(
+            en="""Number of positive cases per 1000 inhabitants since beginning of March 2020""",
+            fr="""Nombre de cas positifs par 1000 habitants depuis le début du mois de Mars 2020""",
+        )),        
+        html.Div([ Gif.GifPlayer(gif='/assets/media/map_cases1000.gif',still='/assets/media/2020-03-01_per1000.png',) ]),
         html.H3(gettext("Where are the epidemic focuses?")),
         dcc.Graph(id='cases-overview-map-communes-p', figure=map_communes_per_inhabitant(), config=dict(locale=str(get_locale()))),
         html.H3(gettext("Cases per municipality")),
