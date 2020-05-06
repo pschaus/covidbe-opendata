@@ -11,8 +11,10 @@ import plotly
 import pandas as pd
 from flask_babel import gettext
 import os, shutil
+import math
 
-os.mkdir("tmp/")
+if not os.path.exists('./tmp/'):
+    os.mkdir("./tmp/")
 
 
 df_communes_tot = pd.merge(pd.read_csv("../static/csv/be-covid-totcases.csv", dtype={"NIS5": str}),
@@ -20,7 +22,8 @@ df_communes_tot = pd.merge(pd.read_csv("../static/csv/be-covid-totcases.csv", dt
                            left_on='NIS5',
                            right_on='NIS5',
                            how='left')
-    
+
+
 # We take the third highest number of cases per 1000 as the max value to represent on the map
 upper_df_communes_tot = np.sort(1000.0*df_communes_tot.CASES/df_communes_tot.POP)[-3]
 df_communes_tot["CASES_PER_1000_POP"] = pd.DataFrame.clip( 1000.0*df_communes_tot.CASES/df_communes_tot.POP , upper=upper_df_communes_tot)
@@ -34,8 +37,10 @@ df_communes_tot['name'] = df_communes_tot.apply(
 for i in range(df_communes_timeseries.shape[1]-1):
     df_communes_timeseries.iloc[:,i+1]=df_communes_timeseries.iloc[:,i+1].rolling(window=7).mean()
 
+skip_duration=math.ceil( len(df_communes_timeseries["DATE"][60:].index)/ 50. )
+
 print("Generation of the png files...")
-for DATE in df_communes_timeseries["DATE"][60:]:
+for DATE in df_communes_timeseries["DATE"][60::skip_duration]:
     for NIS5 in df_communes_tot["NIS5"]:
         df_communes_tot.loc[df_communes_tot['NIS5'] == NIS5,'CASES_PER_1000_POP']=pd.DataFrame.clip( 1000.*df_communes_timeseries.loc[df_communes_timeseries['DATE']==DATE, NIS5].iloc[0]/df_communes_tot.loc[df_communes_tot['NIS5'] == NIS5,'POP'] , upper=1 )
 
@@ -60,10 +65,10 @@ for DATE in df_communes_timeseries["DATE"][60:]:
     )
     fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=25, b=0), title_text=DATE)
     
-    plotly.io.orca.config.port = 8123
+    fig.write_image("./tmp/"+DATE+"_per1000.png")
 
 
 print("Generation of the gif")
-os.system ("convert -verbose -coalesce -set delay \"%[fx:(t!=n-1)?30:240]\" -loop 0 -density 50 -dispose Background ../static/tmp/2020* ../assets/media/map_cases1000.gif")
-shutil.rmtree("tmp/")
+os.system ("convert -verbose -coalesce -set delay \"%[fx:(t!=n-1)?30:240]\" -loop 0 -density 50 -dispose Background ./tmp/2020* ../assets/media/map_cases1000.gif")
+shutil.rmtree("./tmp/")
 
