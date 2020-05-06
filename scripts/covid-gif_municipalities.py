@@ -12,7 +12,7 @@ import pandas as pd
 from flask_babel import gettext
 import os, shutil
 
-os.mkdir("./tmp/")
+os.mkdir("tmp/")
 
 
 df_communes_tot = pd.merge(pd.read_csv("../static/csv/be-covid-totcases.csv", dtype={"NIS5": str}),
@@ -65,5 +65,5 @@ for DATE in df_communes_timeseries["DATE"][60:]:
 
 print("Generation of the gif")
 os.system ("convert -verbose -coalesce -set delay \"%[fx:(t!=n-1)?30:240]\" -loop 0 -density 50 -dispose Background ../static/tmp/2020* ../assets/media/map_cases1000.gif")
-shutil.rmtree("./tmp/")
+shutil.rmtree("tmp/")
 

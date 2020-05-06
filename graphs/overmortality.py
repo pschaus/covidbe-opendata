@@ -10,12 +10,12 @@ NORMAL_COLOR = "#779ecb"
 COVID_COLOR = "#ff6961"
 OVERMORTALITY_COLOR = "#B2B2B2"
 
-df_mortality = pd.read_csv('static/csv/be-covid-mortality.csv')
+df_mortality = pd.read_csv('../static/csv/be-covid-mortality.csv')
 df_mortality_ag = df_mortality.groupby(["AGEGROUP"]).agg({"DEATHS": "sum"})
 df_mortality_ag_ratio = df_mortality_ag.copy()
 df_mortality_ag_ratio.DEATHS /= df_mortality_ag.DEATHS.sum()
 
-df_deaths_2018 = pd.read_csv('static/csv/be-deaths-2018-per-age.csv')
+df_deaths_2018 = pd.read_csv('../static/csv/be-deaths-2018-per-age.csv')
 df_deaths_2018_ag = pd.DataFrame({
     'AGEGROUP': ['0-24', '25-44', '45-64', '65-74', '75-84', '85+'],
     'DEATHS': [
@@ -30,7 +30,7 @@ df_resp_deaths_2018_ag = pd.DataFrame({
     'DEATHS': [0.04, 0.15, 2.47, 4.31, 9.41, 14.21]
 })
 
-df_mortality_causes_2016 = pd.read_csv('static/csv/be-deaths-2016-per-age-per-cause.csv')
+df_mortality_causes_2016 = pd.read_csv('../static/csv/be-deaths-2016-per-age-per-cause.csv')
 causes = df_mortality_causes_2016.CAUSE.unique()
 map_to_covid_agegroups = {'0-4': '0-24', '5-9': '0-24', '10-14': '0-24', '15-19': '0-24', '20-24': '0-24',
                           '25-29': '25-44', '30-34': '25-44', '35-39': '25-44', '40-44': '25-44',
