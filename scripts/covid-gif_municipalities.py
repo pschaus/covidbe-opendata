@@ -10,10 +10,9 @@ import plotly.express as px
 import plotly
 import pandas as pd
 from flask_babel import gettext
-from orca import *
 import os, shutil
 
-os.mkdir("../static/tmp/")
+os.mkdir("./tmp/")
 
 
 df_communes_tot = pd.merge(pd.read_csv("../static/csv/be-covid-totcases.csv", dtype={"NIS5": str}),
@@ -62,11 +61,9 @@ for DATE in df_communes_timeseries["DATE"][60:]:
     fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=25, b=0), title_text=DATE)
     
     plotly.io.orca.config.port = 8123
-    fig.write_image("../static/tmp/"+DATE+"_per1000.png")
-
 
 
 print("Generation of the gif")
 os.system ("convert -verbose -coalesce -set delay \"%[fx:(t!=n-1)?30:240]\" -loop 0 -density 50 -dispose Background ../static/tmp/2020* ../assets/media/map_cases1000.gif")
-shutil.rmtree("../static/tmp/")
+shutil.rmtree("./tmp/")
 
