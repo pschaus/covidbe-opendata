@@ -51,6 +51,9 @@ source_statbel = SourceProvider("STATBEL", "https://statbel.fgov.be/en/open-data
 source_google_traffic = SourceProvider("Google Traffic Data", "https://transparencyreport.google.com/traffic/overview and https://github.com/Jigsaw-Code/net-analysis/tree/master/netanalysis/traffic",
                                   lazy_gettext("Google Traffic Data"))
 
+source_tomtom = SourceProvider("TomTom Traffic Data", "https://www.tomtom.com/en_gb/traffic-index/about/",
+                                  lazy_gettext("TomTom Traffic Data"))
+
 source_google_mobility = SourceProvider("Google Mobility Report", "https://www.google.com/covid19/mobility/",
                                   lazy_gettext("Google Mobility Report"))
 
