@@ -18,3 +18,4 @@ unidecode>=1.1.1
 #git+git://github.com/Jigsaw-Code/net-analysis.git@master#egg=net-analysis
 regex
 dash-gif-component
+pytrends

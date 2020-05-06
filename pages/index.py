@@ -93,6 +93,10 @@ def display_about():
             - [Pierre Schaus, UCLouvain](https://www.info.ucl.ac.be/~pschaus)
             - [Vincent François, UCLouvain](http://vincent.francois-l.be)
             
+            We also received contributions from 
+            
+            - [John Aoga, UCLouvain] (https://scholar.google.be/citations?user=SZWEYcsAAAAJ&hl=fr), graphiques des données TomTom
+            
             """,
             fr="""
             Nous sommes une équipe spécialisée en [AI, Analytics] (https://aia.info.ucl.ac.be/people/) et [Informatique] (https://uclouvain.be/fr/instituts-recherche/icteam / ingi) de @UCLouvain_be et @EPL_UCLouvain.
@@ -103,6 +107,10 @@ def display_about():
             - [Guillaume Derval, UCLouvain] (https://www.linkedin.com/in/guillaumederval/)
             - [Pierre Schaus, UCLouvain] (https://www.info.ucl.ac.be/~pschaus)
             - [Vincent François, UCLouvain] (http://vincent.francois-l.be)
+            
+            Nous avons également reçu des contributions de 
+            
+            - [John Aoga, UCLouvain] (https://scholar.google.be/citations?user=SZWEYcsAAAAJ&hl=fr), graphiques des données TomTom
 
             """,))
     ]
