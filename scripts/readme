@@ -1,0 +1,4 @@
+The script are meant to be run from the local repo script.
+
+An additional dependency is needed for covid-gif_municipalities.py (no pip)
+conda install -c plotly plotly-orca
