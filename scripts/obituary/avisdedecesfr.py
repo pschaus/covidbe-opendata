@@ -19,7 +19,7 @@ def get_link(page):
 FNAME = f"../../static/csv/avisdedecesfr_{YEAR}.csv"
 if os.path.exists(FNAME):
     data = {d["id"]: (d["age"], d["location"].strip(), d["date"], d["publication"]) for d in pd.read_csv(FNAME).to_dict('records')}
-    UPDATE_UNTIL = datetime.strptime(max(d[3] for d in data.values()), "%Y-%m-%d").date() - timedelta(days=1)
+    UPDATE_UNTIL = datetime.strptime(max(d[3] for d in data.values()), "%Y-%m-%d").date() - timedelta(days=20)
 else:
     data = {}
     UPDATE_UNTIL = date(year=YEAR, month=1, day=1)
