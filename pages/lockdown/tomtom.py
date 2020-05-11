@@ -4,7 +4,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 from flask_babel import get_locale, gettext
 
-from graphs.tomtom_traffic import plot_tomtom_be_working_days
+from graphs.tomtom_traffic import plot_tomtom_be_working_days, map_tomtom_be_working_days
 from pages.sources import display_source_providers, source_tomtom
 from pages import get_translation
 
@@ -30,6 +30,12 @@ def display_tomtom():
         dbc.Row([
             dbc.Col(dcc.Graph(id='google map usage',
                               figure=plot_tomtom_be_working_days(),
+                              config=dict(locale=str(get_locale())))),
+        ]),
+        html.H2(gettext("TomTom Traffic Index Belgium Cities and Neighbors 07:00-9:00")),
+        dbc.Row([
+            dbc.Col(dcc.Graph(id='tomtom map usage',
+                              figure=map_tomtom_be_working_days(),
                               config=dict(locale=str(get_locale())))),
         ]),
         display_source_providers(source_tomtom),
