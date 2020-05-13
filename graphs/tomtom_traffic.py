@@ -6,6 +6,8 @@ from plotly.subplots import make_subplots
 
 from graphs import register_plot_for_embedding
 
+######################################## 1
+
 # importing modules
 import pandas as pd
 import plotly.express as px
@@ -69,6 +71,7 @@ def plot_tomtom_be_working_days():
     )
     return fig
 
+######################################## 2
 
 # importing extra modules
 from os import listdir
@@ -179,5 +182,82 @@ def map_tomtom_be_working_days():
     fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 
     return fig
+
+######################################## 3
+
+# Loading dataset from a file
+
+def get_world_df() :
+    # Loading dataset from a file
+    mypath = "static/csv/tomtom/"
+    df = pd.read_csv(mypath + "all/all.csv")
+
+    df[['country', 'shape', 'city']] = df["key"].str.split("/", expand=True)
+    df['Time'] = pd.to_datetime(df['UpdateTime'], unit="ms")
+
+    df['Hour'] = df.Time.dt.hour
+    df['Min'] = df.Time.dt.minute
+    df['Date'] = df.Time.dt.date
+    df.index = df['Time']
+
+    print(df.Date.min())
+
+    # df = df.between_time('07:00', '09:00')
+    df = df[df.index.dayofweek < 5]
+    df = df[df.Time.dt.date != datetime.date(2020, 5, 1)]
+    df = df[df.Time.dt.date > datetime.date(2020, 4, 13)]
+
+    df = df.groupby([df.country, df.city, df.Date, df.Hour]).agg(['mean'])
+    df.columns = df.columns.droplevel(1)
+
+    # print(df)
+
+    df['country'] = df.index.get_level_values(0)
+    df['city'] = df.index.get_level_values(1)
+    df['Date'] = df.index.get_level_values(2)
+    df['Hours'] = df.index.get_level_values(3)
+    #df['Min'] = df.index.get_level_values(4)
+
+    #df['HMin'] = df['Hour'].astype(str) + ':' + df['Min'].astype(str)
+
+    return df
+
+world_df = get_world_df()
+
+@register_plot_for_embedding("map_tomtom_by_day")
+def map_tomtom_by_day(date, hour):
+    """
+    tomtom traffic map by day
+    """
+
+    ddate = datetime.datetime.strptime(date, '%Y-%m-%d')
+    print("treats", ddate, type(ddate), hour, type(hour))
+
+    world_df_day = world_df[(world_df.Date == ddate.date()) & (world_df.Hours == int(hour))]#.sort_values(by = ['Hours'])
+
+    #datetime.date(2020, 5, 7)
+    print(world_df_day.head())
+
+    print("date selected : ", date, type(date))
+
+    fig = px.scatter_mapbox(data_frame=world_df_day,
+                            lat="lat",
+                            lon="lon",
+                            color="LiveTraffic",  # "data.JamsDelay",
+                            size="LiveTraffic",
+                            color_continuous_scale=px.colors.sequential.Viridis,
+                            range_color=[min(world_df.LiveTraffic), max(world_df.LiveTraffic)],
+                            #animation_frame="Hours",
+                            size_max=20,
+                            zoom=7, center={"lat": 50.8466, "lon": 4.3528})  # ,
+    # hover_name="city", hover_data=["country", "data.JamsDelay", "data.JamsCount", "data.JamsLength", "data.UpdateTime"])
+
+    fig.update_layout(mapbox_style="carto-positron")
+
+    fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
+
+    return fig
+
+
 
 
