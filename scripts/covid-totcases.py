@@ -24,3 +24,7 @@ with urllib.request.urlopen("https://epistat.sciensano.be/Data/COVID19BE_CASES_M
             out.append((NIS5, ncases, names_fr[NIS5], names_nl[NIS5]))
 
 pd.DataFrame(out, columns=["NIS5", "CASES", "FR", "NL"]).to_csv('../static/csv/be-covid-totcases.csv', index=False)
+
+
+
+
