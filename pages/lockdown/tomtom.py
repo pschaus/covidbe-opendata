@@ -14,7 +14,7 @@ import datetime as dt
 
 def display_tomtom():
     return [
-        dcc.Location(id='url', refresh=False),
+        #dcc.Location(id='url', refresh=False),
         html.H2(gettext("TomTom Traffic")),
         dcc.Markdown(get_translation(
             en="""
