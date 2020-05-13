@@ -19,6 +19,8 @@ from pages.international import international_menu
 from pages.hospitals import hospitals_menu
 from pages.lockdown import lockdown_menu
 
+from graphs.tomtom_traffic import map_tomtom_by_day
+
 FA = "https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 
 app = dash.Dash(__name__,
@@ -310,6 +312,13 @@ def plot_embed_html(which):
 #         abort(404)
 #     return registered_plots[which].get_image_link()
 
+@app.callback(
+    dash.dependencies.Output('tomtom-map-container-id', 'figure'),
+    [dash.dependencies.Input('tomtom-date-picker-single-id', 'date'), dash.dependencies.Input('tomtom-hour-picker-single-id', 'value')])
+def update_all_map(date, hour):
+    print("callback", date, hour)
+    if date is not None:
+        return map_tomtom_by_day(date, hour)
 
 def memory_summary():
     # Only import Pympler when we need it. We don't want it to

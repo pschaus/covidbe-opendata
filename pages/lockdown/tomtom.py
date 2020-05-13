@@ -4,12 +4,17 @@ import dash_core_components as dcc
 import dash_html_components as html
 from flask_babel import get_locale, gettext
 
-from graphs.tomtom_traffic import plot_tomtom_be_working_days, map_tomtom_be_working_days
+from graphs.tomtom_traffic import plot_tomtom_be_working_days, map_tomtom_be_working_days, map_tomtom_by_day
 from pages.sources import display_source_providers, source_tomtom
 from pages import get_translation
 
+#from mynapp import app
+
+import datetime as dt
+
 def display_tomtom():
     return [
+        dcc.Location(id='url', refresh=False),
         html.H2(gettext("TomTom Traffic")),
         dcc.Markdown(get_translation(
             en="""
@@ -38,5 +43,28 @@ def display_tomtom():
                               figure=map_tomtom_be_working_days(),
                               config=dict(locale=str(get_locale())))),
         ]),
+        html.H2(gettext("TomTom Traffic Index All Cities")),
+        dbc.Row([
+            dbc.Col(dcc.DatePickerSingle(id='tomtom-date-picker-single-id',
+                                         min_date_allowed=dt.datetime(2020, 5, 7),
+                                         max_date_allowed=dt.datetime.today().date(),
+                                         date=dt.datetime.today().date()
+                                         )),
+        ]),
+        dbc.Row([
+            dbc.Col(dcc.Slider(id='tomtom-hour-picker-single-id',
+                               min=0,
+                               max=23,
+                               step=1,
+                               value=8,
+                               marks={i: str(i)+"H" for i in range(24)}
+                    ))
+        ]),
+        dbc.Row([
+            dbc.Col(dcc.Graph(id='tomtom-map-container-id',
+                              #figure=map_tomtom_by_day(dt.datetime.today().date()),
+                              config=dict(locale=str(get_locale())))),
+            ]),
         display_source_providers(source_tomtom),
     ]
+
