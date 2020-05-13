@@ -20,7 +20,7 @@ def municipalities():
             fr="""Nombre de cas positifs par 1000 habitants depuis le début du mois de Mars 2020""",
         )),        
         html.Div([ Gif.GifPlayer(gif='/assets/media/map_cases1000.gif',still='/assets/media/2020-03-01_per1000.png',) ]),
-        html.H3(gettext("Where are the epidemic focuses?")),
+        html.H3(gettext("Where are the epidemic focuses ? (number of cases / 1000 inhabittants)")),
         dcc.Graph(id='cases-overview-map-communes-p', figure=map_communes_per_inhabitant(), config=dict(locale=str(get_locale()))),
         html.H3(gettext("Cases per municipality")),
         html.H4(gettext("Click on a municipality to see a plot of its cases over time")),

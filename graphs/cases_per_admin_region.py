@@ -5,6 +5,7 @@ import plotly.express as px
 import pandas as pd
 import numpy as np
 from flask_babel import gettext
+from pages import get_translation
 
 from graphs import register_plot_for_embedding
 
@@ -22,7 +23,7 @@ df3['NIS3'] = df3['NIS3'].astype(int)
 geojson = geopandas.read_file('static/json/admin-units/be-geojson.geojson')
 df_names = pd.DataFrame(geojson.drop(columns='geometry'))
 df3 = pd.merge(df3,df_names,left_on='NIS3',right_on='NIS3',how='left')
-df3['CASES/HABITANT'] = df3['CASES']/df3['POP']
+df3['CASES/HABITANT'] = df3['CASES']/df3['POP']*1000
 
 
 @register_plot_for_embedding("cases_per_admin_region_inhabitant")
@@ -37,7 +38,7 @@ def map_totcases_admin_region():
                                height=600,
                                mapbox_style="carto-positron", zoom=6)
     fig.update_geos(fitbounds="locations")
-    fig.layout.coloraxis.colorbar.title = gettext("Number of cases")
+    fig.layout.coloraxis.colorbar.title = get_translation(fr="Nombres de cas",en="Number of cases")
     fig.layout.coloraxis.colorbar.titleside = "right"
     fig.layout.coloraxis.colorbar.ticks = "outside"
     fig.layout.coloraxis.colorbar.tickmode = "array"
@@ -60,7 +61,7 @@ def map_cases_per_habittant_admin_region():
                                height=600,
                                mapbox_style="carto-positron", zoom=6)
     fig.update_geos(fitbounds="locations")
-    fig.layout.coloraxis.colorbar.title = gettext("Number of cases per habitant")
+    fig.layout.coloraxis.colorbar.title = get_translation(fr="Nombres de cas / 1000 habitants",en="Number of cases / 1000 inhabitants")
     fig.layout.coloraxis.colorbar.titleside = "right"
     fig.layout.coloraxis.colorbar.ticks = "outside"
     fig.layout.coloraxis.colorbar.tickmode = "array"
