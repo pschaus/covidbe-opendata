@@ -74,10 +74,10 @@ def update():
     df = df.sort_values(by=['Time'])
     df.to_csv(f"../static/csv/tomtom/all.csv")
 
-
-while True:
-	update()
-	time.sleep(5*60)
+update()
+#while True:
+#	update()
+#	time.sleep(5*60)
 
 
 
