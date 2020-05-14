@@ -6,7 +6,7 @@ import os
 from os import path
 
 def update():
-    print("fetch")
+    #print("fetch")
     # retrieve json file
     url = "https://api.midway.tomtom.com/ranking/live/"
     italy_req = requests.get(url)
@@ -28,7 +28,7 @@ def update():
     time = []
 
     count = len(italy_json) - 1
-    print(count)
+    #print(count)
 
     # append each item in the json file to the empty lists
     i = 0
