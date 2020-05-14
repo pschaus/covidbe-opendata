@@ -14,7 +14,19 @@ from pages.sources import *
 
 def municipalities():
     return [
-        html.H2(gettext("Municipalities")),
+        html.H2(gettext(
+            get_translation(en="Number of cases per municipality", fr="Nombre de cas par commune"))),
+        html.P(gettext(
+            get_translation(
+                fr="""C'est le nombre de cas testés positifs rapportés par Sciensano. 
+                  Le nombre de cas positifs réel peut être (beaucoup) plus important.
+                  Notez que le nombre de tests quotidien augmente également. Voir notre page testing.
+            """,
+                en="""
+            This is the number of positive test cases reported by Sciensano. 
+            The number of actual positive cases can be (much) higher.
+            Note that the number of daily tests is also increasing. See our testing page.
+            """))),
         html.H3(get_translation(
             en="""Weekly number of positive case""",
             fr="""Nombre de cas positifs par semaine""",
@@ -70,7 +82,7 @@ def municipalities_callbacks(app):
         return {"display": "block"}
 
 
-municipalities_link = AppLink(lazy_gettext("Cases per municipality"), lazy_gettext("Per municipality"),
+municipalities_link = AppLink(get_translation(en="Cases per municipality",fr="Cas par communne"), get_translation(en="Municipalities",fr="Communes"),
                               "/municipalities", municipalities,
                               map_communes_per_inhabitant,
                               municipalities_callbacks)
