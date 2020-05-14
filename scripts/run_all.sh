@@ -10,4 +10,4 @@ done
 
 wait
 
-python generate_images.py
+#python generate_images.py
