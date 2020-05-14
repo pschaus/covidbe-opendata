@@ -6,7 +6,7 @@ import dash_gif_component as Gif
 from dash.dependencies import Input, Output, State
 from flask_babel import get_locale, gettext, lazy_gettext
 
-from graphs.cases_per_municipality import map_communes, barplot_communes, map_communes_per_inhabitant
+from graphs.cases_per_municipality import map_communes, barplot_communes, map_communes_per_inhabitant, map_communes_cases_per_week, map_communes_per_1000inhabitant_per_week
 from pages import AppLink, get_translation
 
 from pages.sources import *
@@ -15,15 +15,30 @@ from pages.sources import *
 def municipalities():
     return [
         html.H2(gettext("Municipalities")),
-        html.P(get_translation(
-            en="""Number of positive cases per 1000 inhabitants since beginning of March 2020""",
-            fr="""Nombre de cas positifs par 1000 habitants depuis le début du mois de Mars 2020""",
-        )),        
-        html.Div([ Gif.GifPlayer(gif='/assets/media/map_cases1000.gif',still='/assets/media/2020-03-01_per1000.png',) ]),
-        html.H3(gettext("Where are the epidemic focuses ? (number of cases / 1000 inhabittants)")),
+        html.H3(get_translation(
+            en="""Weekly number of positive case""",
+            fr="""Nombre de cas positifs par semaine""",
+        )),
+        dcc.Graph(id='cases-overview-map-communes-p', figure=map_communes_cases_per_week(), config=dict(locale=str(get_locale()))),
+        html.H3(get_translation(
+            en="""Weekly number of positive case per 1000 inhabitants""",
+            fr="""Nombre de cas positifs par semaine par 1000 habitants""",
+        )),
+        dcc.Graph(id='cases-overview-map-communes-p', figure=map_communes_per_1000inhabitant_per_week(),
+                  config=dict(locale=str(get_locale()))),
+        html.H3(get_translation(
+            en="""Number of positive case per 1000 inhabitants""",
+            fr="""Nombre de cas positifs par 1000 habitants""",
+        )),
         dcc.Graph(id='cases-overview-map-communes-p', figure=map_communes_per_inhabitant(), config=dict(locale=str(get_locale()))),
-        html.H3(gettext("Cases per municipality")),
-        html.H4(gettext("Click on a municipality to see a plot of its cases over time")),
+        html.H3(get_translation(
+            en="""Number of positive case""",
+            fr="""Nombre de cas positifs""",
+        )),
+        html.H4(get_translation(
+            en="Click on a municipality to see a plot of its cases over time",
+            fr="Cliquez sur une commune pour voir l'histogramme des cas dans le temps",
+        )),
         dbc.Row([
             dbc.Col(dcc.Graph(id='cases-overview-map-communes', figure=map_communes(),
                               config=dict(locale=str(get_locale()))))
