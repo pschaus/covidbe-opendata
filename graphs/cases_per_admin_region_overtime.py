@@ -61,3 +61,6 @@ def map_cases_per_habittant_admin_region_overtime():
     )
     fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=5, b=0))
     return fig
+
+
+
