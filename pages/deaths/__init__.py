@@ -7,11 +7,16 @@ from pages import AppMenu, AppLink
 from pages.deaths.overmortality import display_overmortality
 from pages.deaths.age_groups import display_age_groups
 from pages.deaths.obituary import display_obituary
+from pages.deaths.admin_region import display_arrondissements
+
+from pages import get_translation
+
 
 deaths_menu = AppMenu(lazy_gettext("Deaths"), "/deaths", [
-    AppLink(lazy_gettext("Death per age group"), lazy_gettext("Age Groups"), "/age_groups", display_age_groups),
-    AppLink(lazy_gettext("Overmortality"), lazy_gettext("Overmortality"), "/overmortality", display_overmortality,
+    AppLink(get_translation(fr="Décès / Arrondissements",en="Deaths / Admin Region"), get_translation(fr="Arrondissements",en="Admin Region"), "/admin_region", display_arrondissements),
+    AppLink(get_translation(fr="Décès / Groupes d'ages", en="Deaths / Age group"), lazy_gettext("Age Groups"), "/age_groups", display_age_groups),
+    AppLink(get_translation(fr = "Surmortalité", en = "Overmortality"), get_translation(fr = "Surmortalité", en = "Overmortality"), "/overmortality", display_overmortality,
             plot=overmortality_estimates_repartition_bar),
-    AppLink(lazy_gettext("Obituary evolution"), lazy_gettext("Obituary evolution"), "/obituary", display_obituary,
+    AppLink(get_translation(fr= "Evolution Nécrologiques", en = "Obituary evolution"), get_translation(fr= "Nécrologie", en = "Obituary"), "/obituary", display_obituary,
             plot=rolling_ratio_plot),
 ])

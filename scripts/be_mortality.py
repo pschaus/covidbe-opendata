@@ -16,7 +16,20 @@ from zipfile import ZipFile
 import pandas
 import requests
 
+import pandas as pd
+import plotly.graph_objs as go
+import plotly.express as px
+from flask_babel import gettext
+from plotly.subplots import make_subplots
+import plotly.express as px
 
+import numpy as np
+import altair as alt
+from pages import get_translation
+
+from datetime import datetime
+
+import geopandas
 
 
 url = "https://statbel.fgov.be/sites/default/files/files/opendata/deathday/DEMO_DEATH_OPEN.zip"
@@ -35,3 +48,35 @@ df = pandas.read_csv(zf.open(match), parse_dates=['DT_DATE'],date_parser=mydatep
 
 
 df.to_csv("../static/csv/mortality_statbel.csv",index=False)
+
+
+
+def weekly_mortality_nis3():
+
+    dateparse = lambda x: datetime.strptime(x, '%Y-%m-%d')
+    df = pd.read_csv("../static/csv/mortality_statbel.csv", parse_dates=['DT_DATE'], date_parser=dateparse)
+    df.dropna(thresh=1, inplace=True)
+    df = df[df['DT_DATE'] >= '2019-12-30']
+    df['NIS3'] = df.apply(lambda x: int(str(x['CD_ARR'])[:2]), axis=1).astype(int)
+    df['WEEK'] = df.apply(lambda x: x['DT_DATE'].isocalendar()[1], axis=1)
+    df = df.groupby(['WEEK', 'NIS3'])["MS_NUM_DEATH"].sum().reset_index()
+    df.rename(columns={"MS_NUM_DEATH": "TOT", "NR_YEAR": "YEAR"}, inplace=True)
+    df = df[df['WEEK'] >= 9]
+
+    geojson = geopandas.read_file('../static/json/admin-units/be-geojson.geojson')
+    df_names = pd.DataFrame(geojson.drop(columns='geometry'))
+    df = pd.merge(df, df_names, left_on='NIS3', right_on='NIS3', how='left')
+    df_pop = pd.read_csv("../static/csv/ins_pop.csv", dtype={"NIS5": str})
+    df_pop['NIS3'] = df_pop.apply(lambda x: x['NIS5'][:2], axis=1)
+    df3_pop = df_pop.groupby([df_pop.NIS3]).agg({'POP': ['sum']}).reset_index()
+    df3_pop.columns = df3_pop.columns.get_level_values(0)
+    df3_pop['NIS3'] = df3_pop['NIS3'].astype(int)
+
+    df3 = pd.merge(df, df3_pop, left_on='NIS3', right_on='NIS3', how='left')
+    df3['DEATH_PER_1000HABITANT'] = df3['TOT'] / df3['POP'] * 1000
+    df3 = df3.round({'DEATH_PER_1000HABITANT': 2})
+    df3 = df3.sort_values(by=['WEEK'])
+    df3.to_csv("../static/csv/weekly_mortality_statbel_ins3.csv",index=False)
+
+
+weekly_mortality_nis3()
