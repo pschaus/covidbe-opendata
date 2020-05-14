@@ -26,13 +26,64 @@ df_communes_tot['name'] = df_communes_tot.apply(
     lambda row: (row.FR if row.FR == row.NL else f"{row.FR}/{row.NL}").replace("_", " "), axis=1)
 
 
+df5 = pd.read_csv("static/csv/cases_weekly_ins5.csv",encoding='latin1')
+
+
+@register_plot_for_embedding("cases_per_municipality_cases_per_week")
+def map_communes_cases_per_week():
+    fig = px.choropleth_mapbox(df5, geojson=geojson_communes,
+                               locations="NIS5",
+                               color='CASES', color_continuous_scale="magma_r",
+                               animation_frame="WEEK", animation_group="NIS5",
+                               featureidkey="properties.NIS5",
+                               center={"lat": 50.641111, "lon": 4.668889},
+                               hover_name="CASES",
+                               hover_data=["CASES_PER_1000HABITANT", "CASES", "name"],
+                               height=600,
+                               mapbox_style="carto-positron", zoom=6)
+    fig.update_geos(fitbounds="locations")
+    fig.layout.coloraxis.colorbar.title = gettext("Number of cases per week")
+    fig.layout.coloraxis.colorbar.titleside = "right"
+    fig.layout.coloraxis.colorbar.ticks = "outside"
+    fig.layout.coloraxis.colorbar.tickmode = "array"
+    fig.update_traces(
+        hovertemplate=gettext("<b>%{customdata[0]} /1000<br><b>%{customdata[1]} cases <br><b>%{customdata[2]}")
+    )
+    fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=5, b=0))
+    return fig
+
+@register_plot_for_embedding("cases_per_municipality_per_1000inhabitant_per_week")
+def map_communes_per_1000inhabitant_per_week():
+    fig = px.choropleth_mapbox(df5, geojson=geojson_communes,
+                               locations="NIS5",
+                               color='CASES_PER_1000HABITANT', color_continuous_scale="magma_r",
+                               animation_frame="WEEK", animation_group="NIS5",
+                               featureidkey="properties.NIS5",
+                               center={"lat": 50.641111, "lon": 4.668889},
+                               hover_name="CASES",
+                               hover_data=["CASES_PER_1000HABITANT", "CASES", "name"],
+                               height=600,
+                               mapbox_style="carto-positron", zoom=6)
+    fig.update_geos(fitbounds="locations")
+    fig.layout.coloraxis.colorbar.title = gettext("Number of cases per 1000 habitants per week")
+    fig.layout.coloraxis.colorbar.titleside = "right"
+    fig.layout.coloraxis.colorbar.ticks = "outside"
+    fig.layout.coloraxis.colorbar.tickmode = "array"
+    fig.update_traces(
+        hovertemplate=gettext("<b>%{customdata[0]} /1000<br><b>%{customdata[1]} cases <br><b>%{customdata[2]}")
+    )
+    fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=5, b=0))
+    return fig
+
+
+
 @register_plot_for_embedding("cases_per_municipality_per_inhabitant")
 def map_communes_per_inhabitant():
     fig = px.choropleth_mapbox(df_communes_tot, geojson=geojson_communes,
                                locations="NIS5",
                                color='CASES_PER_1000_POP', color_continuous_scale="magma_r",
                                #range_color=(3, 10),
-                               featureidkey="properties.AdMuKey",
+                               featureidkey="properties.NIS5",
                                center={"lat": 50.641111, "lon": 4.668889},
                                hover_name="CASES_PER_1000_POP",
                                hover_data=["name", "CASES_PER_1000_POP", "NIS5"],
@@ -57,7 +108,7 @@ def map_communes():
                                locations="NIS5",
                                color='colorbase', color_continuous_scale="deep",
                                range_color=(3, 10),
-                               featureidkey="properties.AdMuKey",
+                               featureidkey="properties.NIS5",
                                center={"lat": 50.641111, "lon": 4.668889},
                                hover_name="CASES",
                                hover_data=["name", "CASES", "NIS5"],
