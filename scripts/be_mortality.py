@@ -25,7 +25,6 @@ import plotly.express as px
 
 import numpy as np
 import altair as alt
-from pages import get_translation
 
 from datetime import datetime
 
