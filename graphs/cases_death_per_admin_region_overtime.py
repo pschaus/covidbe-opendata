@@ -20,7 +20,7 @@ df = df[df['WEEK'] >= 10]
 def gapminder_case_death_admin_region_overtime():
     fig = px.scatter(df, x="DEATH_PER_1000HABITANT", y='CASES_PER_1000HABITANT',
                      animation_frame="WEEK", animation_group="NIS3",
-                     size="POP", color="name", hover_name="name", range_x=[0, 0.35], range_y=[0, 1],height=600,)
+                     size="POP", color="name", hover_name="name", range_x=[0, 0.35], range_y=[0, 1],height=1000,)
     fig.update_layout(title_text="GapMinder Plot: Weekly CASES vs Deaths / 1000 Inhabitants / Admin Region",
                       xaxis_title=get_translation(en="Cases / 1000 Inhabitants",fr="Cas / 1000 habitants"),
                       yaxis_title=get_translation(en="Death / 1000 Inhabitants",fr="Décès / 1000 habitants"))
