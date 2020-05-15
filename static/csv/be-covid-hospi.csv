@@ -605,7 +605,7 @@
 603,2020-05-08,WBR,Wallonia,2,23,7,5,0,0,3,BrabantWallon
 604,2020-05-08,VWV,Flanders,11,267,55,35,1,8,25,WestVlaanderen
 605,2020-05-09,VAN,Flanders,14,407,85,57,2,9,46,Antwerpen
-606,2020-05-09,BRU,Brussels,15,433,95,63,10,16,32,Brussels
+606,2020-05-09,BRU,Brussels,15,433,94,61,10,16,32,Brussels
 607,2020-05-09,WHT,Wallonia,14,298,47,32,6,8,33,Hainaut
 608,2020-05-09,VLI,Flanders,7,176,42,23,2,10,25,Limburg
 609,2020-05-09,WLG,Wallonia,12,171,46,30,1,5,17,Liège
@@ -616,7 +616,7 @@
 614,2020-05-09,WBR,Wallonia,2,23,7,3,0,2,1,BrabantWallon
 615,2020-05-09,VWV,Flanders,11,249,52,30,3,13,29,WestVlaanderen
 616,2020-05-10,VAN,Flanders,14,409,86,55,1,6,15,Antwerpen
-617,2020-05-10,BRU,Brussels,15,429,92,62,10,10,6,Brussels
+617,2020-05-10,BRU,Brussels,15,429,91,59,10,10,6,Brussels
 618,2020-05-10,WHT,Wallonia,14,300,50,36,5,13,8,Hainaut
 619,2020-05-10,VLI,Flanders,7,172,43,25,2,3,6,Limburg
 620,2020-05-10,WLG,Wallonia,12,169,50,29,1,6,7,Liège
@@ -659,3 +659,14 @@
 657,2020-05-13,VBR,Flanders,6,71,18,12,4,4,14,VlaamsBrabant
 658,2020-05-13,WBR,Wallonia,2,17,6,2,0,0,7,BrabantWallon
 659,2020-05-13,VWV,Flanders,11,245,46,24,3,13,30,WestVlaanderen
+660,2020-05-14,VAN,Flanders,14,354,68,49,1,10,33,Antwerpen
+661,2020-05-14,BRU,Brussels,15,330,71,46,6,5,37,Brussels
+662,2020-05-14,WHT,Wallonia,14,252,41,30,4,12,31,Hainaut
+663,2020-05-14,VLI,Flanders,7,134,30,16,1,3,14,Limburg
+664,2020-05-14,WLG,Wallonia,12,158,39,20,1,5,14,Liège
+665,2020-05-14,WLX,Wallonia,3,34,3,3,0,2,1,Luxembourg
+666,2020-05-14,WNA,Wallonia,6,86,15,8,3,4,3,Namur
+667,2020-05-14,VOV,Flanders,14,184,47,21,2,8,20,OostVlaanderen
+668,2020-05-14,VBR,Flanders,6,69,18,11,3,1,9,VlaamsBrabant
+669,2020-05-14,WBR,Wallonia,2,17,4,2,0,0,2,BrabantWallon
+670,2020-05-14,VWV,Flanders,11,244,44,25,3,17,26,WestVlaanderen
