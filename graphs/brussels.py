@@ -6,16 +6,27 @@ import pandas as pd
 import plotly.graph_objs as go
 from flask_babel import gettext
 
-
+from datetime import datetime
 import plotly.express as px
 
 
-df = pd.read_csv(f'static/csv/tunnels_bxl.csv',parse_dates = ['from','to'])
+
+mydateparser = lambda x: datetime.strptime(x, "%d/%m/%Y %H:%M")
+
+df = pd.read_csv(f'static/csv/tunnels_bxl.csv',parse_dates = ['from','to'],date_parser=mydateparser)
 
 
 
 mask = (df['from'] >= '2020-02-1')
 df = df.loc[mask]
+
+mask = (df['from'] <= '2020-05-19')
+df = df.loc[mask]
+
+
+df.sort_values(by='from',inplace=True)
+
+
 
 df.reset_index(level=0, inplace=True)
 df.set_index('from', inplace=True)
