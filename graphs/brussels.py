@@ -75,6 +75,9 @@ def fig_tunnel_ratio(weekday=True, time='07:00'):
     return fig
 
 
+
+
+
 @register_plot_for_embedding("brussels-tunnels")
 def brussels_tunnels():
     fig1 = fig_tunnel(True, '07:00')
