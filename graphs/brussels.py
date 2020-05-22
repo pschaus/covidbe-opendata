@@ -1,13 +1,5 @@
 
-
-from graphs import register_plot_for_embedding
-
-import pandas as pd
-import plotly.graph_objs as go
-from flask_babel import gettext
-
-from datetime import datetime
-import plotly.express as px
+from plotly.subplots import make_subplots
 
 from graphs import register_plot_for_embedding
 
@@ -122,5 +114,64 @@ def brussels_alltunnels_ratio():
     fig1 = fig_global_tunnel_ratio(True, '07:00')
     fig1.update_layout(title="#Total Tunnel Traffic of Brussels at 7:00-8:00 Workdays")
     return fig1
+
+
+
+# -------------------------------------------------------------
+
+cities =  ['Brussels','Paris','Amsterdam','Berlin','London']
+
+df_apple = pd.read_csv(f'static/csv/applemobilitytrends.csv')
+
+cdf = df_apple[df_apple["geo_type"] == "city"]
+
+def df_country(country):
+    cdf_c = cdf[cdf['region'] == country]
+    cdf_c.drop(['geo_type','region'], axis = 1,inplace=True)
+    cdf_c.rename(columns={'transportation_type': 'date'},inplace=True)
+    cdf_c.set_index(['date'])
+    cdf_c=cdf_c.T
+    cdf_c.index.name = 'date'
+    cdf_c.columns = cdf_c.iloc[0]
+    cdf_c.drop(cdf_c.index[0],inplace=True)
+    return cdf_c
+
+
+cities_df = {c:df_country(c) for c in cities}
+
+@register_plot_for_embedding("apple_mobility_plot_cities")
+def apple_mobility_plot_cities():
+    colors = [
+        '#1f77b4',  # muted blue
+        '#ff7f0e',  # safety orange
+        '#2ca02c',  # cooked asparagus green
+        '#d62728',  # brick red
+        '#9467bd',  # muted purple
+        '#8c564b',  # chestnut brown
+        '#e377c2',  # raspberry yogurt pink
+        '#7f7f7f',  # middle gray
+        '#bcbd22',  # curry yellow-green
+        '#17becf'  # blue-teal
+    ]
+
+    graphs = ['driving', 'transit', 'walking', ]
+    large_fig = make_subplots(rows=len(graphs), cols=1, subplot_titles=graphs, horizontal_spacing=0.05,
+                              vertical_spacing=0.02, shared_xaxes=True)
+    r = 1
+    for g in graphs:
+
+        fig = go.Figure()
+        a = 0
+        for c in cities:
+            df = cities_df[c]
+            large_fig.append_trace(
+                go.Scatter(x=df.index, y=df[g], line=dict(color=colors[a]), mode='lines', name=c, legendgroup=c,
+                           showlegend=(r == 1)), row=r, col=1)
+            a += 1
+
+        r += 1
+
+    large_fig['layout'].update(height=1000, title='Apple Mobility Reports')
+    return large_fig
 
 
