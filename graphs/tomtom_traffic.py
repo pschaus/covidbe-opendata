@@ -27,6 +27,7 @@ def get_tomtom_df(cities):
         df = df[df.index.dayofweek < 5]
         df = df[df.Time.dt.date != datetime.date(2020, 5, 1)]
         df = df[df.Time.dt.date != datetime.date(2020, 5, 8)]
+        df = df[df.Time.dt.date != datetime.date(2020, 5, 21)]
         df = df[df.Time.dt.date > datetime.date(2020, 4, 14)]
         df = df.groupby([df.city, df.Time.dt.date]).agg(['mean'])
         df.columns = df.columns.droplevel(1)
