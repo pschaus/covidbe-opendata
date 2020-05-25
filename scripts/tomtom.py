@@ -65,12 +65,12 @@ def update(country):
     df = df.sort_values(by=['Time'])
     df.to_csv(f"../static/csv/tomtom/{country}.csv")
 
+def run():
+    for c in cities_be:
+        update(c)
 
-for c in cities_be:
-    update(c)
-
-for c in cities:
-    update(c)
+    for c in cities:
+        update(c)
 
 
 
