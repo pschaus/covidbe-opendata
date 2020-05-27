@@ -365,4 +365,4 @@ if __name__ == "__main__":
         print(memory_summary())
         return "see logs"
 
-    app.run_server(port=8888, debug=True)
+    app.run_server(port=8050, debug=True)
