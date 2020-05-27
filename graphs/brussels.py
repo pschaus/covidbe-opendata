@@ -9,6 +9,7 @@ from flask_babel import gettext
 
 from datetime import datetime
 import plotly.express as px
+import os
 
 mydateparser = lambda x: datetime.strptime(x, "%d/%m/%Y %H:%M")
 
@@ -173,5 +174,41 @@ def apple_mobility_plot_cities():
 
     large_fig['layout'].update(height=1000, title='Apple Mobility Reports')
     return large_fig
+
+# -------------------------------------------------------------
+
+bike_data_dir = f'static/csv/bike_mobility'
+all_bike_files = sorted([f for f in os.listdir(bike_data_dir) if "history" in f])
+
+stations_pd = pd.read_csv(f"static/csv/bike_stations_devices.csv")
+station_names = [s.split(" - ")[-1] for s in stations_pd["road_nl"]]
+device_codes = list(stations_pd["device_name"])
+devices = {dc: sn for dc, sn in zip(device_codes, station_names)}
+
+@register_plot_for_embedding("bike_mobility_plot_stations")
+def bike_mobility_plot_stations():
+    # global bike_data_dir
+
+    fig = go.Figure()
+    for bike_file_name in all_bike_files:
+        station_code = bike_file_name.split("_")[-1].split(".")[0]
+        station_name = devices[station_code]
+
+        bike_file = f"{bike_data_dir}/{bike_file_name}"
+        bike_pd = pd.read_csv(bike_file)
+        count_by_date = bike_pd.groupby(["Date"]).sum()
+        count_by_date.drop(columns = ["Time gap", "Average speed"], inplace = True)
+        count_by_date.index = pd.to_datetime(count_by_date.index, yearfirst = True, format = "%Y-%m-%d")
+
+        mask = (count_by_date.index <= '2020-03-10')
+
+        count_before_deconfinement = count_by_date.loc[mask]
+        mean = count_before_deconfinement['Count'].mean()
+        count_by_date['rel_count'] = count_by_date.Count / mean
+        fig.add_scatter(x=count_by_date.index, y=count_by_date["rel_count"], mode='lines', 
+                                    name=station_name, # legendgroup=c, # line=dict(color=colors[a]),
+                                   showlegend=True)
+    fig['layout'].update(height=500, title='Bike Mobility Brussels Reports')
+    return fig
 
 
