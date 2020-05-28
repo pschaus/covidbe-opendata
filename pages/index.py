@@ -92,6 +92,7 @@ def display_about():
             - [Guillaume Derval, UCLouvain](https://www.linkedin.com/in/guillaumederval/)
             - [Pierre Schaus, UCLouvain](https://www.info.ucl.ac.be/~pschaus)
             - [Vincent François, UCLouvain](http://vincent.francois-l.be)
+            - [Alexey Medvedev, UNamur, UCLouvain] (http://alexeymedvedev.com)
             
             We also received contributions from 
             
@@ -107,6 +108,7 @@ def display_about():
             - [Guillaume Derval, UCLouvain] (https://www.linkedin.com/in/guillaumederval/)
             - [Pierre Schaus, UCLouvain] (https://www.info.ucl.ac.be/~pschaus)
             - [Vincent François, UCLouvain] (http://vincent.francois-l.be)
+            - [Alexey Medvedev, UNamur, UCLouvain] (http://alexeymedvedev.com)
             
             Nous avons également reçu des contributions de 
             
