@@ -4,7 +4,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 from flask_babel import get_locale, gettext
 
-from graphs.brussels import brussels_tunnels, brussels_tunnels_ratio, brussels_alltunnels_ratio, apple_mobility_plot_cities
+from graphs.brussels import brussels_tunnels, brussels_tunnels_ratio, brussels_alltunnels_ratio, apple_mobility_plot_cities, bike_mobility_plot_stations
 from pages.sources import display_source_providers, source_google_traffic, source_brussels_mobility, source_apple_mobility
 from pages import get_translation
 
@@ -49,5 +49,12 @@ def display_brussels():
                               config=dict(locale=str(get_locale())))),
         ]),
         display_source_providers(source_apple_mobility),
+        html.H2(gettext("Brussels Mobility: bike relative passage count through stations")),
+        dbc.Row([
+            dbc.Col(dcc.Graph(id='brussels-bikes-ratio',
+                              figure=bike_mobility_plot_stations(),
+                              config=dict(locale=str(get_locale())))),
+        ]),
+        display_source_providers(source_brussels_mobility),
 
     ]
