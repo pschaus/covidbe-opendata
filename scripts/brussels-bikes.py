@@ -27,7 +27,7 @@ history_tag = "request=history" # history data
 
 for station in device_codes:
     
-    file = "history_data_{}-{}_{}.csv".format(start_date_h, end_date_h, station)
+    file = "history_data_{}-{}.csv".format(start_date_h, station)
     featureID= "featureID=" + station
 
     save_file = os.path.join(base_save_dir, file)

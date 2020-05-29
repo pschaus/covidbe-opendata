@@ -191,7 +191,7 @@ def bike_mobility_plot_stations():
 
     fig = go.Figure()
     for bike_file_name in all_bike_files:
-        station_code = bike_file_name.split("_")[-1].split(".")[0]
+        station_code = bike_file_name.split("-")[-1].split(".")[0]
         station_name = devices[station_code]
 
         bike_file = f"{bike_data_dir}/{bike_file_name}"
