@@ -93,6 +93,7 @@ def display_about():
             - [Pierre Schaus, UCLouvain](https://www.info.ucl.ac.be/~pschaus)
             - [Vincent François, UCLouvain](http://vincent.francois-l.be)
             - [Alexey Medvedev, UNamur, UCLouvain] (http://alexeymedvedev.com)
+            - [Vianney Coppé, UCLouvain] (https://aia.info.ucl.ac.be)
             
             We also received contributions from 
             
@@ -109,6 +110,7 @@ def display_about():
             - [Pierre Schaus, UCLouvain] (https://www.info.ucl.ac.be/~pschaus)
             - [Vincent François, UCLouvain] (http://vincent.francois-l.be)
             - [Alexey Medvedev, UNamur, UCLouvain] (http://alexeymedvedev.com)
+            - [Vianney Coppé, UCLouvain] (https://aia.info.ucl.ac.be)
             
             Nous avons également reçu des contributions de 
             
