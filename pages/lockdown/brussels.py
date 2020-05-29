@@ -50,6 +50,10 @@ def display_brussels():
         ]),
         display_source_providers(source_apple_mobility),
         html.H2(gettext("Brussels Mobility: bike relative passage count through stations")),
+        html.P(gettext(
+            get_translation(
+                fr="""Relatif signifie divisé par le nombre moyen de passages quotidien avant confinement afin de rendre les sites de comptages comparables""",
+                en="""Relative means divided by the average number of daily passages before confinement in order to make the counting sites comparable"""))),
         dbc.Row([
             dbc.Col(dcc.Graph(id='brussels-bikes-ratio',
                               figure=bike_mobility_plot_stations(),
