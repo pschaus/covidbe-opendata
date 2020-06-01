@@ -37,7 +37,7 @@ prov_population = {"VBR":1129849,
 
 url="https://epistat.sciensano.be/Data/COVID19BE_CASES_AGESEX.csv"
 s=requests.get(url).content
-df_prov=pd.read_csv(io.StringIO(s.decode('latin-1'))) # last line is NaN
+df_prov=pd.read_csv(io.StringIO(s.decode('utf8'))) # last line is NaN
 
 # MAP PROVINCE CODES
 df_prov['PROVINCE_NAME']= df_prov['PROVINCE']
@@ -56,7 +56,7 @@ df_prov.to_csv('../static/csv/be-covid-provinces.csv', index=True)
 
 url="https://epistat.sciensano.be/Data/COVID19BE_HOSP.csv"
 s=requests.get(url).content
-df_hospi=pd.read_csv(io.StringIO(s.decode('latin-1'))) # last line is NaN
+df_hospi=pd.read_csv(io.StringIO(s.decode('utf8'))) # last line is NaN
 
 # MAP PROVINCE CODES
 df_hospi['PROVINCE_NAME']= df_hospi['PROVINCE']
