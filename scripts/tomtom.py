@@ -16,7 +16,10 @@ cities = ["CHN_beijing", "CAN_toronto", "USA_los-angeles", "JPN_tokyo", "ARE_abu
 def update(country):
     print(country)
     # retrieve json file
-    url = f"https://api.midway.tomtom.com/ranking/live/{country}"
+
+    #https://api.midway.tomtom.com/ranking /liveHourly/BEL_liege
+
+    url = f"https://api.midway.tomtom.com/ranking/liveHourly/{country}"
     italy_req = requests.get(url)
     italy_json = italy_req.json()
 
@@ -74,6 +77,6 @@ def run():
 
 
 
-#run()
+run()
 
 

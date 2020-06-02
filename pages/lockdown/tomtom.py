@@ -49,23 +49,23 @@ def display_tomtom():
                               figure=map_tomtom_be_working_days(),
                               config=dict(locale=str(get_locale())))),
         ]),
-        html.H2(gettext("TomTom Traffic Index All Cities")),
-        dbc.Row([
-            dbc.Col(dcc.DatePickerSingle(id='tomtom-date-picker-single-id',
-                                         min_date_allowed=dt.datetime(2020, 5, 7),
-                                         max_date_allowed=dt.datetime.today().date(),
-                                         date=dt.datetime.today().date()
-                                         )),
-        ]),
-        dbc.Row([
-            dbc.Col(dcc.Slider(id='tomtom-hour-picker-single-id',
-                               min=0,
-                               max=23,
-                               step=1,
-                               value=8,
-                               marks={i: str(i)+"H" for i in range(24)}
-                    ))
-        ]),
+        # html.H2(gettext("TomTom Traffic Index All Cities")),
+        # dbc.Row([
+        #     dbc.Col(dcc.DatePickerSingle(id='tomtom-date-picker-single-id',
+        #                                  min_date_allowed=dt.datetime(2020, 5, 7),
+        #                                  max_date_allowed=dt.datetime.today().date(),
+        #                                  date=dt.datetime.today().date()
+        #                                  )),
+        # ]),
+        # dbc.Row([
+        #     dbc.Col(dcc.Slider(id='tomtom-hour-picker-single-id',
+        #                        min=0,
+        #                        max=23,
+        #                        step=1,
+        #                        value=8,
+        #                        marks={i: str(i)+"H" for i in range(24)}
+        #             ))
+        # ]),
         dbc.Row([
             dbc.Col(dcc.Graph(id='tomtom-map-container-id',
                               #figure=map_tomtom_by_day(dt.datetime.today().date()),

@@ -28,6 +28,7 @@ def get_tomtom_df(cities):
         df = df[df.Time.dt.date != datetime.date(2020, 5, 1)]
         df = df[df.Time.dt.date != datetime.date(2020, 5, 8)]
         df = df[df.Time.dt.date != datetime.date(2020, 5, 21)]
+        df = df[df.Time.dt.date != datetime.date(2020, 6, 1)]
         df = df[df.Time.dt.date > datetime.date(2020, 4, 14)]
         df = df.groupby([df.city, df.Time.dt.date]).agg(['mean'])
         df.columns = df.columns.droplevel(1)
@@ -126,6 +127,7 @@ def get_belgium_neighbors_df_working_days() :
         df = df[df.index.dayofweek < 5]
         df = df[df.Time.dt.date != datetime.date(2020,5,1)]
         df = df[df.Time.dt.date != datetime.date(2020, 5, 8)]
+        df = df[df.Time.dt.date != datetime.date(2020, 6, 1)]
 
         df = df[df.Time.dt.date > datetime.date(2020,4,13)]
         df = df.groupby([df.country, df.city,  df.Date]).agg(['mean'])
@@ -199,6 +201,7 @@ def get_world_df() :
     df = df[df.index.dayofweek < 5]
     df = df[df.Time.dt.date != datetime.date(2020, 5, 1)]
     df = df[df.Time.dt.date > datetime.date(2020, 4, 13)]
+    df = df[df.Time.dt.date > datetime.date(2020, 6, 1)]
 
     df = df.groupby([df.country, df.city, df.Date, df.Hour]).agg(['mean'])
     df.columns = df.columns.droplevel(1)
