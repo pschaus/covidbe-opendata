@@ -51,9 +51,11 @@ babel = Babel(app.server)
 @babel.localeselector
 def get_locale():
     g.locale = request.cookies.get("lang")
+    #if not g.get('locale', None):
+    #    translations = ["en", "fr"]
+    #    g.locale = request.accept_languages.best_match(translations)
     if not g.get('locale', None):
-        translations = ["en", "fr"]
-        g.locale = request.accept_languages.best_match(translations)
+        g.locale = "en"
     return g.locale
 
 
