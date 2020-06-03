@@ -8,11 +8,7 @@ from flask_babel import gettext
 
 from graphs import register_plot_for_embedding
 
-df_communes_tot = pd.merge(pd.read_csv("static/csv/be-covid-totcases.csv", dtype={"NIS5": str}),
-                           pd.read_csv("static/csv/ins_pop.csv", dtype={"NIS5": str}),
-                           left_on='NIS5',
-                           right_on='NIS5',
-                           how='left')
+df_communes_tot = pd.read_csv("static/csv/be-covid-totcases.csv", dtype={"NIS5": str})
 
 # We take the third highest number of cases per 1000 as the max value to represent on the map
 upper_df_communes_tot = np.sort(1000.0*df_communes_tot.CASES/df_communes_tot.POP)[-3]
@@ -27,6 +23,8 @@ df_communes_tot['name'] = df_communes_tot.apply(
 
 
 df5 = pd.read_csv("static/csv/cases_weekly_ins5.csv",encoding='latin1')
+
+today_w = datetime.today().isocalendar()[1]
 
 
 @register_plot_for_embedding("cases_per_municipality_cases_per_week")
