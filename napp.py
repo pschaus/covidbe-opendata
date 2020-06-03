@@ -8,6 +8,7 @@ from dash.dependencies import Input, Output, State, ClientsideFunction
 from dash.exceptions import PreventUpdate
 from flask import request, g, abort, redirect
 from flask_babel import Babel, lazy_gettext, gettext
+from flask_caching import Cache
 
 from graphs import registered_plots
 from graphs.cases_per_municipality import map_communes_per_inhabitant
@@ -42,19 +43,29 @@ app = dash.Dash(__name__,
 )
 app.title = "Covidata.be"
 app.config['suppress_callback_exceptions'] = True
+cache = Cache(app.server, config={
+    'CACHE_TYPE': 'filesystem',
+    'CACHE_DIR': 'cache-directory'
+})
 server = app.server
 
 # Hook Flask-Babel to the app
 babel = Babel(app.server)
 
-
 @babel.localeselector
 def get_locale():
     g.locale = request.cookies.get("lang")
+    #if not g.get('locale', None):
+    #    translations = ["en", "fr"]
+    #    g.locale = request.accept_languages.best_match(translations)
     if not g.get('locale', None):
-        translations = ["en", "fr"]
-        g.locale = request.accept_languages.best_match(translations)
+        g.locale = "en"
     return g.locale
+
+
+# Custom memoize function that handles the language in g.language
+def memoize(timeout=24*60*60):
+    return cache.memoize(timeout, make_name=lambda f: f"{get_locale()}_{f}")
 
 
 menus = [index_menu, cases_menu, deaths_menu, hospitals_menu, lockdown_menu, international_menu]
@@ -193,40 +204,38 @@ def serve_layout():
 app.layout = serve_layout
 
 for link_comp in menu_links.values():
-    def gen_f(link):
-        return lambda x: x == link or (x == "/" and link == "/index")
-
-
-    app.callback(
+    app.clientside_callback(
+        f"""
+        function(link) {{
+            return "{link_comp['href']}" == link || (link == "/" && "{link_comp['href']}" == "/index");
+        }}
+        """,
         Output(link_comp["id"], "active"),
         [Input("url", "pathname")]
-    )(gen_f(link_comp["href"]))
-
-
-# this function applies the "open" class to rotate the chevron
-def set_navitem_class(is_open):
-    if is_open:
-        return "open"
-    return ""
-
+    )
 
 for i in range(len(menus)):
-    def toggle_collapse(menu):
-        return lambda x, _ignore: x.startswith(menu.base_link)
-
-
-    app.callback(
+    app.clientside_callback(
+        f"""
+            function(link, ignore) {{
+                return link.startsWith("{menus[i].base_link}")
+            }}
+        """,
         Output(f"submenu-{i}-collapse", "is_open"),
         [Input("url", "pathname"), Input("sidebar", "children")]
-    )(toggle_collapse(menus[i]))
+    )
 
-    app.callback(
+    app.clientside_callback(
+        f"""
+            function(is_open) {{
+                return is_open ? "open" : "";
+            }}
+        """,
         Output(f"submenu-{i}", "className"),
-        [Input(f"submenu-{i}-collapse", "is_open")],
-    )(set_navitem_class)
+        [Input(f"submenu-{i}-collapse", "is_open")]
+    )
 
 page_objects = {menu.base_link + page.link: (menu, page) for menu in menus for page in menu.children}
-page_cache = ThreadSafeCache()
 
 
 @app.callback(Output("sidebar", "children"),
@@ -237,12 +246,14 @@ def update_sidebar_lang(ignore):
 
 @app.callback(Output("page-content", "children"),
               [Input("url", "pathname"), Input("memory", "data")])
+@memoize()
 def render_page_content(pathname, lang_data):
+    print("RE-RENDER")
     if pathname == "/":
         pathname = "/index"
 
     if pathname in page_objects:
-        return page_cache.get((pathname, str(get_locale())), page_objects[pathname][1].display_fn)
+        return page_objects[pathname][1].display_fn()
 
     # If the user tries to reach a different page, return a 404 message
     return dbc.Jumbotron(
@@ -365,4 +376,4 @@ if __name__ == "__main__":
         print(memory_summary())
         return "see logs"
 
-    app.run_server(port=8050, debug=True)
+    app.run_server(port=8050, debug=False)
