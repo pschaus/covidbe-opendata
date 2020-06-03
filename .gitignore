@@ -5,5 +5,5 @@ __pycache__
 .ipynb_checkpoints
 *.ipynb
 tmp/
-*/hidden
+*/hidden/*
 cache-directory
