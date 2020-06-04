@@ -88,6 +88,10 @@ source_SI_modelRe = SourceProvider(lazy_gettext("Theory versus Data: How to Calc
 
 source_euromomo = SourceProvider("EUROMOMO", "https://www.euromomo.eu")
 
-source_brussels_mobility = SourceProvider("Brussels Mobility Open Data", 
+source_brussels_mobility = SourceProvider("Brussels Mobility Open Data",
                                     "https://data-mobility.brussels/bike/api/counts/",
                                     lazy_gettext("See link for API access to Open Data"))
+
+source_facebook = SourceProvider("Facebook Data",
+                                    "https://dataforgood.fb.com/",
+                                    lazy_gettext("Facebook Data For Good Program"))
