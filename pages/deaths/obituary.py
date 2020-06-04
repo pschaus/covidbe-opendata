@@ -83,7 +83,7 @@ def display_obituary():
             dbc.Col(dcc.Graph(id='allbeobituarybar',
                               figure=bar_plot_be(),
                               config=dict(locale=str(get_locale()))),
-                    width=12, lg=6),
+                    width=12, lg=12),
             #dbc.Col(dcc.Graph(id='allfrobituarybar',
             #                  figure=bar_plot_fr(),
             #                  config=dict(locale=str(get_locale()))),
