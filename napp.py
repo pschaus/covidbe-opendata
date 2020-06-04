@@ -44,7 +44,7 @@ app = dash.Dash(__name__,
 app.title = "Covidata.be"
 app.config['suppress_callback_exceptions'] = True
 cache = Cache(app.server, config={
-    'CACHE_TYPE': 'filesystem',
+    'CACHE_TYPE': ('filesystem' if __name__ != "__main__" else 'null'),
     'CACHE_DIR': 'cache-directory'
 })
 server = app.server
