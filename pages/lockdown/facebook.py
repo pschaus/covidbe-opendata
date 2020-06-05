@@ -79,12 +79,12 @@ def display_facebook():
         html.P(
             get_translation(
                 fr="""
-                Comparaison du nombre d'utilisateurs de Facebook et de la population de chaque arrondissement.
+                Comparaison du nombre d'utilisateurs de Facebook observés en moyenne chaque jour de la semaine (calculé sur 45 jours avant le 14 avril 2020) et de la population de chaque arrondissement.
                 On observe une relation linéaire respectée dans tous les arrondissements.
                 Les arrondissements de Soignies et La Louvière ne figurent pas sur cette visualisation car les données fournies par Facebook ne tiennent pas compte de la division de Soignies de janvier 2019.
                 """,
                 en="""
-                Comparison of the number of Facebook users with the population of each administrative unit.
+                Comparison of the average number of Facebook users by weekday (computed over 45 days before April 14th 2020) with the population of each administrative unit.
                 We observe a linear relation for all administrative units.
                 Soignies and La Louvière are not shown on the visualization as Facebook data does not account for the split of Soignies in January 2019.
                 """)),
