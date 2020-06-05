@@ -4,6 +4,7 @@ from pages import get_translation
 import pandas as pd
 import geopandas
 import plotly.express as px
+from flask_babel import get_locale, gettext
 
 df_population = pd.read_csv('static/csv/facebook/population.csv')
 df_movement_range = pd.read_csv('static/csv/facebook/movement-range.csv')
