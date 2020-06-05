@@ -11,15 +11,17 @@ from datetime import datetime, date
 import numpy as np
 from flask_babel import gettext
 
-countries =  ['Belgium','Germany','Netherlands','France','UK','Spain','Italy','Sweden']
+countries =  ['Belgium','Germany','Netherlands','France','United Kingdom','Spain','Italy','Sweden']
+
+pd.options.mode.chained_assignment = 'raise'  # default='warn'
 
 df = pd.read_csv(f'static/csv/applemobilitytrends.csv')
 
-cdf = df[df["geo_type"] == "country/region"]
+cdf = df.loc[df["geo_type"] == "country/region"]
 
 def df_country(country):
-    cdf_c = cdf[cdf['region'] == country]
-    cdf_c.drop(['geo_type','region'], axis = 1,inplace=True)
+    cdf_c = cdf.loc[cdf['region'] == country]
+    cdf_c = cdf_c.drop(labels=['geo_type','region','alternative_name','sub-region','country'], axis = 1)
     cdf_c.rename(columns={'transportation_type': 'date'},inplace=True)
     cdf_c.set_index(['date'])
     cdf_c=cdf_c.T

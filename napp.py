@@ -248,7 +248,6 @@ def update_sidebar_lang(ignore):
               [Input("url", "pathname"), Input("memory", "data")])
 @memoize()
 def render_page_content(pathname, lang_data):
-    print("RE-RENDER")
     if pathname == "/":
         pathname = "/index"
 
