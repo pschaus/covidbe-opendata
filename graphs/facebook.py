@@ -95,7 +95,7 @@ def population_evolution():
     fig = px.line(df_population, x='date_time', y='percent_change', color='name')
     fig.update_layout(
         xaxis_title="date",
-        yaxis_title=get_translation(fr="changement du nombre d'utilisateurs", en="change in number of users")
+        yaxis_title=gettext(get_translation(fr="changement du nombre d'utilisateurs", en="change in number of users"))
     )
     return fig
 
@@ -104,7 +104,7 @@ def movement():
     fig = px.line(df_movement_range_short, x='date_time', y='all_day_bing_tiles_visited_relative_change', color='name')
     fig.update_layout(
         xaxis_title="date",
-        yaxis_title=get_translation(fr="changement du nombre de tuiles visités", en="change in number of tiles visited")
+        yaxis_title=gettext(get_translation(fr="changement du nombre de tuiles visités", en="change in number of tiles visited"))
     )
     return fig
 
@@ -113,6 +113,6 @@ def staying_put():
     fig = px.line(df_movement_range_short, x='date_time', y='all_day_ratio_single_tile_users', color='name')
     fig.update_layout(
         xaxis_title="date",
-        yaxis_title=get_translation(fr="proportion d'utilisateurs immobiles", en="fraction of users staying put")
+        yaxis_title=gettext(get_translation(fr="proportion d'utilisateurs immobiles", en="fraction of users staying put"))
     )
     return fig
