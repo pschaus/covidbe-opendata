@@ -58,11 +58,11 @@ def covid_weekly_ins3():
     df_names = pd.DataFrame(geojson.drop(columns='geometry'))
     df3 = pd.merge(df3, df_names, left_on='NIS3', right_on='NIS3', how='left')
 
-    df_pop = pd.read_csv("../static/csv/ins_pop.csv", dtype={"NIS5": str})
+    df_pop = pd.read_csv("../static/csv/ins_pop.csv", dtype={"NIS5": int})
     df_pop = df_pop.loc[(df_pop.NIS5 >= 10000) & (df_pop.NIS5 % 1000 == 0) & (df_pop.NIS5 % 10000 != 0)]
     df_pop['NIS3'] = df_pop.NIS5.apply(lambda x: x//1000)
 
-    df3 = pd.merge(df3, df3_pop, left_on='NIS3', right_on='NIS3', how='left')
+    df3 = pd.merge(df3, df_pop, left_on='NIS3', right_on='NIS3', how='left')
     df3['CASES_PER_1000HABITANT'] = df3['CASES'] / df3['POP'] * 1000
     df3 = df3.round({'CASES_PER_1000HABITANT': 2})
     df3 = df3.sort_values(by=['WEEK'])
