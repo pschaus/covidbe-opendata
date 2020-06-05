@@ -248,7 +248,6 @@ def update_sidebar_lang(ignore):
               [Input("url", "pathname"), Input("memory", "data")])
 @memoize()
 def render_page_content(pathname, lang_data):
-    print("RE-RENDER")
     if pathname == "/":
         pathname = "/index"
 
@@ -376,4 +375,4 @@ if __name__ == "__main__":
         print(memory_summary())
         return "see logs"
 
-    app.run_server(port=8050, debug=False)
+    app.run_server(port=8050, debug=True)

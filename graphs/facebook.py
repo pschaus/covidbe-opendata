@@ -7,7 +7,7 @@ import plotly.express as px
 df_population = pd.read_csv('static/csv/facebook/population.csv')
 
 df_baseline = df_population.loc[(df_population.date_time >= '2020-04-20') & (df_population.date_time < '2020-04-27')]
-df_baseline.drop(['n_crisis','percent_change'],inplace=True,axis=1)
+df_baseline = df_baseline.drop(['n_crisis','percent_change'],axis=1)
 
 
 def remove_arrondissement(name):
