@@ -55,14 +55,12 @@ def display_facebook():
         html.A(get_translation(fr="tuiles", en="tiles"), href="https://docs.microsoft.com/en-us/bingmaps/articles/bing-maps-tile-system", target="_blank"),
         html.Span(
             get_translation(
-                fr="""
-                ).
+                fr=""").
                 Cet indicateur donne une idée de la proportion de la population restant à (ou très proche de) son domicile toute la journée.
                 Par exemple, si je rends visite à mes grand-parents qui habitent le village voisin à quelques kilomètres de chez moi,
                 je vais traverser plusieurs tuiles sur la journée et ainsi faire partie des utilisateurs n'étant pas restés fixes pendant toute la journée.
                 """,
-                en="""
-                ).
+                en=""").
                 This metric gives insights about the fraction of the population who stays at home (or close to it) during the whole day.
                 For instance, if I visit my grandparents in a village distant by a few kilometers, I will cross several tiles and thus
                 will not belong to the users who stayed put for the whole day.
