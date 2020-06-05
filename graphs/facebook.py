@@ -1,10 +1,24 @@
 from graphs import register_plot_for_embedding
+from pages import get_translation
 
 import pandas as pd
 import geopandas
 import plotly.express as px
 
 df_population = pd.read_csv('static/csv/facebook/population.csv')
+df_movement_range = pd.read_csv('static/csv/facebook/movement-range.csv')
+
+def shorten(x):
+    if x == 'Arr. de Bruxelles-Capitale/Arr. van Brussel-Hoofdstad':
+        return 'Bruxelles-Capitale'
+    if x == 'Arr. Verviers - communes francophones':
+        return 'Verviers (FR)'
+    if x == 'Bezirk Verviers - Deutschsprachige Gemeinschaft':
+        return 'Verviers (GE)'
+    return x[5:]
+
+df_movement_range_short = df_movement_range.copy()
+df_movement_range_short.name = df_movement_range_short.name.apply(shorten)
 
 df_baseline = df_population.loc[(df_population.date_time >= '2020-04-20') & (df_population.date_time < '2020-04-27')]
 df_baseline.drop(['n_crisis','percent_change'],inplace=True,axis=1)
@@ -61,7 +75,48 @@ df3_pop['NIS3'] = df3_pop['NIS3'].astype(int)
 
 df_prop = pd.merge(df_clean, df3_pop)
 
+def to_weekday(x):
+    mapping = {
+        '2020-04-20':'Mondays',
+        '2020-04-21':'Tuesdays',
+        '2020-04-22':'Wednesdays',
+        '2020-04-23':'Thursdays',
+        '2020-04-24':'Fridays',
+        '2020-04-25':'Saturdays',
+        '2020-04-26':'Sundays',
+    }
+    return mapping[x]
+
+df_prop.date_time = df_prop.date_time.apply(to_weekday)
+
 @register_plot_for_embedding("facebook-population-proportion")
 def population_proportion():
     fig = px.scatter(df_prop, x='POP', y='n_baseline', range_y=[0, 400000], color='name', animation_frame='date_time')
+    return fig
+
+@register_plot_for_embedding("facebook-population-evolution")
+def population_evolution():
+    fig = px.line(df_population, x='date_time', y='percent_change', color='name')
+    fig.update_layout(
+        xaxis_title="date",
+        yaxis_title=get_translation(fr="changement du nombre d'utilisateurs", en="change in number of users")
+    )
+    return fig
+
+@register_plot_for_embedding("facebook-moving")
+def movement():
+    fig = px.line(df_movement_range_short, x='date_time', y='all_day_bing_tiles_visited_relative_change', color='name')
+    fig.update_layout(
+        xaxis_title="date",
+        yaxis_title=get_translation(fr="changement du nombre de tuiles visités", en="change in number of tiles visited")
+    )
+    return fig
+
+@register_plot_for_embedding("facebook-staying")
+def staying_put():
+    fig = px.line(df_movement_range_short, x='date_time', y='all_day_ratio_single_tile_users', color='name')
+    fig.update_layout(
+        xaxis_title="date",
+        yaxis_title=get_translation(fr="proportion d'utilisateurs immobiles", en="fraction of users staying put")
+    )
     return fig

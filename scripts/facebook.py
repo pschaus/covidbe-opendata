@@ -38,7 +38,7 @@ def process_movement_range():
 
     df_all.drop(['crisis_name','polygon_id','age_bracket','gender','baseline_name','baseline_type','external_polygon_id_type','external_polygon_id'],axis=1,inplace=True)
     df_all = df_all.loc[:, ~df_all.columns.str.contains('^Unnamed')]
-    df_all.rename(columns={'ds':'date_time'}, inplace=True)
+    df_all.rename(columns={'ds':'date_time', 'polygon_name':'name'}, inplace=True)
     df_all = df_all.sort_values(by=['date_time'])
 
     df_all.to_csv("../static/csv/facebook/movement-range.csv",index=False)
