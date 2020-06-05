@@ -65,13 +65,11 @@ def weekly_mortality_nis3():
     geojson = geopandas.read_file('../static/json/admin-units/be-geojson.geojson')
     df_names = pd.DataFrame(geojson.drop(columns='geometry'))
     df = pd.merge(df, df_names, left_on='NIS3', right_on='NIS3', how='left')
-    df_pop = pd.read_csv("../static/csv/ins_pop.csv", dtype={"NIS5": str})
-    df_pop['NIS3'] = df_pop.apply(lambda x: x['NIS5'][:2], axis=1)
-    df3_pop = df_pop.groupby([df_pop.NIS3]).agg({'POP': ['sum']}).reset_index()
-    df3_pop.columns = df3_pop.columns.get_level_values(0)
-    df3_pop['NIS3'] = df3_pop['NIS3'].astype(int)
+    df_pop = pd.read_csv("../static/csv/ins_pop.csv")
+    df_pop = df_pop.loc[(df_pop.NIS5 >= 10000) & (df_pop.NIS5 % 1000 == 0) & (df_pop.NIS5 % 10000 != 0)]
+    df_pop['NIS3'] = df_pop.NIS5.apply(lambda x: x//1000)
 
-    df3 = pd.merge(df, df3_pop, left_on='NIS3', right_on='NIS3', how='left')
+    df3 = pd.merge(df, df_pop, left_on='NIS3', right_on='NIS3', how='left')
     df3['DEATH_PER_1000HABITANT'] = df3['TOT'] / df3['POP'] * 1000
     df3 = df3.round({'DEATH_PER_1000HABITANT': 2})
     df3 = df3.sort_values(by=['WEEK'])

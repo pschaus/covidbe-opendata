@@ -59,10 +59,8 @@ def covid_weekly_ins3():
     df3 = pd.merge(df3, df_names, left_on='NIS3', right_on='NIS3', how='left')
 
     df_pop = pd.read_csv("../static/csv/ins_pop.csv", dtype={"NIS5": str})
-    df_pop['NIS3'] = df_pop.apply(lambda x: x['NIS5'][:2], axis=1)
-    df3_pop = df_pop.groupby([df_pop.NIS3]).agg({'POP': ['sum']}).reset_index()
-    df3_pop.columns = df3_pop.columns.get_level_values(0)
-    df3_pop['NIS3'] = df3_pop['NIS3'].astype(int)
+    df_pop = df_pop.loc[(df_pop.NIS5 >= 10000) & (df_pop.NIS5 % 1000 == 0) & (df_pop.NIS5 % 10000 != 0)]
+    df_pop['NIS3'] = df_pop.NIS5.apply(lambda x: x//1000)
 
     df3 = pd.merge(df3, df3_pop, left_on='NIS3', right_on='NIS3', how='left')
     df3['CASES_PER_1000HABITANT'] = df3['CASES'] / df3['POP'] * 1000

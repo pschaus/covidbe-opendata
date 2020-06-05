@@ -36,10 +36,9 @@ df_translation = pd.read_csv("static/csv/ins.csv")
 df_translation = df_translation.loc[(df_translation.INS >= 10000) &
                                     (df_translation.INS % 1000 == 0) &
                                     (df_translation.INS % 10000 != 0)]
-df_translation['NIS3'] = df_translation.apply(lambda x: x['INS'] // 1000, axis=1)
 df_translation.FR =  df_translation.FR.apply(remove_arrondissement)
 df_translation.NL =  df_translation.NL.apply(remove_arrondissement)
-df_translation.drop(['INS', 'Langue'], axis=1, inplace=True)
+df_translation.drop(['Langue'], axis=1, inplace=True)
 
 def translate(name):
     if name in df_translation.NL.unique():
@@ -67,13 +66,10 @@ df_baseline = pd.concat([df_baseline,df_tournai_mouscron])
 df_clean = pd.merge(df_baseline, df_translation, left_on='name', right_on='FR')
 df_clean.drop(['FR','NL'], axis=1, inplace=True)
 
-df_pop = pd.read_csv("static/csv/ins_pop.csv", dtype={"NIS5": str})
-df_pop['NIS3'] = df_pop.apply(lambda x: x['NIS5'][:2], axis=1)
-df3_pop = df_pop.groupby([df_pop.NIS3]).agg({'POP': ['sum']}).reset_index()
-df3_pop.columns = df3_pop.columns.get_level_values(0)
-df3_pop['NIS3'] = df3_pop['NIS3'].astype(int)
+df_pop = pd.read_csv("static/csv/ins_pop.csv")
+df_pop = df_pop.loc[(df_pop.NIS5 >= 10000) & (df_pop.NIS5 % 1000 == 0) & (df_pop.NIS5 % 10000 != 0)]
 
-df_prop = pd.merge(df_clean, df3_pop)
+df_prop = pd.merge(df_clean, df_pop, left_on='INS', right_on='NIS5')
 
 def to_weekday(x):
     mapping = {
