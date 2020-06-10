@@ -8,7 +8,7 @@ import urllib.request, json
 from graphs import register_plot_for_embedding
 
 start = '01-10'
-end = '06-3'
+end = '06-6'
 
 
 def necro_count_per_day(df, year):
@@ -59,8 +59,14 @@ df2019totbe = pd.DataFrame(
 df2020totbe = pd.DataFrame(
     [df2020sp['date'], df2020sp['days'], df2020sp['count'] + df2020im['count'] + df2020dp['count']]).transpose()
 convert_dict = {'count': int, 'days': int}
+
+
+df2019totbe.dropna(inplace=True)
 df2019totbe = df2019totbe.astype(convert_dict)
+df2020totbe.dropna(inplace=True)
 df2020totbe = df2020totbe.astype(convert_dict)
+
+
 df2019av = get_df_avisdecesfr('2019')
 df2020av = get_df_avisdecesfr('2020')
 
