@@ -42,7 +42,7 @@ def fetch(args):
         product_id_list = [p for p in model.ProductId if p.value != model.ProductId.UNKNOWN]
     region_code_list = countries #report.list_regions()
     end_time = datetime.datetime.now()
-    start_time = end_time - datetime.timedelta(days=5*365)
+    start_time = end_time - datetime.timedelta(days=2*365)
     for region_code in region_code_list:
         logging.info("Processing region %s", region_code)
         output_region_directory = os.path.join(args.output_dir, region_code)
