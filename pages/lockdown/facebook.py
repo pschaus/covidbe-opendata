@@ -2,11 +2,18 @@ import dash
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
+from dash.dependencies import Input, Output
 from flask_babel import get_locale, gettext
 
 from graphs.facebook import population_proportion, population_evolution, movement, staying_put
 from pages.sources import display_source_providers, source_facebook
 from pages import get_translation
+
+import pandas as pd
+import plotly.express as px
+
+df_all = pd.read_csv('static/csv/facebook/movement.csv')
+regions = sorted(df_all.end_name.unique())
 
 def display_facebook():
     return [
@@ -72,6 +79,35 @@ def display_facebook():
         ]),
         html.H3(gettext(
             get_translation(
+                fr="Flux d'utilisateurs entre arrondissements",
+                en="Flux of users between administrative units"))),
+        html.P(gettext(
+            get_translation(
+                fr="""
+                Pour chaque arrondissement, on observe l'évolution du flux d'utilisateurs entrant.
+                """,
+                en="""
+                We display for each administrative unit the evolution of incoming users by administrative unit.
+                """))),
+        html.Label([gettext(get_translation(fr="Arrondissement", en="Administrative unit")), dcc.Dropdown(
+            id='region-dropdown',
+            options=[{'label': region, 'value':region} for region in regions],
+            value='Brussel Hoofdstad',
+            clearable=False
+        )],
+        style=dict(width='50%')),
+        html.Label([gettext(get_translation(fr="Heures de la journée (UTC)", en="Time frame (UTC)")), dcc.Dropdown(
+            id='interval-dropdown',
+            options=[{'label': '20-4h', 'value':'0000'},
+                     {'label': '4-12h', 'value':'0800'},
+                     {'label': '12-20h', 'value':'1600'}],
+            value='0000',
+            clearable=False
+        )],
+        style=dict(width='50%')),
+        dcc.Graph(id='graph'),
+        html.H3(gettext(
+            get_translation(
                 fr="Lien de proportionnalité entre le nombre d'utilisateurs et la population réelle",
                 en="Proportionality between the number of users and the population"))),
         html.P(gettext(
@@ -86,23 +122,6 @@ def display_facebook():
                 We observe a linear relation for all administrative units.
                 Soignies and La Louvière are not shown on the visualization as Facebook data does not account for the split of Soignies in January 2019.
                 """))),
-        # html.H3(
-        #     get_translation(
-        #         fr="Changement de la densité d'utilisateurs par rapport à la normale",
-        #         en="Change in the density of users wrt normality")),
-        # html.P(
-        #     get_translation(
-        #         fr="""
-        #         Les valeurs caractérisant la normalité ont été calculées sur les 90 jours précédant le début du graphe et pour chaque jour de la semaine.
-        #         """,
-        #         en="""
-        #         Values considered as normal were computed over the 90 days before the start of this graph and for each weekday.
-        #         """)),
-        # dbc.Row([
-        #     dbc.Col(dcc.Graph(id='population-evolution',
-        #                       figure=population_evolution(),
-        #                       config=dict(locale=str(get_locale())))),
-        # ]),
         dbc.Row([
             dbc.Col(dcc.Graph(id='population-proportion',
                               figure=population_proportion(),
@@ -110,3 +129,24 @@ def display_facebook():
         ]),
         display_source_providers(source_facebook)
         ]
+
+def callback_fb(app):
+    @app.callback(
+        Output('graph', 'figure'),
+        [Input('region-dropdown', 'value'),
+         Input('interval-dropdown', 'value')])
+    def update_graph(region, interval):
+        df = df_all.loc[df_all.end_name == region]
+        df = df.loc[df.date_time.str.contains(interval)]
+        df.date_time = pd.to_datetime(df.date_time)
+        if df.empty:
+            fig = px.area(x=df.date_time, y=df.n_crisis)
+        else:
+            fig = px.area(x=df.date_time, y=df.n_crisis, color=df.start_name)
+
+        fig.update_layout(title=gettext(get_translation(fr='Utilisateurs entrant à ', en='Incoming users in '))+region,
+                          xaxis_title="date",
+                          yaxis_title=gettext(get_translation(fr="nombre d'utilisateurs",en="number of users")),
+                          legend_title_text=gettext(get_translation(fr="Venant de", en="Coming from")))
+
+        return fig
