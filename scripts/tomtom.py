@@ -38,13 +38,13 @@ def update(country):
     # append each item in the json file to the empty lists
     i = 0
     while i <= count:
-        # print(italy_json["data"][i])
-        live_traffic.append(italy_json["data"][i]["TrafficIndexLive"])
-        jams_delay.append(italy_json["data"][i]["JamsDelay"])
-        jams_length.append(italy_json["data"][i]["JamsLength"])
-        jams_count.append(italy_json["data"][i]["JamsCount"])
-
-        time.append(italy_json["data"][i]["UpdateTime"])
+        #print(italy_json["data"][i])
+        if "TrafficIndexLive" in italy_json["data"][i]:
+            live_traffic.append(italy_json["data"][i]["TrafficIndexLive"])
+            jams_delay.append(italy_json["data"][i]["JamsDelay"])
+            jams_length.append(italy_json["data"][i]["JamsLength"])
+            jams_count.append(italy_json["data"][i]["JamsCount"])
+            time.append(italy_json["data"][i]["UpdateTime"])
         i += 1
 
     # create dataframe with the traffic data
