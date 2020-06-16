@@ -999,7 +999,7 @@
 997,2020-06-13,VOV,Flanders,14,44,9,4,0,0,2,OostVlaanderen
 998,2020-06-13,VBR,Flanders,6,19,4,4,2,8,1,VlaamsBrabant
 999,2020-06-13,WBR,Wallonia,2,4,0,0,0,0,0,BrabantWallon
-1000,2020-06-13,VWV,Flanders,11,69,13,18,0,2,5,WestVlaanderen
+1000,2020-06-13,VWV,Flanders,11,69,13,8,0,2,5,WestVlaanderen
 1001,2020-06-14,VAN,Flanders,14,47,14,5,1,4,5,Antwerpen
 1002,2020-06-14,BRU,Brussels,15,102,25,14,3,4,4,Brussels
 1003,2020-06-14,WHT,Wallonia,14,33,5,3,1,2,1,Hainaut
@@ -1008,6 +1008,17 @@
 1006,2020-06-14,WLX,Wallonia,3,8,0,0,0,0,0,Luxembourg
 1007,2020-06-14,WNA,Wallonia,6,12,2,0,0,1,0,Namur
 1008,2020-06-14,VOV,Flanders,14,43,8,3,0,1,2,OostVlaanderen
-1009,2020-06-14,VBR,Flanders,5,15,3,3,2,0,1,VlaamsBrabant
+1009,2020-06-14,VBR,Flanders,6,18,4,4,2,0,1,VlaamsBrabant
 1010,2020-06-14,WBR,Wallonia,2,4,0,0,0,0,0,BrabantWallon
 1011,2020-06-14,VWV,Flanders,11,67,14,8,0,2,6,WestVlaanderen
+1012,2020-06-15,VAN,Flanders,14,42,14,5,1,0,2,Antwerpen
+1013,2020-06-15,BRU,Brussels,15,102,24,11,3,4,3,Brussels
+1014,2020-06-15,WHT,Wallonia,14,32,4,3,1,1,2,Hainaut
+1015,2020-06-15,VLI,Flanders,7,36,6,3,0,1,1,Limburg
+1016,2020-06-15,WLG,Wallonia,12,34,5,2,0,1,2,Liège
+1017,2020-06-15,WLX,Wallonia,3,8,0,0,0,0,0,Luxembourg
+1018,2020-06-15,WNA,Wallonia,6,12,1,0,0,0,0,Namur
+1019,2020-06-15,VOV,Flanders,14,45,6,2,0,2,0,OostVlaanderen
+1020,2020-06-15,VBR,Flanders,6,17,4,4,2,0,1,VlaamsBrabant
+1021,2020-06-15,WBR,Wallonia,2,4,0,0,0,0,0,BrabantWallon
+1022,2020-06-15,VWV,Flanders,11,63,12,7,0,2,4,WestVlaanderen

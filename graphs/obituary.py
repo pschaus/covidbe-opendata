@@ -8,7 +8,7 @@ import urllib.request, json
 from graphs import register_plot_for_embedding
 
 start = '01-10'
-end = '06-6'
+end = '06-10'
 
 
 def necro_count_per_day(df, year):
