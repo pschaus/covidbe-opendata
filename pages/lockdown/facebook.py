@@ -138,6 +138,20 @@ def callback_fb(app):
     def update_graph(region, interval):
         df = df_all.loc[df_all.end_name == region]
         df = df.loc[df.date_time.str.contains(interval)]
+
+        df1 = pd.DataFrame({'start_name':df.start_name.unique()})
+        df2 = pd.DataFrame({'end_name':df.end_name.unique()})
+        df3 = pd.DataFrame({'date_time':df.date_time.unique()})
+
+        df1['n_crisis'] = 0
+        df2['n_crisis'] = 0
+        df3['n_crisis'] = 0
+
+        df_combinations = df1.merge(df2, how='outer').merge(df3, how='outer')
+
+        df = pd.concat([df,df_combinations])
+        df = df.groupby(['date_time','start_name','end_name']).agg({'n_crisis':'sum'}).reset_index()
+
         df.date_time = pd.to_datetime(df.date_time)
         if df.empty:
             fig = px.area(x=df.date_time, y=df.n_crisis)
