@@ -66,6 +66,25 @@ def process_movement():
 
     df_all.to_csv("../static/csv/facebook/movement.csv",index=False)
 
+def process_colocation():
+    path = '../static/csv/facebook/hidden/colocation/'
+    df = pd.DataFrame()
+
+    for entry in os.scandir(path):
+        df = pd.concat([df,pd.read_csv(entry.path)])
+
+    if df.empty:
+        return
+
+    df = df.loc[df.country == 'BEL']
+    df = df.drop(['polygon1_id','name_stack_1','polygon2_id','name_stack_2','country','lon_1','lat_1','lon_2','lat_2'], axis=1)
+    df.link_value = df.apply(lambda x: 0 if x.polygon1_name == x.polygon2_name else x.link_value, axis=1)
+
+    df.rename(columns={'polygon1_name':'name1', 'polygon2_name':'name2'}, inplace=True)
+
+    df.to_csv("../static/csv/facebook/colocation.csv",index=False)
+
 process_population()
 process_movement_range()
 process_movement()
+process_colocation()
