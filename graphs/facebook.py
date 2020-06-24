@@ -86,6 +86,30 @@ def to_weekday(x):
 
 df_prop.date_time = df_prop.date_time.apply(to_weekday)
 
+def add_rectangle(fig, x1, y1, x2, y2, color):
+    fig.add_shape(
+        type="rect",
+        x0=x1,
+        y0=y1,
+        x1=x2,
+        y1=y2,
+        fillcolor=color,
+        opacity=0.5,
+        layer="below",
+        line_width=0,
+    )
+
+def add_text(fig, x, y, text):
+    fig.add_annotation(
+        x=x,
+        y=y,
+        text=text,
+        align='center',
+        showarrow=False,
+        font=dict(size=16),
+        yanchor='top',
+    )
+
 @register_plot_for_embedding("facebook-population-proportion")
 def population_proportion():
     fig = px.scatter(df_prop, x='POP', y='n_baseline', range_y=[0, 400000], color='name', animation_frame='date_time')
@@ -107,6 +131,21 @@ def movement():
         xaxis_title="date",
         yaxis_title=gettext(get_translation(fr="changement du nombre de tuiles visités", en="change in number of tiles visited"))
     )
+    top = 0.4
+    bottom = -0.8
+    split = 0.3
+    add_text(fig, "2020-04-11", top, "Confinement")
+    add_text(fig, "2020-05-28", top, "Deconfinement phases")
+    add_text(fig, "2020-05-07", split, "1A")
+    add_text(fig, "2020-05-14", split, "1B")
+    add_text(fig, "2020-05-29", split, "2")
+    add_text(fig, "2020-06-14", split, "3")
+    add_rectangle(fig, "2020-03-18", bottom, "2020-05-04", top, "lightsalmon")
+    add_rectangle(fig, "2020-05-04", split, df_movement_range.date_time.max(), top, "darkgreen")
+    add_rectangle(fig, "2020-05-04", bottom, "2020-05-11", split, "khaki")
+    add_rectangle(fig, "2020-05-11", bottom, "2020-05-18", split, "lightgreen")
+    add_rectangle(fig, "2020-05-18", bottom, "2020-06-08", split, "mediumseagreen")
+    add_rectangle(fig, "2020-06-08", bottom, df_movement_range.date_time.max(), split, "green")
     return fig
 
 @register_plot_for_embedding("facebook-staying")
@@ -116,4 +155,19 @@ def staying_put():
         xaxis_title="date",
         yaxis_title=gettext(get_translation(fr="proportion d'utilisateurs immobiles", en="fraction of users staying put"))
     )
+    top = 0.8
+    bottom = 0
+    split = 0.74
+    add_text(fig, "2020-04-11", top, "Confinement")
+    add_text(fig, "2020-05-28", top, "Deconfinement phases")
+    add_text(fig, "2020-05-07", split, "1A")
+    add_text(fig, "2020-05-14", split, "1B")
+    add_text(fig, "2020-05-29", split, "2")
+    add_text(fig, "2020-06-14", split, "3")
+    add_rectangle(fig, "2020-03-18", bottom, "2020-05-04", top, "lightsalmon")
+    add_rectangle(fig, "2020-05-04", split, df_movement_range.date_time.max(), top, "darkgreen")
+    add_rectangle(fig, "2020-05-04", bottom, "2020-05-11", split, "khaki")
+    add_rectangle(fig, "2020-05-11", bottom, "2020-05-18", split, "lightgreen")
+    add_rectangle(fig, "2020-05-18", bottom, "2020-06-08", split, "mediumseagreen")
+    add_rectangle(fig, "2020-06-08", bottom, df_movement_range.date_time.max(), split, "green")
     return fig
