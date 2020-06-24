@@ -120,6 +120,11 @@ BE,Belgium,Brussels,,BE-BRU,,2020-06-11,-34.0,-12.0,19.0,-45.0,-47.0,15.0
 BE,Belgium,Brussels,,BE-BRU,,2020-06-12,-34.0,-13.0,11.0,-40.0,-45.0,14.0
 BE,Belgium,Brussels,,BE-BRU,,2020-06-13,-34.0,-16.0,77.0,-26.0,-2.0,4.0
 BE,Belgium,Brussels,,BE-BRU,,2020-06-14,-42.0,-16.0,60.0,-32.0,1.0,2.0
+BE,Belgium,Brussels,,BE-BRU,,2020-06-15,-27.0,-13.0,65.0,-40.0,-45.0,13.0
+BE,Belgium,Brussels,,BE-BRU,,2020-06-16,-27.0,-7.0,52.0,-41.0,-45.0,12.0
+BE,Belgium,Brussels,,BE-BRU,,2020-06-17,-36.0,-17.0,-13.0,-42.0,-45.0,13.0
+BE,Belgium,Brussels,,BE-BRU,,2020-06-18,-29.0,-8.0,31.0,-41.0,-45.0,12.0
+BE,Belgium,Brussels,,BE-BRU,,2020-06-19,-29.0,-10.0,37.0,-36.0,-44.0,11.0
 DE,Germany,Berlin,,DE-BE,,2020-02-15,5.0,6.0,46.0,5.0,1.0,-1.0
 DE,Germany,Berlin,,DE-BE,,2020-02-16,1.0,3.0,-2.0,1.0,-2.0,0.0
 DE,Germany,Berlin,,DE-BE,,2020-02-17,6.0,3.0,15.0,4.0,1.0,0.0
@@ -241,6 +246,11 @@ DE,Germany,Berlin,,DE-BE,,2020-06-11,-23.0,-6.0,6.0,-31.0,-32.0,9.0
 DE,Germany,Berlin,,DE-BE,,2020-06-12,-25.0,-7.0,43.0,-29.0,-28.0,6.0
 DE,Germany,Berlin,,DE-BE,,2020-06-13,-40.0,-16.0,3.0,-34.0,4.0,3.0
 DE,Germany,Berlin,,DE-BE,,2020-06-14,-27.0,11.0,63.0,-25.0,14.0,-2.0
+DE,Germany,Berlin,,DE-BE,,2020-06-15,-17.0,-5.0,43.0,-28.0,-28.0,6.0
+DE,Germany,Berlin,,DE-BE,,2020-06-16,-18.0,-4.0,46.0,-27.0,-27.0,6.0
+DE,Germany,Berlin,,DE-BE,,2020-06-17,-19.0,-4.0,61.0,-25.0,-28.0,5.0
+DE,Germany,Berlin,,DE-BE,,2020-06-18,-20.0,-4.0,32.0,-29.0,-29.0,7.0
+DE,Germany,Berlin,,DE-BE,,2020-06-19,-27.0,-7.0,4.0,-31.0,-30.0,7.0
 FR,France,Île-de-France,,FR-IDF,,2020-02-15,-12.0,-10.0,5.0,4.0,-8.0,-1.0
 FR,France,Île-de-France,,FR-IDF,,2020-02-16,-6.0,-6.0,-8.0,4.0,-1.0,-2.0
 FR,France,Île-de-France,,FR-IDF,,2020-02-17,-2.0,-3.0,11.0,-11.0,-20.0,4.0
@@ -362,6 +372,11 @@ FR,France,Île-de-France,,FR-IDF,,2020-06-11,-35.0,-4.0,-15.0,-40.0,-45.0,16.0
 FR,France,Île-de-France,,FR-IDF,,2020-06-12,-41.0,-5.0,-38.0,-40.0,-44.0,16.0
 FR,France,Île-de-France,,FR-IDF,,2020-06-13,-38.0,-10.0,-4.0,-25.0,-5.0,4.0
 FR,France,Île-de-France,,FR-IDF,,2020-06-14,-39.0,-10.0,8.0,-30.0,6.0,2.0
+FR,France,Île-de-France,,FR-IDF,,2020-06-15,-31.0,-7.0,-10.0,-39.0,-44.0,14.0
+FR,France,Île-de-France,,FR-IDF,,2020-06-16,-30.0,-3.0,-3.0,-35.0,-42.0,14.0
+FR,France,Île-de-France,,FR-IDF,,2020-06-17,-31.0,-6.0,-11.0,-36.0,-41.0,12.0
+FR,France,Île-de-France,,FR-IDF,,2020-06-18,-28.0,-6.0,2.0,-36.0,-43.0,13.0
+FR,France,Île-de-France,,FR-IDF,,2020-06-19,-31.0,-5.0,-11.0,-34.0,-42.0,13.0
 GB,United Kingdom,Greater London,,,,2020-02-15,-11.0,-8.0,-34.0,-10.0,-3.0,2.0
 GB,United Kingdom,Greater London,,,,2020-02-16,-9.0,-11.0,-41.0,-9.0,-4.0,1.0
 GB,United Kingdom,Greater London,,,,2020-02-17,11.0,4.0,28.0,-3.0,-13.0,2.0
@@ -483,6 +498,11 @@ GB,United Kingdom,Greater London,,,,2020-06-11,-68.0,-21.0,7.0,-68.0,-62.0,27.0
 GB,United Kingdom,Greater London,,,,2020-06-12,-69.0,-19.0,1.0,-66.0,-60.0,27.0
 GB,United Kingdom,Greater London,,,,2020-06-13,-69.0,-18.0,54.0,-58.0,-28.0,12.0
 GB,United Kingdom,Greater London,,,,2020-06-14,-68.0,-23.0,71.0,-58.0,-27.0,10.0
+GB,United Kingdom,Greater London,,,,2020-06-15,-55.0,-16.0,58.0,-62.0,-59.0,23.0
+GB,United Kingdom,Greater London,,,,2020-06-16,-59.0,-16.0,53.0,-63.0,-60.0,24.0
+GB,United Kingdom,Greater London,,,,2020-06-17,-63.0,-20.0,17.0,-65.0,-60.0,25.0
+GB,United Kingdom,Greater London,,,,2020-06-18,-63.0,-19.0,10.0,-66.0,-61.0,26.0
+GB,United Kingdom,Greater London,,,,2020-06-19,-62.0,-14.0,19.0,-62.0,-58.0,24.0
 NL,Netherlands,North Holland,,NL-NH,,2020-02-15,-2.0,-1.0,3.0,0.0,-2.0,0.0
 NL,Netherlands,North Holland,,NL-NH,,2020-02-16,-14.0,-17.0,-44.0,-7.0,-6.0,2.0
 NL,Netherlands,North Holland,,NL-NH,,2020-02-17,2.0,-3.0,5.0,-4.0,-18.0,2.0
@@ -604,3 +624,8 @@ NL,Netherlands,North Holland,,NL-NH,,2020-06-11,-24.0,-5.0,22.0,-57.0,-39.0,13.0
 NL,Netherlands,North Holland,,NL-NH,,2020-06-12,-20.0,-3.0,92.0,-51.0,-33.0,8.0
 NL,Netherlands,North Holland,,NL-NH,,2020-06-13,-24.0,-6.0,94.0,-47.0,8.0,3.0
 NL,Netherlands,North Holland,,NL-NH,,2020-06-14,-29.0,-8.0,44.0,-56.0,4.0,3.0
+NL,Netherlands,North Holland,,NL-NH,,2020-06-15,-15.0,-4.0,74.0,-55.0,-39.0,11.0
+NL,Netherlands,North Holland,,NL-NH,,2020-06-16,-16.0,1.0,62.0,-55.0,-38.0,12.0
+NL,Netherlands,North Holland,,NL-NH,,2020-06-17,-14.0,-1.0,92.0,-51.0,-36.0,9.0
+NL,Netherlands,North Holland,,NL-NH,,2020-06-18,-19.0,-3.0,35.0,-55.0,-38.0,12.0
+NL,Netherlands,North Holland,,NL-NH,,2020-06-19,-18.0,-2.0,76.0,-50.0,-34.0,8.0
