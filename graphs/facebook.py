@@ -135,17 +135,19 @@ def movement():
     bottom = -0.8
     split = 0.3
     add_text(fig, "2020-04-11", top, "Confinement")
-    add_text(fig, "2020-05-28", top, "Deconfinement phases")
+    add_text(fig, "2020-06-05", top, "Deconfinement phases")
     add_text(fig, "2020-05-07", split, "1A")
     add_text(fig, "2020-05-14", split, "1B")
     add_text(fig, "2020-05-29", split, "2")
-    add_text(fig, "2020-06-14", split, "3")
+    add_text(fig, "2020-06-20", split, "3")
+    add_text(fig, "2020-07-03", split, "4")
     add_rectangle(fig, "2020-03-18", bottom, "2020-05-04", top, "lightsalmon")
     add_rectangle(fig, "2020-05-04", split, df_movement_range.date_time.max(), top, "darkgreen")
     add_rectangle(fig, "2020-05-04", bottom, "2020-05-11", split, "khaki")
     add_rectangle(fig, "2020-05-11", bottom, "2020-05-18", split, "lightgreen")
     add_rectangle(fig, "2020-05-18", bottom, "2020-06-08", split, "mediumseagreen")
-    add_rectangle(fig, "2020-06-08", bottom, df_movement_range.date_time.max(), split, "green")
+    add_rectangle(fig, "2020-06-08", bottom, "2020-07-01", split, "seagreen")
+    add_rectangle(fig, "2020-07-01", bottom, df_movement_range.date_time.max(), split, "green")
     return fig
 
 @register_plot_for_embedding("facebook-staying")
@@ -159,15 +161,17 @@ def staying_put():
     bottom = 0
     split = 0.74
     add_text(fig, "2020-04-11", top, "Confinement")
-    add_text(fig, "2020-05-28", top, "Deconfinement phases")
+    add_text(fig, "2020-06-05", top, "Deconfinement phases")
     add_text(fig, "2020-05-07", split, "1A")
     add_text(fig, "2020-05-14", split, "1B")
     add_text(fig, "2020-05-29", split, "2")
-    add_text(fig, "2020-06-14", split, "3")
+    add_text(fig, "2020-06-20", split, "3")
+    add_text(fig, "2020-07-03", split, "4")
     add_rectangle(fig, "2020-03-18", bottom, "2020-05-04", top, "lightsalmon")
     add_rectangle(fig, "2020-05-04", split, df_movement_range.date_time.max(), top, "darkgreen")
     add_rectangle(fig, "2020-05-04", bottom, "2020-05-11", split, "khaki")
     add_rectangle(fig, "2020-05-11", bottom, "2020-05-18", split, "lightgreen")
     add_rectangle(fig, "2020-05-18", bottom, "2020-06-08", split, "mediumseagreen")
-    add_rectangle(fig, "2020-06-08", bottom, df_movement_range.date_time.max(), split, "green")
+    add_rectangle(fig, "2020-06-08", bottom, "2020-07-01", split, "seagreen")
+    add_rectangle(fig, "2020-07-01", bottom, df_movement_range.date_time.max(), split, "green")
     return fig
