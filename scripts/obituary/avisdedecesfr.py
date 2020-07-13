@@ -31,51 +31,54 @@ def save():
     pd.DataFrame([(a, b, c, d, e) for a, (b, c, d, e) in data.items()],
                  columns=['id', 'age', 'location', 'date', 'publication']).set_index(["id"]).to_csv(FNAME)
 
-last_date = date.today()
-page = 0
-while last_date >= UPDATE_UNTIL:  # first pass must be done with date(year=2019, month=1, day=1)
-    print(f"PAGE {page} {last_date}")
-    try:
-        r = requests.get(get_link(page), allow_redirects=False)
-        if r.status_code == 302:
-            break # last page
-        if r.status_code != 200:
-            raise Exception(r.status_code)
-        soup = BeautifulSoup(r.text, features="lxml")
+def run():
+    last_date = date.today() - timedelta(days=1)
+    page = 0
+    while last_date >= UPDATE_UNTIL:  # first pass must be done with date(year=2019, month=1, day=1)
+        print(f"PAGE avd {page} {last_date}")
+        try:
+            r = requests.get(get_link(page), allow_redirects=False)
+            if r.status_code == 302:
+                break # last page
+            if r.status_code != 200:
+                raise Exception(r.status_code)
+            soup = BeautifulSoup(r.text, features="lxml")
 
-        for person in soup.find_all("a", attrs={"class": "link-avis-annonce"}):
-            try:
-                link = person.get("href")
-                id = hashlib.sha224(link.encode()).hexdigest()
-                published = datetime.strptime(person.find("time").text.strip(), "%d/%m/%Y").date()
-                location = person.find("span", attrs={"class": "from"}).find("strong").text.strip().split("(")[0].strip()
-                death = datetime.strptime(person.find("span", attrs={"class": "deces"}).find_all("strong")[0].text.strip(), "%d %B %Y").date()
-
+            for person in soup.find_all("a", attrs={"class": "link-avis-annonce"}):
                 try:
-                    age = person.find("span", attrs={"class": "deces"}).find_all("strong")[1].text.strip().split(" ")
-                    if age[1] in ["ans", "an"]:
-                        age = int(age[0])
-                    elif age[1] in ["mois", "jour", "jours"]:
-                        age = 0
-                    else:
-                        raise Exception(age)
-                except:
-                    age = -1 #unknown
+                    link = person.get("href")
+                    id = hashlib.sha224(link.encode()).hexdigest()
+                    published = datetime.strptime(person.find("time").text.strip(), "%d/%m/%Y").date()
+                    location = person.find("span", attrs={"class": "from"}).find("strong").text.strip().split("(")[0].strip()
+                    death = datetime.strptime(person.find("span", attrs={"class": "deces"}).find_all("strong")[0].text.strip(), "%d %B %Y").date()
 
-                data[id] = (age, location, death, published)
-                last_date = published
-            except Exception as e:
-                print("----------------")
-                print(e)
-                print(person)
-                print("----------------")
-        page += 1
+                    try:
+                        age = person.find("span", attrs={"class": "deces"}).find_all("strong")[1].text.strip().split(" ")
+                        if age[1] in ["ans", "an"]:
+                            age = int(age[0])
+                        elif age[1] in ["mois", "jour", "jours"]:
+                            age = 0
+                        else:
+                            raise Exception(age)
+                    except:
+                        age = -1 #unknown
 
-        if page % 100 == 0:
-            save()
-    except Exception as e:
-        # repeat!
-        print(e)
-        pass
+                    data[id] = (age, location, death, published)
+                    last_date = published
+                except Exception as e:
+                    print("----------------")
+                    print(e)
+                    print(person)
+                    print("----------------")
+            page += 1
 
-save()
+            if page % 100 == 0:
+                save()
+        except Exception as e:
+            # repeat!
+            print(e)
+            pass
+
+    save()
+
+#run
