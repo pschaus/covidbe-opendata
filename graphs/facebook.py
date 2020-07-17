@@ -131,16 +131,16 @@ def movement():
         xaxis_title="date",
         yaxis_title=gettext(get_translation(fr="changement du nombre de tuiles visités", en="change in number of tiles visited"))
     )
-    top = 0.4
+    top = 0.5
     bottom = -0.8
-    split = 0.3
+    split = 0.4
     add_text(fig, "2020-04-11", top, "Confinement")
-    add_text(fig, "2020-06-05", top, "Deconfinement phases")
+    add_text(fig, "2020-06-09", top, "Deconfinement phases")
     add_text(fig, "2020-05-07", split, "1A")
     add_text(fig, "2020-05-14", split, "1B")
     add_text(fig, "2020-05-29", split, "2")
     add_text(fig, "2020-06-20", split, "3")
-    add_text(fig, "2020-07-03", split, "4")
+    add_text(fig, "2020-07-07", split, "4")
     add_rectangle(fig, "2020-03-18", bottom, "2020-05-04", top, "lightsalmon")
     add_rectangle(fig, "2020-05-04", split, df_movement_range.date_time.max(), top, "darkgreen")
     add_rectangle(fig, "2020-05-04", bottom, "2020-05-11", split, "khaki")
@@ -161,12 +161,12 @@ def staying_put():
     bottom = 0
     split = 0.74
     add_text(fig, "2020-04-11", top, "Confinement")
-    add_text(fig, "2020-06-05", top, "Deconfinement phases")
+    add_text(fig, "2020-06-09", top, "Deconfinement phases")
     add_text(fig, "2020-05-07", split, "1A")
     add_text(fig, "2020-05-14", split, "1B")
     add_text(fig, "2020-05-29", split, "2")
     add_text(fig, "2020-06-20", split, "3")
-    add_text(fig, "2020-07-03", split, "4")
+    add_text(fig, "2020-07-07", split, "4")
     add_rectangle(fig, "2020-03-18", bottom, "2020-05-04", top, "lightsalmon")
     add_rectangle(fig, "2020-05-04", split, df_movement_range.date_time.max(), top, "darkgreen")
     add_rectangle(fig, "2020-05-04", bottom, "2020-05-11", split, "khaki")
