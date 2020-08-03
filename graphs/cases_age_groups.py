@@ -8,6 +8,9 @@ from graphs import register_plot_for_embedding
 
 df_prov_timeseries = pd.read_csv('static/csv/be-covid-provinces.csv')
 
+age_group_dict = {'0-9': '<60', '10-19': '<60', '20-29': '<60', '30-39': '<60', '40-49': '<60', '50-59': '<60',
+                  '60-69': '>=60', '70-79': '>=60', '80-89': '>=60', '90+': '>=60'}
+df_prov_timeseries['pop_active'] = df_prov_timeseries['AGEGROUP'].map(age_group_dict)
 
 @register_plot_for_embedding("cases_age_groups")
 def age_groups_cases():
@@ -32,6 +35,33 @@ def age_groups_cases():
     fig_age_groups_cases.update_layout(template="plotly_white", height=500, barmode="stack",
                                        margin=dict(l=0, r=0, t=30, b=0), title=gettext("Cases per day per age group"))
     return fig_age_groups_cases
+
+
+
+@register_plot_for_embedding("cases_age_groups_pop_active")
+def age_groups_pop_active_cases():
+    """
+    bar plot age groups cases
+    """
+    idx = pd.date_range(df_prov_timeseries.DATE.min(), df_prov_timeseries.DATE.max())
+    bars_age_groups = []
+    age_groups = sorted(df_prov_timeseries.pop_active.unique())
+    for idx2, ag in enumerate(age_groups):
+        df_ag = df_prov_timeseries.loc[df_prov_timeseries['pop_active'] == ag]
+        df_ag = df_ag.groupby(['DATE']).agg({'CASES': 'sum'})
+        df_ag.index = pd.DatetimeIndex(df_ag.index)
+        df_ag = df_ag.reindex(idx, fill_value=0)
+        bars_age_groups.append(go.Bar(
+            x=df_ag.index,
+            y=df_ag['CASES'],
+            name=ag,
+            marker_color=px.colors.qualitative.G10[idx2]
+        ))
+    fig_age_groups_cases = go.Figure(data=bars_age_groups)
+    fig_age_groups_cases.update_layout(template="plotly_white", height=500,
+                                       margin=dict(l=0, r=0, t=30, b=0), title=gettext("Cases per day per age group"))
+    return fig_age_groups_cases
+
 
 
 @register_plot_for_embedding("cases_age_groups_pie")
