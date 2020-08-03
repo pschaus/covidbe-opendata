@@ -23,15 +23,18 @@ df_communes_tot['name'] = df_communes_tot.apply(
 
 
 df5 = pd.read_csv("static/csv/cases_weekly_ins5.csv",encoding='latin1')
+df5 = df5[df5.WEEK >= 25]
 
 today_w = datetime.today().isocalendar()[1]
 
 
 @register_plot_for_embedding("cases_per_municipality_cases_per_week")
 def map_communes_cases_per_week():
+    maxv = df5.CASES.max()
     fig = px.choropleth_mapbox(df5, geojson=geojson_communes,
                                locations="NIS5",
                                color='CASES', color_continuous_scale="magma_r",
+                               range_color=(0, maxv),
                                animation_frame="WEEK", animation_group="NIS5",
                                featureidkey="properties.NIS5",
                                center={"lat": 50.641111, "lon": 4.668889},
@@ -52,9 +55,11 @@ def map_communes_cases_per_week():
 
 @register_plot_for_embedding("cases_per_municipality_per_1000inhabitant_per_week")
 def map_communes_per_1000inhabitant_per_week():
+    maxv = df5.CASES_PER_1000HABITANT.max()
     fig = px.choropleth_mapbox(df5, geojson=geojson_communes,
                                locations="NIS5",
                                color='CASES_PER_1000HABITANT', color_continuous_scale="magma_r",
+                               range_color=(0, maxv),
                                animation_frame="WEEK", animation_group="NIS5",
                                featureidkey="properties.NIS5",
                                center={"lat": 50.641111, "lon": 4.668889},

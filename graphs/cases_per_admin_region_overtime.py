@@ -12,13 +12,15 @@ from graphs import register_plot_for_embedding
 
 geojson = geopandas.read_file('static/json/admin-units/be-geojson.geojson')
 df3 = pd.read_csv("static/csv/cases_weekly_ins3.csv",encoding='latin1')
+df3 = df3[df3.WEEK >= 25]
 
 @register_plot_for_embedding("cases_per_admin_region_inhabitant overtime")
 def map_totcases_admin_region_overtime():
+    maxv = df3.CASES.max()
     fig = px.choropleth_mapbox(df3, geojson=geojson,
                                locations="NIS3",
                                color='CASES', color_continuous_scale="magma_r",
-                               # range_color=(0.85, 1),
+                               range_color=(0, maxv),
                                animation_frame="WEEK", animation_group="NIS3",
                                featureidkey="properties.NIS3",
                                center={"lat": 50.641111, "lon": 4.668889},
@@ -38,12 +40,15 @@ def map_totcases_admin_region_overtime():
     return fig
 
 
+
+
 @register_plot_for_embedding("cases_per_habitant_admin_region_inhabitant overtime")
 def map_cases_per_habittant_admin_region_overtime():
+    maxv = df3.CASES_PER_1000HABITANT.max()
     fig = px.choropleth_mapbox(df3, geojson=geojson,
                                locations="NIS3",
                                color='CASES_PER_1000HABITANT', color_continuous_scale="magma_r",
-                               # range_color=(0.85, 1),
+                               range_color=(0, maxv),
                                animation_frame="WEEK", animation_group="NIS3",
                                featureidkey="properties.NIS3",
                                center={"lat": 50.641111, "lon": 4.668889},
@@ -61,6 +66,18 @@ def map_cases_per_habittant_admin_region_overtime():
     )
     fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=5, b=0))
     return fig
+
+
+
+@register_plot_for_embedding("cases_per_admin_region_inhabitant overtime plot")
+def plot_cases_admin_region_overtime():
+    return px.line(data_frame=df3, x='WEEK', y='CASES', line_group ='name',color='name')
+
+
+
+@register_plot_for_embedding("cases_per_habitant_admin_region_inhabitant overtime plot")
+def plot_cases_per_habittant_admin_region_overtime():
+    return px.line(data_frame=df3, x='WEEK', y='CASES_PER_1000HABITANT', line_group ='name',color='name')
 
 
 

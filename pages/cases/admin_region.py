@@ -6,7 +6,7 @@ from dash.dependencies import Input, Output, State
 from flask_babel import get_locale, gettext
 
 from graphs.cases_per_admin_region import map_totcases_admin_region, map_cases_per_habittant_admin_region
-from graphs.cases_per_admin_region_overtime import map_totcases_admin_region_overtime, map_cases_per_habittant_admin_region_overtime
+from graphs.cases_per_admin_region_overtime import map_totcases_admin_region_overtime, map_cases_per_habittant_admin_region_overtime,plot_cases_admin_region_overtime,plot_cases_per_habittant_admin_region_overtime
 from pages.sources import *
 
 from pages import get_translation
@@ -31,10 +31,18 @@ def display_admin():
             dbc.Col(dcc.Graph(id='cases-province-map', figure=map_totcases_admin_region_overtime(),
                               config=dict(locale=str(get_locale()))), className="col-12"),
         ]),
+        dbc.Row([
+            dbc.Col(dcc.Graph(id='cases-province-map', figure=plot_cases_admin_region_overtime(),
+                              config=dict(locale=str(get_locale()))), className="col-12"),
+        ]),
         html.H3(gettext(
             get_translation(en="Weekly number of cases per 1000 inhabitants", fr="Nombre de cas par semaine pour 1000 habitants"))),
         dbc.Row([
             dbc.Col(dcc.Graph(id='cases-province-map', figure=map_cases_per_habittant_admin_region_overtime(),
+                              config=dict(locale=str(get_locale()))), className="col-12"),
+        ]),
+        dbc.Row([
+            dbc.Col(dcc.Graph(id='cases-province-map', figure=plot_cases_per_habittant_admin_region_overtime(),
                               config=dict(locale=str(get_locale()))), className="col-12"),
         ]),
         html.H3(gettext(get_translation(en="Total Number of cases", fr = "Nombre de cas total"))),
