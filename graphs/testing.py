@@ -16,7 +16,7 @@ def bart_plot_cases_testing():
     """
     # ---------bar plot age groups death---------------------------
 
-    test_bar = go.Bar(x=df_testing.DATE, y=df_testing.TESTS, name=gettext('#Tests'))
+    test_bar = go.Bar(x=df_testing.DATE, y=df_testing.TESTS_ALL, name=gettext('#Tests'))
     case_bar = go.Bar(x=df_testing.DATE, y=df_testing.CASES, name=gettext('#Cases'))
 
     fig_testing = go.Figure(data=[test_bar, case_bar], layout=go.Layout(barmode='group'), )
@@ -34,7 +34,7 @@ def plot_ration_cases_over_testing():
     """
     plot of the ration cases over testing everyday
     """
-    fig = px.line(x=df_testing.DATE,y=df_testing.CASES/df_testing.TESTS, title=gettext("#Cases/#Tests each day"))
+    fig = px.line(x=df_testing.DATE,y=df_testing.CASES/df_testing.TESTS_ALL, title=gettext("#Cases/#Tests each day"))
     fig.update_layout(xaxis_title=gettext('Day'),
                    yaxis_title=gettext('#Cases/#Tests'))
     return fig
@@ -45,7 +45,7 @@ def plot_cumulated_testing():
     """
     plot of the cumulated tests cases of days everyday
     """
-    fig = go.Figure(data=[go.Scatter(x=df_testing.DATE, y=df_testing.TESTS.cumsum(), name=gettext('Cumulated #Test')),
+    fig = go.Figure(data=[go.Scatter(x=df_testing.DATE, y=df_testing.TESTS_ALL.cumsum(), name=gettext('Cumulated #Test')),
                           go.Scatter(x=df_testing.DATE, y=df_testing.CASES.cumsum(), name=gettext('Cumulated #Cases'))]
                     )
     fig.update_layout(xaxis_title=gettext('Day'),
