@@ -65,8 +65,41 @@ def covid_weekly_ins3():
     df3 = pd.merge(df3, df_pop, left_on='NIS3', right_on='NIS3', how='left')
     df3['CASES_PER_1000HABITANT'] = df3['CASES'] / df3['POP'] * 1000
     df3 = df3.round({'CASES_PER_1000HABITANT': 2})
-    df3 = df3.sort_values(by=['WEEK'])
+    df3 = df3.sort_values(by=['WEEK','name'])
     df3.to_csv("../static/csv/cases_weekly_ins3.csv")
+
+
+def covid_daily_ins3():
+    df = pd.read_csv("../static/csv/COVID19BE_CASES_MUNI.csv", parse_dates=['DATE'], encoding='latin1')
+    df = df[['DATE', 'NIS5', 'CASES']]
+
+    df.dropna(inplace=True)
+    df['NIS5'] = df['NIS5'].astype(int).astype(str)
+    df['NIS3'] = df.apply(lambda x: x['NIS5'][:2], axis=1).astype(int)
+
+
+    df = df.replace({'<5': '1'})
+    df['CASES'] = df['CASES'].astype(int)
+
+    df3 = df.groupby([df.NIS3, df.DATE]).agg({'CASES': ['sum']}).reset_index()
+    df3.columns = df3.columns.get_level_values(0)
+
+    geojson = geopandas.read_file('../static/json/admin-units/be-geojson.geojson')
+    df_names = pd.DataFrame(geojson.drop(columns='geometry'))
+    df3 = pd.merge(df3, df_names, left_on='NIS3', right_on='NIS3', how='left')
+
+    df_pop = pd.read_csv("../static/csv/ins_pop.csv", dtype={"NIS5": int})
+    df_pop = df_pop.loc[(df_pop.NIS5 >= 10000) & (df_pop.NIS5 % 1000 == 0) & (df_pop.NIS5 % 10000 != 0)]
+    df_pop['NIS3'] = df_pop.NIS5.apply(lambda x: x//1000)
+
+    df3 = pd.merge(df3, df_pop, left_on='NIS3', right_on='NIS3', how='left')
+    df3['CASES_PER_1000HABITANT'] = df3['CASES'] / df3['POP'] * 1000
+    df3 = df3.round({'CASES_PER_1000HABITANT': 2})
+    df3 = df3.sort_values(by=['DATE','name'])
+    df3.to_csv("../static/csv/cases_daily_ins3.csv")
+
+
 
 covid_weekly_ins5()
 covid_weekly_ins3()
+covid_daily_ins3()

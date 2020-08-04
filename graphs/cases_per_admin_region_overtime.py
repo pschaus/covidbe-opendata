@@ -14,6 +14,11 @@ geojson = geopandas.read_file('static/json/admin-units/be-geojson.geojson')
 df3 = pd.read_csv("static/csv/cases_weekly_ins3.csv",encoding='latin1')
 df3 = df3[df3.WEEK >= 25]
 
+df3d = pd.read_csv("static/csv/cases_daily_ins3.csv",encoding='latin1')
+
+
+
+
 @register_plot_for_embedding("cases_per_admin_region_inhabitant overtime")
 def map_totcases_admin_region_overtime():
     maxv = df3.CASES.max()
@@ -80,4 +85,8 @@ def plot_cases_per_habittant_admin_region_overtime():
     return px.line(data_frame=df3, x='WEEK', y='CASES_PER_1000HABITANT', line_group ='name',color='name')
 
 
+
+@register_plot_for_embedding("casesdaily_per_admin_region_inhabitant overtime plot")
+def plot_cases_daily_admin_region_overtime():
+    return px.line(data_frame=df3d, x='DATE', y='CASES', line_group ='name',color='name')
 
