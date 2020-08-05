@@ -1525,7 +1525,7 @@
 1523,2020-07-31,WLX,Wallonia,3,1,0,0,0,0,0,Luxembourg
 1524,2020-07-31,WNA,Wallonia,6,3,1,0,0,0,0,Namur
 1525,2020-07-31,VOV,Flanders,14,17,2,2,0,0,0,OostVlaanderen
-1526,2020-07-31,VBR,Flanders,6,3,3,1,0,0,0,VlaamsBrabant
+1526,2020-07-31,VBR,Flanders,6,4,2,1,0,0,0,VlaamsBrabant
 1527,2020-07-31,WBR,Wallonia,2,0,0,0,0,0,2,BrabantWallon
 1528,2020-07-31,VWV,Flanders,11,35,1,1,0,0,6,WestVlaanderen
 1529,2020-08-01,VAN,Flanders,14,91,22,8,1,7,4,Antwerpen
@@ -1561,3 +1561,14 @@
 1559,2020-08-03,VBR,Flanders,6,7,3,2,1,2,0,VlaamsBrabant
 1560,2020-08-03,WBR,Wallonia,2,0,0,0,0,0,0,BrabantWallon
 1561,2020-08-03,VWV,Flanders,11,33,2,1,0,3,3,WestVlaanderen
+1562,2020-08-04,VAN,Flanders,14,90,24,9,2,7,16,Antwerpen
+1563,2020-08-04,BRU,Brussels,15,59,9,3,0,8,9,Brussels
+1564,2020-08-04,WHT,Wallonia,14,26,8,7,2,0,3,Hainaut
+1565,2020-08-04,VLI,Flanders,7,12,1,1,0,1,2,Limburg
+1566,2020-08-04,WLG,Wallonia,12,28,10,3,0,2,2,Liège
+1567,2020-08-04,WLX,Wallonia,3,0,0,0,0,0,0,Luxembourg
+1568,2020-08-04,WNA,Wallonia,6,4,2,1,0,0,1,Namur
+1569,2020-08-04,VOV,Flanders,14,13,3,2,0,0,2,OostVlaanderen
+1570,2020-08-04,VBR,Flanders,6,6,4,3,1,0,0,VlaamsBrabant
+1571,2020-08-04,WBR,Wallonia,2,0,0,0,0,0,0,BrabantWallon
+1572,2020-08-04,VWV,Flanders,11,27,2,1,0,0,6,WestVlaanderen
