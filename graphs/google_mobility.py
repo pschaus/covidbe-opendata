@@ -55,5 +55,46 @@ def google_mobility_plot_eu():
     return large_fig
 
 
+subregion = ['Antwerp', 'East Flanders', 'Flemish Brabant', 'Limburg', 'West Flanders', 'Hainaut', 'Liege', 'Luxembourg', 'Province of Namur', 'Walloon Brabant',]
+df_be = pd.read_csv(f'static/csv/google_mobility_report_be.csv', parse_dates=['date'])
+dfmapbe = {c: df_be[df_be['sub_region_2'] == c] for c in subregion}
+
+
+@register_plot_for_embedding("google_mobility_plot_be")
+def google_mobility_plot_be():
+    colors = [
+        '#1f77b4',  # muted blue
+        '#ff7f0e',  # safety orange
+        '#2ca02c',  # cooked asparagus green
+        '#d62728',  # brick red
+        '#9467bd',  # muted purple
+        '#8c564b',  # chestnut brown
+        '#e377c2',  # raspberry yogurt pink
+        '#7f7f7f',  # middle gray
+        '#bcbd22',  # curry yellow-green
+        '#17becf'  # blue-teal
+    ]
+    large_fig = make_subplots(rows=len(graphs), cols=1, subplot_titles=graphs, horizontal_spacing=0.05,
+                              vertical_spacing=0.02, shared_xaxes=True)
+    r = 1
+    for g in graphs:
+
+        fig = go.Figure()
+        a = 0
+        for c in subregion:
+            df = dfmapbe[c]
+            large_fig.append_trace(
+                go.Scatter(x=df.date, y=df[g], line=dict(color=colors[a]), mode='lines', name=c, legendgroup=c,
+                           showlegend=(r == 1)), row=r, col=1)
+            a += 1
+
+        r += 1
+    large_fig['layout'].update(height=1500, title='Google Mobility Reports')
+    return large_fig
+
+
+
+google_mobility_plot_be().show()
+
 
 
