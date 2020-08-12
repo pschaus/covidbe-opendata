@@ -1,9 +1,14 @@
 # Inspired from https://covid19dashboards.com/covid-compare-permillion/
 # and https://gist.github.com/gschivley/578c344461100071b7eef158efccce95
 
+
+from pages import get_translation
+import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
-from pages import get_translation
+from dash.dependencies import Input, Output, State
+from flask_babel import get_locale, gettext
+
 
 import io
 
@@ -11,16 +16,11 @@ import numpy as np
 import altair as alt
 #config InlineBackend.figure_format = 'retina'
 
-from graphs.cases_per_million import lines_cases_per_million
+from graphs.cases_per_million import lines_cases_per_million_not_log
 from pages.sources import source_hopkins, display_source_providers
 
 
 def display_cases_per_million():
-
-    plot1=lines_cases_per_million()
-    # Save html as a StringIO object in memory
-    plot1_html = io.StringIO()
-    plot1.save(plot1_html, 'html')
 
     return [
     html.H1(get_translation(
@@ -34,18 +34,10 @@ def display_cases_per_million():
             Le nombre de cas signalés par million est une limite inférieure du nombre réel de personnes infectées par million d'habitants. Les pays ont eu différentes capacités et approches pour réaliser les tests de dépistage.
             """,
         )),
-    html.Iframe(
-        id='plot',
-        height='500',
-        width='1000',
-        sandbox='allow-scripts',
-
-        # This is where we pass the html
-        srcDoc=plot1_html.getvalue(),
-
-        # Get rid of the border box
-        style={'border-width': '0px'}
-    ),
+    dbc.Row([
+                   dbc.Col(dcc.Graph(id='cases per country', figure=lines_cases_per_million_not_log(),
+                                     config=dict(locale=str(get_locale()))), className="col-12"),
+    ]),
         display_source_providers(source_hopkins)
     ]
 
