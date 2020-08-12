@@ -94,7 +94,4 @@ def google_mobility_plot_be():
 
 
 
-google_mobility_plot_be().show()
-
-
 

@@ -9,7 +9,7 @@ def lines_cases_per_million():
     bar plot hospitalization
     """
 
-    chart_width = 550
+    #chart_width = 550
     chart_height= 400
     
     #hide 
@@ -105,7 +105,7 @@ def lines_cases_per_million():
     ).add_selection(
         selection
     ).properties(
-        width=chart_width,
+        #width=chart_width,
         height=chart_height
     )
     
