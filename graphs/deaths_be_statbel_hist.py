@@ -13,7 +13,7 @@ import pandas
 dateparse = lambda x: datetime.strptime(x, '%Y-%m-%d')
 df = pandas.read_csv("static/csv/mortality_statbel.csv",parse_dates=['DT_DATE'], date_parser=dateparse)
 
-
+df = df[df['DT_DATE'] >= '2015-01-01']
 
 df.dropna(thresh=1,inplace=True)
 
