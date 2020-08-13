@@ -21,6 +21,13 @@ def death_85plus_hist():
     return fig
 
 
+def death_hist():
+    fig = px.line(df_week_all, x="week", y="tot", color='year')
+
+    fig.update_layout(xaxis_title='Week',
+                      yaxis_title='#deaths')
+    return fig
+
 def death_85plus_hist_cum():
     def x(year):
         return df_week85[df_week85.year == year].week
