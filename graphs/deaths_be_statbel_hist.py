@@ -10,29 +10,8 @@ from datetime import datetime
 
 import pandas
 
-dateparse = lambda x: datetime.strptime(x, '%Y-%m-%d')
-df = pandas.read_csv("static/csv/mortality_statbel.csv",parse_dates=['DT_DATE'], date_parser=dateparse)
-
-df = df[df['DT_DATE'] >= '2015-01-01']
-
-df.dropna(thresh=1,inplace=True)
-
-def week(date):
-    return date.isocalendar()[1]
-
-
-df['week'] = df.apply(lambda x: week(x['DT_DATE']), axis=1)
-
-
-
-df_week85 = df.groupby(['NR_YEAR', 'week', 'CD_AGEGROUP'])["MS_NUM_DEATH"].sum().reset_index()
-df_week85.rename(columns={"MS_NUM_DEATH": "tot", "NR_YEAR": "year", "CD_AGEGROUP": "age"}, inplace=True)
-df_week85 = df_week85.loc[(df_week85['age'] == '85+')]
-
-
-df_week_all = df.groupby(['NR_YEAR', 'week'])["MS_NUM_DEATH"].sum().reset_index()
-df_week_all.rename(columns={"MS_NUM_DEATH": "tot", "NR_YEAR": "year"}, inplace=True)
-
+df_week85 = pandas.read_csv("static/csv/weekly_mortality_85+.csv")
+df_week_all = pandas.read_csv("static/csv/weekly_mortality_all.csv")
 
 def death_85plus_hist():
     fig = px.line(df_week85, x="week", y="tot", color='year')
