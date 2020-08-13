@@ -14,7 +14,7 @@ df3_death = pd.read_csv("static/csv/weekly_mortality_statbel_ins3.csv")
 df3_cases = pd.read_csv("static/csv/cases_weekly_ins3.csv")
 
 df = pd.merge(df3_death, df3_cases, left_on=['NIS3','WEEK','name','POP'], right_on=['NIS3','WEEK','name','POP'], how='left')
-df = df[df['WEEK'] >= 10]
+df = df[df['WEEK'] >= 27]
 
 @register_plot_for_embedding("gapminder_case_deats_adminregion")
 def gapminder_case_death_admin_region_overtime():

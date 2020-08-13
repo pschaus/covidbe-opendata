@@ -23,7 +23,7 @@ df_communes_tot['name'] = df_communes_tot.apply(
 
 
 df5 = pd.read_csv("static/csv/cases_weekly_ins5.csv",encoding='latin1')
-df5 = df5[df5.WEEK >= 25]
+df5 = df5[df5.WEEK >= 27]
 
 today_w = datetime.today().isocalendar()[1]
 
