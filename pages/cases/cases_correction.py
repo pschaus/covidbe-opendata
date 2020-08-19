@@ -60,7 +60,7 @@ def display_cases_correction():
                     Depuis le 22 juin, 14% des tests positifs concernent des personnes de plus de 60 ans. 
                     Le testing est beaucoup plus exhaustif aujourd’hui, nous allons donc supposer que cette proportion est correcte.
     
-                    Supposons que le nombre  de personnes de plus de 60 ans contaminés était correct également durant la 
+                    Supposons que le nombre  de personnes de plus de 60 ans contaminées était correct également durant la 
                     première vague. Cette hypothèse est probablement fausse puisque nous testions alors uniquement les cas 
                     symptomatiques, mais elle est cependant conservatrice pour notre exercice de correction de la courbe.
     
