@@ -64,6 +64,42 @@ def age_groups_pop_active_cases():
 
 
 
+@register_plot_for_embedding("cases_age_groups_pop_active_hypothetical")
+def age_groups_pop_active_hypothetical():
+    df = df_prov_timeseries
+    df_young_reworked = df.loc[(df.pop_active == '>=60') & (df['DATE'] < '2020-06-22')].copy()
+    df_young_reworked['CASES'] = df_young_reworked['CASES'].apply(lambda x: x * 7.14)
+    df_young_reworked['pop_active'] = '<60'
+    df_young = df.loc[(df.pop_active == '<60') & (df['DATE'] >= '2020-06-22')]
+    df_old = df.loc[(df.pop_active == '>=60')]
+
+    df_concat = pd.concat([df_young_reworked, df_young, df_old])
+
+    idx = pd.date_range(df_concat.DATE.min(), df_concat.DATE.max())
+    bars_age_groups = []
+    age_groups = sorted(df_concat.pop_active.unique())
+    for idx2, ag in enumerate(age_groups):
+        df_ag = df_concat.loc[df_concat['pop_active'] == ag]
+        df_ag = df_ag.groupby(['DATE']).agg({'CASES': 'sum'})
+        df_ag.index = pd.DatetimeIndex(df_ag.index)
+        df_ag = df_ag.reindex(idx, fill_value=0)
+        bars_age_groups.append(go.Bar(
+            x=df_ag.index,
+            y=df_ag['CASES'],
+            name=ag,
+            marker_color=px.colors.qualitative.G10[idx2]
+        ))
+    fig_age_groups_cases = go.Figure(data=bars_age_groups)
+    fig_age_groups_cases.update_layout(template="plotly_white", height=500,
+                                       margin=dict(l=0, r=0, t=30, b=0), title=gettext("Cases per day per age group"))
+
+    return fig_age_groups_cases
+
+
+
+
+
+
 @register_plot_for_embedding("cases_age_groups_pie")
 def age_groups_cases_pie():
     region_age = df_prov_timeseries.groupby(['REGION', 'AGEGROUP']).agg({'CASES': 'sum'})
