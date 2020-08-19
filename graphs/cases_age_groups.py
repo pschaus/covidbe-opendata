@@ -5,6 +5,7 @@ from flask_babel import gettext
 from plotly.subplots import make_subplots
 
 from graphs import register_plot_for_embedding
+from pages import get_translation
 
 df_prov_timeseries = pd.read_csv('static/csv/be-covid-provinces.csv')
 
@@ -91,7 +92,7 @@ def age_groups_pop_active_hypothetical():
         ))
     fig_age_groups_cases = go.Figure(data=bars_age_groups)
     fig_age_groups_cases.update_layout(template="plotly_white", height=500,
-                                       margin=dict(l=0, r=0, t=30, b=0), title=gettext("Cases per day per age group"))
+                                       margin=dict(l=0, r=0, t=30, b=0), title=get_translation(fr="Nombre de case par groupe d'age (corrigé, voir hypothèses)",en="Number of cases per age group  (corrected, see hypothesises)"))
 
     return fig_age_groups_cases
 

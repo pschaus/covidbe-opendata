@@ -35,15 +35,15 @@ def display_age_groups():
                               config=dict(locale=str(get_locale())))),
         ]),
 
-        html.P(gettext(
-            get_translation(
-                fr="""Hypothetical""",
-                en="""Hypothetical"""))),
-        dbc.Row([
-            dbc.Col(dcc.Graph(id='age-group-cases',
-                              figure=age_groups_pop_active_hypothetical(),
-                              config=dict(locale=str(get_locale())))),
-        ]),
+        # html.P(gettext(
+        #     get_translation(
+        #         fr="""Hypothetical""",
+        #         en="""Hypothetical"""))),
+        # dbc.Row([
+        #     dbc.Col(dcc.Graph(id='age-group-cases',
+        #                       figure=age_groups_pop_active_hypothetical(),
+        #                       config=dict(locale=str(get_locale())))),
+        # ]),
         dbc.Row([
             dbc.Col(dcc.Graph(id='age-group-cases-pie',
                               figure=age_groups_cases_pie(),
