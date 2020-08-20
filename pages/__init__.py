@@ -2,7 +2,7 @@ import threading
 from typing import List
 import dash_core_components as dcc
 import dash_html_components as html
-from flask_babel import gettext, get_locale
+from flask_babel import gettext, get_locale, LazyString
 
 from utils import ThreadSafeCache
 
@@ -41,14 +41,17 @@ def model_warning(*elems):
     ]
 
 
-def get_translation(**kwargs):
+def get_translation(lazy=False, **kwargs):
+    if lazy is True:
+        return LazyString(get_translation, **kwargs)
+
     key = str(get_locale())
     if key in kwargs:
         return kwargs[key]
     # fallback to "en" if available
     if "en" in kwargs:
         return kwargs["en"]
-    return list(kwargs.keys())[0]
+    return list(kwargs.values())[0]
 
 
 def lang_cache(f):
