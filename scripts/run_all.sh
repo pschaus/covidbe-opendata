@@ -4,7 +4,8 @@ for f in *.py
 do
   if [ "$f" != "generate_images.py" ]
   then
-    python "$f" &
+    echo $f
+    python "$f" & 
   fi
 done
 
