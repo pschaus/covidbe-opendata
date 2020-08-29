@@ -43,7 +43,7 @@ match = [s for s in zf.namelist() if ".txt" in s][0]
 mydateparser = lambda x: datetime.strptime(x, "%d/%m/%Y")
 
 
-df = pandas.read_csv(zf.open(match), parse_dates=['DT_DATE'],date_parser=mydateparser, low_memory=False,sep=";")
+df = pandas.read_csv(zf.open(match), parse_dates=['DT_DATE'],date_parser=mydateparser, low_memory=False,sep=";",encoding="latin-1")
 
 
 df.to_csv("../static/csv/mortality_statbel.csv",index=False)
