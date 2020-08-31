@@ -45,8 +45,8 @@ mydateparser = lambda x: datetime.strptime(x, "%d/%m/%Y")
 
 df = pandas.read_csv(zf.open(match), parse_dates=['DT_DATE'],date_parser=mydateparser, low_memory=False,sep=";",encoding="latin-1")
 
-# filter date to keep the file at moderate size
 
+df = df[df['DT_DATE'] >= '2015-01-01']
 
 df.to_csv("../static/csv/mortality_statbel.csv",index=False)
 
