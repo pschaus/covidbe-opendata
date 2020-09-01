@@ -192,6 +192,9 @@ BE,Belgium,Brussels,,,BE-BRU,,2020-08-22,-39.0,-30.0,38.0,-31.0,-10.0,3.0
 BE,Belgium,Brussels,,,BE-BRU,,2020-08-23,-41.0,-22.0,27.0,-34.0,-2.0,1.0
 BE,Belgium,Brussels,,,BE-BRU,,2020-08-24,-26.0,-20.0,24.0,-44.0,-52.0,11.0
 BE,Belgium,Brussels,,,BE-BRU,,2020-08-25,-24.0,-17.0,21.0,-43.0,-51.0,11.0
+BE,Belgium,Brussels,,,BE-BRU,,2020-08-26,-27.0,-19.0,21.0,-41.0,-49.0,10.0
+BE,Belgium,Brussels,,,BE-BRU,,2020-08-27,-26.0,-17.0,32.0,-41.0,-50.0,10.0
+BE,Belgium,Brussels,,,BE-BRU,,2020-08-28,-25.0,-16.0,24.0,-34.0,-49.0,11.0
 DE,Germany,Berlin,,,DE-BE,,2020-02-15,5.0,6.0,46.0,5.0,1.0,-1.0
 DE,Germany,Berlin,,,DE-BE,,2020-02-16,1.0,3.0,-2.0,1.0,-2.0,0.0
 DE,Germany,Berlin,,,DE-BE,,2020-02-17,6.0,3.0,15.0,4.0,1.0,0.0
@@ -385,6 +388,9 @@ DE,Germany,Berlin,,,DE-BE,,2020-08-22,-24.0,-8.0,39.0,-24.0,-7.0,1.0
 DE,Germany,Berlin,,,DE-BE,,2020-08-23,-12.0,19.0,67.0,-16.0,3.0,-4.0
 DE,Germany,Berlin,,,DE-BE,,2020-08-24,-12.0,-5.0,20.0,-23.0,-29.0,5.0
 DE,Germany,Berlin,,,DE-BE,,2020-08-25,-10.0,-4.0,31.0,-21.0,-28.0,4.0
+DE,Germany,Berlin,,,DE-BE,,2020-08-26,-20.0,-10.0,-8.0,-23.0,-28.0,6.0
+DE,Germany,Berlin,,,DE-BE,,2020-08-27,-10.0,-2.0,25.0,-21.0,-27.0,4.0
+DE,Germany,Berlin,,,DE-BE,,2020-08-28,-13.0,-4.0,36.0,-19.0,-27.0,3.0
 FR,France,Île-de-France,,,FR-IDF,,2020-02-15,-12.0,-10.0,5.0,4.0,-8.0,-1.0
 FR,France,Île-de-France,,,FR-IDF,,2020-02-16,-6.0,-6.0,-8.0,4.0,-1.0,-2.0
 FR,France,Île-de-France,,,FR-IDF,,2020-02-17,-2.0,-3.0,11.0,-11.0,-20.0,4.0
@@ -578,6 +584,9 @@ FR,France,Île-de-France,,,FR-IDF,,2020-08-22,-43.0,-29.0,-8.0,-28.0,-23.0,0.0
 FR,France,Île-de-France,,,FR-IDF,,2020-08-23,-33.0,-17.0,4.0,-23.0,-3.0,-3.0
 FR,France,Île-de-France,,,FR-IDF,,2020-08-24,-26.0,-12.0,5.0,-37.0,-50.0,9.0
 FR,France,Île-de-France,,,FR-IDF,,2020-08-25,-27.0,-11.0,4.0,-35.0,-48.0,9.0
+FR,France,Île-de-France,,,FR-IDF,,2020-08-26,-26.0,-14.0,13.0,-34.0,-44.0,7.0
+FR,France,Île-de-France,,,FR-IDF,,2020-08-27,-22.0,-11.0,17.0,-33.0,-46.0,9.0
+FR,France,Île-de-France,,,FR-IDF,,2020-08-28,-28.0,-11.0,-14.0,-32.0,-47.0,9.0
 FR,France,Île-de-France,Essonne,,FR-91,,2020-02-15,-13.0,-13.0,9.0,9.0,-9.0,-2.0
 FR,France,Île-de-France,Essonne,,FR-91,,2020-02-16,-7.0,-7.0,-12.0,10.0,0.0,-1.0
 FR,France,Île-de-France,Essonne,,FR-91,,2020-02-17,1.0,-2.0,-1.0,-9.0,-22.0,5.0
@@ -771,6 +780,9 @@ FR,France,Île-de-France,Essonne,,FR-91,,2020-08-22,-35.0,-24.0,26.0,-21.0,-22.0
 FR,France,Île-de-France,Essonne,,FR-91,,2020-08-23,-23.0,-10.0,52.0,-26.0,0.0,-3.0
 FR,France,Île-de-France,Essonne,,FR-91,,2020-08-24,-13.0,-6.0,35.0,-38.0,-47.0,9.0
 FR,France,Île-de-France,Essonne,,FR-91,,2020-08-25,-13.0,-6.0,32.0,-38.0,-46.0,10.0
+FR,France,Île-de-France,Essonne,,FR-91,,2020-08-26,-16.0,-9.0,37.0,-35.0,-41.0,7.0
+FR,France,Île-de-France,Essonne,,FR-91,,2020-08-27,-11.0,-7.0,47.0,-35.0,-44.0,8.0
+FR,France,Île-de-France,Essonne,,FR-91,,2020-08-28,-14.0,-7.0,29.0,-32.0,-45.0,9.0
 FR,France,Île-de-France,Hauts-de-Seine,,FR-92,,2020-02-15,-20.0,-14.0,-6.0,-6.0,-8.0,-2.0
 FR,France,Île-de-France,Hauts-de-Seine,,FR-92,,2020-02-16,-6.0,-9.0,-36.0,-1.0,0.0,-2.0
 FR,France,Île-de-France,Hauts-de-Seine,,FR-92,,2020-02-17,-3.0,-5.0,10.0,-17.0,-19.0,3.0
@@ -964,6 +976,9 @@ FR,France,Île-de-France,Hauts-de-Seine,,FR-92,,2020-08-22,-49.0,-35.0,-3.0,-35.
 FR,France,Île-de-France,Hauts-de-Seine,,FR-92,,2020-08-23,-34.0,-18.0,9.0,-25.0,2.0,-5.0
 FR,France,Île-de-France,Hauts-de-Seine,,FR-92,,2020-08-24,-30.0,-16.0,23.0,-44.0,-54.0,9.0
 FR,France,Île-de-France,Hauts-de-Seine,,FR-92,,2020-08-25,-30.0,-15.0,20.0,-39.0,-52.0,10.0
+FR,France,Île-de-France,Hauts-de-Seine,,FR-92,,2020-08-26,-29.0,-15.0,27.0,-40.0,-48.0,8.0
+FR,France,Île-de-France,Hauts-de-Seine,,FR-92,,2020-08-27,-25.0,-13.0,50.0,-37.0,-50.0,10.0
+FR,France,Île-de-France,Hauts-de-Seine,,FR-92,,2020-08-28,-31.0,-14.0,7.0,-37.0,-52.0,10.0
 FR,France,Île-de-France,Paris,,FR-75,,2020-02-15,-4.0,-8.0,7.0,4.0,-7.0,-1.0
 FR,France,Île-de-France,Paris,,FR-75,,2020-02-16,-2.0,-9.0,0.0,3.0,-1.0,-2.0
 FR,France,Île-de-France,Paris,,FR-75,,2020-02-17,-4.0,-5.0,13.0,-12.0,-16.0,2.0
@@ -1157,6 +1172,9 @@ FR,France,Île-de-France,Paris,,FR-75,,2020-08-22,-52.0,-39.0,-25.0,-29.0,-23.0,
 FR,France,Île-de-France,Paris,,FR-75,,2020-08-23,-45.0,-32.0,-18.0,-24.0,-5.0,-6.0
 FR,France,Île-de-France,Paris,,FR-75,,2020-08-24,-43.0,-26.0,-16.0,-33.0,-55.0,7.0
 FR,France,Île-de-France,Paris,,FR-75,,2020-08-25,-42.0,-24.0,-17.0,-32.0,-53.0,8.0
+FR,France,Île-de-France,Paris,,FR-75,,2020-08-26,-39.0,-24.0,-6.0,-34.0,-50.0,7.0
+FR,France,Île-de-France,Paris,,FR-75,,2020-08-27,-40.0,-22.0,-5.0,-31.0,-51.0,8.0
+FR,France,Île-de-France,Paris,,FR-75,,2020-08-28,-43.0,-24.0,-32.0,-33.0,-52.0,9.0
 FR,France,Île-de-France,Seine-et-Marne,,FR-77,,2020-02-15,-9.0,-12.0,11.0,12.0,-9.0,-1.0
 FR,France,Île-de-France,Seine-et-Marne,,FR-77,,2020-02-16,-3.0,-7.0,1.0,12.0,-1.0,-1.0
 FR,France,Île-de-France,Seine-et-Marne,,FR-77,,2020-02-17,7.0,0.0,9.0,-7.0,-22.0,5.0
@@ -1350,6 +1368,9 @@ FR,France,Île-de-France,Seine-et-Marne,,FR-77,,2020-08-22,-34.0,-21.0,57.0,0.0,
 FR,France,Île-de-France,Seine-et-Marne,,FR-77,,2020-08-23,-24.0,-5.0,62.0,8.0,-4.0,-3.0
 FR,France,Île-de-France,Seine-et-Marne,,FR-77,,2020-08-24,-13.0,-1.0,59.0,-15.0,-46.0,9.0
 FR,France,Île-de-France,Seine-et-Marne,,FR-77,,2020-08-25,-12.0,-1.0,61.0,-12.0,-45.0,10.0
+FR,France,Île-de-France,Seine-et-Marne,,FR-77,,2020-08-26,-15.0,-4.0,67.0,-11.0,-40.0,7.0
+FR,France,Île-de-France,Seine-et-Marne,,FR-77,,2020-08-27,-7.0,2.0,68.0,-9.0,-44.0,8.0
+FR,France,Île-de-France,Seine-et-Marne,,FR-77,,2020-08-28,-14.0,-1.0,39.0,-2.0,-43.0,9.0
 FR,France,Île-de-France,Seine-Saint-Denis,,FR-93,,2020-02-15,-6.0,-4.0,16.0,6.0,-7.0,0.0
 FR,France,Île-de-France,Seine-Saint-Denis,,FR-93,,2020-02-16,-9.0,-2.0,-17.0,5.0,-2.0,-1.0
 FR,France,Île-de-France,Seine-Saint-Denis,,FR-93,,2020-02-17,-1.0,0.0,5.0,-8.0,-18.0,4.0
@@ -1543,6 +1564,9 @@ FR,France,Île-de-France,Seine-Saint-Denis,,FR-93,,2020-08-22,-33.0,-20.0,57.0,-
 FR,France,Île-de-France,Seine-Saint-Denis,,FR-93,,2020-08-23,-28.0,-9.0,71.0,-15.0,-12.0,-3.0
 FR,France,Île-de-France,Seine-Saint-Denis,,FR-93,,2020-08-24,-20.0,-10.0,51.0,-29.0,-46.0,7.0
 FR,France,Île-de-France,Seine-Saint-Denis,,FR-93,,2020-08-25,-19.0,-7.0,53.0,-26.0,-45.0,7.0
+FR,France,Île-de-France,Seine-Saint-Denis,,FR-93,,2020-08-26,-19.0,-10.0,58.0,-27.0,-41.0,6.0
+FR,France,Île-de-France,Seine-Saint-Denis,,FR-93,,2020-08-27,-17.0,-4.0,78.0,-24.0,-43.0,6.0
+FR,France,Île-de-France,Seine-Saint-Denis,,FR-93,,2020-08-28,-18.0,-7.0,22.0,-24.0,-42.0,7.0
 FR,France,Île-de-France,Val-d'Oise,,FR-95,,2020-02-15,-13.0,-14.0,20.0,3.0,-7.0,-1.0
 FR,France,Île-de-France,Val-d'Oise,,FR-95,,2020-02-16,-8.0,-9.0,-19.0,3.0,-2.0,-1.0
 FR,France,Île-de-France,Val-d'Oise,,FR-95,,2020-02-17,2.0,-4.0,10.0,-7.0,-21.0,4.0
@@ -1736,6 +1760,9 @@ FR,France,Île-de-France,Val-d'Oise,,FR-95,,2020-08-22,-31.0,-26.0,57.0,-58.0,-2
 FR,France,Île-de-France,Val-d'Oise,,FR-95,,2020-08-23,-17.0,-10.0,61.0,-63.0,-4.0,-3.0
 FR,France,Île-de-France,Val-d'Oise,,FR-95,,2020-08-24,-11.0,-10.0,41.0,-61.0,-47.0,8.0
 FR,France,Île-de-France,Val-d'Oise,,FR-95,,2020-08-25,-11.0,-9.0,42.0,-57.0,-46.0,9.0
+FR,France,Île-de-France,Val-d'Oise,,FR-95,,2020-08-26,-12.0,-12.0,56.0,-58.0,-41.0,6.0
+FR,France,Île-de-France,Val-d'Oise,,FR-95,,2020-08-27,-9.0,-8.0,50.0,-58.0,-44.0,8.0
+FR,France,Île-de-France,Val-d'Oise,,FR-95,,2020-08-28,-11.0,-10.0,30.0,-58.0,-44.0,9.0
 FR,France,Île-de-France,Val-de-Marne,,FR-94,,2020-02-15,-12.0,-8.0,-4.0,-1.0,-8.0,-1.0
 FR,France,Île-de-France,Val-de-Marne,,FR-94,,2020-02-16,-7.0,-8.0,-28.0,4.0,-2.0,-2.0
 FR,France,Île-de-France,Val-de-Marne,,FR-94,,2020-02-17,0.0,0.0,7.0,-15.0,-20.0,4.0
@@ -1929,6 +1956,9 @@ FR,France,Île-de-France,Val-de-Marne,,FR-94,,2020-08-22,-39.0,-26.0,4.0,-27.0,-
 FR,France,Île-de-France,Val-de-Marne,,FR-94,,2020-08-23,-28.0,-12.0,14.0,-20.0,-4.0,-3.0
 FR,France,Île-de-France,Val-de-Marne,,FR-94,,2020-08-24,-20.0,-8.0,24.0,-37.0,-50.0,9.0
 FR,France,Île-de-France,Val-de-Marne,,FR-94,,2020-08-25,-21.0,-9.0,26.0,-33.0,-48.0,9.0
+FR,France,Île-de-France,Val-de-Marne,,FR-94,,2020-08-26,-21.0,-10.0,24.0,-33.0,-44.0,7.0
+FR,France,Île-de-France,Val-de-Marne,,FR-94,,2020-08-27,-19.0,-6.0,37.0,-29.0,-46.0,8.0
+FR,France,Île-de-France,Val-de-Marne,,FR-94,,2020-08-28,-19.0,-6.0,3.0,-30.0,-46.0,9.0
 FR,France,Île-de-France,Yvelines,,FR-78,,2020-02-15,-15.0,-11.0,8.0,-2.0,-11.0,-2.0
 FR,France,Île-de-France,Yvelines,,FR-78,,2020-02-16,-14.0,-10.0,-18.0,-1.0,-2.0,-2.0
 FR,France,Île-de-France,Yvelines,,FR-78,,2020-02-17,2.0,2.0,12.0,-18.0,-24.0,5.0
@@ -2122,6 +2152,9 @@ FR,France,Île-de-France,Yvelines,,FR-78,,2020-08-22,-38.0,-28.0,33.0,-10.0,-21.
 FR,France,Île-de-France,Yvelines,,FR-78,,2020-08-23,-28.0,-19.0,24.0,9.0,6.0,-4.0
 FR,France,Île-de-France,Yvelines,,FR-78,,2020-08-24,-14.0,-6.0,13.0,-39.0,-51.0,10.0
 FR,France,Île-de-France,Yvelines,,FR-78,,2020-08-25,-14.0,-8.0,20.0,-37.0,-49.0,10.0
+FR,France,Île-de-France,Yvelines,,FR-78,,2020-08-26,-15.0,-7.0,29.0,-34.0,-45.0,8.0
+FR,France,Île-de-France,Yvelines,,FR-78,,2020-08-27,-10.0,-5.0,27.0,-35.0,-47.0,10.0
+FR,France,Île-de-France,Yvelines,,FR-78,,2020-08-28,-15.0,-8.0,0.0,-28.0,-49.0,10.0
 GB,United Kingdom,Greater London,,,,,2020-02-15,-11.0,-8.0,-34.0,-10.0,-3.0,2.0
 GB,United Kingdom,Greater London,,,,,2020-02-16,-9.0,-11.0,-41.0,-9.0,-4.0,1.0
 GB,United Kingdom,Greater London,,,,,2020-02-17,11.0,4.0,28.0,-3.0,-13.0,2.0
@@ -2315,6 +2348,9 @@ GB,United Kingdom,Greater London,,,,,2020-08-22,-43.0,-21.0,20.0,-45.0,-18.0,4.0
 GB,United Kingdom,Greater London,,,,,2020-08-23,-40.0,-23.0,34.0,-44.0,-14.0,3.0
 GB,United Kingdom,Greater London,,,,,2020-08-24,-24.0,-18.0,44.0,-53.0,-57.0,15.0
 GB,United Kingdom,Greater London,,,,,2020-08-25,-29.0,-21.0,7.0,-54.0,-58.0,17.0
+GB,United Kingdom,Greater London,,,,,2020-08-26,-23.0,-16.0,54.0,-51.0,-55.0,15.0
+GB,United Kingdom,Greater London,,,,,2020-08-27,-38.0,-20.0,11.0,-54.0,-56.0,17.0
+GB,United Kingdom,Greater London,,,,,2020-08-28,-36.0,-14.0,12.0,-50.0,-55.0,15.0
 GB,United Kingdom,Greater London,City of London,,GB-LND,,2020-02-15,-5.0,-9.0,-12.0,-11.0,,
 GB,United Kingdom,Greater London,City of London,,GB-LND,,2020-02-16,-1.0,-21.0,-23.0,-13.0,,
 GB,United Kingdom,Greater London,City of London,,GB-LND,,2020-02-17,-3.0,-2.0,4.0,-1.0,-4.0,
@@ -2508,6 +2544,9 @@ GB,United Kingdom,Greater London,City of London,,GB-LND,,2020-08-22,-69.0,-46.0,
 GB,United Kingdom,Greater London,City of London,,GB-LND,,2020-08-23,-67.0,-45.0,-40.0,-53.0,,
 GB,United Kingdom,Greater London,City of London,,GB-LND,,2020-08-24,-77.0,-69.0,-59.0,-73.0,-71.0,
 GB,United Kingdom,Greater London,City of London,,GB-LND,,2020-08-25,-77.0,-68.0,-65.0,-74.0,-69.0,
+GB,United Kingdom,Greater London,City of London,,GB-LND,,2020-08-26,-76.0,-65.0,-57.0,-72.0,-66.0,
+GB,United Kingdom,Greater London,City of London,,GB-LND,,2020-08-27,-80.0,-67.0,-69.0,-74.0,-69.0,
+GB,United Kingdom,Greater London,City of London,,GB-LND,,2020-08-28,-80.0,-65.0,-67.0,-71.0,-70.0,
 GB,United Kingdom,Greater London,City of Westminster,,GB-WSM,,2020-02-15,-11.0,-14.0,-27.0,-3.0,-1.0,3.0
 GB,United Kingdom,Greater London,City of Westminster,,GB-WSM,,2020-02-16,-10.0,-14.0,-38.0,-8.0,-4.0,2.0
 GB,United Kingdom,Greater London,City of Westminster,,GB-WSM,,2020-02-17,14.0,9.0,37.0,5.0,-8.0,2.0
@@ -2701,6 +2740,9 @@ GB,United Kingdom,Greater London,City of Westminster,,GB-WSM,,2020-08-22,-66.0,-
 GB,United Kingdom,Greater London,City of Westminster,,GB-WSM,,2020-08-23,-64.0,-41.0,-37.0,-59.0,-20.0,4.0
 GB,United Kingdom,Greater London,City of Westminster,,GB-WSM,,2020-08-24,-54.0,-40.0,-27.0,-62.0,-63.0,18.0
 GB,United Kingdom,Greater London,City of Westminster,,GB-WSM,,2020-08-25,-56.0,-43.0,-41.0,-63.0,-64.0,19.0
+GB,United Kingdom,Greater London,City of Westminster,,GB-WSM,,2020-08-26,-53.0,-38.0,-21.0,-61.0,-62.0,16.0
+GB,United Kingdom,Greater London,City of Westminster,,GB-WSM,,2020-08-27,-65.0,-44.0,-43.0,-65.0,-64.0,20.0
+GB,United Kingdom,Greater London,City of Westminster,,GB-WSM,,2020-08-28,-65.0,-40.0,-47.0,-61.0,-62.0,17.0
 GB,United Kingdom,Greater London,London Borough of Barking and Dagenham,,GB-BDG,,2020-02-15,-8.0,-6.0,-12.0,-10.0,-3.0,2.0
 GB,United Kingdom,Greater London,London Borough of Barking and Dagenham,,GB-BDG,,2020-02-16,-7.0,-15.0,-46.0,-15.0,-7.0,1.0
 GB,United Kingdom,Greater London,London Borough of Barking and Dagenham,,GB-BDG,,2020-02-17,6.0,2.0,15.0,-7.0,-16.0,3.0
@@ -2894,6 +2936,9 @@ GB,United Kingdom,Greater London,London Borough of Barking and Dagenham,,GB-BDG,
 GB,United Kingdom,Greater London,London Borough of Barking and Dagenham,,GB-BDG,,2020-08-23,-24.0,-18.0,75.0,-29.0,-14.0,2.0
 GB,United Kingdom,Greater London,London Borough of Barking and Dagenham,,GB-BDG,,2020-08-24,-9.0,-9.0,108.0,-36.0,-45.0,10.0
 GB,United Kingdom,Greater London,London Borough of Barking and Dagenham,,GB-BDG,,2020-08-25,-9.0,-13.0,49.0,-37.0,-46.0,12.0
+GB,United Kingdom,Greater London,London Borough of Barking and Dagenham,,GB-BDG,,2020-08-26,-5.0,-9.0,92.0,-35.0,-44.0,10.0
+GB,United Kingdom,Greater London,London Borough of Barking and Dagenham,,GB-BDG,,2020-08-27,-15.0,-12.0,47.0,-36.0,-45.0,11.0
+GB,United Kingdom,Greater London,London Borough of Barking and Dagenham,,GB-BDG,,2020-08-28,-15.0,-5.0,54.0,-34.0,-43.0,10.0
 GB,United Kingdom,Greater London,London Borough of Barnet,,GB-BNE,,2020-02-15,-9.0,-5.0,-49.0,-10.0,-3.0,2.0
 GB,United Kingdom,Greater London,London Borough of Barnet,,GB-BNE,,2020-02-16,-10.0,-6.0,-51.0,-12.0,-5.0,1.0
 GB,United Kingdom,Greater London,London Borough of Barnet,,GB-BNE,,2020-02-17,8.0,4.0,11.0,-5.0,-14.0,2.0
@@ -3087,6 +3132,9 @@ GB,United Kingdom,Greater London,London Borough of Barnet,,GB-BNE,,2020-08-22,-3
 GB,United Kingdom,Greater London,London Borough of Barnet,,GB-BNE,,2020-08-23,-29.0,-22.0,78.0,-34.0,-17.0,3.0
 GB,United Kingdom,Greater London,London Borough of Barnet,,GB-BNE,,2020-08-24,0.0,-12.0,123.0,-44.0,-56.0,14.0
 GB,United Kingdom,Greater London,London Borough of Barnet,,GB-BNE,,2020-08-25,-4.0,-20.0,46.0,-44.0,-57.0,16.0
+GB,United Kingdom,Greater London,London Borough of Barnet,,GB-BNE,,2020-08-26,5.0,-13.0,119.0,-42.0,-54.0,14.0
+GB,United Kingdom,Greater London,London Borough of Barnet,,GB-BNE,,2020-08-27,-15.0,-13.0,68.0,-45.0,-56.0,16.0
+GB,United Kingdom,Greater London,London Borough of Barnet,,GB-BNE,,2020-08-28,-14.0,-10.0,81.0,-42.0,-54.0,14.0
 GB,United Kingdom,Greater London,London Borough of Bexley,,GB-BEX,,2020-02-15,-11.0,-5.0,-31.0,-8.0,-3.0,2.0
 GB,United Kingdom,Greater London,London Borough of Bexley,,GB-BEX,,2020-02-16,-17.0,-13.0,-60.0,-18.0,-6.0,2.0
 GB,United Kingdom,Greater London,London Borough of Bexley,,GB-BEX,,2020-02-17,6.0,0.0,27.0,-15.0,-19.0,3.0
@@ -3280,6 +3328,9 @@ GB,United Kingdom,Greater London,London Borough of Bexley,,GB-BEX,,2020-08-22,-2
 GB,United Kingdom,Greater London,London Borough of Bexley,,GB-BEX,,2020-08-23,-26.0,-17.0,42.0,-19.0,-9.0,2.0
 GB,United Kingdom,Greater London,London Borough of Bexley,,GB-BEX,,2020-08-24,-2.0,-11.0,66.0,-46.0,-52.0,13.0
 GB,United Kingdom,Greater London,London Borough of Bexley,,GB-BEX,,2020-08-25,-2.0,-11.0,32.0,-49.0,-53.0,15.0
+GB,United Kingdom,Greater London,London Borough of Bexley,,GB-BEX,,2020-08-26,3.0,-8.0,100.0,-43.0,-50.0,13.0
+GB,United Kingdom,Greater London,London Borough of Bexley,,GB-BEX,,2020-08-27,-14.0,-10.0,51.0,-47.0,-51.0,15.0
+GB,United Kingdom,Greater London,London Borough of Bexley,,GB-BEX,,2020-08-28,-13.0,-2.0,56.0,-43.0,-50.0,13.0
 GB,United Kingdom,Greater London,London Borough of Brent,,GB-BEN,,2020-02-15,-8.0,-7.0,-28.0,-10.0,-4.0,2.0
 GB,United Kingdom,Greater London,London Borough of Brent,,GB-BEN,,2020-02-16,-10.0,-7.0,-44.0,-12.0,-4.0,1.0
 GB,United Kingdom,Greater London,London Borough of Brent,,GB-BEN,,2020-02-17,12.0,6.0,22.0,-7.0,-10.0,2.0
@@ -3473,6 +3524,9 @@ GB,United Kingdom,Greater London,London Borough of Brent,,GB-BEN,,2020-08-22,-30
 GB,United Kingdom,Greater London,London Borough of Brent,,GB-BEN,,2020-08-23,-29.0,-18.0,111.0,-34.0,-18.0,3.0
 GB,United Kingdom,Greater London,London Borough of Brent,,GB-BEN,,2020-08-24,7.0,-10.0,178.0,-40.0,-49.0,12.0
 GB,United Kingdom,Greater London,London Borough of Brent,,GB-BEN,,2020-08-25,0.0,-14.0,69.0,-42.0,-51.0,14.0
+GB,United Kingdom,Greater London,London Borough of Brent,,GB-BEN,,2020-08-26,10.0,-9.0,157.0,-37.0,-48.0,12.0
+GB,United Kingdom,Greater London,London Borough of Brent,,GB-BEN,,2020-08-27,-13.0,-12.0,81.0,-41.0,-50.0,14.0
+GB,United Kingdom,Greater London,London Borough of Brent,,GB-BEN,,2020-08-28,-12.0,-2.0,110.0,-35.0,-49.0,13.0
 GB,United Kingdom,Greater London,London Borough of Bromley,,GB-BRY,,2020-02-15,-12.0,-6.0,-39.0,-11.0,-4.0,3.0
 GB,United Kingdom,Greater London,London Borough of Bromley,,GB-BRY,,2020-02-16,-15.0,-10.0,-54.0,-15.0,-5.0,2.0
 GB,United Kingdom,Greater London,London Borough of Bromley,,GB-BRY,,2020-02-17,9.0,2.0,5.0,-4.0,-16.0,3.0
@@ -3666,6 +3720,9 @@ GB,United Kingdom,Greater London,London Borough of Bromley,,GB-BRY,,2020-08-22,-
 GB,United Kingdom,Greater London,London Borough of Bromley,,GB-BRY,,2020-08-23,-29.0,-16.0,52.0,-28.0,-6.0,2.0
 GB,United Kingdom,Greater London,London Borough of Bromley,,GB-BRY,,2020-08-24,0.0,-15.0,41.0,-48.0,-60.0,16.0
 GB,United Kingdom,Greater London,London Borough of Bromley,,GB-BRY,,2020-08-25,-1.0,-13.0,29.0,-49.0,-61.0,18.0
+GB,United Kingdom,Greater London,London Borough of Bromley,,GB-BRY,,2020-08-26,7.0,-12.0,78.0,-45.0,-58.0,16.0
+GB,United Kingdom,Greater London,London Borough of Bromley,,GB-BRY,,2020-08-27,-16.0,-11.0,44.0,-49.0,-59.0,17.0
+GB,United Kingdom,Greater London,London Borough of Bromley,,GB-BRY,,2020-08-28,-14.0,-9.0,48.0,-43.0,-58.0,15.0
 GB,United Kingdom,Greater London,London Borough of Camden,,GB-CMD,,2020-02-15,-9.0,-15.0,-37.0,-5.0,1.0,3.0
 GB,United Kingdom,Greater London,London Borough of Camden,,GB-CMD,,2020-02-16,-5.0,-13.0,-39.0,0.0,-3.0,2.0
 GB,United Kingdom,Greater London,London Borough of Camden,,GB-CMD,,2020-02-17,5.0,7.0,29.0,0.0,-11.0,1.0
@@ -3859,6 +3916,9 @@ GB,United Kingdom,Greater London,London Borough of Camden,,GB-CMD,,2020-08-22,-6
 GB,United Kingdom,Greater London,London Borough of Camden,,GB-CMD,,2020-08-23,-59.0,-40.0,27.0,-59.0,-18.0,3.0
 GB,United Kingdom,Greater London,London Borough of Camden,,GB-CMD,,2020-08-24,-53.0,-39.0,47.0,-65.0,-68.0,17.0
 GB,United Kingdom,Greater London,London Borough of Camden,,GB-CMD,,2020-08-25,-56.0,-42.0,-6.0,-66.0,-69.0,20.0
+GB,United Kingdom,Greater London,London Borough of Camden,,GB-CMD,,2020-08-26,-51.0,-36.0,43.0,-63.0,-65.0,17.0
+GB,United Kingdom,Greater London,London Borough of Camden,,GB-CMD,,2020-08-27,-64.0,-42.0,-2.0,-67.0,-68.0,20.0
+GB,United Kingdom,Greater London,London Borough of Camden,,GB-CMD,,2020-08-28,-62.0,-38.0,14.0,-62.0,-66.0,18.0
 GB,United Kingdom,Greater London,London Borough of Croydon,,GB-CRY,,2020-02-15,-15.0,-8.0,-31.0,-15.0,-3.0,2.0
 GB,United Kingdom,Greater London,London Borough of Croydon,,GB-CRY,,2020-02-16,-15.0,-10.0,-48.0,-16.0,-5.0,2.0
 GB,United Kingdom,Greater London,London Borough of Croydon,,GB-CRY,,2020-02-17,14.0,2.0,14.0,-2.0,-16.0,3.0
@@ -4052,6 +4112,9 @@ GB,United Kingdom,Greater London,London Borough of Croydon,,GB-CRY,,2020-08-22,-
 GB,United Kingdom,Greater London,London Borough of Croydon,,GB-CRY,,2020-08-23,-31.0,-15.0,96.0,-29.0,-9.0,2.0
 GB,United Kingdom,Greater London,London Borough of Croydon,,GB-CRY,,2020-08-24,-7.0,-15.0,87.0,-44.0,-53.0,14.0
 GB,United Kingdom,Greater London,London Borough of Croydon,,GB-CRY,,2020-08-25,-5.0,-12.0,55.0,-48.0,-54.0,16.0
+GB,United Kingdom,Greater London,London Borough of Croydon,,GB-CRY,,2020-08-26,1.0,-9.0,126.0,-41.0,-52.0,14.0
+GB,United Kingdom,Greater London,London Borough of Croydon,,GB-CRY,,2020-08-27,-17.0,-8.0,62.0,-46.0,-52.0,16.0
+GB,United Kingdom,Greater London,London Borough of Croydon,,GB-CRY,,2020-08-28,-17.0,-3.0,73.0,-40.0,-51.0,14.0
 GB,United Kingdom,Greater London,London Borough of Ealing,,GB-EAL,,2020-02-15,-12.0,-7.0,-32.0,1.0,-4.0,2.0
 GB,United Kingdom,Greater London,London Borough of Ealing,,GB-EAL,,2020-02-16,-11.0,-5.0,-49.0,1.0,-3.0,1.0
 GB,United Kingdom,Greater London,London Borough of Ealing,,GB-EAL,,2020-02-17,7.0,4.0,8.0,-3.0,-12.0,2.0
@@ -4245,6 +4308,9 @@ GB,United Kingdom,Greater London,London Borough of Ealing,,GB-EAL,,2020-08-22,-2
 GB,United Kingdom,Greater London,London Borough of Ealing,,GB-EAL,,2020-08-23,-24.0,-17.0,80.0,-36.0,-15.0,3.0
 GB,United Kingdom,Greater London,London Borough of Ealing,,GB-EAL,,2020-08-24,1.0,-11.0,105.0,-45.0,-52.0,13.0
 GB,United Kingdom,Greater London,London Borough of Ealing,,GB-EAL,,2020-08-25,-1.0,-13.0,49.0,-47.0,-53.0,15.0
+GB,United Kingdom,Greater London,London Borough of Ealing,,GB-EAL,,2020-08-26,9.0,-10.0,130.0,-41.0,-50.0,13.0
+GB,United Kingdom,Greater London,London Borough of Ealing,,GB-EAL,,2020-08-27,-17.0,-13.0,56.0,-46.0,-52.0,15.0
+GB,United Kingdom,Greater London,London Borough of Ealing,,GB-EAL,,2020-08-28,-15.0,-9.0,65.0,-41.0,-51.0,14.0
 GB,United Kingdom,Greater London,London Borough of Enfield,,GB-ENF,,2020-02-15,-7.0,-4.0,-33.0,-11.0,-2.0,2.0
 GB,United Kingdom,Greater London,London Borough of Enfield,,GB-ENF,,2020-02-16,-11.0,-7.0,-58.0,-12.0,-5.0,1.0
 GB,United Kingdom,Greater London,London Borough of Enfield,,GB-ENF,,2020-02-17,11.0,2.0,20.0,-10.0,-14.0,3.0
@@ -4438,6 +4504,9 @@ GB,United Kingdom,Greater London,London Borough of Enfield,,GB-ENF,,2020-08-22,-
 GB,United Kingdom,Greater London,London Borough of Enfield,,GB-ENF,,2020-08-23,-31.0,-18.0,50.0,-29.0,-11.0,2.0
 GB,United Kingdom,Greater London,London Borough of Enfield,,GB-ENF,,2020-08-24,-3.0,-11.0,88.0,-42.0,-49.0,11.0
 GB,United Kingdom,Greater London,London Borough of Enfield,,GB-ENF,,2020-08-25,-8.0,-13.0,15.0,-43.0,-50.0,13.0
+GB,United Kingdom,Greater London,London Borough of Enfield,,GB-ENF,,2020-08-26,-1.0,-10.0,84.0,-42.0,-47.0,11.0
+GB,United Kingdom,Greater London,London Borough of Enfield,,GB-ENF,,2020-08-27,-16.0,-11.0,44.0,-41.0,-49.0,14.0
+GB,United Kingdom,Greater London,London Borough of Enfield,,GB-ENF,,2020-08-28,-14.0,-7.0,34.0,-35.0,-47.0,12.0
 GB,United Kingdom,Greater London,London Borough of Hackney,,GB-HCK,,2020-02-15,-10.0,-8.0,-33.0,-10.0,0.0,3.0
 GB,United Kingdom,Greater London,London Borough of Hackney,,GB-HCK,,2020-02-16,-11.0,-13.0,-45.0,-3.0,-2.0,2.0
 GB,United Kingdom,Greater London,London Borough of Hackney,,GB-HCK,,2020-02-17,8.0,3.0,11.0,-4.0,-7.0,2.0
@@ -4631,6 +4700,9 @@ GB,United Kingdom,Greater London,London Borough of Hackney,,GB-HCK,,2020-08-22,-
 GB,United Kingdom,Greater London,London Borough of Hackney,,GB-HCK,,2020-08-23,-42.0,-18.0,63.0,-38.0,-11.0,2.0
 GB,United Kingdom,Greater London,London Borough of Hackney,,GB-HCK,,2020-08-24,-21.0,-15.0,92.0,-49.0,-59.0,15.0
 GB,United Kingdom,Greater London,London Borough of Hackney,,GB-HCK,,2020-08-25,-28.0,-17.0,41.0,-48.0,-60.0,17.0
+GB,United Kingdom,Greater London,London Borough of Hackney,,GB-HCK,,2020-08-26,-18.0,-9.0,96.0,-43.0,-57.0,15.0
+GB,United Kingdom,Greater London,London Borough of Hackney,,GB-HCK,,2020-08-27,-39.0,-12.0,46.0,-48.0,-59.0,17.0
+GB,United Kingdom,Greater London,London Borough of Hackney,,GB-HCK,,2020-08-28,-35.0,-4.0,63.0,-41.0,-58.0,15.0
 GB,United Kingdom,Greater London,London Borough of Hammersmith and Fulham,,GB-HMF,,2020-02-15,-1.0,-1.0,-19.0,-7.0,-1.0,2.0
 GB,United Kingdom,Greater London,London Borough of Hammersmith and Fulham,,GB-HMF,,2020-02-16,-4.0,-5.0,-35.0,-10.0,-2.0,2.0
 GB,United Kingdom,Greater London,London Borough of Hammersmith and Fulham,,GB-HMF,,2020-02-17,35.0,6.0,10.0,11.0,-10.0,2.0
@@ -4824,6 +4896,9 @@ GB,United Kingdom,Greater London,London Borough of Hammersmith and Fulham,,GB-HM
 GB,United Kingdom,Greater London,London Borough of Hammersmith and Fulham,,GB-HMF,,2020-08-23,-58.0,-34.0,39.0,-47.0,-14.0,3.0
 GB,United Kingdom,Greater London,London Borough of Hammersmith and Fulham,,GB-HMF,,2020-08-24,-43.0,-30.0,24.0,-49.0,-62.0,17.0
 GB,United Kingdom,Greater London,London Borough of Hammersmith and Fulham,,GB-HMF,,2020-08-25,-41.0,-28.0,8.0,-50.0,-63.0,19.0
+GB,United Kingdom,Greater London,London Borough of Hammersmith and Fulham,,GB-HMF,,2020-08-26,-35.0,-21.0,55.0,-45.0,-60.0,16.0
+GB,United Kingdom,Greater London,London Borough of Hammersmith and Fulham,,GB-HMF,,2020-08-27,-40.0,-26.0,8.0,-51.0,-62.0,19.0
+GB,United Kingdom,Greater London,London Borough of Hammersmith and Fulham,,GB-HMF,,2020-08-28,-40.0,-22.0,24.0,-49.0,-61.0,17.0
 GB,United Kingdom,Greater London,London Borough of Haringey,,GB-HRY,,2020-02-15,-7.0,-5.0,-39.0,-5.0,-2.0,2.0
 GB,United Kingdom,Greater London,London Borough of Haringey,,GB-HRY,,2020-02-16,-14.0,-10.0,-50.0,-11.0,-4.0,1.0
 GB,United Kingdom,Greater London,London Borough of Haringey,,GB-HRY,,2020-02-17,8.0,7.0,4.0,-8.0,-11.0,2.0
@@ -5017,6 +5092,9 @@ GB,United Kingdom,Greater London,London Borough of Haringey,,GB-HRY,,2020-08-22,
 GB,United Kingdom,Greater London,London Borough of Haringey,,GB-HRY,,2020-08-23,-32.0,-26.0,46.0,-39.0,-24.0,2.0
 GB,United Kingdom,Greater London,London Borough of Haringey,,GB-HRY,,2020-08-24,-4.0,-15.0,94.0,-46.0,-57.0,14.0
 GB,United Kingdom,Greater London,London Borough of Haringey,,GB-HRY,,2020-08-25,-8.0,-19.0,41.0,-48.0,-59.0,16.0
+GB,United Kingdom,Greater London,London Borough of Haringey,,GB-HRY,,2020-08-26,-3.0,-14.0,105.0,-46.0,-55.0,14.0
+GB,United Kingdom,Greater London,London Borough of Haringey,,GB-HRY,,2020-08-27,-20.0,-15.0,50.0,-46.0,-57.0,16.0
+GB,United Kingdom,Greater London,London Borough of Haringey,,GB-HRY,,2020-08-28,-14.0,-8.0,75.0,-41.0,-56.0,14.0
 GB,United Kingdom,Greater London,London Borough of Harrow,,GB-HRW,,2020-02-15,-13.0,-9.0,-35.0,-12.0,-4.0,2.0
 GB,United Kingdom,Greater London,London Borough of Harrow,,GB-HRW,,2020-02-16,-12.0,-10.0,-52.0,-5.0,-4.0,1.0
 GB,United Kingdom,Greater London,London Borough of Harrow,,GB-HRW,,2020-02-17,11.0,0.0,14.0,-9.0,-15.0,2.0
@@ -5210,6 +5288,9 @@ GB,United Kingdom,Greater London,London Borough of Harrow,,GB-HRW,,2020-08-22,-3
 GB,United Kingdom,Greater London,London Borough of Harrow,,GB-HRW,,2020-08-23,-33.0,-19.0,118.0,-29.0,-8.0,3.0
 GB,United Kingdom,Greater London,London Borough of Harrow,,GB-HRW,,2020-08-24,6.0,-12.0,169.0,-47.0,-53.0,13.0
 GB,United Kingdom,Greater London,London Borough of Harrow,,GB-HRW,,2020-08-25,0.0,-17.0,41.0,-49.0,-54.0,16.0
+GB,United Kingdom,Greater London,London Borough of Harrow,,GB-HRW,,2020-08-26,12.0,-11.0,166.0,-44.0,-51.0,14.0
+GB,United Kingdom,Greater London,London Borough of Harrow,,GB-HRW,,2020-08-27,-20.0,-14.0,61.0,-50.0,-53.0,16.0
+GB,United Kingdom,Greater London,London Borough of Harrow,,GB-HRW,,2020-08-28,-18.0,-9.0,82.0,-46.0,-52.0,14.0
 GB,United Kingdom,Greater London,London Borough of Havering,,GB-HAV,,2020-02-15,-8.0,-2.0,-28.0,-16.0,-3.0,2.0
 GB,United Kingdom,Greater London,London Borough of Havering,,GB-HAV,,2020-02-16,-16.0,-9.0,-49.0,-23.0,-5.0,1.0
 GB,United Kingdom,Greater London,London Borough of Havering,,GB-HAV,,2020-02-17,15.0,3.0,4.0,-6.0,-17.0,3.0
@@ -5403,6 +5484,9 @@ GB,United Kingdom,Greater London,London Borough of Havering,,GB-HAV,,2020-08-22,
 GB,United Kingdom,Greater London,London Borough of Havering,,GB-HAV,,2020-08-23,-28.0,-12.0,67.0,-25.0,-7.0,2.0
 GB,United Kingdom,Greater London,London Borough of Havering,,GB-HAV,,2020-08-24,2.0,-12.0,84.0,-43.0,-51.0,11.0
 GB,United Kingdom,Greater London,London Borough of Havering,,GB-HAV,,2020-08-25,-2.0,-14.0,20.0,-44.0,-52.0,14.0
+GB,United Kingdom,Greater London,London Borough of Havering,,GB-HAV,,2020-08-26,2.0,-9.0,71.0,-41.0,-49.0,12.0
+GB,United Kingdom,Greater London,London Borough of Havering,,GB-HAV,,2020-08-27,-11.0,-8.0,37.0,-44.0,-51.0,14.0
+GB,United Kingdom,Greater London,London Borough of Havering,,GB-HAV,,2020-08-28,-11.0,-4.0,28.0,-38.0,-50.0,12.0
 GB,United Kingdom,Greater London,London Borough of Hillingdon,,GB-HIL,,2020-02-15,-10.0,-2.0,-33.0,-3.0,-2.0,2.0
 GB,United Kingdom,Greater London,London Borough of Hillingdon,,GB-HIL,,2020-02-16,-9.0,-5.0,-44.0,0.0,-3.0,1.0
 GB,United Kingdom,Greater London,London Borough of Hillingdon,,GB-HIL,,2020-02-17,5.0,4.0,4.0,-2.0,-16.0,2.0
@@ -5596,6 +5680,9 @@ GB,United Kingdom,Greater London,London Borough of Hillingdon,,GB-HIL,,2020-08-2
 GB,United Kingdom,Greater London,London Borough of Hillingdon,,GB-HIL,,2020-08-23,-29.0,-18.0,121.0,-62.0,-13.0,3.0
 GB,United Kingdom,Greater London,London Borough of Hillingdon,,GB-HIL,,2020-08-24,-13.0,-12.0,95.0,-62.0,-53.0,13.0
 GB,United Kingdom,Greater London,London Borough of Hillingdon,,GB-HIL,,2020-08-25,-15.0,-17.0,34.0,-64.0,-54.0,15.0
+GB,United Kingdom,Greater London,London Borough of Hillingdon,,GB-HIL,,2020-08-26,-8.0,-11.0,135.0,-62.0,-51.0,13.0
+GB,United Kingdom,Greater London,London Borough of Hillingdon,,GB-HIL,,2020-08-27,-25.0,-10.0,58.0,-61.0,-52.0,15.0
+GB,United Kingdom,Greater London,London Borough of Hillingdon,,GB-HIL,,2020-08-28,-23.0,-6.0,58.0,-59.0,-51.0,14.0
 GB,United Kingdom,Greater London,London Borough of Hounslow,,GB-HNS,,2020-02-15,-16.0,-7.0,-33.0,-11.0,-4.0,2.0
 GB,United Kingdom,Greater London,London Borough of Hounslow,,GB-HNS,,2020-02-16,-13.0,-11.0,-39.0,-15.0,-3.0,2.0
 GB,United Kingdom,Greater London,London Borough of Hounslow,,GB-HNS,,2020-02-17,9.0,4.0,40.0,-4.0,-12.0,2.0
@@ -5789,6 +5876,9 @@ GB,United Kingdom,Greater London,London Borough of Hounslow,,GB-HNS,,2020-08-22,
 GB,United Kingdom,Greater London,London Borough of Hounslow,,GB-HNS,,2020-08-23,-25.0,-15.0,47.0,-27.0,-19.0,3.0
 GB,United Kingdom,Greater London,London Borough of Hounslow,,GB-HNS,,2020-08-24,-7.0,-17.0,56.0,-42.0,-52.0,13.0
 GB,United Kingdom,Greater London,London Borough of Hounslow,,GB-HNS,,2020-08-25,-11.0,-18.0,42.0,-45.0,-52.0,15.0
+GB,United Kingdom,Greater London,London Borough of Hounslow,,GB-HNS,,2020-08-26,-1.0,-10.0,104.0,-40.0,-50.0,13.0
+GB,United Kingdom,Greater London,London Borough of Hounslow,,GB-HNS,,2020-08-27,-20.0,-16.0,45.0,-44.0,-51.0,16.0
+GB,United Kingdom,Greater London,London Borough of Hounslow,,GB-HNS,,2020-08-28,-15.0,-8.0,59.0,-37.0,-50.0,14.0
 GB,United Kingdom,Greater London,London Borough of Islington,,GB-ISL,,2020-02-15,-8.0,-5.0,-33.0,15.0,0.0,2.0
 GB,United Kingdom,Greater London,London Borough of Islington,,GB-ISL,,2020-02-16,30.0,-4.0,-38.0,29.0,-2.0,2.0
 GB,United Kingdom,Greater London,London Borough of Islington,,GB-ISL,,2020-02-17,-1.0,-2.0,-4.0,0.0,-8.0,2.0
@@ -5982,6 +6072,9 @@ GB,United Kingdom,Greater London,London Borough of Islington,,GB-ISL,,2020-08-22
 GB,United Kingdom,Greater London,London Borough of Islington,,GB-ISL,,2020-08-23,-53.0,-24.0,57.0,-46.0,-13.0,3.0
 GB,United Kingdom,Greater London,London Borough of Islington,,GB-ISL,,2020-08-24,-42.0,-32.0,51.0,-57.0,-69.0,20.0
 GB,United Kingdom,Greater London,London Borough of Islington,,GB-ISL,,2020-08-25,-46.0,-35.0,18.0,-60.0,-69.0,21.0
+GB,United Kingdom,Greater London,London Borough of Islington,,GB-ISL,,2020-08-26,-40.0,-28.0,60.0,-56.0,-66.0,19.0
+GB,United Kingdom,Greater London,London Borough of Islington,,GB-ISL,,2020-08-27,-57.0,-28.0,15.0,-59.0,-69.0,22.0
+GB,United Kingdom,Greater London,London Borough of Islington,,GB-ISL,,2020-08-28,-54.0,-24.0,39.0,-55.0,-67.0,19.0
 GB,United Kingdom,Greater London,London Borough of Lambeth,,GB-LBH,,2020-02-15,-7.0,-6.0,-28.0,-3.0,-1.0,2.0
 GB,United Kingdom,Greater London,London Borough of Lambeth,,GB-LBH,,2020-02-16,-2.0,-9.0,-30.0,-1.0,-2.0,2.0
 GB,United Kingdom,Greater London,London Borough of Lambeth,,GB-LBH,,2020-02-17,20.0,2.0,33.0,1.0,-9.0,2.0
@@ -6175,6 +6268,9 @@ GB,United Kingdom,Greater London,London Borough of Lambeth,,GB-LBH,,2020-08-22,-
 GB,United Kingdom,Greater London,London Borough of Lambeth,,GB-LBH,,2020-08-23,-41.0,-21.0,59.0,-43.0,-14.0,3.0
 GB,United Kingdom,Greater London,London Borough of Lambeth,,GB-LBH,,2020-08-24,-27.0,-22.0,58.0,-59.0,-62.0,18.0
 GB,United Kingdom,Greater London,London Borough of Lambeth,,GB-LBH,,2020-08-25,-32.0,-20.0,34.0,-61.0,-63.0,19.0
+GB,United Kingdom,Greater London,London Borough of Lambeth,,GB-LBH,,2020-08-26,-22.0,-17.0,84.0,-58.0,-60.0,17.0
+GB,United Kingdom,Greater London,London Borough of Lambeth,,GB-LBH,,2020-08-27,-38.0,-21.0,21.0,-60.0,-62.0,20.0
+GB,United Kingdom,Greater London,London Borough of Lambeth,,GB-LBH,,2020-08-28,-36.0,-13.0,35.0,-54.0,-60.0,17.0
 GB,United Kingdom,Greater London,London Borough of Lewisham,,GB-LEW,,2020-02-15,-13.0,-6.0,-30.0,-12.0,-4.0,2.0
 GB,United Kingdom,Greater London,London Borough of Lewisham,,GB-LEW,,2020-02-16,-17.0,-10.0,-40.0,-16.0,-5.0,2.0
 GB,United Kingdom,Greater London,London Borough of Lewisham,,GB-LEW,,2020-02-17,6.0,2.0,20.0,-5.0,-13.0,3.0
@@ -6368,6 +6464,9 @@ GB,United Kingdom,Greater London,London Borough of Lewisham,,GB-LEW,,2020-08-22,
 GB,United Kingdom,Greater London,London Borough of Lewisham,,GB-LEW,,2020-08-23,-31.0,-15.0,83.0,-38.0,-15.0,3.0
 GB,United Kingdom,Greater London,London Borough of Lewisham,,GB-LEW,,2020-08-24,-8.0,-8.0,83.0,-48.0,-60.0,16.0
 GB,United Kingdom,Greater London,London Borough of Lewisham,,GB-LEW,,2020-08-25,-12.0,-6.0,66.0,-48.0,-61.0,18.0
+GB,United Kingdom,Greater London,London Borough of Lewisham,,GB-LEW,,2020-08-26,-4.0,0.0,112.0,-43.0,-58.0,16.0
+GB,United Kingdom,Greater London,London Borough of Lewisham,,GB-LEW,,2020-08-27,-17.0,-1.0,65.0,-45.0,-60.0,18.0
+GB,United Kingdom,Greater London,London Borough of Lewisham,,GB-LEW,,2020-08-28,-14.0,2.0,67.0,-38.0,-59.0,16.0
 GB,United Kingdom,Greater London,London Borough of Merton,,GB-MRT,,2020-02-15,-13.0,-7.0,-32.0,-21.0,-2.0,2.0
 GB,United Kingdom,Greater London,London Borough of Merton,,GB-MRT,,2020-02-16,-16.0,-13.0,-45.0,-18.0,-3.0,2.0
 GB,United Kingdom,Greater London,London Borough of Merton,,GB-MRT,,2020-02-17,1.0,2.0,6.0,-8.0,-14.0,3.0
@@ -6561,6 +6660,9 @@ GB,United Kingdom,Greater London,London Borough of Merton,,GB-MRT,,2020-08-22,-3
 GB,United Kingdom,Greater London,London Borough of Merton,,GB-MRT,,2020-08-23,-33.0,-21.0,72.0,-39.0,-11.0,2.0
 GB,United Kingdom,Greater London,London Borough of Merton,,GB-MRT,,2020-08-24,-16.0,-17.0,57.0,-48.0,-57.0,15.0
 GB,United Kingdom,Greater London,London Borough of Merton,,GB-MRT,,2020-08-25,-13.0,-14.0,44.0,-50.0,-58.0,18.0
+GB,United Kingdom,Greater London,London Borough of Merton,,GB-MRT,,2020-08-26,-4.0,-14.0,80.0,-46.0,-55.0,15.0
+GB,United Kingdom,Greater London,London Borough of Merton,,GB-MRT,,2020-08-27,-26.0,-13.0,31.0,-49.0,-57.0,18.0
+GB,United Kingdom,Greater London,London Borough of Merton,,GB-MRT,,2020-08-28,-24.0,-8.0,50.0,-44.0,-55.0,15.0
 GB,United Kingdom,Greater London,London Borough of Newham,,GB-NWM,,2020-02-15,-15.0,-4.0,-37.0,-9.0,-3.0,2.0
 GB,United Kingdom,Greater London,London Borough of Newham,,GB-NWM,,2020-02-16,-8.0,-9.0,-46.0,-5.0,-3.0,1.0
 GB,United Kingdom,Greater London,London Borough of Newham,,GB-NWM,,2020-02-17,9.0,10.0,20.0,3.0,-11.0,2.0
@@ -6754,6 +6856,9 @@ GB,United Kingdom,Greater London,London Borough of Newham,,GB-NWM,,2020-08-22,-4
 GB,United Kingdom,Greater London,London Borough of Newham,,GB-NWM,,2020-08-23,-35.0,-20.0,208.0,-34.0,-19.0,2.0
 GB,United Kingdom,Greater London,London Borough of Newham,,GB-NWM,,2020-08-24,-10.0,-14.0,,-43.0,-52.0,12.0
 GB,United Kingdom,Greater London,London Borough of Newham,,GB-NWM,,2020-08-25,-10.0,-16.0,174.0,-44.0,-53.0,13.0
+GB,United Kingdom,Greater London,London Borough of Newham,,GB-NWM,,2020-08-26,-10.0,-10.0,283.0,-43.0,-51.0,12.0
+GB,United Kingdom,Greater London,London Borough of Newham,,GB-NWM,,2020-08-27,-30.0,-15.0,151.0,-49.0,-52.0,14.0
+GB,United Kingdom,Greater London,London Borough of Newham,,GB-NWM,,2020-08-28,-24.0,-7.0,211.0,-42.0,-50.0,13.0
 GB,United Kingdom,Greater London,London Borough of Redbridge,,GB-RDB,,2020-02-15,-8.0,-4.0,-35.0,2.0,-2.0,2.0
 GB,United Kingdom,Greater London,London Borough of Redbridge,,GB-RDB,,2020-02-16,-13.0,-10.0,-54.0,-5.0,-5.0,1.0
 GB,United Kingdom,Greater London,London Borough of Redbridge,,GB-RDB,,2020-02-17,10.0,4.0,12.0,-7.0,-16.0,2.0
@@ -6947,6 +7052,9 @@ GB,United Kingdom,Greater London,London Borough of Redbridge,,GB-RDB,,2020-08-22
 GB,United Kingdom,Greater London,London Borough of Redbridge,,GB-RDB,,2020-08-23,-27.0,-16.0,124.0,-32.0,-11.0,2.0
 GB,United Kingdom,Greater London,London Borough of Redbridge,,GB-RDB,,2020-08-24,8.0,-8.0,144.0,-44.0,-54.0,13.0
 GB,United Kingdom,Greater London,London Borough of Redbridge,,GB-RDB,,2020-08-25,4.0,-13.0,60.0,-45.0,-55.0,15.0
+GB,United Kingdom,Greater London,London Borough of Redbridge,,GB-RDB,,2020-08-26,9.0,-7.0,132.0,-39.0,-52.0,13.0
+GB,United Kingdom,Greater London,London Borough of Redbridge,,GB-RDB,,2020-08-27,-16.0,-15.0,61.0,-48.0,-53.0,15.0
+GB,United Kingdom,Greater London,London Borough of Redbridge,,GB-RDB,,2020-08-28,-14.0,-7.0,65.0,-44.0,-52.0,14.0
 GB,United Kingdom,Greater London,London Borough of Richmond upon Thames,,GB-RIC,,2020-02-15,-5.0,-9.0,-46.0,-9.0,-4.0,2.0
 GB,United Kingdom,Greater London,London Borough of Richmond upon Thames,,GB-RIC,,2020-02-16,-29.0,-16.0,-58.0,-29.0,-3.0,2.0
 GB,United Kingdom,Greater London,London Borough of Richmond upon Thames,,GB-RIC,,2020-02-17,13.0,-1.0,20.0,-6.0,-18.0,2.0
@@ -7140,6 +7248,9 @@ GB,United Kingdom,Greater London,London Borough of Richmond upon Thames,,GB-RIC,
 GB,United Kingdom,Greater London,London Borough of Richmond upon Thames,,GB-RIC,,2020-08-23,-27.0,-18.0,61.0,-33.0,-4.0,2.0
 GB,United Kingdom,Greater London,London Borough of Richmond upon Thames,,GB-RIC,,2020-08-24,-12.0,-18.0,61.0,-51.0,-65.0,17.0
 GB,United Kingdom,Greater London,London Borough of Richmond upon Thames,,GB-RIC,,2020-08-25,-20.0,-18.0,20.0,-54.0,-65.0,19.0
+GB,United Kingdom,Greater London,London Borough of Richmond upon Thames,,GB-RIC,,2020-08-26,-1.0,-15.0,86.0,-48.0,-62.0,16.0
+GB,United Kingdom,Greater London,London Borough of Richmond upon Thames,,GB-RIC,,2020-08-27,-26.0,-14.0,45.0,-52.0,-64.0,20.0
+GB,United Kingdom,Greater London,London Borough of Richmond upon Thames,,GB-RIC,,2020-08-28,-26.0,-10.0,46.0,-49.0,-62.0,16.0
 GB,United Kingdom,Greater London,London Borough of Southwark,,GB-SWK,,2020-02-15,-11.0,-11.0,-22.0,-10.0,-1.0,2.0
 GB,United Kingdom,Greater London,London Borough of Southwark,,GB-SWK,,2020-02-16,-11.0,-13.0,-29.0,0.0,-4.0,2.0
 GB,United Kingdom,Greater London,London Borough of Southwark,,GB-SWK,,2020-02-17,13.0,4.0,27.0,-6.0,-9.0,2.0
@@ -7333,6 +7444,9 @@ GB,United Kingdom,Greater London,London Borough of Southwark,,GB-SWK,,2020-08-22
 GB,United Kingdom,Greater London,London Borough of Southwark,,GB-SWK,,2020-08-23,-42.0,-22.0,22.0,-40.0,-17.0,3.0
 GB,United Kingdom,Greater London,London Borough of Southwark,,GB-SWK,,2020-08-24,-31.0,-22.0,3.0,-56.0,-62.0,17.0
 GB,United Kingdom,Greater London,London Borough of Southwark,,GB-SWK,,2020-08-25,-32.0,-24.0,-13.0,-56.0,-62.0,19.0
+GB,United Kingdom,Greater London,London Borough of Southwark,,GB-SWK,,2020-08-26,-25.0,-20.0,18.0,-53.0,-60.0,17.0
+GB,United Kingdom,Greater London,London Borough of Southwark,,GB-SWK,,2020-08-27,-42.0,-22.0,-14.0,-57.0,-61.0,19.0
+GB,United Kingdom,Greater London,London Borough of Southwark,,GB-SWK,,2020-08-28,-40.0,-15.0,-7.0,-51.0,-60.0,17.0
 GB,United Kingdom,Greater London,London Borough of Sutton,,GB-STN,,2020-02-15,-14.0,-7.0,-32.0,-17.0,-2.0,2.0
 GB,United Kingdom,Greater London,London Borough of Sutton,,GB-STN,,2020-02-16,-19.0,-16.0,-52.0,-24.0,-3.0,2.0
 GB,United Kingdom,Greater London,London Borough of Sutton,,GB-STN,,2020-02-17,7.0,2.0,18.0,-11.0,-18.0,3.0
@@ -7526,6 +7640,9 @@ GB,United Kingdom,Greater London,London Borough of Sutton,,GB-STN,,2020-08-22,-2
 GB,United Kingdom,Greater London,London Borough of Sutton,,GB-STN,,2020-08-23,-31.0,-22.0,64.0,-35.0,-4.0,2.0
 GB,United Kingdom,Greater London,London Borough of Sutton,,GB-STN,,2020-08-24,-4.0,-15.0,72.0,-52.0,-55.0,14.0
 GB,United Kingdom,Greater London,London Borough of Sutton,,GB-STN,,2020-08-25,-3.0,-15.0,55.0,-53.0,-55.0,16.0
+GB,United Kingdom,Greater London,London Borough of Sutton,,GB-STN,,2020-08-26,5.0,-13.0,127.0,-49.0,-52.0,14.0
+GB,United Kingdom,Greater London,London Borough of Sutton,,GB-STN,,2020-08-27,-13.0,-12.0,54.0,-52.0,-55.0,16.0
+GB,United Kingdom,Greater London,London Borough of Sutton,,GB-STN,,2020-08-28,-13.0,-8.0,45.0,-47.0,-53.0,14.0
 GB,United Kingdom,Greater London,London Borough of Tower Hamlets,,GB-TWH,,2020-02-15,-11.0,-8.0,-31.0,-15.0,-3.0,2.0
 GB,United Kingdom,Greater London,London Borough of Tower Hamlets,,GB-TWH,,2020-02-16,-11.0,-17.0,-30.0,-12.0,-6.0,1.0
 GB,United Kingdom,Greater London,London Borough of Tower Hamlets,,GB-TWH,,2020-02-17,3.0,4.0,46.0,-6.0,-8.0,1.0
@@ -7719,6 +7836,9 @@ GB,United Kingdom,Greater London,London Borough of Tower Hamlets,,GB-TWH,,2020-0
 GB,United Kingdom,Greater London,London Borough of Tower Hamlets,,GB-TWH,,2020-08-23,-39.0,-27.0,1.0,-45.0,-16.0,2.0
 GB,United Kingdom,Greater London,London Borough of Tower Hamlets,,GB-TWH,,2020-08-24,-36.0,-18.0,5.0,-55.0,-65.0,17.0
 GB,United Kingdom,Greater London,London Borough of Tower Hamlets,,GB-TWH,,2020-08-25,-38.0,-18.0,-16.0,-56.0,-66.0,19.0
+GB,United Kingdom,Greater London,London Borough of Tower Hamlets,,GB-TWH,,2020-08-26,-34.0,-13.0,15.0,-53.0,-64.0,17.0
+GB,United Kingdom,Greater London,London Borough of Tower Hamlets,,GB-TWH,,2020-08-27,-52.0,-21.0,-22.0,-59.0,-66.0,21.0
+GB,United Kingdom,Greater London,London Borough of Tower Hamlets,,GB-TWH,,2020-08-28,-47.0,-13.0,-17.0,-54.0,-63.0,18.0
 GB,United Kingdom,Greater London,London Borough of Waltham Forest,,GB-WFT,,2020-02-15,-12.0,-6.0,-44.0,-7.0,-3.0,2.0
 GB,United Kingdom,Greater London,London Borough of Waltham Forest,,GB-WFT,,2020-02-16,-12.0,-10.0,-49.0,-7.0,-2.0,1.0
 GB,United Kingdom,Greater London,London Borough of Waltham Forest,,GB-WFT,,2020-02-17,10.0,2.0,14.0,-8.0,-14.0,2.0
@@ -7912,6 +8032,9 @@ GB,United Kingdom,Greater London,London Borough of Waltham Forest,,GB-WFT,,2020-
 GB,United Kingdom,Greater London,London Borough of Waltham Forest,,GB-WFT,,2020-08-23,-23.0,-14.0,66.0,-38.0,-19.0,2.0
 GB,United Kingdom,Greater London,London Borough of Waltham Forest,,GB-WFT,,2020-08-24,8.0,-6.0,82.0,-44.0,-55.0,13.0
 GB,United Kingdom,Greater London,London Borough of Waltham Forest,,GB-WFT,,2020-08-25,0.0,-10.0,21.0,-46.0,-57.0,15.0
+GB,United Kingdom,Greater London,London Borough of Waltham Forest,,GB-WFT,,2020-08-26,13.0,-8.0,70.0,-42.0,-54.0,13.0
+GB,United Kingdom,Greater London,London Borough of Waltham Forest,,GB-WFT,,2020-08-27,-10.0,-3.0,30.0,-45.0,-55.0,15.0
+GB,United Kingdom,Greater London,London Borough of Waltham Forest,,GB-WFT,,2020-08-28,-11.0,-3.0,43.0,-42.0,-54.0,14.0
 GB,United Kingdom,Greater London,London Borough of Wandsworth,,GB-WND,,2020-02-15,-12.0,-5.0,-34.0,0.0,-4.0,2.0
 GB,United Kingdom,Greater London,London Borough of Wandsworth,,GB-WND,,2020-02-16,-16.0,-16.0,-48.0,-15.0,-4.0,2.0
 GB,United Kingdom,Greater London,London Borough of Wandsworth,,GB-WND,,2020-02-17,5.0,3.0,9.0,-2.0,-10.0,2.0
@@ -8105,6 +8228,9 @@ GB,United Kingdom,Greater London,London Borough of Wandsworth,,GB-WND,,2020-08-2
 GB,United Kingdom,Greater London,London Borough of Wandsworth,,GB-WND,,2020-08-23,-38.0,-25.0,59.0,-42.0,-9.0,2.0
 GB,United Kingdom,Greater London,London Borough of Wandsworth,,GB-WND,,2020-08-24,-17.0,-22.0,55.0,-48.0,-66.0,19.0
 GB,United Kingdom,Greater London,London Borough of Wandsworth,,GB-WND,,2020-08-25,-15.0,-18.0,35.0,-49.0,-66.0,21.0
+GB,United Kingdom,Greater London,London Borough of Wandsworth,,GB-WND,,2020-08-26,-5.0,-16.0,80.0,-44.0,-63.0,18.0
+GB,United Kingdom,Greater London,London Borough of Wandsworth,,GB-WND,,2020-08-27,-30.0,-18.0,35.0,-48.0,-65.0,21.0
+GB,United Kingdom,Greater London,London Borough of Wandsworth,,GB-WND,,2020-08-28,-28.0,-13.0,46.0,-43.0,-63.0,18.0
 GB,United Kingdom,Greater London,Royal Borough of Greenwich,,GB-GRE,,2020-02-15,2.0,-7.0,-41.0,-1.0,-3.0,3.0
 GB,United Kingdom,Greater London,Royal Borough of Greenwich,,GB-GRE,,2020-02-16,-16.0,-16.0,-53.0,-14.0,-2.0,2.0
 GB,United Kingdom,Greater London,Royal Borough of Greenwich,,GB-GRE,,2020-02-17,17.0,4.0,34.0,1.0,-13.0,3.0
@@ -8298,6 +8424,9 @@ GB,United Kingdom,Greater London,Royal Borough of Greenwich,,GB-GRE,,2020-08-22,
 GB,United Kingdom,Greater London,Royal Borough of Greenwich,,GB-GRE,,2020-08-23,-32.0,-16.0,42.0,-31.0,-12.0,3.0
 GB,United Kingdom,Greater London,Royal Borough of Greenwich,,GB-GRE,,2020-08-24,-1.0,-11.0,46.0,-39.0,-56.0,15.0
 GB,United Kingdom,Greater London,Royal Borough of Greenwich,,GB-GRE,,2020-08-25,-6.0,-10.0,17.0,-41.0,-57.0,17.0
+GB,United Kingdom,Greater London,Royal Borough of Greenwich,,GB-GRE,,2020-08-26,0.0,-7.0,65.0,-36.0,-54.0,15.0
+GB,United Kingdom,Greater London,Royal Borough of Greenwich,,GB-GRE,,2020-08-27,-14.0,-11.0,22.0,-41.0,-56.0,17.0
+GB,United Kingdom,Greater London,Royal Borough of Greenwich,,GB-GRE,,2020-08-28,-16.0,-4.0,33.0,-33.0,-54.0,14.0
 GB,United Kingdom,Greater London,Royal Borough of Kensington and Chelsea,,GB-KEC,,2020-02-15,-6.0,-9.0,-27.0,-1.0,-5.0,2.0
 GB,United Kingdom,Greater London,Royal Borough of Kensington and Chelsea,,GB-KEC,,2020-02-16,2.0,-2.0,-33.0,1.0,-6.0,
 GB,United Kingdom,Greater London,Royal Borough of Kensington and Chelsea,,GB-KEC,,2020-02-17,23.0,10.0,15.0,16.0,-12.0,2.0
@@ -8491,6 +8620,9 @@ GB,United Kingdom,Greater London,Royal Borough of Kensington and Chelsea,,GB-KEC
 GB,United Kingdom,Greater London,Royal Borough of Kensington and Chelsea,,GB-KEC,,2020-08-23,-58.0,-24.0,13.0,-58.0,-17.0,
 GB,United Kingdom,Greater London,Royal Borough of Kensington and Chelsea,,GB-KEC,,2020-08-24,-44.0,-17.0,12.0,-60.0,-62.0,16.0
 GB,United Kingdom,Greater London,Royal Borough of Kensington and Chelsea,,GB-KEC,,2020-08-25,-44.0,-21.0,-6.0,-59.0,-62.0,18.0
+GB,United Kingdom,Greater London,Royal Borough of Kensington and Chelsea,,GB-KEC,,2020-08-26,-34.0,-14.0,35.0,-55.0,-60.0,16.0
+GB,United Kingdom,Greater London,Royal Borough of Kensington and Chelsea,,GB-KEC,,2020-08-27,-46.0,-16.0,4.0,-57.0,-62.0,18.0
+GB,United Kingdom,Greater London,Royal Borough of Kensington and Chelsea,,GB-KEC,,2020-08-28,-48.0,-12.0,3.0,-56.0,-61.0,17.0
 GB,United Kingdom,Greater London,Royal Borough of Kingston upon Thames,,GB-KTT,,2020-02-15,-17.0,-11.0,-53.0,-16.0,0.0,3.0
 GB,United Kingdom,Greater London,Royal Borough of Kingston upon Thames,,GB-KTT,,2020-02-16,-20.0,-14.0,-57.0,-12.0,-6.0,2.0
 GB,United Kingdom,Greater London,Royal Borough of Kingston upon Thames,,GB-KTT,,2020-02-17,14.0,2.0,,-9.0,-15.0,3.0
@@ -8684,6 +8816,9 @@ GB,United Kingdom,Greater London,Royal Borough of Kingston upon Thames,,GB-KTT,,
 GB,United Kingdom,Greater London,Royal Borough of Kingston upon Thames,,GB-KTT,,2020-08-23,-29.0,-25.0,107.0,-30.0,-12.0,2.0
 GB,United Kingdom,Greater London,Royal Borough of Kingston upon Thames,,GB-KTT,,2020-08-24,-3.0,-22.0,,-48.0,-61.0,16.0
 GB,United Kingdom,Greater London,Royal Borough of Kingston upon Thames,,GB-KTT,,2020-08-25,-6.0,-20.0,,-51.0,-60.0,18.0
+GB,United Kingdom,Greater London,Royal Borough of Kingston upon Thames,,GB-KTT,,2020-08-26,3.0,-17.0,,-44.0,-57.0,15.0
+GB,United Kingdom,Greater London,Royal Borough of Kingston upon Thames,,GB-KTT,,2020-08-27,-21.0,-20.0,,-48.0,-60.0,18.0
+GB,United Kingdom,Greater London,Royal Borough of Kingston upon Thames,,GB-KTT,,2020-08-28,-18.0,-14.0,,-45.0,-58.0,16.0
 NL,Netherlands,North Holland,,,NL-NH,,2020-02-15,-2.0,-1.0,3.0,0.0,-2.0,0.0
 NL,Netherlands,North Holland,,,NL-NH,,2020-02-16,-14.0,-17.0,-44.0,-7.0,-6.0,2.0
 NL,Netherlands,North Holland,,,NL-NH,,2020-02-17,2.0,-3.0,5.0,-4.0,-18.0,2.0
@@ -8877,6 +9012,9 @@ NL,Netherlands,North Holland,,,NL-NH,,2020-08-22,-20.0,-8.0,51.0,-38.0,-2.0,3.0
 NL,Netherlands,North Holland,,,NL-NH,,2020-08-23,-15.0,-5.0,57.0,-41.0,1.0,2.0
 NL,Netherlands,North Holland,,,NL-NH,,2020-08-24,-7.0,-2.0,82.0,-44.0,-38.0,8.0
 NL,Netherlands,North Holland,,,NL-NH,,2020-08-25,-9.0,1.0,57.0,-46.0,-38.0,9.0
+NL,Netherlands,North Holland,,,NL-NH,,2020-08-26,-17.0,-7.0,32.0,-44.0,-36.0,9.0
+NL,Netherlands,North Holland,,,NL-NH,,2020-08-27,-8.0,0.0,62.0,-42.0,-36.0,8.0
+NL,Netherlands,North Holland,,,NL-NH,,2020-08-28,-16.0,-5.0,44.0,-40.0,-33.0,7.0
 NL,Netherlands,North Holland,Aalsmeer,,,,2020-02-15,-1.0,1.0,,-22.0,,
 NL,Netherlands,North Holland,Aalsmeer,,,,2020-02-16,-29.0,,,-39.0,,
 NL,Netherlands,North Holland,Aalsmeer,,,,2020-02-17,-49.0,-2.0,,-58.0,-17.0,2.0
@@ -9070,6 +9208,9 @@ NL,Netherlands,North Holland,Aalsmeer,,,,2020-08-22,-18.0,0.0,,-43.0,-2.0,
 NL,Netherlands,North Holland,Aalsmeer,,,,2020-08-23,-16.0,,,-50.0,4.0,
 NL,Netherlands,North Holland,Aalsmeer,,,,2020-08-24,-46.0,0.0,,-64.0,-36.0,8.0
 NL,Netherlands,North Holland,Aalsmeer,,,,2020-08-25,-39.0,4.0,,-62.0,-36.0,7.0
+NL,Netherlands,North Holland,Aalsmeer,,,,2020-08-26,-40.0,-5.0,,-66.0,-33.0,8.0
+NL,Netherlands,North Holland,Aalsmeer,,,,2020-08-27,-31.0,3.0,,-66.0,-33.0,7.0
+NL,Netherlands,North Holland,Aalsmeer,,,,2020-08-28,-31.0,-4.0,,-65.0,-31.0,5.0
 NL,Netherlands,North Holland,Alkmaar,,,,2020-02-15,-4.0,-2.0,47.0,-2.0,-2.0,0.0
 NL,Netherlands,North Holland,Alkmaar,,,,2020-02-16,-22.0,-20.0,-39.0,-14.0,-9.0,2.0
 NL,Netherlands,North Holland,Alkmaar,,,,2020-02-17,4.0,-1.0,39.0,-22.0,-22.0,3.0
@@ -9263,6 +9404,9 @@ NL,Netherlands,North Holland,Alkmaar,,,,2020-08-22,-9.0,-7.0,48.0,-26.0,-1.0,2.0
 NL,Netherlands,North Holland,Alkmaar,,,,2020-08-23,6.0,-6.0,51.0,-26.0,4.0,1.0
 NL,Netherlands,North Holland,Alkmaar,,,,2020-08-24,10.0,-2.0,37.0,-42.0,-33.0,6.0
 NL,Netherlands,North Holland,Alkmaar,,,,2020-08-25,14.0,-2.0,23.0,-40.0,-31.0,7.0
+NL,Netherlands,North Holland,Alkmaar,,,,2020-08-26,-1.0,-4.0,-2.0,-40.0,-30.0,8.0
+NL,Netherlands,North Holland,Alkmaar,,,,2020-08-27,10.0,-1.0,11.0,-37.0,-29.0,6.0
+NL,Netherlands,North Holland,Alkmaar,,,,2020-08-28,1.0,-5.0,28.0,-32.0,-27.0,5.0
 NL,Netherlands,North Holland,Amstelveen,,,,2020-02-15,-4.0,-2.0,1.0,3.0,0.0,
 NL,Netherlands,North Holland,Amstelveen,,,,2020-02-16,-22.0,-23.0,-65.0,-4.0,-6.0,
 NL,Netherlands,North Holland,Amstelveen,,,,2020-02-17,-5.0,-5.0,-4.0,1.0,-20.0,3.0
@@ -9456,6 +9600,9 @@ NL,Netherlands,North Holland,Amstelveen,,,,2020-08-22,-18.0,-16.0,28.0,-36.0,5.0
 NL,Netherlands,North Holland,Amstelveen,,,,2020-08-23,-15.0,-18.0,19.0,-34.0,4.0,
 NL,Netherlands,North Holland,Amstelveen,,,,2020-08-24,-12.0,-12.0,50.0,-49.0,-54.0,13.0
 NL,Netherlands,North Holland,Amstelveen,,,,2020-08-25,-16.0,-12.0,28.0,-48.0,-53.0,13.0
+NL,Netherlands,North Holland,Amstelveen,,,,2020-08-26,-18.0,-12.0,-10.0,-45.0,-52.0,13.0
+NL,Netherlands,North Holland,Amstelveen,,,,2020-08-27,-10.0,-5.0,36.0,-43.0,-50.0,13.0
+NL,Netherlands,North Holland,Amstelveen,,,,2020-08-28,-16.0,0.0,36.0,-37.0,-48.0,11.0
 NL,Netherlands,North Holland,Andijk,,,,2020-02-20,,,,,-25.0,
 NL,Netherlands,North Holland,Andijk,,,,2020-03-17,,,,,-31.0,
 NL,Netherlands,North Holland,Andijk,,,,2020-03-19,,,,,-28.0,
@@ -9561,6 +9708,9 @@ NL,Netherlands,North Holland,Andijk,,,,2020-08-20,,,,,-38.0,
 NL,Netherlands,North Holland,Andijk,,,,2020-08-21,,,,,-32.0,
 NL,Netherlands,North Holland,Andijk,,,,2020-08-24,,,,,-34.0,
 NL,Netherlands,North Holland,Andijk,,,,2020-08-25,,,,,-32.0,
+NL,Netherlands,North Holland,Andijk,,,,2020-08-26,,,,,-34.0,
+NL,Netherlands,North Holland,Andijk,,,,2020-08-27,,,,,-28.0,
+NL,Netherlands,North Holland,Andijk,,,,2020-08-28,,,,,-29.0,
 NL,Netherlands,North Holland,Beemster,,,,2020-02-17,,,,,-26.0,
 NL,Netherlands,North Holland,Beemster,,,,2020-02-18,,,,,-29.0,
 NL,Netherlands,North Holland,Beemster,,,,2020-02-19,,,,,-32.0,
@@ -9698,6 +9848,9 @@ NL,Netherlands,North Holland,Beemster,,,,2020-08-20,,,,,-32.0,
 NL,Netherlands,North Holland,Beemster,,,,2020-08-21,,,,,-33.0,
 NL,Netherlands,North Holland,Beemster,,,,2020-08-24,,,,,-30.0,
 NL,Netherlands,North Holland,Beemster,,,,2020-08-25,,,,,-30.0,
+NL,Netherlands,North Holland,Beemster,,,,2020-08-26,,,,,-28.0,
+NL,Netherlands,North Holland,Beemster,,,,2020-08-27,,,,,-27.0,
+NL,Netherlands,North Holland,Beemster,,,,2020-08-28,,,,,-29.0,
 NL,Netherlands,North Holland,Bergen,,,,2020-02-15,-2.0,-2.0,0.0,,,
 NL,Netherlands,North Holland,Bergen,,,,2020-02-16,-55.0,-43.0,-80.0,-51.0,,
 NL,Netherlands,North Holland,Bergen,,,,2020-02-17,,,18.0,,-22.0,
@@ -9891,6 +10044,9 @@ NL,Netherlands,North Holland,Bergen,,,,2020-08-22,17.0,32.0,110.0,,14.0,
 NL,Netherlands,North Holland,Bergen,,,,2020-08-23,1.0,,29.0,,20.0,
 NL,Netherlands,North Holland,Bergen,,,,2020-08-24,,,,,-29.0,
 NL,Netherlands,North Holland,Bergen,,,,2020-08-25,,,,,-28.0,
+NL,Netherlands,North Holland,Bergen,,,,2020-08-26,,,,,-27.0,
+NL,Netherlands,North Holland,Bergen,,,,2020-08-27,79.0,50.0,,,-26.0,
+NL,Netherlands,North Holland,Bergen,,,,2020-08-28,27.0,27.0,,,-21.0,
 NL,Netherlands,North Holland,Beverwijk,,,,2020-02-15,6.0,-15.0,,-7.0,-3.0,
 NL,Netherlands,North Holland,Beverwijk,,,,2020-02-16,-26.0,-30.0,,-39.0,-7.0,
 NL,Netherlands,North Holland,Beverwijk,,,,2020-02-17,8.0,-11.0,,-16.0,-17.0,2.0
@@ -10084,6 +10240,9 @@ NL,Netherlands,North Holland,Beverwijk,,,,2020-08-22,-5.0,-10.0,,-29.0,-6.0,
 NL,Netherlands,North Holland,Beverwijk,,,,2020-08-23,-17.0,-18.0,,-48.0,6.0,
 NL,Netherlands,North Holland,Beverwijk,,,,2020-08-24,9.0,15.0,,-40.0,-33.0,7.0
 NL,Netherlands,North Holland,Beverwijk,,,,2020-08-25,7.0,14.0,,-42.0,-33.0,7.0
+NL,Netherlands,North Holland,Beverwijk,,,,2020-08-26,0.0,-4.0,,-35.0,-30.0,8.0
+NL,Netherlands,North Holland,Beverwijk,,,,2020-08-27,6.0,2.0,,-28.0,-28.0,6.0
+NL,Netherlands,North Holland,Beverwijk,,,,2020-08-28,3.0,-8.0,,-24.0,-25.0,5.0
 NL,Netherlands,North Holland,Blaricum,,,,2020-02-18,,,,,-22.0,
 NL,Netherlands,North Holland,Blaricum,,,,2020-03-16,,,,,-46.0,
 NL,Netherlands,North Holland,Blaricum,,,,2020-03-17,,,,,-55.0,
@@ -10194,6 +10353,9 @@ NL,Netherlands,North Holland,Blaricum,,,,2020-08-20,,,,,-37.0,
 NL,Netherlands,North Holland,Blaricum,,,,2020-08-21,,,,,-34.0,
 NL,Netherlands,North Holland,Blaricum,,,,2020-08-24,,,,,-41.0,
 NL,Netherlands,North Holland,Blaricum,,,,2020-08-25,,,,,-40.0,
+NL,Netherlands,North Holland,Blaricum,,,,2020-08-26,,,,,-42.0,
+NL,Netherlands,North Holland,Blaricum,,,,2020-08-27,,,,,-35.0,
+NL,Netherlands,North Holland,Blaricum,,,,2020-08-28,,,,,-37.0,
 NL,Netherlands,North Holland,Bloemendaal,,,,2020-02-15,,,-7.0,,,
 NL,Netherlands,North Holland,Bloemendaal,,,,2020-02-16,,,-81.0,,,
 NL,Netherlands,North Holland,Bloemendaal,,,,2020-02-17,,,,-36.0,-27.0,
@@ -10370,6 +10532,9 @@ NL,Netherlands,North Holland,Bloemendaal,,,,2020-08-21,,,,-20.0,-34.0,
 NL,Netherlands,North Holland,Bloemendaal,,,,2020-08-23,,,58.0,,,
 NL,Netherlands,North Holland,Bloemendaal,,,,2020-08-24,,,,-36.0,-40.0,
 NL,Netherlands,North Holland,Bloemendaal,,,,2020-08-25,,,,-38.0,-37.0,
+NL,Netherlands,North Holland,Bloemendaal,,,,2020-08-26,,,,-26.0,-37.0,
+NL,Netherlands,North Holland,Bloemendaal,,,,2020-08-27,,,,-31.0,-36.0,
+NL,Netherlands,North Holland,Bloemendaal,,,,2020-08-28,,,,-41.0,-33.0,
 NL,Netherlands,North Holland,Castricum,,,,2020-02-15,-8.0,-3.0,,-6.0,,
 NL,Netherlands,North Holland,Castricum,,,,2020-02-16,-34.0,,,-19.0,,
 NL,Netherlands,North Holland,Castricum,,,,2020-02-17,-1.0,,,-21.0,-23.0,2.0
@@ -10563,6 +10728,9 @@ NL,Netherlands,North Holland,Castricum,,,,2020-08-22,7.0,5.0,,-28.0,6.0,
 NL,Netherlands,North Holland,Castricum,,,,2020-08-23,25.0,,,-1.0,14.0,
 NL,Netherlands,North Holland,Castricum,,,,2020-08-24,,,,-38.0,-35.0,7.0
 NL,Netherlands,North Holland,Castricum,,,,2020-08-25,15.0,,,-43.0,-34.0,8.0
+NL,Netherlands,North Holland,Castricum,,,,2020-08-26,4.0,-10.0,,-35.0,-31.0,8.0
+NL,Netherlands,North Holland,Castricum,,,,2020-08-27,23.0,11.0,,-34.0,-31.0,7.0
+NL,Netherlands,North Holland,Castricum,,,,2020-08-28,19.0,1.0,,-28.0,-31.0,7.0
 NL,Netherlands,North Holland,Den Helder,,,,2020-02-15,-8.0,-3.0,-13.0,0.0,6.0,
 NL,Netherlands,North Holland,Den Helder,,,,2020-02-16,-21.0,-20.0,-31.0,-13.0,-1.0,
 NL,Netherlands,North Holland,Den Helder,,,,2020-02-17,0.0,1.0,10.0,8.0,-15.0,2.0
@@ -10756,6 +10924,9 @@ NL,Netherlands,North Holland,Den Helder,,,,2020-08-22,10.0,10.0,55.0,37.0,4.0,
 NL,Netherlands,North Holland,Den Helder,,,,2020-08-23,10.0,9.0,67.0,50.0,9.0,
 NL,Netherlands,North Holland,Den Helder,,,,2020-08-24,23.0,19.0,93.0,28.0,-23.0,5.0
 NL,Netherlands,North Holland,Den Helder,,,,2020-08-25,21.0,21.0,74.0,3.0,-25.0,5.0
+NL,Netherlands,North Holland,Den Helder,,,,2020-08-26,4.0,6.0,42.0,-7.0,-25.0,7.0
+NL,Netherlands,North Holland,Den Helder,,,,2020-08-27,17.0,8.0,81.0,11.0,-23.0,4.0
+NL,Netherlands,North Holland,Den Helder,,,,2020-08-28,17.0,7.0,101.0,42.0,-21.0,4.0
 NL,Netherlands,North Holland,Diemen,,,,2020-02-15,26.0,9.0,,-4.0,,
 NL,Netherlands,North Holland,Diemen,,,,2020-02-16,11.0,,,-8.0,,
 NL,Netherlands,North Holland,Diemen,,,,2020-02-17,19.0,2.0,,-7.0,-14.0,2.0
@@ -10949,6 +11120,9 @@ NL,Netherlands,North Holland,Diemen,,,,2020-08-22,30.0,-11.0,,-25.0,-9.0,
 NL,Netherlands,North Holland,Diemen,,,,2020-08-23,38.0,,,-32.0,-8.0,
 NL,Netherlands,North Holland,Diemen,,,,2020-08-24,28.0,-5.0,,-45.0,-51.0,
 NL,Netherlands,North Holland,Diemen,,,,2020-08-25,24.0,,,-41.0,-48.0,
+NL,Netherlands,North Holland,Diemen,,,,2020-08-26,-1.0,-3.0,,-37.0,-48.0,
+NL,Netherlands,North Holland,Diemen,,,,2020-08-27,1.0,6.0,,-38.0,-48.0,
+NL,Netherlands,North Holland,Diemen,,,,2020-08-28,26.0,7.0,,-33.0,-44.0,
 NL,Netherlands,North Holland,Drechterland,,,,2020-02-17,,,,,-22.0,
 NL,Netherlands,North Holland,Drechterland,,,,2020-02-18,,,,,-20.0,
 NL,Netherlands,North Holland,Drechterland,,,,2020-02-19,,,,,-22.0,
@@ -11097,6 +11271,9 @@ NL,Netherlands,North Holland,Drechterland,,,,2020-08-21,,,,,-34.0,
 NL,Netherlands,North Holland,Drechterland,,,,2020-08-22,,,,,-1.0,
 NL,Netherlands,North Holland,Drechterland,,,,2020-08-24,,,,,-34.0,
 NL,Netherlands,North Holland,Drechterland,,,,2020-08-25,,,,,-34.0,
+NL,Netherlands,North Holland,Drechterland,,,,2020-08-26,,,,,-34.0,
+NL,Netherlands,North Holland,Drechterland,,,,2020-08-27,,,,,-31.0,
+NL,Netherlands,North Holland,Drechterland,,,,2020-08-28,,,,,-29.0,
 NL,Netherlands,North Holland,Edam-Volendam,,,,2020-02-15,-2.0,4.0,-11.0,-3.0,,
 NL,Netherlands,North Holland,Edam-Volendam,,,,2020-02-16,-28.0,,-50.0,,,
 NL,Netherlands,North Holland,Edam-Volendam,,,,2020-02-17,0.0,-1.0,,-19.0,-22.0,2.0
@@ -11289,6 +11466,9 @@ NL,Netherlands,North Holland,Edam-Volendam,,,,2020-08-22,-4.0,4.0,110.0,12.0,3.0
 NL,Netherlands,North Holland,Edam-Volendam,,,,2020-08-23,10.0,,,,16.0,
 NL,Netherlands,North Holland,Edam-Volendam,,,,2020-08-24,24.0,18.0,,-3.0,-27.0,4.0
 NL,Netherlands,North Holland,Edam-Volendam,,,,2020-08-25,19.0,21.0,,-10.0,-28.0,6.0
+NL,Netherlands,North Holland,Edam-Volendam,,,,2020-08-26,12.0,7.0,,-14.0,-25.0,6.0
+NL,Netherlands,North Holland,Edam-Volendam,,,,2020-08-27,32.0,23.0,,20.0,-27.0,4.0
+NL,Netherlands,North Holland,Edam-Volendam,,,,2020-08-28,1.0,15.0,,-18.0,-21.0,4.0
 NL,Netherlands,North Holland,Enkhuizen,,,,2020-02-15,-1.0,,,,,
 NL,Netherlands,North Holland,Enkhuizen,,,,2020-02-16,-25.0,,,,,
 NL,Netherlands,North Holland,Enkhuizen,,,,2020-02-17,,,,,-17.0,
@@ -11459,6 +11639,9 @@ NL,Netherlands,North Holland,Enkhuizen,,,,2020-08-21,60.0,,,,-26.0,
 NL,Netherlands,North Holland,Enkhuizen,,,,2020-08-22,45.0,,,,0.0,
 NL,Netherlands,North Holland,Enkhuizen,,,,2020-08-24,,,,,-27.0,
 NL,Netherlands,North Holland,Enkhuizen,,,,2020-08-25,,,,,-31.0,
+NL,Netherlands,North Holland,Enkhuizen,,,,2020-08-26,34.0,,,,-30.0,
+NL,Netherlands,North Holland,Enkhuizen,,,,2020-08-27,,,,,-29.0,
+NL,Netherlands,North Holland,Enkhuizen,,,,2020-08-28,27.0,,,,-26.0,
 NL,Netherlands,North Holland,Gooise Meren,,,,2020-02-15,-8.0,-6.0,14.0,3.0,-8.0,
 NL,Netherlands,North Holland,Gooise Meren,,,,2020-02-16,-29.0,-11.0,-28.0,-11.0,,
 NL,Netherlands,North Holland,Gooise Meren,,,,2020-02-17,-3.0,-4.0,,2.0,-23.0,2.0
@@ -11652,6 +11835,9 @@ NL,Netherlands,North Holland,Gooise Meren,,,,2020-08-22,-1.0,-4.0,,-5.0,1.0,
 NL,Netherlands,North Holland,Gooise Meren,,,,2020-08-23,4.0,11.0,,-5.0,8.0,
 NL,Netherlands,North Holland,Gooise Meren,,,,2020-08-24,24.0,1.0,,-27.0,-41.0,8.0
 NL,Netherlands,North Holland,Gooise Meren,,,,2020-08-25,13.0,6.0,,-31.0,-40.0,8.0
+NL,Netherlands,North Holland,Gooise Meren,,,,2020-08-26,4.0,0.0,,-25.0,-37.0,9.0
+NL,Netherlands,North Holland,Gooise Meren,,,,2020-08-27,16.0,4.0,,-23.0,-36.0,8.0
+NL,Netherlands,North Holland,Gooise Meren,,,,2020-08-28,-1.0,-3.0,,-21.0,-31.0,7.0
 NL,Netherlands,North Holland,Government of Amsterdam,,,,2020-02-15,-2.0,2.0,5.0,2.0,-1.0,0.0
 NL,Netherlands,North Holland,Government of Amsterdam,,,,2020-02-16,-11.0,-13.0,-30.0,-2.0,-6.0,2.0
 NL,Netherlands,North Holland,Government of Amsterdam,,,,2020-02-17,4.0,-2.0,7.0,-4.0,-14.0,2.0
@@ -11845,6 +12031,9 @@ NL,Netherlands,North Holland,Government of Amsterdam,,,,2020-08-22,-37.0,-17.0,1
 NL,Netherlands,North Holland,Government of Amsterdam,,,,2020-08-23,-37.0,-12.0,17.0,-41.0,-5.0,2.0
 NL,Netherlands,North Holland,Government of Amsterdam,,,,2020-08-24,-27.0,-10.0,31.0,-47.0,-46.0,10.0
 NL,Netherlands,North Holland,Government of Amsterdam,,,,2020-08-25,-26.0,-8.0,10.0,-47.0,-45.0,11.0
+NL,Netherlands,North Holland,Government of Amsterdam,,,,2020-08-26,-33.0,-15.0,-4.0,-45.0,-44.0,11.0
+NL,Netherlands,North Holland,Government of Amsterdam,,,,2020-08-27,-26.0,-8.0,9.0,-44.0,-43.0,10.0
+NL,Netherlands,North Holland,Government of Amsterdam,,,,2020-08-28,-33.0,-13.0,-9.0,-42.0,-41.0,9.0
 NL,Netherlands,North Holland,Haarlem,,,,2020-02-15,-4.0,-4.0,7.0,-35.0,0.0,0.0
 NL,Netherlands,North Holland,Haarlem,,,,2020-02-16,-25.0,-19.0,-58.0,-47.0,-5.0,1.0
 NL,Netherlands,North Holland,Haarlem,,,,2020-02-17,5.0,-6.0,-2.0,-25.0,-19.0,2.0
@@ -12038,6 +12227,9 @@ NL,Netherlands,North Holland,Haarlem,,,,2020-08-22,-20.0,-12.0,5.0,-39.0,-3.0,3.
 NL,Netherlands,North Holland,Haarlem,,,,2020-08-23,-14.0,-9.0,45.0,-39.0,1.0,1.0
 NL,Netherlands,North Holland,Haarlem,,,,2020-08-24,8.0,-8.0,99.0,-40.0,-40.0,8.0
 NL,Netherlands,North Holland,Haarlem,,,,2020-08-25,7.0,-4.0,75.0,-41.0,-40.0,9.0
+NL,Netherlands,North Holland,Haarlem,,,,2020-08-26,-4.0,-11.0,36.0,-39.0,-38.0,10.0
+NL,Netherlands,North Holland,Haarlem,,,,2020-08-27,5.0,-2.0,97.0,-36.0,-38.0,9.0
+NL,Netherlands,North Holland,Haarlem,,,,2020-08-28,-9.0,-8.0,56.0,-36.0,-36.0,7.0
 NL,Netherlands,North Holland,Haarlemmermeer,,,,2020-02-15,-4.0,2.0,10.0,7.0,-2.0,0.0
 NL,Netherlands,North Holland,Haarlemmermeer,,,,2020-02-16,-17.0,-17.0,-26.0,4.0,-7.0,1.0
 NL,Netherlands,North Holland,Haarlemmermeer,,,,2020-02-17,1.0,0.0,-1.0,4.0,-19.0,3.0
@@ -12231,6 +12423,9 @@ NL,Netherlands,North Holland,Haarlemmermeer,,,,2020-08-22,-14.0,-6.0,48.0,-53.0,
 NL,Netherlands,North Holland,Haarlemmermeer,,,,2020-08-23,-5.0,-6.0,53.0,-58.0,-2.0,2.0
 NL,Netherlands,North Holland,Haarlemmermeer,,,,2020-08-24,0.0,0.0,68.0,-59.0,-38.0,8.0
 NL,Netherlands,North Holland,Haarlemmermeer,,,,2020-08-25,-3.0,4.0,32.0,-60.0,-39.0,9.0
+NL,Netherlands,North Holland,Haarlemmermeer,,,,2020-08-26,-8.0,-4.0,24.0,-58.0,-37.0,9.0
+NL,Netherlands,North Holland,Haarlemmermeer,,,,2020-08-27,-2.0,4.0,47.0,-61.0,-37.0,9.0
+NL,Netherlands,North Holland,Haarlemmermeer,,,,2020-08-28,-8.0,-2.0,38.0,-57.0,-33.0,7.0
 NL,Netherlands,North Holland,Heemskerk,,,,2020-02-15,-14.0,-3.0,,,-4.0,
 NL,Netherlands,North Holland,Heemskerk,,,,2020-02-16,,-17.0,,,,
 NL,Netherlands,North Holland,Heemskerk,,,,2020-02-17,-1.0,0.0,,-10.0,-20.0,3.0
@@ -12424,6 +12619,9 @@ NL,Netherlands,North Holland,Heemskerk,,,,2020-08-22,-15.0,-9.0,,,-3.0,
 NL,Netherlands,North Holland,Heemskerk,,,,2020-08-23,,-8.0,,,-9.0,
 NL,Netherlands,North Holland,Heemskerk,,,,2020-08-24,,3.0,,-31.0,-34.0,7.0
 NL,Netherlands,North Holland,Heemskerk,,,,2020-08-25,,2.0,,-32.0,-37.0,7.0
+NL,Netherlands,North Holland,Heemskerk,,,,2020-08-26,-15.0,-8.0,,-35.0,-33.0,7.0
+NL,Netherlands,North Holland,Heemskerk,,,,2020-08-27,2.0,0.0,,-34.0,-32.0,6.0
+NL,Netherlands,North Holland,Heemskerk,,,,2020-08-28,-8.0,2.0,,-12.0,-28.0,6.0
 NL,Netherlands,North Holland,Heemstede,,,,2020-02-15,,-12.0,,-13.0,,
 NL,Netherlands,North Holland,Heemstede,,,,2020-02-16,,,,-16.0,,
 NL,Netherlands,North Holland,Heemstede,,,,2020-02-17,,-11.0,,-17.0,-26.0,
@@ -12616,6 +12814,9 @@ NL,Netherlands,North Holland,Heemstede,,,,2020-08-22,,-6.0,,-26.0,,
 NL,Netherlands,North Holland,Heemstede,,,,2020-08-23,,,,-21.0,,
 NL,Netherlands,North Holland,Heemstede,,,,2020-08-24,,-2.0,,-48.0,-41.0,
 NL,Netherlands,North Holland,Heemstede,,,,2020-08-25,,,,-46.0,-45.0,
+NL,Netherlands,North Holland,Heemstede,,,,2020-08-26,,-11.0,,-42.0,-40.0,
+NL,Netherlands,North Holland,Heemstede,,,,2020-08-27,,1.0,,-50.0,-42.0,
+NL,Netherlands,North Holland,Heemstede,,,,2020-08-28,,-7.0,,-37.0,-38.0,
 NL,Netherlands,North Holland,Heerhugowaard,,,,2020-02-15,-10.0,2.0,,-2.0,0.0,
 NL,Netherlands,North Holland,Heerhugowaard,,,,2020-02-16,-14.0,-9.0,,-12.0,-1.0,
 NL,Netherlands,North Holland,Heerhugowaard,,,,2020-02-17,-1.0,6.0,,-28.0,-21.0,2.0
@@ -12809,6 +13010,9 @@ NL,Netherlands,North Holland,Heerhugowaard,,,,2020-08-22,-14.0,2.0,,-24.0,-3.0,
 NL,Netherlands,North Holland,Heerhugowaard,,,,2020-08-23,-12.0,-2.0,,-22.0,0.0,
 NL,Netherlands,North Holland,Heerhugowaard,,,,2020-08-24,0.0,8.0,,-32.0,-33.0,6.0
 NL,Netherlands,North Holland,Heerhugowaard,,,,2020-08-25,6.0,15.0,,-33.0,-33.0,7.0
+NL,Netherlands,North Holland,Heerhugowaard,,,,2020-08-26,-2.0,12.0,,-26.0,-29.0,7.0
+NL,Netherlands,North Holland,Heerhugowaard,,,,2020-08-27,-2.0,10.0,,-25.0,-31.0,6.0
+NL,Netherlands,North Holland,Heerhugowaard,,,,2020-08-28,-10.0,9.0,,-23.0,-27.0,5.0
 NL,Netherlands,North Holland,Heiloo,,,,2020-02-15,-8.0,,,,,
 NL,Netherlands,North Holland,Heiloo,,,,2020-02-17,-7.0,,,-22.0,-28.0,
 NL,Netherlands,North Holland,Heiloo,,,,2020-02-18,5.0,,,-4.0,-28.0,
@@ -12981,6 +13185,9 @@ NL,Netherlands,North Holland,Heiloo,,,,2020-08-22,-7.0,,,-39.0,1.0,
 NL,Netherlands,North Holland,Heiloo,,,,2020-08-23,11.0,,,,,
 NL,Netherlands,North Holland,Heiloo,,,,2020-08-24,,,,-36.0,-37.0,
 NL,Netherlands,North Holland,Heiloo,,,,2020-08-25,-7.0,,,-33.0,-38.0,
+NL,Netherlands,North Holland,Heiloo,,,,2020-08-26,-19.0,,,-35.0,-34.0,
+NL,Netherlands,North Holland,Heiloo,,,,2020-08-27,-9.0,,,-35.0,-36.0,
+NL,Netherlands,North Holland,Heiloo,,,,2020-08-28,-12.0,,,-36.0,-26.0,
 NL,Netherlands,North Holland,Hilversum,,,,2020-02-15,-1.0,-5.0,,-8.0,-3.0,0.0
 NL,Netherlands,North Holland,Hilversum,,,,2020-02-16,-12.0,-17.0,-48.0,-1.0,-4.0,
 NL,Netherlands,North Holland,Hilversum,,,,2020-02-17,1.0,-8.0,,-22.0,-15.0,3.0
@@ -13174,6 +13381,9 @@ NL,Netherlands,North Holland,Hilversum,,,,2020-08-22,-19.0,-17.0,,-32.0,1.0,3.0
 NL,Netherlands,North Holland,Hilversum,,,,2020-08-23,-10.0,-11.0,,-20.0,8.0,
 NL,Netherlands,North Holland,Hilversum,,,,2020-08-24,-3.0,-10.0,,-51.0,-41.0,9.0
 NL,Netherlands,North Holland,Hilversum,,,,2020-08-25,0.0,-3.0,,-52.0,-40.0,9.0
+NL,Netherlands,North Holland,Hilversum,,,,2020-08-26,-13.0,-11.0,,-50.0,-38.0,10.0
+NL,Netherlands,North Holland,Hilversum,,,,2020-08-27,0.0,-6.0,,-30.0,-38.0,9.0
+NL,Netherlands,North Holland,Hilversum,,,,2020-08-28,-8.0,-11.0,,-18.0,-36.0,7.0
 NL,Netherlands,North Holland,Hollands Kroon,,,,2020-02-15,-10.0,3.0,,,0.0,
 NL,Netherlands,North Holland,Hollands Kroon,,,,2020-02-16,-26.0,-9.0,-60.0,,-1.0,
 NL,Netherlands,North Holland,Hollands Kroon,,,,2020-02-17,-7.0,3.0,,-26.0,-19.0,3.0
@@ -13367,6 +13577,9 @@ NL,Netherlands,North Holland,Hollands Kroon,,,,2020-08-22,4.0,16.0,,-12.0,5.0,
 NL,Netherlands,North Holland,Hollands Kroon,,,,2020-08-23,13.0,,,,8.0,
 NL,Netherlands,North Holland,Hollands Kroon,,,,2020-08-24,2.0,18.0,,-19.0,-26.0,5.0
 NL,Netherlands,North Holland,Hollands Kroon,,,,2020-08-25,2.0,16.0,,-19.0,-27.0,5.0
+NL,Netherlands,North Holland,Hollands Kroon,,,,2020-08-26,-2.0,9.0,,-24.0,-27.0,6.0
+NL,Netherlands,North Holland,Hollands Kroon,,,,2020-08-27,7.0,16.0,,-17.0,-25.0,4.0
+NL,Netherlands,North Holland,Hollands Kroon,,,,2020-08-28,5.0,11.0,,-21.0,-24.0,4.0
 NL,Netherlands,North Holland,Hoorn,,,,2020-02-15,-7.0,-4.0,-8.0,-1.0,-1.0,
 NL,Netherlands,North Holland,Hoorn,,,,2020-02-16,-19.0,-21.0,-64.0,-17.0,-7.0,
 NL,Netherlands,North Holland,Hoorn,,,,2020-02-17,-3.0,-6.0,,-29.0,-23.0,3.0
@@ -13560,6 +13773,9 @@ NL,Netherlands,North Holland,Hoorn,,,,2020-08-22,-13.0,-7.0,,-29.0,-1.0,
 NL,Netherlands,North Holland,Hoorn,,,,2020-08-23,-3.0,2.0,,-31.0,-1.0,
 NL,Netherlands,North Holland,Hoorn,,,,2020-08-24,4.0,2.0,,-43.0,-31.0,6.0
 NL,Netherlands,North Holland,Hoorn,,,,2020-08-25,7.0,3.0,,-40.0,-31.0,7.0
+NL,Netherlands,North Holland,Hoorn,,,,2020-08-26,-8.0,-2.0,,-36.0,-29.0,7.0
+NL,Netherlands,North Holland,Hoorn,,,,2020-08-27,1.0,-2.0,,-36.0,-29.0,6.0
+NL,Netherlands,North Holland,Hoorn,,,,2020-08-28,-6.0,-1.0,,-34.0,-24.0,5.0
 NL,Netherlands,North Holland,Huizen,,,,2020-02-15,-5.0,1.0,,,-8.0,
 NL,Netherlands,North Holland,Huizen,,,,2020-02-16,-11.0,,,,,
 NL,Netherlands,North Holland,Huizen,,,,2020-02-17,-5.0,-7.0,,,-24.0,2.0
@@ -13740,6 +13956,9 @@ NL,Netherlands,North Holland,Huizen,,,,2020-08-22,-10.0,-3.0,,,-5.0,
 NL,Netherlands,North Holland,Huizen,,,,2020-08-23,,,,,6.0,
 NL,Netherlands,North Holland,Huizen,,,,2020-08-24,2.0,2.0,,-34.0,-37.0,7.0
 NL,Netherlands,North Holland,Huizen,,,,2020-08-25,1.0,6.0,,-34.0,-37.0,7.0
+NL,Netherlands,North Holland,Huizen,,,,2020-08-26,-11.0,-1.0,,-32.0,-37.0,8.0
+NL,Netherlands,North Holland,Huizen,,,,2020-08-27,1.0,4.0,,-35.0,-33.0,7.0
+NL,Netherlands,North Holland,Huizen,,,,2020-08-28,-3.0,1.0,,-26.0,-31.0,6.0
 NL,Netherlands,North Holland,Koggenland,,,,2020-02-17,,,,,-21.0,2.0
 NL,Netherlands,North Holland,Koggenland,,,,2020-02-18,,,,,-19.0,2.0
 NL,Netherlands,North Holland,Koggenland,,,,2020-02-19,,,,,-19.0,1.0
@@ -13890,6 +14109,9 @@ NL,Netherlands,North Holland,Koggenland,,,,2020-08-21,,,,,-30.0,
 NL,Netherlands,North Holland,Koggenland,,,,2020-08-22,,,,,-3.0,
 NL,Netherlands,North Holland,Koggenland,,,,2020-08-24,,,,,-31.0,5.0
 NL,Netherlands,North Holland,Koggenland,,,,2020-08-25,,,,,-31.0,6.0
+NL,Netherlands,North Holland,Koggenland,,,,2020-08-26,,,,,-27.0,7.0
+NL,Netherlands,North Holland,Koggenland,,,,2020-08-27,,,,,-29.0,6.0
+NL,Netherlands,North Holland,Koggenland,,,,2020-08-28,,,,,-26.0,
 NL,Netherlands,North Holland,Landsmeer,,,,2020-02-17,,,,,-27.0,
 NL,Netherlands,North Holland,Landsmeer,,,,2020-02-18,,,,,-28.0,
 NL,Netherlands,North Holland,Landsmeer,,,,2020-02-19,,,,,-33.0,
@@ -14025,6 +14247,9 @@ NL,Netherlands,North Holland,Landsmeer,,,,2020-08-20,,,,,-40.0,
 NL,Netherlands,North Holland,Landsmeer,,,,2020-08-21,,,,,-32.0,
 NL,Netherlands,North Holland,Landsmeer,,,,2020-08-24,,,,,-42.0,
 NL,Netherlands,North Holland,Landsmeer,,,,2020-08-25,,,,,-41.0,
+NL,Netherlands,North Holland,Landsmeer,,,,2020-08-26,,,,,-39.0,
+NL,Netherlands,North Holland,Landsmeer,,,,2020-08-27,,,,,-38.0,
+NL,Netherlands,North Holland,Landsmeer,,,,2020-08-28,,,,,-30.0,
 NL,Netherlands,North Holland,Langedijk,,,,2020-02-15,2.0,,,,,
 NL,Netherlands,North Holland,Langedijk,,,,2020-02-17,,,,,-21.0,3.0
 NL,Netherlands,North Holland,Langedijk,,,,2020-02-18,-6.0,,,,-22.0,4.0
@@ -14201,6 +14426,9 @@ NL,Netherlands,North Holland,Langedijk,,,,2020-08-22,-8.0,,,,6.0,
 NL,Netherlands,North Holland,Langedijk,,,,2020-08-23,,,,,-1.0,
 NL,Netherlands,North Holland,Langedijk,,,,2020-08-24,,,,,-30.0,6.0
 NL,Netherlands,North Holland,Langedijk,,,,2020-08-25,-4.0,,,,-31.0,7.0
+NL,Netherlands,North Holland,Langedijk,,,,2020-08-26,-4.0,,,,-27.0,7.0
+NL,Netherlands,North Holland,Langedijk,,,,2020-08-27,0.0,,,,-27.0,7.0
+NL,Netherlands,North Holland,Langedijk,,,,2020-08-28,1.0,,,,-22.0,5.0
 NL,Netherlands,North Holland,Laren,,,,2020-02-15,-11.0,,,,,
 NL,Netherlands,North Holland,Laren,,,,2020-02-21,13.0,,,,,
 NL,Netherlands,North Holland,Laren,,,,2020-02-22,-16.0,,,,,
@@ -14271,6 +14499,9 @@ NL,Netherlands,North Holland,Laren,,,,2020-08-21,7.0,,,,-31.0,
 NL,Netherlands,North Holland,Laren,,,,2020-08-22,-10.0,,,,,
 NL,Netherlands,North Holland,Laren,,,,2020-08-24,,,,,-39.0,
 NL,Netherlands,North Holland,Laren,,,,2020-08-25,,,,,-36.0,
+NL,Netherlands,North Holland,Laren,,,,2020-08-26,,,,,-40.0,
+NL,Netherlands,North Holland,Laren,,,,2020-08-27,,,,,-36.0,
+NL,Netherlands,North Holland,Laren,,,,2020-08-28,,,,,-37.0,
 NL,Netherlands,North Holland,Medemblik,,,,2020-02-15,-9.0,-1.0,,,,
 NL,Netherlands,North Holland,Medemblik,,,,2020-02-16,,,-53.0,,,
 NL,Netherlands,North Holland,Medemblik,,,,2020-02-17,,,,,-23.0,4.0
@@ -14446,6 +14677,9 @@ NL,Netherlands,North Holland,Medemblik,,,,2020-08-22,20.0,11.0,,,6.0,
 NL,Netherlands,North Holland,Medemblik,,,,2020-08-23,,,,,0.0,
 NL,Netherlands,North Holland,Medemblik,,,,2020-08-24,,,,,-28.0,6.0
 NL,Netherlands,North Holland,Medemblik,,,,2020-08-25,,,,,-28.0,6.0
+NL,Netherlands,North Holland,Medemblik,,,,2020-08-26,,,,,-25.0,7.0
+NL,Netherlands,North Holland,Medemblik,,,,2020-08-27,,,,,-25.0,6.0
+NL,Netherlands,North Holland,Medemblik,,,,2020-08-28,,13.0,,,-22.0,4.0
 NL,Netherlands,North Holland,Oostzaan,,,,2020-02-17,,,,,-22.0,
 NL,Netherlands,North Holland,Oostzaan,,,,2020-02-18,,,,,-25.0,
 NL,Netherlands,North Holland,Oostzaan,,,,2020-02-19,,,,,-24.0,
@@ -14581,6 +14815,9 @@ NL,Netherlands,North Holland,Oostzaan,,,,2020-08-20,,,,,-35.0,
 NL,Netherlands,North Holland,Oostzaan,,,,2020-08-21,,,,,-30.0,
 NL,Netherlands,North Holland,Oostzaan,,,,2020-08-24,,,,,-32.0,
 NL,Netherlands,North Holland,Oostzaan,,,,2020-08-25,,,,,-34.0,
+NL,Netherlands,North Holland,Oostzaan,,,,2020-08-26,,,,,-31.0,
+NL,Netherlands,North Holland,Oostzaan,,,,2020-08-27,,,,,-25.0,
+NL,Netherlands,North Holland,Oostzaan,,,,2020-08-28,,,,,-25.0,
 NL,Netherlands,North Holland,Opmeer,,,,2020-02-17,,,,,-19.0,
 NL,Netherlands,North Holland,Opmeer,,,,2020-02-18,,,,,-21.0,
 NL,Netherlands,North Holland,Opmeer,,,,2020-02-19,,,,,-20.0,
@@ -14718,6 +14955,9 @@ NL,Netherlands,North Holland,Opmeer,,,,2020-08-20,,,,,-32.0,
 NL,Netherlands,North Holland,Opmeer,,,,2020-08-21,,,,,-27.0,
 NL,Netherlands,North Holland,Opmeer,,,,2020-08-24,,,,,-25.0,
 NL,Netherlands,North Holland,Opmeer,,,,2020-08-25,,,,,-29.0,
+NL,Netherlands,North Holland,Opmeer,,,,2020-08-26,,,,,-27.0,
+NL,Netherlands,North Holland,Opmeer,,,,2020-08-27,,,,,-21.0,
+NL,Netherlands,North Holland,Opmeer,,,,2020-08-28,,,,,-24.0,
 NL,Netherlands,North Holland,Ouder-Amstel,,,,2020-02-15,-11.0,,,-4.0,,
 NL,Netherlands,North Holland,Ouder-Amstel,,,,2020-02-16,,,,35.0,,
 NL,Netherlands,North Holland,Ouder-Amstel,,,,2020-02-17,,,,-24.0,-20.0,
@@ -14911,6 +15151,9 @@ NL,Netherlands,North Holland,Ouder-Amstel,,,,2020-08-22,-64.0,,,-45.0,,
 NL,Netherlands,North Holland,Ouder-Amstel,,,,2020-08-23,,,,-52.0,,
 NL,Netherlands,North Holland,Ouder-Amstel,,,,2020-08-24,,,,-59.0,-41.0,
 NL,Netherlands,North Holland,Ouder-Amstel,,,,2020-08-25,-14.0,,,-59.0,-42.0,
+NL,Netherlands,North Holland,Ouder-Amstel,,,,2020-08-26,-20.0,,,-61.0,-38.0,
+NL,Netherlands,North Holland,Ouder-Amstel,,,,2020-08-27,,,,-56.0,-40.0,
+NL,Netherlands,North Holland,Ouder-Amstel,,,,2020-08-28,-7.0,,,-49.0,-33.0,
 NL,Netherlands,North Holland,Purmerend,,,,2020-02-15,-3.0,-1.0,,-2.0,0.0,0.0
 NL,Netherlands,North Holland,Purmerend,,,,2020-02-16,-23.0,-16.0,,-24.0,-8.0,
 NL,Netherlands,North Holland,Purmerend,,,,2020-02-17,-5.0,-4.0,,-18.0,-20.0,2.0
@@ -15104,6 +15347,9 @@ NL,Netherlands,North Holland,Purmerend,,,,2020-08-22,-11.0,-10.0,,-29.0,-2.0,4.0
 NL,Netherlands,North Holland,Purmerend,,,,2020-08-23,3.0,-6.0,,-28.0,0.0,
 NL,Netherlands,North Holland,Purmerend,,,,2020-08-24,10.0,-5.0,,-34.0,-37.0,7.0
 NL,Netherlands,North Holland,Purmerend,,,,2020-08-25,0.0,-3.0,,-38.0,-37.0,8.0
+NL,Netherlands,North Holland,Purmerend,,,,2020-08-26,-7.0,-11.0,,-33.0,-33.0,8.0
+NL,Netherlands,North Holland,Purmerend,,,,2020-08-27,9.0,-2.0,,-30.0,-33.0,7.0
+NL,Netherlands,North Holland,Purmerend,,,,2020-08-28,-1.0,-1.0,,-29.0,-32.0,6.0
 NL,Netherlands,North Holland,Schagen,,,,2020-02-15,-2.0,0.0,12.0,-21.0,-7.0,
 NL,Netherlands,North Holland,Schagen,,,,2020-02-16,-19.0,,-44.0,-29.0,-8.0,
 NL,Netherlands,North Holland,Schagen,,,,2020-02-17,4.0,-6.0,,-27.0,-23.0,3.0
@@ -15297,6 +15543,9 @@ NL,Netherlands,North Holland,Schagen,,,,2020-08-22,21.0,43.0,,-15.0,15.0,
 NL,Netherlands,North Holland,Schagen,,,,2020-08-23,30.0,,,-9.0,15.0,
 NL,Netherlands,North Holland,Schagen,,,,2020-08-24,43.0,41.0,,-19.0,-27.0,4.0
 NL,Netherlands,North Holland,Schagen,,,,2020-08-25,26.0,40.0,,-23.0,-28.0,5.0
+NL,Netherlands,North Holland,Schagen,,,,2020-08-26,15.0,29.0,,-23.0,-27.0,7.0
+NL,Netherlands,North Holland,Schagen,,,,2020-08-27,37.0,32.0,,-19.0,-24.0,5.0
+NL,Netherlands,North Holland,Schagen,,,,2020-08-28,19.0,28.0,,-17.0,-22.0,3.0
 NL,Netherlands,North Holland,Stede Broec,,,,2020-02-15,-14.0,-5.0,,8.0,,
 NL,Netherlands,North Holland,Stede Broec,,,,2020-02-17,,,,-3.0,-18.0,2.0
 NL,Netherlands,North Holland,Stede Broec,,,,2020-02-18,,,,11.0,-19.0,2.0
@@ -15466,6 +15715,9 @@ NL,Netherlands,North Holland,Stede Broec,,,,2020-08-22,-5.0,5.0,,-74.0,-6.0,
 NL,Netherlands,North Holland,Stede Broec,,,,2020-08-23,,,,,-5.0,
 NL,Netherlands,North Holland,Stede Broec,,,,2020-08-24,,,,-58.0,-29.0,5.0
 NL,Netherlands,North Holland,Stede Broec,,,,2020-08-25,,,,-57.0,-28.0,6.0
+NL,Netherlands,North Holland,Stede Broec,,,,2020-08-26,,,,-72.0,-27.0,
+NL,Netherlands,North Holland,Stede Broec,,,,2020-08-27,11.0,10.0,,-70.0,-26.0,4.0
+NL,Netherlands,North Holland,Stede Broec,,,,2020-08-28,6.0,11.0,,-64.0,-25.0,
 NL,Netherlands,North Holland,Texel,,,,2020-02-15,8.0,,9.0,-14.0,,
 NL,Netherlands,North Holland,Texel,,,,2020-02-16,,,0.0,-25.0,,
 NL,Netherlands,North Holland,Texel,,,,2020-02-17,,,102.0,34.0,-11.0,
@@ -15659,6 +15911,9 @@ NL,Netherlands,North Holland,Texel,,,,2020-08-22,136.0,,,67.0,37.0,
 NL,Netherlands,North Holland,Texel,,,,2020-08-23,,,,27.0,,
 NL,Netherlands,North Holland,Texel,,,,2020-08-24,,,,70.0,-2.0,
 NL,Netherlands,North Holland,Texel,,,,2020-08-25,,,,42.0,3.0,
+NL,Netherlands,North Holland,Texel,,,,2020-08-26,,,,38.0,2.0,
+NL,Netherlands,North Holland,Texel,,,,2020-08-27,,,,127.0,5.0,
+NL,Netherlands,North Holland,Texel,,,,2020-08-28,,,230.0,120.0,7.0,
 NL,Netherlands,North Holland,Uitgeest,,,,2020-02-17,,,,-31.0,-22.0,
 NL,Netherlands,North Holland,Uitgeest,,,,2020-02-18,,,,-23.0,-20.0,
 NL,Netherlands,North Holland,Uitgeest,,,,2020-02-19,,,,-16.0,-21.0,
@@ -15820,6 +16075,9 @@ NL,Netherlands,North Holland,Uitgeest,,,,2020-08-21,,,,-57.0,-24.0,
 NL,Netherlands,North Holland,Uitgeest,,,,2020-08-22,,,,-26.0,,
 NL,Netherlands,North Holland,Uitgeest,,,,2020-08-24,,,,-52.0,-35.0,
 NL,Netherlands,North Holland,Uitgeest,,,,2020-08-25,,,,-48.0,-35.0,
+NL,Netherlands,North Holland,Uitgeest,,,,2020-08-26,,,,-35.0,-33.0,
+NL,Netherlands,North Holland,Uitgeest,,,,2020-08-27,,,,-38.0,-31.0,
+NL,Netherlands,North Holland,Uitgeest,,,,2020-08-28,,,,-41.0,-31.0,
 NL,Netherlands,North Holland,Uithoorn,,,,2020-02-15,6.0,-5.0,,-4.0,,
 NL,Netherlands,North Holland,Uithoorn,,,,2020-02-16,-1.0,,,,,
 NL,Netherlands,North Holland,Uithoorn,,,,2020-02-17,4.0,-7.0,,-15.0,-19.0,2.0
@@ -16007,6 +16265,9 @@ NL,Netherlands,North Holland,Uithoorn,,,,2020-08-22,-9.0,17.0,,-25.0,8.0,
 NL,Netherlands,North Holland,Uithoorn,,,,2020-08-23,-6.0,,,,5.0,
 NL,Netherlands,North Holland,Uithoorn,,,,2020-08-24,0.0,35.0,,-31.0,-37.0,7.0
 NL,Netherlands,North Holland,Uithoorn,,,,2020-08-25,0.0,27.0,,-30.0,-34.0,9.0
+NL,Netherlands,North Holland,Uithoorn,,,,2020-08-26,-8.0,33.0,,-36.0,-35.0,9.0
+NL,Netherlands,North Holland,Uithoorn,,,,2020-08-27,2.0,46.0,,-25.0,-33.0,7.0
+NL,Netherlands,North Holland,Uithoorn,,,,2020-08-28,-2.0,32.0,,-26.0,-32.0,6.0
 NL,Netherlands,North Holland,Velsen,,,,2020-02-15,-4.0,0.0,1.0,4.0,-3.0,0.0
 NL,Netherlands,North Holland,Velsen,,,,2020-02-16,-18.0,-12.0,-59.0,-20.0,-11.0,
 NL,Netherlands,North Holland,Velsen,,,,2020-02-17,3.0,-2.0,9.0,-10.0,-19.0,2.0
@@ -16200,6 +16461,9 @@ NL,Netherlands,North Holland,Velsen,,,,2020-08-22,10.0,-5.0,67.0,3.0,-7.0,3.0
 NL,Netherlands,North Holland,Velsen,,,,2020-08-23,47.0,7.0,58.0,11.0,3.0,
 NL,Netherlands,North Holland,Velsen,,,,2020-08-24,33.0,-1.0,67.0,-19.0,-34.0,5.0
 NL,Netherlands,North Holland,Velsen,,,,2020-08-25,22.0,0.0,56.0,-16.0,-33.0,7.0
+NL,Netherlands,North Holland,Velsen,,,,2020-08-26,10.0,-7.0,20.0,-22.0,-34.0,7.0
+NL,Netherlands,North Holland,Velsen,,,,2020-08-27,24.0,2.0,62.0,-5.0,-31.0,6.0
+NL,Netherlands,North Holland,Velsen,,,,2020-08-28,16.0,0.0,46.0,-17.0,-28.0,5.0
 NL,Netherlands,North Holland,Waterland,,,,2020-02-17,,,,,-24.0,
 NL,Netherlands,North Holland,Waterland,,,,2020-02-18,,,,,-21.0,
 NL,Netherlands,North Holland,Waterland,,,,2020-02-19,,,,,-22.0,
@@ -16337,6 +16601,9 @@ NL,Netherlands,North Holland,Waterland,,,,2020-08-20,,,,,-39.0,
 NL,Netherlands,North Holland,Waterland,,,,2020-08-21,,,,,-34.0,
 NL,Netherlands,North Holland,Waterland,,,,2020-08-24,,,,,-36.0,
 NL,Netherlands,North Holland,Waterland,,,,2020-08-25,,,,,-38.0,
+NL,Netherlands,North Holland,Waterland,,,,2020-08-26,,,,,-33.0,
+NL,Netherlands,North Holland,Waterland,,,,2020-08-27,,,,,-35.0,
+NL,Netherlands,North Holland,Waterland,,,,2020-08-28,,,,,-29.0,
 NL,Netherlands,North Holland,Weesp,,,,2020-02-15,-12.0,,,-7.0,,
 NL,Netherlands,North Holland,Weesp,,,,2020-02-16,,,,-6.0,,
 NL,Netherlands,North Holland,Weesp,,,,2020-02-17,,-4.0,,13.0,-20.0,
@@ -16530,6 +16797,9 @@ NL,Netherlands,North Holland,Weesp,,,,2020-08-22,0.0,,,-29.0,,
 NL,Netherlands,North Holland,Weesp,,,,2020-08-23,,,,-35.0,,
 NL,Netherlands,North Holland,Weesp,,,,2020-08-24,,5.0,,-36.0,-39.0,
 NL,Netherlands,North Holland,Weesp,,,,2020-08-25,,0.0,,-43.0,-41.0,
+NL,Netherlands,North Holland,Weesp,,,,2020-08-26,-16.0,,,-34.0,-38.0,
+NL,Netherlands,North Holland,Weesp,,,,2020-08-27,,,,-32.0,-37.0,
+NL,Netherlands,North Holland,Weesp,,,,2020-08-28,,-8.0,,-33.0,-37.0,
 NL,Netherlands,North Holland,Wervershoof,,,,2020-02-17,,,,,-23.0,
 NL,Netherlands,North Holland,Wervershoof,,,,2020-02-18,,,,,-21.0,
 NL,Netherlands,North Holland,Wervershoof,,,,2020-02-19,,,,,-21.0,
@@ -16667,6 +16937,9 @@ NL,Netherlands,North Holland,Wervershoof,,,,2020-08-20,,,,,-34.0,
 NL,Netherlands,North Holland,Wervershoof,,,,2020-08-21,,,,,-35.0,
 NL,Netherlands,North Holland,Wervershoof,,,,2020-08-24,,,,,-30.0,
 NL,Netherlands,North Holland,Wervershoof,,,,2020-08-25,,,,,-32.0,
+NL,Netherlands,North Holland,Wervershoof,,,,2020-08-26,,,,,-28.0,
+NL,Netherlands,North Holland,Wervershoof,,,,2020-08-27,,,,,-25.0,
+NL,Netherlands,North Holland,Wervershoof,,,,2020-08-28,,,,,-28.0,
 NL,Netherlands,North Holland,Wijdemeren,,,,2020-02-15,-11.0,,,,,
 NL,Netherlands,North Holland,Wijdemeren,,,,2020-02-16,,,-36.0,,,
 NL,Netherlands,North Holland,Wijdemeren,,,,2020-02-17,,,,,-20.0,
@@ -16826,6 +17099,9 @@ NL,Netherlands,North Holland,Wijdemeren,,,,2020-08-21,,,,,-28.0,
 NL,Netherlands,North Holland,Wijdemeren,,,,2020-08-22,,,,,8.0,
 NL,Netherlands,North Holland,Wijdemeren,,,,2020-08-24,,,,,-32.0,
 NL,Netherlands,North Holland,Wijdemeren,,,,2020-08-25,,,,,-33.0,
+NL,Netherlands,North Holland,Wijdemeren,,,,2020-08-26,,,,,-31.0,
+NL,Netherlands,North Holland,Wijdemeren,,,,2020-08-27,,,,,-29.0,
+NL,Netherlands,North Holland,Wijdemeren,,,,2020-08-28,,,,,-24.0,
 NL,Netherlands,North Holland,Wormerland,,,,2020-02-15,,,,-14.0,,
 NL,Netherlands,North Holland,Wormerland,,,,2020-02-17,,,,-15.0,-25.0,
 NL,Netherlands,North Holland,Wormerland,,,,2020-02-18,,,,-23.0,-22.0,
@@ -16990,6 +17266,9 @@ NL,Netherlands,North Holland,Wormerland,,,,2020-08-21,,,,-31.0,-36.0,
 NL,Netherlands,North Holland,Wormerland,,,,2020-08-22,,,,-22.0,5.0,
 NL,Netherlands,North Holland,Wormerland,,,,2020-08-24,,,,-41.0,-39.0,
 NL,Netherlands,North Holland,Wormerland,,,,2020-08-25,,,,-46.0,-38.0,
+NL,Netherlands,North Holland,Wormerland,,,,2020-08-26,,,,-41.0,-34.0,
+NL,Netherlands,North Holland,Wormerland,,,,2020-08-27,,,,-34.0,-31.0,
+NL,Netherlands,North Holland,Wormerland,,,,2020-08-28,,,,-34.0,-29.0,
 NL,Netherlands,North Holland,Zaanstad,,,,2020-02-15,-7.0,-2.0,11.0,3.0,1.0,0.0
 NL,Netherlands,North Holland,Zaanstad,,,,2020-02-16,-30.0,-18.0,-46.0,-15.0,-8.0,2.0
 NL,Netherlands,North Holland,Zaanstad,,,,2020-02-17,-5.0,-3.0,-3.0,-16.0,-20.0,3.0
@@ -17183,6 +17462,9 @@ NL,Netherlands,North Holland,Zaanstad,,,,2020-08-22,-15.0,-7.0,0.0,-34.0,-6.0,3.
 NL,Netherlands,North Holland,Zaanstad,,,,2020-08-23,-4.0,-1.0,31.0,-25.0,-2.0,1.0
 NL,Netherlands,North Holland,Zaanstad,,,,2020-08-24,2.0,-1.0,26.0,-41.0,-35.0,7.0
 NL,Netherlands,North Holland,Zaanstad,,,,2020-08-25,2.0,-3.0,9.0,-43.0,-36.0,8.0
+NL,Netherlands,North Holland,Zaanstad,,,,2020-08-26,-11.0,-8.0,-6.0,-40.0,-33.0,8.0
+NL,Netherlands,North Holland,Zaanstad,,,,2020-08-27,3.0,-1.0,24.0,-37.0,-32.0,6.0
+NL,Netherlands,North Holland,Zaanstad,,,,2020-08-28,-6.0,-4.0,17.0,-31.0,-31.0,5.0
 NL,Netherlands,North Holland,Zandvoort,,,,2020-02-15,,,16.0,12.0,,
 NL,Netherlands,North Holland,Zandvoort,,,,2020-02-16,,,-65.0,-44.0,,
 NL,Netherlands,North Holland,Zandvoort,,,,2020-02-17,,,,5.0,-17.0,
@@ -17375,6 +17657,9 @@ NL,Netherlands,North Holland,Zandvoort,,,,2020-08-22,,,72.0,9.0,4.0,
 NL,Netherlands,North Holland,Zandvoort,,,,2020-08-23,,,52.0,6.0,,
 NL,Netherlands,North Holland,Zandvoort,,,,2020-08-24,,,,30.0,-30.0,
 NL,Netherlands,North Holland,Zandvoort,,,,2020-08-25,,,,14.0,-32.0,
+NL,Netherlands,North Holland,Zandvoort,,,,2020-08-26,,,,-3.0,-31.0,
+NL,Netherlands,North Holland,Zandvoort,,,,2020-08-27,,,,31.0,-28.0,
+NL,Netherlands,North Holland,Zandvoort,,,,2020-08-28,,,,13.0,-22.0,
 NL,Netherlands,North Holland,Zeevang,,,,2020-06-08,,,,,-30.0,
 NL,Netherlands,North Holland,Zeevang,,,,2020-06-09,,,,,-37.0,
 NL,Netherlands,North Holland,Zeevang,,,,2020-06-10,,,,,-32.0,
@@ -17432,3 +17717,6 @@ NL,Netherlands,North Holland,Zeevang,,,,2020-08-20,,,,,-36.0,
 NL,Netherlands,North Holland,Zeevang,,,,2020-08-21,,,,,-28.0,
 NL,Netherlands,North Holland,Zeevang,,,,2020-08-24,,,,,-29.0,
 NL,Netherlands,North Holland,Zeevang,,,,2020-08-25,,,,,-39.0,
+NL,Netherlands,North Holland,Zeevang,,,,2020-08-26,,,,,-35.0,
+NL,Netherlands,North Holland,Zeevang,,,,2020-08-27,,,,,-31.0,
+NL,Netherlands,North Holland,Zeevang,,,,2020-08-28,,,,,-22.0,
