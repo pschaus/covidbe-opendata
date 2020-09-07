@@ -29,26 +29,26 @@ import altair as alt
 from datetime import datetime
 
 import geopandas
-
-
-url = "https://statbel.fgov.be/sites/default/files/files/opendata/deathday/DEMO_DEATH_OPEN.zip"
-content = requests.get(url)
-zf = ZipFile(BytesIO(content.content))
-
-
-# find the first matching csv file in the zip:
-match = [s for s in zf.namelist() if ".txt" in s][0]
-# the first line of the file contains a string - that line shall de     ignored, hence skiprows
-
-mydateparser = lambda x: datetime.strptime(x, "%d/%m/%Y")
-
-
-df = pandas.read_csv(zf.open(match), parse_dates=['DT_DATE'],date_parser=mydateparser, low_memory=False,sep=";",encoding="latin-1")
-
-
-df = df[df['DT_DATE'] >= '2015-01-01']
-
-df.to_csv("../static/csv/mortality_statbel.csv",index=False)
+#
+#
+# url = "https://statbel.fgov.be/sites/default/files/files/opendata/deathday/DEMO_DEATH_OPEN.zip"
+# content = requests.get(url)
+# zf = ZipFile(BytesIO(content.content))
+#
+#
+# # find the first matching csv file in the zip:
+# match = [s for s in zf.namelist() if ".txt" in s][0]
+# # the first line of the file contains a string - that line shall de     ignored, hence skiprows
+#
+# mydateparser = lambda x: datetime.strptime(x, "%d/%m/%Y")
+#
+#
+# df = pandas.read_csv(zf.open(match), parse_dates=['DT_DATE'],date_parser=mydateparser, low_memory=False,sep=";",encoding="latin-1")
+#
+#
+# df = df[df['DT_DATE'] >= '2015-01-01']
+#
+# df.to_csv("../static/csv/mortality_statbel.csv",index=False)
 
 
 
@@ -58,7 +58,8 @@ def weekly_mortality_nis3():
     df = pd.read_csv("../static/csv/mortality_statbel.csv", parse_dates=['DT_DATE'], date_parser=dateparse)
     df.dropna(thresh=1, inplace=True)
     df = df[df['DT_DATE'] >= '2019-12-30']
-    df['NIS3'] = df.apply(lambda x: int(str(x['CD_ARR'])[:2]), axis=1).astype(int)
+    df['NIS3'] = df.apply(lambda x: int(str(x['ï»¿CD_ARR'])[:2]), axis=1).astype(int)
+    #df['NIS3'] = df.apply(lambda x: int(str(x['CD_ARR'])[:2]), axis=1).astype(int)
     df['WEEK'] = df.apply(lambda x: x['DT_DATE'].isocalendar()[1], axis=1)
     df = df.groupby(['WEEK', 'NIS3'])["MS_NUM_DEATH"].sum().reset_index()
     df.rename(columns={"MS_NUM_DEATH": "TOT", "NR_YEAR": "YEAR"}, inplace=True)

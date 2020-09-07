@@ -13,10 +13,12 @@ from pages import get_translation
 
 
 deaths_menu = AppMenu(lazy_gettext("Deaths"), "/deaths", [
-    AppLink(get_translation(fr="Décès / Arrondissements",en="Deaths / Admin Region"), get_translation(fr="Arrondissements",en="Admin Region"), "/admin_region", display_arrondissements),
     AppLink(get_translation(fr="Décès / Groupes d'ages", en="Deaths / Age group"), lazy_gettext("Age Groups"), "/age_groups", display_age_groups),
     AppLink(get_translation(fr = "Surmortalité", en = "Overmortality"), get_translation(fr = "Surmortalité", en = "Overmortality"), "/overmortality", display_overmortality,
             plot=overmortality_estimates_repartition_bar),
     AppLink(get_translation(fr= "Evolution Nécrologiques", en = "Obituary evolution"), get_translation(fr= "Nécrologie", en = "Obituary"), "/obituary", display_obituary,
             plot=rolling_ratio_plot),
+    AppLink(get_translation(fr="Décès / Arrondissements", en="Deaths / Admin Region"),
+            get_translation(fr="Arrondissements", en="Admin Region"), "/admin_region", display_arrondissements),
+
 ])
