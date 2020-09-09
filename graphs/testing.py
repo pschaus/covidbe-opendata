@@ -3,6 +3,8 @@ import plotly.graph_objs as go
 import plotly.express as px
 from flask_babel import gettext
 from plotly.subplots import make_subplots
+import numpy as np
+
 
 from graphs import register_plot_for_embedding
 
@@ -39,6 +41,25 @@ def plot_ration_cases_over_testing():
                    yaxis_title=gettext('#Cases/#Tests'))
     return fig
 
+
+def moving_average(a, n=1) :
+    ret = np.cumsum(a)
+    ret[n:] = ret[n:] - ret[:-n]
+    ret[:n-1] = ret[:n-1]/range(1,7)
+    ret[n-1:] = ret[n - 1:] / n
+    return ret
+
+
+@register_plot_for_embedding("testing_testing_over_cases_smooth")
+def plot_ration_cases_over_testing_smooth():
+    """
+    plot of the ration cases over testing everyday
+    """
+    data_y = moving_average(df_testing.CASES.values, 7) / moving_average(df_testing.TESTS_ALL.values, 7)
+    fig = px.line(x=df_testing.DATE.values[7:], y=data_y[7:], title=gettext("#Cases/#Tests (avg over past 7 days)"))
+    fig.update_layout(xaxis_title=gettext('Day'),
+                      yaxis_title=gettext('#Cases (avg 7 days)/#Tests (avg 7 days)'))
+    return fig
 
 @register_plot_for_embedding("testing_cumulative")
 def plot_cumulated_testing():
