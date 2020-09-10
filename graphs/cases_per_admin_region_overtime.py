@@ -77,9 +77,11 @@ def map_cases_per_habittant_admin_region_overtime():
 def map_cases_per_habittant_lastweek():
     geojson = geopandas.read_file('static/json/admin-units/be-geojson.geojson')
     df_names = pd.DataFrame(geojson.drop(columns='geometry'))
-    cutoff = (pd.to_datetime('today') - pd.Timedelta('7 days')).date()
+    cutoff1 = (pd.to_datetime('today') - pd.Timedelta('9 days')).date()
+    cutoff2 = (pd.to_datetime('today') - pd.Timedelta('3 days')).date()
     df3d = pd.read_csv("static/csv/cases_daily_ins3.csv", encoding='latin1')
-    df3d = df3d[df3d.DATE >= str(cutoff)]
+    df3d = df3d[df3d.DATE >= str(cutoff1)]
+    df3d = df3d[df3d.DATE <= str(cutoff2)]
     df3d = df3d.groupby([df3d.NIS3, df3d.POP]).agg({'CASES': ['sum']}).reset_index()
     df3d.columns = df3d.columns.get_level_values(0)
     df3d['NIS3'] = df3d['NIS3'].astype(int)
@@ -101,8 +103,8 @@ def map_cases_per_habittant_lastweek():
                                height=600,
                                mapbox_style="carto-positron", zoom=6)
     fig.update_geos(fitbounds="locations")
-    fig.layout.coloraxis.colorbar.title = get_translation(fr="Nombres de cas/100K past 7 days",
-                                                          en="Number of cases/100K past 7 days")
+    fig.layout.coloraxis.colorbar.title = get_translation(fr="Nombres de cas/100K past [d-9,d-3] days",
+                                                          en="Number of cases/100K past [d-9,d-3] days")
     fig.layout.coloraxis.colorbar.titleside = "right"
     fig.layout.coloraxis.colorbar.ticks = "outside"
     fig.layout.coloraxis.colorbar.tickmode = "array"
