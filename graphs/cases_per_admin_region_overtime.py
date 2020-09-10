@@ -73,6 +73,45 @@ def map_cases_per_habittant_admin_region_overtime():
     return fig
 
 
+@register_plot_for_embedding("cases_per_habitant_admin_region_inhabitant_lastweek")
+def map_cases_per_habittant_lastweek():
+    geojson = geopandas.read_file('static/json/admin-units/be-geojson.geojson')
+    df_names = pd.DataFrame(geojson.drop(columns='geometry'))
+    cutoff = (pd.to_datetime('today') - pd.Timedelta('7 days')).date()
+    df3d = pd.read_csv("static/csv/cases_daily_ins3.csv", encoding='latin1')
+    df3d = df3d[df3d.DATE >= str(cutoff)]
+    df3d = df3d.groupby([df3d.NIS3, df3d.POP]).agg({'CASES': ['sum']}).reset_index()
+    df3d.columns = df3d.columns.get_level_values(0)
+    df3d['NIS3'] = df3d['NIS3'].astype(int)
+    df3d['CASES_PER_100KHABITANT'] = df3d['CASES'] / df3d['POP'] * 100000
+    df3d = pd.merge(df3d, df_names, left_on='NIS3', right_on='NIS3', how='left')
+
+    fig = px.choropleth_mapbox(df3d, geojson=geojson,
+                               locations="NIS3",
+                               color='CASES_PER_100KHABITANT',
+                               range_color=(0, 100),
+                               # color_continuous_scale="magma_r",
+                               color_continuous_scale=[(0, "green"), (0.14, "green"), (0.15, "yellow"),
+                                                       (0.30, "yellow"), (0.31, "orange"), (0.50, "orange"),
+                                                       (0.51, "red"), (1, "red")],
+                               featureidkey="properties.NIS3",
+                               center={"lat": 50.641111, "lon": 4.668889},
+                               hover_name="CASES_PER_100KHABITANT",
+                               hover_data=["CASES_PER_100KHABITANT", "name"],
+                               height=600,
+                               mapbox_style="carto-positron", zoom=6)
+    fig.update_geos(fitbounds="locations")
+    fig.layout.coloraxis.colorbar.title = get_translation(fr="Nombres de cas/100K past 7 days",
+                                                          en="Number of cases/100K past 7 days")
+    fig.layout.coloraxis.colorbar.titleside = "right"
+    fig.layout.coloraxis.colorbar.ticks = "outside"
+    fig.layout.coloraxis.colorbar.tickmode = "array"
+    fig.update_traces(
+        hovertemplate=gettext(gettext("<b>%{customdata[0]}<br><b>%{customdata[1]}"))
+    )
+    fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=5, b=0))
+    return fig
+
 
 @register_plot_for_embedding("cases_per_admin_region_inhabitant overtime plot")
 def plot_cases_admin_region_overtime():

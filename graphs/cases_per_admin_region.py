@@ -13,6 +13,8 @@ from graphs import register_plot_for_embedding
 df = pd.read_csv("static/csv/be-covid-totcases.csv", dtype={"NIS5": str})
 
 df['NIS3'] = df.apply(lambda x: x['NIS5'][:2], axis=1)
+
+
 df3 = df.groupby([df.NIS3]).agg({'CASES': ['sum'],'POP': ['sum']}).reset_index()
 df3.columns = df3.columns.get_level_values(0)
 df3['NIS3'] = df3['NIS3'].astype(int)

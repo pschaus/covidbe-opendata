@@ -26,6 +26,7 @@ def covid_weekly_ins5():
     df5.columns = df5.columns.get_level_values(0)
 
     df_pop = pd.read_csv("../static/csv/ins_pop.csv", dtype={"NIS5": int})
+    df_pop = df_pop.loc[(df_pop.NIS5 >= 10000) & (df_pop.NIS5 % 1000 == 0) & (df_pop.NIS5 % 10000 != 0)]
 
     df5 = pd.merge(df5, df_pop, left_on='NIS5', right_on='NIS5', how='left')
     df5['CASES_PER_1000HABITANT'] = df5['CASES'] / df5['POP'] * 1000
