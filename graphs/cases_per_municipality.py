@@ -68,6 +68,7 @@ def map_cases_incidence_nis5():
     df5d.columns = df5d.columns.get_level_values(0)
     df5d['NIS5'] = df5d['NIS5'].astype(str)
     df5d['CASES_PER_100KHABITANT'] = df5d['CASES'] / df5d['POP'] * 100000
+    df5d = df5d.round({'CASES_PER_100KHABITANT': 1})
 
     fig = px.choropleth_mapbox(df5d, geojson=geojson,
                                locations="NIS5",
@@ -79,7 +80,7 @@ def map_cases_incidence_nis5():
                                featureidkey="properties.NIS5",
                                center={"lat": 50.641111, "lon": 4.668889},
                                hover_name="CASES_PER_100KHABITANT",
-                               hover_data=["CASES_PER_100KHABITANT", "TX_DESCR_FR"],
+                               hover_data=["CASES_PER_100KHABITANT", "POP", "TX_DESCR_FR"],
                                height=600,
                                mapbox_style="carto-positron", zoom=6)
     fig.update_geos(fitbounds="locations")
@@ -89,7 +90,8 @@ def map_cases_incidence_nis5():
     fig.layout.coloraxis.colorbar.ticks = "outside"
     fig.layout.coloraxis.colorbar.tickmode = "array"
     fig.update_traces(
-        hovertemplate=gettext(gettext("<b>%{customdata[0]}<br><b>%{customdata[1]}"))
+        hovertemplate=gettext(
+            gettext("incidence:<b>%{customdata[0]}<br>pop:<b>%{customdata[1]}<br><b>%{customdata[2]}"))
     )
     fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=5, b=0))
     return fig

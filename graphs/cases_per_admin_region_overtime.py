@@ -88,6 +88,7 @@ def map_cases_incidence_nis3():
     df3d['NIS3'] = df3d['NIS3'].astype(int)
     df3d['CASES_PER_100KHABITANT'] = df3d['CASES'] / df3d['POP'] * 100000
     df3d = pd.merge(df3d, df_names, left_on='NIS3', right_on='NIS3', how='left')
+    df3d = df3d.round({'CASES_PER_100KHABITANT': 1})
 
     fig = px.choropleth_mapbox(df3d, geojson=geojson,
                                locations="NIS3",
@@ -100,17 +101,18 @@ def map_cases_incidence_nis3():
                                featureidkey="properties.NIS3",
                                center={"lat": 50.641111, "lon": 4.668889},
                                hover_name="CASES_PER_100KHABITANT",
-                               hover_data=["CASES_PER_100KHABITANT", "name"],
+                               hover_data=["CASES_PER_100KHABITANT", "POP", "name"],
                                height=600,
                                mapbox_style="carto-positron", zoom=6)
     fig.update_geos(fitbounds="locations")
     fig.layout.coloraxis.colorbar.title = get_translation(fr="Nombres de cas/100K past [d-17,d-4] days",
-                                                          en="Number of cases/100K past [d-17,d-4] days")
+                                                          en="Number of cases/100K past [d-9,d-3] days")
     fig.layout.coloraxis.colorbar.titleside = "right"
     fig.layout.coloraxis.colorbar.ticks = "outside"
     fig.layout.coloraxis.colorbar.tickmode = "array"
     fig.update_traces(
-        hovertemplate=gettext(gettext("<b>%{customdata[0]}<br><b>%{customdata[1]}"))
+        hovertemplate=gettext(
+            gettext("incidence:<b>%{customdata[0]}<br>pop:<b>%{customdata[1]}<br><b>%{customdata[2]}"))
     )
     fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=5, b=0))
     return fig
