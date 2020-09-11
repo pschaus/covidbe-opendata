@@ -99,8 +99,27 @@ def covid_daily_ins3():
     df3 = df3.sort_values(by=['DATE','name'])
     df3.to_csv("../static/csv/cases_daily_ins3.csv")
 
+def covid_daily_ins5():
+    df = pd.read_csv("../static/csv/COVID19BE_CASES_MUNI.csv", parse_dates=['DATE'], encoding='latin1')
+    df = df[['DATE', 'NIS5', 'CASES', 'TX_DESCR_FR']]
+
+    df.dropna(inplace=True)
+    df['NIS5'] = df['NIS5'].astype(int).astype(str)
+
+    df = df.replace({'<5': '1'})
+    df['CASES'] = df['CASES'].astype(int)
+
+    df5 = df.groupby([df.NIS5, df.DATE, df.TX_DESCR_FR]).agg({'CASES': ['sum']}).reset_index()
+    df5.columns = df5.columns.get_level_values(0)
+    df5['NIS5'] = df5['NIS5'].astype(int)
+
+    df_pop = pd.read_csv("../static/csv/ins_pop.csv", dtype={"NIS5": int})
+    df_pop['NIS5'] = df_pop['NIS5'].astype(int)
+    df5 = pd.merge(df5, df_pop, left_on='NIS5', right_on='NIS5', how='left')
+    df5.to_csv("../static/csv/cases_daily_ins5.csv")
 
 
 covid_weekly_ins5()
 covid_weekly_ins3()
 covid_daily_ins3()
+covid_daily_ins5()

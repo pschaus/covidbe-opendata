@@ -5,6 +5,7 @@ import plotly.express as px
 import pandas as pd
 import numpy as np
 from flask_babel import gettext
+from pages import get_translation
 
 from graphs import register_plot_for_embedding
 
@@ -52,6 +53,48 @@ def map_communes_cases_per_week():
     )
     fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=5, b=0))
     return fig
+
+
+@register_plot_for_embedding("map_cases_incidence_nis5")
+def map_cases_incidence_nis5():
+    geojson = geopandas.read_file('static/json/communes/be-geojson.json')
+    cutoff1 = (pd.to_datetime('today') - pd.Timedelta('17 days')).date()
+    cutoff2 = (pd.to_datetime('today') - pd.Timedelta('4 days')).date()
+
+    df5d = pd.read_csv("static/csv/cases_daily_ins5.csv", encoding='latin1')
+    df5d = df5d[df5d.DATE >= str(cutoff1)]
+    df5d = df5d[df5d.DATE <= str(cutoff2)]
+    df5d = df5d.groupby([df5d.NIS5, df5d.POP, df5d.TX_DESCR_FR]).agg({'CASES': ['sum']}).reset_index()
+    df5d.columns = df5d.columns.get_level_values(0)
+    df5d['NIS5'] = df5d['NIS5'].astype(str)
+    df5d['CASES_PER_100KHABITANT'] = df5d['CASES'] / df5d['POP'] * 100000
+
+    fig = px.choropleth_mapbox(df5d, geojson=geojson,
+                               locations="NIS5",
+                               color='CASES_PER_100KHABITANT',
+                               range_color=(0, 100),
+                               color_continuous_scale=[(0, "green"), (0.14, "green"), (0.15, "yellow"),
+                                                       (0.30, "yellow"), (0.31, "orange"), (0.50, "orange"),
+                                                       (0.51, "red"), (1, "red")],
+                               featureidkey="properties.NIS5",
+                               center={"lat": 50.641111, "lon": 4.668889},
+                               hover_name="CASES_PER_100KHABITANT",
+                               hover_data=["CASES_PER_100KHABITANT", "TX_DESCR_FR"],
+                               height=600,
+                               mapbox_style="carto-positron", zoom=6)
+    fig.update_geos(fitbounds="locations")
+    fig.layout.coloraxis.colorbar.title = get_translation(fr="Nombres de cas/100K past [d-17,d-4] days",
+                                                          en="Number of cases/100K past [d-17,d-4] days")
+    fig.layout.coloraxis.colorbar.titleside = "right"
+    fig.layout.coloraxis.colorbar.ticks = "outside"
+    fig.layout.coloraxis.colorbar.tickmode = "array"
+    fig.update_traces(
+        hovertemplate=gettext(gettext("<b>%{customdata[0]}<br><b>%{customdata[1]}"))
+    )
+    fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=5, b=0))
+    return fig
+
+
 
 @register_plot_for_embedding("cases_per_municipality_per_1000inhabitant_per_week")
 def map_communes_per_1000inhabitant_per_week():

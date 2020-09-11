@@ -6,7 +6,7 @@ import dash_gif_component as Gif
 from dash.dependencies import Input, Output, State
 from flask_babel import get_locale, gettext, lazy_gettext
 
-from graphs.cases_per_municipality import map_communes, barplot_communes, map_communes_per_inhabitant, map_communes_cases_per_week, map_communes_per_1000inhabitant_per_week
+from graphs.cases_per_municipality import map_cases_incidence_nis5, map_communes, barplot_communes, map_communes_per_inhabitant, map_communes_cases_per_week, map_communes_per_1000inhabitant_per_week
 from pages import AppLink, get_translation
 
 from pages.sources import *
@@ -20,29 +20,21 @@ def municipalities():
             get_translation(
                 fr="""C'est le nombre de cas testés positifs rapportés par Sciensano. 
                   Le nombre de cas positifs réel peut être (beaucoup) plus important.
-                  Notez que le nombre de tests quotidien augmente également. Voir notre page testing.
+                  Notez que le nombre de tests quotidien varie également. Voir notre page testing.
             """,
                 en="""
             This is the number of positive test cases reported by Sciensano. 
             The number of actual positive cases can be (much) higher.
-            Note that the number of daily tests is also increasing. See our testing page.
+            Note that the number of daily tests varies also. See our testing page.
             """))),
-        html.H3(get_translation(
-            en="""Weekly number of positive case""",
-            fr="""Nombre de cas positifs par semaine""",
-        )),
-        dcc.Graph(id='cases-overview-map-communes-p', figure=map_communes_cases_per_week(), config=dict(locale=str(get_locale()))),
-        html.H3(get_translation(
-            en="""Weekly number of positive case per 1000 inhabitants""",
-            fr="""Nombre de cas positifs par semaine par 1000 habitants""",
-        )),
-        dcc.Graph(id='cases-overview-map-communes-p', figure=map_communes_per_1000inhabitant_per_week(),
-                  config=dict(locale=str(get_locale()))),
-        html.H3(get_translation(
-            en="""Number of positive case per 1000 inhabitants""",
-            fr="""Nombre de cas positifs par 1000 habitants""",
-        )),
-        dcc.Graph(id='cases-overview-map-communes-p', figure=map_communes_per_inhabitant(), config=dict(locale=str(get_locale()))),
+
+        html.H3(gettext(
+            get_translation(en="Incidence: Number of cases/100K inhabitants over the past 14 days",
+                            fr="Incidence: Nombre de cas/100K habitants sur les 14 derniers jours"))),
+        dbc.Row([
+            dbc.Col(dcc.Graph(id='cases-province-map', figure=map_cases_incidence_nis5(),
+                              config=dict(locale=str(get_locale()))), className="col-12"),
+        ]),
         html.H3(get_translation(
             en="""Number of positive case""",
             fr="""Nombre de cas positifs""",
@@ -59,6 +51,11 @@ def municipalities():
             dbc.Col(dcc.Graph(id='cases-overview-histogram', figure=barplot_communes(),
                               style={"display": "none"}, config=dict(locale=str(get_locale()))))
         ]),
+        html.H3(get_translation(
+            en="""Number of positive case per 1000 inhabitants""",
+            fr="""Nombre de cas positifs par 1000 habitants""",
+        )),
+        dcc.Graph(id='cases-overview-map-communes-p', figure=map_communes_per_inhabitant(), config=dict(locale=str(get_locale()))),
         display_source_providers(source_sciensano, source_map_communes, source_pop)
     ]
 
