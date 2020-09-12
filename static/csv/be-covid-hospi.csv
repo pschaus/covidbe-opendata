@@ -1958,7 +1958,7 @@
 1956,2020-09-08,WBR,Wallonia,2,3,0,0,0,1,0,BrabantWallon
 1957,2020-09-08,VWV,Flanders,11,8,0,0,0,3,0,WestVlaanderen
 1958,2020-09-09,VAN,Flanders,14,57,18,8,1,3,7,Antwerpen
-1959,2020-09-09,BRU,Brussels,15,83,22,11,2,3,12,Brussels
+1959,2020-09-09,BRU,Brussels,15,88,23,12,2,3,12,Brussels
 1960,2020-09-09,WHT,Wallonia,14,18,4,4,0,4,3,Hainaut
 1961,2020-09-09,VLI,Flanders,7,6,0,0,0,0,2,Limburg
 1962,2020-09-09,WLG,Wallonia,12,28,8,4,0,2,3,Liège
@@ -1979,3 +1979,14 @@
 1977,2020-09-10,VBR,Flanders,6,8,3,2,0,1,0,VlaamsBrabant
 1978,2020-09-10,WBR,Wallonia,2,1,0,0,0,0,1,BrabantWallon
 1979,2020-09-10,VWV,Flanders,11,13,0,0,0,4,0,WestVlaanderen
+1980,2020-09-11,VAN,Flanders,14,58,18,8,1,3,7,Antwerpen
+1981,2020-09-11,BRU,Brussels,15,88,25,13,3,13,14,Brussels
+1982,2020-09-11,WHT,Wallonia,14,18,4,3,0,2,2,Hainaut
+1983,2020-09-11,VLI,Flanders,7,5,0,0,0,0,1,Limburg
+1984,2020-09-11,WLG,Wallonia,12,28,8,4,0,2,2,Liège
+1985,2020-09-11,WLX,Wallonia,3,1,0,0,0,1,0,Luxembourg
+1986,2020-09-11,WNA,Wallonia,6,3,1,1,0,1,0,Namur
+1987,2020-09-11,VOV,Flanders,14,29,8,1,0,3,3,OostVlaanderen
+1988,2020-09-11,VBR,Flanders,6,9,3,2,0,0,0,VlaamsBrabant
+1989,2020-09-11,WBR,Wallonia,2,0,0,0,0,0,1,BrabantWallon
+1990,2020-09-11,VWV,Flanders,11,15,0,0,0,3,0,WestVlaanderen
