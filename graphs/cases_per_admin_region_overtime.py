@@ -12,7 +12,7 @@ from graphs import register_plot_for_embedding
 
 geojson = geopandas.read_file('static/json/admin-units/be-geojson.geojson')
 df3 = pd.read_csv("static/csv/cases_weekly_ins3.csv",encoding='latin1')
-df3 = df3[df3.WEEK >= 32]
+#df3 = df3[df3.WEEK >= 32]
 
 df3d = pd.read_csv("static/csv/cases_daily_ins3.csv",encoding='latin1')
 
