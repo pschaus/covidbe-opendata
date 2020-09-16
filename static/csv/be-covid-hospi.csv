@@ -2011,7 +2011,7 @@
 2009,2020-09-13,VOV,Flanders,14,29,5,0,0,3,0,OostVlaanderen
 2010,2020-09-13,VBR,Flanders,6,8,3,2,0,1,1,VlaamsBrabant
 2011,2020-09-13,WBR,Wallonia,2,0,0,0,0,0,0,BrabantWallon
-2012,2020-09-13,VWV,Flanders,11,17,1,0,0,0,1,WestVlaanderen
+2012,2020-09-13,VWV,Flanders,11,18,1,0,0,1,1,WestVlaanderen
 2013,2020-09-14,VAN,Flanders,14,78,19,10,1,5,1,Antwerpen
 2014,2020-09-14,BRU,Brussels,15,101,21,11,3,13,10,Brussels
 2015,2020-09-14,WHT,Wallonia,14,30,6,3,0,4,0,Hainaut
@@ -2022,4 +2022,15 @@
 2020,2020-09-14,VOV,Flanders,14,29,8,1,0,1,2,OostVlaanderen
 2021,2020-09-14,VBR,Flanders,6,10,3,2,0,2,0,VlaamsBrabant
 2022,2020-09-14,WBR,Wallonia,2,0,0,0,0,0,0,BrabantWallon
-2023,2020-09-14,VWV,Flanders,11,20,2,0,0,3,0,WestVlaanderen
+2023,2020-09-14,VWV,Flanders,11,21,2,0,0,3,0,WestVlaanderen
+2024,2020-09-15,VAN,Flanders,14,68,18,11,2,4,11,Antwerpen
+2025,2020-09-15,BRU,Brussels,15,101,21,10,3,15,19,Brussels
+2026,2020-09-15,WHT,Wallonia,14,29,5,3,0,4,5,Hainaut
+2027,2020-09-15,VLI,Flanders,7,8,2,0,0,2,0,Limburg
+2028,2020-09-15,WLG,Wallonia,12,37,8,6,0,8,6,Liège
+2029,2020-09-15,WLX,Wallonia,3,5,1,0,0,1,0,Luxembourg
+2030,2020-09-15,WNA,Wallonia,6,4,2,2,0,0,0,Namur
+2031,2020-09-15,VOV,Flanders,14,30,6,1,0,8,6,OostVlaanderen
+2032,2020-09-15,VBR,Flanders,6,12,2,1,0,2,0,VlaamsBrabant
+2033,2020-09-15,WBR,Wallonia,2,2,0,0,0,1,0,BrabantWallon
+2034,2020-09-15,VWV,Flanders,11,19,2,0,0,3,5,WestVlaanderen
