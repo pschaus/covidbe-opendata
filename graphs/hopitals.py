@@ -31,6 +31,7 @@ def df_hospi_death():
 import numpy as np
 
 def moving_average(a, n=1) :
+    a = a.astype(np.float)
     ret = np.cumsum(a)
     ret[n:] = ret[n:] - ret[:-n]
     ret[:n-1] = ret[:n-1]/range(1,n)
