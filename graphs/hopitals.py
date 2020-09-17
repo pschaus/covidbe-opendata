@@ -9,6 +9,36 @@ from graphs import register_plot_for_embedding
 df_hospi = pd.read_csv('static/csv/be-covid-hospi.csv')
 
 
+
+def df_hospi_death():
+    df_hospi = pd.read_csv('static/csv/be-covid-hospi.csv')
+    idx = pd.date_range(df_hospi.DATE.min(), df_hospi.DATE.max())
+    df_hospi = df_hospi.groupby(['DATE']).agg({'TOTAL_IN': 'sum'})
+    df_hospi.index = pd.DatetimeIndex(df_hospi.index)
+    df_hospi = df_hospi.reindex(idx, fill_value=0)
+
+    df_mortality = pd.read_csv('static/csv/be-covid-mortality.csv', keep_default_na=False)
+    idx = pd.date_range(df_mortality.DATE.min(), df_mortality.DATE.max())
+    df_mortality = df_mortality.groupby(['DATE']).agg({'DEATHS': 'sum'})
+    df_mortality.index = pd.DatetimeIndex(df_mortality.index)
+    df_mortality = df_mortality.reindex(idx, fill_value=0)
+
+    df = df_mortality.merge(df_hospi, how='left', left_index=True, right_index=True)
+
+    df = df[df.index >= '2020-03-15']
+    return df
+
+import numpy as np
+
+def moving_average(a, n=1) :
+    ret = np.cumsum(a)
+    ret[n:] = ret[n:] - ret[:-n]
+    ret[:n-1] = ret[:n-1]/range(1,n)
+    ret[n-1:] = ret[n - 1:] / n
+    return ret
+
+df = df_hospi_death()
+
 @register_plot_for_embedding("hospi_bar")
 def bar_hospitalization():
     """
@@ -62,3 +92,17 @@ def bar_hospi_per_case_per_province():
     fig.layout.yaxis.title = ""
     fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=5, b=0))
     return fig
+
+
+@register_plot_for_embedding("hospi_over_death_smooth")
+def hospi_over_death_smooth():
+    data_y = moving_average(df.DEATHS.values, 7) / moving_average(df.TOTAL_IN.values, 7)
+    return px.line(x=df.index, y=data_y, labels={'x': 'date', 'y': 'ratio death/hospi'})
+
+@register_plot_for_embedding("hospi_smooth")
+def hospi_smooth():
+    return px.line(x=df.index,y=moving_average(df.TOTAL_IN.values, 7),labels={'x':'date', 'y':'total hospi'})
+
+@register_plot_for_embedding("death_smooth")
+def death_smooth():
+    return px.line(x=df.index, y=moving_average(df.DEATHS.values, 7), labels={'x': 'date', 'y': 'deaths'})
