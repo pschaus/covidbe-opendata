@@ -18,7 +18,6 @@ import requests
 
 
 
-
 url = "https://statbel.fgov.be/sites/default/files/files/opendata/deathday/DEMO_DEATH_OPEN.zip"
 content = requests.get(url)
 zf = ZipFile(BytesIO(content.content))
@@ -50,6 +49,7 @@ df_week.rename(columns={"MS_NUM_DEATH": "tot","NR_YEAR": "year"},inplace=True)
 
 
 df_week.to_csv("../static/csv/eu_weekly_mortality/be.csv",index=False)
+
 
 
 

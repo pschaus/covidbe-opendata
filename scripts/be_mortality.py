@@ -29,26 +29,26 @@ import altair as alt
 from datetime import datetime
 
 import geopandas
-#
-#
-# url = "https://statbel.fgov.be/sites/default/files/files/opendata/deathday/DEMO_DEATH_OPEN.zip"
-# content = requests.get(url)
-# zf = ZipFile(BytesIO(content.content))
-#
-#
-# # find the first matching csv file in the zip:
-# match = [s for s in zf.namelist() if ".txt" in s][0]
-# # the first line of the file contains a string - that line shall de     ignored, hence skiprows
-#
-# mydateparser = lambda x: datetime.strptime(x, "%d/%m/%Y")
-#
-#
-# df = pandas.read_csv(zf.open(match), parse_dates=['DT_DATE'],date_parser=mydateparser, low_memory=False,sep=";",encoding="latin-1")
-#
-#
-# df = df[df['DT_DATE'] >= '2015-01-01']
-#
-# df.to_csv("../static/csv/mortality_statbel.csv",index=False)
+
+
+url = "https://statbel.fgov.be/sites/default/files/files/opendata/deathday/DEMO_DEATH_OPEN.zip"
+content = requests.get(url)
+zf = ZipFile(BytesIO(content.content))
+
+
+# find the first matching csv file in the zip:
+match = [s for s in zf.namelist() if ".txt" in s][0]
+# the first line of the file contains a string - that line shall de     ignored, hence skiprows
+
+mydateparser = lambda x: datetime.strptime(x, "%d/%m/%Y")
+
+
+df = pandas.read_csv(zf.open(match), parse_dates=['DT_DATE'],date_parser=mydateparser, low_memory=False,sep=";",encoding="latin-1")
+
+
+df = df[df['DT_DATE'] >= '2015-01-01']
+
+df.to_csv("../static/csv/mortality_statbel.csv",index=False)
 
 
 
