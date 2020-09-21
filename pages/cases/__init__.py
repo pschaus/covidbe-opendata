@@ -19,6 +19,9 @@ cases_menu = AppMenu(lazy_gettext("Cases"), "/cases", [
     AppLink(get_translation(en="Cases per admin region", fr="Cas par arrondissement",lazy=True),
             get_translation(en="Admin Region", fr="Arrondissement",lazy=True), "/admin_region", display_admin),
     AppLink(lazy_gettext("Epidemic Indicators"), lazy_gettext("Epidemic Indicators"), "/Re", display_Re, callback_fn=callback_Re),
+    AppLink(get_translation(en="Provinces",fr="Provinces", lazy=True),
+            get_translation(en="Provinces",fr="Provinces", lazy=True),
+            "/provinces", display_provinces),
     AppLink(get_translation(en="Corrected 1st wave",fr="Correction 1ière vague", lazy=True),
             get_translation(en="Corrected 1st wave",fr="Correction 1ière vague", lazy=True),
             "/first_wave", display_cases_correction)

@@ -14,6 +14,81 @@ with open('static/json/provinces/be-provinces-geojson.json') as json_file:
 range_min = df_prov_tot.CASES_PER_THOUSAND.min()
 range_max = df_prov_tot.CASES_PER_THOUSAND.max()
 
+def get_translation(fr="", en=""):
+    return en
+
+df = pd.read_csv('static/csv/be-covid-provinces-all.csv')
+df['POSITIVE_RATE'] = df['CASES']/df['TESTS_ALL']
+df['TESTING_RATE'] = df['TESTS_ALL']/df['POP']
+
+cutoff1 = (pd.to_datetime('today') - pd.Timedelta('17 days')).date()
+cutoff2 = (pd.to_datetime('today') - pd.Timedelta('4 days')).date()
+
+df3d = df[df.DATE >= str(cutoff1)]
+df3d = df3d[df3d.DATE <= str(cutoff2)]
+df3d = df3d.groupby([df3d.PROVINCE, df3d.POP,df3d.PROV]).agg({'CASES': ['sum']}).reset_index()
+df3d.columns = df3d.columns.get_level_values(0)
+df3d['CASES_PER_100KHABITANT'] = df3d['CASES'] / df3d['POP'] * 100000
+df3d = df3d.round({'CASES_PER_100KHABITANT': 1})
+
+
+def map_cases_incidence_provinces():
+    fig = px.choropleth_mapbox(df3d, geojson=geojson_provinces,
+                               locations="PROV",
+                               color='CASES_PER_100KHABITANT',
+                               range_color=(0, 150),
+                               #color_continuous_scale="magma_r",
+                               color_continuous_scale=[(0, "green"), (15/150, "green"), (15/150, "yellow"),
+                                                       (30/150, "yellow"), (30/150, "orange"), (50/150, "orange"),
+                                                       (50/150, "red"), (100/150, "red"),(100/150, "black"),(150/150, "black")],
+                               featureidkey="properties.proviso",
+                               center={"lat": 50.641111, "lon": 4.668889},
+                               hover_name="CASES_PER_100KHABITANT",
+                               hover_data=["CASES_PER_100KHABITANT", "POP", "PROVINCE"],
+                               height=600,
+                               mapbox_style="carto-positron", zoom=6)
+    fig.update_geos(fitbounds="locations")
+    fig.layout.coloraxis.colorbar.title = get_translation(fr="Nombres de cas/100K past [d-17,d-4] days",
+                                                          en="Number of cases/100K past [d-17,d-4] days")
+    fig.layout.coloraxis.colorbar.titleside = "right"
+    fig.layout.coloraxis.colorbar.ticks = "outside"
+    fig.layout.coloraxis.colorbar.tickmode = "array"
+    fig.update_traces(
+        hovertemplate=gettext(
+            gettext("incidence:<b>%{customdata[0]}<br>pop:<b>%{customdata[1]}<br><b>%{customdata[2]}"))
+    )
+    fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=5, b=0))
+    return fig
+
+
+
+
+
+def scatter_incidence_provinces():
+    df3ds = df3d.sort_values(by='CASES_PER_100KHABITANT', axis=0)
+    fig = px.scatter(y=df3ds.PROVINCE, x=df3ds.CASES_PER_100KHABITANT,title="Incidence rate [d-17,d-4]")
+    def add_line(x,col):
+        fig.add_shape(
+                    type="line",
+                    x0=x,
+                    x1 =x,
+                    y0 = 0,
+                    y1 = 10,
+                    line = {
+                     "color":col,
+                     "width":1,
+                    }
+                )
+    add_line(0,'green')
+    add_line(15,'yellow')
+    add_line(30,'orange')
+    add_line(50,'red')
+    add_line(100,'black')
+    return fig
+
+
+
+
 
 @register_plot_for_embedding("cases_per_province_map")
 def map_provinces():

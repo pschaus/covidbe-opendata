@@ -106,7 +106,7 @@ def map_cases_incidence_nis3():
                                mapbox_style="carto-positron", zoom=6)
     fig.update_geos(fitbounds="locations")
     fig.layout.coloraxis.colorbar.title = get_translation(fr="Nombres de cas/100K past [d-17,d-4] days",
-                                                          en="Number of cases/100K past [d-9,d-3] days")
+                                                          en="Number of cases/100K past [d-17,d-4] days")
     fig.layout.coloraxis.colorbar.titleside = "right"
     fig.layout.coloraxis.colorbar.ticks = "outside"
     fig.layout.coloraxis.colorbar.tickmode = "array"
