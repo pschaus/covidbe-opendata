@@ -1,6 +1,8 @@
 import json
 import pandas as pd
 import plotly.express as px
+import plotly.graph_objs as go
+
 
 # ---------plot of cases per province------------------------
 from flask_babel import gettext
@@ -21,6 +23,7 @@ df = pd.read_csv('static/csv/be-covid-provinces-all.csv')
 df['POSITIVE_RATE'] = df['CASES']/df['TESTS_ALL']
 df['TESTING_RATE'] = df['TESTS_ALL']/df['POP']
 
+
 cutoff1 = (pd.to_datetime('today') - pd.Timedelta('17 days')).date()
 cutoff2 = (pd.to_datetime('today') - pd.Timedelta('4 days')).date()
 
@@ -31,6 +34,53 @@ df3d.columns = df3d.columns.get_level_values(0)
 df3d['CASES_PER_100KHABITANT'] = df3d['CASES'] / df3d['POP'] * 100000
 df3d = df3d.round({'CASES_PER_100KHABITANT': 1})
 
+def bar_testing_provinces():
+    return px.bar(df, x="DATE", y="CASES", color="PROVINCE", barmode="stack")
+
+def bar_cases_provinces():
+    return px.bar(df, x="DATE", y="CASES", color="PROVINCE", barmode="stack")
+
+
+import numpy as np
+
+def plot(df,column_name,title):
+    def moving_average(a, n=1) :
+        a = a.astype(np.float)
+        ret = np.cumsum(a)
+        ret[n:] = ret[n:] - ret[:-n]
+        ret[:n-1] = ret[:n-1]/range(1,n)
+        ret[n-1:] = ret[n - 1:] / n
+        return ret
+
+
+    bars = []
+    provinces = sorted(df.PROVINCE.unique())
+    for p in provinces:
+        df_p = df.loc[df['PROVINCE'] == p]
+        bars.append(go.Scatter(
+            x=df_p.DATE,
+            y=moving_average(df_p[column_name].values,7),
+            name=p
+        ))
+
+
+    fig = go.Figure(data=bars,layout=go.Layout(barmode='group'),)
+    fig.update_layout(template="plotly_white", height=500,margin=dict(l=0, r=0, t=30, b=0), title=title)
+    return fig
+
+
+
+def avg_testing_provinces():
+    return plot(df,'TESTS_ALL',"Testing avg 7 days")
+
+def avg_cases_provinces():
+    return plot(df,'CASES',"Cases avg 7 days")
+
+def avg_positive_rate_provinces():
+    return plot(df,'POSITIVE_RATE',"Positive rate avg 7 days")
+
+def avg_testing_per_habbitant_provinces():
+    return plot(df,'TESTING_RATE',"TESTING rate = number of tests/inhabitant (avg 7 days)")
 
 def map_cases_incidence_provinces():
     fig = px.choropleth_mapbox(df3d, geojson=geojson_provinces,

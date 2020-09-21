@@ -7,7 +7,16 @@ from flask_babel import get_locale, gettext
 from pages import AppLink, get_translation
 
 
-from graphs.cases_per_province import map_provinces, barplot_provinces_cases,map_cases_incidence_provinces,scatter_incidence_provinces
+from graphs.cases_per_province import map_provinces, \
+    barplot_provinces_cases,\
+    map_cases_incidence_provinces,\
+    scatter_incidence_provinces,\
+    bar_testing_provinces,\
+    bar_cases_provinces,\
+    avg_cases_provinces,\
+    avg_positive_rate_provinces,\
+    avg_testing_per_habbitant_provinces,\
+    avg_testing_provinces
 from pages.sources import *
 
 
@@ -22,6 +31,42 @@ def display_provinces():
         ]),
         dbc.Row([
             dbc.Col(dcc.Graph(id='cases-province-map', figure=scatter_incidence_provinces(),
+                              config=dict(locale=str(get_locale()))), className="col-12"),
+        ]),
+        html.H2(gettext(
+            get_translation(en="Number of tests each day",
+                            fr="Nombre de tests chaque jour"))),
+        dbc.Row([
+            dbc.Col(dcc.Graph(id='cases-province-map', figure=bar_cases_provinces(),
+                              config=dict(locale=str(get_locale()))), className="col-12"),
+        ]),
+        dbc.Row([
+            dbc.Col(dcc.Graph(id='cases-province-map', figure=avg_cases_provinces(),
+                              config=dict(locale=str(get_locale()))), className="col-12"),
+        ]),
+        html.H2(gettext(
+            get_translation(en="Number of cases each day",
+                            fr="Nombre de cas chaque jour"))),
+        dbc.Row([
+            dbc.Col(dcc.Graph(id='cases-province-map', figure=bar_testing_provinces(),
+                              config=dict(locale=str(get_locale()))), className="col-12"),
+        ]),
+        dbc.Row([
+            dbc.Col(dcc.Graph(id='cases-province-map', figure=avg_testing_provinces(),
+                              config=dict(locale=str(get_locale()))), className="col-12"),
+        ]),
+        html.H2(gettext(
+            get_translation(fr="Taux de positivité (#cas/#tests)",
+                            en="Positive rate (#cases/#tests)"))),
+        dbc.Row([
+            dbc.Col(dcc.Graph(id='Positive rate (#cases/#tests)', figure=avg_positive_rate_provinces(),
+                              config=dict(locale=str(get_locale()))), className="col-12"),
+        ]),
+        html.H2(gettext(
+            get_translation(fr="Nombre de tests / habitants",
+                            en="Number of tests / inhabitants"))),
+        dbc.Row([
+            dbc.Col(dcc.Graph(id='Number of tests / inhabitants', figure=avg_testing_per_habbitant_provinces(),
                               config=dict(locale=str(get_locale()))), className="col-12"),
         ]),
         html.H2(gettext("Number of cases since beginning / 1000 inhabitants")),
