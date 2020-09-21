@@ -2,7 +2,7 @@ import json
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objs as go
-
+from pages import model_warning, get_translation
 
 # ---------plot of cases per province------------------------
 from flask_babel import gettext
@@ -16,8 +16,7 @@ with open('static/json/provinces/be-provinces-geojson.json') as json_file:
 range_min = df_prov_tot.CASES_PER_THOUSAND.min()
 range_max = df_prov_tot.CASES_PER_THOUSAND.max()
 
-def get_translation(fr="", en=""):
-    return en
+
 
 df = pd.read_csv('static/csv/be-covid-provinces-all.csv')
 df['POSITIVE_RATE'] = df['CASES']/df['TESTS_ALL']
