@@ -34,8 +34,8 @@ def display_provinces():
                               config=dict(locale=str(get_locale()))), className="col-12"),
         ]),
         html.H2(gettext(
-            get_translation(en="Number of tests each day",
-                            fr="Nombre de tests chaque jour"))),
+            get_translation(en="Number of cases each day",
+                            fr="Nombre de cas chaque jour"))),
         dbc.Row([
             dbc.Col(dcc.Graph(id='cases-province-map', figure=bar_cases_provinces(),
                               config=dict(locale=str(get_locale()))), className="col-12"),
@@ -45,8 +45,8 @@ def display_provinces():
                               config=dict(locale=str(get_locale()))), className="col-12"),
         ]),
         html.H2(gettext(
-            get_translation(en="Number of cases each day",
-                            fr="Nombre de cas chaque jour"))),
+            get_translation(en="Number of tests each day",
+                            fr="Nombre de tests chaque jour"))),
         dbc.Row([
             dbc.Col(dcc.Graph(id='cases-province-map', figure=bar_testing_provinces(),
                               config=dict(locale=str(get_locale()))), className="col-12"),
