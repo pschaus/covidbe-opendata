@@ -13,7 +13,7 @@ df_hospi = pd.read_csv('static/csv/be-covid-hospi.csv')
 def df_hospi_death():
     df_hospi = pd.read_csv('static/csv/be-covid-hospi.csv')
     idx = pd.date_range(df_hospi.DATE.min(), df_hospi.DATE.max())
-    df_hospi = df_hospi.groupby(['DATE']).agg({'TOTAL_IN': 'sum'})
+    df_hospi = df_hospi.groupby(['DATE']).agg({'TOTAL_IN': 'sum','TOTAL_IN_ICU': 'sum'})
     df_hospi.index = pd.DatetimeIndex(df_hospi.index)
     df_hospi = df_hospi.reindex(idx, fill_value=0)
 
@@ -100,6 +100,12 @@ def bar_hospi_per_case_per_province():
 def hospi_over_death_smooth():
     data_y = moving_average(df.DEATHS.values, 7) / moving_average(df.TOTAL_IN.values, 7)
     return px.line(x=df.index, y=data_y, labels={'x': 'date', 'y': 'ratio death/hospi'})
+
+
+@register_plot_for_embedding("hospi_over_death_smooth")
+def icu_over_hospi():
+    data_y = df.TOTAL_IN_ICU / df.TOTAL_IN
+    return px.line(x=df.index, y=data_y, labels={'x': 'date', 'y': 'ratio ICU/Hospi'})
 
 @register_plot_for_embedding("hospi_smooth")
 def hospi_smooth():
