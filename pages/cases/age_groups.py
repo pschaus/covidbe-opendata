@@ -4,7 +4,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 from flask_babel import get_locale, gettext
 
-from graphs.cases_age_groups import age_groups_cases, age_groups_cases_pie, age_groups_pop_active_cases, age_groups_pop_active_hypothetical
+from graphs.cases_age_groups import age_groups_cases, age_groups_cases_pie, age_groups_pop_active_cases, age_groups_pop_active_hypothetical, average_age_cases
 from pages.sources import display_source_providers, source_sciensano
 from pages import get_translation
 
@@ -34,7 +34,11 @@ def display_age_groups():
                               figure=age_groups_pop_active_cases(),
                               config=dict(locale=str(get_locale())))),
         ]),
-
+        dbc.Row([
+            dbc.Col(dcc.Graph(id='age-group-cases',
+                              figure=average_age_cases(),
+                              config=dict(locale=str(get_locale())))),
+        ]),
         # html.P(gettext(
         #     get_translation(
         #         fr="""Hypothetical""",

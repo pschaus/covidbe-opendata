@@ -13,6 +13,29 @@ age_group_dict = {'0-9': '<60', '10-19': '<60', '20-29': '<60', '30-39': '<60', 
                   '60-69': '>=60', '70-79': '>=60', '80-89': '>=60', '90+': '>=60'}
 df_prov_timeseries['pop_active'] = df_prov_timeseries['AGEGROUP'].map(age_group_dict)
 
+
+def df_avg_age_cases():
+    df_prov_timeseries = pd.read_csv('static/csv/be-covid-provinces.csv')
+    age_group_weight = {'0-9': 5, '10-19': 15, '20-29': 25, '30-39': 35, '40-49': 45, '50-59': 55,
+                        '60-69': 65, '70-79': 75, '80-89': 85, '90+': 90}
+
+    df_prov_timeseries['pop_active'] = df_prov_timeseries['AGEGROUP'].map(age_group_dict)
+    df_prov_timeseries['weight'] = df_prov_timeseries['AGEGROUP'].map(age_group_weight)
+    df_prov_timeseries['weightedcases'] = df_prov_timeseries['weight'] * df_prov_timeseries['CASES']
+    df_prov = df_prov_timeseries.groupby([df_prov_timeseries.DATE]).agg(
+        {'CASES': ['sum'], 'weightedcases': ['sum']}).reset_index()
+    df_prov.columns = df_prov.columns.get_level_values(0)
+    df_prov['avg_age'] = df_prov['weightedcases'] / df_prov['CASES']
+    return df_prov
+
+
+
+df_avg_age = df_avg_age_cases()
+
+
+
+
+
 @register_plot_for_embedding("cases_age_groups")
 def age_groups_cases():
     """
@@ -63,6 +86,12 @@ def age_groups_pop_active_cases():
                                        margin=dict(l=0, r=0, t=30, b=0), title=gettext("Cases per day per age group"))
     return fig_age_groups_cases
 
+
+def average_age_cases():
+    fig = px.line(df_avg_age, x='DATE', y='avg_age')
+    fig.update_layout(template="plotly_white", height=500,
+                                       margin=dict(l=0, r=0, t=30, b=0), title=gettext("Average age of cases"))
+    return fig
 
 
 @register_plot_for_embedding("cases_age_groups_pop_active_hypothetical")

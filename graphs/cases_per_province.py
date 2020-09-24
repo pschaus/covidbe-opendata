@@ -33,6 +33,24 @@ df3d.columns = df3d.columns.get_level_values(0)
 df3d['CASES_PER_100KHABITANT'] = df3d['CASES'] / df3d['POP'] * 100000
 df3d = df3d.round({'CASES_PER_100KHABITANT': 1})
 
+
+def df_prov_avg_age_cases():
+    df_prov_timeseries = pd.read_csv('static/csv/be-covid-provinces.csv')
+    age_group_weight = {'0-9': 5, '10-19': 15, '20-29': 25, '30-39': 35, '40-49': 45, '50-59': 55,
+                        '60-69': 65, '70-79': 75, '80-89': 85, '90+': 90}
+
+    df_prov_timeseries['weight'] = df_prov_timeseries['AGEGROUP'].map(age_group_weight)
+    df_prov_timeseries['weightedcases'] = df_prov_timeseries['weight'] * df_prov_timeseries['CASES']
+    df_prov = df_prov_timeseries.groupby(
+        [df_prov_timeseries.DATE, df_prov_timeseries.PROVINCE, df_prov_timeseries.PROVINCE_NAME]).agg(
+        {'CASES': ['sum'], 'weightedcases': ['sum']}).reset_index()
+    df_prov.columns = df_prov.columns.get_level_values(0)
+    df_prov['avg_age'] = df_prov['weightedcases'] / df_prov['CASES']
+    df_prov['PROVINCE'] = df_prov['PROVINCE_NAME']
+    return df_prov
+
+df_prov = df_prov_avg_age_cases()
+
 def bar_testing_provinces():
     return px.bar(df, x="DATE", y="CASES", color="PROVINCE", barmode="stack")
 
@@ -68,6 +86,8 @@ def plot(df,column_name,title):
     return fig
 
 
+def avg_age_cases_provinces():
+    return plot(df_prov,'avg_age','average age of cases (avg 7 days)')
 
 def avg_testing_provinces():
     return plot(df,'TESTS_ALL',"Testing avg 7 days")
