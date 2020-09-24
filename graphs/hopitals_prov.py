@@ -23,7 +23,7 @@ dates = df.groupby([df.PROVINCE,df.PROV]).agg({'DATE': ['max']}).reset_index()
 dates.columns = dates.columns.get_level_values(0)
 dfl = dates.merge(df, how='left', left_on=['DATE','PROV','PROVINCE'],right_on=['DATE','PROV','PROVINCE'])
 dfl['HOSPI_PER_100000'] = (dfl.TOTAL_IN/dfl.POP)*100000
-
+dfl = dfl.round({'HOSPI_PER_100000': 2})
 
 def map_hospi(column,title):
     fig = px.choropleth_mapbox(dfl, geojson=geojson_provinces,
