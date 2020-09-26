@@ -13,7 +13,7 @@ df_hospi = pd.read_csv('static/csv/be-covid-hospi.csv')
 def df_hospi_death():
     df_hospi = pd.read_csv('static/csv/be-covid-hospi.csv')
     idx = pd.date_range(df_hospi.DATE.min(), df_hospi.DATE.max())
-    df_hospi = df_hospi.groupby(['DATE']).agg({'TOTAL_IN': 'sum','TOTAL_IN_ICU': 'sum'})
+    df_hospi = df_hospi.groupby(['DATE']).agg({'TOTAL_IN': 'sum','TOTAL_IN_ICU': 'sum','NEW_IN': 'sum'})
     df_hospi.index = pd.DatetimeIndex(df_hospi.index)
     df_hospi = df_hospi.reindex(idx, fill_value=0)
 
@@ -109,7 +109,11 @@ def icu_over_hospi():
 
 @register_plot_for_embedding("hospi_smooth")
 def hospi_smooth():
-    return px.line(x=df.index,y=moving_average(df.TOTAL_IN.values, 7),labels={'x':'date', 'y':'total hospi'})
+    return px.line(x=df.index,y=moving_average(df.TOTAL_IN.values, 7),labels={'x':'date', 'y':'total hospitals'})
+
+@register_plot_for_embedding("newin_smooth")
+def newin_smooth():
+    return px.line(x=df.index,y=moving_average(df.NEW_IN.values, 7),labels={'x':'date', 'y':'daily new in hospitals'})
 
 @register_plot_for_embedding("death_smooth")
 def death_smooth():

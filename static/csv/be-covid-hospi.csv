@@ -2123,7 +2123,7 @@
 2121,2020-09-23,WBR,Wallonia,2,4,1,0,0,1,1,BrabantWallon
 2122,2020-09-23,VWV,Flanders,11,39,7,3,0,7,2,WestVlaanderen
 2123,2020-09-24,VAN,Flanders,14,104,16,7,2,12,6,Antwerpen
-2124,2020-09-24,BRU,Brussels,15,182,37,26,6,25,12,Brussels
+2124,2020-09-24,BRU,Brussels,15,182,37,26,6,24,12,Brussels
 2125,2020-09-24,WHT,Wallonia,14,72,8,4,0,7,5,Hainaut
 2126,2020-09-24,VLI,Flanders,7,17,6,0,0,3,0,Limburg
 2127,2020-09-24,WLG,Wallonia,12,74,13,9,1,9,3,Liège
@@ -2133,3 +2133,14 @@
 2131,2020-09-24,VBR,Flanders,6,30,3,2,0,7,1,VlaamsBrabant
 2132,2020-09-24,WBR,Wallonia,2,4,1,0,0,0,0,BrabantWallon
 2133,2020-09-24,VWV,Flanders,11,38,7,3,0,4,8,WestVlaanderen
+2134,2020-09-25,VAN,Flanders,14,108,14,6,1,11,9,Antwerpen
+2135,2020-09-25,BRU,Brussels,15,178,41,23,5,20,24,Brussels
+2136,2020-09-25,WHT,Wallonia,14,77,8,4,0,7,7,Hainaut
+2137,2020-09-25,VLI,Flanders,7,17,6,0,0,2,2,Limburg
+2138,2020-09-25,WLG,Wallonia,12,81,15,11,1,12,8,Liège
+2139,2020-09-25,WLX,Wallonia,3,7,0,0,0,0,0,Luxembourg
+2140,2020-09-25,WNA,Wallonia,6,7,2,0,1,1,2,Namur
+2141,2020-09-25,VOV,Flanders,14,69,11,7,0,6,3,OostVlaanderen
+2142,2020-09-25,VBR,Flanders,6,29,3,2,0,5,2,VlaamsBrabant
+2143,2020-09-25,WBR,Wallonia,2,6,1,0,0,2,0,BrabantWallon
+2144,2020-09-25,VWV,Flanders,11,41,8,2,0,6,4,WestVlaanderen
