@@ -10,6 +10,14 @@ from graphs import register_plot_for_embedding
 
 df_testing = pd.read_csv('static/csv/be-covid-testing.csv')
 
+def moving_average(a, n=1) :
+    a = a.astype(np.float)
+    ret = np.cumsum(a)
+    ret[n:] = ret[n:] - ret[:-n]
+    ret[:n-1] = ret[:n-1]/range(1,n)
+    ret[n-1:] = ret[n - 1:] / n
+    return ret
+
 
 @register_plot_for_embedding("testing_bar_plot")
 def bart_plot_cases_testing():
@@ -21,7 +29,11 @@ def bart_plot_cases_testing():
     test_bar = go.Bar(x=df_testing.DATE, y=df_testing.TESTS_ALL, name=gettext('#Tests'))
     case_bar = go.Bar(x=df_testing.DATE, y=df_testing.CASES, name=gettext('#Cases'))
 
-    fig_testing = go.Figure(data=[test_bar, case_bar], layout=go.Layout(barmode='group'), )
+    line_test = go.Scatter(x=df_testing.DATE, y=moving_average(df_testing.TESTS_ALL.values, 7),
+                           name=("tests avg 7 days"))
+    case_test = go.Scatter(x=df_testing.DATE, y=moving_average(df_testing.CASES.values, 7), name=("cases avg 7 days"))
+
+    fig_testing = go.Figure(data=[test_bar, case_bar, line_test, case_test], layout=go.Layout(barmode='group'), )
     fig_testing.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0),
                               title=gettext("Number of Tests and Cases each day"))
 

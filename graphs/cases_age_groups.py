@@ -6,12 +6,22 @@ from plotly.subplots import make_subplots
 
 from graphs import register_plot_for_embedding
 from pages import get_translation
-
+import numpy as np
 df_prov_timeseries = pd.read_csv('static/csv/be-covid-provinces.csv')
 
 age_group_dict = {'0-9': '<60', '10-19': '<60', '20-29': '<60', '30-39': '<60', '40-49': '<60', '50-59': '<60',
                   '60-69': '>=60', '70-79': '>=60', '80-89': '>=60', '90+': '>=60'}
 df_prov_timeseries['pop_active'] = df_prov_timeseries['AGEGROUP'].map(age_group_dict)
+
+
+def moving_average(a, n=1) :
+    a = a.astype(np.float)
+    ret = np.cumsum(a)
+    ret[n:] = ret[n:] - ret[:-n]
+    ret[:n-1] = ret[:n-1]/range(1,n)
+    ret[n-1:] = ret[n - 1:] / n
+    return ret
+
 
 
 def df_avg_age_cases():
@@ -81,9 +91,12 @@ def age_groups_pop_active_cases():
             name=ag,
             marker_color=px.colors.qualitative.G10[idx2]
         ))
+        bars_age_groups.append(
+            go.Scatter(x=df_ag.index, y=moving_average(df_ag['CASES'].values, 7), name=(ag + " avg 7 days")))
     fig_age_groups_cases = go.Figure(data=bars_age_groups)
     fig_age_groups_cases.update_layout(template="plotly_white", height=500,
                                        margin=dict(l=0, r=0, t=30, b=0), title=gettext("Cases per day per age group"))
+
     return fig_age_groups_cases
 
 
@@ -119,6 +132,8 @@ def age_groups_pop_active_hypothetical():
             name=ag,
             marker_color=px.colors.qualitative.G10[idx2]
         ))
+
+
     fig_age_groups_cases = go.Figure(data=bars_age_groups)
     fig_age_groups_cases.update_layout(template="plotly_white", height=500,
                                        margin=dict(l=0, r=0, t=30, b=0), title=get_translation(fr="Nombre de case par groupe d'age (corrigé, voir hypothèses)",en="Number of cases per age group  (corrected, see hypothesises)"))
