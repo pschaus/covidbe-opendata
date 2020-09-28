@@ -102,14 +102,15 @@ def avg_testing_per_habbitant_provinces():
     return plot(df,'TESTING_RATE',"TESTING rate = number of tests/inhabitant (avg 7 days)")
 
 def map_cases_incidence_provinces():
+    div = 250
     fig = px.choropleth_mapbox(df3d, geojson=geojson_provinces,
                                locations="PROV",
                                color='CASES_PER_100KHABITANT',
-                               range_color=(0, 150),
-                               #color_continuous_scale="magma_r",
-                               color_continuous_scale=[(0, "green"), (15/150, "green"), (15/150, "yellow"),
-                                                       (30/150, "yellow"), (30/150, "orange"), (50/150, "orange"),
-                                                       (50/150, "red"), (100/150, "red"),(100/150, "black"),(150/150, "black")],
+                               range_color=(0, 300),
+                               color_continuous_scale="magma_r",
+                               #color_continuous_scale=[(0, "green"), (15/150, "green"), (15/150, "yellow"),
+                               #                        (30/150, "yellow"), (30/150, "orange"), (50/150, "orange"),
+                               #                        (50/150, "red"), (100/150, "red"),(100/150, "black"),(150/150, "black")],
                                featureidkey="properties.proviso",
                                center={"lat": 50.641111, "lon": 4.668889},
                                hover_name="CASES_PER_100KHABITANT",
