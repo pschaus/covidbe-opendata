@@ -54,13 +54,6 @@ def plot_ration_cases_over_testing():
     return fig
 
 
-def moving_average(a, n=1) :
-    ret = np.cumsum(a)
-    ret[n:] = ret[n:] - ret[:-n]
-    ret[:n-1] = ret[:n-1]/range(1,7)
-    ret[n-1:] = ret[n - 1:] / n
-    return ret
-
 
 @register_plot_for_embedding("testing_testing_over_cases_smooth")
 def plot_ration_cases_over_testing_smooth():
