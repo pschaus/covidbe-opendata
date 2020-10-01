@@ -4,7 +4,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 from flask_babel import get_locale, gettext
 
-from graphs.hopitals import bar_hospitalization, hospi_over_death_smooth,hospi_smooth,death_smooth,icu_over_hospi,newin_smooth
+from graphs.hopitals import bar_hospitalization, hospi_over_death_smooth,hospi_smooth,death_smooth,icu_over_hospi,newin_smooth,death_over_icu_smooth
 from pages.sources import display_source_providers, source_sciensano
 
 
@@ -40,7 +40,13 @@ def display_hospitals():
                               figure=icu_over_hospi(),
                               config=dict(locale=str(get_locale())))),
         ]),
-        html.H2(gettext("Total Deaths/ Total Hospitalization (Avg over 7 past days)")),
+        html.H2(gettext("Deaths/ Total ICU (Avg over 7 past days)")),
+        dbc.Row([
+            dbc.Col(dcc.Graph(id='hospitalization-be',
+                              figure=death_over_icu_smooth(),
+                              config=dict(locale=str(get_locale())))),
+        ]),
+        html.H2(gettext("Deaths/ Total Hospitalization (Avg over 7 past days)")),
         dbc.Row([
             dbc.Col(dcc.Graph(id='hospitalization-be',
                               figure=hospi_over_death_smooth(),

@@ -107,6 +107,10 @@ def icu_over_hospi():
     data_y = df.TOTAL_IN_ICU / df.TOTAL_IN
     return px.line(x=df.index, y=data_y, labels={'x': 'date', 'y': 'ratio ICU/Hospi'})
 
+@register_plot_for_embedding("deathovericusmooth")
+def death_over_icu_smooth():
+    return px.line(x=df.index,y=moving_average(df.DEATHS.values, 7)/moving_average(df.TOTAL_IN_ICU.values, 7),labels={'x':'date', 'y':'deaths/ICU'})
+
 @register_plot_for_embedding("hospi_smooth")
 def hospi_smooth():
     return px.line(x=df.index,y=moving_average(df.TOTAL_IN.values, 7),labels={'x':'date', 'y':'total hospitals'})
