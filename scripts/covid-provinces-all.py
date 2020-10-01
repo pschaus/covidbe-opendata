@@ -49,7 +49,7 @@ df = df_case_prov.merge(df_testing_prov, how='left', left_on=['DATE','PROVINCE_N
 url="https://epistat.sciensano.be/Data/COVID19BE_HOSP.csv"
 s=requests.get(url).content
 df_hospi=pd.read_csv(io.StringIO(s.decode('utf8'))) # last line is NaN
-df = df[['DATE', 'PROVINCE','TESTS_ALL','CASES']]
+df = df[['DATE', 'PROVINCE','TESTS_ALL','TESTS_ALL_POS','CASES']]
 df = df[df['DATE'] >= '2020-03-15']
 df = df.merge(df_hospi, how='left', on=['DATE','PROVINCE'])
 df['PROV']= df['PROVINCE'].map(prov_codes)

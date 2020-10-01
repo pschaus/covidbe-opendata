@@ -10,7 +10,7 @@ url="https://epistat.sciensano.be/Data/COVID19BE_tests.csv"
 s=requests.get(url).content
 df_testing=pd.read_csv(io.StringIO(s.decode('latin-1')),index_col = 0) # last line is NaN
 
-df_testing = df_testing.groupby(['DATE']).agg({'TESTS_ALL': 'sum'})
+df_testing = df_testing.groupby(['DATE']).agg({'TESTS_ALL': 'sum','TESTS_ALL_POS': 'sum'})
 
 #df_testing.index = pd.to_datetime(df_testing.index)
 

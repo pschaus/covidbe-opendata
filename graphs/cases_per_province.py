@@ -122,8 +122,11 @@ def avg_testing_provinces():
 def avg_cases_provinces():
     return plot(df,'CASES',"Cases avg 7 days")
 
+def avg_positive_rate_cases_provinces():
+    return plot_ratio(df, 'CASES','TESTS_ALL', "Positive rate (positive cases/ all tests) avg 7 days")
+
 def avg_positive_rate_provinces():
-    return plot_ratio(df, 'CASES','TESTS_ALL', "Positive rate avg 7 days")
+    return plot_ratio(df, 'TESTS_ALL_POS','TESTS_ALL', "Positive rate (positive tests/ all tests) avg 7 days")
 
 def avg_testing_per_habbitant_provinces():
     return plot(df,'TESTING_RATE',"TESTING rate = number of tests/inhabitant (avg 7 days)")

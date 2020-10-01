@@ -60,11 +60,20 @@ def plot_ration_cases_over_testing_smooth():
     """
     plot of the ration cases over testing everyday
     """
-    data_y = moving_average(df_testing.CASES.values, 7) / moving_average(df_testing.TESTS_ALL.values, 7)
-    fig = px.line(x=df_testing.DATE.values[7:], y=data_y[7:], title=gettext("#Cases/#Tests (avg over past 7 days)"))
+
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=df_testing.DATE.values[7:], y=(moving_average(df_testing.CASES.values, 7) / moving_average(df_testing.TESTS_ALL.values, 7))[7:],
+                    mode='lines',
+                    name='cases / all tests'))
+    fig.add_trace(go.Scatter(x=df_testing.DATE.values[7:], y=(moving_average(df_testing.TESTS_ALL_POS.values, 7) / moving_average(df_testing.TESTS_ALL.values, 7))[7:],
+                    mode='lines',
+                    name='positive tests / all tests'))
+
+
     fig.update_layout(xaxis_title=gettext('Day'),
-                      yaxis_title=gettext('#Cases (avg 7 days)/#Tests (avg 7 days)'))
+                      yaxis_title=gettext('Positive rate'), title=gettext("Positive rate (avg over past 7 days)"))
     return fig
+
 
 @register_plot_for_embedding("testing_cumulative")
 def plot_cumulated_testing():

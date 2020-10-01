@@ -16,7 +16,8 @@ from graphs.cases_per_province import map_provinces, \
     avg_cases_provinces,\
     avg_positive_rate_provinces,\
     avg_testing_per_habbitant_provinces,\
-    avg_testing_provinces
+    avg_testing_provinces,\
+    avg_positive_rate_cases_provinces
 from pages.sources import *
 
 
@@ -56,10 +57,17 @@ def display_provinces():
                               config=dict(locale=str(get_locale()))), className="col-12"),
         ]),
         html.H2(gettext(
+            get_translation(fr="Taux de positivité (#test positifs / #tests)",
+                            en="Positive rate (#post test/#tests)"))),
+        dbc.Row([
+            dbc.Col(dcc.Graph(id='Positive rate (#cases/#tests)', figure=avg_positive_rate_provinces(),
+                              config=dict(locale=str(get_locale()))), className="col-12"),
+        ]),
+        html.H2(gettext(
             get_translation(fr="Taux de positivité (#cas/#tests)",
                             en="Positive rate (#cases/#tests)"))),
         dbc.Row([
-            dbc.Col(dcc.Graph(id='Positive rate (#cases/#tests)', figure=avg_positive_rate_provinces(),
+            dbc.Col(dcc.Graph(id='Positive rate (#cases/#tests)', figure=avg_positive_rate_cases_provinces(),
                               config=dict(locale=str(get_locale()))), className="col-12"),
         ]),
         html.H2(gettext(
