@@ -2189,7 +2189,7 @@
 2187,2020-09-29,WBR,Wallonia,2,8,3,1,0,0,1,BrabantWallon
 2188,2020-09-29,VWV,Flanders,11,44,10,3,0,4,7,WestVlaanderen
 2189,2020-09-30,VAN,Flanders,14,132,27,6,1,4,5,Antwerpen
-2190,2020-09-30,BRU,Brussels,15,236,51,35,3,36,30,Brussels
+2190,2020-09-30,BRU,Brussels,15,235,51,35,3,34,30,Brussels
 2191,2020-09-30,WHT,Wallonia,14,89,18,10,0,7,8,Hainaut
 2192,2020-09-30,VLI,Flanders,7,23,5,1,0,6,3,Limburg
 2193,2020-09-30,WLG,Wallonia,12,99,21,11,0,9,2,Liège
@@ -2199,3 +2199,14 @@
 2197,2020-09-30,VBR,Flanders,6,21,5,2,0,0,3,VlaamsBrabant
 2198,2020-09-30,WBR,Wallonia,2,7,3,1,0,0,1,BrabantWallon
 2199,2020-09-30,VWV,Flanders,11,45,8,3,0,4,3,WestVlaanderen
+2200,2020-10-01,VAN,Flanders,14,145,27,6,1,12,11,Antwerpen
+2201,2020-10-01,BRU,Brussels,15,245,49,32,3,33,24,Brussels
+2202,2020-10-01,WHT,Wallonia,14,94,15,9,0,10,4,Hainaut
+2203,2020-10-01,VLI,Flanders,7,25,6,1,0,4,4,Limburg
+2204,2020-10-01,WLG,Wallonia,12,100,20,11,0,9,9,Liège
+2205,2020-10-01,WLX,Wallonia,3,8,1,0,0,0,0,Luxembourg
+2206,2020-10-01,WNA,Wallonia,6,11,5,2,1,1,0,Namur
+2207,2020-10-01,VOV,Flanders,14,66,15,5,0,8,11,OostVlaanderen
+2208,2020-10-01,VBR,Flanders,6,25,5,1,0,4,1,VlaamsBrabant
+2209,2020-10-01,WBR,Wallonia,2,9,3,1,0,2,0,BrabantWallon
+2210,2020-10-01,VWV,Flanders,11,45,10,3,0,4,3,WestVlaanderen
