@@ -6,7 +6,13 @@ from dash.dependencies import Input, Output, State
 from flask_babel import get_locale, gettext
 
 from graphs.cases_per_admin_region import map_totcases_admin_region, map_cases_per_habittant_admin_region
-from graphs.cases_per_admin_region_overtime import map_totcases_admin_region_overtime, map_cases_per_habittant_admin_region_overtime,plot_cases_admin_region_overtime,plot_cases_per_habittant_admin_region_overtime, plot_cases_daily_admin_region_overtime,map_cases_incidence_nis3
+from graphs.cases_per_admin_region_overtime import map_totcases_admin_region_overtime, \
+    map_cases_per_habittant_admin_region_overtime,\
+    plot_cases_admin_region_overtime,\
+    plot_cases_per_habittant_admin_region_overtime, \
+    plot_cases_daily_admin_region_overtime,\
+    map_cases_incidence_nis3,\
+    scatter_incidence_nis3
 from pages.sources import *
 
 from pages import get_translation
@@ -30,6 +36,10 @@ def display_admin():
             get_translation(en="Incidence: Number of cases/100K inhabitants over the past 14 days", fr="Incidence: Nombre de cas/100K habitants sur les 14 derniers jours"))),
         dbc.Row([
             dbc.Col(dcc.Graph(id='cases-province-map', figure=map_cases_incidence_nis3(),
+                              config=dict(locale=str(get_locale()))), className="col-12"),
+        ]),
+        dbc.Row([
+            dbc.Col(dcc.Graph(id='cases-province-map', figure=scatter_incidence_nis3(),
                               config=dict(locale=str(get_locale()))), className="col-12"),
         ]),
         html.H3(gettext(

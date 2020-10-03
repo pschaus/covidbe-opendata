@@ -72,6 +72,27 @@ def map_cases_per_habittant_admin_region_overtime():
     fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=5, b=0))
     return fig
 
+def scatter_incidence_nis3():
+    df_names = pd.DataFrame(geojson.drop(columns='geometry'))
+    cutoff1 = (pd.to_datetime('today') - pd.Timedelta('17 days')).date()
+    cutoff2 = (pd.to_datetime('today') - pd.Timedelta('4 days')).date()
+
+    df3d = pd.read_csv("static/csv/cases_daily_ins3.csv", encoding='latin1')
+    df3d = df3d[df3d.DATE >= str(cutoff1)]
+    df3d = df3d[df3d.DATE <= str(cutoff2)]
+    df3d = df3d.groupby([df3d.NIS3, df3d.POP]).agg({'CASES': ['sum']}).reset_index()
+    df3d.columns = df3d.columns.get_level_values(0)
+    df3d['NIS3'] = df3d['NIS3'].astype(int)
+    df3d['CASES_PER_100KHABITANT'] = df3d['CASES'] / df3d['POP'] * 100000
+    df3d = pd.merge(df3d, df_names, left_on='NIS3', right_on='NIS3', how='left')
+    df3d = df3d.round({'CASES_PER_100KHABITANT': 1})
+
+    df3d = df3d.sort_values(by='CASES_PER_100KHABITANT', axis=0)
+    fig = px.scatter(y=df3d.name, x=df3d['CASES_PER_100KHABITANT'],title=get_translation(fr="Nombres de cas/100K past [d-17,d-4] days",
+                                                          en="Number of cases/100K past [d-17,d-4] days"))
+    fig.update_layout(autosize=True, height=900)
+    return fig
+
 
 @register_plot_for_embedding("map_cases_incidence_nis3")
 def map_cases_incidence_nis3():
