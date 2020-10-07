@@ -7,7 +7,7 @@ import urllib.request, json
 
 from graphs import register_plot_for_embedding
 
-start = '01-10'
+start = '04-10'
 
 end = '10-1'
 
