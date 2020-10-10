@@ -44,8 +44,46 @@ df_avg_age = df_avg_age_cases()
 
 
 
+@register_plot_for_embedding("cases_age_groups")
+def age_group_cases_relative():
+    idx = pd.date_range(df_prov_timeseries.DATE.min(), df_prov_timeseries.DATE.max())
+    bars_age_groups = []
+    traces = []
+    age_groups = sorted(df_prov_timeseries.AGEGROUP.unique())
+    for idx2, ag in enumerate(age_groups):
+        df_ag = df_prov_timeseries.loc[df_prov_timeseries['AGEGROUP'] == ag]
+        df_ag = df_ag.groupby(['DATE']).agg({'CASES': 'sum'})
+        df_ag.index = pd.DatetimeIndex(df_ag.index)
+        df_ag = df_ag.reindex(idx, fill_value=0)
+        bars_age_groups.append(go.Bar(
+            x=df_ag.index,
+            y=df_ag['CASES'],
+            name=ag,
+            marker_color=px.colors.qualitative.G10[idx2]
+        ))
+        trace = dict(x=df_ag.index, y=df_ag.CASES, mode='lines',
+                     line=dict(width=0.5),
+                     stackgroup='one', groupnorm='percent', name=ag)
+        traces.append(trace)
 
+    layout = go.Layout(
+        showlegend=True,
+        yaxis=dict(
+            type='linear',
+            range=[1, 100],
+            dtick=20,
+            ticksuffix='%'
+        )
+    )
 
+    fig = go.Figure(data=traces, layout=layout)
+
+    # Edit the layout
+    fig.update_layout(title='Relative Age group percentage of cases',
+                      xaxis_title='Date',
+                      yaxis_title='Percentage')
+
+    return fig
 @register_plot_for_embedding("cases_age_groups")
 def age_groups_cases():
     """
