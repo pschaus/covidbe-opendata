@@ -61,6 +61,113 @@ def bar_hospitalization():
     return fig_hospi
 
 
+@register_plot_for_embedding("hospi_bar")
+def bar_hospitalization_tot():
+    """
+    bar plot hospitalization
+    """
+    df = df_hospi.groupby(['DATE']).agg({'TOTAL_IN': 'sum', 'NEW_OUT': 'sum', 'NEW_IN': 'sum','TOTAL_IN_ICU': 'sum'})
+
+    newin_bar = go.Bar(x=df.index, y=df.NEW_IN, name=gettext('#New Hospitalized'))
+    newout_bar = go.Bar(x=df.index, y=df.NEW_OUT, name=gettext('#New Discharged'))
+    totin_bar = go.Bar(x=df.index, y=df.TOTAL_IN, name=gettext('#Total Hospitalized'))
+    icu_bar = go.Bar(x=df.index, y=df.TOTAL_IN_ICU, name=gettext('#Total ICU'))
+    fig_hospi = go.Figure(data=[totin_bar], layout=go.Layout(barmode='group'), )
+    fig_hospi.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0),
+                            title=gettext("Total Hospitalizations"))
+
+    fig_hospi.update_layout(xaxis_title=gettext('Day'),
+                            yaxis_title=gettext('Number of / Day'))
+
+    return fig_hospi
+
+
+@register_plot_for_embedding("hospi_bar")
+def bar_hospitalization_in_out():
+    """
+    bar plot hospitalization
+    """
+    df = df_hospi.groupby(['DATE']).agg({'TOTAL_IN': 'sum', 'NEW_OUT': 'sum', 'NEW_IN': 'sum','TOTAL_IN_ICU': 'sum'})
+
+    newin_bar = go.Bar(x=df.index, y=df.NEW_IN, name=gettext('#New Hospitalized'))
+    newout_bar = go.Bar(x=df.index, y=df.NEW_OUT, name=gettext('#New Discharged'))
+    totin_bar = go.Bar(x=df.index, y=df.TOTAL_IN, name=gettext('#Total Hospitalized'))
+    icu_bar = go.Bar(x=df.index, y=df.TOTAL_IN_ICU, name=gettext('#Total ICU'))
+    fig_hospi = go.Figure(data=[newin_bar, newout_bar], layout=go.Layout(barmode='group'), )
+    fig_hospi.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0),
+                            title=gettext("Daily IN-Out Hospitalizations"))
+
+    fig_hospi.update_layout(xaxis_title=gettext('Day'),
+                            yaxis_title=gettext('Number of / Day'))
+
+    return fig_hospi
+
+
+
+@register_plot_for_embedding("hospi_icu_bar")
+def bar_hospitalization_ICU():
+    """
+    bar plot hospitalization
+    """
+    df = df_hospi.groupby(['DATE']).agg({'TOTAL_IN': 'sum', 'NEW_OUT': 'sum', 'NEW_IN': 'sum', 'TOTAL_IN_ICU': 'sum'})
+
+    icu_bar = go.Bar(x=df.index, y=df.TOTAL_IN_ICU, name=gettext('#Total ICU'))
+    fig_hospi = go.Figure(data=[icu_bar], layout=go.Layout(barmode='group'), )
+    fig_hospi.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0),
+                            title=gettext("Hospitalizations ICU"))
+
+    fig_hospi.update_layout(xaxis_title=gettext('Day'),
+                            yaxis_title=gettext('Number of / Day'))
+
+    today = str((pd.to_datetime('today') - pd.Timedelta('0 days')).date())
+    today = str((pd.to_datetime('today') - pd.Timedelta('0 days')).date())
+
+    today_ = str((pd.to_datetime('today') - pd.Timedelta('100 days')).date())
+    today_ = str((pd.to_datetime('today') - pd.Timedelta('100 days')).date())
+
+    # Add shapes
+    fig_hospi.add_shape(
+        # Line Vertical
+        dict(
+            type="line",
+            x0="2020-03-15",
+            y0=300,
+            x1=today,
+            y1=300,
+            line=dict(
+                color="RoyalBlue",
+                width=3
+            )
+        ))
+
+    # Add shapes
+    fig_hospi.add_shape(
+        # Line Vertical
+        dict(
+            type="line",
+            x0="2020-03-15",
+            y0=2001,
+            x1=today,
+            y1=2001,
+            line=dict(
+                color="red",
+                width=3
+            )
+        ))
+
+    # Create scatter trace of text labels
+    fig_hospi.add_trace(go.Scatter(
+        x=[today_, today_],
+        y=[330, 2030],
+        text=["15% capa ICU",
+              "100% capa ICU"],
+        mode="text", name=""
+    ))
+
+    return fig_hospi
+
+
+
 df_prov = pd.read_csv('static/csv/be-covid-provinces.csv')
 
 # compute number of hospi / case in each province
