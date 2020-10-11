@@ -61,6 +61,54 @@ def bar_hospitalization():
     return fig_hospi
 
 
+
+def exp_fit_hospi():
+    x = df.index
+    y = df.TOTAL_IN.values #moving_average(df.TOTAL_IN.values, 7)
+    lastx = x[-20:]
+    lasty = y[-20:]
+
+    import numpy as np
+    from scipy.optimize import curve_fit
+
+    def exponenial_func(x, a, b, c):
+        return a * np.exp(-b * x) + c
+        # return a*(2 ** (-b*x))+c
+
+    import math
+
+    lastxx = np.arange(0, len(lasty), 1)
+
+    popt, pcov = curve_fit(exponenial_func, lastxx, lasty, p0=(1, 1e-6, 1))
+
+    doubling = math.log(0.5) / popt[1]
+
+    lastyy = exponenial_func(lastxx, *popt)
+
+    fig = px.line(x=x, y=y, log_y=True, labels={'x': 'date', 'y': 'total hospitals (log scale)'},
+                  title="Hospitalizations log scale and doubling period computation")
+
+    # Creating the dataset, and generating the plot
+    fitexp = go.Scatter(
+        x=lastx,
+        y=lastyy,
+        mode='markers',
+        name='exponential fit'
+    )
+
+    fig.add_trace(fitexp)
+
+    fig.add_trace(go.Scatter(
+        x=[lastx[0]],
+        y=[lastyy[0]],
+        mode="markers+text",
+        name="doubling period",
+        text=["doubling period:" + str(round(doubling, 1)) + " days"],
+        textposition="bottom center"
+    ))
+
+    return fig
+
 @register_plot_for_embedding("hospi_bar")
 def bar_hospitalization_tot():
     """
@@ -220,12 +268,12 @@ def death_over_icu_smooth():
 
 @register_plot_for_embedding("hospi_smooth")
 def hospi_smooth():
-    return px.line(x=df.index,y=moving_average(df.TOTAL_IN.values, 7),labels={'x':'date', 'y':'total hospitals'})
+    return px.line(x=df.index,y=moving_average(df.TOTAL_IN.values, 7),labels={'x':'date', 'y':'total hospitals'},title="Total Hospitalization avg(7days)")
 
 @register_plot_for_embedding("newin_smooth")
 def newin_smooth():
-    return px.line(x=df.index,y=moving_average(df.NEW_IN.values, 7),labels={'x':'date', 'y':'daily new in hospitals'})
+    return px.line(x=df.index,y=moving_average(df.NEW_IN.values, 7),labels={'x':'date', 'y':'daily new in hospitals'},title="New Daily Hospitalization avg(7days)")
 
 @register_plot_for_embedding("death_smooth")
 def death_smooth():
-    return px.line(x=df.index, y=moving_average(df.DEATHS.values, 7), labels={'x': 'date', 'y': 'deaths'})
+    return px.line(x=df.index, y=moving_average(df.DEATHS.values, 7), labels={'x': 'date', 'y': 'deaths'},title="Daily deaths avg(7days)")
