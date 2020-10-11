@@ -20,3 +20,5 @@ regex
 dash-gif-component
 pytrends
 flask-caching>=1.9.0
+scipy>=1.5.2
+numpy>=1.19.2
