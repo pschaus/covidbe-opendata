@@ -4,14 +4,108 @@ import plotly.express as px
 
 import plotly.graph_objs as go
 from flask_babel import gettext
-
+from datetime import datetime, date
+import plotly.graph_objs as go
+import geopandas
+import plotly.express as px
+import pandas as pd
+import numpy as np
+from flask_babel import gettext
+from pages import get_translation
+import numpy as np
+from graphs import register_plot_for_embedding
 
 from datetime import datetime
 
-import pandas
 
-df_week85 = pandas.read_csv("static/csv/weekly_mortality_85+.csv")
-df_week_all = pandas.read_csv("static/csv/weekly_mortality_all.csv")
+
+df_week85 = pd.read_csv("static/csv/weekly_mortality_85+.csv")
+df_week_all = pd.read_csv("static/csv/weekly_mortality_all.csv")
+
+df = pd.read_csv("static/csv/mortality_statbel.csv")
+
+df_ag = df.groupby([df.DT_DATE,df.CD_AGEGROUP]).agg({'MS_NUM_DEATH': ['sum']}).reset_index()
+df_ag.columns = df_ag.columns.get_level_values(0)
+
+df = df.groupby([df.DT_DATE]).agg({'MS_NUM_DEATH': ['sum']}).reset_index()
+df.columns = df.columns.get_level_values(0)
+
+
+age_groups = ['0-24', '25-44', '45-64', '65-74', '75-84', '85+']
+
+
+def moving_average(a, n=1):
+    a = a.astype(np.float)
+    ret = np.cumsum(a)
+    ret[n:] = ret[n:] - ret[:-n]
+    ret[:n - 1] = ret[:n - 1] / range(1, n)
+    ret[n - 1:] = ret[n - 1:] / n
+    return ret
+
+
+def sin_fit(x, y, title):
+    import numpy as np
+    from scipy.optimize import curve_fit
+
+    def sin_func(x, a, b, c, d):
+        return a * np.sin(b * x + c) + d
+
+    xx = np.arange(0, len(y), 1)
+    popt, pcov = curve_fit(sin_func, xx, y, p0=(50, 0.017, 1, 300))
+    yy = sin_func(xx, *popt)
+    sin_line = go.Scatter(
+        x=x,
+        y=yy,
+        mode='lines',
+        name='sin fit model ' + title
+    )
+    line = go.Scatter(
+        x=x,
+        y=y,
+        mode='lines',
+        name='7 day average ' + title
+    )
+
+    return [line, sin_line]
+
+
+
+def daily_death_all():
+    plots = sin_fit(df.DT_DATE, moving_average(df.MS_NUM_DEATH.values, 7), "all pop")
+
+    fig = go.Figure(
+        data=plots,
+        layout=go.Layout(
+            title=go.layout.Title(text="Daily Mortality Belgium"),
+            height=600
+        ),
+
+    )
+    fig.update_layout(template="plotly_white")
+
+    fig.update_layout(yaxis=dict(range=[0, 620]))
+    return fig
+
+
+def daily_death_ag():
+    plots = []
+
+    for ag in age_groups:
+        df_ag_ = df_ag.loc[df_ag['CD_AGEGROUP'] == ag]
+        plots = plots + sin_fit(df_ag_.DT_DATE, moving_average(df_ag_.MS_NUM_DEATH.values, 7), str(ag))
+
+    fig = go.Figure(
+        data=plots,
+        layout=go.Layout(
+            title=go.layout.Title(text="Daily Mortality Belgium by Age Group"),
+            height=600
+        ),
+
+    )
+    fig.update_layout(template="plotly_white")
+    fig.update_layout(yaxis=dict(range=[0, 300]))
+    return fig
+
 
 def death_85plus_hist():
     fig = px.line(df_week85, x="week", y="tot", color='year')

@@ -86,7 +86,7 @@ def exp_fit_hospi():
     lastyy = exponenial_func(lastxx, *popt)
 
     fig = px.line(x=x, y=y, log_y=True, labels={'x': 'date', 'y': 'total hospitals (log scale)'},
-                  title="Hospitalizations log scale and doubling period computation")
+                  title="Hospitalizations log scale and doubling period computation",height=600)
 
     # Creating the dataset, and generating the plot
     fitexp = go.Scatter(
@@ -106,6 +106,8 @@ def exp_fit_hospi():
         text=["doubling period:" + str(round(doubling, 1)) + " days"],
         textposition="bottom center"
     ))
+
+    fig.update_layout(template="plotly_white")
 
     return fig
 
@@ -254,26 +256,39 @@ def bar_hospi_per_case_per_province():
 @register_plot_for_embedding("hospi_over_death_smooth")
 def hospi_over_death_smooth():
     data_y = moving_average(df.DEATHS.values, 7) / moving_average(df.TOTAL_IN.values, 7)
-    return px.line(x=df.index, y=data_y, labels={'x': 'date', 'y': 'ratio death/hospi'})
+    fig = px.line(x=df.index, y=data_y, labels={'x': 'date', 'y': 'ratio death/hospi'})
+    fig.update_layout(template="plotly_white")
+    return fig
 
 
 @register_plot_for_embedding("hospi_over_death_smooth")
 def icu_over_hospi():
     data_y = df.TOTAL_IN_ICU / df.TOTAL_IN
-    return px.line(x=df.index, y=data_y, labels={'x': 'date', 'y': 'ratio ICU/Hospi'})
+    fig = px.line(x=df.index, y=data_y, labels={'x': 'date', 'y': 'ratio ICU/Hospi'})
+    fig.update_layout(template="plotly_white")
+    return fig
 
 @register_plot_for_embedding("deathovericusmooth")
 def death_over_icu_smooth():
-    return px.line(x=df.index,y=moving_average(df.DEATHS.values, 7)/moving_average(df.TOTAL_IN_ICU.values, 7),labels={'x':'date', 'y':'deaths/ICU'})
+    fig = px.line(x=df.index,y=moving_average(df.DEATHS.values, 7)/moving_average(df.TOTAL_IN_ICU.values, 7),labels={'x':'date', 'y':'deaths/ICU'})
+    fig.update_layout(template="plotly_white")
+    return fig
+
 
 @register_plot_for_embedding("hospi_smooth")
 def hospi_smooth():
-    return px.line(x=df.index,y=moving_average(df.TOTAL_IN.values, 7),labels={'x':'date', 'y':'total hospitals'},title="Total Hospitalization avg(7days)")
+    fig = px.line(x=df.index,y=moving_average(df.TOTAL_IN.values, 7),labels={'x':'date', 'y':'total hospitals'},title="Total Hospitalization avg(7days)")
+    fig.update_layout(template="plotly_white")
+    return fig
 
 @register_plot_for_embedding("newin_smooth")
 def newin_smooth():
-    return px.line(x=df.index,y=moving_average(df.NEW_IN.values, 7),labels={'x':'date', 'y':'daily new in hospitals'},title="New Daily Hospitalization avg(7days)")
+    fig = px.line(x=df.index,y=moving_average(df.NEW_IN.values, 7),labels={'x':'date', 'y':'daily new in hospitals'},title="New Daily Hospitalization avg(7days)")
+    fig.update_layout(template="plotly_white")
+    return fig
 
 @register_plot_for_embedding("death_smooth")
 def death_smooth():
-    return px.line(x=df.index, y=moving_average(df.DEATHS.values, 7), labels={'x': 'date', 'y': 'deaths'},title="Daily deaths avg(7days)")
+    fig = px.line(x=df.index, y=moving_average(df.DEATHS.values, 7), labels={'x': 'date', 'y': 'deaths'},title="Daily deaths avg(7days)")
+    fig.update_layout(template="plotly_white")
+    return fig
