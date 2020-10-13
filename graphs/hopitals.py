@@ -65,15 +65,14 @@ def bar_hospitalization():
 def exp_fit_hospi():
     x = df.index
     y = df.TOTAL_IN.values #moving_average(df.TOTAL_IN.values, 7)
-    lastx = x[-20:]
-    lasty = y[-20:]
+    lastx = x[-15:]
+    lasty = y[-15:]
 
     import numpy as np
     from scipy.optimize import curve_fit
 
     def exponenial_func(x, a, b, c):
         return a * np.exp(-b * x) + c
-        # return a*(2 ** (-b*x))+c
 
     import math
 
@@ -81,7 +80,8 @@ def exp_fit_hospi():
 
     popt, pcov = curve_fit(exponenial_func, lastxx, lasty, p0=(1, 1e-6, 1))
 
-    doubling = math.log(0.5) / popt[1]
+    #doubling = math.log(0.5) / popt[1]
+    doubling = -(1 / popt[1]) * math.log((2 * popt[0] + popt[2]) / popt[0])
 
     lastyy = exponenial_func(lastxx, *popt)
 
