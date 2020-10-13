@@ -51,7 +51,8 @@ def sin_fit(x, y, title):
         return a * np.sin(b * x + c) + d
 
     xx = np.arange(0, len(y), 1)
-    popt, pcov = curve_fit(sin_func, xx, y, p0=(50, 0.017, 1, 300))
+    popt, pcov = curve_fit(sin_func, xx[:5 * 365], y[:5 * 365], p0=(50, 0.017, 1, 300))
+    #popt, pcov = curve_fit(sin_func, xx, y, p0=(50, 0.017, 1, 300))
     yy = sin_func(xx, *popt)
     sin_line = go.Scatter(
         x=x,
@@ -103,7 +104,7 @@ def daily_death_ag():
 
     )
     fig.update_layout(template="plotly_white")
-    fig.update_layout(yaxis=dict(range=[0, 300]))
+    #fig.update_layout(yaxis=dict(range=[0, 300]))
     return fig
 
 
