@@ -6,18 +6,24 @@ from flask_babel import get_locale, gettext
 
 from graphs.deaths_age_groups import age_groups_death, age_groups_death_pie
 from graphs.deaths_be_statbel import death_age_groups
-from graphs.deaths_be_statbel_hist import death_85plus_hist,death_85plus_hist_cum,death_plus_hist_cum,death_hist, daily_death_all, daily_death_ag
+from graphs.deaths_be_statbel_hist import death_85plus_hist,death_85plus_hist_cum,death_plus_hist_cum,death_hist, daily_death_all, daily_death_ag, daily_death_all_deviation_sin
 from pages.sources import source_sciensano, source_statbel, display_source_providers
 
 
 def display_age_groups():
     return [
-        html.H2(gettext("Overall (Daily) Mortality Only (STATBEL Data)")),
+        html.H2(gettext("Overall (Daily) Mortality All Population (STATBEL Data)")),
         dbc.Row([
             dbc.Col(dcc.Graph(id='age-group-death-statbel',
                               figure=daily_death_all(),
                               config=dict(locale=str(get_locale())))),
         ]),
+        dbc.Row([
+            dbc.Col(dcc.Graph(id='age-group-death-statbel',
+                              figure=daily_death_all_deviation_sin(),
+                              config=dict(locale=str(get_locale())))),
+        ]),
+        html.H2(gettext("Overall (Daily) Mortality By Age-group (STATBEL Data)")),
         dbc.Row([
             dbc.Col(dcc.Graph(id='age-group-death-statbel',
                               figure=daily_death_ag(),

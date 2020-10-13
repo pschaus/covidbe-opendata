@@ -43,7 +43,7 @@ def moving_average(a, n=1):
     return ret
 
 
-def sin_fit(x, y, title):
+def sin_fit_math(x, y):
     import numpy as np
     from scipy.optimize import curve_fit
 
@@ -52,8 +52,13 @@ def sin_fit(x, y, title):
 
     xx = np.arange(0, len(y), 1)
     popt, pcov = curve_fit(sin_func, xx[:5 * 365], y[:5 * 365], p0=(50, 0.017, 1, 300))
-    #popt, pcov = curve_fit(sin_func, xx, y, p0=(50, 0.017, 1, 300))
+    # popt, pcov = curve_fit(sin_func, xx,y, p0=(50, 0.017, 1, 300))
     yy = sin_func(xx, *popt)
+    return yy
+
+
+def sin_fit(x, y, title):
+    yy = sin_fit_math(x, y)
     sin_line = go.Scatter(
         x=x,
         y=yy,
@@ -71,6 +76,8 @@ def sin_fit(x, y, title):
 
 
 
+
+
 def daily_death_all():
     plots = sin_fit(df.DT_DATE, moving_average(df.MS_NUM_DEATH.values, 7), "all pop")
 
@@ -85,6 +92,29 @@ def daily_death_all():
     fig.update_layout(template="plotly_white")
 
     fig.update_layout(yaxis=dict(range=[0, 620]))
+    return fig
+
+def daily_death_all_deviation_sin():
+    x = df.DT_DATE
+    y = moving_average(df.MS_NUM_DEATH.values,7)
+
+    yy =  sin_fit_math(x,y)
+
+    relative = ((y-yy)/yy)*100
+
+    col = np.where(relative<0, 'green', 'red')
+
+    # Plot
+    fig = go.Figure()
+    fig.add_trace(
+        go.Bar(name='Deviation%',
+               x=x,
+               y=relative,
+               marker_color=col))
+    fig.update_layout(barmode='stack')
+
+    fig.update_layout(template="plotly_white",title="Relative Deviation to the sinusoidal fit in %")
+
     return fig
 
 
