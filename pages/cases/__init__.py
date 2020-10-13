@@ -4,6 +4,7 @@ from pages import AppMenu, AppLink
 from pages.cases.cases_correction import display_cases_correction
 from pages.cases.municipalities import municipalities_link
 from pages.cases.admin_region import display_admin
+from pages.cases.region import display_region
 from pages.cases.provinces import display_provinces
 from pages.cases.age_groups import display_age_groups
 from pages.cases.testing import display_testing
@@ -21,6 +22,9 @@ cases_menu = AppMenu(lazy_gettext("Cases"), "/cases", [
     AppLink(get_translation(en="Provinces", fr="Provinces", lazy=True),
             get_translation(en="Provinces", fr="Provinces", lazy=True),
             "/provinces", display_provinces),
+    AppLink(get_translation(en="Regions", fr="Regions", lazy=True),
+            get_translation(en="Region", fr="Region", lazy=True),
+            "/regions", display_region),
     AppLink(lazy_gettext("Epidemic Indicators"), lazy_gettext("Epidemic Indicators"), "/Re", display_Re, callback_fn=callback_Re),
     AppLink(get_translation(en="Corrected 1st wave",fr="Correction 1ière vague", lazy=True),
             get_translation(en="Corrected 1st wave",fr="Correction 1ière vague", lazy=True),
