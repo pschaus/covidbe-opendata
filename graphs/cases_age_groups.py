@@ -9,6 +9,11 @@ from pages import get_translation
 import numpy as np
 df_prov_timeseries = pd.read_csv('static/csv/be-covid-provinces.csv')
 
+
+age_group_pop_dict = {'0-9': 1269068, '10-19': 1300254, '20-29': 1407645, '30-39': 1492290, '40-49': '1504539', '50-59': '1590628',
+                  '60-69': 1347139, '70-79': 924291, '80-89': 539390, '90+': 117397}
+
+
 age_group_dict = {'0-9': '<60', '10-19': '<60', '20-29': '<60', '30-39': '<60', '40-49': '<60', '50-59': '<60',
                   '60-69': '>=60', '70-79': '>=60', '80-89': '>=60', '90+': '>=60'}
 df_prov_timeseries['pop_active'] = df_prov_timeseries['AGEGROUP'].map(age_group_dict)
@@ -40,8 +45,50 @@ def df_avg_age_cases():
 
 
 
+
+def df_pop_age_cases():
+    df_prov_timeseries = pd.read_csv('static/csv/be-covid-provinces.csv')
+    age_group_pop_dict = {'0-9':   1269068,
+                          '10-19': 1300254,
+                          '20-29': 1407645,
+                          '30-39': 1492290,
+                          '40-49': 1504539,
+                          '50-59': 1590628,
+                          '60-69': 1347139,
+                          '70-79':  924291,
+                          '80-89':  539390,
+                          '90+':    117397}
+
+    df_prov_timeseries['pop'] = df_prov_timeseries['AGEGROUP'].map(age_group_pop_dict)
+    df_prov = df_prov_timeseries.groupby(['DATE','AGEGROUP','pop']).agg({'CASES': ['sum']}).reset_index()
+    df_prov.columns = df_prov.columns.get_level_values(0)
+    return df_prov
+
+
+
 df_avg_age = df_avg_age_cases()
 
+
+def incidence_age_group_plot():
+    df_pop = df_pop_age_cases()
+    df_pop['incidence'] = df_pop['CASES'] / df_pop['pop'] * 100000
+
+    traces = []
+    age_groups = sorted(df_pop.AGEGROUP.unique())
+    for idx, ag in enumerate(age_groups):
+        df_ag = df_pop.loc[df_pop['AGEGROUP'] == ag]
+        trace = dict(x=df_ag.DATE, y=moving_average(df_ag['incidence'].values, 7), mode='lines', name=ag)
+        traces.append(trace)
+
+    fig = go.Figure(data=traces)
+
+    # Edit the layout
+    fig.update_layout(title='Daily number of cases/100K in the age-group (avg 7 days)',
+                      xaxis_title='Date',
+                      yaxis_title='Cases/100K')
+    fig.update_layout(template="plotly_white")
+    fig.update_yaxes(type="log")
+    return fig
 
 
 @register_plot_for_embedding("cases_age_groups")
