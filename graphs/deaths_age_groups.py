@@ -124,6 +124,7 @@ def waves_comparison():
 
     # ---------------------
     total_age = df_2nd_wave.groupby(['AGEGROUP']).agg({'DEATHS': 'sum'})
+    labels = total_age['DEATHS'].index.values
     fig_age_groups_deaths_pie.add_trace(
         go.Pie(labels=labels, values=total_age['DEATHS'], name=gettext("Total"), sort=True, textposition="inside"), 1,
         2)
