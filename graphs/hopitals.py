@@ -28,6 +28,9 @@ def df_hospi_death():
     df = df[df.index >= '2020-03-15']
     return df
 
+
+
+
 import numpy as np
 
 def moving_average(a, n=1) :
@@ -58,6 +61,31 @@ def bar_hospitalization():
     fig_hospi.update_layout(xaxis_title=gettext('Day'),
                             yaxis_title=gettext('Number of / Day'))
 
+    return fig_hospi
+
+
+def hospi_waves():
+    """
+    bar plot hospitalization
+    """
+    df = df_hospi.groupby(['DATE']).agg({'TOTAL_IN': 'sum', 'NEW_OUT': 'sum', 'NEW_IN': 'sum','TOTAL_IN_ICU': 'sum'})
+
+
+
+    #wave1 = go.Bar(x=df.index, y=df.TOTAL_IN, name=gettext('#Total Hospitalized'))
+    wave1 = go.Bar(y=df.TOTAL_IN[:50], name=gettext('#Total Hospitalized Wave1'))
+    wave2 = go.Bar(y=df.TOTAL_IN[df.index>='2020-10-07'], name=gettext('#Total Hospitalized Wave2'))
+
+
+
+
+    fig_hospi = go.Figure(data=[wave1,wave2], layout=go.Layout(barmode='group'), )
+
+    fig_hospi.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0),
+                            title=gettext("Total Hospitalizations First Wave vs Second Wave"))
+
+    fig_hospi.update_layout(xaxis_title=gettext('Day'),
+                            yaxis_title=gettext('Number of / Day'))
     return fig_hospi
 
 
