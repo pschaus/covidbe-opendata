@@ -71,4 +71,61 @@ def age_groups_death_pie():
                textposition="inside"),
         2, 2)
 
+    fig_age_groups_deaths_pie.update_layout(height=600)
+
+    return fig_age_groups_deaths_pie
+
+
+
+@register_plot_for_embedding("deaths_per_age_group_pie")
+def age_groups_death_first_wave():
+
+    total_age = df_mortality.groupby(['AGEGROUP']).agg({'DEATHS': 'sum'})
+
+    fig_age_groups_deaths_pie = fig = go.Figure()
+
+    fig_age_groups_deaths_pie.add_trace(
+        go.Pie(labels=total_age['DEATHS'].index.values, values=total_age['DEATHS'], name=gettext("Total"), sort=False, textposition="inside"),
+        1, 1)
+
+
+    return fig_age_groups_deaths_pie
+
+
+
+
+df_first_wave = df_mortality[df_mortality.DATE >= '2020-03-10']
+df_first_wave = df_first_wave[df_first_wave.DATE <= '2020-06-01']
+df_2nd_wave = df_mortality[df_mortality.DATE >= '2020-09-01']
+
+tot1st = sum(df_first_wave.DEATHS.values)
+tot2nd = sum(df_2nd_wave.DEATHS.values)
+
+def waves_comparison():
+    df_first_wave = df_mortality[df_mortality.DATE >= '2020-03-10']
+    df_first_wave = df_first_wave[df_first_wave.DATE <= '2020-06-01']
+    df_2nd_wave = df_mortality[df_mortality.DATE >= '2020-09-01']
+
+    tot1st = sum(df_first_wave.DEATHS.values)
+    tot2nd = sum(df_2nd_wave.DEATHS.values)
+
+    # -----------------
+    total_age = df_first_wave.groupby(['AGEGROUP']).agg({'DEATHS': 'sum'})
+    labels = total_age['DEATHS'].index.values
+
+    fig_age_groups_deaths_pie = make_subplots(rows=1, cols=2, specs=[[{'type': 'domain'}, {'type': 'domain'}]],
+                                              subplot_titles=['1st wave (March-June) tot=' + str(tot1st),
+                                                              '2nd wave (Sept-Now) tot=' + str(tot2nd)])
+
+
+    fig_age_groups_deaths_pie.add_trace(
+        go.Pie(labels=labels, values=total_age['DEATHS'], name=gettext("Total"), sort=True, textposition="inside"), 1,
+        1)
+
+    # ---------------------
+    total_age = df_2nd_wave.groupby(['AGEGROUP']).agg({'DEATHS': 'sum'})
+    fig_age_groups_deaths_pie.add_trace(
+        go.Pie(labels=labels, values=total_age['DEATHS'], name=gettext("Total"), sort=True, textposition="inside"), 1,
+        2)
+
     return fig_age_groups_deaths_pie
