@@ -157,6 +157,38 @@ def age_groups_cases():
 
 
 
+@register_plot_for_embedding("cases_age_groups_pop_active_relative")
+def age_groups_pop_active_cases_relative():
+    """
+    bar plot age groups cases
+    """
+    idx = pd.date_range(df_prov_timeseries.DATE.min(), df_prov_timeseries.DATE.max())
+    bars_age_groups = []
+    age_groups = sorted(df_prov_timeseries.pop_active.unique())
+
+    age_group_pop={'<60': (1269068 + 1300254 + 1407645 + 1492290 + 1504539 + 1590628), '>=60': (1347139 + 924291 + 539390 + 117397)}
+
+    for idx2, ag in enumerate(age_groups):
+        df_ag = df_prov_timeseries.loc[df_prov_timeseries['pop_active'] == ag]
+        df_ag = df_ag.groupby(['DATE']).agg({'CASES': 'sum'})
+        df_ag.index = pd.DatetimeIndex(df_ag.index)
+        df_ag = df_ag.reindex(idx, fill_value=0)
+        bars_age_groups.append(go.Bar(
+            x=df_ag.index,
+            y=df_ag['CASES']/age_group_pop[ag],
+            name=ag,
+            marker_color=px.colors.qualitative.G10[idx2]
+        ))
+        bars_age_groups.append(
+            go.Scatter(x=df_ag.index, y=moving_average((df_ag['CASES']/age_group_pop[ag]).values, 7), name=(ag + " avg 7 days")))
+    fig_age_groups_cases = go.Figure(data=bars_age_groups)
+    fig_age_groups_cases.update_layout(template="plotly_white", height=500,
+                                       margin=dict(l=0, r=0, t=30, b=0), title=gettext("Cases per day per age group"))
+
+    return fig_age_groups_cases
+
+
+
 @register_plot_for_embedding("cases_age_groups_pop_active")
 def age_groups_pop_active_cases():
     """
@@ -165,6 +197,7 @@ def age_groups_pop_active_cases():
     idx = pd.date_range(df_prov_timeseries.DATE.min(), df_prov_timeseries.DATE.max())
     bars_age_groups = []
     age_groups = sorted(df_prov_timeseries.pop_active.unique())
+
     for idx2, ag in enumerate(age_groups):
         df_ag = df_prov_timeseries.loc[df_prov_timeseries['pop_active'] == ag]
         df_ag = df_ag.groupby(['DATE']).agg({'CASES': 'sum'})
@@ -183,6 +216,7 @@ def age_groups_pop_active_cases():
                                        margin=dict(l=0, r=0, t=30, b=0), title=gettext("Cases per day per age group"))
 
     return fig_age_groups_cases
+
 
 
 def average_age_cases():
