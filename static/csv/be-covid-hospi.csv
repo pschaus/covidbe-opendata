@@ -2375,7 +2375,7 @@
 2373,2020-10-16,VBR,Flanders,6,67,13,3,0,5,7,VlaamsBrabant
 2374,2020-10-16,WBR,Wallonia,2,25,5,0,0,3,4,BrabantWallon
 2375,2020-10-16,VWV,Flanders,11,139,24,11,0,24,15,WestVlaanderen
-2376,2020-10-17,VAN,Flanders,14,294,52,20,1,32,28,Antwerpen
+2376,2020-10-17,VAN,Flanders,14,295,57,23,1,32,28,Antwerpen
 2377,2020-10-17,BRU,Brussels,15,460,82,50,10,63,38,Brussels
 2378,2020-10-17,WHT,Wallonia,14,371,52,31,0,63,31,Hainaut
 2379,2020-10-17,VLI,Flanders,7,60,18,4,2,14,8,Limburg
@@ -2397,7 +2397,7 @@
 2395,2020-10-18,VBR,Flanders,6,68,7,2,0,8,1,VlaamsBrabant
 2396,2020-10-18,WBR,Wallonia,2,38,7,0,0,6,0,BrabantWallon
 2397,2020-10-18,VWV,Flanders,11,173,24,12,0,19,11,WestVlaanderen
-2398,2020-10-19,VAN,Flanders,14,328,63,27,1,15,2,Antwerpen
+2398,2020-10-19,VAN,Flanders,14,327,63,27,1,16,3,Antwerpen
 2399,2020-10-19,BRU,Brussels,15,565,97,57,11,72,18,Brussels
 2400,2020-10-19,WHT,Wallonia,14,455,65,31,0,51,15,Hainaut
 2401,2020-10-19,VLI,Flanders,7,79,19,5,2,6,3,Limburg
@@ -2408,3 +2408,14 @@
 2406,2020-10-19,VBR,Flanders,6,74,10,4,1,7,1,VlaamsBrabant
 2407,2020-10-19,WBR,Wallonia,2,46,7,1,0,6,0,BrabantWallon
 2408,2020-10-19,VWV,Flanders,11,183,25,12,0,16,7,WestVlaanderen
+2409,2020-10-20,VAN,Flanders,14,334,63,31,2,28,34,Antwerpen
+2410,2020-10-20,BRU,Brussels,15,603,103,66,13,91,52,Brussels
+2411,2020-10-20,WHT,Wallonia,14,501,71,42,2,69,37,Hainaut
+2412,2020-10-20,VLI,Flanders,7,91,20,5,2,15,4,Limburg
+2413,2020-10-20,WLG,Wallonia,12,596,87,39,3,70,41,Liège
+2414,2020-10-20,WLX,Wallonia,3,82,17,8,0,10,11,Luxembourg
+2415,2020-10-20,WNA,Wallonia,6,160,24,16,1,21,18,Namur
+2416,2020-10-20,VOV,Flanders,14,257,49,21,0,31,30,OostVlaanderen
+2417,2020-10-20,VBR,Flanders,6,85,13,5,1,19,9,VlaamsBrabant
+2418,2020-10-20,WBR,Wallonia,2,56,9,2,0,13,7,BrabantWallon
+2419,2020-10-20,VWV,Flanders,11,204,30,13,0,44,19,WestVlaanderen
