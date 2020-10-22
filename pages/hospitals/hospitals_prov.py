@@ -8,7 +8,8 @@ from graphs.hopitals_prov import total_hospi_new_in_provinces,\
     total_hospi_provinces,total_icu_provinces,\
     map_hospi_provinces,map_hospi_per100K_provinces,\
     scatter_hospi_provinces,\
-    scatter_hospi_per100K_provinces
+    scatter_hospi_per100K_provinces, \
+    hospi_w1w2_provinces
 from graphs.hopitals import bar_hospi_per_case_per_province
 from pages.sources import display_source_providers, source_sciensano
 
@@ -27,12 +28,19 @@ def display_hospitals_prov():
                               figure=scatter_hospi_provinces(),
                               config=dict(locale=str(get_locale())))),
         ]),
+        html.H3(gettext("Comparison first wave second wave")),
+        dbc.Row([
+            dbc.Col(dcc.Graph(id='hospitalization-prov-scatter',
+                              figure=hospi_w1w2_provinces(),
+                              config=dict(locale=str(get_locale())))),
+        ]),
+        html.H3(gettext("Total number of hospitalizations per province")),
         dbc.Row([
             dbc.Col(dcc.Graph(id='hospitalization-prov',
                               figure=total_hospi_provinces(),
                               config=dict(locale=str(get_locale())))),
         ]),
-        html.H3(gettext("Per 100K inhabitants")),
+        html.H3(gettext("Total number of hospitalizations Per 100K inhabitants")),
         dbc.Row([
             dbc.Col(dcc.Graph(id='hospitalization100K-prov-map',
                               figure=map_hospi_per100K_provinces(),
