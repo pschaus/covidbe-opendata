@@ -52,10 +52,14 @@ def df_prov_avg_age_cases():
 df_prov = df_prov_avg_age_cases()
 
 def bar_testing_provinces():
-    return px.bar(df, x="DATE", y="CASES", color="PROVINCE", barmode="stack")
+    fig = px.bar(df, x="DATE", y="CASES", color="PROVINCE", barmode="stack")
+    fig.update_layout(template="plotly_white")
+    return fig
 
 def bar_cases_provinces():
-    return px.bar(df, x="DATE", y="CASES", color="PROVINCE", barmode="stack")
+    fig =  px.bar(df, x="DATE", y="CASES", color="PROVINCE", barmode="stack")
+    fig.update_layout(template="plotly_white")
+    return fig
 
 
 import numpy as np
@@ -136,7 +140,7 @@ def map_cases_incidence_provinces():
     fig = px.choropleth_mapbox(df3d, geojson=geojson_provinces,
                                locations="PROV",
                                color='CASES_PER_100KHABITANT',
-                               range_color=(0, 1500),
+                               range_color=(0, 2000),
                                color_continuous_scale="magma_r",
                                #color_continuous_scale=[(0, "green"), (15/150, "green"), (15/150, "yellow"),
                                #                        (30/150, "yellow"), (30/150, "orange"), (50/150, "orange"),
@@ -166,7 +170,7 @@ def map_cases_incidence_provinces():
 
 def scatter_incidence_provinces():
     df3ds = df3d.sort_values(by='CASES_PER_100KHABITANT', axis=0)
-    fig = px.scatter(y=df3ds.PROVINCE, x=df3ds.CASES_PER_100KHABITANT,title="Incidence rate [d-17,d-4]")
+    fig = px.scatter(y=df3ds.PROVINCE, x=df3ds.CASES_PER_100KHABITANT,title="Incidence rate [d-17,d-4]",labels={"x":" Number of cases/100K inhabitants over the past 14 days","y":""})
     def add_line(x,col):
         fig.add_shape(
                     type="line",
@@ -184,6 +188,7 @@ def scatter_incidence_provinces():
     add_line(30,'orange')
     add_line(50,'red')
     add_line(100,'black')
+    fig.update_layout(template="plotly_white")
     return fig
 
 

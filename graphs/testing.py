@@ -72,6 +72,8 @@ def plot_ration_cases_over_testing_smooth():
 
     fig.update_layout(xaxis_title=gettext('Day'),
                       yaxis_title=gettext('Positive rate'), title=gettext("Positive rate (avg over past 7 days)"))
+    fig.update_layout(template="plotly_white")
+
     return fig
 
 
@@ -85,5 +87,5 @@ def plot_cumulated_testing():
                     )
     fig.update_layout(xaxis_title=gettext('Day'),
                       yaxis_title=gettext('#Cases/#Tests'), title=gettext("Cumulated number of Tests and Cases"))
-
+    fig.update_layout(template="plotly_white")
     return fig

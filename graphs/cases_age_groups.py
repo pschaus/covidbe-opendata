@@ -69,7 +69,7 @@ def df_pop_age_cases():
 df_avg_age = df_avg_age_cases()
 
 
-def incidence_age_group_plot():
+def incidence_age_group_plot(log=False):
     df_pop = df_pop_age_cases()
     df_pop['incidence'] = df_pop['CASES'] / df_pop['pop'] * 100000
 
@@ -87,7 +87,8 @@ def incidence_age_group_plot():
                       xaxis_title='Date',
                       yaxis_title='Cases/100K')
     fig.update_layout(template="plotly_white")
-    fig.update_yaxes(type="log")
+    if log:
+        fig.update_yaxes(type="log")
     return fig
 
 
@@ -136,25 +137,14 @@ def age_groups_cases():
     """
     bar plot age groups cases
     """
-    idx = pd.date_range(df_prov_timeseries.DATE.min(), df_prov_timeseries.DATE.max())
-    bars_age_groups = []
-    age_groups = sorted(df_prov_timeseries.AGEGROUP.unique())
-    for idx2, ag in enumerate(age_groups):
-        df_ag = df_prov_timeseries.loc[df_prov_timeseries['AGEGROUP'] == ag]
-        df_ag = df_ag.groupby(['DATE']).agg({'CASES': 'sum'})
-        df_ag.index = pd.DatetimeIndex(df_ag.index)
-        df_ag = df_ag.reindex(idx, fill_value=0)
-        bars_age_groups.append(go.Bar(
-            x=df_ag.index,
-            y=df_ag['CASES'],
-            name=ag,
-            marker_color=px.colors.qualitative.G10[idx2]
-        ))
-    fig_age_groups_cases = go.Figure(data=bars_age_groups)
-    fig_age_groups_cases.update_layout(template="plotly_white", height=500, barmode="stack",
-                                       margin=dict(l=0, r=0, t=30, b=0), title=gettext("Cases per day per age group"))
-    return fig_age_groups_cases
+    df_ag = df_prov_timeseries.groupby(['DATE', 'AGEGROUP']).agg({'CASES': 'sum'}).reset_index()
+    df_ag.columns = df_ag.columns.get_level_values(0)
+    df_ag = df_ag.sort_values(by="AGEGROUP", axis=0)
 
+    fig = px.bar(df_ag, x="DATE", y="CASES", color="AGEGROUP", title=gettext("Cases per day per age group"))
+    fig.update_layout(template="plotly_white")
+
+    return fig
 
 
 @register_plot_for_embedding("cases_age_groups_pop_active_relative")

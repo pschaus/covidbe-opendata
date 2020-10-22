@@ -35,30 +35,33 @@ def display_age_groups():
                               figure=age_group_cases_relative(),
                               config=dict(locale=str(get_locale())))),
         ]),
+        html.H3(get_translation(fr = "Nombre de cas par 100K dans la population du groupe d'age",en="Number of cases per 100K in the age group population")),
         dbc.Row([
             dbc.Col(dcc.Graph(id='age-group-cases',
-                              figure=incidence_age_group_plot(),
+                              figure=incidence_age_group_plot(log=True),
                               config=dict(locale=str(get_locale())))),
         ]),
+        dbc.Row([
+            dbc.Col(dcc.Graph(id='age-group-cases',
+                              figure=incidence_age_group_plot(log=False),
+                              config=dict(locale=str(get_locale())))),
+        ]),
+        html.H3(get_translation(fr="Nombre de cas dans chaque groupe d'age",
+                                en="Nombre de cas dans chaque groupe d'age")),
         dbc.Row([
             dbc.Col(dcc.Graph(id='age-group-cases',
                               figure=age_groups_pop_active_cases(),
                               config=dict(locale=str(get_locale())))),
         ]),
+        html.H3(get_translation(fr="Evolution de l'age moyen des cas",
+                                en="Evolution of the average age of cases")),
         dbc.Row([
             dbc.Col(dcc.Graph(id='age-group-cases',
                               figure=average_age_cases(),
                               config=dict(locale=str(get_locale())))),
         ]),
-        # html.P(gettext(
-        #     get_translation(
-        #         fr="""Hypothetical""",
-        #         en="""Hypothetical"""))),
-        # dbc.Row([
-        #     dbc.Col(dcc.Graph(id='age-group-cases',
-        #                       figure=age_groups_pop_active_hypothetical(),
-        #                       config=dict(locale=str(get_locale())))),
-        # ]),
+        html.H3(get_translation(fr="Repartition de cas depuis le début de l'épidémie",
+                                en="Distribution of cases since the beginning")),
         dbc.Row([
             dbc.Col(dcc.Graph(id='age-group-cases-pie',
                               figure=age_groups_cases_pie(),

@@ -21,17 +21,17 @@ prov_codes = {"VlaamsBrabant": "VBR",
 
 prov_codes_ = {v:k for k,v in prov_codes.items()}
 
-prov_population = {"VBR":1129849,
-              "WNA":491285,
-              "WHT":1339562,
-              "VOV":1186532,
-              "BRU":1191604,
-              "VWV":1496187,
-              "VLI":867413,
-              "VAN":1836030,
-              "WLG":1102531,
-              "WLX":281972,
-              "WBR":399123}
+prov_population = {"VBR":1155843,
+              "WNA":495832,
+              "WHT":1346840,
+              "VOV":1200945,
+              "BRU":1218255,
+              "VWV":1525255,
+              "VLI":877370,
+              "VAN":1869730,
+              "WLG":1109800,
+              "WLX":286752,
+              "WBR":406019}
 
 
 

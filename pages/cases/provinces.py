@@ -56,13 +56,13 @@ def display_provinces():
             dbc.Col(dcc.Graph(id='cases-province-map', figure=avg_testing_provinces(),
                               config=dict(locale=str(get_locale()))), className="col-12"),
         ]),
-        html.H2(gettext(
-            get_translation(fr="Taux de positivité (#test positifs / #tests)",
-                            en="Positive rate (#post test/#tests)"))),
-        dbc.Row([
-            dbc.Col(dcc.Graph(id='Positive rate (#cases/#tests)', figure=avg_positive_rate_provinces(),
-                              config=dict(locale=str(get_locale()))), className="col-12"),
-        ]),
+        #html.H2(gettext(
+        #    get_translation(fr="Taux de positivité (#test positifs / #tests)",
+        #                    en="Positive rate (#post test/#tests)"))),
+        #dbc.Row([
+        #    dbc.Col(dcc.Graph(id='Positive rate (#cases/#tests)', figure=avg_positive_rate_provinces(),
+        #                      config=dict(locale=str(get_locale()))), className="col-12"),
+        #]),
         html.H2(gettext(
             get_translation(fr="Taux de positivité (#cas/#tests)",
                             en="Positive rate (#cases/#tests)"))),

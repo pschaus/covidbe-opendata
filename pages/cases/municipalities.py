@@ -36,8 +36,8 @@ def municipalities():
                               config=dict(locale=str(get_locale()))), className="col-12"),
         ]),
         html.H3(get_translation(
-            en="""Number of positive case""",
-            fr="""Nombre de cas positifs""",
+            en="""Number of positive case since the beginning""",
+            fr="""Nombre de cas positifs depuis le début""",
         )),
         html.H4(get_translation(
             en="Click on a municipality to see a plot of its cases over time",

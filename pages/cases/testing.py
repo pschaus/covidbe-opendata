@@ -16,11 +16,6 @@ def display_testing():
             dbc.Col(dcc.Graph(id='cases-province-map', figure=bart_plot_cases_testing(),
                               config=dict(locale=str(get_locale()))), className="col-12"),
         ]),
-        html.H2(gettext("Ratio #Cases/#Tests each day")),
-        dbc.Row([
-            dbc.Col(dcc.Graph(id='cases-province-map', figure=plot_ration_cases_over_testing(),
-                              config=dict(locale=str(get_locale()))), className="col-12"),
-        ]),
         html.H2(gettext("Ratio #Cases/#Tests averaged over past 7 days")),
         dbc.Row([
             dbc.Col(dcc.Graph(id='cases-province-map', figure=plot_ration_cases_over_testing_smooth(),

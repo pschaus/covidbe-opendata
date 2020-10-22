@@ -11,10 +11,10 @@ from graphs import register_plot_for_embedding
 
 
 geojson = geopandas.read_file('static/json/admin-units/be-geojson.geojson')
-df3 = pd.read_csv("static/csv/cases_weekly_ins3.csv",encoding='latin1')
+df3 = pd.read_csv("static/csv/cases_weekly_ins3.csv",encoding='utf8')
 #df3 = df3[df3.WEEK >= 32]
 
-df3d = pd.read_csv("static/csv/cases_daily_ins3.csv",encoding='latin1')
+df3d = pd.read_csv("static/csv/cases_daily_ins3.csv",encoding='utf8')
 
 
 
@@ -88,9 +88,10 @@ def scatter_incidence_nis3():
     df3d = df3d.round({'CASES_PER_100KHABITANT': 1})
 
     df3d = df3d.sort_values(by='CASES_PER_100KHABITANT', axis=0)
-    fig = px.scatter(y=df3d.name, x=df3d['CASES_PER_100KHABITANT'],title=get_translation(fr="Nombres de cas/100K past [d-17,d-4] days",
-                                                          en="Number of cases/100K past [d-17,d-4] days"))
+    title = get_translation(fr="Nombres de cas/100K past [d-17,d-4] days",en="Number of cases/100K past [d-17,d-4] days")
+    fig = px.scatter(y=df3d.name, x=df3d['CASES_PER_100KHABITANT'],title=title ,labels={"y":"","x":title})
     fig.update_layout(autosize=True, height=900)
+    fig.update_layout(template="plotly_white")
     return fig
 
 
@@ -114,7 +115,7 @@ def map_cases_incidence_nis3():
     fig = px.choropleth_mapbox(df3d, geojson=geojson,
                                locations="NIS3",
                                color='CASES_PER_100KHABITANT',
-                               range_color=(0, 1500),
+                               range_color=(0, 2000),
                                color_continuous_scale="magma_r",
                                #color_continuous_scale=[(0, "green"), (15/150, "green"), (15/150, "yellow"),
                                #                        (30/150, "yellow"), (30/150, "orange"), (50/150, "orange"),
@@ -141,17 +142,23 @@ def map_cases_incidence_nis3():
 
 @register_plot_for_embedding("cases_per_admin_region_inhabitant overtime plot")
 def plot_cases_admin_region_overtime():
-    return px.line(data_frame=df3, x='WEEK', y='CASES', line_group ='name',color='name')
+    fig = px.line(data_frame=df3, x='WEEK', y='CASES', line_group ='name',color='name')
+    fig.update_layout(template="plotly_white")
+    return fig
 
 
 
 @register_plot_for_embedding("cases_per_habitant_admin_region_inhabitant overtime plot")
 def plot_cases_per_habittant_admin_region_overtime():
-    return px.line(data_frame=df3, x='WEEK', y='CASES_PER_1000HABITANT', line_group ='name',color='name')
-
-
+    df3d['CASES_PER_1000HABITANT'] = df3d['CASES']/df3d['POP']*100000
+    fig = px.bar(data_frame=df3d, x='DATE', y='CASES_PER_1000HABITANT',color='name')
+    fig.update_layout(template="plotly_white")
+    return fig
 
 @register_plot_for_embedding("casesdaily_per_admin_region_inhabitant overtime plot")
 def plot_cases_daily_admin_region_overtime():
-    return px.line(data_frame=df3d, x='DATE', y='CASES', line_group ='name',color='name')
+    fig = px.bar(data_frame=df3d, x='DATE', y='CASES',color='name')
+    fig.update_layout(template="plotly_white")
+    return fig
+
 

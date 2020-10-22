@@ -43,11 +43,7 @@ def display_admin():
                               config=dict(locale=str(get_locale()))), className="col-12"),
         ]),
         html.H3(gettext(
-            get_translation(en="Plot over time", fr="Evolution dans le temps"))),
-        dbc.Row([
-            dbc.Col(dcc.Graph(id='cases-province-map', figure=plot_cases_admin_region_overtime(),
-                              config=dict(locale=str(get_locale()))), className="col-12"),
-        ]),
+            get_translation(en="Plot over time  (double click in the legend to isolate one region)", fr="Evolution dans le temps (double click dans la legende pour isoler une region)"))),
         dbc.Row([
             dbc.Col(dcc.Graph(id='cases-province-map', figure=plot_cases_daily_admin_region_overtime(),
                               config=dict(locale=str(get_locale()))), className="col-12"),
