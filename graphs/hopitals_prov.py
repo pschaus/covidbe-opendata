@@ -102,7 +102,7 @@ def total_hospi_new_out_provinces():
     return fig
 
 
-def hospi_w1w2(fig, row, col, fromw2, prov=None):
+def hospi_w1w2(fig, row, col, fromw2, prov=None, show_legend=False):
     df_hospi = pd.read_csv('static/csv/be-covid-hospi.csv')
 
     if prov is not None:
@@ -147,27 +147,33 @@ def hospi_w1w2(fig, row, col, fromw2, prov=None):
 
     n = 30
 
-    wave1 = go.Bar(y=df.TOTAL_IN[:n], name=gettext('#Total Hospitalized Wave1'), legendgroup='group1', showlegend=False,
-                   marker_color="red")
-    wave2 = go.Bar(y=df.TOTAL_IN[df.index >= fromw2], name=gettext('#Total Hospitalized Wave2'), legendgroup='group1',
-                   showlegend=False, marker_color="blue")
+    x1 = df.index.values[:n]
+    x2 = df.index.values[df.index >= fromw2]
+    y1 = df.TOTAL_IN[:n]
+    y2 = df.TOTAL_IN[df.index >= fromw2]
 
-    # wave1 = go.Bar(y=df.TOTAL_IN_ICU[:n], name=gettext('#Total Hospitalized Wave1'),legendgroup='group1',showlegend=False,marker_color="red")
-    # wave2 = go.Bar(y=df.TOTAL_IN_ICU[df.index>=fromw2], name=gettext('#Total Hospitalized Wave2'),legendgroup='group1',showlegend=False,marker_color="blue")
+    values = y2.values
+    doubling = 1
+    while values[-doubling] > values[-1] / 2 and doubling < len(values) - 1:
+        doubling += 1
+
+    wave1 = go.Bar(y=y1, name=gettext('Wave1'), legendgroup='group1', showlegend=show_legend, marker_color="red")
+    wave2 = go.Bar(y=y2, name=gettext('Wave2'), legendgroup='group2', showlegend=show_legend, marker_color="blue")
 
     fig.add_trace(wave1, row, col)
     fig.add_trace(wave2, row, col)
-    # fig_hospi = go.Figure(data=[wave1,wave2], layout=go.Layout(barmode='group'), )
-
-    # fig_hospi = go.Figure(data=[wave1,wave2,wave1_ICU,wave2_ICU], layout=go.Layout(barmode='group'), )
 
     fig.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0))
 
-    # fig.update_layout(xaxis_title=gettext('Day'),
-    #                        yaxis_title=gettext('Number of / Day'))
+    xvals = list(range(0, len(x2), 5))
+    # xlabels = [x1[v][-5:]+"|"+x2[v][-5:] for v in xvals]
+    xlabels = [x2[v][-5:] for v in xvals]
 
-    xvals = list(range(0, n, 5))
-    xlabels = [df.index[:n][v] for v in xvals]
+    ymax = max(y2.values)
+    xdoubling = len(y2) - doubling
+    line = go.layout.Shape(type="line", x0=xdoubling, y0=0, x1=xdoubling, y1=ymax,
+                           line=dict(color="lightblue", width=3))
+    fig.add_shape(line, row=row, col=col)
 
     fig.update_xaxes(tickmode='array', tickvals=xvals, ticktext=xlabels, row=row, col=col)
 
@@ -187,7 +193,7 @@ def hospi_w1w2_provinces():
     'Liège', 'Namur', 'Luxembourg', 'Hainaut', 'Brussels', 'BrabantWallon', 'VlaamsBrabant', 'OostVlaanderen',
     'WestVlaanderen', 'Limburg', 'Antwerpen'))
 
-    hospi_w1w2(fig, 1, 1, fromw2='2020-10-01', prov='Liège')
+    hospi_w1w2(fig,1,1,fromw2 = '2020-10-01', prov = 'Liège',show_legend=True)
     hospi_w1w2(fig, 1, 2, fromw2='2020-10-01', prov='Namur')
     hospi_w1w2(fig, 1, 3, fromw2='2020-10-01', prov='Luxembourg')
     hospi_w1w2(fig, 2, 1, fromw2='2020-10-01', prov='Hainaut')
