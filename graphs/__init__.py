@@ -24,7 +24,11 @@ def register_plot_for_embedding(name):
         def add_button():
             g = f()
             lang = str(get_locale())
-            g.__dict__["embeddable"] = f"https://www.covidata.be/embed/static_html/{GIT_COMMIT_HASH}/{name}_{lang}"
+            try:
+                g.__dict__["embeddable"] = f"https://www.covidata.be/embed/static_html/{GIT_COMMIT_HASH}/{name}_{lang}"
+            except:
+                print(name, "is embeddable but is not a plotly figure")
+                pass
             return g
         registered_plots[name] = add_button
         return add_button
