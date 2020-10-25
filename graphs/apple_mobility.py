@@ -11,6 +11,16 @@ from datetime import datetime, date
 import numpy as np
 from flask_babel import gettext
 
+
+def moving_average(a, n=1):
+    a = a.astype(np.float)
+    ret = np.cumsum(a)
+    ret[n:] = ret[n:] - ret[:-n]
+    ret[:n - 1] = ret[:n - 1] / range(1, n)
+    ret[n - 1:] = ret[n - 1:] / n
+    return ret
+
+
 countries =  ['Belgium','Germany','Netherlands','France','United Kingdom','Spain','Italy','Sweden']
 
 pd.options.mode.chained_assignment = 'raise'  # default='warn'
@@ -60,16 +70,18 @@ def apple_mobility_plot_eu():
         a = 0
         for c in countries:
             df = countries_df[c]
-            large_fig.append_trace(
-                go.Scatter(x=df.index, y=df[g], line=dict(color=colors[a]), mode='lines', name=c, legendgroup=c,
-                           showlegend=(r == 1)), row=r, col=1)
+            values = df[g].values
+            values = values.astype(np.float)
+            if len(values) > 0:
+                values = np.nan_to_num(values,True)
+                values = moving_average(values, 7)
+                large_fig.append_trace(
+                    go.Scatter(x=df.index, y=values, line=dict(color=colors[a]), mode='lines', name=c, legendgroup=c,
+                            showlegend=(r == 1)), row=r, col=1)
             a += 1
 
         r += 1
 
-    large_fig['layout'].update(height=1000, title='Apple Mobility Reports')
+    large_fig['layout'].update(height=1000, title='Apple Mobility Reports (7 day average)')
+    large_fig.update_layout(template="plotly_white")
     return large_fig
-
-
-
-
