@@ -1,9 +1,12 @@
+import re
+
 import dash
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
 import flask
 import flask_babel
+import requests
 from dash.dependencies import Input, Output, State, ClientsideFunction
 from dash.exceptions import PreventUpdate
 from flask import request, g, abort, redirect
@@ -314,11 +317,26 @@ app.clientside_callback(
 
 
 @app.server.route("/embed/html/<which>")
-def plot_embed_html(which):
+def old_plot_embed_html(which):
     if which not in registered_plots:
         abort(404)
     return redirect(registered_plots[which].get_html_link())
 
+GITHUB_CHECK_PATTERN = re.compile("^[A-Za-z0-9_\-.]+$")
+
+@cache.memoize(24*60*60)
+def get_static_from_github(commit_id, which):
+    assert GITHUB_CHECK_PATTERN.match(commit_id)
+    assert GITHUB_CHECK_PATTERN.match(which)
+    url = "https://raw.githubusercontent.com/pschaus/covidbe-opendata/{commit_id}/static/embed/{which}.html".format(commit_id=commit_id, which=which)
+    return requests.get(url).content
+
+@app.server.route("/embed/static_html/<commit_id>/<which>")
+def plot_embed_html(commit_id, which):
+    try:
+        return get_static_from_github(commit_id, which)
+    except:
+        return "An error occured"
 
 # @app.server.route("/embed/image/<which>")
 # def plot_embed_image(which):
