@@ -6,7 +6,7 @@ from flask_babel import get_locale, gettext
 
 from graphs.tomtom_traffic import plot_tomtom_be_working_days, map_tomtom_be_working_days, plot_tomtom_eu_working_days, map_tomtom_by_day
 from pages.sources import display_source_providers, source_tomtom
-from pages import get_translation
+from pages import get_translation, display_graphic
 
 #from mynapp import app
 
@@ -33,19 +33,19 @@ def display_tomtom():
             """, )),
         html.H2(gettext("TomTom Traffic Index Belgium Cities 07:00-9:00")),
         dbc.Row([
-            dbc.Col(dcc.Graph(id='tomtom be',
+            dbc.Col(display_graphic(id='tomtom be',
                               figure=plot_tomtom_be_working_days(),
                               config=dict(locale=str(get_locale())))),
         ]),
         html.H2(gettext("TomTom Traffic Index EU Cities 07:00-9:00")),
         dbc.Row([
-            dbc.Col(dcc.Graph(id='tomtom eu',
+            dbc.Col(display_graphic(id='tomtom eu',
                               figure=plot_tomtom_eu_working_days(),
                               config=dict(locale=str(get_locale())))),
         ]),
         html.H2(gettext("TomTom Traffic Index Belgium Cities and Neighbors 07:00-9:00")),
         dbc.Row([
-            dbc.Col(dcc.Graph(id='tomtom map usage',
+            dbc.Col(display_graphic(id='tomtom map usage',
                               figure=map_tomtom_be_working_days(),
                               config=dict(locale=str(get_locale())))),
         ]),
@@ -67,7 +67,7 @@ def display_tomtom():
         #             ))
         # ]),
         dbc.Row([
-            dbc.Col(dcc.Graph(id='tomtom-map-container-id',
+            dbc.Col(display_graphic(id='tomtom-map-container-id',
                               #figure=map_tomtom_by_day(dt.datetime.today().date()),
                               config=dict(locale=str(get_locale())))),
             ]),

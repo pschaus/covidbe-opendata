@@ -4,7 +4,7 @@ import dash_html_components as html
 from flask_babel import get_locale, gettext
 
 from graphs.euromomo import euromomo_zscores, euromomo_ratio
-from pages import custom_warning_box
+from pages import custom_warning_box, display_graphic
 from pages.sources import display_source_providers, source_euromomo
 from pages import get_translation
 
@@ -74,7 +74,7 @@ def display_euromomo():
             """)
         ),
         dbc.Row([
-            dbc.Col(dcc.Graph(id='euromomo-ratio',
+            dbc.Col(display_graphic(id='euromomo-ratio',
                               figure=euromomo_ratio(),
                               config=dict(locale=str(get_locale())))),
         ]),
@@ -82,7 +82,7 @@ def display_euromomo():
         custom_warning_box(gettext("Z-scores CANNOT be compared country-to-country. The plot below can only be used to"
                                    " find when the peaks happened.")),
         dbc.Row([
-            dbc.Col(dcc.Graph(id='euromomo-zscores',
+            dbc.Col(display_graphic(id='euromomo-zscores',
                               figure=euromomo_zscores(),
                               config=dict(locale=str(get_locale())))),
         ]),

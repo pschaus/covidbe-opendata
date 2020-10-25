@@ -7,7 +7,7 @@ from flask_babel import get_locale, gettext
 
 from graphs.facebook import population_proportion, population_evolution, movement, staying_put
 from pages.sources import display_source_providers, source_facebook
-from pages import get_translation
+from pages import get_translation, display_graphic
 
 import pandas as pd
 import plotly.express as px
@@ -47,7 +47,7 @@ def display_facebook():
                 Values considered as normal were computed over the 45 days before the start of this graph and for each separate weekday.
                 """))),
         dbc.Row([
-            dbc.Col(dcc.Graph(id='movement',
+            dbc.Col(display_graphic(id='movement',
                               figure=movement(),
                               config=dict(locale=str(get_locale())))),
         ]),
@@ -73,7 +73,7 @@ def display_facebook():
                 will not belong to the users who stayed put for the whole day.
                 """))),
         dbc.Row([
-            dbc.Col(dcc.Graph(id='staying-put',
+            dbc.Col(display_graphic(id='staying-put',
                               figure=staying_put(),
                               config=dict(locale=str(get_locale())))),
         ]),
@@ -105,7 +105,7 @@ def display_facebook():
             clearable=False
         )],
         style=dict(width='50%')),
-        dcc.Graph(id='graph'),
+        display_graphic(id='graph'),
         html.H3(gettext(
             get_translation(
                 fr="Lien de proportionnalité entre le nombre d'utilisateurs et la population réelle",
@@ -123,7 +123,7 @@ def display_facebook():
                 Soignies and La Louvière are not shown on the visualization as Facebook data does not account for the split of Soignies in January 2019.
                 """))),
         dbc.Row([
-            dbc.Col(dcc.Graph(id='population-proportion',
+            dbc.Col(display_graphic(id='population-proportion',
                               figure=population_proportion(),
                               config=dict(locale=str(get_locale())))),
         ]),

@@ -6,8 +6,7 @@ from dash.dependencies import Input, Output
 import plotly.graph_objects as go
 import pandas as pd
 from os.path import isfile
-from pages import get_translation
-
+from pages import get_translation, display_graphic
 
 #https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/allData.pkl
 #https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv
@@ -91,11 +90,11 @@ def display_a():
                 )
             ])
         ]),
-        dcc.Graph(
+        display_graphic(
             id="plot_new_metrics",
             config={ 'displayModeBar': False }
         ),
-        dcc.Graph(
+        display_graphic(
             id="plot_cum_metrics",
             config={ 'displayModeBar': False }
         ),

@@ -1,6 +1,10 @@
+import builtins
 import threading
 from typing import List
 import dash_core_components as dcc
+import dash_bootstrap_components as dbc
+import dash_html_components as dhc
+
 import dash_html_components as html
 from flask_babel import gettext, get_locale, LazyString
 
@@ -59,3 +63,60 @@ def lang_cache(f):
     return lambda: cache.get(str(get_locale()), f)
 
 
+def display_graphic(id, figure, config=None, **kwargs):
+    """
+    Returns a dash element containing the graphic and additional buttons
+    """
+    if config is None:
+        config = {}
+    if "locale" not in config:
+        config["locale"] = str(get_locale())
+    try:
+        if figure.embeddable:
+            index = f"{id}_{builtins.id(figure)}"
+            return dhc.Div(children=[
+                dcc.Graph(id=id, figure=figure, config=config, **kwargs),
+                dbc.Row([
+                    dbc.Col([
+                        dbc.Button(
+                            "Integrate this in your website",
+                            id={
+                                "type": "integrate-button",
+                                "index": index
+                            },
+                            outline=True,
+                            color="primary",
+                            size="sm"
+                        )
+                    ], width="auto")
+                ], justify="end"),
+                dbc.Modal(
+                    [
+                        dbc.ModalHeader("Integrate a plot in your website"),
+                        dbc.ModalBody([
+                            "You can copy-paste the following code in your website. The plot won't be updated.",
+                            dhc.Pre([
+                                f"<iframe src='{figure.embeddable}'></iframe>"
+                            ])
+                        ]),
+                        dbc.ModalFooter(
+                            dbc.Button("Close", id={
+                                    "type": "integrate-close",
+                                    "index": index
+                                },
+                                className="ml-auto",
+                                outline=True,
+                                color="primary",
+                                size="sm"
+                            )
+                        ),
+                    ],
+                    id={
+                        "type": "integrate-modal",
+                        "index": index
+                    }
+                ),
+            ])
+    except:
+        pass
+    return dcc.Graph(id=id, figure=figure, config=config, **kwargs)

@@ -7,7 +7,7 @@ import dash_html_components as html
 import flask
 import flask_babel
 import requests
-from dash.dependencies import Input, Output, State, ClientsideFunction
+from dash.dependencies import Input, Output, State, ClientsideFunction, MATCH
 from dash.exceptions import PreventUpdate
 from flask import request, g, abort, redirect
 from flask_babel import Babel, lazy_gettext, gettext
@@ -351,6 +351,18 @@ def update_all_map(date, hour):
     print("callback", date, hour)
     if date is not None:
         return map_tomtom_by_day(date, hour)
+
+
+@app.callback(
+    Output({'type': 'integrate-modal', 'index': MATCH}, "is_open"),
+    [Input({'type': 'integrate-button', 'index': MATCH}, 'n_clicks'), Input({'type': 'integrate-close', 'index': MATCH}, 'n_clicks')],
+    [State({'type': 'integrate-modal', 'index': MATCH}, 'is_open')],
+)
+def toggle_modal_integrate(n1, n2, is_open):
+    if n1 or n2:
+        return not is_open
+    return is_open
+
 
 def memory_summary():
     # Only import Pympler when we need it. We don't want it to

@@ -6,7 +6,8 @@ from flask_babel import get_locale, gettext
 
 from graphs.obituary import inmemoriam_plot, sudpresse_plot, dansnospensees_plot, allbeobituary_plot, avideces_plot, rolling_ratio_plot, bar_plot_be, bar_plot_fr, ratio_plot
 from pages.sources import *
-from pages import get_translation
+from pages import get_translation, display_graphic
+
 
 def display_obituary():
     return [
@@ -26,23 +27,23 @@ def display_obituary():
             Flanders and Brussels seem underrepresented in Belgian sites and therefore more closely reflect the situation in Wallonia.
             """, )),
         dbc.Row([
-            dbc.Col(dcc.Graph(id='inmemoriam',
+            dbc.Col(display_graphic(id='inmemoriam',
                               figure=inmemoriam_plot(),
                               config=dict(locale=str(get_locale()))),
                     width=12, lg=6),
-            dbc.Col(dcc.Graph(id='sudpress',
+            dbc.Col(display_graphic(id='sudpress',
                               figure=sudpresse_plot(),
                               config=dict(locale=str(get_locale()))),
                     width=12, lg=6),
-            dbc.Col(dcc.Graph(id='dansnospensees',
+            dbc.Col(display_graphic(id='dansnospensees',
                               figure=dansnospensees_plot(),
                               config=dict(locale=str(get_locale()))),
                     width=12, lg=6),
-            dbc.Col(dcc.Graph(id='allbeobituary',
+            dbc.Col(display_graphic(id='allbeobituary',
                               figure=allbeobituary_plot(),
                               config=dict(locale=str(get_locale()))),
                     width=12, lg=6),
-            #dbc.Col(dcc.Graph(id='avisdeces',
+            #dbc.Col(display_graphic(id='avisdeces',
             #                  figure=avideces_plot(),
             #                  config=dict(locale=str(get_locale()))),
             #        width=12, lg=6),
@@ -61,7 +62,7 @@ def display_obituary():
         In order to reduce the effect due to the daily fluctuation, this ratio is calculated on a (sliding) window of 7 days.
             """, )),
         dbc.Row([
-            dbc.Col(dcc.Graph(id='rollinratio_obituary',
+            dbc.Col(display_graphic(id='rollinratio_obituary',
                               figure=rolling_ratio_plot(),
                               config=dict(locale=str(get_locale())))),
         ]),
@@ -74,17 +75,17 @@ def display_obituary():
             Same graph as the previous one, but the ratio is calculated relative to the 2019 average to avoid adding fluctuations due to 2019.
             """, )),
         dbc.Row([
-            dbc.Col(dcc.Graph(id='ratio_obituary',
+            dbc.Col(display_graphic(id='ratio_obituary',
                               figure=ratio_plot(),
                               config=dict(locale=str(get_locale())))),
         ]),
         html.H2(gettext("Total number of deaths published on obituary websites 2020/2019")),
         dbc.Row([
-            dbc.Col(dcc.Graph(id='allbeobituarybar',
+            dbc.Col(display_graphic(id='allbeobituarybar',
                               figure=bar_plot_be(),
                               config=dict(locale=str(get_locale()))),
                     width=12, lg=12),
-            #dbc.Col(dcc.Graph(id='allfrobituarybar',
+            #dbc.Col(display_graphic(id='allfrobituarybar',
             #                  figure=bar_plot_fr(),
             #                  config=dict(locale=str(get_locale()))),
             #        width=12, lg=6)
