@@ -66,7 +66,7 @@ def Re_estimate2(cases,n,delay_test=0):
     return Re[10-n:]
 
 
-@register_plot_for_embedding("testing_testing_over_cases")
+@register_plot_for_embedding("plot_Re")
 def plot_Re():
     """
     We make the hypotheses that 
@@ -114,6 +114,7 @@ def plot_Re():
     figRe.update_yaxes(range=[0, 5])
     return fig_rate_increase,fig_rate_decrease,figRe
 
+@register_plot_for_embedding("plot_daily_exp_factor")
 def plot_daily_exp_factor():
     """
     We make the hypotheses that 

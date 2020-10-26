@@ -3,6 +3,7 @@ import plotly.graph_objs as go
 import plotly.express as px
 from flask_babel import gettext
 from plotly.subplots import make_subplots
+from graphs import register_plot_for_embedding
 
 import numpy as np
 import altair as alt
@@ -89,6 +90,8 @@ def death_age_groups(barmode="group"):
 geojson = geopandas.read_file('static/json/admin-units/be-geojson.geojson')
 df3 = pd.read_csv("static/csv/weekly_mortality_statbel_ins3.csv")
 
+
+@register_plot_for_embedding("death_arrondissements_map_weekly")
 def death_arrondissements_map_weekly():
     fig = px.choropleth_mapbox(df3, geojson=geojson,
                                locations="NIS3",

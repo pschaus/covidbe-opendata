@@ -72,6 +72,7 @@ def map_cases_per_habittant_admin_region_overtime():
     fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=5, b=0))
     return fig
 
+@register_plot_for_embedding("scattter-incidence-nis3")
 def scatter_incidence_nis3():
     df_names = pd.DataFrame(geojson.drop(columns='geometry'))
     cutoff1 = (pd.to_datetime('today') - pd.Timedelta('17 days')).date()

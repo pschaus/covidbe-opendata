@@ -126,7 +126,7 @@ def map_communes_per_1000inhabitant_per_week():
 
 
 
-@register_plot_for_embedding("cases_per_municipality_per_inhabitant")
+@register_plot_for_embedding("map_communes_per_inhabitant")
 def map_communes_per_inhabitant():
     fig = px.choropleth_mapbox(df_communes_tot, geojson=geojson_communes,
                                locations="NIS5",
@@ -151,7 +151,7 @@ def map_communes_per_inhabitant():
     return fig
 
 
-@register_plot_for_embedding("cases_per_municipality")
+@register_plot_for_embedding("map_communes")
 def map_communes():
     fig = px.choropleth_mapbox(df_communes_tot, geojson=geojson_communes,
                                locations="NIS5",
@@ -179,7 +179,7 @@ def map_communes():
     fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=5, b=0))
     return fig
 
-
+@register_plot_for_embedding("barplot_communes")
 def barplot_communes(commune_nis=73006):
     [nis, cases, fr, nl, _, title_text, _, _] = df_communes_tot.loc[df_communes_tot['NIS5'] == str(commune_nis)].values[0]
     title = title_text

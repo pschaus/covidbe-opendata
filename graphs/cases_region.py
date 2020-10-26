@@ -39,7 +39,7 @@ def trace(region, log=False, div=1, mul=1):
                       x=df[df.REGION == region].DATE,
                       y=moving_average(df[df.REGION == region].CASES.values, 7) / div * mul)
 
-
+@register_plot_for_embedding("plot_absolute_cases_region")
 def plot_absolute_cases():
     fig = go.Figure()
     fig.add_trace(trace('Wallonia'))
@@ -49,7 +49,7 @@ def plot_absolute_cases():
     fig.update_layout(template="plotly_white", title="Number of cases")
     return fig
 
-
+@register_plot_for_embedding("plot_relative_cases_region")
 def plot_relative_cases():
     fig = go.Figure()
     brux_pop = 1218255
@@ -63,21 +63,21 @@ def plot_relative_cases():
     fig.update_layout(template="plotly_white", title="Number of cases/100000 habitants")
     return fig
 
-
+@register_plot_for_embedding("cases_absolute_region")
 def cases_absolute_region():
     return plot_absolute_cases()
 
+@register_plot_for_embedding("cases_relative_region")
 def cases_relative_region():
     return plot_relative_cases()
 
-def cases_absolute_region():
-    return plot_absolute_cases()
-
+@register_plot_for_embedding("cases_absolute_region_log")
 def cases_absolute_region_log():
     fig = plot_absolute_cases()
     fig.update_yaxes(type="log")
     return fig
 
+@register_plot_for_embedding("cases_relative_region_log")
 def cases_relative_region_log():
     fig = plot_relative_cases()
     fig.update_yaxes(type="log")

@@ -19,7 +19,7 @@ def moving_average(a, n=1) :
     return ret
 
 
-@register_plot_for_embedding("testing_bar_plot")
+@register_plot_for_embedding("bart_plot_cases_testing")
 def bart_plot_cases_testing():
     """
     bar plot cases and testing everyday
@@ -43,7 +43,7 @@ def bart_plot_cases_testing():
     return fig_testing
 
 
-@register_plot_for_embedding("testing_testing_over_cases")
+@register_plot_for_embedding("plot_ration_cases_over_testing")
 def plot_ration_cases_over_testing():
     """
     plot of the ration cases over testing everyday
@@ -55,7 +55,7 @@ def plot_ration_cases_over_testing():
 
 
 
-@register_plot_for_embedding("testing_testing_over_cases_smooth")
+@register_plot_for_embedding("plot_ration_cases_over_testing_smooth")
 def plot_ration_cases_over_testing_smooth():
     """
     plot of the ration cases over testing everyday
@@ -77,7 +77,7 @@ def plot_ration_cases_over_testing_smooth():
     return fig
 
 
-@register_plot_for_embedding("testing_cumulative")
+@register_plot_for_embedding("plot_cumulated_testing")
 def plot_cumulated_testing():
     """
     plot of the cumulated tests cases of days everyday

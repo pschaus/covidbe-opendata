@@ -11,7 +11,7 @@ df_mortality = pd.read_csv('static/csv/be-covid-mortality.csv', keep_default_na=
 
 
 
-@register_plot_for_embedding("deaths_per_age_group_param")
+@register_plot_for_embedding("age_groups_death_covid")
 def age_groups_death():
     """
     bar plot age groups cases
@@ -40,7 +40,7 @@ def age_groups_death():
     return fig_age_groups_deaths
 
 
-@register_plot_for_embedding("deaths_per_age_group_pie")
+@register_plot_for_embedding("coviddeaths_per_age_group_pie")
 def age_groups_death_pie():
 
     region_age = df_mortality.groupby(['REGION', 'AGEGROUP']).agg({'DEATHS': 'sum'})
@@ -79,7 +79,7 @@ def age_groups_death_pie():
 
 
 
-@register_plot_for_embedding("deaths_per_age_group_pie")
+@register_plot_for_embedding("coviddeaths_per_age_group_pie")
 def age_groups_death_first_wave():
 
     total_age = df_mortality.groupby(['AGEGROUP']).agg({'DEATHS': 'sum'})
@@ -103,6 +103,7 @@ df_2nd_wave = df_mortality[df_mortality.DATE >= '2020-09-01']
 tot1st = sum(df_first_wave.DEATHS.values)
 tot2nd = sum(df_2nd_wave.DEATHS.values)
 
+@register_plot_for_embedding("covid-deaths-waves_comparison")
 def waves_comparison():
     df_first_wave = df_mortality[df_mortality.DATE >= '2020-03-10']
     df_first_wave = df_first_wave[df_first_wave.DATE <= '2020-06-01']

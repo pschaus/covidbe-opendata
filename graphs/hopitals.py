@@ -43,7 +43,7 @@ def moving_average(a, n=1) :
 
 df = df_hospi_death()
 
-@register_plot_for_embedding("hospi_bar")
+@register_plot_for_embedding("bar_hospitalization")
 def bar_hospitalization():
     """
     bar plot hospitalization
@@ -64,6 +64,8 @@ def bar_hospitalization():
     return fig_hospi
 
 
+
+@register_plot_for_embedding("hospi_waves")
 def hospi_waves():
     """
     bar plot hospitalization
@@ -86,7 +88,7 @@ def hospi_waves():
     return fig_hospi
 
 
-
+@register_plot_for_embedding("exp_fit_hospi")
 def exp_fit_hospi():
     x = df.index
     y = df.TOTAL_IN.values #moving_average(df.TOTAL_IN.values, 7)
@@ -136,7 +138,7 @@ def exp_fit_hospi():
 
     return fig
 
-@register_plot_for_embedding("hospi_bar")
+@register_plot_for_embedding("bar_hospitalization_tot")
 def bar_hospitalization_tot():
     """
     bar plot hospitalization
@@ -157,7 +159,7 @@ def bar_hospitalization_tot():
     return fig_hospi
 
 
-@register_plot_for_embedding("hospi_bar")
+@register_plot_for_embedding("bar_hospitalization_in_out")
 def bar_hospitalization_in_out():
     """
     bar plot hospitalization
@@ -179,7 +181,7 @@ def bar_hospitalization_in_out():
 
 
 
-@register_plot_for_embedding("hospi_icu_bar")
+@register_plot_for_embedding("bar_hospitalization_ICU")
 def bar_hospitalization_ICU():
     """
     bar plot hospitalization
@@ -286,14 +288,14 @@ def hospi_over_death_smooth():
     return fig
 
 
-@register_plot_for_embedding("hospi_over_death_smooth")
+@register_plot_for_embedding("icu_over_hospi(")
 def icu_over_hospi():
     data_y = df.TOTAL_IN_ICU / df.TOTAL_IN
     fig = px.line(x=df.index, y=data_y, labels={'x': 'date', 'y': 'ratio ICU/Hospi'})
     fig.update_layout(template="plotly_white")
     return fig
 
-@register_plot_for_embedding("deathovericusmooth")
+@register_plot_for_embedding("death_over_icu_smooth")
 def death_over_icu_smooth():
     fig = px.line(x=df.index,y=moving_average(df.DEATHS.values, 7)/moving_average(df.TOTAL_IN_ICU.values, 7),labels={'x':'date', 'y':'deaths/ICU'})
     fig.update_layout(template="plotly_white")

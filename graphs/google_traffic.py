@@ -26,7 +26,7 @@ dfmap = {c:get_df(c) for c in countries}
 
 
 
-@register_plot_for_embedding("gooole_traffic_working_days")
+@register_plot_for_embedding("plot_google_traffic_working_days")
 def plot_google_traffic_working_days():
     """
     google traffic working days

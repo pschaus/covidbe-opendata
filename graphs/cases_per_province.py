@@ -51,11 +51,15 @@ def df_prov_avg_age_cases():
 
 df_prov = df_prov_avg_age_cases()
 
+
+@register_plot_for_embedding("bar_testing_provinces")
 def bar_testing_provinces():
     fig = px.bar(df, x="DATE", y="CASES", color="PROVINCE", barmode="stack")
     fig.update_layout(template="plotly_white")
     return fig
 
+
+@register_plot_for_embedding("bar_cases_provinces")
 def bar_cases_provinces():
     fig =  px.bar(df, x="DATE", y="CASES", color="PROVINCE", barmode="stack")
     fig.update_layout(template="plotly_white")
@@ -116,25 +120,32 @@ def plot_ratio(df, column_name1,column_name2, title):
     return fig
 
 
-
+@register_plot_for_embedding("avg_age_cases_provinces")
 def avg_age_cases_provinces():
     return plot(df_prov,'avg_age','average age of cases (avg 7 days)')
 
+
+@register_plot_for_embedding("avg_testing_provinces")
 def avg_testing_provinces():
     return plot(df,'TESTS_ALL',"Testing avg 7 days")
 
+@register_plot_for_embedding("avg_cases_provinces")
 def avg_cases_provinces():
     return plot(df,'CASES',"Cases avg 7 days")
 
+@register_plot_for_embedding("avg_positive_rate_cases_provinces")
 def avg_positive_rate_cases_provinces():
     return plot_ratio(df, 'CASES','TESTS_ALL', "Positive rate (positive cases/ all tests) avg 7 days")
 
+@register_plot_for_embedding("avg_positive_rate_provinces")
 def avg_positive_rate_provinces():
     return plot_ratio(df, 'TESTS_ALL_POS','TESTS_ALL', "Positive rate (positive tests/ all tests) avg 7 days")
 
+@register_plot_for_embedding("avg_testing_per_habbitant_provinces")
 def avg_testing_per_habbitant_provinces():
     return plot(df,'TESTING_RATE',"TESTING rate = number of tests/inhabitant (avg 7 days)")
 
+@register_plot_for_embedding("map_cases_incidence_provinces")
 def map_cases_incidence_provinces():
     div = 250
     fig = px.choropleth_mapbox(df3d, geojson=geojson_provinces,
@@ -165,9 +176,7 @@ def map_cases_incidence_provinces():
     return fig
 
 
-
-
-
+@register_plot_for_embedding("scatter_incidence_provinces")
 def scatter_incidence_provinces():
     df3ds = df3d.sort_values(by='CASES_PER_100KHABITANT', axis=0)
     fig = px.scatter(y=df3ds.PROVINCE, x=df3ds.CASES_PER_100KHABITANT,title="Incidence rate [d-17,d-4]",labels={"x":" Number of cases/100K inhabitants over the past 14 days","y":""})
@@ -195,7 +204,7 @@ def scatter_incidence_provinces():
 
 
 
-@register_plot_for_embedding("cases_per_province_map")
+@register_plot_for_embedding("map_provinces")
 def map_provinces():
     fig = px.choropleth_mapbox(df_prov_tot,
                                geojson=geojson_provinces,
@@ -220,7 +229,7 @@ def map_provinces():
     return fig
 
 
-@register_plot_for_embedding("cases_per_province_bar")
+@register_plot_for_embedding("barplot_provinces_cases")
 def barplot_provinces_cases():
     fig = px.bar(df_prov_tot,
                  y='PROVINCE_NAME',

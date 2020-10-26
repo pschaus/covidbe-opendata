@@ -51,7 +51,7 @@ def map_totcases_admin_region_():
 
 map_totcases_admin_region_fig = map_totcases_admin_region_()
 
-@register_plot_for_embedding("cases_per_admin_region_inhabitant")
+@register_plot_for_embedding("map_cases_per_admin_region")
 def map_totcases_admin_region():
     return map_totcases_admin_region_fig
 

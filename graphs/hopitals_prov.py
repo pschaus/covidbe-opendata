@@ -58,44 +58,53 @@ def map_hospi(column,title):
     fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=5, b=0))
     return fig
 
+
+
 def scatter_hospi(column,title):
     dfls = dfl.sort_values(by=column, axis=0)
     fig = px.scatter(y=dfls.PROVINCE, x=dfls[column],title=title,labels={"x":"number of hospitalizations","y":""})
     return fig
 
-
+@register_plot_for_embedding("map_hospi_provinces")
 def map_hospi_provinces():
     return map_hospi('TOTAL_IN','Total Hospitalizations')
 
+
+@register_plot_for_embedding("scatter_hospi_provinces")
 def scatter_hospi_provinces():
     fig = scatter_hospi('TOTAL_IN','Total Hospitalizations')
     fig.update_layout(template="plotly_white")
     return fig
 
+@register_plot_for_embedding("map_hospi_per100K_provinces")
 def map_hospi_per100K_provinces():
     return map_hospi('HOSPI_PER_100000','Total Hospitalizations per 100K inhabitants')
 
+@register_plot_for_embedding("scatter_hospi_per100K_provinces")
 def scatter_hospi_per100K_provinces():
     fig = scatter_hospi('HOSPI_PER_100000','Total Hospitalizations per 100K inhabitants')
     fig.update_layout(template="plotly_white")
     return fig
 
-
+@register_plot_for_embedding("total_hospi_provinces")
 def total_hospi_provinces():
     fig = px.bar(df, x="DATE", y="TOTAL_IN", color="PROVINCE",title="Total number of hospitalized patients at the moment of reporting")
     fig.update_layout(template="plotly_white")
     return fig
 
+@register_plot_for_embedding("total_icu_provinces")
 def total_icu_provinces():
     fig = px.bar(df, x="DATE", y="TOTAL_IN_ICU", color="PROVINCE",title="Total number of hospitalized patients in ICU at the moment of reporting")
     fig.update_layout(template="plotly_white")
     return fig
 
+@register_plot_for_embedding("total_hospi_new_in_provinces")
 def total_hospi_new_in_provinces():
     fig = px.bar(df, x="DATE", y="NEW_IN", color="PROVINCE",title="Number of hospital intakes that day")
     fig.update_layout(template="plotly_white")
     return fig
 
+@register_plot_for_embedding("total_hospi_new_out_provinces")
 def total_hospi_new_out_provinces():
     fig = px.bar(df, x="DATE", y="NEW_OUT", color="PROVINCE",title="Number of hospital discharges that day")
     fig.update_layout(template="plotly_white")
@@ -187,7 +196,7 @@ def hospi_w1w2(fig, row, col, fromw2, prov=None, show_legend=False):
     )
     return fig
 
-
+@register_plot_for_embedding("hospi_w1w2_provinces")
 def hospi_w1w2_provinces():
     fig = make_subplots(rows=4, cols=3, subplot_titles=(
     'Liège', 'Namur', 'Luxembourg', 'Hainaut', 'Brussels', 'BrabantWallon', 'VlaamsBrabant', 'OostVlaanderen',

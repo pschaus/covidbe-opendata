@@ -46,7 +46,7 @@ def display_admin():
         html.H3(gettext(
             get_translation(en="Plot over time  (double click in the legend to isolate one region)", fr="Evolution dans le temps (double click dans la legende pour isoler une region)"))),
         dbc.Row([
-            dbc.Col(display_graphic(id='cases-province-daily-bar-chart', figure=plot_cases_daily_admin_region_overtime(),
+            dbc.Col(display_graphic(id='cases-admin-daily-bar-chart', figure=plot_cases_daily_admin_region_overtime(),
                               config=dict(locale=str(get_locale()))), className="col-12"),
         ]),
         dbc.Row([

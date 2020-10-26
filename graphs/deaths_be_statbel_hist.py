@@ -15,6 +15,8 @@ from pages import get_translation
 import numpy as np
 from graphs import register_plot_for_embedding
 
+from graphs import register_plot_for_embedding
+
 from datetime import datetime
 
 
@@ -77,7 +79,7 @@ def sin_fit(x, y, title):
 
 
 
-
+@register_plot_for_embedding("daily_death_all")
 def daily_death_all():
     plots = sin_fit(df.DT_DATE, moving_average(df.MS_NUM_DEATH.values, 7), "all pop")
 
@@ -94,6 +96,8 @@ def daily_death_all():
     fig.update_layout(yaxis=dict(range=[0, 620]))
     return fig
 
+
+@register_plot_for_embedding("daily_death_all_deviation_sin")
 def daily_death_all_deviation_sin():
     x = df.DT_DATE
     y = moving_average(df.MS_NUM_DEATH.values,7)
@@ -117,7 +121,7 @@ def daily_death_all_deviation_sin():
 
     return fig
 
-
+@register_plot_for_embedding("daily_death_ag")
 def daily_death_ag():
     plots = []
 
@@ -137,7 +141,7 @@ def daily_death_ag():
     #fig.update_layout(yaxis=dict(range=[0, 300]))
     return fig
 
-
+@register_plot_for_embedding("death_85plus_hist")
 def death_85plus_hist():
     fig = px.line(df_week85, x="week", y="tot", color='year')
 
@@ -145,7 +149,7 @@ def death_85plus_hist():
                       yaxis_title='#deaths 85+')
     return fig
 
-
+@register_plot_for_embedding("death_hist")
 def death_hist():
     fig = px.line(df_week_all, x="week", y="tot", color='year')
 
@@ -153,6 +157,7 @@ def death_hist():
                       yaxis_title='#deaths')
     return fig
 
+@register_plot_for_embedding("death_85plus_hist_cum")
 def death_85plus_hist_cum():
     def x(year):
         return df_week85[df_week85.year == year].week
@@ -169,7 +174,7 @@ def death_85plus_hist_cum():
                       yaxis_title='cumulated #deaths 85+')
     return fig
 
-
+@register_plot_for_embedding("death_plus_hist_cum")
 def death_plus_hist_cum():
     def x(year):
         return df_week_all[df_week_all.year == year].week

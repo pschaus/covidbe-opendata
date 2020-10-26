@@ -68,7 +68,7 @@ def df_pop_age_cases():
 
 df_avg_age = df_avg_age_cases()
 
-
+@register_plot_for_embedding("incidence_age_group_plot")
 def incidence_age_group_plot(log=False):
     df_pop = df_pop_age_cases()
     df_pop['incidence'] = df_pop['CASES'] / df_pop['pop'] * 100000
@@ -92,7 +92,7 @@ def incidence_age_group_plot(log=False):
     return fig
 
 
-@register_plot_for_embedding("cases_age_groups")
+@register_plot_for_embedding("age_group_cases_relative")
 def age_group_cases_relative():
     idx = pd.date_range(df_prov_timeseries.DATE.min(), df_prov_timeseries.DATE.max())
     bars_age_groups = []
@@ -132,7 +132,7 @@ def age_group_cases_relative():
                       yaxis_title='Percentage')
 
     return fig
-@register_plot_for_embedding("cases_age_groups")
+@register_plot_for_embedding("age_groups_cases")
 def age_groups_cases():
     """
     bar plot age groups cases
@@ -208,7 +208,7 @@ def age_groups_pop_active_cases():
     return fig_age_groups_cases
 
 
-
+@register_plot_for_embedding("average_age_cases")
 def average_age_cases():
     fig = px.line(df_avg_age, x='DATE', y='avg_age')
     fig.update_layout(template="plotly_white", height=500,

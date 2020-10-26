@@ -77,7 +77,7 @@ def plot_traffic_fig(df):
 
 belgium_df = get_belgium_df_working_days()
 
-@register_plot_for_embedding("tomtom_traffic_working_days")
+@register_plot_for_embedding("tomtom_traffic_working_days_be")
 def plot_tomtom_be_working_days():
     """
     tomtom traffic working days
@@ -87,7 +87,7 @@ def plot_tomtom_be_working_days():
 
 eu_df = get_eu_df_working_days()
 
-@register_plot_for_embedding("tomtom_traffic_working_days")
+@register_plot_for_embedding("tomtom_traffic_working_days_eu")
 def plot_tomtom_eu_working_days():
     """
     tomtom traffic working days
