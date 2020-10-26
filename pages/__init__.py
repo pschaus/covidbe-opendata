@@ -96,7 +96,7 @@ def display_graphic(id, figure, config=None, **kwargs):
                         dbc.ModalBody([
                             "You can copy-paste the following code in your website. The plot won't be updated.",
                             dhc.Pre([
-                                f"<iframe src='{figure.embeddable}'></iframe>"
+                                f"<iframe src='{figure.embeddable}' width=\"800\" height=\"600\"></iframe>"
                             ])
                         ]),
                         dbc.ModalFooter(

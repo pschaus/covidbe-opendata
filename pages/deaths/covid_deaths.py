@@ -27,7 +27,7 @@ def display_covid_death():
         ]),
         html.H2(gettext("First wave vs 2nd wave")),
         dbc.Row([
-            dbc.Col(display_graphic(id='hospitalization-be',
+            dbc.Col(display_graphic(id='hospitalization-be-waves',
                               figure=waves_comparison(),
                               config=dict(locale=str(get_locale())))),
         ]),

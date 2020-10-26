@@ -15,24 +15,24 @@ def display_age_groups():
     return [
         html.H2(gettext("Overall (Daily) Mortality All Population (STATBEL Data)")),
         dbc.Row([
-            dbc.Col(display_graphic(id='age-group-death-statbel',
+            dbc.Col(display_graphic(id='age-group-death-statbel-sinplot',
                               figure=daily_death_all(),
                               config=dict(locale=str(get_locale())))),
         ]),
         dbc.Row([
-            dbc.Col(display_graphic(id='age-group-death-statbel',
+            dbc.Col(display_graphic(id='age-group-death-statbel-sinplot-deviation',
                               figure=daily_death_all_deviation_sin(),
                               config=dict(locale=str(get_locale())))),
         ]),
         html.H2(gettext("Overall (Daily) Mortality By Age-group (STATBEL Data)")),
         dbc.Row([
-            dbc.Col(display_graphic(id='age-group-death-statbel',
+            dbc.Col(display_graphic(id='age-group-death-statbel-daily',
                               figure=daily_death_ag(),
                               config=dict(locale=str(get_locale())))),
         ]),
         html.H2(gettext("Overall (Weekly) Mortality Only (STATBEL Data)")),
         dbc.Row([
-            dbc.Col(display_graphic(id='age-group-death-statbel',
+            dbc.Col(display_graphic(id='age-group-death-statbel-weekly',
                               figure=death_age_groups("stack"),
                               config=dict(locale=str(get_locale())))),
         ]),
@@ -43,7 +43,7 @@ def display_age_groups():
         ]),
          html.H2(gettext("History of death 85+ only")),
          dbc.Row([
-             dbc.Col(display_graphic(id='age-group-death-statbel-hist',
+             dbc.Col(display_graphic(id='age-group-death-statbel-hist85+',
                                figure=death_85plus_hist(),
                                config=dict(locale=str(get_locale())))),
          ]),

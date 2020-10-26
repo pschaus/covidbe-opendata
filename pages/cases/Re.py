@@ -90,20 +90,16 @@ def display_Re():
         html.H2(gettext("Additional visualisations")),
         dcc.Markdown(Markdown_text, dangerously_allow_html=True),
 
-        #html.P("Here are the curves that we obtain since the lockdown in Belgium:"), 
+
         dbc.Row([
-            dbc.Col(display_graphic(id='Re', figure=plot_Re()[0],
+            dbc.Col(display_graphic(id='infection-rate-increase', figure=plot_Re()[0],
                               config=dict(locale=str(get_locale()))), className="col-12"),
         ]),
         dbc.Row([
-            dbc.Col(display_graphic(id='Re', figure=plot_Re()[1],
+            dbc.Col(display_graphic(id='infection-rate-decrease', figure=plot_Re()[1],
                               config=dict(locale=str(get_locale()))), className="col-12"),
         ]),
-        #html.P("The number of secondary infections Re can be understood as the exponential factor of the number of infected persons, with the specificity that the time scale for that exponential increase is related to the period of the infection. If we look at the exponential increase of active cases on a daily basis, we have to look at Re^(1/n)."),
-        #dbc.Row([
-        #    dbc.Col(display_graphic(id='daily_exp_factor_from_Re', figure=plot_Re_div_n(),
-        #                      config=dict(locale=str(get_locale()))), className="col-12"),
-        #]),
+
 
         display_source_providers(source_sciensano,source_SI_modelRe)
         )

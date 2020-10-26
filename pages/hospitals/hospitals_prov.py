@@ -31,13 +31,13 @@ def display_hospitals_prov():
         ]),
         html.H3(gettext("Comparison first wave second wave")),
         dbc.Row([
-            dbc.Col(display_graphic(id='hospitalization-prov-scatter',
+            dbc.Col(display_graphic(id='hospitalization-prov-w1w2',
                               figure=hospi_w1w2_provinces(),
                               config=dict(locale=str(get_locale())))),
         ]),
         html.H3(gettext("Total number of hospitalizations per province")),
         dbc.Row([
-            dbc.Col(display_graphic(id='hospitalization-prov',
+            dbc.Col(display_graphic(id='hospitalization-prov-total',
                               figure=total_hospi_provinces(),
                               config=dict(locale=str(get_locale())))),
         ]),
@@ -54,19 +54,19 @@ def display_hospitals_prov():
         ]),
         html.H3(gettext("Total ICU per province")),
         dbc.Row([
-            dbc.Col(display_graphic(id='hospitalization-prov',
+            dbc.Col(display_graphic(id='icu-prov',
                               figure=total_icu_provinces(),
                               config=dict(locale=str(get_locale())))),
         ]),
         html.H3(gettext("Total daily new hospitalizations per province")),
         dbc.Row([
-            dbc.Col(display_graphic(id='hospitalization-prov',
+            dbc.Col(display_graphic(id='in-out-prov',
                               figure=total_hospi_new_in_provinces(),
                               config=dict(locale=str(get_locale())))),
         ]),
         html.H3(gettext("Total daily persons out of hospital per province")),
         dbc.Row([
-            dbc.Col(display_graphic(id='hospitalization-prov',
+            dbc.Col(display_graphic(id='newout-prov',
                               figure=total_hospi_new_out_provinces(),
                               config=dict(locale=str(get_locale())))),
         ]),

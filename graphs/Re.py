@@ -85,7 +85,7 @@ def plot_Re():
                           go.Scatter(x=df_testing.DATE[10+7:], y=rate_increase10, name="n=10"),                    
                           ],                    
 )
-    fig_rate_increase.update_layout(xaxis_title=gettext('Day'),
+    fig_rate_increase.update_layout(xaxis_title=gettext('Day'),template="plotly_white",
                    yaxis_title=gettext('Estimated effective infection rate increase'),
                    title=gettext("Evolution of the infection rate increase"))
     #fig_rate_increase.update_yaxes(range=[0, 5])
@@ -96,7 +96,7 @@ def plot_Re():
                           go.Scatter(x=df_testing.DATE[10+7:], y=rate_decrease10, name="n=10"),                    
                           ],                    
 )
-    fig_rate_decrease.update_layout(xaxis_title=gettext('Day'),
+    fig_rate_decrease.update_layout(xaxis_title=gettext('Day'),template="plotly_white",
                    yaxis_title=gettext('Estimated effective infection rate decrease'),
                    title=gettext("Evolution of the infection rate decrease"))
     #fig_rate_decrease.update_yaxes(range=[0, 5])
@@ -108,7 +108,7 @@ def plot_Re():
                           go.Scatter(x=df_testing.DATE[10+7:], y=np.array([1 for n in range((df_testing.DATE[10+7:].shape[0]))]), showlegend=False, line=dict(width=3,color='orange')),                    
                           ],                    
 )
-    figRe.update_layout(xaxis_title=gettext('Day'),
+    figRe.update_layout(xaxis_title=gettext('Day'),template="plotly_white",
                    yaxis_title=gettext('Estimated effective infection rate Re'),
                    title=gettext("Evolution of the average number of new patients infected per positive case"))
     figRe.update_yaxes(range=[0, 5])
@@ -133,7 +133,7 @@ def plot_daily_exp_factor():
                           go.Scatter(x=df_testing.DATE[7:], y=np.array([1 for n in range((df_testing.DATE[7:].shape[0]))]), showlegend=False, line=dict(width=3,color='orange')),                    
                           ],                    
 )
-    fig.update_layout(xaxis_title=gettext('Day'),
+    fig.update_layout(xaxis_title=gettext('Day'),template="plotly_white",
                    yaxis_title=gettext('Daily multiplicative factor'),
                    title=gettext("Estimate of the daily multiplicative rate of the number of active cases, >1 is an increase, <1 is a decrease"))
     return fig

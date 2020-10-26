@@ -29,7 +29,7 @@ def display_cases_correction():
                 """,
             )),
             dbc.Row([
-                dbc.Col(display_graphic(id='age-group-cases',
+                dbc.Col(display_graphic(id='age-group-cases-real',
                                   figure=age_groups_pop_active_cases(),
                                   config=dict(locale=str(get_locale())))),
             ]),
@@ -70,7 +70,7 @@ def display_cases_correction():
                 """,
             )),
             dbc.Row([
-                dbc.Col(display_graphic(id='age-group-cases',
+                dbc.Col(display_graphic(id='age-group-cases-corrected',
                                figure=age_groups_pop_active_hypothetical(),
                                config=dict(locale=str(get_locale())))),
             ]),
