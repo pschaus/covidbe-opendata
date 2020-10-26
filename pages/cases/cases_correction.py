@@ -8,7 +8,7 @@ from flask_babel import get_locale
 from graphs.cases_age_groups import age_groups_pop_active_hypothetical, age_groups_pop_active_cases
 from graphs.overmortality import daily_deaths, daily_deaths_respiratory, overmortality_respiratory_line, \
     overmortality_estimates_repartition, overmortality_respiratory_count
-from pages import model_warning, get_translation
+from pages import model_warning, get_translation, display_graphic
 from pages.sources import *
 
 
@@ -29,7 +29,7 @@ def display_cases_correction():
                 """,
             )),
             dbc.Row([
-                dbc.Col(dcc.Graph(id='age-group-cases',
+                dbc.Col(display_graphic(id='age-group-cases',
                                   figure=age_groups_pop_active_cases(),
                                   config=dict(locale=str(get_locale())))),
             ]),
@@ -70,7 +70,7 @@ def display_cases_correction():
                 """,
             )),
             dbc.Row([
-                dbc.Col(dcc.Graph(id='age-group-cases',
+                dbc.Col(display_graphic(id='age-group-cases',
                                figure=age_groups_pop_active_hypothetical(),
                                config=dict(locale=str(get_locale())))),
             ]),

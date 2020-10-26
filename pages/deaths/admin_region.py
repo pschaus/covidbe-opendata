@@ -9,13 +9,14 @@ from graphs.deaths_be_statbel import death_arrondissements_map_weekly
 from graphs.cases_death_per_admin_region_overtime import gapminder_case_death_admin_region_overtime
 from pages.sources import source_sciensano, source_statbel, display_source_providers
 
-from pages import get_translation
+from pages import get_translation, display_graphic
+
 
 def display_arrondissements():
     return [
         html.H3(get_translation(en="Weekly Mortality In each admin region (STATBEL Data)",fr="Mortalité par semaine dans chaque arrondissement (STATBEL Data)")),
         dbc.Row([
-            dbc.Col(dcc.Graph(id='death-statbel-weekly-adminregion',
+            dbc.Col(display_graphic(id='death-statbel-weekly-adminregion',
                               figure=death_arrondissements_map_weekly(),
                               config=dict(locale=str(get_locale())))),
         ]),
@@ -29,7 +30,7 @@ def display_arrondissements():
                 fr="""La surface des cercles represente la population des arrondissements.""",
                 en="""The circcle surface represents the population of the region."""))),
         dbc.Row([
-            dbc.Col(dcc.Graph(id='gapminder-adminregion',
+            dbc.Col(display_graphic(id='gapminder-adminregion',
                               figure=gapminder_case_death_admin_region_overtime(),
                               config=dict(locale=str(get_locale())))),
         ]),

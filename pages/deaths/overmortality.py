@@ -7,7 +7,7 @@ from flask_babel import get_locale
 
 from graphs.overmortality import daily_deaths, daily_deaths_respiratory, overmortality_respiratory_line, \
     overmortality_estimates_repartition, overmortality_respiratory_count
-from pages import model_warning, get_translation
+from pages import model_warning, get_translation, display_graphic
 from pages.sources import *
 
 
@@ -38,7 +38,7 @@ def display_overmortality():
                 ### 1. Décès journaliers liés au Covid-19 comparés aux décès attendus
             """,
         )),
-        dcc.Graph(figure=daily_deaths(), config=dict(locale=str(get_locale()))),
+        display_graphic(figure=daily_deaths(), config=dict(locale=str(get_locale()))),
         dcc.Markdown(get_translation(
             en="""
             This graphic plots side-by-side the amount of expected death during an average day in Belgium (in 2018, this
@@ -68,7 +68,7 @@ def display_overmortality():
             étaient imputables à des problèmes respiratoires (environ 30 décès par jour).
             """
         )),
-        dcc.Graph(figure=daily_deaths_respiratory(), config=dict(locale=str(get_locale()))),
+        display_graphic(figure=daily_deaths_respiratory(), config=dict(locale=str(get_locale()))),
         dcc.Markdown(get_translation(
             en="""
             As death induced by the coronavirus will be attributed to the respiratory illness category, we can compute
@@ -92,7 +92,7 @@ def display_overmortality():
             Nous pouvons appliquer ce calcul pour chaque jour depuis le début de l'épidémie:
             """
         )),
-        dcc.Graph(figure=overmortality_respiratory_line(), config=dict(locale=str(get_locale()))),
+        display_graphic(figure=overmortality_respiratory_line(), config=dict(locale=str(get_locale()))),
         dcc.Markdown(get_translation(
             en="""
             Since the beginning of the epidemy, this amounts to {total} deaths in overmortality in the respiratory 
@@ -143,8 +143,8 @@ def display_overmortality():
                 On peut prendre l'exemple d'un jour moyen:
                 """
             )),
-            dcc.Graph(figure=age_estimate, config=dict(locale=str(get_locale()))),
-            dcc.Graph(figure=pie_estimate, config=dict(locale=str(get_locale()))),
+            display_graphic(figure=age_estimate, config=dict(locale=str(get_locale()))),
+            display_graphic(figure=pie_estimate, config=dict(locale=str(get_locale()))),
         ),
         display_source_providers(source_sciensano, source_death_causes)
     ]

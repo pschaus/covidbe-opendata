@@ -7,7 +7,7 @@ from flask_babel import get_locale, gettext
 
 from graphs.Re import plot_Re, plot_daily_exp_factor, plot_Re_div_n
 from pages.sources import display_source_providers, source_sciensano, source_SI_modelRe
-from pages import model_warning, get_translation
+from pages import model_warning, get_translation, display_graphic
 import urllib.parse
 import re
 
@@ -54,7 +54,7 @@ def display_Re():
         html.H2(gettext("Daily multiplicative factor")),
         html.P("The daily multiplicative factor gives the relative daily increase/decrease of positive cases. When >1, the strength of the epidemy is increasing, when <1, the strength of the epidemy is decreasing."),
         dbc.Row([
-            dbc.Col(dcc.Graph(id='daily_exp_factor', figure=plot_daily_exp_factor(),
+            dbc.Col(display_graphic(id='daily_exp_factor', figure=plot_daily_exp_factor(),
                               config=dict(locale=str(get_locale()))), className="col-12"),
         ]),
         html.H2(gettext("Effective number of secondary infections (Re factor)")),
@@ -82,7 +82,7 @@ def display_Re():
         html.P("We can also visualize the Re factor:"),
         html.P("Here are the curves that we obtain since the lockdown in Belgium:"),
         dbc.Row([
-            dbc.Col(dcc.Graph(id='Re', figure=plot_Re()[2],
+            dbc.Col(display_graphic(id='Re', figure=plot_Re()[2],
                               config=dict(locale=str(get_locale()))), className="col-12"),
         ]),
 
@@ -92,16 +92,16 @@ def display_Re():
 
         #html.P("Here are the curves that we obtain since the lockdown in Belgium:"), 
         dbc.Row([
-            dbc.Col(dcc.Graph(id='Re', figure=plot_Re()[0],
+            dbc.Col(display_graphic(id='Re', figure=plot_Re()[0],
                               config=dict(locale=str(get_locale()))), className="col-12"),
         ]),
         dbc.Row([
-            dbc.Col(dcc.Graph(id='Re', figure=plot_Re()[1],
+            dbc.Col(display_graphic(id='Re', figure=plot_Re()[1],
                               config=dict(locale=str(get_locale()))), className="col-12"),
         ]),
         #html.P("The number of secondary infections Re can be understood as the exponential factor of the number of infected persons, with the specificity that the time scale for that exponential increase is related to the period of the infection. If we look at the exponential increase of active cases on a daily basis, we have to look at Re^(1/n)."),
         #dbc.Row([
-        #    dbc.Col(dcc.Graph(id='daily_exp_factor_from_Re', figure=plot_Re_div_n(),
+        #    dbc.Col(display_graphic(id='daily_exp_factor_from_Re', figure=plot_Re_div_n(),
         #                      config=dict(locale=str(get_locale()))), className="col-12"),
         #]),
 

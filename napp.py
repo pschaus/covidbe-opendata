@@ -1,10 +1,13 @@
+import re
+
 import dash
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
 import flask
 import flask_babel
-from dash.dependencies import Input, Output, State, ClientsideFunction
+import requests
+from dash.dependencies import Input, Output, State, ClientsideFunction, MATCH
 from dash.exceptions import PreventUpdate
 from flask import request, g, abort, redirect
 from flask_babel import Babel, lazy_gettext, gettext
@@ -54,7 +57,11 @@ babel = Babel(app.server)
 
 @babel.localeselector
 def get_locale():
-    g.locale = request.cookies.get("lang")
+    try:
+        g.locale = request.cookies.get("lang")
+    except:
+        pass
+
     #if not g.get('locale', None):
     #    translations = ["en", "fr"]
     #    g.locale = request.accept_languages.best_match(translations)
@@ -310,11 +317,26 @@ app.clientside_callback(
 
 
 @app.server.route("/embed/html/<which>")
-def plot_embed_html(which):
+def old_plot_embed_html(which):
     if which not in registered_plots:
         abort(404)
     return redirect(registered_plots[which].get_html_link())
 
+GITHUB_CHECK_PATTERN = re.compile("^[A-Za-z0-9_\-.]+$")
+
+@cache.memoize(24*60*60)
+def get_static_from_github(commit_id, which):
+    assert GITHUB_CHECK_PATTERN.match(commit_id)
+    assert GITHUB_CHECK_PATTERN.match(which)
+    url = "https://raw.githubusercontent.com/pschaus/covidbe-opendata/{commit_id}/static/embed/{which}.html".format(commit_id=commit_id, which=which)
+    return requests.get(url).content
+
+@app.server.route("/embed/static_html/<commit_id>/<which>")
+def plot_embed_html(commit_id, which):
+    try:
+        return get_static_from_github(commit_id, which)
+    except:
+        return "An error occured"
 
 # @app.server.route("/embed/image/<which>")
 # def plot_embed_image(which):
@@ -329,6 +351,18 @@ def update_all_map(date, hour):
     print("callback", date, hour)
     if date is not None:
         return map_tomtom_by_day(date, hour)
+
+
+@app.callback(
+    Output({'type': 'integrate-modal', 'index': MATCH}, "is_open"),
+    [Input({'type': 'integrate-button', 'index': MATCH}, 'n_clicks'), Input({'type': 'integrate-close', 'index': MATCH}, 'n_clicks')],
+    [State({'type': 'integrate-modal', 'index': MATCH}, 'is_open')],
+)
+def toggle_modal_integrate(n1, n2, is_open):
+    if n1 or n2:
+        return not is_open
+    return is_open
+
 
 def memory_summary():
     # Only import Pympler when we need it. We don't want it to

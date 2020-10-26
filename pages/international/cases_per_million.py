@@ -2,7 +2,7 @@
 # and https://gist.github.com/gschivley/578c344461100071b7eef158efccce95
 
 
-from pages import get_translation
+from pages import get_translation, display_graphic
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
@@ -35,7 +35,7 @@ def display_cases_per_million():
             """,
         )),
     dbc.Row([
-                   dbc.Col(dcc.Graph(id='cases per country', figure=lines_cases_per_million_not_log(),
+                   dbc.Col(display_graphic(id='cases per country', figure=lines_cases_per_million_not_log(),
                                      config=dict(locale=str(get_locale()))), className="col-12"),
     ]),
         display_source_providers(source_hopkins)

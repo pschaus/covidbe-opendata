@@ -6,7 +6,8 @@ from flask_babel import get_locale, gettext
 
 from graphs.google_traffic import plot_google_traffic_working_days
 from pages.sources import display_source_providers, source_google_traffic
-from pages import get_translation
+from pages import get_translation, display_graphic
+
 
 def display_traffic():
     return [
@@ -33,7 +34,7 @@ A value greater than 1 means that the country has gained traffic compared to the
 Mobility in this country seems comparatively higher than normal compared to other countries.
         """, )),
         dbc.Row([
-            dbc.Col(dcc.Graph(id='google map usage',
+            dbc.Col(display_graphic(id='google map usage',
                               figure=plot_google_traffic_working_days(),
                               config=dict(locale=str(get_locale())))),
         ]),
