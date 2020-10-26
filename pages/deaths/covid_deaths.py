@@ -16,7 +16,7 @@ def display_covid_death():
         html.H2(gettext("COVID (Daily) Mortality (Sciensano Data)")),
         dbc.Row([
             dbc.Col(display_graphic(id='age-group-death-stack',
-                              figure=age_groups_death("stack"),
+                              figure=age_groups_death(),
                               config=dict(locale=str(get_locale())))),
         ]),
         html.H2(gettext("Total Deaths Avg over 7 past days")),

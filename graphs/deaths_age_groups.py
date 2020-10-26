@@ -9,13 +9,15 @@ from graphs import register_plot_for_embedding
 df_mortality = pd.read_csv('static/csv/be-covid-mortality.csv', keep_default_na=False)
 
 
-@register_plot_for_embedding("deaths_per_age_group")
-def age_groups_death(barmode = 'group'):
+
+
+@register_plot_for_embedding("deaths_per_age_group_param")
+def age_groups_death():
     """
     bar plot age groups cases
     """
     # ---------bar plot age groups death---------------------------
-
+    barmode = 'stack' #group
     idx = pd.date_range(df_mortality.DATE.min(), df_mortality.DATE.max())
     # bar plot with bars per age groups
     bars_age_groups_deaths = []
