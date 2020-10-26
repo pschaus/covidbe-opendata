@@ -43,12 +43,12 @@ def display_tomtom():
                               figure=plot_tomtom_eu_working_days(),
                               config=dict(locale=str(get_locale())))),
         ]),
-        html.H2(gettext("TomTom Traffic Index Belgium Cities and Neighbors 07:00-9:00")),
-        dbc.Row([
-            dbc.Col(dcc.Graph(id='tomtom map usage',
-                              figure=map_tomtom_be_working_days(),
-                              config=dict(locale=str(get_locale())))),
-        ]),
+        #html.H2(gettext("TomTom Traffic Index Belgium Cities and Neighbors 07:00-9:00")),
+        #dbc.Row([
+        #    dbc.Col(dcc.Graph(id='tomtom map usage',
+        #                      figure=map_tomtom_be_working_days(),
+        #                      config=dict(locale=str(get_locale())))),
+        #]),
         # html.H2(gettext("TomTom Traffic Index All Cities")),
         # dbc.Row([
         #     dbc.Col(dcc.DatePickerSingle(id='tomtom-date-picker-single-id',
@@ -66,11 +66,11 @@ def display_tomtom():
         #                        marks={i: str(i)+"H" for i in range(24)}
         #             ))
         # ]),
-        dbc.Row([
-            dbc.Col(dcc.Graph(id='tomtom-map-container-id',
-                              #figure=map_tomtom_by_day(dt.datetime.today().date()),
-                              config=dict(locale=str(get_locale())))),
-            ]),
+        #dbc.Row([
+        #    dbc.Col(dcc.Graph(id='tomtom-map-container-id',
+        #                      #figure=map_tomtom_by_day(dt.datetime.today().date()),
+        #                      config=dict(locale=str(get_locale())))),
+        #    ]),
         display_source_providers(source_tomtom),
     ]
 
