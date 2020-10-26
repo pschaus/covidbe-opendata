@@ -100,7 +100,7 @@ def covid_daily_ins3():
     df3.to_csv("../static/csv/cases_daily_ins3.csv")
 
 def covid_daily_ins5():
-    df = pd.read_csv("../static/csv/COVID19BE_CASES_MUNI.csv", parse_dates=['DATE'], encoding='latin1')
+    df = pd.read_csv("../static/csv/COVID19BE_CASES_MUNI.csv", parse_dates=['DATE'], encoding='utf8')
     df = df[['DATE', 'NIS5', 'CASES', 'TX_DESCR_FR']]
 
     df.dropna(inplace=True)

@@ -57,11 +57,11 @@ def map_communes_cases_per_week():
 
 @register_plot_for_embedding("map_cases_incidence_nis5")
 def map_cases_incidence_nis5():
-    geojson = geopandas.read_file('static/json/communes/be-geojson.json')
+    geojson = geopandas.read_file('static/json/communes/be-geojson.json',encoding='utf8')
     cutoff1 = (pd.to_datetime('today') - pd.Timedelta('17 days')).date()
     cutoff2 = (pd.to_datetime('today') - pd.Timedelta('4 days')).date()
 
-    df5d = pd.read_csv("static/csv/cases_daily_ins5.csv", encoding='latin1')
+    df5d = pd.read_csv("static/csv/cases_daily_ins5.csv", encoding='utf8')
     df5d = df5d[df5d.DATE >= str(cutoff1)]
     df5d = df5d[df5d.DATE <= str(cutoff2)]
     df5d = df5d.groupby([df5d.NIS5, df5d.POP, df5d.TX_DESCR_FR]).agg({'CASES': ['sum']}).reset_index()
@@ -73,7 +73,7 @@ def map_cases_incidence_nis5():
     fig = px.choropleth_mapbox(df5d, geojson=geojson,
                                locations="NIS5",
                                color='CASES_PER_100KHABITANT',
-                               range_color=(0, 2000),
+                               range_color=(0, 2500),
                                color_continuous_scale="magma_r",
                                #color_continuous_scale=[(0, "green"), (15/150, "green"), (15/150, "yellow"),
                                #                        (30/150, "yellow"), (30/150, "orange"), (50/150, "orange"),
