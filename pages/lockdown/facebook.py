@@ -105,7 +105,7 @@ def display_facebook():
             clearable=False
         )],
         style=dict(width='50%')),
-        display_graphic(id='graph'),
+        dcc.Graph(id='graph'),
         html.H3(gettext(
             get_translation(
                 fr="Lien de proportionnalité entre le nombre d'utilisateurs et la population réelle",

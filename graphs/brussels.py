@@ -1,4 +1,3 @@
-
 from plotly.subplots import make_subplots
 
 from graphs import register_plot_for_embedding
@@ -10,19 +9,33 @@ from flask_babel import gettext
 from datetime import datetime
 import plotly.express as px
 import os
+import numpy as np
 
 mydateparser = lambda x: datetime.strptime(x, "%d/%m/%Y %H:%M")
 
 df = pd.read_csv(f'static/csv/tunnels_bxl.csv', parse_dates=['from', 'to'], date_parser=mydateparser)
 
+
+
+
+
 mask = (df['from'] >= '2020-02-1')
 df = df.loc[mask]
 
-mask = (df['from'] <= '2020-05-19')
+mask = (df['from'] <= '2020-10-25')
 df = df.loc[mask]
 
 df.reset_index(level=0, inplace=True)
 df.set_index('from', inplace=True)
+
+
+def moving_average(a, n=1):
+    a = a.astype(np.float)
+    ret = np.cumsum(a)
+    ret[n:] = ret[n:] - ret[:-n]
+    ret[:n - 1] = ret[:n - 1] / range(1, n)
+    ret[n - 1:] = ret[n - 1:] / n
+    return ret
 
 
 def fig_tunnel(weekday=True, time='07:00'):
@@ -31,47 +44,34 @@ def fig_tunnel(weekday=True, time='07:00'):
         df_ = df_[df_.index.dayofweek < 5]
     else:
         df_ = df_[df_.index.dayofweek == 5]
-    df_.reset_index(level=0, inplace=True)
 
-    fig = px.line(df_, x="from", y="volume", color="tunnel")
+    df_.reset_index(level=0, inplace=True)
+    tunnels = sorted(df_.tunnel.unique())
+    traces = []
+
+    for idx, t in enumerate(tunnels):
+        df_t = df_.loc[df_['tunnel'] == t]
+        trace = dict(x=df_t['from'], y=moving_average(df_t['volume'].values, 5), mode='lines', name=t)
+        traces.append(trace)
+
+    fig = go.Figure(data=traces)
+
+    # fig = px.line(df_, x="from", y="volume", color="tunnel")
 
     fig.update_layout(
         xaxis_title="day",
-        yaxis_title="#vehicles"
+        yaxis_title="#vehicles",
+        template="plotly_white"
     )
     return fig
 
 
-def fig_tunnel_ratio(weekday=True, time='07:00'):
-    df_ = df.between_time(time, time)
-    if weekday:
-        df_ = df_[df_.index.dayofweek < 5]
-    else:
-        df_ = df_[df_.index.dayofweek == 5]
-    df_.reset_index(level=0, inplace=True)
-
-    mask = (df_['from'] <= '2020-03-10')
-    df2 = df_.loc[mask]
-
-    df2 = df2.groupby('tunnel').mean()
-
-    dict_mean = df2.to_dict()['volume']
-
-    df_['rel_volume'] = df_.apply(lambda row: row['volume'] / dict_mean[row['tunnel']], axis=1)
-
-    fig = px.line(df_, x="from", y="rel_volume", color="tunnel")
-
-    fig.update_layout(
-        xaxis_title="day",
-        yaxis_title="ratio wrt to normality"
-    )
-    return fig
 
 
 def fig_global_tunnel_ratio(weekday=True, time='07:00'):
     df_ = df.between_time(time, time)
     if weekday:
-        df_ = df_[df_.index.dayofweek < 5]
+        df_ = df_[df_.index.dayofweek < 4]
     else:
         df_ = df_[df_.index.dayofweek == 5]
     df_.reset_index(level=0, inplace=True)
@@ -87,34 +87,44 @@ def fig_global_tunnel_ratio(weekday=True, time='07:00'):
     mean = df2['volume'].mean()
 
     df_day['rel_volume'] = df_day.volume / mean
-    fig = px.line(df_day, x="from", y="rel_volume")
+    fig = px.line(x=df_day["from"], y=moving_average(df_day["rel_volume"].values,4))
 
     fig.update_layout(
         xaxis_title="day",
-        yaxis_title="ratio wrt to normality"
+        yaxis_title="ratio wrt to normality",
+        template="plotly_white"
     )
     return fig
+
+
+@register_plot_for_embedding("brussels-tunnels-23h")
+def brussels_tunnels23h():
+    fig1 = fig_tunnel(True, '23:00')
+    fig1.update_layout(title="#Tunnel Traffic of Brussels at 23h Workdays")
+    return fig1
 
 
 @register_plot_for_embedding("brussels-tunnels")
 def brussels_tunnels():
     fig1 = fig_tunnel(True, '07:00')
-    fig1.update_layout(title="#Tunnel Traffic of Brussels at 7:00-8:00 Workdays")
+    fig1.update_layout(title="#Tunnel Traffic of Brussels at 7h Workdays")
     return fig1
 
-
-@register_plot_for_embedding("brussels-tunnels-ratio")
-def brussels_tunnels_ratio():
-    fig1 = fig_tunnel_ratio(True, '07:00')
-    fig1.update_layout(title="#Tunnel Traffic of Brussels at 7:00-8:00 Workdays")
-    return fig1
 
 
 @register_plot_for_embedding("brussels-tunnels-ratio")
 def brussels_alltunnels_ratio():
     fig1 = fig_global_tunnel_ratio(True, '07:00')
-    fig1.update_layout(title="#Total Tunnel Traffic of Brussels at 7:00-8:00 Workdays")
+    fig1.update_layout(title="#Deviation from January-February of of Total Tunnel Traffic of Brussels at 7:00-8:00 Workdays")
     return fig1
+
+
+@register_plot_for_embedding("brussels-tunnels-ratio23h")
+def brussels_alltunnels_ratio23h():
+    fig1 = fig_global_tunnel_ratio(True, '22:00')
+    fig1.update_layout(title="#Deviation from January-February of Tunnel Traffic of Brussels at 23:00-24:00 Workdays")
+    return fig1
+
 
 
 
@@ -167,14 +177,21 @@ def apple_mobility_plot_cities():
         a = 0
         for c in cities:
             df = cities_df[c]
+
+            values = df[g].values
+            values = values.astype(np.float)
+
+            values = np.nan_to_num(values, True)
+            values = moving_average(values, 7)
+
             large_fig.append_trace(
-                go.Scatter(x=df.index, y=df[g], line=dict(color=colors[a]), mode='lines', name=c, legendgroup=c,
+                go.Scatter(x=df.index, y=values, line=dict(color=colors[a]), mode='lines', name=c, legendgroup=c,
                            showlegend=(r == 1)), row=r, col=1)
             a += 1
 
         r += 1
 
-    large_fig['layout'].update(height=1000, title='Apple Mobility Reports')
+    large_fig['layout'].update(height=1000, title='Apple Mobility Reports (7day avg)',template="plotly_white")
     return large_fig
 
 # -------------------------------------------------------------
