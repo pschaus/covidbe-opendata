@@ -51,7 +51,7 @@ s=requests.get(url).content
 df_hospi=pd.read_csv(io.StringIO(s.decode('utf8'))) # last line is NaN
 df = df[['DATE', 'PROVINCE','TESTS_ALL','TESTS_ALL_POS','CASES']]
 df = df[df['DATE'] >= '2020-03-15']
-df = df.merge(df_hospi, how='left', on=['DATE','PROVINCE'])
+df = df.merge(df_hospi, how='right', on=['DATE','PROVINCE'])
 df['PROV']= df['PROVINCE'].map(prov_codes)
 df['POP']= df['PROV'].map(prov_population)
 
