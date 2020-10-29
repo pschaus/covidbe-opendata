@@ -64,28 +64,61 @@ def bar_hospitalization():
     return fig_hospi
 
 
-
 @register_plot_for_embedding("hospi_waves")
 def hospi_waves():
     """
     bar plot hospitalization
     """
-    df = df_hospi.groupby(['DATE']).agg({'TOTAL_IN': 'sum', 'NEW_OUT': 'sum', 'NEW_IN': 'sum', 'TOTAL_IN_ICU': 'sum'})
 
-    # wave1 = go.Bar(x=df.index, y=df.TOTAL_IN, name=gettext('#Total Hospitalized'))
-    wave1 = go.Bar(y=df.TOTAL_IN[:40], name=gettext('#Total Hospitalized Wave1'))
-    wave2 = go.Bar(y=df.TOTAL_IN[df.index >= '2020-10-07'], name=gettext('#Total Hospitalized Wave2'))
-    wave1_ICU = go.Bar(y=df.TOTAL_IN_ICU[:40], name=gettext('#Total ICU Wave1'))
-    wave2_ICU = go.Bar(y=df.TOTAL_IN_ICU[df.index >= '2020-10-07'], name=gettext('#Total ICU Wave2'))
+    df = df_hospi.groupby(['DATE']).agg(
+        {'TOTAL_IN': 'sum', 'TOTAL_IN_ECMO': 'sum', 'TOTAL_IN_RESP': 'sum', 'NEW_OUT': 'sum', 'NEW_IN': 'sum',
+         'TOTAL_IN_ICU': 'sum'})
 
-    fig_hospi = go.Figure(data=[wave1, wave2, wave1_ICU, wave2_ICU], layout=go.Layout(barmode='group'), )
+    startw2 = '2020-10-07'
+    dates_w1 = df.index[:40].values.tolist()
+    dates_w2 = df.index[df.index >= startw2].values.tolist()
 
-    fig_hospi.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0),
-                            title=gettext("Hospitalizations First Wave vs Second Wave"))
+    eventsw1 = {'2020-03-17': 'lockdown'}
+    eventsw2 = {'2020-10-18': 'couvre-feu 24h'}
 
-    fig_hospi.update_layout(xaxis_title=gettext('Day'),
-                            yaxis_title=gettext('Number of / Day'))
-    return fig_hospi
+    def addlines(fig, row, col, ymax, events, dates, color, group):
+        show = True
+        for date, descr in events.items():
+            i = dates.index(date)
+
+            fig.add_trace(go.Scatter(x=[i, i], y=[0, ymax], line={'color': color, 'width': 1, 'dash': 'dashdot'},
+                                     name='Horizontal Line', legendgroup=group, showlegend=False), row=row, col=col)
+            fig.add_trace(go.Scatter(x=[i], y=[ymax * 1.2], text=[descr], mode="text", name="wave3", legendgroup=group,
+                                     showlegend=False), row=row, col=col)
+            show = False
+
+    xvals = list(range(0, min(len(dates_w1), len(dates_w2)), 3))
+    xlabels = [dates_w1[v][-5:] + "|" + dates_w2[v][-5:] for v in xvals]
+
+    fig = make_subplots(rows=5, cols=1, subplot_titles=('Total', 'ICU', 'New In', 'ECMO', 'RESP'))
+
+    def add(column, row, show=False):
+        y1 = df[column][:40]
+        y2 = df[column][df.index >= startw2]
+        wave1 = go.Bar(y=y1, name="wave1", legendgroup="wave1", showlegend=show, marker_color="red")
+        wave2 = go.Bar(y=y2, name="wave2", legendgroup="wave2", showlegend=show, marker_color="blue")
+        fig.add_trace(wave1, row, 1)
+        fig.add_trace(wave2, row, 1)
+        # fig.update_layout(xaxis_title=gettext('Day'),yaxis_title=gettext('Number of / Day'),row=row,col=1)
+        fig.update_xaxes(tickmode='array', tickvals=xvals, ticktext=xlabels, row=row, col=1)
+        addlines(fig, row, 1, max(max(y1), max(y2)) * 1.2, eventsw1, dates_w1, "red", 'wave1')
+        addlines(fig, row, 1, max(max(y1), max(y2)) * 1.2, eventsw2, dates_w2, "blue", 'wave2')
+
+    add('TOTAL_IN', 1, True)
+    add('TOTAL_IN_ICU', 2)
+    add('NEW_IN', 3)
+    add('TOTAL_IN_ECMO', 4)
+    add('TOTAL_IN_RESP', 5)
+
+    fig.update_layout(template="plotly_white", height=1400, margin=dict(l=0, r=0, t=40, b=0),
+                      title=gettext("Hospitalizations First Wave vs Second Wave"))
+
+    return fig
 
 
 @register_plot_for_embedding("exp_fit_hospi")
