@@ -88,14 +88,15 @@ def hospi_waves():
 
             fig.add_trace(go.Scatter(x=[i, i], y=[0, ymax], line={'color': color, 'width': 1, 'dash': 'dashdot'},
                                      name='Horizontal Line', legendgroup=group, showlegend=False), row=row, col=col)
-            fig.add_trace(go.Scatter(x=[i], y=[ymax * 1.2], text=[descr], mode="text", name="wave3", legendgroup=group,
+            fig.add_trace(go.Scatter(x=[i], y=[ymax * 1.1], text=[descr], mode="text", name="wave3", legendgroup=group,
                                      showlegend=False), row=row, col=col)
             show = False
 
-    xvals = list(range(0, min(len(dates_w1), len(dates_w2)), 3))
+    xvals = list(range(0, min(len(dates_w1), len(dates_w2)), 2))
     xlabels = [dates_w1[v][-5:] + "|" + dates_w2[v][-5:] for v in xvals]
 
-    fig = make_subplots(rows=5, cols=1, subplot_titles=('Total', 'ICU', 'New In', 'ECMO', 'RESP'))
+    fig = make_subplots(rows=5, cols=1, subplot_titles=('Total', 'ICU', 'New In', 'ECMO', 'RESP'), shared_xaxes=True,
+                        vertical_spacing=0.02, )
 
     def add(column, row, show=False):
         y1 = df[column][:40]
@@ -106,8 +107,8 @@ def hospi_waves():
         fig.add_trace(wave2, row, 1)
         # fig.update_layout(xaxis_title=gettext('Day'),yaxis_title=gettext('Number of / Day'),row=row,col=1)
         fig.update_xaxes(tickmode='array', tickvals=xvals, ticktext=xlabels, row=row, col=1)
-        addlines(fig, row, 1, max(max(y1), max(y2)) * 1.2, eventsw1, dates_w1, "red", 'wave1')
-        addlines(fig, row, 1, max(max(y1), max(y2)) * 1.2, eventsw2, dates_w2, "blue", 'wave2')
+        addlines(fig, row, 1, max(max(y1), max(y2)) * 1, eventsw1, dates_w1, "red", 'wave1')
+        addlines(fig, row, 1, max(max(y1), max(y2)) * 1, eventsw2, dates_w2, "blue", 'wave2')
 
     add('TOTAL_IN', 1, True)
     add('TOTAL_IN_ICU', 2)
@@ -115,7 +116,7 @@ def hospi_waves():
     add('TOTAL_IN_ECMO', 4)
     add('TOTAL_IN_RESP', 5)
 
-    fig.update_layout(template="plotly_white", height=1400, margin=dict(l=0, r=0, t=40, b=0),
+    fig.update_layout(template="plotly_white", height=1600, margin=dict(l=0, r=0, t=40, b=0),
                       title=gettext("Hospitalizations First Wave vs Second Wave"))
 
     return fig
