@@ -150,23 +150,23 @@ def exp_fit_hospi():
                   title="Hospitalizations log scale and doubling period computation",height=600)
 
     # Creating the dataset, and generating the plot
-    fitexp = go.Scatter(
-        x=lastx,
-        y=lastyy,
-        mode='markers',
-        name='exponential fit'
-    )
+    #fitexp = go.Scatter(
+    #    x=lastx,
+    #    y=lastyy,
+    #    mode='markers',
+    #    name='exponential fit'
+    #)
 
-    fig.add_trace(fitexp)
+    #fig.add_trace(fitexp)
 
-    fig.add_trace(go.Scatter(
-        x=[lastx[0]],
-        y=[lastyy[0]],
-        mode="markers+text",
-        name="doubling period",
-        text=["doubling period:" + str(round(doubling, 1)) + " days"],
-        textposition="bottom center"
-    ))
+    #fig.add_trace(go.Scatter(
+    #    x=[lastx[0]],
+    #    y=[lastyy[0]],
+    #    mode="markers+text",
+    #    name="doubling period",
+    #    text=["doubling period:" + str(round(doubling, 1)) + " days"],
+    #    textposition="bottom center"
+    #))
 
     fig.update_layout(template="plotly_white")
 
