@@ -139,12 +139,12 @@ def exp_fit_hospi():
 
     lastxx = np.arange(0, len(lasty), 1)
 
-    popt, pcov = curve_fit(exponenial_func, lastxx, lasty, p0=(1, 1e-6, 1))
+    #popt, pcov = curve_fit(exponenial_func, lastxx, lasty, p0=(1, 1e-6, 1))
 
     #doubling = math.log(0.5) / popt[1]
-    doubling = -(1 / popt[1]) * math.log((2 * popt[0] + popt[2]) / popt[0])
+    #doubling = -(1 / popt[1]) * math.log((2 * popt[0] + popt[2]) / popt[0])
 
-    lastyy = exponenial_func(lastxx, *popt)
+    #lastyy = exponenial_func(lastxx, *popt)
 
     fig = px.line(x=x, y=y, log_y=True, labels={'x': 'date', 'y': 'total hospitals (log scale)'},
                   title="Hospitalizations log scale and doubling period computation",height=600)
