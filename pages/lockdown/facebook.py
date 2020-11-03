@@ -5,7 +5,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 from flask_babel import get_locale, gettext
 
-from graphs.facebook import population_proportion, population_evolution, movement, staying_put
+from graphs.facebook import population_proportion, population_evolution, movement, staying_put, map_staying_put
 from pages.sources import display_source_providers, source_facebook
 from pages import get_translation, display_graphic
 
@@ -53,8 +53,8 @@ def display_facebook():
         ]),
         html.H3(gettext(
             get_translation(
-                fr="Fraction des utilisateurs restant dans la même tuile toute la journée",
-                en="Ratio of users staying in one tile for the whole day"))),
+                fr="Fraction des utilisateurs restant dans la même tuile toute la journée (moyenne 7 jours)",
+                en="Ratio of users staying in one tile for the whole day (avg 7 days)"))),
         html.Span(gettext(
             get_translation(
                 fr="Comme pour le graphe précédent, on considère des zones géographiques de 600x600m (",
@@ -76,6 +76,11 @@ def display_facebook():
             dbc.Col(display_graphic(id='staying-put',
                               figure=staying_put(),
                               config=dict(locale=str(get_locale())))),
+        ]),
+        dbc.Row([
+            dbc.Col(display_graphic(id='staying-put-map',
+                                    figure=map_staying_put(),
+                                    config=dict(locale=str(get_locale())))),
         ]),
         html.H3(gettext(
             get_translation(
@@ -162,5 +167,7 @@ def callback_fb(app):
                           xaxis_title="date",
                           yaxis_title=gettext(get_translation(fr="nombre d'utilisateurs",en="number of users")),
                           legend_title_text=gettext(get_translation(fr="Venant de", en="Coming from")))
+
+        fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=30, b=0))
 
         return fig
