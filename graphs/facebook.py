@@ -147,7 +147,9 @@ def movement():
     add_rectangle(fig, "2020-05-11", bottom, "2020-05-18", split, "lightgreen")
     add_rectangle(fig, "2020-05-18", bottom, "2020-06-08", split, "mediumseagreen")
     add_rectangle(fig, "2020-06-08", bottom, "2020-07-01", split, "seagreen")
-    add_rectangle(fig, "2020-07-01", bottom, df_movement_range.date_time.max(), split, "green")
+    add_rectangle(fig, "2020-07-01", bottom, "2020-07-15", split, "green")
+    add_text(fig, "2020-10-18", top, "Pre-confinement")
+    add_rectangle(fig, "2020-10-18", bottom, df_movement_range.date_time.max(), split, "yellow")
     return fig
 
 @register_plot_for_embedding("facebook-staying")

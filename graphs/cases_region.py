@@ -47,6 +47,26 @@ def plot_absolute_cases():
     fig.add_trace(trace('Brussels'))
     # fig.update_yaxes(type="log")
     fig.update_layout(template="plotly_white", title="Number of cases")
+    fig.update_layout(
+        hovermode='x unified',
+        updatemenus=[
+            dict(
+                type="buttons",
+                direction="left",
+                buttons=list([
+                    dict(
+                        args=[{"yaxis.type": "linear"}],
+                        label="LINEAR",
+                        method="relayout"
+                    ),
+                    dict(
+                        args=[{"yaxis.type": "log"}],
+                        label="LOG",
+                        method="relayout"
+                    )
+                ]),
+            ),
+        ])
     return fig
 
 @register_plot_for_embedding("plot_relative_cases_region")
@@ -61,6 +81,26 @@ def plot_relative_cases():
     fig.add_trace(trace('Brussels', div=brux_pop, mul=100000))
 
     fig.update_layout(template="plotly_white", title="Number of cases/100000 habitants")
+    fig.update_layout(
+        hovermode='x unified',
+        updatemenus=[
+            dict(
+                type="buttons",
+                direction="left",
+                buttons=list([
+                    dict(
+                        args=[{"yaxis.type": "linear"}],
+                        label="LINEAR",
+                        method="relayout"
+                    ),
+                    dict(
+                        args=[{"yaxis.type": "log"}],
+                        label="LOG",
+                        method="relayout"
+                    )
+                ]),
+            ),
+        ])
     return fig
 
 @register_plot_for_embedding("cases_absolute_region")
@@ -71,14 +111,3 @@ def cases_absolute_region():
 def cases_relative_region():
     return plot_relative_cases()
 
-@register_plot_for_embedding("cases_absolute_region_log")
-def cases_absolute_region_log():
-    fig = plot_absolute_cases()
-    fig.update_yaxes(type="log")
-    return fig
-
-@register_plot_for_embedding("cases_relative_region_log")
-def cases_relative_region_log():
-    fig = plot_relative_cases()
-    fig.update_yaxes(type="log")
-    return fig

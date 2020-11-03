@@ -190,6 +190,27 @@ def bar_hospitalization_tot():
     fig_hospi.update_layout(xaxis_title=gettext('Day'),
                             yaxis_title=gettext('Number of / Day'))
 
+    fig_hospi.update_layout(
+    hovermode='x unified',
+    updatemenus=[
+        dict(
+            type = "buttons",
+            direction = "left",
+            buttons=list([
+                dict(
+                    args=[{"yaxis.type": "linear"}],
+                    label="LINEAR",
+                    method="relayout"
+                ),
+                dict(
+                    args=[{"yaxis.type": "log"}],
+                    label="LOG",
+                    method="relayout"
+                )
+            ]),
+        ),
+    ])
+
     return fig_hospi
 
 
@@ -200,16 +221,42 @@ def bar_hospitalization_in_out():
     """
     df = df_hospi.groupby(['DATE']).agg({'TOTAL_IN': 'sum', 'NEW_OUT': 'sum', 'NEW_IN': 'sum','TOTAL_IN_ICU': 'sum'})
 
-    newin_bar = go.Bar(x=df.index, y=df.NEW_IN, name=gettext('#New Hospitalized'))
-    newout_bar = go.Bar(x=df.index, y=df.NEW_OUT, name=gettext('#New Discharged'))
-    totin_bar = go.Bar(x=df.index, y=df.TOTAL_IN, name=gettext('#Total Hospitalized'))
-    icu_bar = go.Bar(x=df.index, y=df.TOTAL_IN_ICU, name=gettext('#Total ICU'))
-    fig_hospi = go.Figure(data=[newin_bar, newout_bar], layout=go.Layout(barmode='group'), )
+    newin_bar = go.Bar(x=df.index, y=df.NEW_IN, name=gettext('#New Hospitalized'),marker_color="red",legendgroup = "newin", showlegend = True)
+    newout_bar = go.Bar(x=df.index, y=df.NEW_OUT, name=gettext('#New Discharged'),marker_color="blue",legendgroup = "newout", showlegend = True)
+
+
+
+    newin_smooth = go.Scatter(x=df.index,y=moving_average(df.NEW_IN.values, 7), name=("New Hospitalized avg 7 days"),marker_color="red",legendgroup = "newin", showlegend = False)
+    newout_smooth = go.Scatter(x=df.index,y=moving_average(df.NEW_OUT.values, 7), name=("New Discharged avg 7 days"),marker_color="blue",legendgroup = "newout", showlegend = False)
+
+
+    fig_hospi = go.Figure(data=[newin_bar,newin_smooth, newout_bar,newout_smooth], layout=go.Layout(barmode='group'))
     fig_hospi.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0),
                             title=gettext("Daily IN-Out Hospitalizations"))
 
     fig_hospi.update_layout(xaxis_title=gettext('Day'),
                             yaxis_title=gettext('Number of / Day'))
+
+    fig_hospi.update_layout(
+    hovermode='x unified',
+    updatemenus=[
+        dict(
+            type = "buttons",
+            direction = "left",
+            buttons=list([
+                dict(
+                    args=[{"yaxis.type": "linear"}],
+                    label="LINEAR",
+                    method="relayout"
+                ),
+                dict(
+                    args=[{"yaxis.type": "log"}],
+                    label="LOG",
+                    method="relayout"
+                )
+            ]),
+        ),
+    ])
 
     return fig_hospi
 
@@ -274,6 +321,26 @@ def bar_hospitalization_ICU():
               "100% capa ICU"],
         mode="text", name=""
     ))
+    fig_hospi.update_layout(
+    hovermode='x unified',
+    updatemenus=[
+        dict(
+            type = "buttons",
+            direction = "left",
+            buttons=list([
+                dict(
+                    args=[{"yaxis.type": "linear"}],
+                    label="LINEAR",
+                    method="relayout"
+                ),
+                dict(
+                    args=[{"yaxis.type": "log"}],
+                    label="LOG",
+                    method="relayout"
+                )
+            ]),
+        ),
+    ])
 
     return fig_hospi
 
@@ -340,16 +407,81 @@ def death_over_icu_smooth():
 def hospi_smooth():
     fig = px.line(x=df.index,y=moving_average(df.TOTAL_IN.values, 7),labels={'x':'date', 'y':'total hospitals'},title="Total Hospitalization avg(7days)")
     fig.update_layout(template="plotly_white")
+    fig.update_layout(
+    hovermode='x unified',
+    updatemenus=[
+        dict(
+            type = "buttons",
+            direction = "left",
+            buttons=list([
+                dict(
+                    args=[{"yaxis.type": "linear"}],
+                    label="LINEAR",
+                    method="relayout"
+                ),
+                dict(
+                    args=[{"yaxis.type": "log"}],
+                    label="LOG",
+                    method="relayout"
+                )
+            ]),
+        ),
+    ])
     return fig
 
 @register_plot_for_embedding("newin_smooth")
 def newin_smooth():
     fig = px.line(x=df.index,y=moving_average(df.NEW_IN.values, 7),labels={'x':'date', 'y':'daily new in hospitals'},title="New Daily Hospitalization avg(7days)")
     fig.update_layout(template="plotly_white")
+    fig.update_layout(
+    hovermode='x unified',
+    updatemenus=[
+        dict(
+            type = "buttons",
+            direction = "left",
+            buttons=list([
+                dict(
+                    args=[{"yaxis.type": "linear"}],
+                    label="LINEAR",
+                    method="relayout"
+                ),
+                dict(
+                    args=[{"yaxis.type": "log"}],
+                    label="LOG",
+                    method="relayout"
+                )
+            ]),
+        ),
+    ])
     return fig
 
 @register_plot_for_embedding("death_smooth")
 def death_smooth():
-    fig = px.line(x=df.index, y=moving_average(df.DEATHS.values, 7), labels={'x': 'date', 'y': 'deaths'},title="Daily deaths avg(7days)")
+
+    death_bar = go.Bar(x=df.index, y=df.DEATHS, name=gettext('#Daily Covid Deaths'),marker_color="red",legendgroup = "death", showlegend = False)
+    death_smooth = go.Scatter(x=df.index,y=moving_average(df.DEATHS.values, 7), name=("#Daily Covid Deaths"),marker_color="blue",legendgroup = "death", showlegend = False)
+
+    fig = go.Figure(data=[death_bar,death_smooth], layout=go.Layout(barmode='group'))
+
     fig.update_layout(template="plotly_white")
+    fig.update_layout(
+    hovermode='x unified',
+    updatemenus=[
+        dict(
+            type = "buttons",
+            direction = "left",
+            buttons=list([
+                dict(
+                    args=[{"yaxis.type": "linear"}],
+                    label="LINEAR",
+                    method="relayout"
+                ),
+                dict(
+                    args=[{"yaxis.type": "log"}],
+                    label="LOG",
+                    method="relayout"
+                )
+            ]),
+        ),
+    ])
     return fig

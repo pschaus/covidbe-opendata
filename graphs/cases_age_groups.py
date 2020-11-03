@@ -69,7 +69,7 @@ def df_pop_age_cases():
 df_avg_age = df_avg_age_cases()
 
 @register_plot_for_embedding("incidence_age_group_plot")
-def incidence_age_group_plot(log=False):
+def incidence_age_group_plot():
     df_pop = df_pop_age_cases()
     df_pop['incidence'] = df_pop['CASES'] / df_pop['pop'] * 100000
 
@@ -87,8 +87,27 @@ def incidence_age_group_plot(log=False):
                       xaxis_title='Date',
                       yaxis_title='Cases/100K')
     fig.update_layout(template="plotly_white")
-    if log:
-        fig.update_yaxes(type="log")
+
+    fig.update_layout(
+    hovermode='x unified',
+    updatemenus=[
+        dict(
+            type = "buttons",
+            direction = "left",
+            buttons=list([
+                dict(
+                    args=[{"yaxis.type": "linear"}],
+                    label="LINEAR",
+                    method="relayout"
+                ),
+                dict(
+                    args=[{"yaxis.type": "log"}],
+                    label="LOG",
+                    method="relayout"
+                )
+            ]),
+        ),
+    ])
     return fig
 
 
@@ -144,6 +163,7 @@ def age_groups_cases():
     fig = px.bar(df_ag, x="DATE", y="CASES", color="AGEGROUP", title=gettext("Cases per day per age group"))
     fig.update_layout(template="plotly_white")
 
+
     return fig
 
 
@@ -193,17 +213,42 @@ def age_groups_pop_active_cases():
         df_ag = df_ag.groupby(['DATE']).agg({'CASES': 'sum'})
         df_ag.index = pd.DatetimeIndex(df_ag.index)
         df_ag = df_ag.reindex(idx, fill_value=0)
+        col = px.colors.qualitative.G10[idx2]
         bars_age_groups.append(go.Bar(
             x=df_ag.index,
             y=df_ag['CASES'],
             name=ag,
-            marker_color=px.colors.qualitative.G10[idx2]
+            marker_color = col,legendgroup = ag, showlegend = True
         ))
         bars_age_groups.append(
-            go.Scatter(x=df_ag.index, y=moving_average(df_ag['CASES'].values, 7), name=(ag + " avg 7 days")))
+            go.Scatter(x=df_ag.index, y=moving_average(df_ag['CASES'].values, 7),
+                       name=ag, marker_color = col, legendgroup = ag, showlegend = False))
     fig_age_groups_cases = go.Figure(data=bars_age_groups)
     fig_age_groups_cases.update_layout(template="plotly_white", height=500,
-                                       margin=dict(l=0, r=0, t=30, b=0), title=gettext("Cases per day per age group"))
+                                       margin=dict(l=0, r=0, t=30, b=0),
+                                       title=gettext("Cases per day per age group"))
+
+    fig_age_groups_cases.update_layout(
+    hovermode='x unified',
+    updatemenus=[
+        dict(
+            type = "buttons",
+            direction = "left",
+            buttons=list([
+                dict(
+                    args=[{"yaxis.type": "linear"}],
+                    label="LINEAR",
+                    method="relayout"
+                ),
+                dict(
+                    args=[{"yaxis.type": "log"}],
+                    label="LOG",
+                    method="relayout"
+                )
+            ]),
+        ),
+    ])
+
 
     return fig_age_groups_cases
 

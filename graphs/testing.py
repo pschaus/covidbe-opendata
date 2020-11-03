@@ -26,12 +26,12 @@ def bart_plot_cases_testing():
     """
     # ---------bar plot age groups death---------------------------
 
-    test_bar = go.Bar(x=df_testing.DATE, y=df_testing.TESTS_ALL, name=gettext('#Tests'))
-    case_bar = go.Bar(x=df_testing.DATE, y=df_testing.CASES, name=gettext('#Cases'))
+    test_bar = go.Bar(x=df_testing.DATE, y=df_testing.TESTS_ALL, name=gettext('#Tests'),marker_color="blue",legendgroup = "testing", showlegend = True)
+    case_bar = go.Bar(x=df_testing.DATE, y=df_testing.CASES, name=gettext('#Cases'),marker_color="red",legendgroup = "cases", showlegend = True)
 
     line_test = go.Scatter(x=df_testing.DATE, y=moving_average(df_testing.TESTS_ALL.values, 7),
-                           name=("tests avg 7 days"))
-    case_test = go.Scatter(x=df_testing.DATE, y=moving_average(df_testing.CASES.values, 7), name=("cases avg 7 days"))
+                           name=gettext('#Tests'),marker_color="blue",legendgroup = "testing", showlegend = False)
+    case_test = go.Scatter(x=df_testing.DATE, y=moving_average(df_testing.CASES.values, 7), name=gettext('#Cases'),marker_color="red",legendgroup = "cases", showlegend = False)
 
     fig_testing = go.Figure(data=[test_bar, case_bar, line_test, case_test], layout=go.Layout(barmode='group'), )
     fig_testing.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0),
@@ -39,6 +39,27 @@ def bart_plot_cases_testing():
 
     fig_testing.update_layout(xaxis_title=gettext('Day'),
                               yaxis_title=gettext('Number of / Day'))
+
+    fig_testing.update_layout(
+        hovermode='x unified',
+        updatemenus=[
+            dict(
+                type="buttons",
+                direction="left",
+                buttons=list([
+                    dict(
+                        args=[{"yaxis.type": "linear"}],
+                        label="LINEAR",
+                        method="relayout"
+                    ),
+                    dict(
+                        args=[{"yaxis.type": "log"}],
+                        label="LOG",
+                        method="relayout"
+                    )
+                ]),
+            ),
+        ])
 
     return fig_testing
 

@@ -36,12 +36,7 @@ def display_age_groups():
         html.H3(get_translation(fr = "Nombre de cas par 100K dans la population du groupe d'age",en="Number of cases per 100K in the age group population")),
         dbc.Row([
             dbc.Col(display_graphic(id='age-group-cases-relative100K',
-                              figure=incidence_age_group_plot(log=True),
-                              config=dict(locale=str(get_locale())))),
-        ]),
-        dbc.Row([
-            dbc.Col(display_graphic(id='age-group-cases-log-plot',
-                              figure=incidence_age_group_plot(log=False),
+                              figure=incidence_age_group_plot(),
                               config=dict(locale=str(get_locale())))),
         ]),
         html.H3(get_translation(fr="Nombre de cas dans chaque groupe d'age",
