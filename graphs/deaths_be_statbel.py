@@ -61,28 +61,6 @@ def death_age_groups(barmode="group"):
     # Set y-axes titles
     fig_age_groups_deaths.update_yaxes(title_text=get_translation(en="Total Deaths",fr="Nombre de morts"))
 
-    # Add shape regions
-    fig_age_groups_deaths.update_layout(
-        shapes=[
-            # 1st highlight during Feb 4 - Feb 6
-            dict(
-                type="rect",
-                # x-reference is assigned to the x-values
-                xref="x",
-                # y-reference is assigned to the plot paper [0,1]
-                yref="paper",
-                x0=10.5,
-                y0=0,
-                x1=int(maxw) + 0.5,
-                y1=100,
-                fillcolor="LightBlue",
-                opacity=0.5,
-                layer="below",
-                line_width=0,
-            ),
-        ]
-    )
-
     fig_age_groups_deaths.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0),
                                         title=get_translation(en="Weekly Total deaths per age group in Belgium 2020",fr="Nombre de morts dans chaque groupe d'age en Belgique 2020 "))
     return fig_age_groups_deaths

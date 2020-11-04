@@ -1,5 +1,4 @@
 
-
 import plotly.express as px
 
 import plotly.graph_objs as go
@@ -26,10 +25,11 @@ df_week_all = pd.read_csv("static/csv/weekly_mortality_all.csv")
 
 df = pd.read_csv("static/csv/mortality_statbel.csv")
 
-df_ag = df.groupby([df.DT_DATE,df.CD_AGEGROUP]).agg({'MS_NUM_DEATH': ['sum']}).reset_index()
+df_ag = df.groupby([df.DT_DATE ,df.CD_AGEGROUP]).agg({'MS_NUM_DEATH': ['sum']}).reset_index()
 df_ag.columns = df_ag.columns.get_level_values(0)
 
-df = df.groupby([df.DT_DATE]).agg({'MS_NUM_DEATH': ['sum']}).reset_index()
+
+df = df.groupby([df.DT_DATE ,df.NR_YEAR]).agg({'MS_NUM_DEATH': ['sum']}).reset_index()
 df.columns = df.columns.get_level_values(0)
 
 
@@ -100,13 +100,13 @@ def daily_death_all():
 @register_plot_for_embedding("daily_death_all_deviation_sin")
 def daily_death_all_deviation_sin():
     x = df.DT_DATE
-    y = moving_average(df.MS_NUM_DEATH.values,7)
+    y = moving_average(df.MS_NUM_DEATH.values ,7)
 
-    yy =  sin_fit_math(x,y)
+    yy =  sin_fit_math(x ,y)
 
-    relative = ((y-yy)/yy)*100
+    relative = (( y -yy ) /yy ) *100
 
-    col = np.where(relative<0, 'green', 'red')
+    col = np.where(relative <0, 'green', 'red')
 
     # Plot
     fig = go.Figure()
@@ -117,7 +117,7 @@ def daily_death_all_deviation_sin():
                marker_color=col))
     fig.update_layout(barmode='stack')
 
-    fig.update_layout(template="plotly_white",title="Relative Deviation to the sinusoidal fit in %")
+    fig.update_layout(template="plotly_white" ,title="Relative Deviation to the sinusoidal fit in %")
 
     return fig
 
@@ -138,57 +138,63 @@ def daily_death_ag():
 
     )
     fig.update_layout(template="plotly_white")
-    #fig.update_layout(yaxis=dict(range=[0, 300]))
+    # fig.update_layout(yaxis=dict(range=[0, 300]))
     return fig
 
-@register_plot_for_embedding("death_85plus_hist")
-def death_85plus_hist():
-    fig = px.line(df_week85, x="week", y="tot", color='year')
 
-    fig.update_layout(xaxis_title='Week',
-                      yaxis_title='#deaths 85+')
-    return fig
-
-@register_plot_for_embedding("death_hist")
-def death_hist():
-    fig = px.line(df_week_all, x="week", y="tot", color='year')
-
-    fig.update_layout(xaxis_title='Week',
-                      yaxis_title='#deaths')
-    return fig
-
-@register_plot_for_embedding("death_85plus_hist_cum")
-def death_85plus_hist_cum():
-    def x(year):
-        return df_week85[df_week85.year == year].week
-
-    def y(year):
-        return df_week85[df_week85.year == year].tot.cumsum()
-
-    fig = go.Figure(data=[go.Scatter(x=x(2015), y=y(2015), name=gettext('2015')),
-                          go.Scatter(x=x(2017), y=y(2017), name=gettext('2017')),
-                          go.Scatter(x=x(2018), y=y(2018), name=gettext('2018')),
-                          go.Scatter(x=x(2020), y=y(2020), name=gettext('2020')), ])
-
-    fig.update_layout(xaxis_title='Week',
-                      yaxis_title='cumulated #deaths 85+')
-    return fig
 
 @register_plot_for_embedding("death_plus_hist_cum")
 def death_plus_hist_cum():
     def x(year):
-        return df_week_all[df_week_all.year == year].week
+        return df[df.NR_YEAR == year].DT_DATE
 
     def y(year):
-        return df_week_all[df_week_all.year == year].tot.cumsum()
+        return df[df.NR_YEAR == year].MS_NUM_DEATH.cumsum()
 
-    fig = go.Figure(data=[go.Scatter(x=x(2015), y=y(2015), name=gettext('2015')),
-                          go.Scatter(x=x(2016), y=y(2016), name=gettext('2016')),
-                          go.Scatter(x=x(2017), y=y(2017), name=gettext('2017')),
-                          go.Scatter(x=x(2018), y=y(2018), name=gettext('2018')),
-                          go.Scatter(x=x(2019), y=y(2019), name=gettext('2019')),
-                          go.Scatter(x=x(2020), y=y(2020), name=gettext('2020')), ])
+    fig = go.Figure(data=[go.Scatter(y=y(2015), name=gettext('2015')),
+                          go.Scatter(y=y(2016), name=gettext('2016')),
+                          go.Scatter(y=y(2017), name=gettext('2017')),
+                          go.Scatter(y=y(2018), name=gettext('2018')),
+                          go.Scatter(y=y(2019), name=gettext('2019')),
+                          go.Scatter(y=y(2020), name=gettext('2020')), ])
 
-    fig.update_layout(xaxis_title='Week',
+    fig.update_layout(xaxis_title='#Days since 1st of January',
                       yaxis_title='cumulated #deaths all population')
+    fig.update_layout(template="plotly_white")
+    return fig
+
+
+@register_plot_for_embedding("death_cumsum_comparison")
+def death_cum_january():
+
+    years = [2015 ,2016 ,2017 ,2018 ,2019 ,2020]
+
+
+    def y(year):
+        return df[df.NR_YEAR == year].MS_NUM_DEATH.cumsum()
+
+    n = len(y(2020).values)
+    values = [y(a).values[ n -1] for a in years]
+
+    fig = px.bar(x=years, y=values ,labels={"x" :"" ,"y" :""})
+    fig.update_layout(template="plotly_white",
+                      title="Total deaths since 1st of January at day  " +str(n) ,)
+    return fig
+
+
+@register_plot_for_embedding("death_cumsum_comparison_excess")
+def death_cum_january_additional():
+
+    years = [2015 ,2016 ,2017 ,2018 ,2019]
+
+
+    def y(year):
+        return df[df.NR_YEAR == year].MS_NUM_DEATH.cumsum()
+
+    n = len(y(2020).values)
+    values = [(y(2020).values[ n -1 ] -y(a).values[ n -1]) for a in years]
+
+    fig = px.bar(x=years, y=values ,labels={"x" :"" ,"y" :""})
+    fig.update_layout(template="plotly_white",
+                      title="Additional deaths of 2020 since 1st of January at day  " +str(n) ,)
     return fig
