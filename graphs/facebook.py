@@ -226,7 +226,7 @@ def map_stayput(column, title):
                                featureidkey="properties.name",
                                center={"lat": 50.641111, "lon": 4.668889},
                                hover_name=column,
-                               hover_data=[column, column, "name"],
+                               hover_data=[column, "name"],
                                height=600,
                                mapbox_style="carto-positron", zoom=6)
     fig.update_geos(fitbounds="locations")
@@ -243,3 +243,7 @@ def map_stayput(column, title):
 def map_staying_put():
     return map_stayput("all_day_ratio_single_tile_users", "Fraction Facebook users not moving for 24h at date " + last_date)
 
+
+@register_plot_for_embedding("facebook-ratio-tiles")
+def map_ratio_tiles_fb():
+    return map_stayput("all_day_bing_tiles_visited_relative_change", "Change in the daily number of tiles visited wrt normality at date " + last_date)

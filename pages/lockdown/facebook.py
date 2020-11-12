@@ -5,7 +5,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 from flask_babel import get_locale, gettext
 
-from graphs.facebook import population_proportion, population_evolution, movement, staying_put, map_staying_put
+from graphs.facebook import population_proportion, population_evolution, movement, staying_put, map_staying_put,map_ratio_tiles_fb
 from pages.sources import display_source_providers, source_facebook
 from pages import get_translation, display_graphic
 
@@ -50,6 +50,11 @@ def display_facebook():
             dbc.Col(display_graphic(id='movement',
                               figure=movement(),
                               config=dict(locale=str(get_locale())))),
+        ]),
+        dbc.Row([
+            dbc.Col(display_graphic(id='ratio-tiles-map',
+                                    figure=map_ratio_tiles_fb(),
+                                    config=dict(locale=str(get_locale())))),
         ]),
         html.H3(gettext(
             get_translation(

@@ -73,13 +73,13 @@ def hospi_waves():
     df = df_hospi.groupby(['DATE']).agg(
         {'TOTAL_IN': 'sum', 'TOTAL_IN_ECMO': 'sum', 'TOTAL_IN_RESP': 'sum', 'NEW_OUT': 'sum', 'NEW_IN': 'sum',
          'TOTAL_IN_ICU': 'sum'})
-
+    n = 60
     startw2 = '2020-10-07'
-    dates_w1 = df.index[:40].values.tolist()
+    dates_w1 = df.index[:n].values.tolist()
     dates_w2 = df.index[df.index >= startw2].values.tolist()
 
     eventsw1 = {'2020-03-17': 'lockdown'}
-    eventsw2 = {'2020-10-18': 'couvre-feu 24h'}
+    eventsw2 = {'2020-10-18': 'couvre-feu 24h','2020-11-02': 'lockdown'}
 
     def addlines(fig, row, col, ymax, events, dates, color, group):
         show = True
@@ -99,7 +99,7 @@ def hospi_waves():
                         vertical_spacing=0.02, )
 
     def add(column, row, show=False):
-        y1 = df[column][:40]
+        y1 = df[column][:n]
         y2 = df[column][df.index >= startw2]
         wave1 = go.Bar(y=y1, name="wave1", legendgroup="wave1", showlegend=show, marker_color="red")
         wave2 = go.Bar(y=y2, name="wave2", legendgroup="wave2", showlegend=show, marker_color="blue")
