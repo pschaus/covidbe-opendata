@@ -16,14 +16,17 @@ from graphs import register_plot_for_embedding
 
 df = pd.read_csv('static/csv/international_hospi.csv')
 
-population = {'United Kingdom':66.65,'France':66.99,'Belgium':11.46,'Netherlands':17.28,'Hungary':9.773,'Italy':60.36,'Poland':37.9, 'Portugal':10.28}
+population = {'United Kingdom':66.65,'France':66.99,'Belgium':11.46,'Netherlands':17.28,'Hungary':9.773,
+              'Italy':60.36,'Poland':37.9, 'Portugal':10.28, 'Czechia': 10.69, 'Romania':19.190, 'Spain':47.431 }
 
 df = df.loc[(df['country'] =='Belgium') |
             (df['country'] =='France') |
             (df['country'] =='Netherlands')  |
             (df['country'] =='United Kingdom')|
             (df['country'] =='Hungary')|
-            (df['country'] =='Italy')| (df['country'] =='Portugal')]
+            (df['country'] =='Italy')|
+            (df['country'] =='Portugal') |
+            (df['country'] =='Czechia') | (df['country'] =='Romania') | (df['country'] =='Spain')]
 
 df["pop"] = df["country"].map(lambda x:population[x])
 df = df[df.date >= "2020-09-01"]
