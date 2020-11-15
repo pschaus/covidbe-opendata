@@ -27,6 +27,8 @@ range_min = df_prov_tot.CASES_PER_THOUSAND.min()
 range_max = df_prov_tot.CASES_PER_THOUSAND.max()
 
 df = pd.read_csv('static/csv/be-covid-provinces-all.csv')
+df.sort_values(by=['DATE'], inplace=True, ascending=True)
+df['TOTAL_IN_PER_100K'] = df['TOTAL_IN'] / df['POP'] * 100000
 
 dates = df.groupby([df.PROVINCE,df.PROV]).agg({'DATE': ['max']}).reset_index()
 dates.columns = dates.columns.get_level_values(0)
@@ -218,6 +220,13 @@ def hospi_w1w2_provinces():
 
     fig.update_layout(template="plotly_white", height=800, margin=dict(l=50, r=50, t=50, b=50),
                       title=gettext(title))
+    return fig
+
+
+@register_plot_for_embedding("hospi_provinces_per100k")
+def hospi_provinces_per100k():
+    fig = px.line(df, x="DATE", y='TOTAL_IN_PER_100K', color="PROVINCE",title="Total number of hospitalized patients per 100K habitants")
+    fig.update_layout(template="plotly_white")
     return fig
 
 
