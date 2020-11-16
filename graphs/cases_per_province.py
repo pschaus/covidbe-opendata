@@ -20,7 +20,7 @@ range_max = df_prov_tot.CASES_PER_THOUSAND.max()
 
 df = pd.read_csv('static/csv/be-covid-provinces-all.csv')
 df['POSITIVE_RATE'] = df['CASES']/df['TESTS_ALL']
-df['TESTING_RATE'] = df['TESTS_ALL']/df['POP']
+df['TESTING_RATE'] = df['TESTS_ALL']*100000/df['POP']
 
 
 cutoff1 = (pd.to_datetime('today') - pd.Timedelta('17 days')).date()
@@ -130,7 +130,7 @@ def plot_ratio(df, column_name1,column_name2, title):
         df_p = df.loc[df['PROVINCE'] == p]
         bars.append(go.Scatter(
             x=df_p.DATE,
-            y=moving_average(df_p[column_name1].values, 7)/moving_average(df_p[column_name2].values, 7),
+            y=moving_average(100* df_p[column_name1].values, 7)/moving_average(df_p[column_name2].values, 7),
             name=p
         ))
 
@@ -175,11 +175,11 @@ def avg_cases_provinces():
 
 @register_plot_for_embedding("avg_positive_rate_cases_provinces")
 def avg_positive_rate_cases_provinces():
-    return plot_ratio(df, 'CASES','TESTS_ALL', "Positive rate (positive cases/ all tests) avg 7 days")
+    return plot_ratio(df, 'CASES','TESTS_ALL', "Positive rate % (positive cases/ all tests) avg 7 days")
 
 @register_plot_for_embedding("avg_positive_rate_provinces")
 def avg_positive_rate_provinces():
-    return plot_ratio(df, 'TESTS_ALL_POS','TESTS_ALL', "Positive rate (positive tests/ all tests) avg 7 days")
+    return plot_ratio(df, 'TESTS_ALL_POS','TESTS_ALL', "Positive rate % (positive tests/ all tests) avg 7 days")
 
 @register_plot_for_embedding("avg_testing_per_habbitant_provinces")
 def avg_testing_per_habbitant_provinces():

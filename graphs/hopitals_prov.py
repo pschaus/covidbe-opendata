@@ -227,6 +227,26 @@ def hospi_w1w2_provinces():
 def hospi_provinces_per100k():
     fig = px.line(df, x="DATE", y='TOTAL_IN_PER_100K', color="PROVINCE",title="Total number of hospitalized patients per 100K habitants")
     fig.update_layout(template="plotly_white")
+    fig.update_layout(
+    hovermode='x unified',
+    updatemenus=[
+        dict(
+            type = "buttons",
+            direction = "left",
+            buttons=list([
+                dict(
+                    args=[{"yaxis.type": "linear"}],
+                    label="LINEAR",
+                    method="relayout"
+                ),
+                dict(
+                    args=[{"yaxis.type": "log"}],
+                    label="LOG",
+                    method="relayout"
+                )
+            ]),
+        ),
+    ])
     return fig
 
 

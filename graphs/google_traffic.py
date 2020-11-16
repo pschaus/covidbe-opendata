@@ -41,6 +41,7 @@ def plot_google_traffic_working_days():
         xaxis_title="day",
         yaxis_title="normalized traffic"
     )
+    fig.update_layout(template="plotly_white", title="Number of tests per inhabitants")
     return fig
 
 
