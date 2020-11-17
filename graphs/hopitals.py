@@ -485,3 +485,53 @@ def death_smooth():
         ),
     ])
     return fig
+
+
+@register_plot_for_embedding("regions_death_covid_per_habitant")
+def region_covid_death_per_habitant():
+    df_mortality = pd.read_csv('static/csv/be-covid-mortality.csv', keep_default_na=False)
+    barmode = 'stack'  # group
+    idx = pd.date_range(df_mortality.DATE.min(), df_mortality.DATE.max())
+    # bar plot with bars per age groups
+    bars_age_groups_deaths = []
+    regions = sorted(df_mortality.REGION.unique())
+
+    pop = {'Brussels': 1218255, 'Flanders': 6629143, 'Wallonia': 3645243}
+
+    for r in regions:
+        df_r = df_mortality.loc[df_mortality['REGION'] == r]
+        df_r = df_r.groupby(['DATE']).agg({'DEATHS': 'sum'})
+        df_r.index = pd.DatetimeIndex(df_r.index)
+        df_r = df_r.reindex(idx, fill_value=0)
+
+        plot = go.Scatter(x=df_r.index, y=(100000 * df_r['DEATHS'] / pop[r]).rolling(7).mean(), name=r)
+
+        bars_age_groups_deaths.append(plot)
+
+    fig = go.Figure(data=bars_age_groups_deaths,
+                    layout=go.Layout(barmode='group'), )
+    fig.update_layout(template="plotly_white", height=500, barmode=barmode, margin=dict(l=0, r=0, t=30, b=0), )
+
+    fig.update_layout(template="plotly_white", title="Deaths per 100K inhabitants (avg 7 days)")
+    fig.update_layout(
+        hovermode='x unified',
+        updatemenus=[
+            dict(
+                type="buttons",
+                direction="left",
+                buttons=list([
+                    dict(
+                        args=[{"yaxis.type": "linear"}],
+                        label="LINEAR",
+                        method="relayout"
+                    ),
+                    dict(
+                        args=[{"yaxis.type": "log"}],
+                        label="LOG",
+                        method="relayout"
+                    )
+                ]),
+            ),
+        ])
+
+    return fig
