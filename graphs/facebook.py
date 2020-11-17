@@ -154,13 +154,14 @@ def movement():
     fig = go.Figure(data=plots, layout=go.Layout(barmode='group'))
 
     fig.update_layout(
+        height=600,
         xaxis_title="date",
         yaxis_title=gettext(
             get_translation(fr="changement du nombre de tuiles visités", en="change in number of tiles visited"))
     )
-    top = 0.5
-    bottom = -0.8
-    split = 0.4
+    top = 0.2
+    bottom = -0.6
+    split = 0.2
     add_text(fig, "2020-04-11", top, "Confinement")
     add_rectangle(fig, "2020-03-18", bottom, "2020-05-04", top, "lightsalmon")
     add_rectangle(fig, "2020-10-18", split, df_movement_range.date_time.max(), top, "lightsalmon")
@@ -185,13 +186,14 @@ def staying_put():
     fig = go.Figure(data=plots, layout=go.Layout(barmode='group'))
 
     fig.update_layout(
+        height = 600,
         xaxis_title="date",
         yaxis_title=gettext(
             get_translation(fr="proportion d'utilisateurs immobiles", en="fraction of users staying put"))
     )
-    top = 0.8
+    top = 0.6
     bottom = 0
-    split = 0.74
+    split = 0.6
     add_text(fig, "2020-04-11", top, "Confinement")
     add_rectangle(fig, "2020-03-18", bottom, "2020-05-04", top, "lightsalmon")
     add_rectangle(fig, "2020-10-18", split, df_movement_range.date_time.max(), top, "lightsalmon")
