@@ -168,7 +168,7 @@ def map_communes_per_inhabitant():
                                featureidkey="properties.NIS5",
                                center={"lat": 50.641111, "lon": 4.668889},
                                hover_name="name",
-                               hover_data=["name", "CASES_PER_100_POP"],
+                               hover_data=["name", "CASES_PER_100_POP","NIS5"],
                                height=500,
                                mapbox_style="carto-positron", zoom=6)
     fig.update_geos(fitbounds="locations")

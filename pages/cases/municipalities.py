@@ -49,7 +49,16 @@ def municipalities():
             dbc.Col(display_graphic(id='map_bubble_communes_since_beginning', figure=map_bubble_communes_since_beginning(),
                                     config=dict(locale=str(get_locale()))))
         ]),
-        display_graphic(id='cases-overview-map-communes-p', figure=map_communes_per_inhabitant(), config=dict(locale=str(get_locale()))),
+        html.H4(get_translation(
+            en="""click on a municipality to see the cases barplot""",
+            fr="""cliquez sur une commune pour observer l'historique des cas""",
+        )),
+        dbc.Row([
+            dbc.Col(display_graphic(id='map_communes_per_inhabitant', figure=map_communes_per_inhabitant(), config=dict(locale=str(get_locale())))),
+        ]),
+        dbc.Row([
+            dbc.Col(display_graphic(id='cases-overview-histogram', style={"display": "none"}, figure=barplot_communes(), config=dict(locale=str(get_locale()))))
+        ]),
         display_source_providers(source_sciensano, source_map_communes, source_pop)
     ]
 
@@ -57,20 +66,23 @@ def municipalities():
 def municipalities_callbacks(app):
     @app.callback(
         Output("cases-overview-histogram", "figure"),
-        [Input('cases-overview-map-communes', 'clickData')])
+        [Input('map_communes_per_inhabitant', 'clickData')])
     def callback_barplot(clickData):
         if clickData is None:
             return barplot_communes()
         nis = clickData['points'][0]['customdata'][2]
+        print(nis)
         return barplot_communes(commune_nis=nis)
-
     @app.callback(
         Output("cases-overview-histogram", "style"),
-        [Input('cases-overview-map-communes', 'clickData')])
+        [Input('map_communes_per_inhabitant', 'clickData')])
     def callback_barplot_style(clickData):
         if clickData is None:
             return {"display": "none"}
         return {"display": "block"}
+
+
+
 
 
 municipalities_link = AppLink(get_translation(en="Cases per municipality",fr="Cas par communne"), get_translation(en="Municipalities",fr="Communes"),
