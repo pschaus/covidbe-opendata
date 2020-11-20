@@ -165,8 +165,8 @@ def hospi_w1w2(fig, row, col, fromw2, prov=None, show_legend=False):
 
     values = y2.values
     doubling = 1
-    while values[-doubling] > values[-1] / 2 and doubling < len(values) - 1:
-        doubling += 1
+    #while values[-doubling] > values[-1] / 2 and doubling < len(values) - 1:
+    #    doubling += 1
 
     wave1 = go.Bar(y=y1, name=gettext('Wave1'), legendgroup='group1', showlegend=show_legend, marker_color="red")
     wave2 = go.Bar(y=y2, name=gettext('Wave2'), legendgroup='group2', showlegend=show_legend, marker_color="blue")
@@ -182,9 +182,9 @@ def hospi_w1w2(fig, row, col, fromw2, prov=None, show_legend=False):
 
     ymax = max(y2.values)
     xdoubling = len(y2) - doubling
-    line = go.layout.Shape(type="line", x0=xdoubling, y0=0, x1=xdoubling, y1=ymax,
-                           line=dict(color="lightblue", width=3))
-    fig.add_shape(line, row=row, col=col)
+    #line = go.layout.Shape(type="line", x0=xdoubling, y0=0, x1=xdoubling, y1=ymax,
+    #                       line=dict(color="lightblue", width=3))
+    #fig.add_shape(line, row=row, col=col)
 
     fig.update_xaxes(tickmode='array', tickvals=xvals, ticktext=xlabels, row=row, col=col)
 
@@ -204,17 +204,17 @@ def hospi_w1w2_provinces():
     'Liège', 'Namur', 'Luxembourg', 'Hainaut', 'Brussels', 'BrabantWallon', 'VlaamsBrabant', 'OostVlaanderen',
     'WestVlaanderen', 'Limburg', 'Antwerpen'))
 
-    hospi_w1w2(fig,1,1,fromw2 = '2020-10-01', prov = 'Liège',show_legend=True)
-    hospi_w1w2(fig, 1, 2, fromw2='2020-10-01', prov='Namur')
-    hospi_w1w2(fig, 1, 3, fromw2='2020-10-01', prov='Luxembourg')
-    hospi_w1w2(fig, 2, 1, fromw2='2020-10-01', prov='Hainaut')
-    hospi_w1w2(fig, 2, 2, fromw2='2020-10-01', prov='Brussels')
-    hospi_w1w2(fig, 2, 3, fromw2='2020-10-01', prov='BrabantWallon')
-    hospi_w1w2(fig, 3, 1, fromw2='2020-10-01', prov='VlaamsBrabant')
-    hospi_w1w2(fig, 3, 2, fromw2='2020-10-01', prov='OostVlaanderen')
-    hospi_w1w2(fig, 3, 3, fromw2='2020-10-01', prov='WestVlaanderen')
-    hospi_w1w2(fig, 4, 1, fromw2='2020-10-01', prov='Limburg')
-    hospi_w1w2(fig, 4, 2, fromw2='2020-10-01', prov='Antwerpen')
+    hospi_w1w2(fig,1,1,fromw2 = '2020-10-10', prov = 'Liège',show_legend=True)
+    hospi_w1w2(fig, 1, 2, fromw2='2020-10-10', prov='Namur')
+    hospi_w1w2(fig, 1, 3, fromw2='2020-10-10', prov='Luxembourg')
+    hospi_w1w2(fig, 2, 1, fromw2='2020-10-10', prov='Hainaut')
+    hospi_w1w2(fig, 2, 2, fromw2='2020-10-10', prov='Brussels')
+    hospi_w1w2(fig, 2, 3, fromw2='2020-10-10', prov='BrabantWallon')
+    hospi_w1w2(fig, 3, 1, fromw2='2020-10-15', prov='VlaamsBrabant')
+    hospi_w1w2(fig, 3, 2, fromw2='2020-10-15', prov='OostVlaanderen')
+    hospi_w1w2(fig, 3, 3, fromw2='2020-10-15', prov='WestVlaanderen')
+    hospi_w1w2(fig, 4, 1, fromw2='2020-10-15', prov='Limburg')
+    hospi_w1w2(fig, 4, 2, fromw2='2020-10-15', prov='Antwerpen')
 
     title = "Hospitalization First Wave vs Second Wave "
 
