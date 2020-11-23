@@ -4,6 +4,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 from flask_babel import get_locale, gettext
+import plotly.graph_objs as go
 
 from graphs.facebook import population_proportion, population_evolution, movement, staying_put, map_staying_put,map_ratio_tiles_fb
 from pages.sources import display_source_providers, source_facebook
@@ -164,7 +165,14 @@ def callback_fb(app):
 
         df.date_time = pd.to_datetime(df.date_time)
         if df.empty:
-            fig = px.area(x=df.date_time, y=df.n_crisis)
+            fig = go.Figure()
+            fig.add_trace(go.Scatter(
+                x=[0],
+                y=[0],
+                mode="lines+markers+text",
+                text=["No Data"],
+                textfont_size=40,
+            ))
         else:
             fig = px.area(x=df.date_time, y=df.n_crisis, color=df.start_name)
 

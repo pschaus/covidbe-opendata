@@ -60,7 +60,7 @@ def process_movement():
         'is_statistically_significant','n_difference','percent_change','z_score'],
         axis=1
     )
-    df_all = df_all.loc[~(df_all.start_polygon_name == df_all.end_polygon_name)]
+    #df_all = df_all.loc[~(df_all.start_polygon_name == df_all.end_polygon_name)]
     df_all.rename(columns={'start_polygon_name':'start_name', 'end_polygon_name':'end_name'}, inplace=True)
     df_all = df_all.sort_values(by=['date_time'])
 
