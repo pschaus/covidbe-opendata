@@ -16,6 +16,9 @@ import plotly.express as px
 df_all = pd.read_csv('static/csv/facebook/movement-lux.csv')
 regions = sorted(df_all.end_name.unique())
 
+df_all_countries = pd.read_csv('static/csv/facebook/movement_countries.csv')
+countries = sorted(df_all_countries.end_name.unique())
+
 def display_facebook_lux():
     return [
         html.H3(gettext(
@@ -47,8 +50,79 @@ def display_facebook_lux():
         )],
         style=dict(width='50%')),
         dcc.Graph(id='graph-lux'),
+
+        html.H3(gettext(
+            get_translation(
+                fr="Flux d'utilisateurs vers un pays (min 1000)",
+                en="Flux of users to a country (min 1000)"))),
+        html.Label([gettext(get_translation(fr="Arrondissement", en="Administrative unit")), dcc.Dropdown(
+            id='countries-dropdown',
+            options=[{'label': c, 'value': c} for c in countries],
+            value='belgium',
+            clearable=False
+        )],
+        style=dict(width='50%')),
+        html.Label([gettext(get_translation(fr="Heures de la journée (UTC)", en="Time frame (UTC)")), dcc.Dropdown(
+            id='countries-day-dropdown',
+            options=[{'label': 'all-days', 'value': 8},
+                     {'label': 'monday', 'value': 0},
+                     {'label': 'tuesday', 'value': 1},
+                     {'label': 'wednesday', 'value': 2},
+                     {'label': 'thursday', 'value': 3},
+                     {'label': 'friday', 'value': 4},
+                     {'label': 'saturday', 'value': 5},
+                     {'label': 'sunday', 'value': 6}],
+            value=8,
+            clearable=False
+        )],
+        style=dict(width='50%')),
+        dcc.Graph(id='graph-countries'),
         display_source_providers(source_facebook)
-        ]
+    ]
+
+def callback_fb_countries(app):
+    @app.callback(
+        Output('graph-countries', 'figure'),
+        [Input('countries-dropdown', 'value'),
+         Input('countries-day-dropdown', 'value')])
+    def update_graph(country, day):
+        print(country,day)
+        df = df_all_countries.loc[df_all_countries.end_name == country]
+
+        df1 = pd.DataFrame({'start_name': df.start_name.unique()})
+        df2 = pd.DataFrame({'end_name': df.end_name.unique()})
+
+        df1['travel_counts'] = 0
+        df2['travel_counts'] = 0
+
+        df_combinations = df1.merge(df2, how='outer')
+
+        df = pd.concat([df, df_combinations])
+        df = df.groupby(['ds', 'start_name', 'end_name']).agg({'travel_counts': 'sum'}).reset_index()
+
+        df.ds = pd.to_datetime(df.ds)
+        df.index = df['ds']
+        df['day_of_week'] = df.index.dayofweek
+
+        if (day <= 6):
+            df = df[df['day_of_week'] == day]
+        print(df)
+        #fig = px.area(x=df.ds, y=df.travel_counts, color=df.start_name)
+
+        countries = df.start_name.unique()
+        print(countries)
+        plots = []
+        for c in countries:
+            dfc = df[df.start_name == c]
+            plot = go.Scatter(x=dfc['ds'], y=dfc['travel_counts'], name=c)
+            plots.append(plot)
+        fig = go.Figure(data=plots, layout=go.Layout(barmode='group'))
+
+        fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=30, b=0))
+
+        return fig
+
+
 
 def callback_fb_lux(app):
     @app.callback(
