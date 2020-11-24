@@ -1,3 +1,4 @@
+
 import dash
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
@@ -9,6 +10,7 @@ from graphs.facebook import population_proportion, population_evolution, movemen
 from pages.sources import display_source_providers, source_facebook
 from pages import get_translation, display_graphic
 import plotly.graph_objs as go
+from graphs.facebook_lux import facebook_imported_cases
 
 import pandas as pd
 import plotly.express as px
@@ -78,6 +80,14 @@ def display_facebook_lux():
         )],
         style=dict(width='50%')),
         dcc.Graph(id='graph-countries'),
+
+        html.H3(get_translation(fr="Imported cases per million inhabitants",
+                                en="Imported cases per million inhabitants")),
+        dbc.Row([
+            dbc.Col(display_graphic(id='facebook_imported_cases',
+                                    figure=facebook_imported_cases(),
+                                    config=dict(locale=str(get_locale())))),
+        ]),
         display_source_providers(source_facebook)
     ]
 
