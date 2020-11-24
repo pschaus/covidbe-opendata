@@ -6,11 +6,15 @@ from pages.lockdown.mobility_report import display_mobility
 from pages.lockdown.brussels import display_brussels
 from pages.lockdown.tomtom import display_tomtom
 from pages.lockdown.facebook import display_facebook, callback_fb
-from pages.lockdown.facebook_lux import display_facebook_lux, callback_fb_lux,callback_fb_countries
+from pages.lockdown.facebook_eu import callback_fb_countries_eu, display_facebook_eu
+from pages.lockdown.facebook_lux import callback_fb_countries,callback_fb_lux, display_facebook_lux
+
+def call_back_fb_eu(app):
+    callback_fb_countries_eu(app)
 
 def call_back_fb_lux(app):
-    callback_fb_lux(app)
-    callback_fb_countries(app)
+    facebook_lux.callback_fb_countries(app)
+    facebook_lux.callback_fb_lux(app)
 
 lockdown_menu = AppMenu(lazy_gettext("Lockdown Impact"), "/lockdown", [
     AppLink(lazy_gettext("Mobility Reports"), lazy_gettext("Mobility Report"), "/mobility-reports", display_mobility),
@@ -19,5 +23,8 @@ lockdown_menu = AppMenu(lazy_gettext("Lockdown Impact"), "/lockdown", [
     AppLink(lazy_gettext("Brussels"), lazy_gettext("Brussels"), "/brussels", display_brussels),
     AppLink(lazy_gettext("Facebook"), lazy_gettext("Facebook"), "/facebook", display_facebook, callback_fn=callback_fb),
     AppLink(lazy_gettext("Facebook-lux"), lazy_gettext("Facebook-lux"), "/facebook_lux", display_facebook_lux, callback_fn=call_back_fb_lux,invisible=True),
-    ])
+    AppLink(lazy_gettext("Facebook-eu"), lazy_gettext("Facebook-eu"), "/facebook_eu", display_facebook_eu,
+            callback_fn=call_back_fb_eu, invisible=True),
+
+])
 
