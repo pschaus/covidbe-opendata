@@ -53,18 +53,19 @@ def display_facebook_lux():
 
         html.H3(gettext(
             get_translation(
-                fr="Flux d'utilisateurs vers un pays (min 1000)",
-                en="Flux of users to a country (min 1000)"))),
-        html.Label([gettext(get_translation(fr="Arrondissement", en="Administrative unit")), dcc.Dropdown(
+                fr="Flux d'utilisateurs (min 1000) vers un pays",
+                en="Flow of users (min 1000) to a country"))),
+        html.Label([gettext(get_translation(fr="Destination Country", en="Destination Country")), dcc.Dropdown(
             id='countries-dropdown',
             options=[{'label': c, 'value': c} for c in countries],
             value='belgium',
             clearable=False
         )],
         style=dict(width='50%')),
-        html.Label([gettext(get_translation(fr="Heures de la journée (UTC)", en="Time frame (UTC)")), dcc.Dropdown(
+        html.Label([gettext(get_translation(fr="Jour", en="Day")), dcc.Dropdown(
             id='countries-day-dropdown',
-            options=[{'label': 'all-days', 'value': 8},
+            options=[{'label': 'all-days-moving-avg-7', 'value': 9},
+                     {'label': 'all-days', 'value': 8},
                      {'label': 'monday', 'value': 0},
                      {'label': 'tuesday', 'value': 1},
                      {'label': 'wednesday', 'value': 2},
@@ -114,7 +115,10 @@ def callback_fb_countries(app):
         plots = []
         for c in countries:
             dfc = df[df.start_name == c]
-            plot = go.Scatter(x=dfc['ds'], y=dfc['travel_counts'], name=c)
+            if (day == 9):
+                plot = go.Scatter(x=dfc['ds'], y=dfc['travel_counts'].rolling(7).mean(), name=c)
+            else:
+                plot = go.Scatter(x=dfc['ds'], y=dfc['travel_counts'], name=c)
             plots.append(plot)
         fig = go.Figure(data=plots, layout=go.Layout(barmode='group'))
 
