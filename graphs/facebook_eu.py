@@ -37,7 +37,8 @@ df.rename(
 
 df = df[df.continent == 'Europe']
 df['covid_in'] = 7 * df['start_new_cases_smoothed_per_million'] * df['travel_counts'] / 1000000
-df_tot_travel = df.groupby(['date']).agg({'travel_counts': 'sum'}).reset_index()
+df_tot_travel = df.groupby(['date']).agg({'travel_counts':'sum','end_new_cases_smoothed':'sum'}).reset_index()
+
 df = df.groupby(['date', 'end_name', 'end_population', 'end_new_cases_smoothed']).agg(
     {'covid_in': 'sum', 'travel_counts': 'sum'}).reset_index()
 df['covid_in_per_million'] = 1000000 * df['covid_in'] / df['end_population']
@@ -70,6 +71,22 @@ def plot_tot_travel():
     )
     return fig
 
+@register_plot_for_embedding("plot_tot_cases")
+def plot_tot_cases():
+    fig = px.line(x=df_tot_travel.date.values,y=df_tot_travel.end_new_cases_smoothed.rolling(7).mean())
+
+    fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=30, b=0))
+
+
+    fig.update_layout(
+        height=600,
+        title="Daily Number of covid cases in EU",
+        xaxis_title="date",
+        yaxis_title=gettext(
+            get_translation(fr="cases", en="cases"))
+    )
+    return fig
+
 
 @register_plot_for_embedding("plot_tot_fraction_countries")
 def plot_tot_fraction_countries():
@@ -97,7 +114,7 @@ def plot_tot_fraction_countries():
     fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=30, b=0))
 
     # Edit the layout
-    fig.update_layout(title='Fraction of total flow with this destination country',
+    fig.update_layout(title='FB user flow with this destination',
                       xaxis_title='Date',
                       yaxis_title='Percentage',
                       height=600,)
@@ -118,11 +135,11 @@ def plot_in_per_million():
 
     fig.update_layout(
         height=600,
-        title="Daily Incoming users per million inhabitants",
+        title="Daily in FB users per million inhabitants in destination",
         xaxis_title="date",
         yaxis_title=gettext(
-            get_translation(fr="Daily Incoming users per million inhabitants",
-                            en="Daily Incoming users per million inhabitants"))
+            get_translation(fr="Daily in FB users per million inhabitants in destination",
+                            en="Daily in FB users per million inhabitants in destination"))
     )
     return fig
 
@@ -140,7 +157,7 @@ def plot_imported_cases_per_millions():
 
     fig.update_layout(
         height=600,
-        title="Imported cases per million inhabitants in destination",
+        title="Hypothetical Daily in covid cases per million inhabitants in destination",
         xaxis_title="date",
         yaxis_title=gettext(
             get_translation(fr="imported cases per million inhabitants in destination",
@@ -162,7 +179,7 @@ def fraction_imported_cases_over_tot_cases():
 
     fig.update_layout(
         height=600,
-        title="Fraction imported over totcases",
+        title="Daily Fraction of imported cases over tot-cases in destination",
         xaxis_title="date",
         yaxis_title=gettext(
             get_translation(fr="fraction_imported_over_tot_cases", en="fraction_imported_over_tot_cases"))

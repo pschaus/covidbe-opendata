@@ -9,7 +9,7 @@ from flask_babel import get_locale, gettext
 from pages.sources import display_source_providers, source_facebook
 from pages import get_translation, display_graphic
 import plotly.graph_objs as go
-from graphs.facebook_eu import plot_tot_travel,plot_imported_cases_per_millions,\
+from graphs.facebook_eu import plot_tot_travel, plot_tot_cases, plot_imported_cases_per_millions,\
     plot_tot_fraction_countries,fraction_imported_cases_over_tot_cases,plot_in_per_million
 
 import pandas as pd
@@ -52,6 +52,11 @@ def display_facebook_eu():
         dbc.Row([
             dbc.Col(display_graphic(id='plot_tot_travel',
                                     figure=plot_tot_travel(),
+                                    config=dict(locale=str(get_locale())))),
+        ]),
+        dbc.Row([
+            dbc.Col(display_graphic(id='plot_tot_travel',
+                                    figure=plot_tot_cases(),
                                     config=dict(locale=str(get_locale())))),
         ]),
         dbc.Row([
