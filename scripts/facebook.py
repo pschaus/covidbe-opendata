@@ -84,7 +84,34 @@ def process_colocation():
 
     df.to_csv("../static/csv/facebook/colocation.csv",index=False)
 
+
+
+def process_travel_maps():
+    path = '../static/csv/facebook/hidden/travel-maps/'
+    df_all = pd.DataFrame()
+
+    for entry in os.scandir(path):
+        df = pd.read_csv(entry.path)
+        df_all = pd.concat([df_all, df])
+
+    if df_all.empty:
+        return
+
+    df_all = df_all.drop(
+        ['polygon1_id', 'latitude1', 'longitude1', 'polygon2_id', 'latitude2', 'longitude2', 'metric_name'],
+        axis=1
+    )
+
+    # df_all = df_all.loc[~(df_all.start_polygon_name == df_all.end_polygon_name)]
+    df_all.rename(columns={'polygon1_name': 'start_name', 'polygon2_name': 'end_name', 'metric_value': 'travel_counts'},
+                  inplace=True)
+    df_all = df_all.sort_values(by=['ds'])
+    df_all.to_csv("../static/csv/facebook/movement_countries.csv", index=False)
+
+
+
 process_population()
 process_movement_range()
 process_movement()
 process_colocation()
+process_travel_maps()
