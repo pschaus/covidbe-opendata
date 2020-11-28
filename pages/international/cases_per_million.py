@@ -16,7 +16,7 @@ import numpy as np
 import altair as alt
 #config InlineBackend.figure_format = 'retina'
 
-from graphs.cases_per_million import lines_cases_per_million_not_log
+from graphs.cases_per_million import lines_cases_per_million_not_log,plot_cases_eu,plot_cases_international
 from pages.sources import source_hopkins, display_source_providers
 
 
@@ -34,13 +34,21 @@ def display_cases_per_million():
             Le nombre de cas signalés par million est une limite inférieure du nombre réel de personnes infectées par million d'habitants. Les pays ont eu différentes capacités et approches pour réaliser les tests de dépistage.
             """,
         )),
+
     dbc.Row([
-                   dbc.Col(display_graphic(id='cases per country', figure=lines_cases_per_million_not_log(),
+                   dbc.Col(display_graphic(id='cases per country eu', figure=plot_cases_eu(),
+                                     config=dict(locale=str(get_locale()))), className="col-12"),
+    ]),
+    dbc.Row([
+                   dbc.Col(display_graphic(id='cases per country internation', figure=plot_cases_international(),
+                                     config=dict(locale=str(get_locale()))), className="col-12"),
+    ]),
+    dbc.Row([
+                   dbc.Col(display_graphic(id='tot cases per country', figure=lines_cases_per_million_not_log(),
                                      config=dict(locale=str(get_locale()))), className="col-12"),
     ]),
         display_source_providers(source_hopkins)
     ]
 
-def callback_cases_per_million(app):
-    return None
+
 

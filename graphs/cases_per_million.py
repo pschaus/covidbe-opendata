@@ -1,10 +1,9 @@
-import pandas as pd
 import numpy as np
-import altair as alt
-from pages import get_translation
+
+import pandas as pd
 import plotly.express as px
-
-
+from graphs import register_plot_for_embedding
+import plotly.graph_objs as go
 
 def lines_cases_per_million_not_log():
 
@@ -78,4 +77,132 @@ def lines_cases_per_million_not_log():
 
     fig.update_layout(xaxis_title='Day Since first infection',
                       yaxis_title='#cases/million')
+
+    fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=30, b=0))
+
+    # Edit the layout
+    fig.update_layout(title='Cumulated Cases since first infection',height=600, )
+
+
     return fig
+
+
+df_owid = pd.read_csv('static/csv/owid.csv')
+df_owid['location'] = df_owid['location'].str.lower()
+
+
+@register_plot_for_embedding("plot_cases_eu")
+def plot_cases_eu():
+    df_eu = df_owid[df_owid.continent == 'Europe']
+    df_eu = df_eu[df_eu['location'].isin(['austria', 'belgium', 'croatia', 'czech republic',
+                                          'denmark'                                                                                'estonia',
+                                          'finland', 'france',
+                                          'germany', 'greece', 'iceland', 'ireland',
+                                          'italy', 'lithuania', 'luxembourg', 'netherlands',
+                                          'norway'                                                                     'romania',
+                                          'serbia', 'spain', 'sweden',
+                                          'switzerland',
+                                          'united kingdom', 'portugal', 'hungary', 'poland'])]
+
+    countries = sorted(df_eu.location.unique())
+    traces = []
+    for c in countries:
+        dfc = df_eu[df_eu.location == c]
+        y = dfc['new_cases_smoothed_per_million'].values
+        y[y < 0] = 0
+        plot = go.Scatter(x=dfc['date'], y=y, name=c)
+
+        traces.append(plot)
+
+    layout = go.Layout(
+        showlegend=True,
+    )
+
+    fig = go.Figure(data=traces, layout=layout)
+
+    fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=30, b=0))
+
+    # Edit the layout
+    fig.update_layout(title='EU',
+                      xaxis_title='Date',
+                      yaxis_title='cases per million smoothed',
+                      height=600, )
+
+    fig.update_layout(
+        updatemenus=[
+            dict(
+                type="buttons",
+                direction="left",
+                buttons=list([
+                    dict(
+                        args=[{"yaxis.type": "linear"}],
+                        label="LINEAR",
+                        method="relayout"
+                    ),
+                    dict(
+                        args=[{"yaxis.type": "log"}],
+                        label="LOG",
+                        method="relayout"
+                    )
+                ]),
+            ),
+        ])
+
+    return fig
+
+
+df_owid = pd.read_csv('static/csv/owid.csv')
+df_owid['location'] = df_owid['location'].str.lower()
+
+
+@register_plot_for_embedding("plot_cases_international")
+def plot_cases_international():
+    df_eu = df_owid[df_owid['location'].isin(
+        ['japan', 'south korea', 'brazil', 'united states', 'belgium', 'france', 'germany', 'italy', 'netherlands',
+         'spain', 'sweden', 'united kingdom'])]
+
+    countries = sorted(df_eu.location.unique())
+    traces = []
+    for c in countries:
+        dfc = df_eu[df_eu.location == c]
+        y = dfc['new_cases_smoothed_per_million'].values
+        y[y < 0] = 0
+        plot = go.Scatter(x=dfc['date'], y=y, name=c)
+
+        traces.append(plot)
+
+    layout = go.Layout(
+        showlegend=True,
+    )
+
+    fig = go.Figure(data=traces, layout=layout)
+
+    fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=30, b=0))
+
+    # Edit the layout
+    fig.update_layout(title='International',
+                      xaxis_title='Date',
+                      yaxis_title='cases per million smoothed',
+                      height=600, )
+    fig.update_layout(
+        updatemenus=[
+            dict(
+                type="buttons",
+                direction="left",
+                buttons=list([
+                    dict(
+                        args=[{"yaxis.type": "linear"}],
+                        label="LINEAR",
+                        method="relayout"
+                    ),
+                    dict(
+                        args=[{"yaxis.type": "log"}],
+                        label="LOG",
+                        method="relayout"
+                    )
+                ]),
+            ),
+        ])
+
+    return fig
+
