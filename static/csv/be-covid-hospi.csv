@@ -2826,7 +2826,7 @@
 2824,2020-11-26,VBR,Flanders,6,194,57,38,5,11,10,VlaamsBrabant
 2825,2020-11-26,WBR,Wallonia,2,67,10,6,0,5,4,BrabantWallon
 2826,2020-11-26,VWV,Flanders,11,513,98,61,7,38,34,WestVlaanderen
-2827,2020-11-27,VAN,Flanders,14,589,138,82,7,29,38,Antwerpen
+2827,2020-11-27,VAN,Flanders,14,592,138,83,7,35,39,Antwerpen
 2828,2020-11-27,BRU,Brussels,15,571,153,100,25,23,53,Brussels
 2829,2020-11-27,WHT,Wallonia,14,722,157,102,15,38,59,Hainaut
 2830,2020-11-27,VLI,Flanders,7,197,51,28,1,14,15,Limburg
@@ -2837,3 +2837,14 @@
 2835,2020-11-27,VBR,Flanders,6,182,53,38,5,8,9,VlaamsBrabant
 2836,2020-11-27,WBR,Wallonia,2,65,9,6,0,5,5,BrabantWallon
 2837,2020-11-27,VWV,Flanders,11,499,95,59,7,34,38,WestVlaanderen
+2838,2020-11-28,VAN,Flanders,14,577,131,78,7,36,59,Antwerpen
+2839,2020-11-28,BRU,Brussels,15,556,155,100,26,27,42,Brussels
+2840,2020-11-28,WHT,Wallonia,14,675,152,98,13,29,74,Hainaut
+2841,2020-11-28,VLI,Flanders,7,189,50,30,3,10,22,Limburg
+2842,2020-11-28,WLG,Wallonia,12,456,118,87,5,16,52,Liège
+2843,2020-11-28,WLX,Wallonia,3,107,27,17,1,0,8,Luxembourg
+2844,2020-11-28,WNA,Wallonia,6,179,57,44,8,10,15,Namur
+2845,2020-11-28,VOV,Flanders,14,563,135,50,12,46,63,OostVlaanderen
+2846,2020-11-28,VBR,Flanders,6,170,48,37,5,4,17,VlaamsBrabant
+2847,2020-11-28,WBR,Wallonia,2,60,8,6,0,3,7,BrabantWallon
+2848,2020-11-28,VWV,Flanders,11,461,86,50,6,30,59,WestVlaanderen
