@@ -75,7 +75,7 @@ def map_cases_incidence_nis5():
     fig = px.choropleth_mapbox(df5d, geojson=geojson,
                                locations="NIS5",
                                color='INCIDENCE',
-                               range_color=(0, 1000),
+                               range_color=(0, 500),
                                color_continuous_scale="magma_r",
                                #color_continuous_scale=[(0, "green"), (15/150, "green"), (15/150, "yellow"),
                                #                        (30/150, "yellow"), (30/150, "orange"), (50/150, "orange"),
