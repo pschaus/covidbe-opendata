@@ -156,7 +156,7 @@ def hospi_w1w2(fig, row, col, fromw2, prov=None, show_legend=False):
     """
     df = df_hospi.groupby(['DATE']).agg({'TOTAL_IN': 'sum', 'NEW_OUT': 'sum', 'NEW_IN': 'sum', 'TOTAL_IN_ICU': 'sum'})
 
-    n = 50
+    n = 65
 
     x1 = df.index.values[:n]
     x2 = df.index.values[df.index >= fromw2]
