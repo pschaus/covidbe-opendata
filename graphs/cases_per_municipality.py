@@ -299,7 +299,7 @@ def bubble_map_cases_incidence_nis5():
     df5d = pd.merge(df5d, df, left_on='NIS5', right_on='NIS5', how='left')
 
     fig = px.scatter_mapbox(df5d, lat="lat", lon="lon", color="INCIDENCE", size="POP",
-                            color_continuous_scale="magma_r", zoom=6, range_color=(0, 1500),
+                            color_continuous_scale="magma_r", zoom=6, range_color=(0, 500),
                             hover_data=["INCIDENCE", "POP"],
                             hover_name="TX_DESCR_FR",
                             mapbox_style="carto-positron", height=600, )
