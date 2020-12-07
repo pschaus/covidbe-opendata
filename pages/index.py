@@ -89,14 +89,14 @@ def display_about():
             
             The current main contributors to this project are:
  
-            - [Guillaume Derval, UCLouvain](https://www.linkedin.com/in/guillaumederval/)
-            - [Pierre Schaus, UCLouvain](https://www.info.ucl.ac.be/~pschaus)
-            - [Vincent François, UCLouvain](http://vincent.francois-l.be)
-            - [Alexey Medvedev, UNamur, UCLouvain] (http://alexeymedvedev.com)
-            - [Vianney Coppé, UCLouvain] (https://aia.info.ucl.ac.be)
+            - [Pierre Schaus, prof@UCLouvain] (https://www.info.ucl.ac.be/~pschaus)
+            - [Guillaume Derval, phd-student@UCLouvain] (https://www.linkedin.com/in/guillaumederval/)
             
             We also received contributions from 
             
+            - [Vincent François, UCLouvain] (http://vincent.francois-l.be)
+            - [Alexey Medvedev, UNamur, UCLouvain] (http://alexeymedvedev.com)
+            - [Vianney Coppé, UCLouvain] (https://aia.info.ucl.ac.be)
             - [John Aoga, UCLouvain] (https://scholar.google.be/citations?user=SZWEYcsAAAAJ&hl=fr), graphiques des données TomTom
             
             """,
@@ -106,16 +106,16 @@ def display_about():
 
             Les principaux contributeurs actuels de ce projet sont:
  
-            - [Guillaume Derval, UCLouvain] (https://www.linkedin.com/in/guillaumederval/)
-            - [Pierre Schaus, UCLouvain] (https://www.info.ucl.ac.be/~pschaus)
+            - [Pierre Schaus, prof@UCLouvain] (https://www.info.ucl.ac.be/~pschaus)
+            - [Guillaume Derval, phd-student@UCLouvain] (https://www.linkedin.com/in/guillaumederval/)
+ 
+            Nous avons également reçu des contributions de 
+            
             - [Vincent François, UCLouvain] (http://vincent.francois-l.be)
             - [Alexey Medvedev, UNamur, UCLouvain] (http://alexeymedvedev.com)
             - [Vianney Coppé, UCLouvain] (https://aia.info.ucl.ac.be)
-            
-            Nous avons également reçu des contributions de 
-            
             - [John Aoga, UCLouvain] (https://scholar.google.be/citations?user=SZWEYcsAAAAJ&hl=fr), graphiques des données TomTom
-
+            
             """,))
     ]
 
