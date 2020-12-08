@@ -95,6 +95,27 @@ def plot_ration_cases_over_testing_smooth():
                       yaxis_title=gettext('Positive rate %'), title=gettext("Positive rate % (avg over past 7 days)"))
     fig.update_layout(template="plotly_white")
 
+    fig.update_layout(
+    hovermode='x unified',
+    updatemenus=[
+        dict(
+            type = "buttons",
+            direction = "left",
+            buttons=list([
+                dict(
+                    args=[{"yaxis.type": "linear"}],
+                    label="LINEAR",
+                    method="relayout"
+                ),
+                dict(
+                    args=[{"yaxis.type": "log"}],
+                    label="LOG",
+                    method="relayout"
+                )
+            ]),
+        ),
+    ])
+
     return fig
 
 

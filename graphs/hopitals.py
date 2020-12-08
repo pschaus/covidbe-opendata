@@ -73,8 +73,8 @@ def hospi_waves():
     df = df_hospi.groupby(['DATE']).agg(
         {'TOTAL_IN': 'sum', 'TOTAL_IN_ECMO': 'sum', 'TOTAL_IN_RESP': 'sum', 'NEW_OUT': 'sum', 'NEW_IN': 'sum',
          'TOTAL_IN_ICU': 'sum'})
-    n = 60
-    startw2 = '2020-10-07'
+    n = 80
+    startw2 = '2020-10-16'
     dates_w1 = df.index[:n].values.tolist()
     dates_w2 = df.index[df.index >= startw2].values.tolist()
 
