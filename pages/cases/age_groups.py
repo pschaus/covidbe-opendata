@@ -5,7 +5,8 @@ import dash_html_components as html
 from flask_babel import get_locale, gettext
 
 from graphs.cases_age_groups import age_groups_cases, age_groups_cases_pie, age_groups_pop_active_cases, \
-    age_groups_pop_active_hypothetical, average_age_cases, age_group_cases_relative, incidence_age_group_plot
+    age_groups_pop_active_hypothetical, average_age_cases, \
+    age_group_cases_relative, incidence_age_group_plot, relative_increase_age_group_plot
 from pages.sources import display_source_providers, source_sciensano
 from pages import get_translation, display_graphic
 
@@ -32,6 +33,15 @@ def display_age_groups():
             dbc.Col(display_graphic(id='age-group-cases-distribution-percentage',
                               figure=age_group_cases_relative(),
                               config=dict(locale=str(get_locale())))),
+        ]),
+
+
+        html.H3(get_translation(fr="Augmentation relative sur une semaine dans chaque groupe d'age",
+                                en="Relative increase wrt to previous week in each age group")),
+        dbc.Row([
+            dbc.Col(display_graphic(id='relative_increase_age_group_plot',
+                                    figure=relative_increase_age_group_plot(),
+                                    config=dict(locale=str(get_locale())))),
         ]),
         html.H3(get_translation(fr = "Nombre de cas par 100K dans la population du groupe d'age",en="Number of cases per 100K in the age group population")),
         dbc.Row([

@@ -111,6 +111,35 @@ def incidence_age_group_plot():
     return fig
 
 
+@register_plot_for_embedding("relative_increase_age_group_plot")
+def relative_increase_age_group_plot():
+    df_pop = df_pop_age_cases()
+    df_pop['incidence'] = df_pop['CASES'] / df_pop['pop'] * 100000
+
+    traces = []
+    age_groups = sorted(df_pop.AGEGROUP.unique())
+    for idx, ag in enumerate(age_groups):
+        df_ag = df_pop.loc[df_pop['AGEGROUP'] == ag]
+
+        today = (df_ag['incidence']).rolling(7).mean().values
+        oneweekago = today[:-7]
+        ratio = (today[7:] / oneweekago * 100) - 100
+        dates = df_ag.DATE.values[7:]
+
+        trace = dict(x=dates[5:], y=ratio[5:], mode='lines', name=ag)
+        traces.append(trace)
+
+    fig = go.Figure(data=traces)
+
+    # Edit the layout
+    fig.update_layout(title='Relative increase/decrease of cases over one week in %',
+                      xaxis_title='Date',
+                      yaxis_title='% increase/decrease wrt week-1')
+    fig.update_layout(template="plotly_white")
+
+    return fig
+
+
 @register_plot_for_embedding("age_group_cases_relative")
 def age_group_cases_relative():
     idx = pd.date_range(df_prov_timeseries.DATE.min(), df_prov_timeseries.DATE.max())
