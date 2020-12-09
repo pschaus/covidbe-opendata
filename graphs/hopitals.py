@@ -8,7 +8,58 @@ from graphs import register_plot_for_embedding
 
 df_hospi = pd.read_csv('static/csv/be-covid-hospi.csv')
 
+@register_plot_for_embedding("gees_barometer")
+def gees_barometer():
+    df_newin = df_hospi.groupby(['DATE']).agg({'NEW_IN': 'sum'}).reset_index()
 
+    dates = df_newin.DATE.values
+    newin = df_newin.NEW_IN.rolling(7).mean().values
+    growth = (newin[1:] - newin[:-1])
+
+    dates_w2 = dates[200:]
+    newin_w2 = newin[200:]
+    growth_w2 = growth[200:]
+
+    dates_w1 = dates[:80]
+    newin_w1 = newin[:80]
+    growth_w1 = growth[:80]
+
+    fig = go.Figure()
+
+    fig.add_trace(go.Scatter(x=newin_w2[1:], y=growth_w2, text=dates_w2[1:], mode='lines+markers', name="wave2"))
+
+    fig.add_trace(go.Scatter(x=newin_w1[1:], y=growth_w1, text=dates_w1[1:], mode='lines+markers', name="wave1",
+                             visible='legendonly', marker_color="grey"))
+
+    fig.add_trace(go.Scatter(x=newin_w2[-1:], y=growth_w2[-1:], text=dates_w2[-1:], mode='markers', marker_color="red",
+                             name="today"))
+
+    fig.update_layout(xaxis_title=gettext('daily new admission (7d MA)'),
+                      yaxis_title=gettext('daily admission increase (7d MA)'))
+
+    fig.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0),
+                      title=gettext("GEES Barometer"))
+
+    fig.update_layout(
+        updatemenus=[
+            dict(
+                type="buttons",
+                direction="left",
+                buttons=list([
+                    dict(
+                        args=[{"xaxis.type": "linear"}],
+                        label="LINEAR x",
+                        method="relayout"
+                    ),
+                    dict(
+                        args=[{"xaxis.type": "log"}],
+                        label="LOG x",
+                        method="relayout"
+                    )
+                ]),
+            ),
+        ])
+    return fig
 
 def df_hospi_death():
     df_hospi = pd.read_csv('static/csv/be-covid-hospi.csv')

@@ -138,7 +138,7 @@ def population_evolution():
         yaxis_title=gettext(get_translation(fr="changement du nombre d'utilisateurs", en="change in number of users"))
     )
     fig.update_layout(template="plotly_white")
-    fig.update_layout(hovermode='x unified')
+    #fig.update_layout(hovermode='x unified')
     return fig
 
 
@@ -170,7 +170,7 @@ def movement():
     add_rectangle(fig, "2020-11-01", bottom, df_movement_range.date_time.max(), split, "lightsalmon")
 
     fig.update_layout(template="plotly_white")
-    fig.update_layout(hovermode='x unified')
+    #fig.update_layout(hovermode='x unified')
 
     return fig
 
@@ -201,7 +201,7 @@ def staying_put():
     add_rectangle(fig, "2020-10-18", bottom, "2020-10-31", split, "yellow")
     add_rectangle(fig, "2020-11-01", bottom, df_movement_range.date_time.max(), split, "lightsalmon")
     fig.update_layout(template="plotly_white")
-    fig.update_layout(hovermode='x unified')
+    #fig.update_layout(hovermode='x unified')
     return fig
 
 
