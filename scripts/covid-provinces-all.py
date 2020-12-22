@@ -43,16 +43,24 @@ df_case_prov['PROVINCE_NAME']= df_case_prov['PROVINCE']
 df_case_prov = df_case_prov.groupby(['DATE','PROVINCE_NAME']).agg({'CASES': 'sum'}).reset_index()
 
 
-df = df_case_prov.merge(df_testing_prov, how='left', left_on=['DATE','PROVINCE_NAME'],right_on=['DATE','PROVINCE'])
-
+df = df_testing_prov.merge(df_case_prov, how='outer', left_on=['DATE','PROVINCE'],right_on=['DATE','PROVINCE_NAME'])
+df['CASES'] = df['CASES'].fillna(0)
+df.sort_values(by=['DATE'],inplace=True)
+df = df.drop(['PROVINCE_NAME'], axis=1)
 
 url="https://epistat.sciensano.be/Data/COVID19BE_HOSP.csv"
 s=requests.get(url).content
 df_hospi=pd.read_csv(io.StringIO(s.decode('utf8'))) # last line is NaN
 df = df[['DATE', 'PROVINCE','TESTS_ALL','TESTS_ALL_POS','CASES']]
 df = df[df['DATE'] >= '2020-03-15']
-df = df.merge(df_hospi, how='right', on=['DATE','PROVINCE'])
+df = df.merge(df_hospi, how='outer', on=['DATE','PROVINCE'])
 df['PROV']= df['PROVINCE'].map(prov_codes)
 df['POP']= df['PROV'].map(prov_population)
+
+df = df[df['PROVINCE'] != ""]
+
+nan_value = float("NaN")
+df.replace("", nan_value, inplace=True)
+df.dropna(subset = ["PROVINCE"], inplace=True)
 
 df.to_csv('../static/csv/be-covid-provinces-all.csv', index=False)

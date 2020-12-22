@@ -29,6 +29,7 @@ range_max = df_prov_tot.CASES_PER_THOUSAND.max()
 df = pd.read_csv('static/csv/be-covid-provinces-all.csv')
 df.sort_values(by=['DATE'], inplace=True, ascending=True)
 df['TOTAL_IN_PER_100K'] = df['TOTAL_IN'] / df['POP'] * 100000
+df['NEW_IN_PER_100K'] = df['NEW_IN'] / df['POP'] * 100000
 
 dates = df.groupby([df.PROVINCE,df.PROV]).agg({'DATE': ['max']}).reset_index()
 dates.columns = dates.columns.get_level_values(0)
@@ -251,3 +252,43 @@ def hospi_provinces_per100k():
 
 
 
+def plot(df,column_name,title):
+    bars = []
+    provinces = df.PROVINCE.unique()
+    for p in provinces:
+        df_p = df.loc[df['PROVINCE'] == p]
+        bars.append(go.Scatter(
+            x=df_p.DATE,
+            y=df_p[column_name].rolling(7).mean(),
+            name=p
+        ))
+
+
+    fig = go.Figure(data=bars,layout=go.Layout(barmode='group'),)
+    fig.update_layout(template="plotly_white", height=500,margin=dict(l=0, r=0, t=30, b=0), title=title)
+    fig.update_layout(
+        updatemenus=[
+            dict(
+                type="buttons",
+                direction="left",
+                buttons=list([
+                    dict(
+                        args=[{"yaxis.type": "linear"}],
+                        label="LINEAR",
+                        method="relayout"
+                    ),
+                    dict(
+                        args=[{"yaxis.type": "log"}],
+                        label="LOG",
+                        method="relayout"
+                    )
+                ]),
+            ),
+        ])
+    return fig
+
+
+
+@register_plot_for_embedding("new_in_per_100K_provinces")
+def new_in_per_100K_provinces():
+    return plot(df,'NEW_IN_PER_100K',"NEW_IN / 100K inhabitant (avg 7 days)")

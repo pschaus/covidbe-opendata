@@ -9,7 +9,7 @@ from graphs.hopitals_prov import total_hospi_new_in_provinces,\
     map_hospi_provinces,map_hospi_per100K_provinces,\
     scatter_hospi_provinces,\
     scatter_hospi_per100K_provinces, \
-    hospi_w1w2_provinces, hospi_provinces_per100k
+    hospi_w1w2_provinces, hospi_provinces_per100k, new_in_per_100K_provinces
 from graphs.hopitals import bar_hospi_per_case_per_province
 from pages import display_graphic
 from pages.sources import display_source_providers, source_sciensano
@@ -63,6 +63,11 @@ def display_hospitals_prov():
             dbc.Col(display_graphic(id='in-out-prov',
                               figure=total_hospi_new_in_provinces(),
                               config=dict(locale=str(get_locale())))),
+        ]),
+        dbc.Row([
+            dbc.Col(display_graphic(id='in_per100k_prov',
+                                    figure=new_in_per_100K_provinces(),
+                                    config=dict(locale=str(get_locale())))),
         ]),
         html.H3(gettext("Total daily persons out of hospital per province")),
         dbc.Row([

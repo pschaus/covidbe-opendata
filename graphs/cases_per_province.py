@@ -69,26 +69,15 @@ def bar_cases_provinces():
 import numpy as np
 
 def plot(df,column_name,title):
-    def moving_average(a, n=1) :
-        a = a.astype(np.float)
-        ret = np.cumsum(a)
-        ret[n:] = ret[n:] - ret[:-n]
-        ret[:n-1] = ret[:n-1]/range(1,n)
-        ret[n-1:] = ret[n - 1:] / n
-        return ret
-
-
     bars = []
-    provinces = sorted(df.PROVINCE.unique())
+    provinces = df.PROVINCE.unique()
     for p in provinces:
         df_p = df.loc[df['PROVINCE'] == p]
         bars.append(go.Scatter(
             x=df_p.DATE,
-            y=moving_average(df_p[column_name].values,7),
+            y=df_p[column_name].rolling(7).mean(),
             name=p
         ))
-
-
     fig = go.Figure(data=bars,layout=go.Layout(barmode='group'),)
     fig.update_layout(template="plotly_white", height=500,margin=dict(l=0, r=0, t=30, b=0), title=title)
     fig.update_layout(
