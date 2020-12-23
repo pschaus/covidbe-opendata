@@ -18,6 +18,24 @@ def moving_average(a, n=1) :
     ret[n-1:] = ret[n - 1:] / n
     return ret
 
+@register_plot_for_embedding("test_vs_case_increase")
+def test_vs_case_increase():
+    df_testing = pd.read_csv('static/csv/be-covid-testing.csv')
+
+    tests = df_testing['TESTS_ALL'].rolling(7).sum().values[7:-4]
+    cases = df_testing['CASES'].rolling(7).sum().values[7:-4]
+    x = tests[1:]/tests[:-1]
+    y = cases[1:]/cases[:-1]
+    fig = px.scatter(x=x,y=y,labels={'x':'tests daily increase','y':'case daily increase'})
+    fig.add_trace(go.Scatter(x=x[-15:], y=y[-15:],mode='markers',name="last 15 days",marker_color="red"))
+    fig.add_trace(go.Scatter(x=x[210:250], y=y[210:250],mode='markers',name="october",marker_color="black"))
+
+    xl = np.arange(min(x),max(x),0.01)
+    yl = xl
+    fig.add_trace(go.Scatter(x=xl,y=yl,showlegend=False,line={'dash': 'dash'}))
+    fig.update_layout(template="plotly_white")
+    return fig
+
 
 @register_plot_for_embedding("bart_plot_cases_testing")
 def bart_plot_cases_testing():
