@@ -110,16 +110,21 @@ def scatter_incidence_nis3():
     fig.add_trace(go.Scatter(y=df.name, x=df['CASES_PER_100KHABITANT_x'],
                              name="[t-17,t-4]", mode='markers',
                              marker=dict(
-                                 color=df['increase5d'],  # set color equal to a variable
-                                 size=12,
-                                 colorscale=[[0, "rgb(166,206,227)"],
-                                             [0.25, "rgb(31,120,180)"],
-                                             [0.45, "rgb(178,223,138)"],
-                                             [0.65, "rgb(51,160,44)"],
-                                             [0.85, "rgb(251,154,153)"],
-                                             [1, "rgb(227,26,28)"]],
-                                 showscale=True
-                             )))
+        color=df['increase5d'], #set color equal to a variable
+        size = 12,
+        cmin=-50,
+        cmax=50,
+        colorscale=[
+                [0, "#238b45"],
+                [0.25, "#238b45"],
+                [0.25, "#66c2a4"],
+                [0.50, "#66c2a4"],
+                [0.50, "#fb6a4a"],
+                [0.75, "#fb6a4a"],
+                [0.75, "#cb181d"],
+                [1, "#cb181d"]],
+        showscale=True
+    )))
 
     fig.add_trace(go.Scatter(y=df.name, x=df['CASES_PER_100KHABITANT_y'],
                              name="[t-22,t-9]", mode='markers', marker_color='black'))
