@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 from flask_babel import gettext
 from pages import get_translation
-
+import plotly.graph_objects as go
 from graphs import register_plot_for_embedding
 
 
@@ -72,11 +72,11 @@ def map_cases_per_habittant_admin_region_overtime():
     fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=5, b=0))
     return fig
 
-@register_plot_for_embedding("scattter-incidence-nis3")
-def scatter_incidence_nis3():
+
+def dfoff(offset):
     df_names = pd.DataFrame(geojson.drop(columns='geometry'))
-    cutoff1 = (pd.to_datetime('today') - pd.Timedelta('17 days')).date()
-    cutoff2 = (pd.to_datetime('today') - pd.Timedelta('4 days')).date()
+    cutoff1 = (pd.to_datetime('today') - pd.Timedelta(str(17 + offset) + ' days')).date()
+    cutoff2 = (pd.to_datetime('today') - pd.Timedelta(str(4 + offset) + ' days')).date()
 
     df3d = pd.read_csv("static/csv/cases_daily_ins3.csv", encoding='latin1')
     df3d = df3d[df3d.DATE >= str(cutoff1)]
@@ -89,10 +89,55 @@ def scatter_incidence_nis3():
     df3d = df3d.round({'CASES_PER_100KHABITANT': 1})
 
     df3d = df3d.sort_values(by='CASES_PER_100KHABITANT', axis=0)
-    title = get_translation(fr="Nombres de cas/100K past [d-17,d-4] days",en="Number of cases/100K past [d-17,d-4] days")
-    fig = px.scatter(y=df3d.name, x=df3d['CASES_PER_100KHABITANT'],title=title ,labels={"y":"","x":title})
+    return df3d
+
+
+@register_plot_for_embedding("scattter-incidence-nis3")
+def scatter_incidence_nis3():
+    df_names = pd.DataFrame(geojson.drop(columns='geometry'))
+
+    # title = get_translation(fr="Nombres de cas/100K past [d-17,d-4] days",en="Number of cases/100K past [d-17,d-4] days")
+
+    df1 = dfoff(0)
+    df2 = dfoff(5)
+    df = df1.merge(df2, left_on=['NIS3', 'POP', 'name'], right_on=['NIS3', 'POP', 'name'])
+    df['increase5d'] = ((df['CASES_PER_100KHABITANT_x'] / df['CASES_PER_100KHABITANT_y']) - 1) * 100
+
+    df = df.sort_values(by='CASES_PER_100KHABITANT_x', axis=0)
+
+    fig = go.Figure()
+
+    fig.add_trace(go.Scatter(y=df.name, x=df['CASES_PER_100KHABITANT_x'],
+                             name="[t-17,t-4]", mode='markers',
+                             marker=dict(
+                                 color=df['increase5d'],  # set color equal to a variable
+                                 size=12,
+                                 colorscale=[[0, "rgb(166,206,227)"],
+                                             [0.25, "rgb(31,120,180)"],
+                                             [0.45, "rgb(178,223,138)"],
+                                             [0.65, "rgb(51,160,44)"],
+                                             [0.85, "rgb(251,154,153)"],
+                                             [1, "rgb(227,26,28)"]],
+                                 showscale=True
+                             )))
+
+    fig.add_trace(go.Scatter(y=df.name, x=df['CASES_PER_100KHABITANT_y'],
+                             name="[t-22,t-9]", mode='markers', marker_color='black'))
+
     fig.update_layout(autosize=True, height=900)
     fig.update_layout(template="plotly_white")
+
+    fig.update_layout(legend=dict(
+        orientation="h",
+        yanchor="bottom",
+        y=1.02,
+        xanchor="right",
+        x=1
+    ))
+    fig.update_layout(
+        title="Incidence evolution over 5 days (color = % increase/decrease)",
+    )
+
     return fig
 
 
