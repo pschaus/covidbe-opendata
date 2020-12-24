@@ -17,15 +17,17 @@ upper_df_communes_tot = np.sort(1000.0*df_communes_tot.CASES/df_communes_tot.POP
 df_communes_tot["CASES_PER_100_POP"] = pd.DataFrame.clip( 100.0*df_communes_tot.CASES/df_communes_tot.POP , upper=upper_df_communes_tot)
 df_communes_tot = df_communes_tot.round({'CASES_PER_100_POP': 1})
 
-df_communes_timeseries = pd.read_csv('static/csv/be-covid-timeseries.csv')
 geojson_communes = geopandas.read_file('static/json/communes/be-geojson.json')
 
 df_communes_tot['colorbase'] = df_communes_tot.apply(lambda row: np.log2(row.CASES) if row.CASES != 0 else 0, axis=1)
 df_communes_tot['name'] = df_communes_tot.apply(
     lambda row: (row.FR if row.FR == row.NL else f"{row.FR}/{row.NL}").replace("_", " "), axis=1)
 
+df_muni = pd.read_csv("static/csv/COVID19BE_CASES_MUNI.csv",encoding='utf8')
+df_muni = df_muni.replace({'CASES': '<5'}, {'CASES': '1'}, regex=True)
+df_muni['CASES'] = df_muni['CASES'].astype(int)
 
-df5 = pd.read_csv("static/csv/cases_weekly_ins5.csv",encoding='latin1')
+df5 = pd.read_csv("static/csv/cases_weekly_ins5.csv",encoding='utf8')
 df5 = df5[df5.WEEK >= 32]
 
 today_w = datetime.today().isocalendar()[1]
@@ -210,27 +212,22 @@ def map_communes():
     fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=5, b=0))
     return fig
 
+
 @register_plot_for_embedding("barplot_communes")
 def barplot_communes(commune_nis=73006):
-    [nis, cases, fr, nl, _, title_text, _, _] = df_communes_tot.loc[df_communes_tot['NIS5'] == str(commune_nis)].values[0]
-    title = title_text
-
-    orig_first_date = datetime.strptime(
-        df_communes_timeseries.loc[df_communes_timeseries[str(commune_nis)] > 0]["DATE"].min(), "%Y-%m-%d").date()
-    first_date = date(year=orig_first_date.year, month=orig_first_date.month, day=1)
-    last_date = datetime.strptime(df_communes_timeseries["DATE"].max(), "%Y-%m-%d").date()
-
-    range_y_stop = max(10, df_communes_timeseries[str(commune_nis)].max())
-
-    fig = px.bar(df_communes_timeseries, x='DATE', y=str(commune_nis), height=400,
-                 range_x=(first_date, last_date),
-                 range_y=(0, range_y_stop),
-                 color=str(commune_nis), color_continuous_scale="deep",
-                 labels={"DATE": "Date", str(commune_nis): "# Cases"})
+    df_com = df_muni[df_muni.NIS5 == commune_nis]
+    descr = df_com['TX_DESCR_FR'].values
+    title = "municipality"
+    if len(descr) > 0:
+        title = descr[0]
+    cases = sum(df_com.CASES.values)
+    fig = px.bar(x=df_com.DATE, y=df_com.CASES)
 
     fig.update_layout(title_text=gettext("Number of cases in {title}: {cases}").format(title=title, cases=cases),
                       height=500, template="plotly_white", margin=dict(l=20, r=0, t=60, b=0))
     fig.layout.coloraxis.showscale = False
+    fig.update_yaxes(title="cases (1 = <5)")
+
     fig.update_traces(
         hovertemplate=gettext("<b>%{x}</b><extra>%{y} cases</extra>"),
     )

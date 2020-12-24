@@ -71,8 +71,7 @@ def municipalities_callbacks(app):
         if clickData is None:
             return barplot_communes()
         nis = clickData['points'][0]['customdata'][2]
-        print(nis)
-        return barplot_communes(commune_nis=nis)
+        return barplot_communes(commune_nis=int(nis))
     @app.callback(
         Output("cases-overview-histogram", "style"),
         [Input('map_communes_per_inhabitant', 'clickData')])
