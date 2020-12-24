@@ -81,3 +81,5 @@ map_cases_per_habittant_admin_region_fig = map_cases_per_habittant_admin_region_
 @register_plot_for_embedding("cases_per_habitant_admin_region_inhabitant")
 def map_cases_per_habittant_admin_region():
     return map_cases_per_habittant_admin_region_fig
+
+

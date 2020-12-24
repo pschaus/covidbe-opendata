@@ -37,7 +37,6 @@ def test_vs_case_increase():
     return fig
 
 
-
 @register_plot_for_embedding("bart_plot_cases_testing")
 def bart_plot_cases_testing():
     """
@@ -76,12 +75,12 @@ def bart_plot_cases_testing():
                 direction="left",
                 buttons=list([
                     dict(
-                        args=[{"yaxis.type": "linear"}],
+                        args=[{"yaxis.type": "linear", "yaxis2.type": "linear"}],
                         label="LINEAR",
                         method="relayout"
                     ),
                     dict(
-                        args=[{"yaxis.type": "log"}],
+                        args=[{"yaxis.type": "log", "yaxis2.type": "log"}],
                         label="LOG",
                         method="relayout"
                     )
@@ -152,10 +151,24 @@ def plot_cumulated_testing():
     """
     plot of the cumulated tests cases of days everyday
     """
-    fig = go.Figure(data=[go.Scatter(x=df_testing.DATE, y=df_testing.TESTS_ALL.cumsum(), name=gettext('Cumulated #Test')),
-                          go.Scatter(x=df_testing.DATE, y=df_testing.CASES.cumsum(), name=gettext('Cumulated #Cases'))]
-                    )
-    fig.update_layout(xaxis_title=gettext('Day'),
-                      yaxis_title=gettext('#Cases/#Tests'), title=gettext("Cumulated number of Tests and Cases"))
+    fig = make_subplots(specs=[[{"secondary_y": True, }]], shared_yaxes='all', shared_xaxes='all')
+
+    fig.add_trace(
+        go.Scatter(x=df_testing.DATE, y=df_testing.TESTS_ALL.cumsum(), name=gettext('Cumulated #Test')),
+        secondary_y=False,
+    )
+
+    fig.add_trace(
+        go.Scatter(x=df_testing.DATE, y=df_testing.CASES.cumsum(), name=gettext('Cumulated #Cases')),
+        secondary_y=True,
+    )
+
+    # Set y-axes titles
+    fig.update_yaxes(title_text="cumulated #tests", secondary_y=False)
+    fig.update_yaxes(title_text="cumulated #cases", secondary_y=True)
+
+    fig.update_layout(title=gettext("Cumulated number of Tests and Cases"))
     fig.update_layout(template="plotly_white")
     return fig
+
+

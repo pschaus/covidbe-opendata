@@ -174,7 +174,8 @@ def map_cases_incidence_nis3():
                                featureidkey="properties.NIS3",
                                center={"lat": 50.641111, "lon": 4.668889},
                                hover_name="CASES_PER_100KHABITANT",
-                               hover_data=["CASES_PER_100KHABITANT", "POP", "name"],
+                               hover_data=["CASES_PER_100KHABITANT", "POP","NIS3", "name"],
+                               custom_data=["CASES_PER_100KHABITANT", "POP","NIS3", "name"],
                                height=600,
                                mapbox_style="carto-positron", zoom=6)
     fig.update_geos(fitbounds="locations")
@@ -185,7 +186,7 @@ def map_cases_incidence_nis3():
     fig.layout.coloraxis.colorbar.tickmode = "array"
     fig.update_traces(
         hovertemplate=gettext(
-            gettext("incidence:<b>%{customdata[0]}<br>pop:<b>%{customdata[1]}<br><b>%{customdata[2]}"))
+            gettext("incidence:<b>%{customdata[0]}<br>pop:<b>%{customdata[1]}<br><b>%{customdata[3]}"))
     )
     fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=5, b=0))
     return fig
@@ -210,6 +211,32 @@ def plot_cases_per_habittant_admin_region_overtime():
 def plot_cases_daily_admin_region_overtime():
     fig = px.bar(data_frame=df3d, x='DATE', y='CASES',color='name')
     fig.update_layout(template="plotly_white")
+    return fig
+
+
+@register_plot_for_embedding("barplot_admin")
+def barplot_admin(nis=46):
+    df_admin = df3d[df3d.NIS3 == nis]
+
+    descr = df_admin['name'].values
+    title = "admin"
+    if len(descr) > 0:
+        title = descr[0]
+    cases = sum(df_admin.CASES.values)
+    fig = px.bar(x=df_admin.DATE, y=df_admin.CASES)
+
+    fig.add_trace(
+        go.Scatter(x=df_admin.DATE, y=df_admin.CASES.rolling(7).mean(), showlegend=False)
+    )
+
+    fig.update_layout(title_text=gettext("Number of cases in {title} since beginning: {cases}").format(title=title, cases=cases),
+                      height=500, template="plotly_white", margin=dict(l=20, r=0, t=60, b=0))
+    fig.layout.coloraxis.showscale = False
+    fig.update_yaxes(title="cases (1 = <5)")
+
+    fig.update_traces(
+        hovertemplate=gettext("<b>%{x}</b><extra>%{y} cases</extra>"),
+    )
     return fig
 
 

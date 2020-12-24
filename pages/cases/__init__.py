@@ -3,7 +3,7 @@ from flask_babel import lazy_gettext
 from pages import AppMenu, AppLink
 from pages.cases.cases_correction import display_cases_correction
 from pages.cases.municipalities import municipalities_link
-from pages.cases.admin_region import display_admin
+from pages.cases.admin_region import display_admin, admin_link
 from pages.cases.region import display_region
 from pages.cases.provinces import display_provinces
 from pages.cases.age_groups import display_age_groups
@@ -17,8 +17,7 @@ cases_menu = AppMenu(lazy_gettext("Cases"), "/cases", [
     AppLink(get_translation(en="Cases per age-group",fr="Cas par agroupe d'age",lazy=True), get_translation(en="Age-group",fr="Groupes d'age",lazy=True), "/age_groups", display_age_groups),
     municipalities_link,
     AppLink(lazy_gettext("Testing"), lazy_gettext("Testing"), "/testing", display_testing),
-    AppLink(get_translation(en="Cases per admin region", fr="Cas par arrondissement",lazy=True),
-            get_translation(en="Admin Region", fr="Arrondissement",lazy=True), "/admin_region", display_admin),
+    admin_link,
     AppLink(get_translation(en="Provinces", fr="Provinces", lazy=True),
             get_translation(en="Provinces", fr="Provinces", lazy=True),
             "/provinces", display_provinces),

@@ -85,7 +85,7 @@ def map_cases_incidence_nis5():
                                featureidkey="properties.NIS5",
                                center={"lat": 50.641111, "lon": 4.668889},
                                hover_name="TX_DESCR_FR",
-                               hover_data=["INCIDENCE", "POP", "TX_DESCR_FR"],
+                               hover_data=["INCIDENCE", "POP","NIS5", "TX_DESCR_FR"],
                                height=600,
                                mapbox_style="carto-positron", zoom=6)
     fig.update_geos(fitbounds="locations")
@@ -227,6 +227,7 @@ def barplot_communes(commune_nis=73006):
                       height=500, template="plotly_white", margin=dict(l=20, r=0, t=60, b=0))
     fig.layout.coloraxis.showscale = False
     fig.update_yaxes(title="cases (1 = <5)")
+    fig.update_xaxes(title="")
 
     fig.update_traces(
         hovertemplate=gettext("<b>%{x}</b><extra>%{y} cases</extra>"),

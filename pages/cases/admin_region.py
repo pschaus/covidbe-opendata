@@ -12,9 +12,9 @@ from graphs.cases_per_admin_region_overtime import map_totcases_admin_region_ove
     plot_cases_per_habittant_admin_region_overtime, \
     plot_cases_daily_admin_region_overtime,\
     map_cases_incidence_nis3,\
-    scatter_incidence_nis3
+    scatter_incidence_nis3, barplot_admin
 from pages.sources import *
-
+from pages import AppLink, get_translation, display_graphic
 from pages import get_translation, display_graphic
 
 
@@ -34,10 +34,18 @@ def display_admin():
                 Note that the number of daily tests is also increasing. See our testing page."""))),
 
         html.H3(gettext(
-            get_translation(en="Incidence: Number of cases/100K inhabitants over the past 14 days", fr="Incidence: Nombre de cas/100K habitants sur les 14 derniers jours"))),
+            get_translation(en="Incidence: Number of cases/100K inhabitants over the past 14 days (click to see the evolution)", fr="Incidence: Nombre de cas/100K habitants sur les 14 derniers jours (cliquez pour voir l'évolution)"))),
+        html.H4(get_translation(
+            en="""click on a region to see the cases barplot""",
+            fr="""cliquez sur un arrondissement pour observer l'historique des cas""",
+        )),
         dbc.Row([
-            dbc.Col(display_graphic(id='cases-province-map', figure=map_cases_incidence_nis3(),
+            dbc.Col(display_graphic(id='map_cases_incidence_nis3', figure=map_cases_incidence_nis3(),
                               config=dict(locale=str(get_locale()))), className="col-12"),
+        ]),
+        dbc.Row([
+            dbc.Col(display_graphic(id='barplot_admin', style={"display": "none"}, figure=barplot_admin(),
+                                    config=dict(locale=str(get_locale()))))
         ]),
         dbc.Row([
             dbc.Col(display_graphic(id='cases-province-scatter-incidence', figure=scatter_incidence_nis3(),
@@ -66,3 +74,31 @@ def display_admin():
         ]),
         display_source_providers(source_sciensano, source_map_provinces)
     ]
+
+
+
+def admin_callbacks(app):
+    print("admin call back setup")
+    @app.callback(
+        Output("barplot_admin", "figure"),
+        [Input('map_cases_incidence_nis3', 'clickData')])
+    def callback_barplot(clickData):
+        print("callback")
+        if clickData is None:
+            return barplot_admin()
+        nis = clickData['points'][0]['customdata'][2]
+        return barplot_admin(nis=int(nis))
+    @app.callback(
+        Output("barplot_admin", "style"),
+        [Input('map_cases_incidence_nis3', 'clickData')])
+    def callback_barplot_style(clickData):
+        print("callback1")
+        if clickData is None:
+            return {"display": "none"}
+        return {"display": "block"}
+
+
+admin_link = AppLink(get_translation(en="Cases per admin region",fr="Cas par arrondissement"), get_translation(en="Admin regions",fr="Arrondissements"),
+                              "/admin_region", display_fn=display_admin,
+                              plot=map_cases_incidence_nis3,
+                              callback_fn=admin_callbacks)

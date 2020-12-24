@@ -33,13 +33,21 @@ def municipalities():
         html.H3(gettext(
             get_translation(en="Incidence: Number of cases/100K inhabitants over the past 14 days",
                             fr="Incidence: Nombre de cas/100K habitants sur les 14 derniers jours"))),
+        html.H4(get_translation(
+            en="""click on a municipality to see the cases barplot""",
+            fr="""cliquez sur une commune pour observer l'historique des cas""",
+        )),
+        dbc.Row([
+            dbc.Col(display_graphic(id='map_cases_incidence_nis5', figure=map_cases_incidence_nis5(),
+                              config=dict(locale=str(get_locale()))), className="col-12"),
+        ]),
+        dbc.Row([
+            dbc.Col(display_graphic(id='cases-overview-histogram', style={"display": "none"}, figure=barplot_communes(),
+                                    config=dict(locale=str(get_locale()))))
+        ]),
         dbc.Row([
             dbc.Col(display_graphic(id='cases-province-map', figure=bubble_map_cases_incidence_nis5(),
                                     config=dict(locale=str(get_locale()))), className="col-12"),
-        ]),
-        dbc.Row([
-            dbc.Col(display_graphic(id='cases-province-map', figure=map_cases_incidence_nis5(),
-                              config=dict(locale=str(get_locale()))), className="col-12"),
         ]),
         html.H3(get_translation(
             en="""Percentage of cases in the population since beginning""",
@@ -49,15 +57,8 @@ def municipalities():
             dbc.Col(display_graphic(id='map_bubble_communes_since_beginning', figure=map_bubble_communes_since_beginning(),
                                     config=dict(locale=str(get_locale()))))
         ]),
-        html.H4(get_translation(
-            en="""click on a municipality to see the cases barplot""",
-            fr="""cliquez sur une commune pour observer l'historique des cas""",
-        )),
         dbc.Row([
             dbc.Col(display_graphic(id='map_communes_per_inhabitant', figure=map_communes_per_inhabitant(), config=dict(locale=str(get_locale())))),
-        ]),
-        dbc.Row([
-            dbc.Col(display_graphic(id='cases-overview-histogram', style={"display": "none"}, figure=barplot_communes(), config=dict(locale=str(get_locale()))))
         ]),
         display_source_providers(source_sciensano, source_map_communes, source_pop)
     ]
@@ -66,7 +67,7 @@ def municipalities():
 def municipalities_callbacks(app):
     @app.callback(
         Output("cases-overview-histogram", "figure"),
-        [Input('map_communes_per_inhabitant', 'clickData')])
+        [Input('map_cases_incidence_nis5', 'clickData')])
     def callback_barplot(clickData):
         if clickData is None:
             return barplot_communes()
@@ -74,7 +75,7 @@ def municipalities_callbacks(app):
         return barplot_communes(commune_nis=int(nis))
     @app.callback(
         Output("cases-overview-histogram", "style"),
-        [Input('map_communes_per_inhabitant', 'clickData')])
+        [Input('map_cases_incidence_nis5', 'clickData')])
     def callback_barplot_style(clickData):
         if clickData is None:
             return {"display": "none"}
@@ -88,3 +89,8 @@ municipalities_link = AppLink(get_translation(en="Cases per municipality",fr="Ca
                               "/municipalities", municipalities,
                               map_communes_per_inhabitant,
                               municipalities_callbacks)
+
+
+
+
+
