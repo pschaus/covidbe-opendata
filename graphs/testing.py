@@ -4,7 +4,7 @@ import plotly.express as px
 from flask_babel import gettext
 from plotly.subplots import make_subplots
 import numpy as np
-
+from plotly.subplots import make_subplots
 
 from graphs import register_plot_for_embedding
 
@@ -37,6 +37,7 @@ def test_vs_case_increase():
     return fig
 
 
+
 @register_plot_for_embedding("bart_plot_cases_testing")
 def bart_plot_cases_testing():
     """
@@ -44,21 +45,30 @@ def bart_plot_cases_testing():
     """
     # ---------bar plot age groups death---------------------------
 
-    test_bar = go.Bar(x=df_testing.DATE, y=df_testing.TESTS_ALL, name=gettext('#Tests'),marker_color="blue",legendgroup = "testing", showlegend = True)
-    case_bar = go.Bar(x=df_testing.DATE, y=df_testing.CASES, name=gettext('#Cases'),marker_color="red",legendgroup = "cases", showlegend = True)
+    test_bar = go.Bar(x=df_testing.DATE, y=df_testing.TESTS_ALL, name=gettext('#Tests'), marker_color="blue",
+                      legendgroup="testing", showlegend=True)
+    case_bar = go.Bar(x=df_testing.DATE, y=df_testing.CASES, name=gettext('#Cases'), marker_color="red",
+                      legendgroup="cases", showlegend=True)
 
-    line_test = go.Scatter(x=df_testing.DATE, y=moving_average(df_testing.TESTS_ALL.values, 7),
-                           name=gettext('#Tests'),marker_color="blue",legendgroup = "testing", showlegend = False)
-    case_test = go.Scatter(x=df_testing.DATE, y=moving_average(df_testing.CASES.values, 7), name=gettext('#Cases'),marker_color="red",legendgroup = "cases", showlegend = False)
+    line_test = go.Scatter(x=df_testing.DATE, y=df_testing.TESTS_ALL.rolling(7).mean(),
+                           name=gettext('#Tests'), marker_color="blue", legendgroup="testing", showlegend=False)
+    case_test = go.Scatter(x=df_testing.DATE, y=df_testing.CASES.rolling(7).mean(), name=gettext('#Cases'),
+                           marker_color="red", legendgroup="cases", showlegend=False)
 
-    fig_testing = go.Figure(data=[test_bar, case_bar, line_test, case_test], layout=go.Layout(barmode='group'), )
-    fig_testing.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0),
-                              title=gettext("Number of Tests and Cases each day"))
+    fig = make_subplots(specs=[[{"secondary_y": True, }]], shared_yaxes='all', shared_xaxes='all')
+    fig.add_trace(test_bar, secondary_y=False)
+    fig.add_trace(line_test, secondary_y=False)
+    fig.add_trace(case_bar, secondary_y=True)
+    fig.add_trace(case_test, secondary_y=True)
 
-    fig_testing.update_layout(xaxis_title=gettext('Day'),
-                              yaxis_title=gettext('Number of / Day'))
+    # Set y-axes titles
+    fig.update_yaxes(title_text="#tests/day", secondary_y=False)
+    fig.update_yaxes(title_text="#cases/day", secondary_y=True)
 
-    fig_testing.update_layout(
+    fig.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0),
+                      title=gettext("Number of Tests and Cases each day"))
+
+    fig.update_layout(
         hovermode='x unified',
         updatemenus=[
             dict(
@@ -79,7 +89,7 @@ def bart_plot_cases_testing():
             ),
         ])
 
-    return fig_testing
+    return fig
 
 
 @register_plot_for_embedding("plot_ration_cases_over_testing")
