@@ -233,6 +233,7 @@ def barplot_admin(nis=46):
                       height=500, template="plotly_white", margin=dict(l=20, r=0, t=60, b=0))
     fig.layout.coloraxis.showscale = False
     fig.update_yaxes(title="cases (1 = <5)")
+    fig.update_xaxes(title="")
 
     fig.update_traces(
         hovertemplate=gettext("<b>%{x}</b><extra>%{y} cases</extra>"),
