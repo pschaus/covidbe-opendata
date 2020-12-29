@@ -35,7 +35,7 @@ pop = {'Brussels': 1218255, 'Flanders': 6629143, 'Wallonia': 3645243}
 
 
 @register_plot_for_embedding("hospi_region_per100k")
-def hospi_region_per100k(column):
+def hospi_region_per100k(column,avg=False):
     barmode = 'stack'  # group
     # bar plot with bars per age groups
     bars = []
@@ -49,15 +49,17 @@ def hospi_region_per100k(column):
         df_r.index = pd.DatetimeIndex(df_r.index)
         df_r = df_r.reindex(idx, fill_value=0)
 
-        plot = go.Scatter(x=df_r.index, y=(100000 * df_r[column] / pop[r]).rolling(7).mean(), name=r)
-
+        if avg:
+            plot = go.Scatter(x=df_r.index, y=(100000 * df_r[column] / pop[r]).rolling(7).mean(), name=r)
+        else:
+            plot = go.Scatter(x=df_r.index, y=(100000 * df_r[column] / pop[r]), name=r)
         bars.append(plot)
 
     fig = go.Figure(data=bars,
                     layout=go.Layout(barmode='group'), )
     fig.update_layout(template="plotly_white", height=500, barmode=barmode, margin=dict(l=0, r=0, t=30, b=0), )
 
-    fig.update_layout(template="plotly_white", title=column+" per 100K inhabitants (avg 7 days)")
+    fig.update_layout(template="plotly_white", title=column+" per 100K inhabitants" + ("(avg 7 days)" if avg  else ""))
     fig.update_layout(
         hovermode='x unified',
         updatemenus=[
@@ -83,14 +85,14 @@ def hospi_region_per100k(column):
 
 @register_plot_for_embedding("hospi_total_in_region_per100k")
 def hospi_total_in_region_per100k():
-    return hospi_region_per100k("TOTAL_IN")
+    return hospi_region_per100k("TOTAL_IN",avg=False)
 
 
 @register_plot_for_embedding("hospi_total_in_icu_region_per100k")
 def hospi_total_in_icu_region_per100k():
-    return hospi_region_per100k("TOTAL_IN_ICU")
+    return hospi_region_per100k("TOTAL_IN_ICU",avg=False)
 
 
 @register_plot_for_embedding("hospi_newin_region_per100k")
 def hospi_newin_region_per100k():
-    return hospi_region_per100k("NEW_IN")
+    return hospi_region_per100k("NEW_IN",avg=True)
