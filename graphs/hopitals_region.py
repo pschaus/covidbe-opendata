@@ -96,3 +96,8 @@ def hospi_total_in_icu_region_per100k():
 @register_plot_for_embedding("hospi_newin_region_per100k")
 def hospi_newin_region_per100k():
     return hospi_region_per100k("NEW_IN",avg=True)
+
+
+@register_plot_for_embedding("hospi_newout_region_per100k")
+def hospi_newout_region_per100k():
+    return hospi_region_per100k("NEW_OUT",avg=True)
