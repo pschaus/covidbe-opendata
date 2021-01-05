@@ -14,7 +14,7 @@ def gees_barometer():
 
     dates = df_newin.DATE.values
     newin = df_newin.NEW_IN.rolling(7).mean().values
-    growth = (newin[1:] - newin[:-1])
+    growth = 100*(newin[1:] - newin[:-1])/newin[:-1]
 
     dates_w2 = dates[200:]
     newin_w2 = newin[200:]
