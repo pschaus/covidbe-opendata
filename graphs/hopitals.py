@@ -35,7 +35,7 @@ def gees_barometer():
                              name="today"))
 
     fig.update_layout(xaxis_title=gettext('daily new admission (7d MA)'),
-                      yaxis_title=gettext('daily admission increase (7d MA)'))
+                      yaxis_title=gettext('daily admission increase in % (7d MA)'))
 
     fig.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0),
                       title=gettext("GEES Barometer"))
@@ -56,6 +56,7 @@ def gees_barometer():
                         label="LOG x",
                         method="relayout"
                     )
+
                 ]),
             ),
         ])
