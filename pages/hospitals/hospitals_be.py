@@ -43,11 +43,6 @@ def display_hospitals():
                                     figure=gees_barometer(),
                                     config=dict(locale=str(get_locale())))),
         ]),
-        dbc.Row([
-            dbc.Col(display_graphic(id='hospitalization-be-waves',
-                              figure=hospi_waves(),
-                              config=dict(locale=str(get_locale())))),
-        ]),
         html.H2(gettext("Total ICU/ Total Hospitalization")),
         dbc.Row([
             dbc.Col(display_graphic(id='icuoverhospi',
