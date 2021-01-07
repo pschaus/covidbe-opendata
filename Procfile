@@ -1,1 +1,1 @@
-web: gunicorn napp:server --preload
+web: gunicorn napp_stop:server --preload
