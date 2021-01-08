@@ -274,6 +274,8 @@ Austria,Daily hospital occupancy,2020-12-28,2020-W53,2089.0,Country_Website,http
 Austria,Daily hospital occupancy,2020-12-29,2020-W53,2116.0,Country_Website,https://covid19-dashboard.ages.at/dashboard_Hosp.html
 Austria,Daily hospital occupancy,2020-12-30,2020-W53,2012.0,Country_Website,https://covid19-dashboard.ages.at/dashboard_Hosp.html
 Austria,Daily hospital occupancy,2020-12-31,2020-W53,1946.0,Country_Website,https://covid19-dashboard.ages.at/dashboard_Hosp.html
+Austria,Daily hospital occupancy,2021-01-01,2020-W53,1858.0,Country_Website,https://covid19-dashboard.ages.at/dashboard_Hosp.html
+Austria,Daily hospital occupancy,2021-01-03,2020-W53,1864.0,Country_Website,https://covid19-dashboard.ages.at/dashboard_Hosp.html
 Austria,Daily ICU occupancy,2020-04-01,2020-W14,215.0,Country_Website,https://covid19-dashboard.ages.at/dashboard_Hosp.html
 Austria,Daily ICU occupancy,2020-04-02,2020-W14,219.0,Country_Website,https://covid19-dashboard.ages.at/dashboard_Hosp.html
 Austria,Daily ICU occupancy,2020-04-03,2020-W14,245.0,Country_Website,https://covid19-dashboard.ages.at/dashboard_Hosp.html
@@ -549,6 +551,8 @@ Austria,Daily ICU occupancy,2020-12-28,2020-W53,421.0,Country_Website,https://co
 Austria,Daily ICU occupancy,2020-12-29,2020-W53,411.0,Country_Website,https://covid19-dashboard.ages.at/dashboard_Hosp.html
 Austria,Daily ICU occupancy,2020-12-30,2020-W53,395.0,Country_Website,https://covid19-dashboard.ages.at/dashboard_Hosp.html
 Austria,Daily ICU occupancy,2020-12-31,2020-W53,396.0,Country_Website,https://covid19-dashboard.ages.at/dashboard_Hosp.html
+Austria,Daily ICU occupancy,2021-01-01,2020-W53,385.0,Country_Website,https://covid19-dashboard.ages.at/dashboard_Hosp.html
+Austria,Daily ICU occupancy,2021-01-03,2020-W53,363.0,Country_Website,https://covid19-dashboard.ages.at/dashboard_Hosp.html
 Belgium,Daily hospital occupancy,2020-03-15,2020-W11,266.0,Country_Website,https://epistat.wiv-isp.be/covid/
 Belgium,Daily hospital occupancy,2020-03-16,2020-W12,370.0,Country_Website,https://epistat.wiv-isp.be/covid/
 Belgium,Daily hospital occupancy,2020-03-17,2020-W12,497.0,Country_Website,https://epistat.wiv-isp.be/covid/
@@ -841,6 +845,9 @@ Belgium,Daily hospital occupancy,2020-12-28,2020-W53,2440.0,Country_Website,http
 Belgium,Daily hospital occupancy,2020-12-29,2020-W53,2416.0,Country_Website,https://epistat.wiv-isp.be/covid/
 Belgium,Daily hospital occupancy,2020-12-30,2020-W53,2334.0,Country_Website,https://epistat.wiv-isp.be/covid/
 Belgium,Daily hospital occupancy,2020-12-31,2020-W53,2188.0,Country_Website,https://epistat.wiv-isp.be/covid/
+Belgium,Daily hospital occupancy,2021-01-01,2020-W53,2081.0,Country_Website,https://epistat.wiv-isp.be/covid/
+Belgium,Daily hospital occupancy,2021-01-02,2020-W53,2122.0,Country_Website,https://epistat.wiv-isp.be/covid/
+Belgium,Daily hospital occupancy,2021-01-03,2020-W53,2185.0,Country_Website,https://epistat.wiv-isp.be/covid/
 Belgium,Daily ICU occupancy,2020-03-15,2020-W11,54.0,Country_Website,https://epistat.wiv-isp.be/covid/
 Belgium,Daily ICU occupancy,2020-03-16,2020-W12,79.0,Country_Website,https://epistat.wiv-isp.be/covid/
 Belgium,Daily ICU occupancy,2020-03-17,2020-W12,100.0,Country_Website,https://epistat.wiv-isp.be/covid/
@@ -1133,6 +1140,9 @@ Belgium,Daily ICU occupancy,2020-12-28,2020-W53,510.0,Country_Website,https://ep
 Belgium,Daily ICU occupancy,2020-12-29,2020-W53,498.0,Country_Website,https://epistat.wiv-isp.be/covid/
 Belgium,Daily ICU occupancy,2020-12-30,2020-W53,495.0,Country_Website,https://epistat.wiv-isp.be/covid/
 Belgium,Daily ICU occupancy,2020-12-31,2020-W53,493.0,Country_Website,https://epistat.wiv-isp.be/covid/
+Belgium,Daily ICU occupancy,2021-01-01,2020-W53,489.0,Country_Website,https://epistat.wiv-isp.be/covid/
+Belgium,Daily ICU occupancy,2021-01-02,2020-W53,481.0,Country_Website,https://epistat.wiv-isp.be/covid/
+Belgium,Daily ICU occupancy,2021-01-03,2020-W53,468.0,Country_Website,https://epistat.wiv-isp.be/covid/
 Belgium,Weekly new hospital admissions per 100k,,2020-W06,,"TESSy COVID-19, national weekly data",
 Belgium,Weekly new hospital admissions per 100k,,2020-W07,,"TESSy COVID-19, national weekly data",
 Belgium,Weekly new hospital admissions per 100k,,2020-W08,,"TESSy COVID-19, national weekly data",
@@ -1180,6 +1190,7 @@ Belgium,Weekly new hospital admissions per 100k,,2020-W49,11.549018425092699,"TE
 Belgium,Weekly new hospital admissions per 100k,,2020-W50,11.3220535883184,"TESSy COVID-19, national weekly data",
 Belgium,Weekly new hospital admissions per 100k,,2020-W51,10.9554180827599,"TESSy COVID-19, national weekly data",
 Belgium,Weekly new hospital admissions per 100k,,2020-W52,9.803135065290368,"TESSy COVID-19, national weekly data",
+Belgium,Weekly new hospital admissions per 100k,,2020-W53,8.89527571819313,"TESSy COVID-19, national weekly data",
 Belgium,Weekly new ICU admissions per 100k,,2020-W06,,"TESSy COVID-19, national weekly data",
 Belgium,Weekly new ICU admissions per 100k,,2020-W07,,"TESSy COVID-19, national weekly data",
 Belgium,Weekly new ICU admissions per 100k,,2020-W08,,"TESSy COVID-19, national weekly data",
@@ -1227,6 +1238,7 @@ Belgium,Weekly new ICU admissions per 100k,,2020-W49,49.399769665608304,"TESSy C
 Belgium,Weekly new ICU admissions per 100k,,2020-W50,40.2513408602439,"TESSy COVID-19, national weekly data",
 Belgium,Weekly new ICU admissions per 100k,,2020-W51,34.681972942474296,"TESSy COVID-19, national weekly data",
 Belgium,Weekly new ICU admissions per 100k,,2020-W52,31.4520887268399,"TESSy COVID-19, national weekly data",
+Belgium,Weekly new ICU admissions per 100k,,2020-W53,29.9855467046059,"TESSy COVID-19, national weekly data",
 Bulgaria,Daily hospital occupancy,2020-04-06,2020-W15,210.0,External_Github,https://github.com/COVID-19-Bulgaria/covid-database
 Bulgaria,Daily hospital occupancy,2020-04-07,2020-W15,213.0,External_Github,https://github.com/COVID-19-Bulgaria/covid-database
 Bulgaria,Daily hospital occupancy,2020-04-08,2020-W15,233.0,External_Github,https://github.com/COVID-19-Bulgaria/covid-database
@@ -1497,6 +1509,9 @@ Bulgaria,Daily hospital occupancy,2020-12-28,2020-W53,5571.0,External_Github,htt
 Bulgaria,Daily hospital occupancy,2020-12-29,2020-W53,5023.0,Country_Website,https://coronavirus.bg/bg/statistika
 Bulgaria,Daily hospital occupancy,2020-12-30,2020-W53,4831.0,Country_Website,https://coronavirus.bg/bg/statistika
 Bulgaria,Daily hospital occupancy,2020-12-31,2020-W53,4756.0,Country_Website,https://coronavirus.bg/bg/statistika
+Bulgaria,Daily hospital occupancy,2021-01-01,2020-W53,4747.0,Country_Website,https://coronavirus.bg/bg/statistika
+Bulgaria,Daily hospital occupancy,2021-01-02,2020-W53,4786.0,Country_Website,https://coronavirus.bg/bg/statistika
+Bulgaria,Daily hospital occupancy,2021-01-03,2020-W53,4689.0,Country_Website,https://coronavirus.bg/bg/statistika
 Bulgaria,Daily ICU occupancy,2020-04-06,2020-W15,26.0,External_Github,https://github.com/COVID-19-Bulgaria/covid-database
 Bulgaria,Daily ICU occupancy,2020-04-07,2020-W15,26.0,External_Github,https://github.com/COVID-19-Bulgaria/covid-database
 Bulgaria,Daily ICU occupancy,2020-04-08,2020-W15,27.0,External_Github,https://github.com/COVID-19-Bulgaria/covid-database
@@ -1767,6 +1782,9 @@ Bulgaria,Daily ICU occupancy,2020-12-28,2020-W53,523.0,External_Github,https://g
 Bulgaria,Daily ICU occupancy,2020-12-29,2020-W53,474.0,Country_Website,https://coronavirus.bg/bg/statistika
 Bulgaria,Daily ICU occupancy,2020-12-30,2020-W53,467.0,Country_Website,https://coronavirus.bg/bg/statistika
 Bulgaria,Daily ICU occupancy,2020-12-31,2020-W53,464.0,Country_Website,https://coronavirus.bg/bg/statistika
+Bulgaria,Daily ICU occupancy,2021-01-01,2020-W53,462.0,Country_Website,https://coronavirus.bg/bg/statistika
+Bulgaria,Daily ICU occupancy,2021-01-02,2020-W53,458.0,Country_Website,https://coronavirus.bg/bg/statistika
+Bulgaria,Daily ICU occupancy,2021-01-03,2020-W53,453.0,Country_Website,https://coronavirus.bg/bg/statistika
 Croatia,Daily hospital occupancy,2020-04-15,2020-W16,341.0,Country_Website,https://www.hzjz.hr/aktualnosti/covid-19-izvjesce-hzjz-a/
 Croatia,Daily hospital occupancy,2020-04-16,2020-W16,372.0,Country_Website,https://www.hzjz.hr/aktualnosti/covid-19-izvjesce-hzjz-a/
 Croatia,Daily hospital occupancy,2020-04-17,2020-W16,372.0,Country_Website,https://www.hzjz.hr/aktualnosti/covid-19-izvjesce-hzjz-a/
@@ -2028,6 +2046,9 @@ Croatia,Daily hospital occupancy,2020-12-28,2020-W53,2720.0,Country_Website,http
 Croatia,Daily hospital occupancy,2020-12-29,2020-W53,2654.0,Country_Website,https://www.hzjz.hr/aktualnosti/covid-19-izvjesce-hzjz-a/
 Croatia,Daily hospital occupancy,2020-12-30,2020-W53,2608.0,Country_Website,https://www.hzjz.hr/aktualnosti/covid-19-izvjesce-hzjz-a/
 Croatia,Daily hospital occupancy,2020-12-31,2020-W53,2524.0,Country_Website,https://www.hzjz.hr/aktualnosti/covid-19-izvjesce-hzjz-a/
+Croatia,Daily hospital occupancy,2021-01-01,2020-W53,2478.0,Country_Website,https://www.hzjz.hr/aktualnosti/covid-19-izvjesce-hzjz-a/
+Croatia,Daily hospital occupancy,2021-01-02,2020-W53,2437.0,Country_Website,https://www.hzjz.hr/aktualnosti/covid-19-izvjesce-hzjz-a/
+Croatia,Daily hospital occupancy,2021-01-03,2020-W53,2453.0,Country_Website,https://www.hzjz.hr/aktualnosti/covid-19-izvjesce-hzjz-a/
 Croatia,Weekly new hospital admissions per 100k,,2020-W16,1.76633108011636,,https://www.hzjz.hr/aktualnosti/covid-19-izvjesce-hzjz-a/
 Croatia,Weekly new hospital admissions per 100k,,2020-W17,2.5023023634981802,,https://www.hzjz.hr/aktualnosti/covid-19-izvjesce-hzjz-a/
 Croatia,Weekly new hospital admissions per 100k,,2020-W18,0.588777026705454,,https://www.hzjz.hr/aktualnosti/covid-19-izvjesce-hzjz-a/
@@ -2065,6 +2086,7 @@ Croatia,Weekly new hospital admissions per 100k,,2020-W49,53.7749684390981,,http
 Croatia,Weekly new hospital admissions per 100k,,2020-W50,57.258565847105395,,https://www.hzjz.hr/aktualnosti/covid-19-izvjesce-hzjz-a/
 Croatia,Weekly new hospital admissions per 100k,,2020-W51,53.16165903628,,https://www.hzjz.hr/aktualnosti/covid-19-izvjesce-hzjz-a/
 Croatia,Weekly new hospital admissions per 100k,,2020-W52,41.3370537499454,,https://www.hzjz.hr/aktualnosti/covid-19-izvjesce-hzjz-a/
+Croatia,Weekly new hospital admissions per 100k,,2020-W53,37.2892116913454,,https://www.hzjz.hr/aktualnosti/covid-19-izvjesce-hzjz-a/
 Cyprus,Daily hospital occupancy,2020-03-09,2020-W11,0.0,Country_Website,https://www.data.gov.cy/search/type/dataset
 Cyprus,Daily hospital occupancy,2020-03-10,2020-W11,0.0,Country_Website,https://www.data.gov.cy/search/type/dataset
 Cyprus,Daily hospital occupancy,2020-03-11,2020-W11,0.0,Country_Website,https://www.data.gov.cy/search/type/dataset
@@ -2348,6 +2370,24 @@ Cyprus,Daily hospital occupancy,2020-12-13,2020-W50,120.0,Country_Website,https:
 Cyprus,Daily hospital occupancy,2020-12-14,2020-W51,123.0,Country_Website,https://www.data.gov.cy/search/type/dataset
 Cyprus,Daily hospital occupancy,2020-12-15,2020-W51,122.0,Country_Website,https://www.data.gov.cy/search/type/dataset
 Cyprus,Daily hospital occupancy,2020-12-16,2020-W51,125.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily hospital occupancy,2020-12-17,2020-W51,115.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily hospital occupancy,2020-12-18,2020-W51,115.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily hospital occupancy,2020-12-19,2020-W51,115.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily hospital occupancy,2020-12-20,2020-W51,125.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily hospital occupancy,2020-12-21,2020-W52,127.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily hospital occupancy,2020-12-22,2020-W52,130.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily hospital occupancy,2020-12-23,2020-W52,146.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily hospital occupancy,2020-12-24,2020-W52,142.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily hospital occupancy,2020-12-25,2020-W52,148.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily hospital occupancy,2020-12-26,2020-W52,149.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily hospital occupancy,2020-12-27,2020-W52,154.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily hospital occupancy,2020-12-28,2020-W53,153.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily hospital occupancy,2020-12-29,2020-W53,154.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily hospital occupancy,2020-12-30,2020-W53,159.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily hospital occupancy,2020-12-31,2020-W53,160.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily hospital occupancy,2021-01-01,2020-W53,168.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily hospital occupancy,2021-01-02,2020-W53,180.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily hospital occupancy,2021-01-03,2020-W53,182.0,Country_Website,https://www.data.gov.cy/search/type/dataset
 Cyprus,Daily ICU occupancy,2020-03-09,2020-W11,0.0,Country_Website,https://www.data.gov.cy/search/type/dataset
 Cyprus,Daily ICU occupancy,2020-03-10,2020-W11,0.0,Country_Website,https://www.data.gov.cy/search/type/dataset
 Cyprus,Daily ICU occupancy,2020-03-11,2020-W11,0.0,Country_Website,https://www.data.gov.cy/search/type/dataset
@@ -2631,6 +2671,24 @@ Cyprus,Daily ICU occupancy,2020-12-13,2020-W50,11.0,Country_Website,https://www.
 Cyprus,Daily ICU occupancy,2020-12-14,2020-W51,12.0,Country_Website,https://www.data.gov.cy/search/type/dataset
 Cyprus,Daily ICU occupancy,2020-12-15,2020-W51,13.0,Country_Website,https://www.data.gov.cy/search/type/dataset
 Cyprus,Daily ICU occupancy,2020-12-16,2020-W51,14.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily ICU occupancy,2020-12-17,2020-W51,14.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily ICU occupancy,2020-12-18,2020-W51,13.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily ICU occupancy,2020-12-19,2020-W51,13.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily ICU occupancy,2020-12-20,2020-W51,14.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily ICU occupancy,2020-12-21,2020-W52,15.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily ICU occupancy,2020-12-22,2020-W52,15.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily ICU occupancy,2020-12-23,2020-W52,16.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily ICU occupancy,2020-12-24,2020-W52,17.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily ICU occupancy,2020-12-25,2020-W52,20.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily ICU occupancy,2020-12-26,2020-W52,23.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily ICU occupancy,2020-12-27,2020-W52,25.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily ICU occupancy,2020-12-28,2020-W53,27.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily ICU occupancy,2020-12-29,2020-W53,25.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily ICU occupancy,2020-12-30,2020-W53,25.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily ICU occupancy,2020-12-31,2020-W53,27.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily ICU occupancy,2021-01-01,2020-W53,28.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily ICU occupancy,2021-01-02,2020-W53,30.0,Country_Website,https://www.data.gov.cy/search/type/dataset
+Cyprus,Daily ICU occupancy,2021-01-03,2020-W53,28.0,Country_Website,https://www.data.gov.cy/search/type/dataset
 Cyprus,Weekly new hospital admissions per 100k,,2020-W11,1.02751572955329,TESSy COVID-19,
 Cyprus,Weekly new hospital admissions per 100k,,2020-W12,2.74004194547545,TESSy COVID-19,
 Cyprus,Weekly new hospital admissions per 100k,,2020-W13,6.05092596292495,TESSy COVID-19,
@@ -2673,6 +2731,7 @@ Cyprus,Weekly new hospital admissions per 100k,,2020-W49,5.02341023337165,TESSy 
 Cyprus,Weekly new hospital admissions per 100k,,2020-W50,9.36180998037445,TESSy COVID-19,
 Cyprus,Weekly new hospital admissions per 100k,,2020-W51,9.47597839476926,TESSy COVID-19,
 Cyprus,Weekly new hospital admissions per 100k,,2020-W52,8.10595742203154,TESSy COVID-19,
+Cyprus,Weekly new hospital admissions per 100k,,2020-W53,13.3577044841928,TESSy COVID-19,
 Cyprus,Weekly new ICU admissions per 100k,,2020-W11,,TESSy COVID-19,
 Cyprus,Weekly new ICU admissions per 100k,,2020-W12,0.34250524318443104,TESSy COVID-19,
 Cyprus,Weekly new ICU admissions per 100k,,2020-W13,1.94086304471178,TESSy COVID-19,
@@ -2715,6 +2774,7 @@ Cyprus,Weekly new ICU admissions per 100k,,2020-W49,0.228336828789621,TESSy COVI
 Cyprus,Weekly new ICU admissions per 100k,,2020-W50,0.570842071974052,TESSy COVID-19,
 Cyprus,Weekly new ICU admissions per 100k,,2020-W51,0.34250524318443104,TESSy COVID-19,
 Cyprus,Weekly new ICU admissions per 100k,,2020-W52,1.5983578015273499,TESSy COVID-19,
+Cyprus,Weekly new ICU admissions per 100k,,2020-W53,2.51170511668583,TESSy COVID-19,
 Czechia,Daily hospital occupancy,2020-03-01,2020-W09,0.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2020-03-02,2020-W10,0.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2020-03-03,2020-W10,0.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
@@ -2963,14 +3023,14 @@ Czechia,Daily hospital occupancy,2020-10-31,2020-W44,7310.0,Country_Website,http
 Czechia,Daily hospital occupancy,2020-11-01,2020-W44,7444.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2020-11-02,2020-W45,8021.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2020-11-03,2020-W45,8108.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-11-04,2020-W45,8167.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-11-04,2020-W45,8166.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2020-11-05,2020-W45,8146.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2020-11-06,2020-W45,8040.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2020-11-07,2020-W45,7422.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2020-11-08,2020-W45,7399.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-11-09,2020-W46,7678.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-11-10,2020-W46,7507.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-11-11,2020-W46,7249.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-11-09,2020-W46,7679.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-11-10,2020-W46,7508.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-11-11,2020-W46,7250.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2020-11-12,2020-W46,7096.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2020-11-13,2020-W46,6994.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2020-11-14,2020-W46,6463.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
@@ -2983,44 +3043,47 @@ Czechia,Daily hospital occupancy,2020-11-20,2020-W47,6002.0,Country_Website,http
 Czechia,Daily hospital occupancy,2020-11-21,2020-W47,5359.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2020-11-22,2020-W47,5325.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2020-11-23,2020-W48,5686.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-11-24,2020-W48,5510.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-11-25,2020-W48,5302.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-11-26,2020-W48,5143.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-11-27,2020-W48,4934.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-11-28,2020-W48,4464.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-11-29,2020-W48,4528.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-11-30,2020-W49,4828.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-01,2020-W49,4668.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-02,2020-W49,4562.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-11-24,2020-W48,5511.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-11-25,2020-W48,5304.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-11-26,2020-W48,5145.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-11-27,2020-W48,4936.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-11-28,2020-W48,4466.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-11-29,2020-W48,4530.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-11-30,2020-W49,4830.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-01,2020-W49,4670.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-02,2020-W49,4563.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2020-12-03,2020-W49,4520.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-04,2020-W49,4485.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-05,2020-W49,4122.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-06,2020-W49,4174.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-07,2020-W50,4516.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-08,2020-W50,4422.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-09,2020-W50,4478.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-10,2020-W50,4566.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-11,2020-W50,4547.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-04,2020-W49,4484.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-05,2020-W49,4121.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-06,2020-W49,4175.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-07,2020-W50,4517.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-08,2020-W50,4421.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-09,2020-W50,4477.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-10,2020-W50,4565.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-11,2020-W50,4546.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2020-12-12,2020-W50,4313.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-13,2020-W50,4429.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-14,2020-W51,4789.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-15,2020-W51,4763.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-16,2020-W51,4730.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-17,2020-W51,4781.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-18,2020-W51,4802.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-19,2020-W51,4498.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-20,2020-W51,4597.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-21,2020-W52,4983.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-22,2020-W52,4960.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-23,2020-W52,4963.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-13,2020-W50,4426.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-14,2020-W51,4786.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-15,2020-W51,4761.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-16,2020-W51,4725.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-17,2020-W51,4774.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-18,2020-W51,4799.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-19,2020-W51,4494.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-20,2020-W51,4592.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-21,2020-W52,4976.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-22,2020-W52,4954.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-23,2020-W52,4964.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2020-12-24,2020-W52,4309.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-25,2020-W52,4387.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-26,2020-W52,4644.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-27,2020-W52,4969.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-28,2020-W53,5726.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-29,2020-W53,5972.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-30,2020-W53,6127.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-31,2020-W53,6126.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-25,2020-W52,4384.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-26,2020-W52,4643.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-27,2020-W52,4965.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-28,2020-W53,5727.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-29,2020-W53,5971.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-30,2020-W53,6130.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-31,2020-W53,6151.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-01-01,2020-W53,5653.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-01-02,2020-W53,5962.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-01-03,2020-W53,6288.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily ICU occupancy,2020-03-01,2020-W09,0.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily ICU occupancy,2020-03-02,2020-W10,0.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily ICU occupancy,2020-03-03,2020-W10,0.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
@@ -3289,44 +3352,47 @@ Czechia,Daily ICU occupancy,2020-11-20,2020-W47,830.0,Country_Website,https://on
 Czechia,Daily ICU occupancy,2020-11-21,2020-W47,819.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily ICU occupancy,2020-11-22,2020-W47,814.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily ICU occupancy,2020-11-23,2020-W48,823.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-11-24,2020-W48,792.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-11-25,2020-W48,750.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-11-26,2020-W48,743.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-11-27,2020-W48,707.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-11-28,2020-W48,654.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-11-29,2020-W48,641.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-11-30,2020-W49,669.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-01,2020-W49,591.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-02,2020-W49,588.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-03,2020-W49,581.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-04,2020-W49,575.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-05,2020-W49,558.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-06,2020-W49,554.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-07,2020-W50,560.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-08,2020-W50,554.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-09,2020-W50,538.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-10,2020-W50,560.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-11-24,2020-W48,793.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-11-25,2020-W48,751.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-11-26,2020-W48,744.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-11-27,2020-W48,708.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-11-28,2020-W48,655.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-11-29,2020-W48,642.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-11-30,2020-W49,670.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-01,2020-W49,592.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-02,2020-W49,589.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-03,2020-W49,582.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-04,2020-W49,576.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-05,2020-W49,559.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-06,2020-W49,555.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-07,2020-W50,562.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-08,2020-W50,555.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-09,2020-W50,539.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-10,2020-W50,561.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily ICU occupancy,2020-12-11,2020-W50,579.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily ICU occupancy,2020-12-12,2020-W50,566.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-13,2020-W50,580.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-14,2020-W51,608.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-15,2020-W51,599.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-16,2020-W51,606.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-17,2020-W51,598.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-18,2020-W51,604.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-19,2020-W51,596.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-20,2020-W51,613.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-21,2020-W52,622.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-22,2020-W52,630.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-23,2020-W52,663.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-24,2020-W52,643.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-25,2020-W52,654.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-26,2020-W52,694.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-27,2020-W52,728.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-28,2020-W53,781.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-29,2020-W53,842.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-30,2020-W53,859.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-31,2020-W53,877.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-13,2020-W50,579.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-14,2020-W51,607.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-15,2020-W51,598.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-16,2020-W51,605.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-17,2020-W51,597.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-18,2020-W51,603.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-19,2020-W51,595.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-20,2020-W51,612.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-21,2020-W52,621.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-22,2020-W52,629.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-23,2020-W52,661.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-24,2020-W52,641.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-25,2020-W52,653.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-26,2020-W52,693.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-27,2020-W52,725.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-28,2020-W53,778.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-29,2020-W53,837.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-30,2020-W53,856.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-31,2020-W53,876.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2021-01-01,2020-W53,887.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2021-01-02,2020-W53,893.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2021-01-03,2020-W53,933.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Weekly new hospital admissions per 100k,,2020-W05,,TESSy COVID-19,
 Czechia,Weekly new hospital admissions per 100k,,2020-W06,,TESSy COVID-19,
 Czechia,Weekly new hospital admissions per 100k,,2020-W07,,TESSy COVID-19,
@@ -3375,6 +3441,7 @@ Czechia,Weekly new hospital admissions per 100k,,2020-W49,69.4567034122707,TESSy
 Czechia,Weekly new hospital admissions per 100k,,2020-W50,68.3205318409736,TESSy COVID-19,
 Czechia,Weekly new hospital admissions per 100k,,2020-W51,71.9168435087983,TESSy COVID-19,
 Czechia,Weekly new hospital admissions per 100k,,2020-W52,77.2784465435971,TESSy COVID-19,
+Czechia,Weekly new hospital admissions per 100k,,2020-W53,82.5085917106425,TESSy COVID-19,
 Czechia,Weekly new ICU admissions per 100k,,2020-W05,,TESSy COVID-19,
 Czechia,Weekly new ICU admissions per 100k,,2020-W06,,TESSy COVID-19,
 Czechia,Weekly new ICU admissions per 100k,,2020-W07,,TESSy COVID-19,
@@ -3423,6 +3490,7 @@ Czechia,Weekly new ICU admissions per 100k,,2020-W49,11.5119532761179,TESSy COVI
 Czechia,Weekly new ICU admissions per 100k,,2020-W50,11.2959867790944,TESSy COVID-19,
 Czechia,Weekly new ICU admissions per 100k,,2020-W51,11.765479163928001,TESSy COVID-19,
 Czechia,Weekly new ICU admissions per 100k,,2020-W52,12.957989821405098,TESSy COVID-19,
+Czechia,Weekly new ICU admissions per 100k,,2020-W53,13.784296418712099,TESSy COVID-19,
 Denmark,Weekly new hospital admissions per 100k,,2020-W09,0.0172233215485626,,https://experience.arcgis.com/experience/aa41b29149f24e20a4007a0c4e13db1d
 Denmark,Weekly new hospital admissions per 100k,,2020-W10,0.155009893937064,,https://experience.arcgis.com/experience/aa41b29149f24e20a4007a0c4e13db1d
 Denmark,Weekly new hospital admissions per 100k,,2020-W11,2.34237173060452,,https://experience.arcgis.com/experience/aa41b29149f24e20a4007a0c4e13db1d
@@ -3467,6 +3535,7 @@ Denmark,Weekly new hospital admissions per 100k,,2020-W49,6.785988690133669,,htt
 Denmark,Weekly new hospital admissions per 100k,,2020-W50,10.5062261446232,,https://experience.arcgis.com/experience/aa41b29149f24e20a4007a0c4e13db1d
 Denmark,Weekly new hospital admissions per 100k,,2020-W51,17.051088333077,,https://experience.arcgis.com/experience/aa41b29149f24e20a4007a0c4e13db1d
 Denmark,Weekly new hospital admissions per 100k,,2020-W52,18.136157590636397,,https://experience.arcgis.com/experience/aa41b29149f24e20a4007a0c4e13db1d
+Denmark,Weekly new hospital admissions per 100k,,2020-W53,17.3094381563054,,https://experience.arcgis.com/experience/aa41b29149f24e20a4007a0c4e13db1d
 Estonia,Daily hospital occupancy,2020-02-26,2020-W09,1.0,Country_API,https://www.terviseamet.ee/et/koroonaviirus/avaandmed
 Estonia,Daily hospital occupancy,2020-02-27,2020-W09,1.0,Country_API,https://www.terviseamet.ee/et/koroonaviirus/avaandmed
 Estonia,Daily hospital occupancy,2020-02-28,2020-W09,1.0,Country_API,https://www.terviseamet.ee/et/koroonaviirus/avaandmed
@@ -3777,6 +3846,9 @@ Estonia,Daily hospital occupancy,2020-12-28,2020-W53,430.0,Country_API,https://w
 Estonia,Daily hospital occupancy,2020-12-29,2020-W53,429.0,Country_API,https://www.terviseamet.ee/et/koroonaviirus/avaandmed
 Estonia,Daily hospital occupancy,2020-12-30,2020-W53,407.0,Country_API,https://www.terviseamet.ee/et/koroonaviirus/avaandmed
 Estonia,Daily hospital occupancy,2020-12-31,2020-W53,388.0,Country_API,https://www.terviseamet.ee/et/koroonaviirus/avaandmed
+Estonia,Daily hospital occupancy,2021-01-01,2020-W53,404.0,Country_API,https://www.terviseamet.ee/et/koroonaviirus/avaandmed
+Estonia,Daily hospital occupancy,2021-01-02,2020-W53,406.0,Country_API,https://www.terviseamet.ee/et/koroonaviirus/avaandmed
+Estonia,Daily hospital occupancy,2021-01-03,2020-W53,431.0,Country_API,https://www.terviseamet.ee/et/koroonaviirus/avaandmed
 Estonia,Daily ICU occupancy,2020-02-26,2020-W09,0.0,Surveillance,https://koroonakaart.ee/en
 Estonia,Daily ICU occupancy,2020-02-27,2020-W09,0.0,Surveillance,https://koroonakaart.ee/en
 Estonia,Daily ICU occupancy,2020-02-28,2020-W09,0.0,Surveillance,https://koroonakaart.ee/en
@@ -4087,6 +4159,9 @@ Estonia,Daily ICU occupancy,2020-12-28,2020-W53,44.0,Country_API,https://www.ter
 Estonia,Daily ICU occupancy,2020-12-29,2020-W53,45.0,Country_API,https://www.terviseamet.ee/et/koroonaviirus/avaandmed
 Estonia,Daily ICU occupancy,2020-12-30,2020-W53,40.0,Country_API,https://www.terviseamet.ee/et/koroonaviirus/avaandmed
 Estonia,Daily ICU occupancy,2020-12-31,2020-W53,43.0,Country_API,https://www.terviseamet.ee/et/koroonaviirus/avaandmed
+Estonia,Daily ICU occupancy,2021-01-01,2020-W53,41.0,Country_API,https://www.terviseamet.ee/et/koroonaviirus/avaandmed
+Estonia,Daily ICU occupancy,2021-01-02,2020-W53,43.0,Country_API,https://www.terviseamet.ee/et/koroonaviirus/avaandmed
+Estonia,Daily ICU occupancy,2021-01-03,2020-W53,47.0,Country_API,https://www.terviseamet.ee/et/koroonaviirus/avaandmed
 Estonia,Weekly new hospital admissions per 100k,,2020-W09,0.0754819522652134,TESSy COVID-19,
 Estonia,Weekly new hospital admissions per 100k,,2020-W10,,TESSy COVID-19,
 Estonia,Weekly new hospital admissions per 100k,,2020-W11,0.30192780906085404,TESSy COVID-19,
@@ -4131,6 +4206,7 @@ Estonia,Weekly new hospital admissions per 100k,,2020-W49,14.417052882655803,TES
 Estonia,Weekly new hospital admissions per 100k,,2020-W50,14.115125073594902,TESSy COVID-19,
 Estonia,Weekly new hospital admissions per 100k,,2020-W51,18.3421144004469,TESSy COVID-19,
 Estonia,Weekly new hospital admissions per 100k,,2020-W52,20.6820549206685,TESSy COVID-19,
+Estonia,Weekly new hospital admissions per 100k,,2020-W53,21.361392491055398,TESSy COVID-19,
 Estonia,Weekly new ICU admissions per 100k,,2020-W09,,TESSy COVID-19,
 Estonia,Weekly new ICU admissions per 100k,,2020-W10,,TESSy COVID-19,
 Estonia,Weekly new ICU admissions per 100k,,2020-W11,,TESSy COVID-19,
@@ -4175,6 +4251,7 @@ Estonia,Weekly new ICU admissions per 100k,,2020-W49,1.1322292839782,TESSy COVID
 Estonia,Weekly new ICU admissions per 100k,,2020-W50,1.4341570930390501,TESSy COVID-19,
 Estonia,Weekly new ICU admissions per 100k,,2020-W51,1.50963904530427,TESSy COVID-19,
 Estonia,Weekly new ICU admissions per 100k,,2020-W52,2.18897661569119,TESSy COVID-19,
+Estonia,Weekly new ICU admissions per 100k,,2020-W53,2.4909044247520398,TESSy COVID-19,
 Finland,Daily hospital occupancy,2020-03-21,2020-W12,0.0,External_Github,https://github.com/HS-Datadesk/koronavirus-avoindata#direct-interface-to-hs-data
 Finland,Daily hospital occupancy,2020-03-25,2020-W13,82.0,External_Github,https://github.com/HS-Datadesk/koronavirus-avoindata#direct-interface-to-hs-data
 Finland,Daily hospital occupancy,2020-03-26,2020-W13,96.0,External_Github,https://github.com/HS-Datadesk/koronavirus-avoindata#direct-interface-to-hs-data
@@ -4345,6 +4422,13 @@ Finland,Daily hospital occupancy,2020-12-15,2020-W51,284.0,External_Github,https
 Finland,Daily hospital occupancy,2020-12-16,2020-W51,268.0,External_Github,https://github.com/HS-Datadesk/koronavirus-avoindata#direct-interface-to-hs-data
 Finland,Daily hospital occupancy,2020-12-17,2020-W51,264.0,External_Github,https://github.com/HS-Datadesk/koronavirus-avoindata#direct-interface-to-hs-data
 Finland,Daily hospital occupancy,2020-12-18,2020-W51,263.0,External_Github,https://github.com/HS-Datadesk/koronavirus-avoindata#direct-interface-to-hs-data
+Finland,Daily hospital occupancy,2020-12-21,2020-W52,281.0,External_Github,https://github.com/HS-Datadesk/koronavirus-avoindata#direct-interface-to-hs-data
+Finland,Daily hospital occupancy,2020-12-22,2020-W52,273.0,External_Github,https://github.com/HS-Datadesk/koronavirus-avoindata#direct-interface-to-hs-data
+Finland,Daily hospital occupancy,2020-12-23,2020-W52,258.0,External_Github,https://github.com/HS-Datadesk/koronavirus-avoindata#direct-interface-to-hs-data
+Finland,Daily hospital occupancy,2020-12-28,2020-W53,237.0,External_Github,https://github.com/HS-Datadesk/koronavirus-avoindata#direct-interface-to-hs-data
+Finland,Daily hospital occupancy,2020-12-29,2020-W53,221.0,External_Github,https://github.com/HS-Datadesk/koronavirus-avoindata#direct-interface-to-hs-data
+Finland,Daily hospital occupancy,2020-12-30,2020-W53,211.0,External_Github,https://github.com/HS-Datadesk/koronavirus-avoindata#direct-interface-to-hs-data
+Finland,Daily hospital occupancy,2020-12-31,2020-W53,199.0,External_Github,https://github.com/HS-Datadesk/koronavirus-avoindata#direct-interface-to-hs-data
 Finland,Daily ICU occupancy,2020-03-21,2020-W12,0.0,External_Github,https://github.com/HS-Datadesk/koronavirus-avoindata#direct-interface-to-hs-data
 Finland,Daily ICU occupancy,2020-03-25,2020-W13,22.0,External_Github,https://github.com/HS-Datadesk/koronavirus-avoindata#direct-interface-to-hs-data
 Finland,Daily ICU occupancy,2020-03-26,2020-W13,24.0,External_Github,https://github.com/HS-Datadesk/koronavirus-avoindata#direct-interface-to-hs-data
@@ -4515,6 +4599,13 @@ Finland,Daily ICU occupancy,2020-12-15,2020-W51,35.0,External_Github,https://git
 Finland,Daily ICU occupancy,2020-12-16,2020-W51,34.0,External_Github,https://github.com/HS-Datadesk/koronavirus-avoindata#direct-interface-to-hs-data
 Finland,Daily ICU occupancy,2020-12-17,2020-W51,27.0,External_Github,https://github.com/HS-Datadesk/koronavirus-avoindata#direct-interface-to-hs-data
 Finland,Daily ICU occupancy,2020-12-18,2020-W51,30.0,External_Github,https://github.com/HS-Datadesk/koronavirus-avoindata#direct-interface-to-hs-data
+Finland,Daily ICU occupancy,2020-12-21,2020-W52,33.0,External_Github,https://github.com/HS-Datadesk/koronavirus-avoindata#direct-interface-to-hs-data
+Finland,Daily ICU occupancy,2020-12-22,2020-W52,28.0,External_Github,https://github.com/HS-Datadesk/koronavirus-avoindata#direct-interface-to-hs-data
+Finland,Daily ICU occupancy,2020-12-23,2020-W52,26.0,External_Github,https://github.com/HS-Datadesk/koronavirus-avoindata#direct-interface-to-hs-data
+Finland,Daily ICU occupancy,2020-12-28,2020-W53,29.0,External_Github,https://github.com/HS-Datadesk/koronavirus-avoindata#direct-interface-to-hs-data
+Finland,Daily ICU occupancy,2020-12-29,2020-W53,30.0,External_Github,https://github.com/HS-Datadesk/koronavirus-avoindata#direct-interface-to-hs-data
+Finland,Daily ICU occupancy,2020-12-30,2020-W53,30.0,External_Github,https://github.com/HS-Datadesk/koronavirus-avoindata#direct-interface-to-hs-data
+Finland,Daily ICU occupancy,2020-12-31,2020-W53,27.0,External_Github,https://github.com/HS-Datadesk/koronavirus-avoindata#direct-interface-to-hs-data
 France,Daily hospital occupancy,2020-02-02,2020-W05,6.0,External_Github,https://github.com/opencovid19-fr/data
 France,Daily hospital occupancy,2020-02-03,2020-W06,6.0,External_Github,https://github.com/opencovid19-fr/data
 France,Daily hospital occupancy,2020-02-04,2020-W06,6.0,External_Github,https://github.com/opencovid19-fr/data
@@ -4828,6 +4919,9 @@ France,Daily hospital occupancy,2020-12-28,2020-W53,24645.0,Country_Website,http
 France,Daily hospital occupancy,2020-12-29,2020-W53,24743.0,Country_Website,https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/
 France,Daily hospital occupancy,2020-12-30,2020-W53,24560.0,Country_Website,https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/
 France,Daily hospital occupancy,2020-12-31,2020-W53,24407.0,Country_Website,https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/
+France,Daily hospital occupancy,2021-01-01,2020-W53,24263.0,Country_Website,https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/
+France,Daily hospital occupancy,2021-01-02,2020-W53,24458.0,Country_Website,https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/
+France,Daily hospital occupancy,2021-01-03,2020-W53,24780.0,Country_Website,https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/
 France,Daily ICU occupancy,2020-02-02,2020-W05,1.0,External_Github,https://github.com/opencovid19-fr/data
 France,Daily ICU occupancy,2020-02-03,2020-W06,1.0,External_Github,https://github.com/opencovid19-fr/data
 France,Daily ICU occupancy,2020-02-04,2020-W06,1.0,External_Github,https://github.com/opencovid19-fr/data
@@ -5140,6 +5234,9 @@ France,Daily ICU occupancy,2020-12-28,2020-W53,2694.0,Country_Website,https://ww
 France,Daily ICU occupancy,2020-12-29,2020-W53,2666.0,Country_Website,https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/
 France,Daily ICU occupancy,2020-12-30,2020-W53,2652.0,Country_Website,https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/
 France,Daily ICU occupancy,2020-12-31,2020-W53,2625.0,Country_Website,https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/
+France,Daily ICU occupancy,2021-01-01,2020-W53,2609.0,Country_Website,https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/
+France,Daily ICU occupancy,2021-01-02,2020-W53,2632.0,Country_Website,https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/
+France,Daily ICU occupancy,2021-01-03,2020-W53,2665.0,Country_Website,https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/
 France,Weekly new hospital admissions per 100k,,2020-W05,,TESSy COVID-19,
 France,Weekly new hospital admissions per 100k,,2020-W06,,TESSy COVID-19,
 France,Weekly new hospital admissions per 100k,,2020-W08,,TESSy COVID-19,
@@ -5187,6 +5284,7 @@ France,Weekly new hospital admissions per 100k,,2020-W49,12.1066273182128,TESSy 
 France,Weekly new hospital admissions per 100k,,2020-W50,12.2379453514931,TESSy COVID-19,
 France,Weekly new hospital admissions per 100k,,2020-W51,12.4737209112463,TESSy COVID-19,
 France,Weekly new hospital admissions per 100k,,2020-W52,10.959086777388801,TESSy COVID-19,
+France,Weekly new hospital admissions per 100k,,2020-W53,10.856121501294,TESSy COVID-19,
 France,Weekly new ICU admissions per 100k,,2020-W05,,TESSy COVID-19,
 France,Weekly new ICU admissions per 100k,,2020-W06,,TESSy COVID-19,
 France,Weekly new ICU admissions per 100k,,2020-W08,,TESSy COVID-19,
@@ -5234,6 +5332,7 @@ France,Weekly new ICU admissions per 100k,,2020-W49,1.60715365730497,TESSy COVID
 France,Weekly new ICU admissions per 100k,,2020-W50,1.6683359228105399,TESSy COVID-19,
 France,Weekly new ICU admissions per 100k,,2020-W51,1.68325842659239,TESSy COVID-19,
 France,Weekly new ICU admissions per 100k,,2020-W52,1.62655291222137,TESSy COVID-19,
+France,Weekly new ICU admissions per 100k,,2020-W53,1.66236692129781,TESSy COVID-19,
 Germany,Daily ICU occupancy,2020-03-20,2020-W12,200.0,Country_Website,https://www.intensivregister.de/#/intensivregister
 Germany,Daily ICU occupancy,2020-03-21,2020-W12,308.0,Country_Website,https://www.intensivregister.de/#/intensivregister
 Germany,Daily ICU occupancy,2020-03-22,2020-W12,364.0,Country_Website,https://www.intensivregister.de/#/intensivregister
@@ -5521,6 +5620,9 @@ Germany,Daily ICU occupancy,2020-12-28,2020-W53,5582.0,Country_Website,https://w
 Germany,Daily ICU occupancy,2020-12-29,2020-W53,5637.0,Country_Website,https://www.intensivregister.de/#/intensivregister
 Germany,Daily ICU occupancy,2020-12-30,2020-W53,5630.0,Country_Website,https://www.intensivregister.de/#/intensivregister
 Germany,Daily ICU occupancy,2020-12-31,2020-W53,5623.0,Country_Website,https://www.intensivregister.de/#/intensivregister
+Germany,Daily ICU occupancy,2021-01-01,2020-W53,5584.0,Country_Website,https://www.intensivregister.de/#/intensivregister
+Germany,Daily ICU occupancy,2021-01-02,2020-W53,5703.0,Country_Website,https://www.intensivregister.de/#/intensivregister
+Germany,Daily ICU occupancy,2021-01-03,2020-W53,5745.0,Country_Website,https://www.intensivregister.de/#/intensivregister
 Germany,Weekly new hospital admissions per 100k,,2020-W05,0.0493861583583068,"TESSy COVID-19, national daily data",
 Germany,Weekly new hospital admissions per 100k,,2020-W06,0.0289089707463259,"TESSy COVID-19, national daily data",
 Germany,Weekly new hospital admissions per 100k,,2020-W07,0.0421589156717253,"TESSy COVID-19, national daily data",
@@ -5616,6 +5718,7 @@ Greece,Weekly new ICU admissions per 100k,,2020-W49,2.63879330126935,TESSy COVID
 Greece,Weekly new ICU admissions per 100k,,2020-W50,2.2844676989787702,TESSy COVID-19,
 Greece,Weekly new ICU admissions per 100k,,2020-W51,1.84622287509305,TESSy COVID-19,
 Greece,Weekly new ICU admissions per 100k,,2020-W52,1.64108700008271,TESSy COVID-19,
+Greece,Weekly new ICU admissions per 100k,,2020-W53,1.1562203864219098,TESSy COVID-19,
 Hungary,Daily hospital occupancy,2020-04-16,2020-W16,729.0,Other_Website,http://pandemia.hu/koronavirus-magyarorszag/
 Hungary,Daily hospital occupancy,2020-04-17,2020-W16,847.0,Other_Website,http://pandemia.hu/koronavirus-magyarorszag/
 Hungary,Daily hospital occupancy,2020-04-18,2020-W16,829.0,Other_Website,http://pandemia.hu/koronavirus-magyarorszag/
@@ -5874,6 +5977,9 @@ Hungary,Daily hospital occupancy,2020-12-28,2020-W53,6261.0,Other_Website,http:/
 Hungary,Daily hospital occupancy,2020-12-29,2020-W53,6298.0,Other_Website,http://pandemia.hu/koronavirus-magyarorszag/
 Hungary,Daily hospital occupancy,2020-12-30,2020-W53,6155.0,Other_Website,http://pandemia.hu/koronavirus-magyarorszag/
 Hungary,Daily hospital occupancy,2020-12-31,2020-W53,5856.0,Other_Website,http://pandemia.hu/koronavirus-magyarorszag/
+Hungary,Daily hospital occupancy,2021-01-01,2020-W53,5648.0,Other_Website,http://pandemia.hu/koronavirus-magyarorszag/
+Hungary,Daily hospital occupancy,2021-01-02,2020-W53,5529.0,Other_Website,http://pandemia.hu/koronavirus-magyarorszag/
+Hungary,Daily hospital occupancy,2021-01-03,2020-W53,5619.0,Other_Website,http://pandemia.hu/koronavirus-magyarorszag/
 Iceland,Daily hospital occupancy,2020-02-28,2020-W09,1.0,Country_Website,https://www.covid.is/
 Iceland,Daily hospital occupancy,2020-02-29,2020-W09,1.0,Country_Website,https://www.covid.is/
 Iceland,Daily hospital occupancy,2020-03-01,2020-W09,1.0,Country_Website,https://www.covid.is/
@@ -6408,6 +6514,7 @@ Iceland,Weekly new hospital admissions per 100k,,2020-W49,0.280119106644145,TESS
 Iceland,Weekly new hospital admissions per 100k,,2020-W50,0.280119106644145,TESSy COVID-19,
 Iceland,Weekly new hospital admissions per 100k,,2020-W51,0.840357319932435,TESSy COVID-19,
 Iceland,Weekly new hospital admissions per 100k,,2020-W52,,TESSy COVID-19,
+Iceland,Weekly new hospital admissions per 100k,,2020-W53,,TESSy COVID-19,
 Ireland,Daily hospital occupancy,2020-03-07,2020-W10,18.0,Country_Website,https://data.gov.ie/dataset/covid19acutehospitalhistoricsummaryopendata
 Ireland,Daily hospital occupancy,2020-03-08,2020-W10,17.0,Country_Website,https://data.gov.ie/dataset/covid19acutehospitalhistoricsummaryopendata
 Ireland,Daily hospital occupancy,2020-03-09,2020-W11,18.0,Country_Website,https://data.gov.ie/dataset/covid19acutehospitalhistoricsummaryopendata
@@ -6708,6 +6815,9 @@ Ireland,Daily hospital occupancy,2020-12-28,2020-W53,360.0,Country_Website,https
 Ireland,Daily hospital occupancy,2020-12-29,2020-W53,409.0,Country_Website,https://data.gov.ie/dataset/covid19acutehospitalhistoricsummaryopendata
 Ireland,Daily hospital occupancy,2020-12-30,2020-W53,454.0,Country_Website,https://data.gov.ie/dataset/covid19acutehospitalhistoricsummaryopendata
 Ireland,Daily hospital occupancy,2020-12-31,2020-W53,491.0,Country_Website,https://data.gov.ie/dataset/covid19acutehospitalhistoricsummaryopendata
+Ireland,Daily hospital occupancy,2021-01-01,2020-W53,508.0,Country_Website,https://data.gov.ie/dataset/covid19acutehospitalhistoricsummaryopendata
+Ireland,Daily hospital occupancy,2021-01-02,2020-W53,581.0,Country_Website,https://data.gov.ie/dataset/covid19acutehospitalhistoricsummaryopendata
+Ireland,Daily hospital occupancy,2021-01-03,2020-W53,673.0,Country_Website,https://data.gov.ie/dataset/covid19acutehospitalhistoricsummaryopendata
 Ireland,Daily ICU occupancy,2020-03-27,2020-W13,68.0,Country_Website,https://data.gov.ie/dataset/icubishistorictimelinepublicview
 Ireland,Daily ICU occupancy,2020-03-28,2020-W13,80.0,Country_Website,https://data.gov.ie/dataset/icubishistorictimelinepublicview
 Ireland,Daily ICU occupancy,2020-03-29,2020-W13,96.0,Country_Website,https://data.gov.ie/dataset/icubishistorictimelinepublicview
@@ -6987,6 +7097,9 @@ Ireland,Daily ICU occupancy,2020-12-28,2020-W53,30.0,Country_Website,https://dat
 Ireland,Daily ICU occupancy,2020-12-29,2020-W53,34.0,Country_Website,https://data.gov.ie/dataset/icubishistorictimelinepublicview
 Ireland,Daily ICU occupancy,2020-12-30,2020-W53,39.0,Country_Website,https://data.gov.ie/dataset/icubishistorictimelinepublicview
 Ireland,Daily ICU occupancy,2020-12-31,2020-W53,42.0,Country_Website,https://data.gov.ie/dataset/icubishistorictimelinepublicview
+Ireland,Daily ICU occupancy,2021-01-01,2020-W53,50.0,Country_Website,https://data.gov.ie/dataset/icubishistorictimelinepublicview
+Ireland,Daily ICU occupancy,2021-01-02,2020-W53,56.0,Country_Website,https://data.gov.ie/dataset/icubishistorictimelinepublicview
+Ireland,Daily ICU occupancy,2021-01-03,2020-W53,65.0,Country_Website,https://data.gov.ie/dataset/icubishistorictimelinepublicview
 Ireland,Weekly new hospital admissions per 100k,,2020-W14,3.3848261912141298,,https://data.gov.ie/dataset/covid19acutehospitalhistoricsummaryopendata
 Ireland,Weekly new hospital admissions per 100k,,2020-W15,5.729735901995009,,https://data.gov.ie/dataset/covid19acutehospitalhistoricsummaryopendata
 Ireland,Weekly new hospital admissions per 100k,,2020-W16,4.526695267768299,,https://data.gov.ie/dataset/covid19acutehospitalhistoricsummaryopendata
@@ -7026,6 +7139,7 @@ Ireland,Weekly new hospital admissions per 100k,,2020-W49,1.40694582646853,,http
 Ireland,Weekly new hospital admissions per 100k,,2020-W50,1.71280361483125,,https://data.gov.ie/dataset/covid19acutehospitalhistoricsummaryopendata
 Ireland,Weekly new hospital admissions per 100k,,2020-W51,1.69241309560707,,https://data.gov.ie/dataset/covid19acutehospitalhistoricsummaryopendata
 Ireland,Weekly new hospital admissions per 100k,,2020-W52,2.46725282612596,,https://data.gov.ie/dataset/covid19acutehospitalhistoricsummaryopendata
+Ireland,Weekly new hospital admissions per 100k,,2020-W53,7.7483973051889805,,https://data.gov.ie/dataset/covid19acutehospitalhistoricsummaryopendata
 Ireland,Weekly new ICU admissions per 100k,,2020-W13,0.0,,https://data.gov.ie/dataset/icubishistorictimelinepublicview
 Ireland,Weekly new ICU admissions per 100k,,2020-W14,0.0815620768967261,,https://data.gov.ie/dataset/icubishistorictimelinepublicview
 Ireland,Weekly new ICU admissions per 100k,,2020-W15,0.9583544035365319,,https://data.gov.ie/dataset/icubishistorictimelinepublicview
@@ -7065,6 +7179,7 @@ Ireland,Weekly new ICU admissions per 100k,,2020-W49,0.203905192241815,,https://
 Ireland,Weekly new ICU admissions per 100k,,2020-W50,0.224295711465997,,https://data.gov.ie/dataset/icubishistorictimelinepublicview
 Ireland,Weekly new ICU admissions per 100k,,2020-W51,0.36702934603526705,,https://data.gov.ie/dataset/icubishistorictimelinepublicview
 Ireland,Weekly new ICU admissions per 100k,,2020-W52,0.326248307586904,,https://data.gov.ie/dataset/icubishistorictimelinepublicview
+Ireland,Weekly new ICU admissions per 100k,,2020-W53,0.30585778836272304,,https://data.gov.ie/dataset/icubishistorictimelinepublicview
 Italy,Daily hospital occupancy,2020-02-24,2020-W09,127.0,Country_Github,https://github.com/pcm-dpc/COVID-19
 Italy,Daily hospital occupancy,2020-02-25,2020-W09,149.0,Country_Github,https://github.com/pcm-dpc/COVID-19
 Italy,Daily hospital occupancy,2020-02-26,2020-W09,164.0,Country_Github,https://github.com/pcm-dpc/COVID-19
@@ -7377,6 +7492,9 @@ Italy,Daily hospital occupancy,2020-12-28,2020-W53,26497.0,Country_Github,https:
 Italy,Daily hospital occupancy,2020-12-29,2020-W53,26211.0,Country_Github,https://github.com/pcm-dpc/COVID-19
 Italy,Daily hospital occupancy,2020-12-30,2020-W53,26094.0,Country_Github,https://github.com/pcm-dpc/COVID-19
 Italy,Daily hospital occupancy,2020-12-31,2020-W53,25706.0,Country_Github,https://github.com/pcm-dpc/COVID-19
+Italy,Daily hospital occupancy,2021-01-01,2020-W53,25375.0,Country_Github,https://github.com/pcm-dpc/COVID-19
+Italy,Daily hospital occupancy,2021-01-02,2020-W53,25517.0,Country_Github,https://github.com/pcm-dpc/COVID-19
+Italy,Daily hospital occupancy,2021-01-03,2020-W53,25658.0,Country_Github,https://github.com/pcm-dpc/COVID-19
 Italy,Daily ICU occupancy,2020-02-24,2020-W09,26.0,Country_Github,https://github.com/pcm-dpc/COVID-19
 Italy,Daily ICU occupancy,2020-02-25,2020-W09,35.0,Country_Github,https://github.com/pcm-dpc/COVID-19
 Italy,Daily ICU occupancy,2020-02-26,2020-W09,36.0,Country_Github,https://github.com/pcm-dpc/COVID-19
@@ -7689,6 +7807,9 @@ Italy,Daily ICU occupancy,2020-12-28,2020-W53,2565.0,Country_Github,https://gith
 Italy,Daily ICU occupancy,2020-12-29,2020-W53,2549.0,Country_Github,https://github.com/pcm-dpc/COVID-19
 Italy,Daily ICU occupancy,2020-12-30,2020-W53,2528.0,Country_Github,https://github.com/pcm-dpc/COVID-19
 Italy,Daily ICU occupancy,2020-12-31,2020-W53,2555.0,Country_Github,https://github.com/pcm-dpc/COVID-19
+Italy,Daily ICU occupancy,2021-01-01,2020-W53,2553.0,Country_Github,https://github.com/pcm-dpc/COVID-19
+Italy,Daily ICU occupancy,2021-01-02,2020-W53,2569.0,Country_Github,https://github.com/pcm-dpc/COVID-19
+Italy,Daily ICU occupancy,2021-01-03,2020-W53,2583.0,Country_Github,https://github.com/pcm-dpc/COVID-19
 Italy,Weekly new hospital admissions per 100k,,2020-W08,0.7753537443770699,"TESSy COVID-19, national daily data",
 Italy,Weekly new hospital admissions per 100k,,2020-W09,3.69618419595137,"TESSy COVID-19, national daily data",
 Italy,Weekly new hospital admissions per 100k,,2020-W10,11.704859410307698,"TESSy COVID-19, national daily data",
@@ -7734,6 +7855,7 @@ Italy,Weekly new hospital admissions per 100k,,2020-W49,16.580641610525,"TESSy C
 Italy,Weekly new hospital admissions per 100k,,2020-W50,14.113757581940698,"TESSy COVID-19, national daily data",
 Italy,Weekly new hospital admissions per 100k,,2020-W51,12.5663635707267,"TESSy COVID-19, national daily data",
 Italy,Weekly new hospital admissions per 100k,,2020-W52,11.068671722613699,"TESSy COVID-19, national daily data",
+Italy,Weekly new hospital admissions per 100k,,2020-W53,5.3810875250784695,"TESSy COVID-19, national daily data",
 Latvia,Daily hospital occupancy,2020-03-30,2020-W14,28.0,Surveillance,https://arkartassituacija.gov.lv/
 Latvia,Daily hospital occupancy,2020-03-31,2020-W14,27.0,Surveillance,https://arkartassituacija.gov.lv/
 Latvia,Daily hospital occupancy,2020-04-01,2020-W14,28.0,Surveillance,https://arkartassituacija.gov.lv/
@@ -8059,6 +8181,7 @@ Latvia,Weekly new hospital admissions per 100k,,2020-W49,26.5629427157119,"TESSy
 Latvia,Weekly new hospital admissions per 100k,,2020-W50,33.8547309121819,"TESSy COVID-19, national weekly data",
 Latvia,Weekly new hospital admissions per 100k,,2020-W51,39.2194036567276,"TESSy COVID-19, national weekly data",
 Latvia,Weekly new hospital admissions per 100k,,2020-W52,41.7194453240887,"TESSy COVID-19, national weekly data",
+Latvia,Weekly new hospital admissions per 100k,,2020-W53,43.854897581626396,"TESSy COVID-19, national weekly data",
 Latvia,Weekly new ICU admissions per 100k,,2020-W05,,TESSy COVID-19,
 Latvia,Weekly new ICU admissions per 100k,,2020-W06,,TESSy COVID-19,
 Latvia,Weekly new ICU admissions per 100k,,2020-W07,,TESSy COVID-19,
@@ -8107,6 +8230,7 @@ Latvia,Weekly new ICU admissions per 100k,,2020-W49,4.9479991333188895,TESSy COV
 Latvia,Weekly new ICU admissions per 100k,,2020-W50,5.57300955015917,TESSy COVID-19,
 Latvia,Weekly new ICU admissions per 100k,,2020-W51,4.791746529108821,TESSy COVID-19,
 Latvia,Weekly new ICU admissions per 100k,,2020-W52,4.791746529108821,TESSy COVID-19,
+Latvia,Weekly new ICU admissions per 100k,,2020-W53,5.7813463557726,TESSy COVID-19,
 Lithuania,Daily hospital occupancy,2020-10-06,2020-W41,156.0,Country_Website,http://sam.lrv.lt/lt/naujienos/koronavirusas
 Lithuania,Daily hospital occupancy,2020-10-13,2020-W42,149.0,Country_Website,http://sam.lrv.lt/lt/naujienos/koronavirusas
 Lithuania,Daily hospital occupancy,2020-10-14,2020-W42,141.0,Country_Website,http://sam.lrv.lt/lt/naujienos/koronavirusas
@@ -8151,6 +8275,9 @@ Lithuania,Daily hospital occupancy,2020-12-27,2020-W52,2510.0,Country_Website,ht
 Lithuania,Daily hospital occupancy,2020-12-28,2020-W53,2506.0,Country_Website,https://osp.maps.arcgis.com/apps/MapSeries/index.html?appid=c6bc9659a00449239eb3bde062d23caa
 Lithuania,Daily hospital occupancy,2020-12-30,2020-W53,2429.0,Country_Website,https://osp.maps.arcgis.com/apps/MapSeries/index.html?appid=c6bc9659a00449239eb3bde062d23caa
 Lithuania,Daily hospital occupancy,2020-12-31,2020-W53,2480.0,Country_Website,https://osp.maps.arcgis.com/apps/MapSeries/index.html?appid=c6bc9659a00449239eb3bde062d23caa
+Lithuania,Daily hospital occupancy,2021-01-01,2020-W53,2406.0,Country_Website,https://osp.maps.arcgis.com/apps/MapSeries/index.html?appid=c6bc9659a00449239eb3bde062d23caa
+Lithuania,Daily hospital occupancy,2021-01-02,2020-W53,2494.0,Country_Website,https://osp.maps.arcgis.com/apps/MapSeries/index.html?appid=c6bc9659a00449239eb3bde062d23caa
+Lithuania,Daily hospital occupancy,2021-01-03,2020-W53,2571.0,Country_Website,https://osp.maps.arcgis.com/apps/MapSeries/index.html?appid=c6bc9659a00449239eb3bde062d23caa
 Lithuania,Weekly new hospital admissions per 100k,,2020-W08,,TESSy COVID-19,
 Lithuania,Weekly new hospital admissions per 100k,,2020-W09,0.10736587139572801,TESSy COVID-19,
 Lithuania,Weekly new hospital admissions per 100k,,2020-W10,,TESSy COVID-19,
@@ -8194,6 +8321,7 @@ Lithuania,Weekly new hospital admissions per 100k,,2020-W49,25.4457115207875,TES
 Lithuania,Weekly new hospital admissions per 100k,,2020-W50,28.630899038860697,TESSy COVID-19,
 Lithuania,Weekly new hospital admissions per 100k,,2020-W51,25.6962318873775,TESSy COVID-19,
 Lithuania,Weekly new hospital admissions per 100k,,2020-W52,21.938426388527002,TESSy COVID-19,
+Lithuania,Weekly new hospital admissions per 100k,,2020-W53,26.054118125363303,TESSy COVID-19,
 Lithuania,Weekly new ICU admissions per 100k,,2020-W08,,"TESSy COVID-19, national weekly data",
 Lithuania,Weekly new ICU admissions per 100k,,2020-W09,,"TESSy COVID-19, national weekly data",
 Lithuania,Weekly new ICU admissions per 100k,,2020-W10,,"TESSy COVID-19, national weekly data",
@@ -8214,6 +8342,7 @@ Lithuania,Weekly new ICU admissions per 100k,,2020-W49,3.32834201326756,"TESSy C
 Lithuania,Weekly new ICU admissions per 100k,,2020-W50,4.0083258654405,"TESSy COVID-19, national weekly data",
 Lithuania,Weekly new ICU admissions per 100k,,2020-W51,3.9725372416419304,"TESSy COVID-19, national weekly data",
 Lithuania,Weekly new ICU admissions per 100k,,2020-W52,4.43778935102341,"TESSy COVID-19, national weekly data",
+Lithuania,Weekly new ICU admissions per 100k,,2020-W53,4.72409834141202,"TESSy COVID-19, national weekly data",
 Luxembourg,Daily hospital occupancy,2020-03-16,2020-W12,0.0,Country_Website,https://covid19.public.lu/fr/graph.html
 Luxembourg,Daily hospital occupancy,2020-03-17,2020-W12,0.0,Country_Website,https://covid19.public.lu/fr/graph.html
 Luxembourg,Daily hospital occupancy,2020-03-18,2020-W12,0.0,Country_Website,https://covid19.public.lu/fr/graph.html
@@ -8505,6 +8634,9 @@ Luxembourg,Daily hospital occupancy,2020-12-28,2020-W53,157.0,Country_Website,ht
 Luxembourg,Daily hospital occupancy,2020-12-29,2020-W53,147.0,Country_Website,https://covid19.public.lu/fr/graph.html
 Luxembourg,Daily hospital occupancy,2020-12-30,2020-W53,132.0,Country_Website,https://covid19.public.lu/fr/graph.html
 Luxembourg,Daily hospital occupancy,2020-12-31,2020-W53,136.0,Country_Website,https://covid19.public.lu/fr/graph.html
+Luxembourg,Daily hospital occupancy,2021-01-01,2020-W53,125.0,Country_Website,https://covid19.public.lu/fr/graph.html
+Luxembourg,Daily hospital occupancy,2021-01-02,2020-W53,125.0,Country_Website,https://covid19.public.lu/fr/graph.html
+Luxembourg,Daily hospital occupancy,2021-01-03,2020-W53,125.0,Country_Website,https://covid19.public.lu/fr/graph.html
 Luxembourg,Daily ICU occupancy,2020-02-24,2020-W09,0.0,Country_Website,https://covid19.public.lu/fr/graph.html
 Luxembourg,Daily ICU occupancy,2020-02-25,2020-W09,0.0,Country_Website,https://covid19.public.lu/fr/graph.html
 Luxembourg,Daily ICU occupancy,2020-02-26,2020-W09,0.0,Country_Website,https://covid19.public.lu/fr/graph.html
@@ -8817,6 +8949,9 @@ Luxembourg,Daily ICU occupancy,2020-12-28,2020-W53,32.0,Country_Website,https://
 Luxembourg,Daily ICU occupancy,2020-12-29,2020-W53,31.0,Country_Website,https://covid19.public.lu/fr/graph.html
 Luxembourg,Daily ICU occupancy,2020-12-30,2020-W53,31.0,Country_Website,https://covid19.public.lu/fr/graph.html
 Luxembourg,Daily ICU occupancy,2020-12-31,2020-W53,33.0,Country_Website,https://covid19.public.lu/fr/graph.html
+Luxembourg,Daily ICU occupancy,2021-01-01,2020-W53,32.0,Country_Website,https://covid19.public.lu/fr/graph.html
+Luxembourg,Daily ICU occupancy,2021-01-02,2020-W53,30.0,Country_Website,https://covid19.public.lu/fr/graph.html
+Luxembourg,Daily ICU occupancy,2021-01-03,2020-W53,34.0,Country_Website,https://covid19.public.lu/fr/graph.html
 Malta,Weekly new hospital admissions per 100k,,2020-W06,,"TESSy COVID-19, national weekly data",
 Malta,Weekly new hospital admissions per 100k,,2020-W08,,"TESSy COVID-19, national weekly data",
 Malta,Weekly new hospital admissions per 100k,,2020-W09,,"TESSy COVID-19, national weekly data",
@@ -8863,6 +8998,7 @@ Malta,Weekly new hospital admissions per 100k,,2020-W49,18.0322919853554,"TESSy 
 Malta,Weekly new hospital admissions per 100k,,2020-W50,8.509620936909268,"TESSy COVID-19, national weekly data",
 Malta,Weekly new hospital admissions per 100k,,2020-W51,6.888740758450361,"TESSy COVID-19, national weekly data",
 Malta,Weekly new hospital admissions per 100k,,2020-W52,5.26786057999145,"TESSy COVID-19, national weekly data",
+Malta,Weekly new hospital admissions per 100k,,2020-W53,5.87569064691354,"TESSy COVID-19, national weekly data",
 Malta,Weekly new ICU admissions per 100k,,2020-W06,,"TESSy COVID-19, national weekly data",
 Malta,Weekly new ICU admissions per 100k,,2020-W08,,"TESSy COVID-19, national weekly data",
 Malta,Weekly new ICU admissions per 100k,,2020-W09,,"TESSy COVID-19, national weekly data",
@@ -8909,6 +9045,7 @@ Malta,Weekly new ICU admissions per 100k,,2020-W49,,"TESSy COVID-19, national we
 Malta,Weekly new ICU admissions per 100k,,2020-W50,,"TESSy COVID-19, national weekly data",
 Malta,Weekly new ICU admissions per 100k,,2020-W51,,"TESSy COVID-19, national weekly data",
 Malta,Weekly new ICU admissions per 100k,,2020-W52,,"TESSy COVID-19, national weekly data",
+Malta,Weekly new ICU admissions per 100k,,2020-W53,,"TESSy COVID-19, national weekly data",
 Netherlands,Daily hospital occupancy,2020-06-01,2020-W23,542.0,Country_Website,https://lcps.nu/datafeed/
 Netherlands,Daily hospital occupancy,2020-06-02,2020-W23,516.0,Country_Website,https://lcps.nu/datafeed/
 Netherlands,Daily hospital occupancy,2020-06-03,2020-W23,496.0,Country_Website,https://lcps.nu/datafeed/
@@ -9123,101 +9260,104 @@ Netherlands,Daily hospital occupancy,2020-12-28,2020-W53,1922.0,Country_Website,
 Netherlands,Daily hospital occupancy,2020-12-29,2020-W53,2077.0,Country_Website,https://lcps.nu/datafeed/
 Netherlands,Daily hospital occupancy,2020-12-30,2020-W53,2002.0,Country_Website,https://lcps.nu/datafeed/
 Netherlands,Daily hospital occupancy,2020-12-31,2020-W53,2104.0,Country_Website,https://lcps.nu/datafeed/
-Netherlands,Daily ICU occupancy,2020-02-27,2020-W09,10.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-02-28,2020-W09,11.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-02-29,2020-W09,12.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-03-01,2020-W09,14.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-03-02,2020-W10,13.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-03-03,2020-W10,15.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-03-04,2020-W10,18.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-03-05,2020-W10,18.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-03-06,2020-W10,22.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-03-07,2020-W10,24.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-03-08,2020-W10,30.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-03-09,2020-W11,35.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-03-10,2020-W11,43.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-03-11,2020-W11,51.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-03-12,2020-W11,71.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-03-13,2020-W11,82.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-03-14,2020-W11,100.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-03-15,2020-W11,123.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-03-16,2020-W12,154.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-03-17,2020-W12,184.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-03-18,2020-W12,234.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-03-19,2020-W12,292.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-03-20,2020-W12,367.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-03-21,2020-W12,436.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-03-22,2020-W12,486.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-03-23,2020-W13,579.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-03-24,2020-W13,660.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-03-25,2020-W13,758.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-03-26,2020-W13,843.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-03-27,2020-W13,930.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-03-28,2020-W13,994.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-03-29,2020-W13,1040.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-03-30,2020-W14,1129.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-03-31,2020-W14,1194.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-04-01,2020-W14,1211.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-04-02,2020-W14,1254.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-04-03,2020-W14,1281.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-04-04,2020-W14,1285.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-04-05,2020-W14,1310.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-04-06,2020-W15,1318.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-04-07,2020-W15,1320.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-04-08,2020-W15,1287.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-04-09,2020-W15,1282.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-04-10,2020-W15,1289.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-04-11,2020-W15,1254.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-04-12,2020-W15,1236.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-04-13,2020-W16,1219.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-04-14,2020-W16,1196.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-04-15,2020-W16,1171.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-04-16,2020-W16,1138.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-04-17,2020-W16,1108.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-04-18,2020-W16,1062.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-04-19,2020-W16,1033.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-04-20,2020-W17,1014.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-04-21,2020-W17,978.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-04-22,2020-W17,921.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-04-23,2020-W17,879.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-04-24,2020-W17,862.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-04-25,2020-W17,831.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-04-26,2020-W17,807.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-04-27,2020-W18,784.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-04-28,2020-W18,763.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-04-29,2020-W18,735.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-04-30,2020-W18,711.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-05-01,2020-W18,676.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-05-02,2020-W18,638.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-05-03,2020-W18,624.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-05-04,2020-W19,615.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-05-05,2020-W19,573.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-05-06,2020-W19,546.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-05-07,2020-W19,524.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-05-08,2020-W19,493.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-05-09,2020-W19,471.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-05-10,2020-W19,453.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-05-11,2020-W20,447.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-05-12,2020-W20,405.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-05-13,2020-W20,387.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-05-14,2020-W20,361.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-05-15,2020-W20,345.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-05-16,2020-W20,329.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-05-17,2020-W20,322.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-05-18,2020-W21,317.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-05-19,2020-W21,284.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-05-20,2020-W21,274.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-05-21,2020-W21,253.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-05-22,2020-W21,242.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-05-23,2020-W21,226.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-05-24,2020-W21,225.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-05-25,2020-W22,215.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-05-26,2020-W22,192.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-05-27,2020-W22,178.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-05-28,2020-W22,170.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-05-29,2020-W22,160.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-05-30,2020-W22,151.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
-Netherlands,Daily ICU occupancy,2020-05-31,2020-W22,153.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily hospital occupancy,2021-01-01,2020-W53,1957.0,Country_Website,https://lcps.nu/datafeed/
+Netherlands,Daily hospital occupancy,2021-01-02,2020-W53,2005.0,Country_Website,https://lcps.nu/datafeed/
+Netherlands,Daily hospital occupancy,2021-01-03,2020-W53,2006.0,Country_Website,https://lcps.nu/datafeed/
+Netherlands,Daily ICU occupancy,2020-02-27,2020-W09,11.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-02-28,2020-W09,12.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-02-29,2020-W09,13.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-03-01,2020-W09,15.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-03-02,2020-W10,14.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-03-03,2020-W10,16.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-03-04,2020-W10,19.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-03-05,2020-W10,19.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-03-06,2020-W10,23.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-03-07,2020-W10,25.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-03-08,2020-W10,31.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-03-09,2020-W11,36.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-03-10,2020-W11,44.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-03-11,2020-W11,52.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-03-12,2020-W11,72.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-03-13,2020-W11,83.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-03-14,2020-W11,101.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-03-15,2020-W11,124.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-03-16,2020-W12,155.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-03-17,2020-W12,185.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-03-18,2020-W12,235.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-03-19,2020-W12,293.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-03-20,2020-W12,368.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-03-21,2020-W12,437.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-03-22,2020-W12,487.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-03-23,2020-W13,580.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-03-24,2020-W13,661.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-03-25,2020-W13,759.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-03-26,2020-W13,844.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-03-27,2020-W13,931.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-03-28,2020-W13,995.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-03-29,2020-W13,1041.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-03-30,2020-W14,1130.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-03-31,2020-W14,1195.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-04-01,2020-W14,1212.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-04-02,2020-W14,1255.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-04-03,2020-W14,1282.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-04-04,2020-W14,1286.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-04-05,2020-W14,1311.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-04-06,2020-W15,1319.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-04-07,2020-W15,1321.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-04-08,2020-W15,1288.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-04-09,2020-W15,1283.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-04-10,2020-W15,1290.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-04-11,2020-W15,1255.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-04-12,2020-W15,1237.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-04-13,2020-W16,1220.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-04-14,2020-W16,1197.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-04-15,2020-W16,1172.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-04-16,2020-W16,1139.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-04-17,2020-W16,1109.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-04-18,2020-W16,1063.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-04-19,2020-W16,1034.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-04-20,2020-W17,1015.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-04-21,2020-W17,979.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-04-22,2020-W17,922.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-04-23,2020-W17,880.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-04-24,2020-W17,863.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-04-25,2020-W17,832.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-04-26,2020-W17,808.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-04-27,2020-W18,785.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-04-28,2020-W18,764.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-04-29,2020-W18,736.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-04-30,2020-W18,712.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-05-01,2020-W18,677.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-05-02,2020-W18,639.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-05-03,2020-W18,625.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-05-04,2020-W19,616.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-05-05,2020-W19,574.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-05-06,2020-W19,547.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-05-07,2020-W19,525.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-05-08,2020-W19,494.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-05-09,2020-W19,472.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-05-10,2020-W19,454.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-05-11,2020-W20,448.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-05-12,2020-W20,406.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-05-13,2020-W20,388.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-05-14,2020-W20,362.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-05-15,2020-W20,346.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-05-16,2020-W20,330.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-05-17,2020-W20,323.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-05-18,2020-W21,318.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-05-19,2020-W21,285.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-05-20,2020-W21,275.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-05-21,2020-W21,254.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-05-22,2020-W21,243.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-05-23,2020-W21,227.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-05-24,2020-W21,226.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-05-25,2020-W22,216.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-05-26,2020-W22,193.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-05-27,2020-W22,179.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-05-28,2020-W22,171.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-05-29,2020-W22,161.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-05-30,2020-W22,152.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
+Netherlands,Daily ICU occupancy,2020-05-31,2020-W22,154.0,Other Website,https://nlcovid-19-esrinl-content.hub.arcgis.com/pages/kaarten
 Netherlands,Daily ICU occupancy,2020-06-01,2020-W23,157.0,Country_Website,https://lcps.nu/datafeed/
 Netherlands,Daily ICU occupancy,2020-06-02,2020-W23,153.0,Country_Website,https://lcps.nu/datafeed/
 Netherlands,Daily ICU occupancy,2020-06-03,2020-W23,116.0,Country_Website,https://lcps.nu/datafeed/
@@ -9432,6 +9572,9 @@ Netherlands,Daily ICU occupancy,2020-12-28,2020-W53,658.0,Country_Website,https:
 Netherlands,Daily ICU occupancy,2020-12-29,2020-W53,684.0,Country_Website,https://lcps.nu/datafeed/
 Netherlands,Daily ICU occupancy,2020-12-30,2020-W53,712.0,Country_Website,https://lcps.nu/datafeed/
 Netherlands,Daily ICU occupancy,2020-12-31,2020-W53,724.0,Country_Website,https://lcps.nu/datafeed/
+Netherlands,Daily ICU occupancy,2021-01-01,2020-W53,703.0,Country_Website,https://lcps.nu/datafeed/
+Netherlands,Daily ICU occupancy,2021-01-02,2020-W53,698.0,Country_Website,https://lcps.nu/datafeed/
+Netherlands,Daily ICU occupancy,2021-01-03,2020-W53,704.0,Country_Website,https://lcps.nu/datafeed/
 Netherlands,Weekly new hospital admissions per 100k,,2020-W07,0.0405041892036315,,https://data.rivm.nl/covid-19/
 Netherlands,Weekly new hospital admissions per 100k,,2020-W08,0.127298880354271,,https://data.rivm.nl/covid-19/
 Netherlands,Weekly new hospital admissions per 100k,,2020-W09,0.22566619699166102,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
@@ -9472,12 +9615,13 @@ Netherlands,Weekly new hospital admissions per 100k,,2020-W43,10.554234443917698
 Netherlands,Weekly new hospital admissions per 100k,,2020-W44,10.855122706573301,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
 Netherlands,Weekly new hospital admissions per 100k,,2020-W45,9.582133903030538,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
 Netherlands,Weekly new hospital admissions per 100k,,2020-W46,8.592674423913259,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W47,7.53377919187546,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W48,6.41702083240391,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W49,6.660045967625701,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W50,7.69579594868999,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W51,9.298604578605119,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W52,10.641029135068301,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
+Netherlands,Weekly new hospital admissions per 100k,,2020-W47,7.545351817362209,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
+Netherlands,Weekly new hospital admissions per 100k,,2020-W48,6.41123451966053,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
+Netherlands,Weekly new hospital admissions per 100k,,2020-W49,6.67740490585582,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
+Netherlands,Weekly new hospital admissions per 100k,,2020-W50,7.70158226143336,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
+Netherlands,Weekly new hospital admissions per 100k,,2020-W51,9.31596351683525,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
+Netherlands,Weekly new hospital admissions per 100k,,2020-W52,10.669960698785198,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
+Netherlands,Weekly new hospital admissions per 100k,,2020-W53,9.88880847842946,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
 Netherlands,Weekly new ICU admissions per 100k,,2020-W09,0.0173589382301278,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
 Netherlands,Weekly new ICU admissions per 100k,,2020-W10,0.10415362938076698,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
 Netherlands,Weekly new ICU admissions per 100k,,2020-W11,0.601776525311097,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
@@ -9516,12 +9660,13 @@ Netherlands,Weekly new ICU admissions per 100k,,2020-W43,1.9036968925706799,,htt
 Netherlands,Weekly new ICU admissions per 100k,,2020-W44,1.9036968925706799,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
 Netherlands,Weekly new ICU admissions per 100k,,2020-W45,1.60859494265851,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
 Netherlands,Weekly new ICU admissions per 100k,,2020-W46,1.3713561201801001,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new ICU admissions per 100k,,2020-W47,1.1456899231884299,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
+Netherlands,Weekly new ICU admissions per 100k,,2020-W47,1.13990361044506,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
 Netherlands,Weekly new ICU admissions per 100k,,2020-W48,1.05889523203779,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
 Netherlands,Weekly new ICU admissions per 100k,,2020-W49,1.1109720467281798,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
 Netherlands,Weekly new ICU admissions per 100k,,2020-W50,1.2614161780559499,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
 Netherlands,Weekly new ICU admissions per 100k,,2020-W51,1.6548854446055201,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new ICU admissions per 100k,,2020-W52,1.62595388088864,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
+Netherlands,Weekly new ICU admissions per 100k,,2020-W52,1.6201675681452599,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
+Netherlands,Weekly new ICU admissions per 100k,,2020-W53,1.85740639062367,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
 Norway,Daily hospital occupancy,2020-03-08,2020-W10,0.0,Country_API,https://utvikler.helsedirektoratet.no/
 Norway,Daily hospital occupancy,2020-03-09,2020-W11,2.0,Country_API,https://utvikler.helsedirektoratet.no/
 Norway,Daily hospital occupancy,2020-03-10,2020-W11,8.0,Country_API,https://utvikler.helsedirektoratet.no/
@@ -9782,6 +9927,9 @@ Norway,Daily hospital occupancy,2020-12-28,2020-W53,141.0,Country_API,https://ut
 Norway,Daily hospital occupancy,2020-12-29,2020-W53,151.0,Country_API,https://utvikler.helsedirektoratet.no/
 Norway,Daily hospital occupancy,2020-12-30,2020-W53,145.0,Country_API,https://utvikler.helsedirektoratet.no/
 Norway,Daily hospital occupancy,2020-12-31,2020-W53,140.0,Country_API,https://utvikler.helsedirektoratet.no/
+Norway,Daily hospital occupancy,2021-01-01,2020-W53,126.0,Country_API,https://utvikler.helsedirektoratet.no/
+Norway,Daily hospital occupancy,2021-01-02,2020-W53,127.0,Country_API,https://utvikler.helsedirektoratet.no/
+Norway,Daily hospital occupancy,2021-01-03,2020-W53,128.0,Country_API,https://utvikler.helsedirektoratet.no/
 Norway,Weekly new hospital admissions per 100k,,2020-W44,0.8633290116834691,,
 Norway,Weekly new hospital admissions per 100k,,2020-W45,1.50144175944951,,
 Norway,Weekly new hospital admissions per 100k,,2020-W46,1.9894103312706,,
@@ -9791,6 +9939,7 @@ Norway,Weekly new hospital admissions per 100k,,2020-W49,1.9143382432981297,,
 Norway,Weekly new hospital admissions per 100k,,2020-W50,1.83926615532565,,
 Norway,Weekly new hospital admissions per 100k,,2020-W51,1.70789000137382,,
 Norway,Weekly new hospital admissions per 100k,,2020-W52,1.50144175944951,,
+Norway,Weekly new hospital admissions per 100k,,2020-W53,1.76419406735318,,
 Norway,Weekly new ICU admissions per 100k,,2020-W44,0.11260813195871301,,
 Norway,Weekly new ICU admissions per 100k,,2020-W45,0.0938401099655945,,
 Norway,Weekly new ICU admissions per 100k,,2020-W46,0.319056373883021,,
@@ -9800,6 +9949,7 @@ Norway,Weekly new ICU admissions per 100k,,2020-W49,0.300288351889902,,
 Norway,Weekly new ICU admissions per 100k,,2020-W50,0.375360439862378,,
 Norway,Weekly new ICU admissions per 100k,,2020-W51,0.300288351889902,,
 Norway,Weekly new ICU admissions per 100k,,2020-W52,0.319056373883021,,
+Norway,Weekly new ICU admissions per 100k,,2020-W53,0.187680219931189,,
 Poland,Daily hospital occupancy,2020-04-08,2020-W15,2425.0,Surveillance,https://twitter.com/MZ_GOV_PL/status/1247796557581176832
 Poland,Daily hospital occupancy,2020-04-13,2020-W16,2510.0,Surveillance,https://en.wikipedia.org/wiki/2020_coronavirus_pandemic_in_Poland
 Poland,Daily hospital occupancy,2020-04-15,2020-W16,2499.0,Surveillance,https://twitter.com/MZ_GOV_PL/status/1250318007248629762
@@ -10060,6 +10210,9 @@ Poland,Daily hospital occupancy,2020-12-28,2020-W53,17078.0,Country_Website,http
 Poland,Daily hospital occupancy,2020-12-29,2020-W53,17299.0,Country_Website,https://t.co/uJeo4jjKt8
 Poland,Daily hospital occupancy,2020-12-30,2020-W53,17228.0,Country_Website,https://t.co/9SgONOIIpB
 Poland,Daily hospital occupancy,2020-12-31,2020-W53,16970.0,Country_Website,https://t.co/hxTDRY15wZ
+Poland,Daily hospital occupancy,2021-01-01,2020-W53,16757.0,Country_Website,https://t.co/IbaQc6pqFE
+Poland,Daily hospital occupancy,2021-01-02,2020-W53,16601.0,Country_Website,https://t.co/1oaXuw1esR
+Poland,Daily hospital occupancy,2021-01-03,2020-W53,16786.0,Country_Website,https://t.co/fAsCtW6MM9
 Portugal,Daily hospital occupancy,2020-03-03,2020-W10,0.0,Country_Website,https://covid19.min-saude.pt/ponto-de-situacao-atual-em-portugal/
 Portugal,Daily hospital occupancy,2020-03-04,2020-W10,0.0,Country_Website,https://covid19.min-saude.pt/ponto-de-situacao-atual-em-portugal/
 Portugal,Daily hospital occupancy,2020-03-05,2020-W10,0.0,Country_Website,https://covid19.min-saude.pt/ponto-de-situacao-atual-em-portugal/
@@ -10364,6 +10517,9 @@ Portugal,Daily hospital occupancy,2020-12-28,2020-W53,2967.0,Country_Website,htt
 Portugal,Daily hospital occupancy,2020-12-29,2020-W53,2930.0,Country_Website,https://covid19.min-saude.pt/ponto-de-situacao-atual-em-portugal/
 Portugal,Daily hospital occupancy,2020-12-30,2020-W53,2896.0,Country_Website,https://covid19.min-saude.pt/ponto-de-situacao-atual-em-portugal/
 Portugal,Daily hospital occupancy,2020-12-31,2020-W53,2840.0,Country_Website,https://covid19.min-saude.pt/ponto-de-situacao-atual-em-portugal/
+Portugal,Daily hospital occupancy,2021-01-01,2020-W53,2806.0,Country_Website,https://covid19.min-saude.pt/ponto-de-situacao-atual-em-portugal/
+Portugal,Daily hospital occupancy,2021-01-02,2020-W53,2858.0,Country_Website,https://covid19.min-saude.pt/ponto-de-situacao-atual-em-portugal/
+Portugal,Daily hospital occupancy,2021-01-03,2020-W53,3044.0,Country_Website,https://covid19.min-saude.pt/ponto-de-situacao-atual-em-portugal/
 Portugal,Daily ICU occupancy,2020-03-03,2020-W10,0.0,Country_Website,https://covid19.min-saude.pt/ponto-de-situacao-atual-em-portugal/
 Portugal,Daily ICU occupancy,2020-03-04,2020-W10,0.0,Country_Website,https://covid19.min-saude.pt/ponto-de-situacao-atual-em-portugal/
 Portugal,Daily ICU occupancy,2020-03-05,2020-W10,0.0,Country_Website,https://covid19.min-saude.pt/ponto-de-situacao-atual-em-portugal/
@@ -10668,6 +10824,9 @@ Portugal,Daily ICU occupancy,2020-12-28,2020-W53,503.0,Country_Website,https://c
 Portugal,Daily ICU occupancy,2020-12-29,2020-W53,486.0,Country_Website,https://covid19.min-saude.pt/ponto-de-situacao-atual-em-portugal/
 Portugal,Daily ICU occupancy,2020-12-30,2020-W53,487.0,Country_Website,https://covid19.min-saude.pt/ponto-de-situacao-atual-em-portugal/
 Portugal,Daily ICU occupancy,2020-12-31,2020-W53,482.0,Country_Website,https://covid19.min-saude.pt/ponto-de-situacao-atual-em-portugal/
+Portugal,Daily ICU occupancy,2021-01-01,2020-W53,483.0,Country_Website,https://covid19.min-saude.pt/ponto-de-situacao-atual-em-portugal/
+Portugal,Daily ICU occupancy,2021-01-02,2020-W53,492.0,Country_Website,https://covid19.min-saude.pt/ponto-de-situacao-atual-em-portugal/
+Portugal,Daily ICU occupancy,2021-01-03,2020-W53,500.0,Country_Website,https://covid19.min-saude.pt/ponto-de-situacao-atual-em-portugal/
 Portugal,Weekly new hospital admissions per 100k,,2020-W05,0.0973082873478694,"TESSy COVID-19, national daily data",
 Portugal,Weekly new hospital admissions per 100k,,2020-W06,0.0875774586130825,"TESSy COVID-19, national daily data",
 Portugal,Weekly new hospital admissions per 100k,,2020-W07,0.155693259756591,"TESSy COVID-19, national daily data",
@@ -10716,6 +10875,7 @@ Portugal,Weekly new hospital admissions per 100k,,2020-W49,4.65133613522816,"TES
 Portugal,Weekly new hospital admissions per 100k,,2020-W50,4.1647946984888105,"TESSy COVID-19, national daily data",
 Portugal,Weekly new hospital admissions per 100k,,2020-W51,3.53229083072766,"TESSy COVID-19, national daily data",
 Portugal,Weekly new hospital admissions per 100k,,2020-W52,3.1138651951318197,"TESSy COVID-19, national daily data",
+Portugal,Weekly new hospital admissions per 100k,,2020-W53,2.62732375839248,"TESSy COVID-19, national daily data",
 Romania,Daily ICU occupancy,2020-03-19,2020-W12,6.0,Country_Website,http://www.ms.ro/2020/03/19/buletin-informativ-19-03-2020/
 Romania,Daily ICU occupancy,2020-03-20,2020-W12,11.0,Country_Website,http://www.ms.ro/2020/03/20/buletin-informativ-20-03-2020/
 Romania,Daily ICU occupancy,2020-03-21,2020-W12,14.0,Country_Website,http://www.ms.ro/2020/03/21/buletin-informativ-21-03-2020/
@@ -10991,6 +11151,9 @@ Romania,Daily ICU occupancy,2020-12-28,2020-W53,1197.0,Country_Website,http://ww
 Romania,Daily ICU occupancy,2020-12-29,2020-W53,1162.0,Country_Website,http://www.ms.ro/2020/12/29/buletin-informativ-29-12-2020/
 Romania,Daily ICU occupancy,2020-12-30,2020-W53,1149.0,Country_Website,http://www.ms.ro/2020/12/30/buletin-informativ-30-12-2020/
 Romania,Daily ICU occupancy,2020-12-31,2020-W53,1130.0,Country_Website,http://www.ms.ro/2020/12/31/buletin-informativ-31-12-2020/
+Romania,Daily ICU occupancy,2021-01-01,2020-W53,1111.0,Country_Website,http://www.ms.ro/2021/01/01/buletin-informativ-01-01-2021/
+Romania,Daily ICU occupancy,2021-01-02,2020-W53,1117.0,Country_Website,http://www.ms.ro/2021/01/02/buletin-informativ-02-01-2021/
+Romania,Daily ICU occupancy,2021-01-03,2020-W53,1119.0,Country_Website,http://www.ms.ro/2021/01/03/buletin-informativ-03-01-2021/
 Romania,Weekly new hospital admissions per 100k,,2020-W09,0.015452401504075002,TESSy COVID-19,
 Romania,Weekly new hospital admissions per 100k,,2020-W10,0.0618096060162998,TESSy COVID-19,
 Romania,Weekly new hospital admissions per 100k,,2020-W11,0.73656447169424,TESSy COVID-19,
@@ -11035,6 +11198,7 @@ Romania,Weekly new hospital admissions per 100k,,2020-W49,189.03437839985,TESSy 
 Romania,Weekly new hospital admissions per 100k,,2020-W50,43.6066770444995,TESSy COVID-19,
 Romania,Weekly new hospital admissions per 100k,,2020-W51,37.1321208142921,TESSy COVID-19,
 Romania,Weekly new hospital admissions per 100k,,2020-W52,34.4021965485722,TESSy COVID-19,
+Romania,Weekly new hospital admissions per 100k,,2020-W53,27.6031398867792,TESSy COVID-19,
 Slovakia,Daily hospital occupancy,2020-04-30,2020-W18,51.0,Country_Website,https://app.powerbi.com/view?r=eyJrIjoiZmVhNjM2ZmQtMDQ2NS00NDBjLWJkMjItYjNkZTZiNzY4NzQyIiwidCI6IjMxMGJhNTk1LTAxM2MtNDAyZC05ZWYyLWI1N2Q1ZjFkY2Q2MyIsImMiOjl9
 Slovakia,Daily hospital occupancy,2020-05-01,2020-W18,43.0,Country_Website,https://app.powerbi.com/view?r=eyJrIjoiZmVhNjM2ZmQtMDQ2NS00NDBjLWJkMjItYjNkZTZiNzY4NzQyIiwidCI6IjMxMGJhNTk1LTAxM2MtNDAyZC05ZWYyLWI1N2Q1ZjFkY2Q2MyIsImMiOjl9
 Slovakia,Daily hospital occupancy,2020-05-02,2020-W18,41.0,Country_Website,https://app.powerbi.com/view?r=eyJrIjoiZmVhNjM2ZmQtMDQ2NS00NDBjLWJkMjItYjNkZTZiNzY4NzQyIiwidCI6IjMxMGJhNTk1LTAxM2MtNDAyZC05ZWYyLWI1N2Q1ZjFkY2Q2MyIsImMiOjl9
@@ -11281,6 +11445,9 @@ Slovakia,Daily hospital occupancy,2020-12-28,2020-W53,2546.0,Country_Website,htt
 Slovakia,Daily hospital occupancy,2020-12-29,2020-W53,2606.0,Country_Website,https://app.powerbi.com/view?r=eyJrIjoiZmVhNjM2ZmQtMDQ2NS00NDBjLWJkMjItYjNkZTZiNzY4NzQyIiwidCI6IjMxMGJhNTk1LTAxM2MtNDAyZC05ZWYyLWI1N2Q1ZjFkY2Q2MyIsImMiOjl9
 Slovakia,Daily hospital occupancy,2020-12-30,2020-W53,2659.0,Country_Website,https://app.powerbi.com/view?r=eyJrIjoiZmVhNjM2ZmQtMDQ2NS00NDBjLWJkMjItYjNkZTZiNzY4NzQyIiwidCI6IjMxMGJhNTk1LTAxM2MtNDAyZC05ZWYyLWI1N2Q1ZjFkY2Q2MyIsImMiOjl9
 Slovakia,Daily hospital occupancy,2020-12-31,2020-W53,2650.0,Country_Website,https://app.powerbi.com/view?r=eyJrIjoiZmVhNjM2ZmQtMDQ2NS00NDBjLWJkMjItYjNkZTZiNzY4NzQyIiwidCI6IjMxMGJhNTk1LTAxM2MtNDAyZC05ZWYyLWI1N2Q1ZjFkY2Q2MyIsImMiOjl9
+Slovakia,Daily hospital occupancy,2021-01-01,2020-W53,2607.0,Country_Website,https://app.powerbi.com/view?r=eyJrIjoiZmVhNjM2ZmQtMDQ2NS00NDBjLWJkMjItYjNkZTZiNzY4NzQyIiwidCI6IjMxMGJhNTk1LTAxM2MtNDAyZC05ZWYyLWI1N2Q1ZjFkY2Q2MyIsImMiOjl9
+Slovakia,Daily hospital occupancy,2021-01-02,2020-W53,2668.0,Country_Website,https://app.powerbi.com/view?r=eyJrIjoiZmVhNjM2ZmQtMDQ2NS00NDBjLWJkMjItYjNkZTZiNzY4NzQyIiwidCI6IjMxMGJhNTk1LTAxM2MtNDAyZC05ZWYyLWI1N2Q1ZjFkY2Q2MyIsImMiOjl9
+Slovakia,Daily hospital occupancy,2021-01-03,2020-W53,2771.0,Country_Website,https://app.powerbi.com/view?r=eyJrIjoiZmVhNjM2ZmQtMDQ2NS00NDBjLWJkMjItYjNkZTZiNzY4NzQyIiwidCI6IjMxMGJhNTk1LTAxM2MtNDAyZC05ZWYyLWI1N2Q1ZjFkY2Q2MyIsImMiOjl9
 Slovenia,Daily hospital occupancy,2020-03-10,2020-W11,18.0,Country_Github,https://github.com/sledilnik/data
 Slovenia,Daily hospital occupancy,2020-03-11,2020-W11,18.0,Country_Github,https://github.com/sledilnik/data
 Slovenia,Daily hospital occupancy,2020-03-12,2020-W11,17.0,Country_Github,https://github.com/sledilnik/data
@@ -11578,6 +11745,9 @@ Slovenia,Daily hospital occupancy,2020-12-28,2020-W53,1221.0,Country_Github,http
 Slovenia,Daily hospital occupancy,2020-12-29,2020-W53,1170.0,Country_Github,https://github.com/sledilnik/data
 Slovenia,Daily hospital occupancy,2020-12-30,2020-W53,1172.0,Country_Github,https://github.com/sledilnik/data
 Slovenia,Daily hospital occupancy,2020-12-31,2020-W53,1174.0,Country_Github,https://github.com/sledilnik/data
+Slovenia,Daily hospital occupancy,2021-01-01,2020-W53,1110.0,Country_Github,https://github.com/sledilnik/data
+Slovenia,Daily hospital occupancy,2021-01-02,2020-W53,1111.0,Country_Github,https://github.com/sledilnik/data
+Slovenia,Daily hospital occupancy,2021-01-03,2020-W53,1173.0,Country_Github,https://github.com/sledilnik/data
 Slovenia,Daily ICU occupancy,2020-03-10,2020-W11,1.0,Country_Github,https://github.com/sledilnik/data
 Slovenia,Daily ICU occupancy,2020-03-11,2020-W11,1.0,Country_Github,https://github.com/sledilnik/data
 Slovenia,Daily ICU occupancy,2020-03-12,2020-W11,2.0,Country_Github,https://github.com/sledilnik/data
@@ -11875,6 +12045,9 @@ Slovenia,Daily ICU occupancy,2020-12-28,2020-W53,205.0,Country_Github,https://gi
 Slovenia,Daily ICU occupancy,2020-12-29,2020-W53,204.0,Country_Github,https://github.com/sledilnik/data
 Slovenia,Daily ICU occupancy,2020-12-30,2020-W53,209.0,Country_Github,https://github.com/sledilnik/data
 Slovenia,Daily ICU occupancy,2020-12-31,2020-W53,195.0,Country_Github,https://github.com/sledilnik/data
+Slovenia,Daily ICU occupancy,2021-01-01,2020-W53,187.0,Country_Github,https://github.com/sledilnik/data
+Slovenia,Daily ICU occupancy,2021-01-02,2020-W53,186.0,Country_Github,https://github.com/sledilnik/data
+Slovenia,Daily ICU occupancy,2021-01-03,2020-W53,190.0,Country_Github,https://github.com/sledilnik/data
 Slovenia,Weekly new hospital admissions per 100k,,2020-W11,1.2975105098351298,,https://github.com/sledilnik/data
 Slovenia,Weekly new hospital admissions per 100k,,2020-W12,1.9702937371570501,,https://github.com/sledilnik/data
 Slovenia,Weekly new hospital admissions per 100k,,2020-W13,3.70030775027056,,https://github.com/sledilnik/data
@@ -11917,6 +12090,7 @@ Slovenia,Weekly new hospital admissions per 100k,,2020-W49,39.501986632758396,,h
 Slovenia,Weekly new hospital admissions per 100k,,2020-W50,41.0397768666371,,https://github.com/sledilnik/data
 Slovenia,Weekly new hospital admissions per 100k,,2020-W51,34.9847278207398,,https://github.com/sledilnik/data
 Slovenia,Weekly new hospital admissions per 100k,,2020-W52,33.110545973200196,,https://github.com/sledilnik/data
+Slovenia,Weekly new hospital admissions per 100k,,2020-W53,35.945846716914,,https://github.com/sledilnik/data
 Slovenia,Weekly new ICU admissions per 100k,,2020-W11,0.19222377923483397,,https://github.com/sledilnik/data
 Slovenia,Weekly new ICU admissions per 100k,,2020-W12,0.38444755846966794,,https://github.com/sledilnik/data
 Slovenia,Weekly new ICU admissions per 100k,,2020-W13,0.8650070065567529,,https://github.com/sledilnik/data
@@ -11959,6 +12133,7 @@ Slovenia,Weekly new ICU admissions per 100k,,2020-W49,6.1031049907059804,,https:
 Slovenia,Weekly new ICU admissions per 100k,,2020-W50,6.727832273219191,,https://github.com/sledilnik/data
 Slovenia,Weekly new ICU admissions per 100k,,2020-W51,5.5744895978101905,,https://github.com/sledilnik/data
 Slovenia,Weekly new ICU admissions per 100k,,2020-W52,5.478377708192769,,https://github.com/sledilnik/data
+Slovenia,Weekly new ICU admissions per 100k,,2020-W53,5.430321763384059,,https://github.com/sledilnik/data
 Spain,Daily hospital occupancy,2020-08-20,2020-W34,4636.0,Surveillance,HOSP & ICU DATA Source: mscbs.gob.es
 Spain,Daily hospital occupancy,2020-08-21,2020-W34,4703.0,Surveillance,HOSP & ICU DATA Source: mscbs.gob.es
 Spain,Daily hospital occupancy,2020-08-24,2020-W35,5484.0,Surveillance,HOSP & ICU DATA Source: mscbs.gob.es
@@ -12049,6 +12224,9 @@ Spain,Daily hospital occupancy,2020-12-22,2020-W52,11500.0,Surveillance,HOSP & I
 Spain,Daily hospital occupancy,2020-12-23,2020-W52,11328.0,Surveillance,HOSP & ICU DATA Source: mscbs.gob.es
 Spain,Daily hospital occupancy,2020-12-24,2020-W52,10744.0,Surveillance,HOSP & ICU DATA Source: mscbs.gob.es
 Spain,Daily hospital occupancy,2020-12-28,2020-W53,12172.0,Surveillance,HOSP & ICU DATA Source: mscbs.gob.es
+Spain,Daily hospital occupancy,2020-12-29,2020-W53,12032.0,Surveillance,HOSP & ICU DATA Source: mscbs.gob.es
+Spain,Daily hospital occupancy,2020-12-30,2020-W53,11905.0,Surveillance,HOSP & ICU DATA Source: mscbs.gob.es
+Spain,Daily hospital occupancy,2020-12-31,2020-W53,11535.0,Surveillance,HOSP & ICU DATA Source: mscbs.gob.es
 Spain,Daily ICU occupancy,2020-08-20,2020-W34,522.0,Surveillance,HOSP & ICU DATA Source: mscbs.gob.es
 Spain,Daily ICU occupancy,2020-08-21,2020-W34,541.0,Surveillance,HOSP & ICU DATA Source: mscbs.gob.es
 Spain,Daily ICU occupancy,2020-08-24,2020-W35,658.0,Surveillance,HOSP & ICU DATA Source: mscbs.gob.es
@@ -12139,6 +12317,9 @@ Spain,Daily ICU occupancy,2020-12-22,2020-W52,1906.0,Surveillance,HOSP & ICU DAT
 Spain,Daily ICU occupancy,2020-12-23,2020-W52,1932.0,Surveillance,HOSP & ICU DATA Source: mscbs.gob.es
 Spain,Daily ICU occupancy,2020-12-24,2020-W52,1907.0,Surveillance,HOSP & ICU DATA Source: mscbs.gob.es
 Spain,Daily ICU occupancy,2020-12-28,2020-W53,2022.0,Surveillance,HOSP & ICU DATA Source: mscbs.gob.es
+Spain,Daily ICU occupancy,2020-12-29,2020-W53,2005.0,Surveillance,HOSP & ICU DATA Source: mscbs.gob.es
+Spain,Daily ICU occupancy,2020-12-30,2020-W53,2035.0,Surveillance,HOSP & ICU DATA Source: mscbs.gob.es
+Spain,Daily ICU occupancy,2020-12-31,2020-W53,2018.0,Surveillance,HOSP & ICU DATA Source: mscbs.gob.es
 Spain,Weekly new hospital admissions per 100k,,2020-W05,0.0447407656125032,"TESSy COVID-19, national weekly data",
 Spain,Weekly new hospital admissions per 100k,,2020-W06,0.08735101857679202,"TESSy COVID-19, national weekly data",
 Spain,Weekly new hospital admissions per 100k,,2020-W07,0.22796485335894498,"TESSy COVID-19, national weekly data",
@@ -12187,6 +12368,7 @@ Spain,Weekly new hospital admissions per 100k,,2020-W49,7.23948197863266,"TESSy 
 Spain,Weekly new hospital admissions per 100k,,2020-W50,7.43122811697196,"TESSy COVID-19, national weekly data",
 Spain,Weekly new hospital admissions per 100k,,2020-W51,6.81337944898978,"TESSy COVID-19, national weekly data",
 Spain,Weekly new hospital admissions per 100k,,2020-W52,5.26449675373788,"TESSy COVID-19, national weekly data",
+Spain,Weekly new hospital admissions per 100k,,2020-W53,2.70362055058412,"TESSy COVID-19, national weekly data",
 Spain,Weekly new ICU admissions per 100k,,2020-W05,0.00639153794464332,"TESSy COVID-19, national weekly data",
 Spain,Weekly new ICU admissions per 100k,,2020-W06,0.0149135885375011,"TESSy COVID-19, national weekly data",
 Spain,Weekly new ICU admissions per 100k,,2020-W07,0.0255661517785733,"TESSy COVID-19, national weekly data",
@@ -12235,6 +12417,7 @@ Spain,Weekly new ICU admissions per 100k,,2020-W49,0.558194313832183,"TESSy COVI
 Spain,Weekly new ICU admissions per 100k,,2020-W50,0.541150212646467,"TESSy COVID-19, national weekly data",
 Spain,Weekly new ICU admissions per 100k,,2020-W51,0.556063801183969,"TESSy COVID-19, national weekly data",
 Spain,Weekly new ICU admissions per 100k,,2020-W52,0.37283971343752703,"TESSy COVID-19, national weekly data",
+Spain,Weekly new ICU admissions per 100k,,2020-W53,0.10226460711429301,"TESSy COVID-19, national weekly data",
 Sweden,Daily ICU occupancy,2020-03-30,2020-W14,267.0,Country_API,https://portal.icuregswe.org/siri/report/corona.vtfstart
 Sweden,Daily ICU occupancy,2020-03-31,2020-W14,298.0,Country_API,https://portal.icuregswe.org/siri/report/corona.vtfstart
 Sweden,Daily ICU occupancy,2020-04-01,2020-W14,314.0,Country_API,https://portal.icuregswe.org/siri/report/corona.vtfstart
@@ -12512,6 +12695,9 @@ Sweden,Daily ICU occupancy,2020-12-28,2020-W53,337.0,Country_API,https://portal.
 Sweden,Daily ICU occupancy,2020-12-29,2020-W53,340.0,Country_API,https://portal.icuregswe.org/siri/report/corona.vtfstart
 Sweden,Daily ICU occupancy,2020-12-30,2020-W53,339.0,Country_API,https://portal.icuregswe.org/siri/report/corona.vtfstart
 Sweden,Daily ICU occupancy,2020-12-31,2020-W53,336.0,Country_API,https://portal.icuregswe.org/siri/report/corona.vtfstart
+Sweden,Daily ICU occupancy,2021-01-01,2020-W53,346.0,Country_API,https://portal.icuregswe.org/siri/report/corona.vtfstart
+Sweden,Daily ICU occupancy,2021-01-02,2020-W53,354.0,Country_API,https://portal.icuregswe.org/siri/report/corona.vtfstart
+Sweden,Daily ICU occupancy,2021-01-03,2020-W53,359.0,Country_API,https://portal.icuregswe.org/siri/report/corona.vtfstart
 Sweden,Weekly new ICU admissions per 100k,,2020-W06,0.0,,https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/bekraftade-fall-i-sverige
 Sweden,Weekly new ICU admissions per 100k,,2020-W07,0.0,,https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/bekraftade-fall-i-sverige
 Sweden,Weekly new ICU admissions per 100k,,2020-W08,0.0,,https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/bekraftade-fall-i-sverige
@@ -12558,4 +12744,5 @@ Sweden,Weekly new ICU admissions per 100k,,2020-W48,1.65197403566016,,https://ww
 Sweden,Weekly new ICU admissions per 100k,,2020-W49,1.63242404707246,,https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/bekraftade-fall-i-sverige
 Sweden,Weekly new ICU admissions per 100k,,2020-W50,1.61287405848477,,https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/bekraftade-fall-i-sverige
 Sweden,Weekly new ICU admissions per 100k,,2020-W51,1.81814893865556,,https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/bekraftade-fall-i-sverige
-Sweden,Weekly new ICU admissions per 100k,,2020-W52,1.8572489158309498,,https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/bekraftade-fall-i-sverige
+Sweden,Weekly new ICU admissions per 100k,,2020-W52,1.9158988815940299,,https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/bekraftade-fall-i-sverige
+Sweden,Weekly new ICU admissions per 100k,,2020-W53,2.03319881312019,,https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/bekraftade-fall-i-sverige
