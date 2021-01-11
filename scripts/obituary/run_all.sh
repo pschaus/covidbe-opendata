@@ -5,3 +5,4 @@ do
   echo $f
   python "$f" &
 done
+wait

@@ -16,7 +16,7 @@ FNAME = "../../static/csv/necrosudpresse.csv"
 data = {d["id"]: (d["age"], d["location"], d["date"]) for d in pd.read_csv(FNAME).to_dict('records')}
 last_date = date.today()
 page = 0
-while last_date >= date(year=2020, month=7, day=1):  # first pass must be done with date(year=2019, month=1, day=1)
+while last_date >= date(year=2021, month=1, day=1):  # first pass must be done with date(year=2019, month=1, day=1)
     print(f"PAGE sp {page} {last_date}")
     try:
         r = requests.get(get_link(page), allow_redirects=False)
