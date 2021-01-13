@@ -24,7 +24,7 @@ def display_covid_death():
                                     config=dict(locale=str(get_locale())))),
         ]),
         dbc.Row([
-            dbc.Col(display_graphic(id='region_death_covid_per_habita t',
+            dbc.Col(display_graphic(id='region_death_covid_per_habitant',
                                     figure=region_covid_death_per_habitant(),
                                     config=dict(locale=str(get_locale())))),
         ]),

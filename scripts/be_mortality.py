@@ -51,32 +51,31 @@ df = df[df['DT_DATE'] >= '2015-01-01']
 df.to_csv("../static/csv/mortality_statbel.csv",index=False)
 
 
-
-def weekly_mortality_nis3():
-
+def yearly_mortality_nis3():
     dateparse = lambda x: datetime.strptime(x, '%Y-%m-%d')
     df = pd.read_csv("../static/csv/mortality_statbel.csv", parse_dates=['DT_DATE'], date_parser=dateparse)
     df.dropna(thresh=1, inplace=True)
-    df = df[df['DT_DATE'] >= '2019-12-30']
     df['NIS3'] = df.apply(lambda x: int(str(x['ï»¿CD_ARR'])[:2]), axis=1).astype(int)
-    #df['NIS3'] = df.apply(lambda x: int(str(x['CD_ARR'])[:2]), axis=1).astype(int)
+    # df['NIS3'] = df.apply(lambda x: int(str(x['CD_ARR'])[:2]), axis=1).astype(int)
     df['WEEK'] = df.apply(lambda x: x['DT_DATE'].isocalendar()[1], axis=1)
-    df = df.groupby(['WEEK', 'NIS3'])["MS_NUM_DEATH"].sum().reset_index()
+    df = df.groupby(['NR_YEAR', 'NIS3'])["MS_NUM_DEATH"].sum().reset_index()
     df.rename(columns={"MS_NUM_DEATH": "TOT", "NR_YEAR": "YEAR"}, inplace=True)
-    df = df[df['WEEK'] >= 9]
 
     geojson = geopandas.read_file('../static/json/admin-units/be-geojson.geojson')
     df_names = pd.DataFrame(geojson.drop(columns='geometry'))
     df = pd.merge(df, df_names, left_on='NIS3', right_on='NIS3', how='left')
     df_pop = pd.read_csv("../static/csv/ins_pop.csv")
     df_pop = df_pop.loc[(df_pop.NIS5 >= 10000) & (df_pop.NIS5 % 1000 == 0) & (df_pop.NIS5 % 10000 != 0)]
-    df_pop['NIS3'] = df_pop.NIS5.apply(lambda x: x//1000)
+    df_pop['NIS3'] = df_pop.NIS5.apply(lambda x: x // 1000)
 
     df3 = pd.merge(df, df_pop, left_on='NIS3', right_on='NIS3', how='left')
     df3['DEATH_PER_1000HABITANT'] = df3['TOT'] / df3['POP'] * 1000
     df3 = df3.round({'DEATH_PER_1000HABITANT': 2})
-    df3 = df3.sort_values(by=['WEEK'])
-    df3.to_csv("../static/csv/weekly_mortality_statbel_ins3.csv",index=False)
+    df3 = df3.sort_values(by=['YEAR'])
+    df3.to_csv("../static/csv/yearly_mortality_statbel_ins3.csv", index=False)
+
+
+yearly_mortality_nis3()
 
 
 def weekly_mortality_all():
@@ -106,5 +105,4 @@ def weekly_mortality_all():
 
 
 
-weekly_mortality_nis3()
 weekly_mortality_all()

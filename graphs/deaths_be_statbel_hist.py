@@ -116,7 +116,7 @@ def daily_death_all_deviation_sin():
                y=relative,
                marker_color=col))
     fig.update_layout(barmode='stack')
-
+    fig.update_xaxes(range=['2020-1-1', max(x)])
     fig.update_layout(template="plotly_white" ,title="Relative Deviation to the sinusoidal fit in %")
 
     return fig
@@ -156,7 +156,8 @@ def death_plus_hist_cum():
                           go.Scatter(y=y(2017), name=gettext('2017')),
                           go.Scatter(y=y(2018), name=gettext('2018')),
                           go.Scatter(y=y(2019), name=gettext('2019')),
-                          go.Scatter(y=y(2020), name=gettext('2020')), ])
+                          go.Scatter(y=y(2020), name=gettext('2020')),
+                          go.Scatter(y=y(2021), name=gettext('2020'))])
 
     fig.update_layout(xaxis_title='#Days since 1st of January',
                       yaxis_title='cumulated #deaths all population')
