@@ -12,6 +12,7 @@ from graphs.hopitals import bar_hospitalization, \
     bar_hospitalization_ICU, \
     bar_hospitalization_tot, \
     bar_hospitalization_in_out,\
+    bar_hospitalization_in,\
     exp_fit_hospi,hospi_waves, gees_barometer
 from pages import display_graphic
 from pages.sources import display_source_providers, source_sciensano
@@ -32,6 +33,11 @@ def display_hospitals():
                                     config=dict(locale=str(get_locale())))),
         ]),
         html.H2(gettext("Daily IN-OUT Hospitalizations")),
+        dbc.Row([
+            dbc.Col(display_graphic(id='hospitalization-be-in',
+                                    figure=bar_hospitalization_in(),
+                                    config=dict(locale=str(get_locale())))),
+        ]),
         dbc.Row([
             dbc.Col(display_graphic(id='hospitalization-be-in-out',
                                     figure=bar_hospitalization_in_out(),

@@ -271,47 +271,106 @@ def bar_hospitalization_in_out():
     """
     bar plot hospitalization
     """
-    df = df_hospi.groupby(['DATE']).agg({'TOTAL_IN': 'sum', 'NEW_OUT': 'sum', 'NEW_IN': 'sum','TOTAL_IN_ICU': 'sum'})
+    df = df_hospi.groupby(['DATE']).agg({'TOTAL_IN': 'sum', 'NEW_OUT': 'sum', 'NEW_IN': 'sum', 'TOTAL_IN_ICU': 'sum'})
 
-    newin_bar = go.Bar(x=df.index, y=df.NEW_IN, name=gettext('#New Hospitalized'),marker_color="red",legendgroup = "newin", showlegend = True)
-    newout_bar = go.Bar(x=df.index, y=df.NEW_OUT, name=gettext('#New Discharged'),marker_color="blue",legendgroup = "newout", showlegend = True)
+    newin_smooth = go.Scatter(x=df.index, y=df.NEW_IN.rolling(7).mean(), name=("New Hospitalized avg 7 days"),
+                              marker_color="red", legendgroup="newin", showlegend=True)
+    newout_smooth = go.Scatter(x=df.index, y=df.NEW_OUT.rolling(7).mean(), name=("New Discharged avg 7 days"),
+                               marker_color="blue", legendgroup="newout", showlegend=True)
 
-
-
-    newin_smooth = go.Scatter(x=df.index,y=moving_average(df.NEW_IN.values, 7), name=("New Hospitalized avg 7 days"),marker_color="red",legendgroup = "newin", showlegend = False)
-    newout_smooth = go.Scatter(x=df.index,y=moving_average(df.NEW_OUT.values, 7), name=("New Discharged avg 7 days"),marker_color="blue",legendgroup = "newout", showlegend = False)
-
-
-    fig_hospi = go.Figure(data=[newin_bar,newin_smooth, newout_bar,newout_smooth], layout=go.Layout(barmode='group'))
+    fig_hospi = go.Figure(data=[newin_smooth, newout_smooth], layout=go.Layout(barmode='group'))
     fig_hospi.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0),
-                            title=gettext("Daily IN-Out Hospitalizations"))
+                            title=gettext("Daily IN/Out Hospitalizations"))
 
     fig_hospi.update_layout(xaxis_title=gettext('Day'),
                             yaxis_title=gettext('Number of / Day'))
 
     fig_hospi.update_layout(
-    hovermode='x unified',
-    updatemenus=[
-        dict(
-            type = "buttons",
-            direction = "left",
-            buttons=list([
-                dict(
-                    args=[{"yaxis.type": "linear"}],
-                    label="LINEAR",
-                    method="relayout"
-                ),
-                dict(
-                    args=[{"yaxis.type": "log"}],
-                    label="LOG",
-                    method="relayout"
-                )
-            ]),
-        ),
-    ])
+        hovermode='x unified',
+        updatemenus=[
+            dict(
+                type="buttons",
+                direction="left",
+                buttons=list([
+                    dict(
+                        args=[{"yaxis.type": "linear"}],
+                        label="LINEAR",
+                        method="relayout"
+                    ),
+                    dict(
+                        args=[{"yaxis.type": "log"}],
+                        label="LOG",
+                        method="relayout"
+                    )
+                ]),
+            ),
+        ])
 
     return fig_hospi
 
+
+@register_plot_for_embedding("bar_hospitalization_in")
+def bar_hospitalization_in():
+    """
+    bar plot hospitalization
+    """
+    df = df_hospi.groupby(['DATE']).agg({'TOTAL_IN': 'sum', 'NEW_OUT': 'sum', 'NEW_IN': 'sum', 'TOTAL_IN_ICU': 'sum'})
+    df.index = pd.to_datetime(df.index)
+    df['DAY_OF_WEEK'] = df.index.dayofweek
+
+    new_in = df.NEW_IN.values.tolist()
+    colors = [7 for i in range(len(new_in))]
+    days = df['DAY_OF_WEEK'].values.tolist()
+    start = days.index(0)
+    for i in range(start, len(new_in), 7):
+        invals = new_in[i:i + 7]
+        offset = invals.index(max(invals))
+        colors[i + offset] = offset
+
+    colors_map = {0: '#fccde5', 1: '#8dd3c7', 2: '#b3de69', 3: '#bebada', 4: '#fb8072', 5: '#fdb462', 6: '#80b1d3',
+                  7: 'lightgrey'}
+    colors = [colors_map[i] for i in colors]
+    newin_bar = go.Bar(x=df.index, y=df.NEW_IN, name=gettext('#New Hospitalized'), marker_color=colors,
+                       showlegend=False)
+
+    newin_smooth = go.Scatter(x=df.index, y=df.NEW_IN.rolling(7).mean(), name=("New Hospitalized avg 7 days"),
+                              marker_color="red", legendgroup="newin", showlegend=True)
+
+    # Add single buy and sell traces for legend
+    day_names = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', '-']
+    legend = []
+    for i in range(8):
+        legend.append(go.Bar(x=[None], y=[None], marker_color=colors_map[i], legendgroup='legend', showlegend=True,
+                             name=day_names[i]))
+
+    fig_hospi = go.Figure(data=[newin_bar, newin_smooth] + legend, layout=go.Layout(barmode='group'))
+    fig_hospi.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0),
+                            title=gettext("Daily IN Hospitalizations"))
+
+    fig_hospi.update_layout(xaxis_title=gettext('Day'),
+                            yaxis_title=gettext('Number of / Day'))
+
+    fig_hospi.update_layout(
+        updatemenus=[
+            dict(
+                type="buttons",
+                direction="left",
+                buttons=list([
+                    dict(
+                        args=[{"yaxis.type": "linear"}],
+                        label="LINEAR",
+                        method="relayout"
+                    ),
+                    dict(
+                        args=[{"yaxis.type": "log"}],
+                        label="LOG",
+                        method="relayout"
+                    )
+                ]),
+            ),
+        ])
+
+    return fig_hospi
 
 
 @register_plot_for_embedding("bar_hospitalization_ICU")
