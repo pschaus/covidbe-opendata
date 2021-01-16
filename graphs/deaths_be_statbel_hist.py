@@ -175,7 +175,7 @@ def death_cum_january():
         return df[df.NR_YEAR == year].MS_NUM_DEATH.cumsum()
 
     n = len(y(2020).values)
-    values = [y(a).values[ n -1] for a in years]
+    values = [y(a).values[ min(n -1,364)] for a in years]
 
     fig = px.bar(x=years, y=values ,labels={"x" :"" ,"y" :""})
     fig.update_layout(template="plotly_white",
@@ -193,7 +193,7 @@ def death_cum_january_additional():
         return df[df.NR_YEAR == year].MS_NUM_DEATH.cumsum()
 
     n = len(y(2020).values)
-    values = [(y(2020).values[ n -1 ] -y(a).values[ n -1]) for a in years]
+    values = [(y(2020).values[ min(n -1,364) ] -y(a).values[ min(n -1,364)]) for a in years]
 
     fig = px.bar(x=years, y=values ,labels={"x" :"" ,"y" :""})
     fig.update_layout(template="plotly_white",
