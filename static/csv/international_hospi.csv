@@ -10278,54 +10278,55 @@ Netherlands,Daily ICU occupancy,2021-01-07,2021-W01,712.0,Country_Website,https:
 Netherlands,Daily ICU occupancy,2021-01-08,2021-W01,708.0,Country_Website,https://lcps.nu/datafeed/
 Netherlands,Daily ICU occupancy,2021-01-09,2021-W01,700.0,Country_Website,https://lcps.nu/datafeed/
 Netherlands,Daily ICU occupancy,2021-01-10,2021-W01,711.0,Country_Website,https://lcps.nu/datafeed/
-Netherlands,Weekly new hospital admissions per 100k,,2020-W07,0.0405041892036315,,https://data.rivm.nl/covid-19/
-Netherlands,Weekly new hospital admissions per 100k,,2020-W08,0.127298880354271,,https://data.rivm.nl/covid-19/
-Netherlands,Weekly new hospital admissions per 100k,,2020-W09,0.22566619699166102,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W10,0.480263957700202,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W11,2.06571364938521,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W12,7.97353896037203,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W13,16.3984103147274,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W14,12.4347860855149,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W15,8.06033365152267,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W16,4.97044264655992,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W17,3.33870245292791,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W18,2.2393030316864904,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W19,1.74168013575616,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W20,1.2266983015957,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W21,0.9373826644269009,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W22,0.8563742860196378,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W23,0.503409208673706,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W24,0.3124608881423,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W25,0.21409357150490899,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W26,0.202520946018158,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W27,0.15623044407115,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W28,0.15623044407115,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W29,0.19094832053140598,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W30,0.271956698938669,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W31,0.376110328319436,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W32,0.514981834160458,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W33,0.711716467435239,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W34,0.642280714514728,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W35,0.416614517523067,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W36,0.671212278231608,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W37,1.1051857339848,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W38,2.21615778071298,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W39,3.4544287077954303,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W40,4.56540075452361,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W41,6.561678650988309,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W42,8.78940905718804,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W43,10.554234443917698,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W44,10.855122706573301,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W45,9.59370652851729,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W46,8.59846073665663,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W47,7.545351817362209,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W48,6.42859345789066,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W49,6.69476384408595,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W50,7.80573589081413,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W51,9.40275820798589,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W52,10.9477037104673,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2020-W53,10.6757470115286,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
-Netherlands,Weekly new hospital admissions per 100k,,2021-W01,9.061365756126712,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
+Netherlands,Weekly new hospital admissions per 100k,,2020-W06,,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W07,,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W08,,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W09,,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W10,,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W11,,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W12,,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W13,,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W14,,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W15,,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W16,,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W17,,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W18,,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W19,,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W20,,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W21,,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W22,,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W23,,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W24,,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W25,,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W26,,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W27,,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W28,,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W29,,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W30,,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W31,,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W32,,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W33,,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W34,,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W35,,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W36,0.694357529205112,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W37,1.18040779964869,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W38,2.32609772283712,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W39,3.6974538430172204,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W40,4.86050270443578,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W41,7.0535152341752605,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W42,9.373826644269009,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W43,11.283309849583098,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W44,11.5263349848049,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W45,9.85987691471259,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W46,8.66789648957714,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W47,7.614787570282731,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W48,6.49802921081117,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W49,6.80470378621009,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W50,8.00247052408891,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W51,9.84830428922583,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W52,11.098147841795,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2020-W53,10.635242822324999,"TESSy COVID-19, national weekly data",
+Netherlands,Weekly new hospital admissions per 100k,,2021-W01,8.69682805329402,"TESSy COVID-19, national weekly data",
 Netherlands,Weekly new ICU admissions per 100k,,2020-W09,0.0173589382301278,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
 Netherlands,Weekly new ICU admissions per 100k,,2020-W10,0.10415362938076698,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
 Netherlands,Weekly new ICU admissions per 100k,,2020-W11,0.601776525311097,,https://www.databronnencovid19.nl/Bron?naam=Nationale-Intensive-Care-Evaluatie
@@ -10642,64 +10643,17 @@ Norway,Daily hospital occupancy,2021-01-07,2021-W01,127.0,Country_API,https://ut
 Norway,Daily hospital occupancy,2021-01-08,2021-W01,131.0,Country_API,https://utvikler.helsedirektoratet.no/
 Norway,Daily hospital occupancy,2021-01-09,2021-W01,125.0,Country_API,https://utvikler.helsedirektoratet.no/
 Norway,Daily hospital occupancy,2021-01-10,2021-W01,143.0,Country_API,https://utvikler.helsedirektoratet.no/
-Norway,Weekly new hospital admissions per 100k,,2020-W08,0.0187680219931189,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W09,,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W10,0.0563040659793567,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W11,0.6005767037798051,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W12,2.7213631890022403,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W13,3.52838813470635,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W14,1.2949935175251999,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W15,0.581808681786686,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W16,0.375360439862378,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W17,0.544272637800448,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W18,0.16891219793807,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W19,0.11260813195871301,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W20,0.0938401099655945,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W21,0.0938401099655945,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W22,0.13137615395183197,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W23,0.0563040659793567,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W24,0.13137615395183197,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W25,0.20644824192430802,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W26,0.16891219793807,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W27,0.150144175944951,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W28,0.0375360439862378,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W29,0.0187680219931189,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W30,0.0375360439862378,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W31,0.150144175944951,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W32,0.20644824192430802,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W33,0.13137615395183197,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W34,0.13137615395183197,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W35,0.20644824192430802,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W36,0.41289648384861605,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W37,0.187680219931189,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W38,0.300288351889902,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W39,0.225216263917427,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W40,0.281520329896783,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W41,0.45043252783485294,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W42,0.300288351889902,TESSy COVID-19,
-Norway,Weekly new hospital admissions per 100k,,2020-W43,0.319056373883021,TESSy COVID-19,
 Norway,Weekly new hospital admissions per 100k,,2020-W44,0.8633290116834691,,
-Norway,Weekly new hospital admissions per 100k,,2020-W44,0.6005767037798051,TESSy COVID-19,
 Norway,Weekly new hospital admissions per 100k,,2020-W45,1.50144175944951,,
-Norway,Weekly new hospital admissions per 100k,,2020-W45,0.84456098969035,TESSy COVID-19,
 Norway,Weekly new hospital admissions per 100k,,2020-W46,1.9894103312706,,
-Norway,Weekly new hospital admissions per 100k,,2020-W46,1.0885452756009,TESSy COVID-19,
 Norway,Weekly new hospital admissions per 100k,,2020-W47,2.06448241924308,,
-Norway,Weekly new hospital admissions per 100k,,2020-W47,0.9947051656353009,TESSy COVID-19,
 Norway,Weekly new hospital admissions per 100k,,2020-W48,2.0832504412362,,
-Norway,Weekly new hospital admissions per 100k,,2020-W48,0.9196330776628259,TESSy COVID-19,
 Norway,Weekly new hospital admissions per 100k,,2020-W49,1.9143382432981297,,
-Norway,Weekly new hospital admissions per 100k,,2020-W49,0.84456098969035,TESSy COVID-19,
 Norway,Weekly new hospital admissions per 100k,,2020-W50,1.83926615532565,,
-Norway,Weekly new hospital admissions per 100k,,2020-W50,0.394128461855497,TESSy COVID-19,
 Norway,Weekly new hospital admissions per 100k,,2020-W51,1.70789000137382,,
-Norway,Weekly new hospital admissions per 100k,,2020-W51,0.525504615807329,TESSy COVID-19,
 Norway,Weekly new hospital admissions per 100k,,2020-W52,1.50144175944951,,
-Norway,Weekly new hospital admissions per 100k,,2020-W52,0.50673659381421,TESSy COVID-19,
 Norway,Weekly new hospital admissions per 100k,,2020-W53,1.76419406735318,,
-Norway,Weekly new hospital admissions per 100k,,2020-W53,0.581808681786686,TESSy COVID-19,
 Norway,Weekly new hospital admissions per 100k,,2021-W01,1.9706423092774799,,
-Norway,Weekly new hospital admissions per 100k,,2021-W01,0.13137615395183197,TESSy COVID-19,
 Norway,Weekly new ICU admissions per 100k,,2020-W44,0.11260813195871301,,
 Norway,Weekly new ICU admissions per 100k,,2020-W45,0.0938401099655945,,
 Norway,Weekly new ICU admissions per 100k,,2020-W46,0.319056373883021,,

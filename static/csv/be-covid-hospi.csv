@@ -3306,7 +3306,7 @@
 3304,2021-01-09,WLG,Wallonia,12,187,39,26,3,15,11,Liège
 3305,2021-01-09,WLX,Wallonia,3,39,5,4,1,4,2,Luxembourg
 3306,2021-01-09,WNA,Wallonia,6,67,21,16,1,1,5,Namur
-3307,2021-01-09,VOV,Flanders,14,310,60,28,3,13,42,OostVlaanderen
+3307,2021-01-09,VOV,Flanders,14,310,60,28,3,12,42,OostVlaanderen
 3308,2021-01-09,VBR,Flanders,6,72,9,4,1,8,5,VlaamsBrabant
 3309,2021-01-09,WBR,Wallonia,2,16,3,3,0,4,2,BrabantWallon
 3310,2021-01-09,VWV,Flanders,11,299,44,16,2,29,46,WestVlaanderen
@@ -3317,7 +3317,7 @@
 3315,2021-01-10,WLG,Wallonia,12,195,40,26,3,9,6,Liège
 3316,2021-01-10,WLX,Wallonia,3,39,5,3,1,0,0,Luxembourg
 3317,2021-01-10,WNA,Wallonia,6,68,19,11,0,4,1,Namur
-3318,2021-01-10,VOV,Flanders,14,316,59,25,3,14,7,OostVlaanderen
+3318,2021-01-10,VOV,Flanders,14,316,59,26,3,14,6,OostVlaanderen
 3319,2021-01-10,VBR,Flanders,6,72,7,4,1,6,3,VlaamsBrabant
 3320,2021-01-10,WBR,Wallonia,2,18,3,3,0,0,1,BrabantWallon
 3321,2021-01-10,VWV,Flanders,11,313,44,19,1,22,9,WestVlaanderen
@@ -3400,7 +3400,7 @@
 3398,2021-01-17,VWV,Flanders,11,280,35,18,0,12,7,WestVlaanderen
 3399,2021-01-18,VAN,Flanders,14,334,62,39,4,13,7,Antwerpen
 3400,2021-01-18,BRU,Brussels,15,255,55,27,7,16,11,Brussels
-3401,2021-01-18,WHT,Wallonia,14,266,58,32,4,12,0,Hainaut
+3401,2021-01-18,WHT,Wallonia,14,266,58,32,5,12,0,Hainaut
 3402,2021-01-18,VLI,Flanders,7,162,36,13,3,6,2,Limburg
 3403,2021-01-18,WLG,Wallonia,12,175,34,16,1,6,3,Liège
 3404,2021-01-18,WLX,Wallonia,3,45,7,4,1,2,0,Luxembourg
@@ -3409,3 +3409,14 @@
 3407,2021-01-18,VBR,Flanders,6,83,15,5,2,7,1,VlaamsBrabant
 3408,2021-01-18,WBR,Wallonia,2,29,4,2,0,4,0,BrabantWallon
 3409,2021-01-18,VWV,Flanders,11,284,33,17,0,11,2,WestVlaanderen
+3410,2021-01-19,VAN,Flanders,14,343,59,34,4,18,23,Antwerpen
+3411,2021-01-19,BRU,Brussels,15,256,57,28,6,29,29,Brussels
+3412,2021-01-19,WHT,Wallonia,14,270,54,33,6,24,18,Hainaut
+3413,2021-01-19,VLI,Flanders,7,147,34,16,2,15,19,Limburg
+3414,2021-01-19,WLG,Wallonia,12,181,34,16,1,21,16,Liège
+3415,2021-01-19,WLX,Wallonia,3,40,7,5,1,2,1,Luxembourg
+3416,2021-01-19,WNA,Wallonia,6,40,12,10,0,1,12,Namur
+3417,2021-01-19,VOV,Flanders,14,280,51,26,5,23,35,OostVlaanderen
+3418,2021-01-19,VBR,Flanders,6,84,12,5,2,10,7,VlaamsBrabant
+3419,2021-01-19,WBR,Wallonia,2,26,4,2,0,3,4,BrabantWallon
+3420,2021-01-19,VWV,Flanders,11,293,36,23,0,37,26,WestVlaanderen
