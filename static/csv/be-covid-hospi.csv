@@ -3336,7 +3336,7 @@
 3334,2021-01-12,BRU,Brussels,15,236,58,33,8,25,15,Brussels
 3335,2021-01-12,WHT,Wallonia,14,259,57,37,7,18,17,Hainaut
 3336,2021-01-12,VLI,Flanders,7,147,23,10,4,17,13,Limburg
-3337,2021-01-12,WLG,Wallonia,12,194,40,23,2,13,24,Liège
+3337,2021-01-12,WLG,Wallonia,12,200,40,23,2,19,24,Liège
 3338,2021-01-12,WLX,Wallonia,3,45,7,3,1,1,3,Luxembourg
 3339,2021-01-12,WNA,Wallonia,6,56,15,13,0,1,7,Namur
 3340,2021-01-12,VOV,Flanders,14,305,57,27,4,19,45,OostVlaanderen
@@ -3347,7 +3347,7 @@
 3345,2021-01-13,BRU,Brussels,15,241,56,32,7,19,18,Brussels
 3346,2021-01-13,WHT,Wallonia,14,262,60,33,7,18,17,Hainaut
 3347,2021-01-13,VLI,Flanders,7,148,24,9,4,11,13,Limburg
-3348,2021-01-13,WLG,Wallonia,12,182,36,17,1,13,18,Liège
+3348,2021-01-13,WLG,Wallonia,12,188,36,17,1,10,18,Liège
 3349,2021-01-13,WLX,Wallonia,3,43,5,3,1,1,3,Luxembourg
 3350,2021-01-13,WNA,Wallonia,6,51,14,12,0,2,8,Namur
 3351,2021-01-13,VOV,Flanders,14,293,60,25,4,21,32,OostVlaanderen
@@ -3358,7 +3358,7 @@
 3356,2021-01-14,BRU,Brussels,15,237,57,32,7,20,38,Brussels
 3357,2021-01-14,WHT,Wallonia,14,250,55,29,7,21,27,Hainaut
 3358,2021-01-14,VLI,Flanders,7,148,25,10,4,10,12,Limburg
-3359,2021-01-14,WLG,Wallonia,12,183,34,16,1,12,12,Liège
+3359,2021-01-14,WLG,Wallonia,12,190,34,16,1,12,12,Liège
 3360,2021-01-14,WLX,Wallonia,3,43,6,5,1,0,5,Luxembourg
 3361,2021-01-14,WNA,Wallonia,6,51,14,11,0,4,4,Namur
 3362,2021-01-14,VOV,Flanders,14,272,53,27,3,9,27,OostVlaanderen
@@ -3369,7 +3369,7 @@
 3367,2021-01-15,BRU,Brussels,15,235,54,30,6,15,15,Brussels
 3368,2021-01-15,WHT,Wallonia,14,263,53,36,8,18,9,Hainaut
 3369,2021-01-15,VLI,Flanders,7,145,27,9,3,17,13,Limburg
-3370,2021-01-15,WLG,Wallonia,12,166,32,17,1,10,21,Liège
+3370,2021-01-15,WLG,Wallonia,12,173,32,17,1,10,21,Liège
 3371,2021-01-15,WLX,Wallonia,3,44,7,4,1,3,4,Luxembourg
 3372,2021-01-15,WNA,Wallonia,6,48,14,12,0,2,2,Namur
 3373,2021-01-15,VOV,Flanders,14,274,50,27,3,19,22,OostVlaanderen
@@ -3380,7 +3380,7 @@
 3378,2021-01-16,BRU,Brussels,15,221,54,29,6,11,25,Brussels
 3379,2021-01-16,WHT,Wallonia,14,244,53,33,6,12,24,Hainaut
 3380,2021-01-16,VLI,Flanders,7,152,30,8,3,9,7,Limburg
-3381,2021-01-16,WLG,Wallonia,12,165,33,17,1,10,11,Liège
+3381,2021-01-16,WLG,Wallonia,12,175,33,17,1,13,11,Liège
 3382,2021-01-16,WLX,Wallonia,3,43,7,5,1,2,4,Luxembourg
 3383,2021-01-16,WNA,Wallonia,6,45,13,11,0,3,4,Namur
 3384,2021-01-16,VOV,Flanders,14,269,54,27,4,17,29,OostVlaanderen
@@ -3486,7 +3486,7 @@
 3484,2021-01-25,VBR,Flanders,6,96,10,3,2,4,0,VlaamsBrabant
 3485,2021-01-25,WBR,Wallonia,2,25,2,2,0,2,1,BrabantWallon
 3486,2021-01-25,VWV,Flanders,11,298,39,16,0,22,9,WestVlaanderen
-3487,2021-01-26,VAN,Flanders,14,300,46,25,5,13,21,Antwerpen
+3487,2021-01-26,VAN,Flanders,14,299,45,25,5,13,21,Antwerpen
 3488,2021-01-26,BRU,Brussels,15,257,47,28,8,13,13,Brussels
 3489,2021-01-26,WHT,Wallonia,14,293,52,27,5,25,23,Hainaut
 3490,2021-01-26,VLI,Flanders,7,147,22,12,1,19,17,Limburg
@@ -3497,7 +3497,7 @@
 3495,2021-01-26,VBR,Flanders,6,100,10,4,1,6,2,VlaamsBrabant
 3496,2021-01-26,WBR,Wallonia,2,23,2,2,0,3,3,BrabantWallon
 3497,2021-01-26,VWV,Flanders,11,287,42,21,0,25,36,WestVlaanderen
-3498,2021-01-27,VAN,Flanders,14,279,48,26,4,9,25,Antwerpen
+3498,2021-01-27,VAN,Flanders,14,278,47,26,4,9,25,Antwerpen
 3499,2021-01-27,BRU,Brussels,15,246,46,28,6,13,18,Brussels
 3500,2021-01-27,WHT,Wallonia,14,299,51,28,4,23,19,Hainaut
 3501,2021-01-27,VLI,Flanders,7,133,21,11,1,8,20,Limburg
@@ -3508,3 +3508,14 @@
 3506,2021-01-27,VBR,Flanders,6,94,7,3,1,7,8,VlaamsBrabant
 3507,2021-01-27,WBR,Wallonia,2,26,2,1,0,6,3,BrabantWallon
 3508,2021-01-27,VWV,Flanders,11,275,41,23,0,20,26,WestVlaanderen
+3509,2021-01-28,VAN,Flanders,14,273,47,27,5,10,24,Antwerpen
+3510,2021-01-28,BRU,Brussels,15,233,45,26,6,11,27,Brussels
+3511,2021-01-28,WHT,Wallonia,14,306,52,29,4,24,15,Hainaut
+3512,2021-01-28,VLI,Flanders,7,127,20,12,1,9,18,Limburg
+3513,2021-01-28,WLG,Wallonia,12,147,36,18,2,9,14,Liège
+3514,2021-01-28,WLX,Wallonia,3,32,7,5,1,2,1,Luxembourg
+3515,2021-01-28,WNA,Wallonia,6,26,8,3,0,5,1,Namur
+3516,2021-01-28,VOV,Flanders,14,290,53,21,2,32,20,OostVlaanderen
+3517,2021-01-28,VBR,Flanders,6,92,8,3,0,8,4,VlaamsBrabant
+3518,2021-01-28,WBR,Wallonia,2,26,2,1,0,2,2,BrabantWallon
+3519,2021-01-28,VWV,Flanders,11,265,45,22,0,18,26,WestVlaanderen
