@@ -3574,7 +3574,7 @@
 3572,2021-02-02,VBR,Flanders,6,86,14,8,1,8,10,VlaamsBrabant
 3573,2021-02-02,WBR,Wallonia,2,28,3,3,0,5,4,BrabantWallon
 3574,2021-02-02,VWV,Flanders,11,266,40,25,2,27,30,WestVlaanderen
-3575,2021-02-03,VAN,Flanders,14,261,36,16,2,15,22,Antwerpen
+3575,2021-02-03,VAN,Flanders,14,262,37,16,2,15,22,Antwerpen
 3576,2021-02-03,BRU,Brussels,15,224,40,23,5,17,14,Brussels
 3577,2021-02-03,WHT,Wallonia,14,310,48,32,4,16,21,Hainaut
 3578,2021-02-03,VLI,Flanders,7,136,32,14,1,10,12,Limburg
@@ -3585,3 +3585,14 @@
 3583,2021-02-03,VBR,Flanders,6,85,13,5,1,7,4,VlaamsBrabant
 3584,2021-02-03,WBR,Wallonia,2,31,4,3,0,7,4,BrabantWallon
 3585,2021-02-03,VWV,Flanders,11,256,46,25,2,21,26,WestVlaanderen
+3586,2021-02-04,VAN,Flanders,14,234,37,16,2,17,25,Antwerpen
+3587,2021-02-04,BRU,Brussels,15,227,42,23,5,21,19,Brussels
+3588,2021-02-04,WHT,Wallonia,14,312,46,30,2,19,22,Hainaut
+3589,2021-02-04,VLI,Flanders,7,140,30,14,1,15,10,Limburg
+3590,2021-02-04,WLG,Wallonia,12,132,30,17,1,10,11,Liège
+3591,2021-02-04,WLX,Wallonia,3,27,6,4,0,4,2,Luxembourg
+3592,2021-02-04,WNA,Wallonia,6,44,9,6,0,3,1,Namur
+3593,2021-02-04,VOV,Flanders,14,283,46,21,3,27,18,OostVlaanderen
+3594,2021-02-04,VBR,Flanders,6,87,13,6,1,7,6,VlaamsBrabant
+3595,2021-02-04,WBR,Wallonia,2,24,4,3,0,1,7,BrabantWallon
+3596,2021-02-04,VWV,Flanders,11,242,43,26,1,15,25,WestVlaanderen
