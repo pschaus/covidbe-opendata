@@ -198,7 +198,7 @@ def ratio_case_hospi_region():
 
     for r in regions:
         df_r = df.loc[df['REGION'] == r]
-        n = 90
+        n = 200
         plot = go.Scatter(x=df_r.DATE[-n:-4],
                           y=(df_r['NEW_IN'][-n:-4].rolling(7).mean() / df_r['CASES'][-n:-4].rolling(7).mean()).rolling(
                               7).mean(), name=r)
