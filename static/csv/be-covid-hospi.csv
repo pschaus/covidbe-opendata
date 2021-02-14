@@ -3673,7 +3673,7 @@
 3671,2021-02-11,VBR,Flanders,6,75,14,7,1,5,3,VlaamsBrabant
 3672,2021-02-11,WBR,Wallonia,2,32,2,1,0,10,1,BrabantWallon
 3673,2021-02-11,VWV,Flanders,11,217,40,24,1,16,20,WestVlaanderen
-3674,2021-02-12,VAN,Flanders,14,223,36,21,2,8,24,Antwerpen
+3674,2021-02-12,VAN,Flanders,14,221,36,21,2,8,26,Antwerpen
 3675,2021-02-12,BRU,Brussels,15,199,36,25,2,18,13,Brussels
 3676,2021-02-12,WHT,Wallonia,14,311,47,29,2,17,27,Hainaut
 3677,2021-02-12,VLI,Flanders,7,111,22,13,3,14,20,Limburg
@@ -3684,3 +3684,14 @@
 3682,2021-02-12,VBR,Flanders,6,76,13,6,1,5,2,VlaamsBrabant
 3683,2021-02-12,WBR,Wallonia,2,33,2,0,0,8,7,BrabantWallon
 3684,2021-02-12,VWV,Flanders,11,225,37,25,1,33,24,WestVlaanderen
+3685,2021-02-13,VAN,Flanders,14,203,33,21,2,6,27,Antwerpen
+3686,2021-02-13,BRU,Brussels,15,170,39,28,3,7,29,Brussels
+3687,2021-02-13,WHT,Wallonia,14,312,47,29,1,10,20,Hainaut
+3688,2021-02-13,VLI,Flanders,7,103,21,13,3,13,15,Limburg
+3689,2021-02-13,WLG,Wallonia,12,126,30,20,2,14,9,Liège
+3690,2021-02-13,WLX,Wallonia,3,19,3,3,0,3,3,Luxembourg
+3691,2021-02-13,WNA,Wallonia,6,47,12,6,1,2,8,Namur
+3692,2021-02-13,VOV,Flanders,14,261,54,25,3,25,36,OostVlaanderen
+3693,2021-02-13,VBR,Flanders,6,72,13,6,1,0,3,VlaamsBrabant
+3694,2021-02-13,WBR,Wallonia,2,27,1,0,0,1,6,BrabantWallon
+3695,2021-02-13,VWV,Flanders,11,228,45,24,2,25,17,WestVlaanderen
