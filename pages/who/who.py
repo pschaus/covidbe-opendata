@@ -15,8 +15,14 @@ def display_who():
     return [
         html.H2(gettext("New Hospitalization WHO Indicator")),
         dcc.Markdown(get_translation(
-            fr="""Taux d’hospitalisation = Nombre de nouvelles hospitalisations dues à la COVID-19 pour 100 000 habitants et par semaine (moyenne sur deux semaines).""",
-            en="""Hospitalization rate = Number of new hospitalizations due to COVID-19 per 100,000 inhabitants per week (average over two weeks).""")),
+            fr="""
+            Cette page utilise des sommes et moyennes *centrées* sur 14 jour. La somme au jour J est donc calculée à partir des jours J-7 jusque J+6.
+            
+            Taux d’hospitalisation = Nombre de nouvelles hospitalisations dues à la COVID-19 pour 100 000 habitants et par semaine (moyenne sur deux semaines).""",
+            en="""
+            This page uses centered sums and means, with a 14-days window. The sum at day D is thus computed from the days D-7 until D+6.
+            
+            Hospitalization rate = Number of new hospitalizations due to COVID-19 per 100,000 inhabitants per week (average over two weeks).""")),
         dbc.Row([
             dbc.Col(display_graphic(id='newinoms',
                               figure=newin_oms(),
