@@ -28,16 +28,6 @@ def df_hospi_death():
 
 import numpy as np
 
-
-def moving_average(a, n=1):
-    a = a.astype(np.float)
-    ret = np.cumsum(a)
-    ret[n:] = ret[n:] - ret[:-n]
-    ret[:n - 1] = ret[:n - 1] / range(1, n)
-    ret[n - 1:] = ret[n - 1:] / n
-    return ret
-
-
 df = df_hospi_death()
 
 
@@ -71,7 +61,7 @@ def add_text(fig, x, y, text):
 def death_oms():
     death_bar = go.Bar(x=df.index, y=df.DEATHS, name=gettext('#Daily Covid Deaths'), marker_color="red",
                        legendgroup="death", showlegend=False)
-    death_smooth = go.Scatter(x=df.index, y=df.DEATHS.rolling(14).sum() / 2 / 115, name=("#Daily Covid Deaths"),
+    death_smooth = go.Scatter(x=df.index, y=df.DEATHS.rolling(14, center=True).sum() / 2 / 115, name=("#Daily Covid Deaths"),
                               marker_color="blue", legendgroup="death", showlegend=False)
 
     fig = go.Figure(data=[death_smooth], layout=go.Layout(barmode='group'))
@@ -113,7 +103,7 @@ def death_oms():
 
 @register_plot_for_embedding("newin_oms")
 def newin_oms():
-    newin_smooth = go.Scatter(x=df.index, y=df.NEW_IN.rolling(14).sum() / 2 / 115, name=("#OMS HOSPI"),
+    newin_smooth = go.Scatter(x=df.index, y=df.NEW_IN.rolling(14, center=True).sum() / 2 / 115, name=("#OMS HOSPI"),
                               marker_color="blue", legendgroup="death", showlegend=False)
 
     fig = go.Figure(data=[newin_smooth], layout=go.Layout(barmode='group'))
@@ -162,7 +152,7 @@ def cases_oms():
     df = df.groupby([df.DATE]).agg(
         {'CASES': ['sum'], 'TESTS_ALL': ['sum'], 'TESTS_ALL_POS': ['sum'], 'NEW_IN': ['sum']}).reset_index()
     df.columns = df.columns.get_level_values(0)
-    cases_smooth = go.Scatter(x=df.DATE, y=df.CASES.rolling(14).sum() / 2 / 115, name=("#OMS CASES"),
+    cases_smooth = go.Scatter(x=df.DATE, y=df.CASES.rolling(14, center=True).sum() / 2 / 115, name=("#OMS CASES"),
                               marker_color="blue", legendgroup="death", showlegend=False)
 
     fig = go.Figure(data=[cases_smooth], layout=go.Layout(barmode='group'))
@@ -209,7 +199,7 @@ def posrate_oms():
     df = df.groupby([df.DATE]).agg(
         {'CASES': ['sum'], 'TESTS_ALL': ['sum'], 'TESTS_ALL_POS': ['sum'], 'NEW_IN': ['sum']}).reset_index()
     df.columns = df.columns.get_level_values(0)
-    posrate_smooth = go.Scatter(x=df.DATE, y=100 * df.TESTS_ALL_POS.rolling(14).sum() / df.TESTS_ALL.rolling(14).sum(),
+    posrate_smooth = go.Scatter(x=df.DATE, y=100 * df.TESTS_ALL_POS.rolling(14, center=True).sum() / df.TESTS_ALL.rolling(14, center=True).sum(),
                                 name=("#OMS CASES"), marker_color="blue", legendgroup="death", showlegend=False)
 
     fig = go.Figure(data=[posrate_smooth], layout=go.Layout(barmode='group'))
