@@ -3740,7 +3740,7 @@
 3738,2021-02-17,WBR,Wallonia,2,38,3,1,0,8,1,BrabantWallon
 3739,2021-02-17,VWV,Flanders,11,240,44,24,2,21,14,WestVlaanderen
 3740,2021-02-18,VAN,Flanders,14,226,38,22,1,13,22,Antwerpen
-3741,2021-02-18,BRU,Brussels,15,185,35,18,2,17,12,Brussels
+3741,2021-02-18,BRU,Brussels,15,185,38,18,2,17,12,Brussels
 3742,2021-02-18,WHT,Wallonia,14,280,52,31,1,20,21,Hainaut
 3743,2021-02-18,VLI,Flanders,7,96,21,15,4,17,20,Limburg
 3744,2021-02-18,WLG,Wallonia,12,124,33,19,2,10,13,Liège
@@ -3754,7 +3754,7 @@
 3752,2021-02-19,BRU,Brussels,15,187,41,18,2,19,19,Brussels
 3753,2021-02-19,WHT,Wallonia,14,272,49,30,1,12,22,Hainaut
 3754,2021-02-19,VLI,Flanders,7,94,24,14,4,8,10,Limburg
-3755,2021-02-19,WLG,Wallonia,12,120,31,14,2,7,5,Liège
+3755,2021-02-19,WLG,Wallonia,12,120,32,15,2,7,5,Liège
 3756,2021-02-19,WLX,Wallonia,3,25,6,3,0,4,1,Luxembourg
 3757,2021-02-19,WNA,Wallonia,6,38,9,5,1,7,8,Namur
 3758,2021-02-19,VOV,Flanders,14,305,57,26,2,24,20,OostVlaanderen
@@ -3765,7 +3765,7 @@
 3763,2021-02-20,BRU,Brussels,15,193,41,18,2,18,22,Brussels
 3764,2021-02-20,WHT,Wallonia,14,252,50,30,1,15,30,Hainaut
 3765,2021-02-20,VLI,Flanders,7,109,25,14,4,19,7,Limburg
-3766,2021-02-20,WLG,Wallonia,12,117,32,16,2,8,14,Liège
+3766,2021-02-20,WLG,Wallonia,12,117,33,17,2,8,14,Liège
 3767,2021-02-20,WLX,Wallonia,3,22,8,3,0,0,4,Luxembourg
 3768,2021-02-20,WNA,Wallonia,6,36,9,4,1,4,4,Namur
 3769,2021-02-20,VOV,Flanders,14,291,56,27,2,15,32,OostVlaanderen
@@ -3783,3 +3783,14 @@
 3781,2021-02-21,VBR,Flanders,6,51,7,3,2,2,1,VlaamsBrabant
 3782,2021-02-21,WBR,Wallonia,2,40,6,2,0,5,1,BrabantWallon
 3783,2021-02-21,VWV,Flanders,11,235,46,22,3,11,10,WestVlaanderen
+3784,2021-02-22,VAN,Flanders,14,234,36,23,3,28,9,Antwerpen
+3785,2021-02-22,BRU,Brussels,15,226,49,21,2,19,5,Brussels
+3786,2021-02-22,WHT,Wallonia,14,282,58,34,2,10,7,Hainaut
+3787,2021-02-22,VLI,Flanders,7,115,23,12,4,5,2,Limburg
+3788,2021-02-22,WLG,Wallonia,12,115,33,17,2,3,1,Liège
+3789,2021-02-22,WLX,Wallonia,3,28,10,4,0,2,0,Luxembourg
+3790,2021-02-22,WNA,Wallonia,6,42,9,5,1,4,0,Namur
+3791,2021-02-22,VOV,Flanders,14,332,67,33,2,19,2,OostVlaanderen
+3792,2021-02-22,VBR,Flanders,6,54,10,3,2,8,4,VlaamsBrabant
+3793,2021-02-22,WBR,Wallonia,2,45,6,3,0,4,1,BrabantWallon
+3794,2021-02-22,VWV,Flanders,11,235,47,20,3,6,6,WestVlaanderen
