@@ -11,4 +11,15 @@ done
 
 wait
 
+
+
+#!/bin/bash
+
+for f in *.py
+  do
+     PYTHONPATH=../ python $f &
+  done
+[user]
+        name = Pierre Schaus
+        email = pschaus@gmail.com
 #python generate_images.py
