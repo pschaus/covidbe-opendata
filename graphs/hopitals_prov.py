@@ -141,9 +141,9 @@ def hospi_prov(fig, row, col, fromw2, prov=None, show_legend=False):
     slope, intercept, r_value, p_value, std_err = stats.linregress(np.arange(0, 14), y2[-14:])
     # print(prov,slope, intercept, r_value, p_value, std_err )
     # print(p_value)
-    ylin_interp = np.arange(0, 14) * slope + intercept
-    fig.add_trace(go.Scatter(x=x2[-14:], y=ylin_interp, showlegend=show_legend, name=gettext('Linear Interp'),
-                             legendgroup='linear-interp', marker_color="orange"), row, col)
+    #ylin_interp = np.arange(0, 14) * slope + intercept
+    #fig.add_trace(go.Scatter(x=x2[-14:], y=ylin_interp, showlegend=show_legend, name=gettext('Linear Interp'),
+    #                         legendgroup='linear-interp', marker_color="orange"), row, col)
 
     fig.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0))
 
