@@ -10,7 +10,8 @@ import plotly.graph_objs as go
 import plotly.express as px
 from flask_babel import gettext
 from plotly.subplots import make_subplots
-
+from scipy import stats
+import numpy as np
 from graphs import register_plot_for_embedding
 
 
@@ -114,110 +115,63 @@ def total_hospi_new_out_provinces():
     return fig
 
 
-def hospi_w1w2(fig, row, col, fromw2, prov=None, show_legend=False):
+def hospi_prov(fig, row, col, fromw2, prov=None, show_legend=False):
     df_hospi = pd.read_csv('static/csv/be-covid-hospi.csv')
 
-    if prov is not None:
+    if prov is not 'All':
         df_hospi = df_hospi[df_hospi['PROVINCE_NAME'] == prov]
 
-    def df_hospi_death():
-        df_hospi = pd.read_csv('static/csv/be-covid-hospi.csv')
-        idx = pd.date_range(df_hospi.DATE.min(), df_hospi.DATE.max())
-        df_hospi = df_hospi.groupby(['DATE']).agg({'TOTAL_IN': 'sum', 'TOTAL_IN_ICU': 'sum', 'NEW_IN': 'sum'})
-        df_hospi.index = pd.DatetimeIndex(df_hospi.index)
-        df_hospi = df_hospi.reindex(idx, fill_value=0)
-
-        df_mortality = pd.read_csv('static/csv/be-covid-mortality.csv', keep_default_na=False)
-        idx = pd.date_range(df_mortality.DATE.min(), df_mortality.DATE.max())
-        df_mortality = df_mortality.groupby(['DATE']).agg({'DEATHS': 'sum'})
-        df_mortality.index = pd.DatetimeIndex(df_mortality.index)
-        df_mortality = df_mortality.reindex(idx, fill_value=0)
-
-        df = df_mortality.merge(df_hospi, how='left', left_index=True, right_index=True)
-
-        df = df[df.index >= '2020-03-15']
-        return df
-
-    import numpy as np
-
-    def moving_average(a, n=1):
-        a = a.astype(np.float)
-        ret = np.cumsum(a)
-        ret[n:] = ret[n:] - ret[:-n]
-        ret[:n - 1] = ret[:n - 1] / range(1, n)
-        ret[n - 1:] = ret[n - 1:] / n
-        return ret
-
-    df = df_hospi_death()
-
-    # print(df_hospi)
-
-    """
-    bar plot hospitalization
-    """
     df = df_hospi.groupby(['DATE']).agg({'TOTAL_IN': 'sum', 'NEW_OUT': 'sum', 'NEW_IN': 'sum', 'TOTAL_IN_ICU': 'sum'})
 
-    n = 65
+    x2 = df.index[df.index >= fromw2]
+    y2 = df.NEW_IN[df.index >= fromw2]
 
-    x1 = df.index.values[:n]
-    x2 = df.index.values[df.index >= fromw2]
-    y1 = df.TOTAL_IN[:n]
-    y2 = df.TOTAL_IN[df.index >= fromw2]
+    df.index = pd.to_datetime(df.index)
+    dw = df.index[df.index >= fromw2].dayofweek
+    colors_map = {0: '#fccde5', 1: '#8dd3c7', 2: '#b3de69', 3: '#bebada', 4: '#fb8072', 5: '#fdb462', 6: '#80b1d3',
+                  7: 'lightgrey'}
+    colors = [colors_map[i] for i in dw]
 
-    values = y2.values
-    doubling = 1
-    #while values[-doubling] > values[-1] / 2 and doubling < len(values) - 1:
-    #    doubling += 1
-
-    wave1 = go.Bar(y=y1, name=gettext('Wave1'), legendgroup='group1', showlegend=show_legend, marker_color="red")
-    wave2 = go.Bar(y=y2, name=gettext('Wave2'), legendgroup='group2', showlegend=show_legend, marker_color="blue")
-
-    fig.add_trace(wave1, row, col)
+    wave2 = go.Bar(x=x2, y=y2, name=gettext('NEW_IN'), legendgroup='group2', showlegend=False, marker_color=colors)
     fig.add_trace(wave2, row, col)
+
+    fig.add_trace(go.Scatter(x=x2, y=y2.rolling(7).mean(), showlegend=show_legend, name=gettext('avg past 7 days'),
+                             legendgroup='avg 7 days', marker_color="red"), row, col)
+
+    slope, intercept, r_value, p_value, std_err = stats.linregress(np.arange(0, 14), y2[-14:])
+    # print(prov,slope, intercept, r_value, p_value, std_err )
+    # print(p_value)
+    ylin_interp = np.arange(0, 14) * slope + intercept
+    fig.add_trace(go.Scatter(x=x2[-14:], y=ylin_interp, showlegend=show_legend, name=gettext('Linear Interp'),
+                             legendgroup='linear-interp', marker_color="orange"), row, col)
 
     fig.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0))
 
-    xvals = list(range(0, len(x2), 5))
-    # xlabels = [x1[v][-5:]+"|"+x2[v][-5:] for v in xvals]
-    xlabels = [x2[v][-5:] for v in xvals]
-
-    ymax = max(y2.values)
-    xdoubling = len(y2) - doubling
-    #line = go.layout.Shape(type="line", x0=xdoubling, y0=0, x1=xdoubling, y1=ymax,
-    #                       line=dict(color="lightblue", width=3))
-    #fig.add_shape(line, row=row, col=col)
-
-    fig.update_xaxes(tickmode='array', tickvals=xvals, ticktext=xlabels, row=row, col=col)
-
-    fig.update_layout(
-        xaxis=dict(
-            tickmode='array',
-            tickvals=xvals,
-            ticktext=xlabels,
-        ),
-
-    )
     return fig
 
-@register_plot_for_embedding("hospi_w1w2_provinces")
-def hospi_w1w2_provinces():
+
+@register_plot_for_embedding("hospi_new_in_provinces")
+def hospi_new_in_per_provinces():
     fig = make_subplots(rows=4, cols=3, subplot_titles=(
-    'Liège', 'Namur', 'Luxembourg', 'Hainaut', 'Brussels', 'BrabantWallon', 'VlaamsBrabant', 'OostVlaanderen',
-    'WestVlaanderen', 'Limburg', 'Antwerpen'))
+        'Liège', 'Namur', 'Luxembourg', 'Hainaut', 'Brussels', 'BrabantWallon', 'VlaamsBrabant', 'OostVlaanderen',
+        'WestVlaanderen', 'Limburg', 'Antwerpen', 'All'))
 
-    hospi_w1w2(fig,1,1,fromw2 = '2020-10-10', prov = 'Liège',show_legend=True)
-    hospi_w1w2(fig, 1, 2, fromw2='2020-10-10', prov='Namur')
-    hospi_w1w2(fig, 1, 3, fromw2='2020-10-10', prov='Luxembourg')
-    hospi_w1w2(fig, 2, 1, fromw2='2020-10-10', prov='Hainaut')
-    hospi_w1w2(fig, 2, 2, fromw2='2020-10-10', prov='Brussels')
-    hospi_w1w2(fig, 2, 3, fromw2='2020-10-10', prov='BrabantWallon')
-    hospi_w1w2(fig, 3, 1, fromw2='2020-10-15', prov='VlaamsBrabant')
-    hospi_w1w2(fig, 3, 2, fromw2='2020-10-15', prov='OostVlaanderen')
-    hospi_w1w2(fig, 3, 3, fromw2='2020-10-15', prov='WestVlaanderen')
-    hospi_w1w2(fig, 4, 1, fromw2='2020-10-15', prov='Limburg')
-    hospi_w1w2(fig, 4, 2, fromw2='2020-10-15', prov='Antwerpen')
+    fw2 = '2021-02-01'
 
-    title = "Hospitalization First Wave vs Second Wave "
+    hospi_prov(fig, 1, 1, fromw2=fw2, prov='Liège', show_legend=True)
+    hospi_prov(fig, 1, 2, fromw2=fw2, prov='Namur')
+    hospi_prov(fig, 1, 3, fromw2=fw2, prov='Luxembourg')
+    hospi_prov(fig, 2, 1, fromw2=fw2, prov='Hainaut')
+    hospi_prov(fig, 2, 2, fromw2=fw2, prov='Brussels')
+    hospi_prov(fig, 2, 3, fromw2=fw2, prov='BrabantWallon')
+    hospi_prov(fig, 3, 1, fromw2=fw2, prov='VlaamsBrabant')
+    hospi_prov(fig, 3, 2, fromw2=fw2, prov='OostVlaanderen')
+    hospi_prov(fig, 3, 3, fromw2=fw2, prov='WestVlaanderen')
+    hospi_prov(fig, 4, 1, fromw2=fw2, prov='Limburg')
+    hospi_prov(fig, 4, 2, fromw2=fw2, prov='Antwerpen')
+    hospi_prov(fig, 4, 3, fromw2=fw2, prov='All')
+
+    title = "New daily Hospitalizations per Province"
 
     fig.update_layout(template="plotly_white", height=800, margin=dict(l=50, r=50, t=50, b=50),
                       title=gettext(title))

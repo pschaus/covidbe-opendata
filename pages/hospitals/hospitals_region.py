@@ -8,8 +8,7 @@ from graphs.hopitals_prov import total_hospi_new_in_provinces,\
     total_hospi_provinces,total_icu_provinces,\
     map_hospi_provinces,map_hospi_per100K_provinces,\
     scatter_hospi_provinces,\
-    scatter_hospi_per100K_provinces, \
-    hospi_w1w2_provinces, hospi_provinces_per100k
+    scatter_hospi_per100K_provinces, hospi_provinces_per100k
 from graphs.hopitals import bar_hospi_per_case_per_province
 from graphs.hopitals_region import hospi_total_in_region_per100k, \
     hospi_total_in_icu_region_per100k, hospi_newin_region_per100k, hospi_newout_region_per100k
