@@ -329,6 +329,10 @@ Austria,Daily hospital occupancy,2021-02-21,2021-W07,1018.0,Country_Website,http
 Austria,Daily hospital occupancy,2021-02-22,2021-W08,1085.0,Country_Website,https://covid19-dashboard.ages.at/dashboard_Hosp.html
 Austria,Daily hospital occupancy,2021-02-23,2021-W08,1077.0,Country_Website,https://covid19-dashboard.ages.at/dashboard_Hosp.html
 Austria,Daily hospital occupancy,2021-02-24,2021-W08,1064.0,Country_Website,https://covid19-dashboard.ages.at/dashboard_Hosp.html
+Austria,Daily hospital occupancy,2021-02-25,2021-W08,1041.0,Country_Website,https://covid19-dashboard.ages.at/dashboard_Hosp.html
+Austria,Daily hospital occupancy,2021-02-26,2021-W08,1018.0,Country_Website,https://covid19-dashboard.ages.at/dashboard_Hosp.html
+Austria,Daily hospital occupancy,2021-02-27,2021-W08,988.0,Country_Website,https://covid19-dashboard.ages.at/dashboard_Hosp.html
+Austria,Daily hospital occupancy,2021-02-28,2021-W08,1022.0,Country_Website,https://covid19-dashboard.ages.at/dashboard_Hosp.html
 Austria,Daily ICU occupancy,2020-04-01,2020-W14,215.0,Country_Website,https://covid19-dashboard.ages.at/dashboard_Hosp.html
 Austria,Daily ICU occupancy,2020-04-02,2020-W14,219.0,Country_Website,https://covid19-dashboard.ages.at/dashboard_Hosp.html
 Austria,Daily ICU occupancy,2020-04-03,2020-W14,245.0,Country_Website,https://covid19-dashboard.ages.at/dashboard_Hosp.html
@@ -659,6 +663,10 @@ Austria,Daily ICU occupancy,2021-02-21,2021-W07,254.0,Country_Website,https://co
 Austria,Daily ICU occupancy,2021-02-22,2021-W08,252.0,Country_Website,https://covid19-dashboard.ages.at/dashboard_Hosp.html
 Austria,Daily ICU occupancy,2021-02-23,2021-W08,273.0,Country_Website,https://covid19-dashboard.ages.at/dashboard_Hosp.html
 Austria,Daily ICU occupancy,2021-02-24,2021-W08,255.0,Country_Website,https://covid19-dashboard.ages.at/dashboard_Hosp.html
+Austria,Daily ICU occupancy,2021-02-25,2021-W08,248.0,Country_Website,https://covid19-dashboard.ages.at/dashboard_Hosp.html
+Austria,Daily ICU occupancy,2021-02-26,2021-W08,260.0,Country_Website,https://covid19-dashboard.ages.at/dashboard_Hosp.html
+Austria,Daily ICU occupancy,2021-02-27,2021-W08,260.0,Country_Website,https://covid19-dashboard.ages.at/dashboard_Hosp.html
+Austria,Daily ICU occupancy,2021-02-28,2021-W08,283.0,Country_Website,https://covid19-dashboard.ages.at/dashboard_Hosp.html
 Belgium,Daily hospital occupancy,2020-03-15,2020-W11,266.0,Country_Website,https://epistat.wiv-isp.be/covid/
 Belgium,Daily hospital occupancy,2020-03-16,2020-W12,370.0,Country_Website,https://epistat.wiv-isp.be/covid/
 Belgium,Daily hospital occupancy,2020-03-17,2020-W12,497.0,Country_Website,https://epistat.wiv-isp.be/covid/
@@ -3519,22 +3527,22 @@ Czechia,Daily hospital occupancy,2020-11-14,2020-W46,6461.0,Country_Website,http
 Czechia,Daily hospital occupancy,2020-11-15,2020-W46,6305.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2020-11-16,2020-W47,6528.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2020-11-17,2020-W47,6085.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-11-18,2020-W47,6459.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-11-19,2020-W47,6226.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-11-20,2020-W47,5996.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-11-21,2020-W47,5359.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-11-22,2020-W47,5323.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-11-23,2020-W48,5680.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-11-24,2020-W48,5510.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-11-25,2020-W48,5300.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-11-26,2020-W48,5144.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-11-27,2020-W48,4930.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-11-28,2020-W48,4461.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-11-29,2020-W48,4524.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-11-30,2020-W49,4819.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-01,2020-W49,4651.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-02,2020-W49,4548.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-03,2020-W49,4504.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-11-18,2020-W47,6458.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-11-19,2020-W47,6225.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-11-20,2020-W47,5995.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-11-21,2020-W47,5358.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-11-22,2020-W47,5322.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-11-23,2020-W48,5679.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-11-24,2020-W48,5508.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-11-25,2020-W48,5298.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-11-26,2020-W48,5142.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-11-27,2020-W48,4928.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-11-28,2020-W48,4459.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-11-29,2020-W48,4523.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-11-30,2020-W49,4818.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-01,2020-W49,4650.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-02,2020-W49,4547.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-03,2020-W49,4503.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2020-12-04,2020-W49,4459.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2020-12-05,2020-W49,4097.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2020-12-06,2020-W49,4144.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
@@ -3561,67 +3569,67 @@ Czechia,Daily hospital occupancy,2020-12-26,2020-W52,4635.0,Country_Website,http
 Czechia,Daily hospital occupancy,2020-12-27,2020-W52,4949.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2020-12-28,2020-W53,5702.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2020-12-29,2020-W53,5951.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-30,2020-W53,6116.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2020-12-31,2020-W53,6133.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-01-01,2020-W53,5640.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-01-02,2020-W53,5943.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-01-03,2020-W53,6259.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-01-04,2021-W01,7199.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-01-05,2021-W01,7375.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-01-06,2021-W01,7364.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-01-07,2021-W01,7504.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-01-08,2021-W01,7300.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-30,2020-W53,6117.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2020-12-31,2020-W53,6135.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-01-01,2020-W53,5642.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-01-02,2020-W53,5947.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-01-03,2020-W53,6262.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-01-04,2021-W01,7201.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-01-05,2021-W01,7379.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-01-06,2021-W01,7369.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-01-07,2021-W01,7507.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-01-08,2021-W01,7302.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2021-01-09,2021-W01,6727.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-01-10,2021-W01,6835.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-01-11,2021-W02,7374.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-01-12,2021-W02,7429.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-01-10,2021-W01,6837.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-01-11,2021-W02,7376.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-01-12,2021-W02,7430.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2021-01-13,2021-W02,7258.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2021-01-14,2021-W02,7183.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-01-15,2021-W02,7100.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-01-16,2021-W02,6474.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-01-15,2021-W02,7099.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-01-16,2021-W02,6475.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2021-01-17,2021-W02,6443.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2021-01-18,2021-W03,6929.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2021-01-19,2021-W03,6645.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2021-01-20,2021-W03,6470.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2021-01-21,2021-W03,6350.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-01-22,2021-W03,6328.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-01-22,2021-W03,6327.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2021-01-23,2021-W03,5826.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-01-24,2021-W03,5865.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-01-25,2021-W04,6285.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-01-26,2021-W04,6251.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-01-27,2021-W04,6092.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-01-24,2021-W03,5866.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-01-25,2021-W04,6286.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-01-26,2021-W04,6252.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-01-27,2021-W04,6094.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2021-01-28,2021-W04,5988.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2021-01-29,2021-W04,5929.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-01-30,2021-W04,5491.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-01-31,2021-W04,5538.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-02-01,2021-W05,6064.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-02-02,2021-W05,5954.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-02-03,2021-W05,5917.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-01-30,2021-W04,5492.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-01-31,2021-W04,5539.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-02-01,2021-W05,6065.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-02-02,2021-W05,5955.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-02-03,2021-W05,5927.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2021-02-04,2021-W05,5951.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-02-05,2021-W05,5933.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-02-06,2021-W05,5604.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-02-07,2021-W05,5747.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-02-08,2021-W06,6163.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-02-09,2021-W06,6094.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-02-10,2021-W06,6013.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-02-11,2021-W06,5991.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-02-12,2021-W06,5922.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-02-05,2021-W05,5932.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-02-06,2021-W05,5602.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-02-07,2021-W05,5745.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-02-08,2021-W06,6162.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-02-09,2021-W06,6093.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-02-10,2021-W06,6012.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-02-11,2021-W06,5988.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-02-12,2021-W06,5921.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily hospital occupancy,2021-02-13,2021-W06,5615.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-02-14,2021-W06,5828.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-02-15,2021-W07,6317.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-02-16,2021-W07,6354.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-02-17,2021-W07,6439.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-02-18,2021-W07,6535.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-02-19,2021-W07,6554.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-02-20,2021-W07,6156.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-02-21,2021-W07,6374.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-02-22,2021-W08,7084.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-02-23,2021-W08,7119.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-02-24,2021-W08,7186.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-02-25,2021-W08,7408.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-02-26,2021-W08,7512.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-02-27,2021-W08,7184.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily hospital occupancy,2021-02-28,2021-W08,7459.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-02-14,2021-W06,5829.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-02-15,2021-W07,6316.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-02-16,2021-W07,6353.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-02-17,2021-W07,6440.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-02-18,2021-W07,6534.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-02-19,2021-W07,6553.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-02-20,2021-W07,6155.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-02-21,2021-W07,6372.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-02-22,2021-W08,7083.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-02-23,2021-W08,7111.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-02-24,2021-W08,7187.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-02-25,2021-W08,7414.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-02-26,2021-W08,7517.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-02-27,2021-W08,7212.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily hospital occupancy,2021-02-28,2021-W08,7484.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily ICU occupancy,2020-03-01,2020-W09,0.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily ICU occupancy,2020-03-02,2020-W10,0.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily ICU occupancy,2020-03-03,2020-W10,0.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
@@ -3893,13 +3901,13 @@ Czechia,Daily ICU occupancy,2020-11-23,2020-W48,821.0,Country_Website,https://on
 Czechia,Daily ICU occupancy,2020-11-24,2020-W48,790.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily ICU occupancy,2020-11-25,2020-W48,747.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily ICU occupancy,2020-11-26,2020-W48,743.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-11-27,2020-W48,705.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-11-28,2020-W48,653.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-11-29,2020-W48,639.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-11-30,2020-W49,665.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-01,2020-W49,589.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-02,2020-W49,590.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2020-12-03,2020-W49,582.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-11-27,2020-W48,704.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-11-28,2020-W48,652.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-11-29,2020-W48,638.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-11-30,2020-W49,664.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-01,2020-W49,588.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-02,2020-W49,589.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2020-12-03,2020-W49,581.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily ICU occupancy,2020-12-04,2020-W49,576.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily ICU occupancy,2020-12-05,2020-W49,561.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily ICU occupancy,2020-12-06,2020-W49,552.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
@@ -3962,31 +3970,31 @@ Czechia,Daily ICU occupancy,2021-01-31,2021-W04,970.0,Country_Website,https://on
 Czechia,Daily ICU occupancy,2021-02-01,2021-W05,1022.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily ICU occupancy,2021-02-02,2021-W05,1031.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily ICU occupancy,2021-02-03,2021-W05,1016.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2021-02-04,2021-W05,1035.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2021-02-04,2021-W05,1034.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily ICU occupancy,2021-02-05,2021-W05,1043.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2021-02-06,2021-W05,1045.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2021-02-07,2021-W05,1056.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2021-02-06,2021-W05,1044.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2021-02-07,2021-W05,1055.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily ICU occupancy,2021-02-08,2021-W06,1088.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily ICU occupancy,2021-02-09,2021-W06,1091.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily ICU occupancy,2021-02-10,2021-W06,1088.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily ICU occupancy,2021-02-11,2021-W06,1106.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2021-02-12,2021-W06,1097.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2021-02-13,2021-W06,1098.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2021-02-14,2021-W06,1143.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2021-02-15,2021-W07,1190.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2021-02-12,2021-W06,1098.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2021-02-13,2021-W06,1099.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2021-02-14,2021-W06,1144.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2021-02-15,2021-W07,1191.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily ICU occupancy,2021-02-16,2021-W07,1228.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2021-02-17,2021-W07,1274.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2021-02-18,2021-W07,1291.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2021-02-19,2021-W07,1301.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2021-02-17,2021-W07,1275.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2021-02-18,2021-W07,1292.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2021-02-19,2021-W07,1302.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily ICU occupancy,2021-02-20,2021-W07,1301.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily ICU occupancy,2021-02-21,2021-W07,1316.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2021-02-22,2021-W08,1405.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2021-02-23,2021-W08,1442.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2021-02-24,2021-W08,1470.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2021-02-22,2021-W08,1406.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2021-02-23,2021-W08,1443.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2021-02-24,2021-W08,1469.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Daily ICU occupancy,2021-02-25,2021-W08,1561.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2021-02-26,2021-W08,1533.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2021-02-27,2021-W08,1540.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
-Czechia,Daily ICU occupancy,2021-02-28,2021-W08,1567.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2021-02-26,2021-W08,1532.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2021-02-27,2021-W08,1542.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
+Czechia,Daily ICU occupancy,2021-02-28,2021-W08,1573.0,Country_Website,https://onemocneni-aktualne.mzcr.cz/covid-19
 Czechia,Weekly new hospital admissions per 100k,,2020-W05,,TESSy COVID-19,
 Czechia,Weekly new hospital admissions per 100k,,2020-W06,,TESSy COVID-19,
 Czechia,Weekly new hospital admissions per 100k,,2020-W07,,TESSy COVID-19,
@@ -5448,7 +5456,7 @@ Estonia,Daily ICU occupancy,2021-02-07,2021-W05,31.0,Country_API,https://www.ter
 Estonia,Daily ICU occupancy,2021-02-08,2021-W06,30.0,Country_API,https://www.terviseamet.ee/et/koroonaviirus/avaandmed
 Estonia,Daily ICU occupancy,2021-02-09,2021-W06,34.0,Country_API,https://www.terviseamet.ee/et/koroonaviirus/avaandmed
 Estonia,Daily ICU occupancy,2021-02-10,2021-W06,32.0,Country_API,https://www.terviseamet.ee/et/koroonaviirus/avaandmed
-Estonia,Daily ICU occupancy,2021-02-11,2021-W06,30.0,Country_API,https://www.terviseamet.ee/et/koroonaviirus/avaandmed
+Estonia,Daily ICU occupancy,2021-02-11,2021-W06,29.0,Country_API,https://www.terviseamet.ee/et/koroonaviirus/avaandmed
 Estonia,Daily ICU occupancy,2021-02-12,2021-W06,33.0,Country_API,https://www.terviseamet.ee/et/koroonaviirus/avaandmed
 Estonia,Daily ICU occupancy,2021-02-13,2021-W06,35.0,Country_API,https://www.terviseamet.ee/et/koroonaviirus/avaandmed
 Estonia,Daily ICU occupancy,2021-02-14,2021-W06,36.0,Country_API,https://www.terviseamet.ee/et/koroonaviirus/avaandmed
@@ -12388,8 +12396,8 @@ Norway,Weekly new hospital admissions per 100k,,2021-W03,1.6953636461869197,,htt
 Norway,Weekly new hospital admissions per 100k,,2021-W04,0.875627377700938,,https://www.fhi.no/sv/smittsomme-sykdommer/corona/dags--og-ukerapporter/dags--og-ukerapporter-om-koronavirus/
 Norway,Weekly new hospital admissions per 100k,,2021-W05,0.633432571102806,,https://www.fhi.no/sv/smittsomme-sykdommer/corona/dags--og-ukerapporter/dags--og-ukerapporter-om-koronavirus/
 Norway,Weekly new hospital admissions per 100k,,2021-W06,0.8569970079626199,,https://www.fhi.no/sv/smittsomme-sykdommer/corona/dags--og-ukerapporter/dags--og-ukerapporter-om-koronavirus/
-Norway,Weekly new hospital admissions per 100k,,2021-W07,1.13645255403739,,https://www.fhi.no/sv/smittsomme-sykdommer/corona/dags--og-ukerapporter/dags--og-ukerapporter-om-koronavirus/
-Norway,Weekly new hospital admissions per 100k,,2021-W08,1.17371329351402,,https://www.fhi.no/sv/smittsomme-sykdommer/corona/dags--og-ukerapporter/dags--og-ukerapporter-om-koronavirus/
+Norway,Weekly new hospital admissions per 100k,,2021-W07,1.15508292377571,,https://www.fhi.no/sv/smittsomme-sykdommer/corona/dags--og-ukerapporter/dags--og-ukerapporter-om-koronavirus/
+Norway,Weekly new hospital admissions per 100k,,2021-W08,1.32275625142057,,https://www.fhi.no/sv/smittsomme-sykdommer/corona/dags--og-ukerapporter/dags--og-ukerapporter-om-koronavirus/
 Norway,Weekly new ICU admissions per 100k,,2020-W08,0.0,,https://www.fhi.no/sv/smittsomme-sykdommer/corona/dags--og-ukerapporter/dags--og-ukerapporter-om-koronavirus/
 Norway,Weekly new ICU admissions per 100k,,2020-W09,0.0,,https://www.fhi.no/sv/smittsomme-sykdommer/corona/dags--og-ukerapporter/dags--og-ukerapporter-om-koronavirus/
 Norway,Weekly new ICU admissions per 100k,,2020-W10,0.0,,https://www.fhi.no/sv/smittsomme-sykdommer/corona/dags--og-ukerapporter/dags--og-ukerapporter-om-koronavirus/
@@ -12437,13 +12445,13 @@ Norway,Weekly new ICU admissions per 100k,,2020-W51,0.26082517633645,,https://ww
 Norway,Weekly new ICU admissions per 100k,,2020-W52,0.26082517633645,,https://www.fhi.no/sv/smittsomme-sykdommer/corona/dags--og-ukerapporter/dags--og-ukerapporter-om-koronavirus/
 Norway,Weekly new ICU admissions per 100k,,2020-W53,0.204934067121496,,https://www.fhi.no/sv/smittsomme-sykdommer/corona/dags--og-ukerapporter/dags--og-ukerapporter-om-koronavirus/
 Norway,Weekly new ICU admissions per 100k,,2021-W01,0.42849850398130995,,https://www.fhi.no/sv/smittsomme-sykdommer/corona/dags--og-ukerapporter/dags--og-ukerapporter-om-koronavirus/
-Norway,Weekly new ICU admissions per 100k,,2021-W02,0.27945554607476697,,https://www.fhi.no/sv/smittsomme-sykdommer/corona/dags--og-ukerapporter/dags--og-ukerapporter-om-koronavirus/
+Norway,Weekly new ICU admissions per 100k,,2021-W02,0.26082517633645,,https://www.fhi.no/sv/smittsomme-sykdommer/corona/dags--og-ukerapporter/dags--og-ukerapporter-om-koronavirus/
 Norway,Weekly new ICU admissions per 100k,,2021-W03,0.223564436859814,,https://www.fhi.no/sv/smittsomme-sykdommer/corona/dags--og-ukerapporter/dags--og-ukerapporter-om-koronavirus/
 Norway,Weekly new ICU admissions per 100k,,2021-W04,0.18630369738317804,,https://www.fhi.no/sv/smittsomme-sykdommer/corona/dags--og-ukerapporter/dags--og-ukerapporter-om-koronavirus/
 Norway,Weekly new ICU admissions per 100k,,2021-W05,0.16767332764485998,,https://www.fhi.no/sv/smittsomme-sykdommer/corona/dags--og-ukerapporter/dags--og-ukerapporter-om-koronavirus/
 Norway,Weekly new ICU admissions per 100k,,2021-W06,0.130412588168225,,https://www.fhi.no/sv/smittsomme-sykdommer/corona/dags--og-ukerapporter/dags--og-ukerapporter-om-koronavirus/
 Norway,Weekly new ICU admissions per 100k,,2021-W07,0.16767332764485998,,https://www.fhi.no/sv/smittsomme-sykdommer/corona/dags--og-ukerapporter/dags--og-ukerapporter-om-koronavirus/
-Norway,Weekly new ICU admissions per 100k,,2021-W08,0.149042957906543,,https://www.fhi.no/sv/smittsomme-sykdommer/corona/dags--og-ukerapporter/dags--og-ukerapporter-om-koronavirus/
+Norway,Weekly new ICU admissions per 100k,,2021-W08,0.223564436859814,,https://www.fhi.no/sv/smittsomme-sykdommer/corona/dags--og-ukerapporter/dags--og-ukerapporter-om-koronavirus/
 Poland,Daily hospital occupancy,2020-04-08,2020-W15,2425.0,Surveillance,https://twitter.com/MZ_GOV_PL/status/1247796557581176832
 Poland,Daily hospital occupancy,2020-04-13,2020-W16,2510.0,Surveillance,https://en.wikipedia.org/wiki/2020_coronavirus_pandemic_in_Poland
 Poland,Daily hospital occupancy,2020-04-15,2020-W16,2499.0,Surveillance,https://twitter.com/MZ_GOV_PL/status/1250318007248629762
@@ -16243,7 +16251,7 @@ Sweden,Weekly new ICU admissions per 100k,,2021-W01,1.80100118236696,,https://ww
 Sweden,Weekly new ICU admissions per 100k,,2021-W02,1.4911515165833997,,https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/bekraftade-fall-i-sverige
 Sweden,Weekly new ICU admissions per 100k,,2021-W03,1.21035025696704,,https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/bekraftade-fall-i-sverige
 Sweden,Weekly new ICU admissions per 100k,,2021-W04,1.05542542407526,,https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/bekraftade-fall-i-sverige
-Sweden,Weekly new ICU admissions per 100k,,2021-W05,1.01669421585232,,https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/bekraftade-fall-i-sverige
+Sweden,Weekly new ICU admissions per 100k,,2021-W05,1.02637701790805,,https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/bekraftade-fall-i-sverige
 Sweden,Weekly new ICU admissions per 100k,,2021-W06,1.01669421585232,,https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/bekraftade-fall-i-sverige
 Sweden,Weekly new ICU admissions per 100k,,2021-W07,1.01669421585232,,https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/bekraftade-fall-i-sverige
-Sweden,Weekly new ICU admissions per 100k,,2021-W08,1.05542542407526,,https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/bekraftade-fall-i-sverige
+Sweden,Weekly new ICU admissions per 100k,,2021-W08,1.15225344463262,,https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/bekraftade-fall-i-sverige
