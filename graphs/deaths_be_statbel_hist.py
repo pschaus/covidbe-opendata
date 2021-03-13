@@ -165,6 +165,25 @@ def death_plus_hist_cum():
     return fig
 
 
+@register_plot_for_embedding("death_cumsum_comparison_2021")
+def death_cum_january_2021():
+
+    years = [2015 ,2016 ,2017 ,2018 ,2019 ,2020, 2021]
+
+
+    def y(year):
+        return df[df.NR_YEAR == year].MS_NUM_DEATH.cumsum()
+
+    n = len(y(2021).values)
+    values = [y(a).values[ min(n -1,364)] for a in years]
+
+    fig = px.bar(x=years, y=values ,labels={"x" :"" ,"y" :""})
+    fig.update_layout(template="plotly_white",
+                      title="Total deaths since 1st of January at day  " +str(n) ,)
+    return fig
+
+
+
 @register_plot_for_embedding("death_cumsum_comparison")
 def death_cum_january():
 
