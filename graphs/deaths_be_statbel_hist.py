@@ -157,7 +157,7 @@ def death_plus_hist_cum():
                           go.Scatter(y=y(2018), name=gettext('2018')),
                           go.Scatter(y=y(2019), name=gettext('2019')),
                           go.Scatter(y=y(2020), name=gettext('2020')),
-                          go.Scatter(y=y(2021), name=gettext('2020'))])
+                          go.Scatter(y=y(2021), name=gettext('2021'))])
 
     fig.update_layout(xaxis_title='#Days since 1st of January',
                       yaxis_title='cumulated #deaths all population')
