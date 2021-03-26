@@ -32,7 +32,7 @@ mydateparser = lambda x: datetime.strptime(x, "%d/%m/%Y")
 
 
 
-df = pandas.read_csv(zf.open(match), parse_dates=['DT_DATE'],date_parser=mydateparser, low_memory=False,sep=";",encoding="latin-1")
+df = pandas.read_csv(zf.open(match), parse_dates=['DT_DATE'],date_parser=mydateparser, low_memory=False,sep="|",encoding="latin-1")
 df.dropna(thresh=1,inplace=True)
 
 def week(date):
