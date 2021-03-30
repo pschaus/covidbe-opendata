@@ -68,18 +68,100 @@ def bar_cases_provinces():
 
 import numpy as np
 
-def plot(df,column_name,title):
+import json
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objs as go
+from pages import model_warning, get_translation
+
+# ---------plot of cases per province------------------------
+from flask_babel import gettext
+
+from graphs import register_plot_for_embedding
+
+df_prov_tot = pd.read_csv('static/csv/be-covid-provinces_tot.csv')
+
+with open('static/json/provinces/be-provinces-geojson.json') as json_file:
+    geojson_provinces = json.load(json_file)
+range_min = df_prov_tot.CASES_PER_THOUSAND.min()
+range_max = df_prov_tot.CASES_PER_THOUSAND.max()
+
+df = pd.read_csv('static/csv/be-covid-provinces-all.csv')
+df['POSITIVE_RATE'] = df['CASES'] / df['TESTS_ALL']
+df['TESTING_RATE'] = df['TESTS_ALL'] * 100000 / df['POP']
+
+cutoff1 = (pd.to_datetime('today') - pd.Timedelta('17 days')).date()
+cutoff2 = (pd.to_datetime('today') - pd.Timedelta('4 days')).date()
+
+df3d = df[df.DATE >= str(cutoff1)]
+df3d = df3d[df3d.DATE <= str(cutoff2)]
+df3d = df3d.groupby([df3d.PROVINCE, df3d.POP, df3d.PROV]).agg({'CASES': ['sum']}).reset_index()
+df3d.columns = df3d.columns.get_level_values(0)
+df3d['CASES_PER_100KHABITANT'] = df3d['CASES'] / df3d['POP'] * 100000
+df3d = df3d.round({'CASES_PER_100KHABITANT': 1})
+
+
+def df_prov_avg_age_cases():
+    df_prov_timeseries = pd.read_csv('static/csv/be-covid-provinces.csv')
+    age_group_weight = {'0-9': 5, '10-19': 15, '20-29': 25, '30-39': 35, '40-49': 45, '50-59': 55,
+                        '60-69': 65, '70-79': 75, '80-89': 85, '90+': 90}
+
+    df_prov_timeseries['weight'] = df_prov_timeseries['AGEGROUP'].map(age_group_weight)
+    df_prov_timeseries['weightedcases'] = df_prov_timeseries['weight'] * df_prov_timeseries['CASES']
+    df_prov = df_prov_timeseries.groupby(
+        [df_prov_timeseries.DATE, df_prov_timeseries.PROVINCE, df_prov_timeseries.PROVINCE_NAME]).agg(
+        {'CASES': ['sum'], 'weightedcases': ['sum']}).reset_index()
+    df_prov.columns = df_prov.columns.get_level_values(0)
+    df_prov['avg_age'] = df_prov['weightedcases'] / df_prov['CASES']
+    df_prov['PROVINCE'] = df_prov['PROVINCE_NAME']
+    return df_prov
+
+
+df_prov = df_prov_avg_age_cases()
+
+
+@register_plot_for_embedding("bar_testing_provinces")
+def bar_testing_provinces():
+    fig = px.bar(df, x="DATE", y="TESTS_ALL", color="PROVINCE", barmode="stack")
+    fig.update_layout(template="plotly_white")
+    return fig
+
+
+@register_plot_for_embedding("bar_cases_provinces")
+def bar_cases_provinces():
+    fig = px.bar(df, x="DATE", y="CASES", color="PROVINCE", barmode="stack")
+    fig.update_layout(template="plotly_white")
+    return fig
+
+
+import numpy as np
+
+
+def plot(df, column_name, title):
     bars = []
     provinces = df.PROVINCE.unique()
+    cols = px.colors.qualitative.Plotly
+    i = 0
     for p in provinces:
+        c = cols[i % len(cols)]
         df_p = df.loc[df['PROVINCE'] == p]
         bars.append(go.Scatter(
             x=df_p.DATE,
-            y=df_p[column_name].rolling(7).mean(),
+            y=df_p[column_name].rolling(7, center=True).mean(),
+            marker_color=c,
             name=p
         ))
-    fig = go.Figure(data=bars,layout=go.Layout(barmode='group'),)
-    fig.update_layout(template="plotly_white", height=500,margin=dict(l=0, r=0, t=30, b=0), title=title)
+
+        bars.append(go.Scatter(
+            x=df_p.DATE,
+            y=df_p[column_name],
+            mode='markers',
+            marker_color=c,
+            name=p, visible='legendonly',
+        ))
+        i += 1
+    fig = go.Figure(data=bars, layout=go.Layout(barmode='group'), )
+    fig.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0), title=title)
     fig.update_layout(
         hovermode='x unified',
         updatemenus=[
@@ -103,25 +185,35 @@ def plot(df,column_name,title):
     return fig
 
 
+@register_plot_for_embedding("avg_cases_provinces")
+def avg_cases_provinces():
+    return plot(df, 'CASES', "Cases avg 7 days")
+
+
+
 def plot_ratio(df, column_name1,column_name2, title):
-    def moving_average(a, n=1) :
-        a = a.astype(np.float)
-        ret = np.cumsum(a)
-        ret[n:] = ret[n:] - ret[:-n]
-        ret[:n-1] = ret[:n-1]/range(1,n)
-        ret[n-1:] = ret[n - 1:] / n
-        return ret
-
-
     bars = []
     provinces = sorted(df.PROVINCE.unique())
+    cols = px.colors.qualitative.Plotly
+    i = 0
     for p in provinces:
+        c = cols[i % len(cols)]
         df_p = df.loc[df['PROVINCE'] == p]
         bars.append(go.Scatter(
             x=df_p.DATE,
-            y=moving_average(100* df_p[column_name1].values, 7)/moving_average(df_p[column_name2].values, 7),
-            name=p
+            y=100* (df_p[column_name1].rolling(7,center=True).sum()/df_p[column_name2].rolling(7,center=True).sum()),
+            name=p,
+            mode='lines',
+            marker_color=c
         ))
+        bars.append(go.Scatter(
+            x=df_p.DATE,
+            y=100* df_p[column_name1]/df_p[column_name2],
+            name=p,
+            mode='markers',
+            marker_color=c,visible='legendonly',
+        ))
+        i += 1
 
 
     fig = go.Figure(data=bars,layout=go.Layout(barmode='group'),)

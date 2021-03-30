@@ -5,7 +5,7 @@ from flask_babel import gettext
 from plotly.subplots import make_subplots
 import numpy as np
 
-
+from datetime import datetime
 from graphs import register_plot_for_embedding
 
 import pandas as pd
@@ -25,46 +25,18 @@ df = df.groupby([df.DATE, df.REGION]).agg(
 df.columns = df.columns.get_level_values(0)
 
 
+def trace(fig, region, log=False, div=1, mul=1, col="blue"):
+    fig.add_trace(go.Scatter(name=region,
+                             x=df[df.REGION == region].DATE,
+                             y=df[df.REGION == region].CASES.rolling(7, center=True).mean() / div * mul,
+                             marker_color=col, legendgroup=region + "mean", showlegend=True))
 
-def trace(region, log=False, div=1, mul=1):
-    return go.Scatter(name=region,
-                      x=df[df.REGION == region].DATE,
-                      y=df[df.REGION == region].CASES.rolling(7).mean() / div * mul)
+    fig.add_trace(go.Bar(name=region,
+                         x=df[df.REGION == region].DATE,
+                         y=df[df.REGION == region].CASES / div * mul, legendgroup=region, marker_color=col,
+                         visible='legendonly',
+                         showlegend=True))
 
-
-@register_plot_for_embedding("plot_relative_cases_region")
-def plot_relative_cases():
-    fig = go.Figure()
-    brux_pop = 1218255
-    wall_pop = 3645243
-    flanders_pop = 6629143
-
-    fig.add_trace(trace('Wallonia', div=wall_pop, mul=100000))
-    fig.add_trace(trace('Flanders', div=flanders_pop, mul=100000))
-    fig.add_trace(trace('Brussels', div=brux_pop, mul=100000))
-
-    fig.update_layout(template="plotly_white", title="Number of cases/100000 habitants")
-    fig.update_layout(
-        hovermode='x unified',
-        updatemenus=[
-            dict(
-                type="buttons",
-                direction="left",
-                buttons=list([
-                    dict(
-                        args=[{"yaxis.type": "linear"}],
-                        label="LINEAR",
-                        method="relayout"
-                    ),
-                    dict(
-                        args=[{"yaxis.type": "log"}],
-                        label="LOG",
-                        method="relayout"
-                    )
-                ]),
-            ),
-        ])
-    return fig
 
 @register_plot_for_embedding("plot_relative_cases_region")
 def plot_relative_cases():
@@ -73,11 +45,14 @@ def plot_relative_cases():
     wall_pop = 3645243
     flanders_pop = 6629143
 
-    fig.add_trace(trace('Wallonia', div=wall_pop, mul=100000))
-    fig.add_trace(trace('Flanders', div=flanders_pop, mul=100000))
-    fig.add_trace(trace('Brussels', div=brux_pop, mul=100000))
+    trace(fig, 'Brussels', div=brux_pop, mul=100000, col=px.colors.qualitative.Plotly[0])
+    trace(fig, 'Flanders', div=flanders_pop, mul=100000, col=px.colors.qualitative.Plotly[1])
+    trace(fig, 'Wallonia', div=wall_pop, mul=100000, col=px.colors.qualitative.Plotly[2])
 
     fig.update_layout(template="plotly_white", title="Number of cases/100000 habitants")
+    #fig.update_layout(xaxis_range=['2021-02-01', datetime.today().strftime('%Y-%m-%d')])
+    #fig.update_layout(yaxis_range=[0, 70])
+
     fig.update_layout(
         hovermode='x unified',
         updatemenus=[
@@ -117,10 +92,16 @@ def positive_rate_region():
     #fig = px.line(x=df_pos.DATE,y=df_pos.POSITIVE_RATE,color=df.REGION)
     regions = ['Brussels','Flanders','Wallonia']
     plots = []
+    colors = px.colors.qualitative.Plotly
+    i = 0
     for r in regions:
+        c = colors[i]
         dfr = df_pos[df_pos.REGION == r]
-        plot = go.Scatter(x=dfr['DATE'], y=dfr['POSITIVE_RATE'].rolling(7).mean(),name=r)
+        plot = go.Scatter(x=dfr['DATE'], y=dfr['POSITIVE_RATE'].rolling(7,center=True).mean(),mode='lines',name=r,marker_color=c)
         plots.append(plot)
+        plot = go.Scatter(x=dfr['DATE'], y=dfr['POSITIVE_RATE'],name=r+' avg',mode='markers',marker_color=c)
+        plots.append(plot)
+        i += 1
     fig = go.Figure(data=plots, layout=go.Layout(barmode='group'))
     fig.update_layout(template="plotly_white", title="Positive Rate (%)")
     fig.update_layout(
@@ -160,7 +141,7 @@ def number_of_test_per_inhabitant_region():
     plots = []
     for r in regions:
         dfr = df_pos[df_pos.REGION == r]
-        plot = go.Scatter(x=dfr['DATE'], y=(100000*dfr['TESTS_ALL'] / pop[r]).rolling(7).mean(), name=r)
+        plot = go.Scatter(x=dfr['DATE'], y=(100000*dfr['TESTS_ALL'] / pop[r]).rolling(7,center=True).mean(), name=r)
         plots.append(plot)
     fig = go.Figure(data=plots, layout=go.Layout(barmode='group'))
     fig.update_layout(template="plotly_white", title="Number of tests per 100K inhabitants")

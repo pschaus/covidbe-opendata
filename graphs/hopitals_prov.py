@@ -135,7 +135,7 @@ def hospi_prov(fig, row, col, fromw2, prov=None, show_legend=False):
     wave2 = go.Bar(x=x2, y=y2, name=gettext('NEW_IN'), legendgroup='group2', showlegend=False, marker_color=colors)
     fig.add_trace(wave2, row, col)
 
-    fig.add_trace(go.Scatter(x=x2, y=y2.rolling(7).mean(), showlegend=show_legend, name=gettext('avg past 7 days'),
+    fig.add_trace(go.Scatter(x=x2, y=y2.rolling(7,center=True).mean(), showlegend=show_legend, name=gettext('avg past 7 days'),
                              legendgroup='avg 7 days', marker_color="red"), row, col)
 
     slope, intercept, r_value, p_value, std_err = stats.linregress(np.arange(0, 14), y2[-14:])
@@ -213,7 +213,7 @@ def plot(df,column_name,title):
         df_p = df.loc[df['PROVINCE'] == p]
         bars.append(go.Scatter(
             x=df_p.DATE,
-            y=df_p[column_name].rolling(7).mean(),
+            y=df_p[column_name].rolling(7,center=True).mean(),
             name=p
         ))
 

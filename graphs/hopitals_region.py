@@ -36,27 +36,37 @@ pop = {'Brussels': 1218255, 'Flanders': 6629143, 'Wallonia': 3645243}
 
 @register_plot_for_embedding("hospi_region_per100k")
 def hospi_region_per100k(column,avg=False):
-    barmode = 'stack'  # group
+    barmode = 'group'  # group
     # bar plot with bars per age groups
     bars = []
     regions = sorted(df.REGION.unique())
 
     idx = pd.date_range(df.DATE.min(), df.DATE.max())
 
+    colors = px.colors.qualitative.Plotly
+    i = 0
+
     for r in regions:
+        c = colors[i]
         df_r = df.loc[df['REGION'] == r]
         df_r = df_r.groupby(['DATE']).agg({column: 'sum'})
         df_r.index = pd.DatetimeIndex(df_r.index)
         df_r = df_r.reindex(idx, fill_value=0)
 
         if avg:
-            plot = go.Scatter(x=df_r.index, y=(100000 * df_r[column] / pop[r]).rolling(7).mean(), name=r)
+            plot = go.Scatter(x=df_r.index, y=(100000 * df_r[column] / pop[r]).rolling(7,center=True).mean(),
+                              name=r+" avg",mode="lines",marker_color=c)
+            bars.append(plot)
+            plot = go.Bar(x=df_r.index, y=(100000 * df_r[column] / pop[r]),
+                              name=r,marker_color=c)
+            bars.append(plot)
         else:
-            plot = go.Scatter(x=df_r.index, y=(100000 * df_r[column] / pop[r]), name=r)
-        bars.append(plot)
+            plot = go.Scatter(x=df_r.index, y=(100000 * df_r[column] / pop[r]),
+                              name=r,marker_color=c)
+            bars.append(plot)
+        i += 1
 
-    fig = go.Figure(data=bars,
-                    layout=go.Layout(barmode='group'), )
+    fig = go.Figure(data=bars )
     fig.update_layout(template="plotly_white", height=500, barmode=barmode, margin=dict(l=0, r=0, t=30, b=0), )
 
     fig.update_layout(template="plotly_white", title=column+" per 100K inhabitants" + ("(avg 7 days)" if avg  else ""))

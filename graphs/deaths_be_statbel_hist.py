@@ -1,4 +1,3 @@
-
 import plotly.express as px
 
 import plotly.graph_objs as go
@@ -18,20 +17,16 @@ from graphs import register_plot_for_embedding
 
 from datetime import datetime
 
-
-
 df_week85 = pd.read_csv("static/csv/weekly_mortality_85+.csv")
 df_week_all = pd.read_csv("static/csv/weekly_mortality_all.csv")
 
 df = pd.read_csv("static/csv/mortality_statbel.csv")
 
-df_ag = df.groupby([df.DT_DATE ,df.CD_AGEGROUP]).agg({'MS_NUM_DEATH': ['sum']}).reset_index()
+df_ag = df.groupby([df.DT_DATE, df.CD_AGEGROUP]).agg({'MS_NUM_DEATH': ['sum']}).reset_index()
 df_ag.columns = df_ag.columns.get_level_values(0)
 
-
-df = df.groupby([df.DT_DATE ,df.NR_YEAR]).agg({'MS_NUM_DEATH': ['sum']}).reset_index()
+df = df.groupby([df.DT_DATE, df.NR_YEAR]).agg({'MS_NUM_DEATH': ['sum']}).reset_index()
 df.columns = df.columns.get_level_values(0)
-
 
 age_groups = ['0-24', '25-44', '45-64', '65-74', '75-84', '85+']
 
@@ -59,29 +54,40 @@ def sin_fit_math(x, y):
     return yy
 
 
-def sin_fit(x, y, title):
-    yy = sin_fit_math(x, y)
+def sin_fit(x, y, title,color="blue"):
+    yy = sin_fit_math(x, y.values)
+
     sin_line = go.Scatter(
         x=x,
         y=yy,
         mode='lines',
-        name='sin fit model ' + title
+        name='sin fit model ' + title,
+        legendgroup=title,
+        marker_color="grey"
     )
     line = go.Scatter(
         x=x,
-        y=y,
+        y=y.values,
+        mode='markers',
+        name='daily ' + title,
+        legendgroup = title,
+        marker_color = color
+    )
+    avgline = go.Scatter(
+        x=x,
+        y=y.rolling(7, center=True).mean().values,
         mode='lines',
-        name='7 day average ' + title
+        name='7 day average ' + title,
+        legendgroup=title,
+        marker_color=color
     )
 
-    return [line, sin_line]
-
-
+    return [line, sin_line, avgline]
 
 
 @register_plot_for_embedding("daily_death_all")
 def daily_death_all():
-    plots = sin_fit(df.DT_DATE, moving_average(df.MS_NUM_DEATH.values, 7), "all pop")
+    plots = sin_fit(df.DT_DATE, df.MS_NUM_DEATH, "all pop")
 
     fig = go.Figure(
         data=plots,
@@ -93,6 +99,8 @@ def daily_death_all():
     )
     fig.update_layout(template="plotly_white")
 
+    fig.update_layout(xaxis_range=['2020-01-01', datetime.today().strftime('%Y-%m-%d')])
+
     fig.update_layout(yaxis=dict(range=[0, 620]))
     return fig
 
@@ -100,11 +108,11 @@ def daily_death_all():
 @register_plot_for_embedding("daily_death_all_deviation_sin")
 def daily_death_all_deviation_sin():
     x = df.DT_DATE
-    y = moving_average(df.MS_NUM_DEATH.values ,7)
 
-    yy =  sin_fit_math(x ,y)
 
-    relative = (( y -yy ) /yy ) *100
+    yy =  sin_fit_math(x ,df.MS_NUM_DEATH.values)
+
+    relative = (( df.MS_NUM_DEATH.values -yy ) /yy ) *100
 
     col = np.where(relative <0, 'green', 'red')
 
@@ -124,10 +132,12 @@ def daily_death_all_deviation_sin():
 @register_plot_for_embedding("daily_death_ag")
 def daily_death_ag():
     plots = []
-
+    cols = px.colors.qualitative.Plotly
+    i = 0
     for ag in age_groups:
         df_ag_ = df_ag.loc[df_ag['CD_AGEGROUP'] == ag]
-        plots = plots + sin_fit(df_ag_.DT_DATE, moving_average(df_ag_.MS_NUM_DEATH.values, 7), str(ag))
+        plots = plots + sin_fit(df_ag_.DT_DATE, df_ag_.MS_NUM_DEATH, str(ag),color=cols[i])
+        i += 1
 
     fig = go.Figure(
         data=plots,

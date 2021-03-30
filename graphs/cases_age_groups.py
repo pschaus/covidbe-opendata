@@ -219,7 +219,7 @@ def age_groups_pop_active_cases_relative():
             marker_color=px.colors.qualitative.G10[idx2]
         ))
         bars_age_groups.append(
-            go.Scatter(x=df_ag.index, y=moving_average((df_ag['CASES']/age_group_pop[ag]).values, 7), name=(ag + " avg 7 days")))
+            go.Scatter(x=df_ag.index, y=(df_ag['CASES']/age_group_pop[ag]).rolling(7,center=True).mean(), name=(ag + " avg 7 days")))
     fig_age_groups_cases = go.Figure(data=bars_age_groups)
     fig_age_groups_cases.update_layout(template="plotly_white", height=500,
                                        margin=dict(l=0, r=0, t=30, b=0), title=gettext("Cases per day per age group"))
@@ -250,7 +250,7 @@ def age_groups_pop_active_cases():
             marker_color = col,legendgroup = ag, showlegend = True
         ))
         bars_age_groups.append(
-            go.Scatter(x=df_ag.index, y=moving_average(df_ag['CASES'].values, 7),
+            go.Scatter(x=df_ag.index, y=df_ag['CASES'].rolling(7,center=True).mean(),
                        name=ag, marker_color = col, legendgroup = ag, showlegend = False))
     fig_age_groups_cases = go.Figure(data=bars_age_groups)
     fig_age_groups_cases.update_layout(template="plotly_white", height=500,

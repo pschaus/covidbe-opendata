@@ -55,10 +55,10 @@ def bart_plot_cases_testing():
     case_bar = go.Bar(x=df_testing.DATE, y=df_testing.CASES, name=gettext('#Cases'), marker_color="red",
                       legendgroup="cases", showlegend=True)
 
-    line_test = go.Scatter(x=df_testing.DATE, y=df_testing.TESTS_ALL.rolling(7).mean(),
-                           name=gettext('#Tests'), marker_color="blue", legendgroup="testing", showlegend=False)
-    case_test = go.Scatter(x=df_testing.DATE, y=df_testing.CASES.rolling(7).mean(), name=gettext('#Cases'),
-                           marker_color="red", legendgroup="cases", showlegend=False)
+    line_test = go.Scatter(x=df_testing.DATE, y=df_testing.TESTS_ALL.rolling(7,center=True).mean(),
+                           name=gettext('#Tests avg'), marker_color="blue", legendgroup="testing-avg", showlegend=True)
+    case_test = go.Scatter(x=df_testing.DATE, y=df_testing.CASES.rolling(7,center=True).mean(), name=gettext('#Cases avg'),
+                           marker_color="red", legendgroup="cases-avg", showlegend=True)
 
     fig = make_subplots(specs=[[{"secondary_y": True, }]], shared_yaxes='all', shared_xaxes='all')
     fig.add_trace(test_bar, secondary_y=False)
@@ -108,7 +108,6 @@ def plot_ration_cases_over_testing():
     return fig
 
 
-
 @register_plot_for_embedding("plot_ration_cases_over_testing_smooth")
 def plot_ration_cases_over_testing_smooth():
     """
@@ -116,38 +115,99 @@ def plot_ration_cases_over_testing_smooth():
     """
 
     fig = go.Figure()
-    fig.add_trace(go.Scatter(x=df_testing.DATE.values[7:], y=(moving_average(100*df_testing.CASES.values, 7) / moving_average(df_testing.TESTS_ALL.values, 7))[7:],
-                    mode='lines',
-                    name='cases / all tests (%)'))
-    fig.add_trace(go.Scatter(x=df_testing.DATE.values[7:], y=(moving_average(100*df_testing.TESTS_ALL_POS.values, 7) / moving_average(df_testing.TESTS_ALL.values, 7))[7:],
-                    mode='lines',
-                    name='positive tests / all tests (%)'))
 
+    fig.add_trace(go.Scatter(x=df_testing.DATE, y=100 * df_testing.TESTS_ALL_POS.rolling(7,
+                                                                                         center=True).mean() / df_testing.TESTS_ALL.rolling(
+        7, center=True).mean(),
+                             mode='lines',
+                             name='positive tests / all tests (%) avg',
+                             marker_color="blue", legendgroup="two", showlegend=True))
+
+    fig.add_trace(go.Scatter(x=df_testing.DATE, y=100 * df_testing.TESTS_ALL_POS / df_testing.TESTS_ALL,
+                             mode='markers',
+                             name='positive tests / all tests (%)',
+                             marker_color="blue", legendgroup="two", showlegend=True))
 
     fig.update_layout(xaxis_title=gettext('Day'),
                       yaxis_title=gettext('Positive rate %'), title=gettext("Positive rate % (avg over past 7 days)"))
     fig.update_layout(template="plotly_white")
 
     fig.update_layout(
-    hovermode='x unified',
-    updatemenus=[
-        dict(
-            type = "buttons",
-            direction = "left",
-            buttons=list([
-                dict(
-                    args=[{"yaxis.type": "linear"}],
-                    label="LINEAR",
-                    method="relayout"
-                ),
-                dict(
-                    args=[{"yaxis.type": "log"}],
-                    label="LOG",
-                    method="relayout"
-                )
-            ]),
-        ),
-    ])
+        hovermode='x unified',
+        updatemenus=[
+            dict(
+                type="buttons",
+                direction="left",
+                buttons=list([
+                    dict(
+                        args=[{"yaxis.type": "linear"}],
+                        label="LINEAR",
+                        method="relayout"
+                    ),
+                    dict(
+                        args=[{"yaxis.type": "log"}],
+                        label="LOG",
+                        method="relayout"
+                    )
+                ]),
+            ),
+        ])
+
+    return fig
+
+
+@register_plot_for_embedding("plot_poscasesandtests")
+def plot_positive_cases_tests():
+    """
+    plot of the ration cases over testing everyday
+    """
+
+    fig = go.Figure()
+
+    fig.add_trace(go.Scatter(x=df_testing.DATE, y=100 * df_testing.CASES.rolling(7, center=True).mean(),
+                             mode='lines',
+                             name='positive cases avg',
+                             marker_color="red", legendgroup="onea", showlegend=True))
+
+    fig.add_trace(go.Scatter(x=df_testing.DATE, y=100 * df_testing.CASES,
+                             mode='markers',
+                             name='positive tests',
+                             marker_color="red", legendgroup="oneb", showlegend=True))
+
+    fig.add_trace(go.Scatter(x=df_testing.DATE, y=100 * df_testing.TESTS_ALL_POS.rolling(7, center=True).mean(),
+                             mode='lines',
+                             name='positive tests avg',
+                             marker_color="blue", legendgroup="twoa", showlegend=True))
+
+    fig.add_trace(go.Scatter(x=df_testing.DATE, y=100 * df_testing.TESTS_ALL_POS,
+                             mode='markers',
+                             name='positive tests',
+                             marker_color="blue", legendgroup="twob", showlegend=True))
+
+    fig.update_layout(xaxis_title=gettext('Day'),
+                      yaxis_title=gettext('Number of'), title=gettext("Number of positive tests/cases"))
+    fig.update_layout(template="plotly_white")
+
+    fig.update_layout(
+        hovermode='x unified',
+        updatemenus=[
+            dict(
+                type="buttons",
+                direction="left",
+                buttons=list([
+                    dict(
+                        args=[{"yaxis.type": "linear"}],
+                        label="LINEAR",
+                        method="relayout"
+                    ),
+                    dict(
+                        args=[{"yaxis.type": "log"}],
+                        label="LOG",
+                        method="relayout"
+                    )
+                ]),
+            ),
+        ])
 
     return fig
 

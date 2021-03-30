@@ -273,12 +273,17 @@ def bar_hospitalization_in_out():
     """
     df = df_hospi.groupby(['DATE']).agg({'TOTAL_IN': 'sum', 'NEW_OUT': 'sum', 'NEW_IN': 'sum', 'TOTAL_IN_ICU': 'sum'})
 
-    newin_smooth = go.Scatter(x=df.index, y=df.NEW_IN.rolling(7).mean(), name=("New Hospitalized avg 7 days"),
-                              marker_color="red", legendgroup="newin", showlegend=True)
-    newout_smooth = go.Scatter(x=df.index, y=df.NEW_OUT.rolling(7).mean(), name=("New Discharged avg 7 days"),
-                               marker_color="blue", legendgroup="newout", showlegend=True)
+    newin_smooth = go.Scatter(x=df.index, y=df.NEW_IN.rolling(7,center=True).mean(), name=("New Hospitalized avg 7 days"),
+                              marker_color="red", showlegend=True)
+    newout_smooth = go.Scatter(x=df.index, y=df.NEW_OUT.rolling(7,center=True).mean(), name=("New Discharged avg 7 days"),
+                               marker_color="blue", showlegend=True)
 
-    fig_hospi = go.Figure(data=[newin_smooth, newout_smooth], layout=go.Layout(barmode='group'))
+    newin_scatter = go.Bar(x=df.index, y=df.NEW_IN, name=("New Hospitalized"),
+                              marker_color="red", showlegend=True)
+    newout_scatter = go.Bar(x=df.index, y=df.NEW_OUT, name=("New Discharged"),
+                               marker_color="blue", showlegend=True)
+
+    fig_hospi = go.Figure(data=[newin_smooth, newout_smooth,newin_scatter, newout_scatter], layout=go.Layout(barmode='group'))
     fig_hospi.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0),
                             title=gettext("Daily IN/Out Hospitalizations"))
 
@@ -333,7 +338,7 @@ def bar_hospitalization_in():
     newin_bar = go.Bar(x=df.index, y=df.NEW_IN, name=gettext('#New Hospitalized'), marker_color=colors,
                        showlegend=False)
 
-    newin_smooth = go.Scatter(x=df.index, y=df.NEW_IN.rolling(7).mean(), name=("New Hospitalized avg 7 days"),
+    newin_smooth = go.Scatter(x=df.index, y=df.NEW_IN.rolling(7,center=True).mean(), name=("New Hospitalized avg 7 days"),
                               marker_color="red", legendgroup="newin", showlegend=True)
 
     # Add single buy and sell traces for legend
@@ -570,7 +575,7 @@ def newin_smooth():
 def death_smooth():
 
     death_bar = go.Bar(x=df.index, y=df.DEATHS, name=gettext('#Daily Covid Deaths'),marker_color="red",legendgroup = "death", showlegend = False)
-    death_smooth = go.Scatter(x=df.index,y=moving_average(df.DEATHS.values, 7), name=("#Daily Covid Deaths"),marker_color="blue",legendgroup = "death", showlegend = False)
+    death_smooth = go.Scatter(x=df.index,y=df.DEATHS.rolling(7,center=True).mean(), name=("#Daily Covid Deaths"),marker_color="blue",legendgroup = "death", showlegend = False)
 
     fig = go.Figure(data=[death_bar,death_smooth], layout=go.Layout(barmode='group'))
 

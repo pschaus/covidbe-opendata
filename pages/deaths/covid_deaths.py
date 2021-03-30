@@ -28,7 +28,7 @@ def display_covid_death():
                                     figure=region_covid_death_per_habitant(),
                                     config=dict(locale=str(get_locale())))),
         ]),
-        html.H2(gettext("Total Deaths Avg over 7 past days")),
+        html.H2(gettext("Total Deaths Avg over 7 days")),
         dbc.Row([
             dbc.Col(display_graphic(id='hospitalization-be',
                               figure=death_smooth(),

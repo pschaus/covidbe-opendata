@@ -90,7 +90,7 @@ def region_covid_death_per_habitant():
         df_r.index = pd.DatetimeIndex(df_r.index)
         df_r = df_r.reindex(idx, fill_value=0)
 
-        plot = go.Scatter(x=df_r.index, y=(100000 * df_r['DEATHS'] / pop[r]).rolling(7).mean(), name=r)
+        plot = go.Scatter(x=df_r.index, y=(100000 * df_r['DEATHS'] / pop[r]).rolling(7,center=True).mean(), name=r)
 
         bars_age_groups_deaths.append(plot)
 
