@@ -126,7 +126,7 @@ def plot_ration_cases_over_testing_smooth():
     fig.add_trace(go.Scatter(x=df_testing.DATE, y=100 * df_testing.TESTS_ALL_POS / df_testing.TESTS_ALL,
                              mode='markers',
                              name='positive tests / all tests (%)',
-                             marker_color="blue", legendgroup="two", showlegend=True))
+                             marker_color="blue", legendgroup="twoa", showlegend=True))
 
     fig.update_layout(xaxis_title=gettext('Day'),
                       yaxis_title=gettext('Positive rate %'), title=gettext("Positive rate % (avg over past 7 days)"))
