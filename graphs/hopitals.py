@@ -224,18 +224,28 @@ def exp_fit_hospi():
 
     return fig
 
+
 @register_plot_for_embedding("bar_hospitalization_tot")
 def bar_hospitalization_tot():
     """
     bar plot hospitalization
     """
-    df = df_hospi.groupby(['DATE']).agg({'TOTAL_IN': 'sum', 'NEW_OUT': 'sum', 'NEW_IN': 'sum','TOTAL_IN_ICU': 'sum'})
+    df = df_hospi.groupby(['DATE']).agg({'TOTAL_IN': 'sum', 'NEW_OUT': 'sum', 'NEW_IN': 'sum', 'TOTAL_IN_ICU': 'sum'})
 
     newin_bar = go.Bar(x=df.index, y=df.NEW_IN, name=gettext('#New Hospitalized'))
     newout_bar = go.Bar(x=df.index, y=df.NEW_OUT, name=gettext('#New Discharged'))
     totin_bar = go.Bar(x=df.index, y=df.TOTAL_IN, name=gettext('#Total Hospitalized'))
     icu_bar = go.Bar(x=df.index, y=df.TOTAL_IN_ICU, name=gettext('#Total ICU'))
-    fig_hospi = go.Figure(data=[totin_bar], layout=go.Layout(barmode='group'), )
+
+    fig_hospi = make_subplots(specs=[[{"secondary_y": True, }]], shared_yaxes='all', shared_xaxes='all')
+
+    fig_hospi.add_trace(totin_bar, secondary_y=False)
+
+    xvals = df.index[7:]
+    yvals = 100 * (df.TOTAL_IN.values[7:] - df.TOTAL_IN.values[:-7]) / df.TOTAL_IN.values[:-7]
+
+    fig_hospi.add_trace(go.Scatter(x=xvals[10:], y=yvals[10:], name=gettext('Weekly Increase %')), secondary_y=True)
+
     fig_hospi.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0),
                             title=gettext("Total Hospitalizations"))
 
@@ -243,25 +253,25 @@ def bar_hospitalization_tot():
                             yaxis_title=gettext('Number of / Day'))
 
     fig_hospi.update_layout(
-    hovermode='x unified',
-    updatemenus=[
-        dict(
-            type = "buttons",
-            direction = "left",
-            buttons=list([
-                dict(
-                    args=[{"yaxis.type": "linear"}],
-                    label="LINEAR",
-                    method="relayout"
-                ),
-                dict(
-                    args=[{"yaxis.type": "log"}],
-                    label="LOG",
-                    method="relayout"
-                )
-            ]),
-        ),
-    ])
+        hovermode='x unified',
+        updatemenus=[
+            dict(
+                type="buttons",
+                direction="left",
+                buttons=list([
+                    dict(
+                        args=[{"yaxis.type": "linear"}],
+                        label="LINEAR",
+                        method="relayout"
+                    ),
+                    dict(
+                        args=[{"yaxis.type": "log"}],
+                        label="LOG",
+                        method="relayout"
+                    )
+                ]),
+            ),
+        ])
 
     return fig_hospi
 
@@ -385,8 +395,16 @@ def bar_hospitalization_ICU():
     """
     df = df_hospi.groupby(['DATE']).agg({'TOTAL_IN': 'sum', 'NEW_OUT': 'sum', 'NEW_IN': 'sum', 'TOTAL_IN_ICU': 'sum'})
 
+    fig_hospi = make_subplots(specs=[[{"secondary_y": True, }]], shared_yaxes='all', shared_xaxes='all')
+
     icu_bar = go.Bar(x=df.index, y=df.TOTAL_IN_ICU, name=gettext('#Total ICU'))
-    fig_hospi = go.Figure(data=[icu_bar], layout=go.Layout(barmode='group'), )
+    fig_hospi.add_trace(icu_bar, secondary_y=False)
+
+    xvals = df.index[7:]
+    yvals = 100 * (df.TOTAL_IN_ICU.values[7:] - df.TOTAL_IN_ICU.values[:-7]) / df.TOTAL_IN_ICU.values[:-7]
+
+    fig_hospi.add_trace(go.Scatter(x=xvals[10:], y=yvals[10:], name=gettext('Weekly Increase %')), secondary_y=True)
+
     fig_hospi.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0),
                             title=gettext("Hospitalizations ICU"))
 
@@ -438,28 +456,27 @@ def bar_hospitalization_ICU():
         mode="text", name=""
     ))
     fig_hospi.update_layout(
-    hovermode='x unified',
-    updatemenus=[
-        dict(
-            type = "buttons",
-            direction = "left",
-            buttons=list([
-                dict(
-                    args=[{"yaxis.type": "linear"}],
-                    label="LINEAR",
-                    method="relayout"
-                ),
-                dict(
-                    args=[{"yaxis.type": "log"}],
-                    label="LOG",
-                    method="relayout"
-                )
-            ]),
-        ),
-    ])
+        hovermode='x unified',
+        updatemenus=[
+            dict(
+                type="buttons",
+                direction="left",
+                buttons=list([
+                    dict(
+                        args=[{"yaxis.type": "linear"}],
+                        label="LINEAR",
+                        method="relayout"
+                    ),
+                    dict(
+                        args=[{"yaxis.type": "log"}],
+                        label="LOG",
+                        method="relayout"
+                    )
+                ]),
+            ),
+        ])
 
     return fig_hospi
-
 
 
 df_prov = pd.read_csv('static/csv/be-covid-provinces.csv')
