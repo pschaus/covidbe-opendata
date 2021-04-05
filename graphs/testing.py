@@ -10,12 +10,13 @@ from graphs import register_plot_for_embedding
 
 df_testing = pd.read_csv('static/csv/be-covid-testing.csv')
 
-def moving_average(a, n=1) :
+
+def moving_average(a, n=1):
     a = a.astype(np.float)
     ret = np.cumsum(a)
     ret[n:] = ret[n:] - ret[:-n]
-    ret[:n-1] = ret[:n-1]/range(1,n)
-    ret[n-1:] = ret[n - 1:] / n
+    ret[:n - 1] = ret[:n - 1] / range(1, n)
+    ret[n - 1:] = ret[n - 1:] / n
     return ret
 
 
@@ -50,21 +51,38 @@ def bart_plot_cases_testing():
     """
     # ---------bar plot age groups death---------------------------
 
-    test_bar = go.Bar(x=df_testing.DATE, y=df_testing.TESTS_ALL, name=gettext('#Tests'), marker_color="blue",
+    test_bar = go.Bar(x=df_testing.DATE[:-4], y=df_testing.TESTS_ALL[:-4], name=gettext('#Tests'), marker_color="blue",
                       legendgroup="testing", showlegend=True)
     case_bar = go.Bar(x=df_testing.DATE, y=df_testing.CASES, name=gettext('#Cases'), marker_color="red",
                       legendgroup="cases", showlegend=True)
 
-    line_test = go.Scatter(x=df_testing.DATE, y=df_testing.TESTS_ALL.rolling(7,center=True).mean(),
+    test_bar_last = go.Bar(x=df_testing.DATE[-4:], y=df_testing.TESTS_ALL[-4:], name=gettext('#Tests Not Consolidated'),
+                           marker_color="lightblue",
+                           legendgroup="testing", showlegend=True)
+
+    case_bar = go.Bar(x=df_testing.DATE[:-4], y=df_testing.CASES[:-4], name=gettext('#Cases'), marker_color="red",
+                      legendgroup="cases", showlegend=True)
+
+    case_bar_last = go.Bar(x=df_testing.DATE[-4:], y=df_testing.CASES[-4:], name=gettext('#Cases Not Consolidated'),
+                           marker_color="pink",
+                           legendgroup="cases", showlegend=True)
+
+    line_test = go.Scatter(x=df_testing.DATE[:-4], y=df_testing.TESTS_ALL[:-4].rolling(7, center=True).mean(),
                            name=gettext('#Tests avg'), marker_color="blue", legendgroup="testing-avg", showlegend=True)
-    case_test = go.Scatter(x=df_testing.DATE, y=df_testing.CASES.rolling(7,center=True).mean(), name=gettext('#Cases avg'),
+
+    line_case = go.Scatter(x=df_testing.DATE[:-4],
+                           y=df_testing.CASES[:-4].rolling(7, center=True).mean(),
+
+                           name=gettext('#Cases avg'),
                            marker_color="red", legendgroup="cases-avg", showlegend=True)
 
     fig = make_subplots(specs=[[{"secondary_y": True, }]], shared_yaxes='all', shared_xaxes='all')
     fig.add_trace(test_bar, secondary_y=False)
+    fig.add_trace(test_bar_last, secondary_y=False)
     fig.add_trace(line_test, secondary_y=False)
     fig.add_trace(case_bar, secondary_y=True)
-    fig.add_trace(case_test, secondary_y=True)
+    fig.add_trace(case_bar_last, secondary_y=True)
+    fig.add_trace(line_case, secondary_y=True)
 
     # Set y-axes titles
     fig.update_yaxes(title_text="#tests/day", secondary_y=False)
@@ -95,6 +113,7 @@ def bart_plot_cases_testing():
         ])
 
     return fig
+
 
 
 @register_plot_for_embedding("plot_ration_cases_over_testing")
