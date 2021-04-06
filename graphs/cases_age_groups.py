@@ -77,7 +77,7 @@ def incidence_age_group_plot():
     age_groups = sorted(df_pop.AGEGROUP.unique())
     for idx, ag in enumerate(age_groups):
         df_ag = df_pop.loc[df_pop['AGEGROUP'] == ag]
-        trace = dict(x=df_ag.DATE, y=moving_average(df_ag['incidence'].values, 7), mode='lines', name=ag)
+        trace = dict(x=df_ag.DATE[:-4], y=df_ag['incidence'][:-4].rolling(7,center=True).mean(), mode='lines', name=ag)
         traces.append(trace)
 
     fig = go.Figure(data=traces)
@@ -189,7 +189,18 @@ def age_groups_cases():
     df_ag.columns = df_ag.columns.get_level_values(0)
     df_ag = df_ag.sort_values(by="AGEGROUP", axis=0)
 
+    df_all = df_prov_timeseries.groupby(['DATE']).agg({'CASES': 'sum'}).reset_index()
+    df_all.columns = df_all.columns.get_level_values(0)
+
     fig = px.bar(df_ag, x="DATE", y="CASES", color="AGEGROUP", title=gettext("Cases per day per age group"))
+
+    fig.add_trace(go.Scatter(x=df_all.DATE[:-4], y=df_all.CASES[:-4].rolling(7, center=True).mean(),
+                           name=gettext('#Cases avg'), marker_color="blue", legendgroup="cases-avg", showlegend=True))
+
+    #fig.add_trace(go.Bar(x=df_all.DATE[-4:], y=df_all.CASES[-4:], name=gettext('#Cases Not Consolidated'),
+    #                       marker_color="grey",
+    #                       legendgroup="cases", showlegend=True))
+
     fig.update_layout(template="plotly_white")
 
 
@@ -244,11 +255,19 @@ def age_groups_pop_active_cases():
         df_ag = df_ag.reindex(idx, fill_value=0)
         col = px.colors.qualitative.G10[idx2]
         bars_age_groups.append(go.Bar(
-            x=df_ag.index,
-            y=df_ag['CASES'],
+            x=df_ag.index[:-4],
+            y=df_ag['CASES'][:-4],
             name=ag,
             marker_color = col,legendgroup = ag, showlegend = True
         ))
+
+        bars_age_groups.append(go.Bar(
+            x=df_ag.index[-4:],
+            y=df_ag['CASES'][-4:],
+            name=ag+"not consolidated",
+            marker_color = "grey",legendgroup = ag, showlegend = True
+        ))
+
         bars_age_groups.append(
             go.Scatter(x=df_ag.index[:-4], y=df_ag['CASES'][:-4].rolling(7,center=True).mean(),
                        name=ag, marker_color = col, legendgroup = ag, showlegend = False))

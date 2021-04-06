@@ -135,7 +135,7 @@ def plot_ration_cases_over_testing_smooth():
 
     fig = go.Figure()
 
-    fig.add_trace(go.Scatter(x=df_testing.DATE, y=100 * df_testing.TESTS_ALL_POS.rolling(7,
+    fig.add_trace(go.Scatter(x=df_testing.DATE[:-4], y=100 * df_testing.TESTS_ALL_POS[:-4].rolling(7,
                                                                                          center=True).mean() / df_testing.TESTS_ALL.rolling(
         7, center=True).mean(),
                              mode='lines',
@@ -183,22 +183,22 @@ def plot_positive_cases_tests():
 
     fig = go.Figure()
 
-    fig.add_trace(go.Scatter(x=df_testing.DATE, y=100 * df_testing.CASES.rolling(7, center=True).mean(),
+    fig.add_trace(go.Scatter(x=df_testing.DATE[:-4], y=100 * df_testing[:-4].CASES.rolling(7, center=True).mean(),
                              mode='lines',
                              name='positive cases avg',
                              marker_color="red", legendgroup="onea", showlegend=True))
 
-    fig.add_trace(go.Scatter(x=df_testing.DATE, y=100 * df_testing.CASES,
+    fig.add_trace(go.Scatter(x=df_testing.DATE[:-4], y=100 * df_testing.CASES[:-4],
                              mode='markers',
                              name='positive tests',
                              marker_color="red", legendgroup="oneb", showlegend=True))
 
-    fig.add_trace(go.Scatter(x=df_testing.DATE, y=100 * df_testing.TESTS_ALL_POS.rolling(7, center=True).mean(),
+    fig.add_trace(go.Scatter(x=df_testing.DATE[:-4], y=100 * df_testing.TESTS_ALL_POS[:-4].rolling(7, center=True).mean(),
                              mode='lines',
                              name='positive tests avg',
                              marker_color="blue", legendgroup="twoa", showlegend=True))
 
-    fig.add_trace(go.Scatter(x=df_testing.DATE, y=100 * df_testing.TESTS_ALL_POS,
+    fig.add_trace(go.Scatter(x=df_testing.DATE[:-4], y=100 * df_testing.TESTS_ALL_POS[:-4],
                              mode='markers',
                              name='positive tests',
                              marker_color="blue", legendgroup="twob", showlegend=True))

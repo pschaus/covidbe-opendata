@@ -27,13 +27,19 @@ df.columns = df.columns.get_level_values(0)
 
 def trace(fig, region, log=False, div=1, mul=1, col="blue"):
     fig.add_trace(go.Scatter(name=region,
-                             x=df[df.REGION == region].DATE,
-                             y=df[df.REGION == region].CASES.rolling(7, center=True).mean() / div * mul,
+                             x=df[df.REGION == region].DATE[:-4],
+                             y=df[df.REGION == region].CASES[:-4].rolling(7, center=True).mean() / div * mul,
                              marker_color=col, legendgroup=region + "mean", showlegend=True))
 
     fig.add_trace(go.Bar(name=region,
-                         x=df[df.REGION == region].DATE,
-                         y=df[df.REGION == region].CASES / div * mul, legendgroup=region, marker_color=col,
+                         x=df[df.REGION == region].DATE[:-4],
+                         y=df[df.REGION == region].CASES[:-4] / div * mul, legendgroup=region, marker_color=col,
+                         visible='legendonly',
+                         showlegend=True))
+
+    fig.add_trace(go.Bar(name=region+" not consolidated",
+                         x=df[df.REGION == region].DATE[-4:],
+                         y=df[df.REGION == region].CASES[-4:] / div * mul, legendgroup=region, marker_color="grey",
                          visible='legendonly',
                          showlegend=True))
 
@@ -97,10 +103,12 @@ def positive_rate_region():
     for r in regions:
         c = colors[i]
         dfr = df_pos[df_pos.REGION == r]
-        plot = go.Scatter(x=dfr['DATE'], y=dfr['POSITIVE_RATE'].rolling(7,center=True).mean(),mode='lines',name=r,marker_color=c)
+        plot = go.Scatter(x=dfr['DATE'][:-4], y=dfr['POSITIVE_RATE'][:-4].rolling(7,center=True).mean(),mode='lines',name=r,marker_color=c)
         plots.append(plot)
         plot = go.Scatter(x=dfr['DATE'], y=dfr['POSITIVE_RATE'],name=r+' avg',mode='markers',marker_color=c)
         plots.append(plot)
+        plots.append(plot)
+
         i += 1
     fig = go.Figure(data=plots, layout=go.Layout(barmode='group'))
     fig.update_layout(template="plotly_white", title="Positive Rate (%)")
@@ -141,7 +149,7 @@ def number_of_test_per_inhabitant_region():
     plots = []
     for r in regions:
         dfr = df_pos[df_pos.REGION == r]
-        plot = go.Scatter(x=dfr['DATE'], y=(100000*dfr['TESTS_ALL'] / pop[r]).rolling(7,center=True).mean(), name=r)
+        plot = go.Scatter(x=dfr['DATE'][:-4], y=(100000*dfr['TESTS_ALL'][:-4] / pop[r]).rolling(7,center=True).mean(), name=r)
         plots.append(plot)
     fig = go.Figure(data=plots, layout=go.Layout(barmode='group'))
     fig.update_layout(template="plotly_white", title="Number of tests per 100K inhabitants")

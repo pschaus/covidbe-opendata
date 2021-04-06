@@ -146,8 +146,8 @@ def plot(df, column_name, title):
         c = cols[i % len(cols)]
         df_p = df.loc[df['PROVINCE'] == p]
         bars.append(go.Scatter(
-            x=df_p.DATE,
-            y=df_p[column_name].rolling(7, center=True).mean(),
+            x=df_p.DATE[:-4],
+            y=df_p[column_name][:-4].rolling(7, center=True).mean(),
             marker_color=c,
             name=p
         ))
@@ -163,7 +163,6 @@ def plot(df, column_name, title):
     fig = go.Figure(data=bars, layout=go.Layout(barmode='group'), )
     fig.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0), title=title)
     fig.update_layout(
-        hovermode='x unified',
         updatemenus=[
             dict(
                 type="buttons",

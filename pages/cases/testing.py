@@ -24,7 +24,7 @@ def display_testing():
             dbc.Col(display_graphic(id='testing-barplot', figure=plot_positive_cases_tests(),
                                     config=dict(locale=str(get_locale()))), className="col-12"),
         ]),
-        html.H2(gettext("Ratio #Cases/#Tests")),
+        html.H2(gettext("Positive rate")),
         dbc.Row([
             dbc.Col(display_graphic(id='cases-over-testing', figure=plot_ration_cases_over_testing_smooth(),
                               config=dict(locale=str(get_locale()))), className="col-12"),
