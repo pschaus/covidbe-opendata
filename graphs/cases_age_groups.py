@@ -250,7 +250,7 @@ def age_groups_pop_active_cases():
             marker_color = col,legendgroup = ag, showlegend = True
         ))
         bars_age_groups.append(
-            go.Scatter(x=df_ag.index, y=df_ag['CASES'].rolling(7,center=True).mean(),
+            go.Scatter(x=df_ag.index[:-4], y=df_ag['CASES'][:-4].rolling(7,center=True).mean(),
                        name=ag, marker_color = col, legendgroup = ag, showlegend = False))
     fig_age_groups_cases = go.Figure(data=bars_age_groups)
     fig_age_groups_cases.update_layout(template="plotly_white", height=500,
