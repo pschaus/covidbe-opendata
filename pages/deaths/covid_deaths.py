@@ -5,7 +5,8 @@ import dash_html_components as html
 from flask_babel import get_locale, gettext
 
 from graphs.deaths_age_groups import age_groups_death, age_groups_death_pie, \
-    waves_comparison,region_death_covid,region_covid_death_per_habitant,age_groups_death_relative
+    waves_comparison,region_death_covid,region_covid_death_per_habitant,\
+    age_groups_death_relative
 from pages import display_graphic
 from pages.sources import source_sciensano, source_statbel, display_source_providers
 from graphs.hopitals import death_smooth

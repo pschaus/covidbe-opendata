@@ -12,6 +12,8 @@ from flask_babel import gettext
 from pages import get_translation
 import numpy as np
 from graphs import register_plot_for_embedding
+from plotly.subplots import make_subplots
+
 
 from graphs import register_plot_for_embedding
 
@@ -30,6 +32,76 @@ df.columns = df.columns.get_level_values(0)
 
 age_groups = ['0-24', '25-44', '45-64', '65-74', '75-84', '85+']
 
+
+
+def all_death():
+
+    df = pd.read_csv("static/csv/mortality_statbel.csv")
+
+
+    df_ag = df.groupby([df.DT_DATE, df.CD_AGEGROUP]).agg({'MS_NUM_DEATH': ['sum']}).reset_index()
+    df_ag.columns = df_ag.columns.get_level_values(0)
+    df_ag.rename(columns={'MS_NUM_DEATH':'DEATHS_ALL','CD_AGEGROUP':'AGEGROUP','DT_DATE':'DATE'}, inplace=True)
+
+    start_date = '2020-03-17'
+    end_date = df_ag.DATE.max()
+
+    df_ag = df_ag[df_ag.DATE >= start_date]
+    df_ag = df_ag[df_ag.DATE <= end_date]
+
+    age_groups = ['0-24', '25-44', '45-64', '65-74', '75-84', '85+']
+
+    df_covid = pd.read_csv('static/csv/be-covid-mortality.csv', keep_default_na=False)
+    df_covid = df_covid.groupby([df_covid.DATE, df_covid.AGEGROUP]).agg({'DEATHS': ['sum']}).reset_index()
+    df_covid.columns = df_covid.columns.get_level_values(0)
+    df_covid.rename(columns={'DEATHS':'DEATHS_COVID'}, inplace=True)
+    df_covid = df_covid[df_covid.DATE >= start_date]
+    df_covid = df_covid[df_covid.DATE <= end_date]
+
+
+    df_all = pd.merge(df_covid, df_ag, left_on=['AGEGROUP','DATE'], right_on=['AGEGROUP','DATE'], how='outer')
+
+    df_all.fillna(0,inplace=True)
+    return df_all
+
+
+df_all = all_death()
+
+
+
+
+
+def death_decompose(fig, row, col, ag, show_legend=False, groupnorm=''):
+    df_ag = df_all.loc[df_all['AGEGROUP'] == ag]
+    fig.add_trace(go.Scatter(x=df_ag.DATE, y=(df_ag.DEATHS_ALL - df_ag.DEATHS_COVID).abs(), showlegend=show_legend,
+                             name="non covid",
+                             legendgroup=ag, stackgroup='one', line=dict(width=0.5), mode='lines', marker_color="blue",
+                             groupnorm=groupnorm), row, col)
+    fig.add_trace(go.Scatter(x=df_ag.DATE, y=df_ag.DEATHS_COVID, showlegend=show_legend, name="covid",
+                             legendgroup=ag, stackgroup='one', line=dict(width=0.5), mode='lines', marker_color="red",
+                             groupnorm=groupnorm), row, col)
+
+
+def fig_death_decompose(groupnorm=''):
+    fig = make_subplots(rows=6, cols=1, subplot_titles=('0-24', '25-44', '45-64', '65-74', '75-84', '85+'))
+    death_decompose(fig, 1, 1, '0-24', show_legend=True, groupnorm=groupnorm)
+    death_decompose(fig, 2, 1, '25-44', show_legend=False, groupnorm=groupnorm)
+    death_decompose(fig, 3, 1, '45-64', show_legend=False, groupnorm=groupnorm)
+    death_decompose(fig, 4, 1, '65-74', show_legend=False, groupnorm=groupnorm)
+    death_decompose(fig, 5, 1, '75-84', show_legend=False, groupnorm=groupnorm)
+    death_decompose(fig, 6, 1, '85+', show_legend=False, groupnorm=groupnorm)
+
+    fig.update_layout(template="plotly_white", height=1000, margin=dict(l=50, r=50, t=50, b=50),
+                      title="BE total deaths: covid vs non-covid " + groupnorm)
+    return fig
+
+@register_plot_for_embedding("death_decompose_absolute")
+def death_decompose_absolute():
+    return fig_death_decompose(groupnorm='')
+
+@register_plot_for_embedding("death_decompose_percent")
+def death_decompose_percent():
+    return fig_death_decompose(groupnorm='percent')
 
 def moving_average(a, n=1):
     a = a.astype(np.float)
