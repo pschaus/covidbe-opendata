@@ -152,6 +152,38 @@ def daily_death_ag():
     return fig
 
 
+@register_plot_for_embedding("daily_death_ag_relative")
+def daily_death_ag_relative():
+    traces = []
+    cols = px.colors.qualitative.Plotly
+    i = 0
+    for ag in age_groups:
+        df_ag_ = df_ag.loc[df_ag['CD_AGEGROUP'] == ag]
+
+        trace = dict(x=df_ag_.DT_DATE, y=df_ag_.MS_NUM_DEATH.rolling(7, center=True).mean(), mode='lines',
+                     line=dict(width=0.5),
+                     stackgroup='one', groupnorm='percent', name=ag)
+        traces.append(trace)
+
+        i += 1
+
+    layout = go.Layout(
+        showlegend=True,
+        yaxis=dict(
+            type='linear',
+            range=[1, 100],
+            dtick=20,
+            ticksuffix='%'
+        )
+    )
+
+    fig = go.Figure(data=traces, layout=layout)
+
+    # Edit the layout
+    fig.update_layout(title='Relative Age group percentage of death',
+                      xaxis_title='Date',
+                      yaxis_title='Percentage')
+    return fig
 
 @register_plot_for_embedding("death_plus_hist_cum")
 def death_plus_hist_cum():

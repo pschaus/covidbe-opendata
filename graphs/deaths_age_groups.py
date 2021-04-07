@@ -40,6 +40,48 @@ def age_groups_death():
     return fig_age_groups_deaths
 
 
+@register_plot_for_embedding("age_groups_death_covid_relative")
+def age_groups_death_relative():
+    """
+    bar plot age groups cases
+    """
+    # ---------bar plot age groups death---------------------------
+    barmode = 'stack'  # group
+    idx = pd.date_range(df_mortality.DATE.min(), df_mortality.DATE.max())
+    # bar plot with bars per age groups
+    bars_age_groups_deaths = []
+    traces = []
+    age_groups = sorted(df_mortality.AGEGROUP.unique())
+    for ag in age_groups:
+        df_ag = df_mortality.loc[df_mortality['AGEGROUP'] == ag]
+        df_ag = df_ag.groupby(['DATE']).agg({'DEATHS': 'sum'})
+        df_ag.index = pd.DatetimeIndex(df_ag.index)
+        df_ag = df_ag.reindex(idx, fill_value=0)
+
+        trace = dict(x=df_ag.index, y=df_ag['DEATHS'].rolling(7, center=True).mean(), mode='lines',
+                     line=dict(width=0.5),
+                     stackgroup='one', groupnorm='percent', name=ag)
+        traces.append(trace)
+
+    layout = go.Layout(
+        showlegend=True,
+        yaxis=dict(
+            type='linear',
+            range=[1, 100],
+            dtick=20,
+            ticksuffix='%'
+        )
+    )
+
+    fig = go.Figure(data=traces, layout=layout)
+
+    # Edit the layout
+    fig.update_layout(title='Relative Age group percentage of death',
+                      xaxis_title='Date',
+                      yaxis_title='Percentage')
+    return fig
+
+
 @register_plot_for_embedding("regions_death_covid")
 def region_death_covid():
     """

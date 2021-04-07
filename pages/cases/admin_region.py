@@ -12,7 +12,7 @@ from graphs.cases_per_admin_region_overtime import map_totcases_admin_region_ove
     plot_cases_per_habittant_admin_region_overtime, \
     plot_cases_daily_admin_region_overtime,\
     map_cases_incidence_nis3,\
-    scatter_incidence_nis3, barplot_admin
+    scatter_incidence_nis3, barplot_admin,map_increase_incidence_admin_region_percentage
 from pages.sources import *
 from pages import AppLink, get_translation, display_graphic
 from pages import get_translation, display_graphic
@@ -42,6 +42,10 @@ def display_admin():
         dbc.Row([
             dbc.Col(display_graphic(id='map_cases_incidence_nis3', figure=map_cases_incidence_nis3(),
                               config=dict(locale=str(get_locale()))), className="col-12"),
+        ]),
+        dbc.Row([
+            dbc.Col(display_graphic(id='map_cases_incidence_nis3_percentage', figure=map_increase_incidence_admin_region_percentage(),
+                                    config=dict(locale=str(get_locale()))), className="col-12"),
         ]),
         dbc.Row([
             dbc.Col(display_graphic(id='barplot_admin', style={"display": "none"}, figure=barplot_admin(),

@@ -4246,7 +4246,7 @@
 4244,2021-04-04,WBR,Wallonia,2,42,9,6,0,6,3,BrabantWallon
 4245,2021-04-04,VWV,Flanders,11,314,93,47,2,17,12,WestVlaanderen
 4246,2021-04-05,VAN,Flanders,14,425,127,64,8,37,10,Antwerpen
-4247,2021-04-05,BRU,Brussels,15,514,129,86,11,34,16,Brussels
+4247,2021-04-05,BRU,Brussels,15,514,129,79,11,34,16,Brussels
 4248,2021-04-05,WHT,Wallonia,14,542,133,89,16,42,12,Hainaut
 4249,2021-04-05,VLI,Flanders,7,167,56,26,4,18,3,Limburg
 4250,2021-04-05,WLG,Wallonia,12,215,71,37,2,12,5,Liège
@@ -4255,4 +4255,15 @@
 4253,2021-04-05,VOV,Flanders,14,419,129,68,7,30,12,OostVlaanderen
 4254,2021-04-05,VBR,Flanders,6,146,48,26,2,9,3,VlaamsBrabant
 4255,2021-04-05,WBR,Wallonia,2,48,11,6,0,6,0,BrabantWallon
-4256,2021-04-05,VWV,Flanders,11,315,93,47,2,18,17,WestVlaanderen
+4256,2021-04-05,VWV,Flanders,11,317,95,47,2,18,17,WestVlaanderen
+4257,2021-04-06,VAN,Flanders,14,436,132,60,8,29,14,Antwerpen
+4258,2021-04-06,BRU,Brussels,15,517,133,81,15,26,20,Brussels
+4259,2021-04-06,WHT,Wallonia,14,566,135,91,14,46,15,Hainaut
+4260,2021-04-06,VLI,Flanders,7,171,58,28,4,11,7,Limburg
+4261,2021-04-06,WLG,Wallonia,12,234,78,40,2,17,4,Liège
+4262,2021-04-06,WLX,Wallonia,3,81,22,12,1,10,2,Luxembourg
+4263,2021-04-06,WNA,Wallonia,6,197,45,32,3,17,4,Namur
+4264,2021-04-06,VOV,Flanders,14,433,138,71,8,31,21,OostVlaanderen
+4265,2021-04-06,VBR,Flanders,6,157,50,29,2,11,2,VlaamsBrabant
+4266,2021-04-06,WBR,Wallonia,2,53,12,10,0,9,3,BrabantWallon
+4267,2021-04-06,VWV,Flanders,11,322,90,43,2,28,18,WestVlaanderen

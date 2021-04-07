@@ -92,42 +92,56 @@ def dfoff(offset):
     return df3d
 
 
+def dfoff7days(offset):
+    df_names = pd.DataFrame(geojson.drop(columns='geometry'))
+    cutoff1 = (pd.to_datetime('today') - pd.Timedelta(str(10 + offset) + ' days')).date()
+    cutoff2 = (pd.to_datetime('today') - pd.Timedelta(str(4 + offset) + ' days')).date()
+
+    df3d = pd.read_csv("static/csv/cases_daily_ins3.csv", encoding='latin1')
+    df3d = df3d[df3d.DATE >= str(cutoff1)]
+    df3d = df3d[df3d.DATE <= str(cutoff2)]
+    df3d = df3d.groupby([df3d.NIS3, df3d.POP]).agg({'CASES': ['sum']}).reset_index()
+    df3d.columns = df3d.columns.get_level_values(0)
+    df3d['NIS3'] = df3d['NIS3'].astype(int)
+    df3d['CASES_PER_100KHABITANT'] = df3d['CASES'] / df3d['POP'] * 100000
+    df3d = pd.merge(df3d, df_names, left_on='NIS3', right_on='NIS3', how='left')
+    df3d = df3d.round({'CASES_PER_100KHABITANT': 1})
+
+    df3d = df3d.sort_values(by='CASES_PER_100KHABITANT', axis=0)
+    return df3d
+
 @register_plot_for_embedding("scattter-incidence-nis3")
 def scatter_incidence_nis3():
     df_names = pd.DataFrame(geojson.drop(columns='geometry'))
 
     # title = get_translation(fr="Nombres de cas/100K past [d-17,d-4] days",en="Number of cases/100K past [d-17,d-4] days")
 
-    df1 = dfoff(0)
-    df2 = dfoff(5)
+    df1 = dfoff7days(0)
+    df2 = dfoff7days(3)
     df = df1.merge(df2, left_on=['NIS3', 'POP', 'name'], right_on=['NIS3', 'POP', 'name'])
-    df['increase5d'] = ((df['CASES_PER_100KHABITANT_x'] / df['CASES_PER_100KHABITANT_y']) - 1) * 100
+    df['increase3d'] = ((df['CASES_PER_100KHABITANT_x'] / df['CASES_PER_100KHABITANT_y']) - 1) * 100
 
     df = df.sort_values(by='CASES_PER_100KHABITANT_x', axis=0)
 
     fig = go.Figure()
 
     fig.add_trace(go.Scatter(y=df.name, x=df['CASES_PER_100KHABITANT_x'],
-                             name="[t-17,t-4]", mode='markers',
+                             name="[t-10,t-4]", mode='markers',
                              marker=dict(
-        color=df['increase5d'], #set color equal to a variable
+        color=df['increase3d'], #set color equal to a variable
         size = 12,
         cmin=-50,
         cmax=50,
         colorscale=[
-                [0, "#238b45"],
-                [0.25, "#238b45"],
-                [0.25, "#66c2a4"],
-                [0.50, "#66c2a4"],
-                [0.50, "#fb6a4a"],
-                [0.75, "#fb6a4a"],
-                [0.75, "#cb181d"],
-                [1, "#cb181d"]],
+            [0, "#238b45"],
+            [0.50, "#e5f5f9"],
+            [0.50, "#fee0d2"],
+            [1, "#cb181d"]],
         showscale=True
     )))
 
     fig.add_trace(go.Scatter(y=df.name, x=df['CASES_PER_100KHABITANT_y'],
-                             name="[t-22,t-9]", mode='markers', marker_color='black'))
+                             name="[t-13,t-7]", mode='markers', marker_color='black'))
 
     fig.update_layout(autosize=True, height=900)
     fig.update_layout(template="plotly_white")
@@ -140,9 +154,43 @@ def scatter_incidence_nis3():
         x=1
     ))
     fig.update_layout(
-        title="Incidence evolution over 5 days (color = % increase/decrease)",
+        title="7 days-Incidence evolution over last 3 days (color = % increase/decrease)",
     )
 
+    return fig
+
+
+@register_plot_for_embedding("map_increase_incidence_admin_region_percentage")
+def map_increase_incidence_admin_region_percentage():
+    maxv = df3.CASES_PER_1000HABITANT.max()
+
+    df1 = dfoff7days(0)
+    df2 = dfoff7days(3)
+    df = df1.merge(df2, left_on=['NIS3', 'POP', 'name'], right_on=['NIS3', 'POP', 'name'])
+    df['increase5d'] = ((df['CASES_PER_100KHABITANT_x'] / df['CASES_PER_100KHABITANT_y']) - 1) * 100
+
+    fig = px.choropleth_mapbox(df, geojson=geojson,
+                               locations="NIS3",
+                               color='increase5d',
+                               range_color=(-40, 40),
+                               color_continuous_scale=[
+                                   [0, "#238b45"],
+                                   [0.50, "#e5f5f9"],
+                                   [0.50, "#fee0d2"],
+                                   [1, "#cb181d"]],
+                               featureidkey="properties.NIS3",
+                               center={"lat": 50.641111, "lon": 4.668889},
+                               hover_name="name",
+                               hover_data=["increase5d", 'CASES_PER_100KHABITANT_x', "name"],
+                               height=600,
+                               mapbox_style="carto-positron", zoom=6)
+    fig.update_geos(fitbounds="locations")
+    fig.layout.coloraxis.colorbar.title = get_translation(fr="Increase/Decrease % over last 3 days",
+                                                          en="Augmentation/Diminution en % sur les 3 derniers jours")
+    fig.layout.coloraxis.colorbar.titleside = "right"
+    fig.layout.coloraxis.colorbar.ticks = "outside"
+    fig.layout.coloraxis.colorbar.tickmode = "array"
+    fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=5, b=0))
     return fig
 
 

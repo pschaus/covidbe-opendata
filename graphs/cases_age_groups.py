@@ -180,6 +180,7 @@ def age_group_cases_relative():
                       yaxis_title='Percentage')
 
     return fig
+
 @register_plot_for_embedding("age_groups_cases")
 def age_groups_cases():
     """

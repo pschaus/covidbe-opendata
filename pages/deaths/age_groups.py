@@ -8,7 +8,7 @@ from graphs.deaths_age_groups import age_groups_death, age_groups_death_pie
 from graphs.deaths_be_statbel import death_arrondissements_map_yearly
 from graphs.deaths_be_statbel_hist import death_plus_hist_cum, \
     daily_death_all, daily_death_ag, daily_death_all_deviation_sin,death_cum_january,\
-    death_cum_january_additional,death_cum_january_2021
+    death_cum_january_additional,death_cum_january_2021,daily_death_ag_relative
 from pages import display_graphic
 from pages.sources import source_sciensano, source_statbel, display_source_providers
 
@@ -31,6 +31,11 @@ def display_age_groups():
             dbc.Col(display_graphic(id='age-group-death-statbel-daily',
                                 figure=daily_death_ag(),
                               config=dict(locale=str(get_locale())))),
+        ]),
+        dbc.Row([
+            dbc.Col(display_graphic(id='age-group-death-statbel-daily',
+                                    figure=daily_death_ag_relative(),
+                                    config=dict(locale=str(get_locale())))),
         ]),
         html.H2(gettext("History of death all population")),
         dbc.Row([
