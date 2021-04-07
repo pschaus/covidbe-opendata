@@ -232,10 +232,7 @@ def bar_hospitalization_tot():
     """
     df = df_hospi.groupby(['DATE']).agg({'TOTAL_IN': 'sum', 'NEW_OUT': 'sum', 'NEW_IN': 'sum', 'TOTAL_IN_ICU': 'sum'})
 
-    newin_bar = go.Bar(x=df.index, y=df.NEW_IN, name=gettext('#New Hospitalized'))
-    newout_bar = go.Bar(x=df.index, y=df.NEW_OUT, name=gettext('#New Discharged'))
-    totin_bar = go.Bar(x=df.index, y=df.TOTAL_IN, name=gettext('#Total Hospitalized'))
-    icu_bar = go.Bar(x=df.index, y=df.TOTAL_IN_ICU, name=gettext('#Total ICU'))
+    totin_bar = go.Scatter(x=df.index, y=df.TOTAL_IN, name=gettext('#Total Hospitalized'),stackgroup='two',line=dict(width=0.5),mode='lines', groupnorm="")
 
     fig_hospi = make_subplots(specs=[[{"secondary_y": True, }]], shared_yaxes='all', shared_xaxes='all')
 
@@ -244,7 +241,7 @@ def bar_hospitalization_tot():
     xvals = df.index[7:]
     yvals = 100 * (df.TOTAL_IN.values[7:] - df.TOTAL_IN.values[:-7]) / df.TOTAL_IN.values[:-7]
 
-    fig_hospi.add_trace(go.Scatter(x=xvals[10:], y=yvals[10:], name=gettext('Weekly Increase %')), secondary_y=True)
+    fig_hospi.add_trace(go.Scatter(x=xvals[10:], y=yvals[10:], name=gettext('Weekly Increase %'),marker_color = 'pink'), secondary_y=True)
 
     fig_hospi.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0),
                             title=gettext("Total Hospitalizations"))
@@ -288,12 +285,12 @@ def bar_hospitalization_in_out():
     newout_smooth = go.Scatter(x=df.index, y=df.NEW_OUT.rolling(7,center=True).mean(), name=("New Discharged avg 7 days"),
                                marker_color="blue", showlegend=True)
 
-    newin_scatter = go.Bar(x=df.index, y=df.NEW_IN, name=("New Hospitalized"),
-                              marker_color="red", showlegend=True)
-    newout_scatter = go.Bar(x=df.index, y=df.NEW_OUT, name=("New Discharged"),
-                               marker_color="blue", showlegend=True)
+    newin_scatter = go.Scatter(x=df.index, y=df.NEW_IN, name=("New Hospitalized"),
+                              marker_color="pink", showlegend=True,stackgroup='one',line=dict(width=0.5),mode='lines', groupnorm="")
+    newout_scatter = go.Scatter(x=df.index, y=df.NEW_OUT, name=("New Discharged"),
+                               marker_color="lightblue", showlegend=True,stackgroup='two',line=dict(width=0.5),mode='lines', groupnorm="")
 
-    fig_hospi = go.Figure(data=[newin_smooth, newout_smooth,newin_scatter, newout_scatter], layout=go.Layout(barmode='group'))
+    fig_hospi = go.Figure(data=[newin_scatter, newout_scatter,newin_smooth, newout_smooth], layout=go.Layout(barmode='group'))
     fig_hospi.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0),
                             title=gettext("Daily IN/Out Hospitalizations"))
 
@@ -397,13 +394,13 @@ def bar_hospitalization_ICU():
 
     fig_hospi = make_subplots(specs=[[{"secondary_y": True, }]], shared_yaxes='all', shared_xaxes='all')
 
-    icu_bar = go.Bar(x=df.index, y=df.TOTAL_IN_ICU, name=gettext('#Total ICU'))
+    icu_bar = go.Scatter(x=df.index, y=df.TOTAL_IN_ICU, name=gettext('#Total ICU'), showlegend=True,stackgroup='one',line=dict(width=0.5),mode='lines', groupnorm="")
     fig_hospi.add_trace(icu_bar, secondary_y=False)
 
     xvals = df.index[7:]
     yvals = 100 * (df.TOTAL_IN_ICU.values[7:] - df.TOTAL_IN_ICU.values[:-7]) / df.TOTAL_IN_ICU.values[:-7]
 
-    fig_hospi.add_trace(go.Scatter(x=xvals[10:], y=yvals[10:], name=gettext('Weekly Increase %')), secondary_y=True)
+    fig_hospi.add_trace(go.Scatter(x=xvals[10:], y=yvals[10:], name=gettext('Weekly Increase %'),marker_color="pink"), secondary_y=True)
 
     fig_hospi.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0),
                             title=gettext("Hospitalizations ICU"))
@@ -591,7 +588,7 @@ def newin_smooth():
 @register_plot_for_embedding("death_smooth")
 def death_smooth():
 
-    death_bar = go.Bar(x=df.index, y=df.DEATHS, name=gettext('#Daily Covid Deaths'),marker_color="red",legendgroup = "death", showlegend = False)
+    death_bar = go.Scatter(x=df.index, y=df.DEATHS, name=gettext('#Daily Covid Deaths'),marker_color="red",legendgroup = "death", showlegend = False,stackgroup='two',line=dict(width=0.5),mode='lines', groupnorm="")
     death_smooth = go.Scatter(x=df.index,y=df.DEATHS.rolling(7,center=True).mean(), name=("#Daily Covid Deaths"),marker_color="blue",legendgroup = "death", showlegend = False)
 
     fig = go.Figure(data=[death_bar,death_smooth], layout=go.Layout(barmode='group'))

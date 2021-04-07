@@ -36,11 +36,13 @@ age_groups = ['0-24', '25-44', '45-64', '65-74', '75-84', '85+']
 
 def all_death():
 
+
     df = pd.read_csv("static/csv/mortality_statbel.csv")
 
 
     df_ag = df.groupby([df.DT_DATE, df.CD_AGEGROUP]).agg({'MS_NUM_DEATH': ['sum']}).reset_index()
     df_ag.columns = df_ag.columns.get_level_values(0)
+
     df_ag.rename(columns={'MS_NUM_DEATH':'DEATHS_ALL','CD_AGEGROUP':'AGEGROUP','DT_DATE':'DATE'}, inplace=True)
 
     start_date = '2020-03-17'
@@ -82,26 +84,89 @@ def death_decompose(fig, row, col, ag, show_legend=False, groupnorm=''):
                              groupnorm=groupnorm), row, col)
 
 
-def fig_death_decompose(groupnorm=''):
+def death_decompose(fig, row, col, ag, show_legend=False):
+    df_ag = df_all.loc[df_all['AGEGROUP'] == ag]
+    fig.add_trace(go.Scatter(x=df_ag.DATE, y=(df_ag.DEATHS_ALL - df_ag.DEATHS_COVID).abs(), showlegend=show_legend,
+                             name="non covid",
+                             legendgroup=ag, stackgroup='one', line=dict(width=0.5), mode='lines', marker_color="blue",
+                             groupnorm=""), row, col)
+    fig.add_trace(go.Scatter(x=df_ag.DATE, y=df_ag.DEATHS_COVID, showlegend=show_legend, name="covid",
+                             legendgroup=ag, stackgroup='one', line=dict(width=0.5), mode='lines', marker_color="red",
+                             groupnorm=""), row, col)
+
+@register_plot_for_embedding("fig__ag_death_decompose_time")
+def fig_ag_death_decompose_time():
     fig = make_subplots(rows=6, cols=1, subplot_titles=('0-24', '25-44', '45-64', '65-74', '75-84', '85+'))
-    death_decompose(fig, 1, 1, '0-24', show_legend=True, groupnorm=groupnorm)
-    death_decompose(fig, 2, 1, '25-44', show_legend=False, groupnorm=groupnorm)
-    death_decompose(fig, 3, 1, '45-64', show_legend=False, groupnorm=groupnorm)
-    death_decompose(fig, 4, 1, '65-74', show_legend=False, groupnorm=groupnorm)
-    death_decompose(fig, 5, 1, '75-84', show_legend=False, groupnorm=groupnorm)
-    death_decompose(fig, 6, 1, '85+', show_legend=False, groupnorm=groupnorm)
+    death_decompose(fig, 1, 1, '0-24', show_legend=True)
+    death_decompose(fig, 2, 1, '25-44', show_legend=False)
+    death_decompose(fig, 3, 1, '45-64', show_legend=False)
+    death_decompose(fig, 4, 1, '65-74', show_legend=False)
+    death_decompose(fig, 5, 1, '75-84', show_legend=False)
+    death_decompose(fig, 6, 1, '85+', show_legend=False)
 
     fig.update_layout(template="plotly_white", height=1000, margin=dict(l=50, r=50, t=50, b=50),
-                      title="BE total deaths: covid vs non-covid " + groupnorm)
+                      title="BE total deaths: covid vs non-covid ")
+
+    fig.update_layout(
+        updatemenus=[
+            dict(
+                type="buttons",
+                direction="up",
+                buttons=list([
+                    dict(
+                        args=[{"groupnorm": ""}],
+                        label="absolute",
+                        method="restyle"
+                    ),
+                    dict(
+                        args=[{"groupnorm": "percent"}],
+                        label="percent",
+                        method="restyle"
+                    )
+                ]),
+            ),
+        ])
+
     return fig
 
-@register_plot_for_embedding("death_decompose_absolute")
-def death_decompose_absolute():
-    return fig_death_decompose(groupnorm='')
+@register_plot_for_embedding("fig_ag_death_decompose_aggregate")
+def fig_ag_death_decompose_aggregate():
+    df_ag = df_all.groupby([df_all.AGEGROUP]).agg({'DEATHS_ALL': ['sum'], 'DEATHS_COVID': ['sum']}).reset_index()
+    df_ag.columns = df_ag.columns.get_level_values(0)
+    df_ag = df_ag[df_ag.AGEGROUP != 'NA']
 
-@register_plot_for_embedding("death_decompose_percent")
-def death_decompose_percent():
-    return fig_death_decompose(groupnorm='percent')
+    fig = go.Figure(data=[
+        go.Scatter(name='non-covid', x=df_ag.AGEGROUP, y=df_ag.DEATHS_ALL - df_ag.DEATHS_COVID, stackgroup='one',
+                   groupnorm=""),
+        go.Scatter(name='covid', x=df_ag.AGEGROUP, y=df_ag.DEATHS_COVID, stackgroup='one', groupnorm="")
+    ])
+    fig.update_layout(template="plotly_white", margin=dict(l=50, r=50, t=50, b=50),
+                      title="BE total deaths: covid vs non-covid since covid outbreak")
+
+    fig.update_layout(
+        updatemenus=[
+            dict(
+                type="buttons",
+                direction="up",
+                buttons=list([
+                    dict(
+                        args=[{"groupnorm": ""}],
+                        label="absolute",
+                        method="restyle"
+                    ),
+                    dict(
+                        args=[{"groupnorm": "percent"}],
+                        label="percent",
+                        method="restyle"
+                    )
+                ]),
+            ),
+        ])
+
+    return fig
+
+
+
 
 def moving_average(a, n=1):
     a = a.astype(np.float)
@@ -126,7 +191,7 @@ def sin_fit_math(x, y):
     return yy
 
 
-def sin_fit(x, y, title,color="blue"):
+def sin_fit(x, y, title,color="blue",points=True):
     yy = sin_fit_math(x, y.values)
 
     sin_line = go.Scatter(
@@ -137,14 +202,7 @@ def sin_fit(x, y, title,color="blue"):
         legendgroup=title,
         marker_color="grey"
     )
-    line = go.Scatter(
-        x=x,
-        y=y.values,
-        mode='markers',
-        name='daily ' + title,
-        legendgroup = title,
-        marker_color = color
-    )
+
     avgline = go.Scatter(
         x=x,
         y=y.rolling(7, center=True).mean().values,
@@ -153,8 +211,18 @@ def sin_fit(x, y, title,color="blue"):
         legendgroup=title,
         marker_color=color
     )
-
-    return [line, sin_line, avgline]
+    res = [sin_line, avgline]
+    if points:
+        line = go.Scatter(
+            x=x,
+            y=y.values,
+            mode='markers',
+            name='daily ' + title,
+            legendgroup=title,
+            marker_color=color
+        )
+        res.append(line)
+    return [sin_line, avgline]
 
 
 @register_plot_for_embedding("daily_death_all")
@@ -208,7 +276,7 @@ def daily_death_ag():
     i = 0
     for ag in age_groups:
         df_ag_ = df_ag.loc[df_ag['CD_AGEGROUP'] == ag]
-        plots = plots + sin_fit(df_ag_.DT_DATE, df_ag_.MS_NUM_DEATH, str(ag),color=cols[i])
+        plots = plots + sin_fit(df_ag_.DT_DATE, df_ag_.MS_NUM_DEATH, str(ag),color=cols[i],points=False)
         i += 1
 
     fig = go.Figure(
@@ -234,25 +302,38 @@ def daily_death_ag_relative():
 
         trace = dict(x=df_ag_.DT_DATE, y=df_ag_.MS_NUM_DEATH.rolling(7, center=True).mean(), mode='lines',
                      line=dict(width=0.5),
-                     stackgroup='one', groupnorm='percent', name=ag)
+                     stackgroup='one', groupnorm='percent', name=ag,showlegend=True)
         traces.append(trace)
 
         i += 1
 
-    layout = go.Layout(
-        showlegend=True,
-        yaxis=dict(
-            type='linear',
-            range=[1, 100],
-            dtick=20,
-            ticksuffix='%'
-        )
-    )
 
-    fig = go.Figure(data=traces, layout=layout)
+
+    fig = go.Figure(data=traces)
+
+    fig.update_layout(
+        updatemenus=[
+            dict(
+                type="buttons",
+                direction="up",
+                buttons=list([
+                    dict(
+                        args=[{"groupnorm": ""}],
+                        label="absolute",
+                        method="restyle"
+                    ),
+                    dict(
+                        args=[{"groupnorm": "percent"}],
+                        label="percent",
+                        method="restyle"
+                    )
+                ]),
+            ),
+        ])
 
     # Edit the layout
-    fig.update_layout(title='Relative Age group percentage of death',
+    fig.update_layout(template="plotly_white", margin=dict(l=50, r=50, t=50, b=50),
+                      title='Age group total death',
                       xaxis_title='Date',
                       yaxis_title='Percentage')
     return fig

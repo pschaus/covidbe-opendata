@@ -92,25 +92,25 @@ def scatter_hospi_per100K_provinces():
 
 @register_plot_for_embedding("total_hospi_provinces")
 def total_hospi_provinces():
-    fig = px.bar(df, x="DATE", y="TOTAL_IN", color="PROVINCE",title="Total number of hospitalized patients at the moment of reporting")
+    fig = px.area(df, x="DATE", y="TOTAL_IN", color="PROVINCE",title="Total number of hospitalized patients at the moment of reporting")
     fig.update_layout(template="plotly_white")
     return fig
 
 @register_plot_for_embedding("total_icu_provinces")
 def total_icu_provinces():
-    fig = px.bar(df, x="DATE", y="TOTAL_IN_ICU", color="PROVINCE",title="Total number of hospitalized patients in ICU at the moment of reporting")
+    fig = px.area(df, x="DATE", y="TOTAL_IN_ICU", color="PROVINCE",title="Total number of hospitalized patients in ICU at the moment of reporting")
     fig.update_layout(template="plotly_white")
     return fig
 
 @register_plot_for_embedding("total_hospi_new_in_provinces")
 def total_hospi_new_in_provinces():
-    fig = px.bar(df, x="DATE", y="NEW_IN", color="PROVINCE",title="Number of hospital intakes that day")
+    fig = px.area(df, x="DATE", y="NEW_IN", color="PROVINCE",title="Number of hospital intakes that day")
     fig.update_layout(template="plotly_white")
     return fig
 
 @register_plot_for_embedding("total_hospi_new_out_provinces")
 def total_hospi_new_out_provinces():
-    fig = px.bar(df, x="DATE", y="NEW_OUT", color="PROVINCE",title="Number of hospital discharges that day")
+    fig = px.area(df, x="DATE", y="NEW_OUT", color="PROVINCE",title="Number of hospital discharges that day")
     fig.update_layout(template="plotly_white")
     return fig
 

@@ -151,35 +151,45 @@ def age_group_cases_relative():
         df_ag = df_ag.groupby(['DATE']).agg({'CASES': 'sum'})
         df_ag.index = pd.DatetimeIndex(df_ag.index)
         df_ag = df_ag.reindex(idx, fill_value=0)
-        bars_age_groups.append(go.Bar(
-            x=df_ag.index,
-            y=df_ag['CASES'],
+        traces.append(go.Scatter(
+            x=df_ag.index[:-4],
+            y=df_ag['CASES'][:-4],
             name=ag,
-            marker_color=px.colors.qualitative.G10[idx2]
-        ))
-        trace = dict(x=df_ag.index, y=df_ag.CASES, mode='lines',
-                     line=dict(width=0.5),
-                     stackgroup='one', groupnorm='percent', name=ag)
-        traces.append(trace)
+            showlegend=True,
+            legendgroup=ag, stackgroup='one',
+            line=dict(width=0.5),
+            mode='lines', groupnorm=""))
 
-    layout = go.Layout(
-        showlegend=True,
-        yaxis=dict(
-            type='linear',
-            range=[1, 100],
-            dtick=20,
-            ticksuffix='%'
-        )
-    )
-
-    fig = go.Figure(data=traces, layout=layout)
+    fig = go.Figure(data=traces)
 
     # Edit the layout
-    fig.update_layout(title='Relative Age group percentage of cases',
+    fig.update_layout(title='Age group cases',
                       xaxis_title='Date',
-                      yaxis_title='Percentage')
+                      yaxis_title='')
+    fig.update_layout(template="plotly_white")
+
+    fig.update_layout(
+        updatemenus=[
+            dict(
+                type="buttons",
+                direction="up",
+                buttons=list([
+                    dict(
+                        args=[{"groupnorm": ""}],
+                        label="absolute",
+                        method="restyle"
+                    ),
+                    dict(
+                        args=[{"groupnorm": "percent"}],
+                        label="percent",
+                        method="restyle"
+                    )
+                ]),
+            ),
+        ])
 
     return fig
+
 
 @register_plot_for_embedding("age_groups_cases")
 def age_groups_cases():
@@ -239,67 +249,6 @@ def age_groups_pop_active_cases_relative():
     return fig_age_groups_cases
 
 
-
-@register_plot_for_embedding("cases_age_groups_pop_active")
-def age_groups_pop_active_cases():
-    """
-    bar plot age groups cases
-    """
-    idx = pd.date_range(df_prov_timeseries.DATE.min(), df_prov_timeseries.DATE.max())
-    bars_age_groups = []
-    age_groups = sorted(df_prov_timeseries.pop_active.unique())
-
-    for idx2, ag in enumerate(age_groups):
-        df_ag = df_prov_timeseries.loc[df_prov_timeseries['pop_active'] == ag]
-        df_ag = df_ag.groupby(['DATE']).agg({'CASES': 'sum'})
-        df_ag.index = pd.DatetimeIndex(df_ag.index)
-        df_ag = df_ag.reindex(idx, fill_value=0)
-        col = px.colors.qualitative.G10[idx2]
-        bars_age_groups.append(go.Bar(
-            x=df_ag.index[:-4],
-            y=df_ag['CASES'][:-4],
-            name=ag,
-            marker_color = col,legendgroup = ag, showlegend = True
-        ))
-
-        bars_age_groups.append(go.Bar(
-            x=df_ag.index[-4:],
-            y=df_ag['CASES'][-4:],
-            name=ag+"not consolidated",
-            marker_color = "grey",legendgroup = ag, showlegend = True
-        ))
-
-        bars_age_groups.append(
-            go.Scatter(x=df_ag.index[:-4], y=df_ag['CASES'][:-4].rolling(7,center=True).mean(),
-                       name=ag, marker_color = col, legendgroup = ag, showlegend = False))
-    fig_age_groups_cases = go.Figure(data=bars_age_groups)
-    fig_age_groups_cases.update_layout(template="plotly_white", height=500,
-                                       margin=dict(l=0, r=0, t=30, b=0),
-                                       title=gettext("Cases per day per age group"))
-
-    fig_age_groups_cases.update_layout(
-    hovermode='x unified',
-    updatemenus=[
-        dict(
-            type = "buttons",
-            direction = "left",
-            buttons=list([
-                dict(
-                    args=[{"yaxis.type": "linear"}],
-                    label="LINEAR",
-                    method="relayout"
-                ),
-                dict(
-                    args=[{"yaxis.type": "log"}],
-                    label="LOG",
-                    method="relayout"
-                )
-            ]),
-        ),
-    ])
-
-
-    return fig_age_groups_cases
 
 
 @register_plot_for_embedding("average_age_cases")

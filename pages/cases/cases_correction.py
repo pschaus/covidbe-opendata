@@ -5,7 +5,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output, State
 from flask_babel import get_locale
 
-from graphs.cases_age_groups import age_groups_pop_active_hypothetical, age_groups_pop_active_cases
+from graphs.cases_age_groups import age_groups_pop_active_hypothetical
 from graphs.overmortality import daily_deaths, daily_deaths_respiratory, overmortality_respiratory_line, \
     overmortality_estimates_repartition, overmortality_respiratory_count
 from pages import model_warning, get_translation, display_graphic

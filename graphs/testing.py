@@ -51,21 +51,19 @@ def bart_plot_cases_testing():
     """
     # ---------bar plot age groups death---------------------------
 
-    test_bar = go.Bar(x=df_testing.DATE[:-4], y=df_testing.TESTS_ALL[:-4], name=gettext('#Tests'), marker_color="blue",
-                      legendgroup="testing", showlegend=True)
-    case_bar = go.Bar(x=df_testing.DATE, y=df_testing.CASES, name=gettext('#Cases'), marker_color="red",
-                      legendgroup="cases", showlegend=True)
+    test_bar = go.Scatter(x=df_testing.DATE[:-4], y=df_testing.TESTS_ALL[:-4], name=gettext('#Tests'), marker_color="blue",
+                      legendgroup="testing", showlegend=True,stackgroup='one',line=dict(width=0.5),mode='lines', groupnorm="",)
 
-    test_bar_last = go.Bar(x=df_testing.DATE[-4:], y=df_testing.TESTS_ALL[-4:], name=gettext('#Tests Not Consolidated'),
+    test_bar_last = go.Scatter(x=df_testing.DATE[-4:], y=df_testing.TESTS_ALL[-4:], name=gettext('#Tests Not Consolidated'),
                            marker_color="lightblue",
-                           legendgroup="testing", showlegend=True)
+                           legendgroup="testing", showlegend=True,stackgroup='one',line=dict(width=0.5),mode='lines', groupnorm="",)
 
-    case_bar = go.Bar(x=df_testing.DATE[:-4], y=df_testing.CASES[:-4], name=gettext('#Cases'), marker_color="red",
-                      legendgroup="cases", showlegend=True)
+    case_bar = go.Scatter(x=df_testing.DATE[:-4], y=df_testing.CASES[:-4], name=gettext('#Cases'), marker_color="red",
+                      legendgroup="cases", showlegend=True,stackgroup='two',line=dict(width=0.5),mode='lines', groupnorm="",)
 
-    case_bar_last = go.Bar(x=df_testing.DATE[-4:], y=df_testing.CASES[-4:], name=gettext('#Cases Not Consolidated'),
+    case_bar_last = go.Scatter(x=df_testing.DATE[-4:], y=df_testing.CASES[-4:], name=gettext('#Cases Not Consolidated'),
                            marker_color="pink",
-                           legendgroup="cases", showlegend=True)
+                           legendgroup="cases", showlegend=True,stackgroup='two',line=dict(width=0.5),mode='lines', groupnorm="",)
 
     line_test = go.Scatter(x=df_testing.DATE[:-4], y=df_testing.TESTS_ALL[:-4].rolling(7, center=True).mean(),
                            name=gettext('#Tests avg'), marker_color="blue", legendgroup="testing-avg", showlegend=True)
@@ -76,35 +74,34 @@ def bart_plot_cases_testing():
                            name=gettext('#Cases avg'),
                            marker_color="red", legendgroup="cases-avg", showlegend=True)
 
-    fig = make_subplots(specs=[[{"secondary_y": True, }]], shared_yaxes='all', shared_xaxes='all')
-    fig.add_trace(test_bar, secondary_y=False)
-    fig.add_trace(test_bar_last, secondary_y=False)
-    fig.add_trace(line_test, secondary_y=False)
-    fig.add_trace(case_bar, secondary_y=True)
-    fig.add_trace(case_bar_last, secondary_y=True)
-    fig.add_trace(line_case, secondary_y=True)
+    fig = go.Figure()
+    fig.add_trace(test_bar)
+    fig.add_trace(test_bar_last)
+    fig.add_trace(line_test)
+    fig.add_trace(case_bar)
+    fig.add_trace(case_bar_last)
+    fig.add_trace(line_case)
 
     # Set y-axes titles
-    fig.update_yaxes(title_text="#tests/day", secondary_y=False)
-    fig.update_yaxes(title_text="#cases/day", secondary_y=True)
+    fig.update_yaxes(title_text="#day")
+
 
     fig.update_layout(template="plotly_white", height=500, margin=dict(l=0, r=0, t=30, b=0),
                       title=gettext("Number of Tests and Cases each day"))
 
     fig.update_layout(
-        hovermode='x unified',
         updatemenus=[
             dict(
                 type="buttons",
                 direction="left",
                 buttons=list([
                     dict(
-                        args=[{"yaxis.type": "linear", "yaxis2.type": "linear"}],
+                        args=[{"yaxis.type": "linear"}],
                         label="LINEAR",
                         method="relayout"
                     ),
                     dict(
-                        args=[{"yaxis.type": "log", "yaxis2.type": "log"}],
+                        args=[{"yaxis.type": "log"}],
                         label="LOG",
                         method="relayout"
                     )

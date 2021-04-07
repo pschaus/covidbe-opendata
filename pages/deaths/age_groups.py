@@ -9,7 +9,7 @@ from graphs.deaths_be_statbel import death_arrondissements_map_yearly
 from graphs.deaths_be_statbel_hist import death_plus_hist_cum, \
     daily_death_all, daily_death_ag, daily_death_all_deviation_sin,death_cum_january,\
     death_cum_january_additional,death_cum_january_2021,daily_death_ag_relative, \
-    death_decompose_percent, death_decompose_absolute
+    fig_ag_death_decompose_time, fig_ag_death_decompose_aggregate
 from pages import display_graphic
 from pages.sources import source_sciensano, source_statbel, display_source_providers
 
@@ -40,13 +40,13 @@ def display_age_groups():
         ]),
         html.H2(gettext("Covid vs Non-Covid Death per age-group")),
         dbc.Row([
-            dbc.Col(display_graphic(id='death_decompose_absolute',
-                                    figure=death_decompose_absolute(),
+            dbc.Col(display_graphic(id='fig_ag_death_decompose_time',
+                                    figure=fig_ag_death_decompose_time(),
                                     config=dict(locale=str(get_locale())))),
         ]),
         dbc.Row([
-            dbc.Col(display_graphic(id='death_decompose_relative',
-                                    figure=death_decompose_percent(),
+            dbc.Col(display_graphic(id='fig_ag_death_decompose_aggregate',
+                                    figure=fig_ag_death_decompose_aggregate(),
                                     config=dict(locale=str(get_locale())))),
         ]),
         html.H2(gettext("History of death all population")),

@@ -4,7 +4,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 from flask_babel import get_locale, gettext
 
-from graphs.cases_age_groups import age_groups_cases, age_groups_cases_pie, age_groups_pop_active_cases, \
+from graphs.cases_age_groups import age_groups_cases, age_groups_cases_pie, \
     age_groups_pop_active_hypothetical, average_age_cases, \
     age_group_cases_relative, incidence_age_group_plot, relative_increase_age_group_plot
 from pages.sources import display_source_providers, source_sciensano
@@ -25,17 +25,10 @@ def display_age_groups():
             The number of actual positive cases can be (much) higher.
             Note that the number of daily tests is also increasing. See our testing page."""))),
         dbc.Row([
-            dbc.Col(display_graphic(id='age-group-cases',
-                              figure=age_groups_cases(),
-                              config=dict(locale=str(get_locale())))),
-        ]),
-        dbc.Row([
             dbc.Col(display_graphic(id='age-group-cases-distribution-percentage',
                               figure=age_group_cases_relative(),
                               config=dict(locale=str(get_locale())))),
         ]),
-
-
         html.H3(get_translation(fr="Augmentation relative sur une semaine dans chaque groupe d'age",
                                 en="Relative increase wrt to previous week in each age group")),
         dbc.Row([
@@ -47,13 +40,6 @@ def display_age_groups():
         dbc.Row([
             dbc.Col(display_graphic(id='age-group-cases-relative100K',
                               figure=incidence_age_group_plot(),
-                              config=dict(locale=str(get_locale())))),
-        ]),
-        html.H3(get_translation(fr="Nombre de cas dans chaque groupe d'age",
-                                en="Nombre de cas dans chaque groupe d'age")),
-        dbc.Row([
-            dbc.Col(display_graphic(id='age-group-cases-60years',
-                              figure=age_groups_pop_active_cases(),
                               config=dict(locale=str(get_locale())))),
         ]),
         html.H3(get_translation(fr="Evolution de l'age moyen des cas",

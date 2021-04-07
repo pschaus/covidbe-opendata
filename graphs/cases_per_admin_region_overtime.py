@@ -251,13 +251,13 @@ def plot_cases_admin_region_overtime():
 @register_plot_for_embedding("cases_per_habitant_admin_region_inhabitant overtime plot")
 def plot_cases_per_habittant_admin_region_overtime():
     df3d['CASES_PER_1000HABITANT'] = df3d['CASES']/df3d['POP']*100000
-    fig = px.bar(data_frame=df3d, x='DATE', y='CASES_PER_1000HABITANT',color='name')
+    fig = px.area(data_frame=df3d, x='DATE', y='CASES_PER_1000HABITANT',color='name')
     fig.update_layout(template="plotly_white")
     return fig
 
 @register_plot_for_embedding("casesdaily_per_admin_region_inhabitant overtime plot")
 def plot_cases_daily_admin_region_overtime():
-    fig = px.bar(data_frame=df3d, x='DATE', y='CASES',color='name')
+    fig = px.area(data_frame=df3d, x='DATE', y='CASES',color='name')
     fig.update_layout(template="plotly_white")
     return fig
 

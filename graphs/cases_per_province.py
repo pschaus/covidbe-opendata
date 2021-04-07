@@ -54,14 +54,14 @@ df_prov = df_prov_avg_age_cases()
 
 @register_plot_for_embedding("bar_testing_provinces")
 def bar_testing_provinces():
-    fig = px.bar(df, x="DATE", y="TESTS_ALL", color="PROVINCE", barmode="stack")
+    fig = px.area(df, x="DATE", y="TESTS_ALL", color="PROVINCE")
     fig.update_layout(template="plotly_white")
     return fig
 
 
 @register_plot_for_embedding("bar_cases_provinces")
 def bar_cases_provinces():
-    fig =  px.bar(df, x="DATE", y="CASES", color="PROVINCE", barmode="stack")
+    fig =  px.bar(df, x="DATE", y="CASES", color="PROVINCE")
     fig.update_layout(template="plotly_white")
     return fig
 
@@ -122,14 +122,14 @@ df_prov = df_prov_avg_age_cases()
 
 @register_plot_for_embedding("bar_testing_provinces")
 def bar_testing_provinces():
-    fig = px.bar(df, x="DATE", y="TESTS_ALL", color="PROVINCE", barmode="stack")
+    fig = px.area(df, x="DATE", y="TESTS_ALL", color="PROVINCE")
     fig.update_layout(template="plotly_white")
     return fig
 
 
 @register_plot_for_embedding("bar_cases_provinces")
 def bar_cases_provinces():
-    fig = px.bar(df, x="DATE", y="CASES", color="PROVINCE", barmode="stack")
+    fig = px.area(df, x="DATE", y="CASES", color="PROVINCE")
     fig.update_layout(template="plotly_white")
     return fig
 
