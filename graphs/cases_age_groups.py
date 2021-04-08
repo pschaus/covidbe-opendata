@@ -253,9 +253,11 @@ def age_groups_pop_active_cases_relative():
 
 @register_plot_for_embedding("average_age_cases")
 def average_age_cases():
-    fig = px.line(df_avg_age, x='DATE', y='avg_age')
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=df_avg_age.DATE[:-4],y=df_avg_age['avg_age'][:-4]))
     fig.update_layout(template="plotly_white", height=500,
                                        margin=dict(l=0, r=0, t=30, b=0), title=gettext("Average age of cases"))
+    fig.update_layout(yaxis_range=[0,70])
     return fig
 
 

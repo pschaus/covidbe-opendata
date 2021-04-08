@@ -5,7 +5,7 @@ import dash_html_components as html
 from flask_babel import get_locale, gettext
 
 from graphs.deaths_age_groups import age_groups_death, age_groups_death_pie, \
-    waves_comparison,region_death_covid,region_covid_death_per_habitant
+    waves_comparison,region_death_covid,region_covid_death_per_habitant, average_age_death
 from pages import display_graphic
 from pages.sources import source_sciensano, source_statbel, display_source_providers
 from graphs.hopitals import death_smooth
@@ -28,11 +28,17 @@ def display_covid_death():
                                     figure=region_covid_death_per_habitant(),
                                     config=dict(locale=str(get_locale())))),
         ]),
-        html.H2(gettext("Total Deaths Avg over 7 days")),
+        html.H2(gettext("Total covid deaths Avg over 7 days")),
         dbc.Row([
             dbc.Col(display_graphic(id='hospitalization-be',
                               figure=death_smooth(),
                               config=dict(locale=str(get_locale())))),
+        ]),
+        html.H2(gettext("Average age of covid deaths")),
+        dbc.Row([
+            dbc.Col(display_graphic(id='avgagecoviddeath',
+                                    figure=average_age_death(),
+                                    config=dict(locale=str(get_locale())))),
         ]),
         html.H2(gettext("First wave vs 2nd wave")),
         dbc.Row([
