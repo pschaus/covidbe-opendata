@@ -13,7 +13,7 @@ from graphs.hopitals import bar_hospitalization, \
     bar_hospitalization_tot, \
     bar_hospitalization_in_out,\
     bar_hospitalization_in,\
-    exp_fit_hospi,hospi_waves, gees_barometer
+    exp_fit_hospi,hospi_waves, gees_barometer, average_age_new_in
 from pages import display_graphic
 from pages.sources import display_source_providers, source_sciensano
 
@@ -67,6 +67,11 @@ def display_hospitals():
                               figure=hospi_over_death_smooth(),
                               config=dict(locale=str(get_locale())))),
         ]),
-
+        html.H2(gettext("Average age weekly admission")),
+        dbc.Row([
+            dbc.Col(display_graphic(id='avg age weekly admission',
+                                    figure=average_age_new_in(),
+                                    config=dict(locale=str(get_locale())))),
+        ]),
         display_source_providers(source_sciensano)
     ]

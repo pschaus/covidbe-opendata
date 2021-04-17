@@ -519,6 +519,56 @@ def hospi_over_death_smooth():
     return fig
 
 
+@register_plot_for_embedding("average age new in")
+def average_age_new_in():
+    df_age_hospi = pd.read_csv('static/csv/Belgium COVID-19 Dashboard - Sciensano_Hospitalizations 2_Tijdreeks.csv',
+                               keep_default_na=False)
+
+    age_group_min = {"00–05": 0, "06–19": 6, "20–39": 20, "40–59": 40, "60-79": 60, "80–++": 80}
+    age_group_max = {"00–05": 5, "06–19": 19, "20–39": 39, "40–59": 59, "60-79": 79, "80–++": 85}
+
+    df_age_hospi['age_min'] = df_age_hospi['AgeGroup'].map(age_group_min)
+    df_age_hospi['age_max'] = df_age_hospi['AgeGroup'].map(age_group_max)
+
+    df_age_hospi['weight_min'] = df_age_hospi['age_min'] * df_age_hospi['Hospitalisations']
+    df_age_hospi['weight_max'] = df_age_hospi['age_max'] * df_age_hospi['Hospitalisations']
+
+    df_age_hospi = df_age_hospi.groupby(['Jaar week']).agg({'weight_min': 'sum', 'weight_max': 'sum'}).reset_index()
+    new = df_age_hospi["Jaar week"].str.split(" ", n=20, expand=True)
+
+    df_age_hospi['year'] = new[2]
+    df_age_hospi['week'] = new[8].str.split(")", n=1, expand=True)[0]
+    df_age_hospi['week'] = df_age_hospi['week'].astype(int)
+
+    df_age_hospi['year_week'] = df_age_hospi['year'].astype(str) + " w " + df_age_hospi['week'].astype(str)
+
+    df_age_hospi = df_age_hospi.sort_values(by=['year', 'week'], axis=0, ascending=True)
+
+    fig = go.Figure()
+
+    fig.add_trace(go.Scatter(
+        x=df_age_hospi.year_week,
+        y=df_age_hospi.weight_min,
+        fill=None,
+        mode='lines',
+        line_color='indigo',
+        name="lower-bound"
+    ))
+    fig.add_trace(go.Scatter(
+        x=df_age_hospi.year_week,
+        y=df_age_hospi.weight_max,
+        fill='tonexty',  # fill area between trace0 and trace1
+        name="upper-bound",
+        mode='lines', line_color='indigo'))
+
+    fig.update_layout(template="plotly_white")
+    fig.update_layout(title='Average age of weekly new hospitalized admissions in Belgium',
+                      xaxis_title='Week',
+                      yaxis_title='Age')
+    fig.update_layout(yaxis=dict(range=[0, 80]))
+    return fig
+
+
 @register_plot_for_embedding("icu_over_hospi(")
 def icu_over_hospi():
     data_y = df.TOTAL_IN_ICU / df.TOTAL_IN
