@@ -55,7 +55,7 @@ def yearly_mortality_nis3():
     dateparse = lambda x: datetime.strptime(x, '%Y-%m-%d')
     df = pd.read_csv("../static/csv/mortality_statbel.csv", parse_dates=['DT_DATE'], date_parser=dateparse)
     df.dropna(thresh=1, inplace=True)
-    df['NIS3'] = df.apply(lambda x: int(str(x['ï»¿CD_ARR'])[:2]), axis=1).astype(int)
+    df['NIS3'] = df.apply(lambda x: int(str(x['CD_ARR'])[:2]), axis=1).astype(int)
     # df['NIS3'] = df.apply(lambda x: int(str(x['CD_ARR'])[:2]), axis=1).astype(int)
     df['WEEK'] = df.apply(lambda x: x['DT_DATE'].isocalendar()[1], axis=1)
     df = df.groupby(['NR_YEAR', 'NIS3'])["MS_NUM_DEATH"].sum().reset_index()
