@@ -59,3 +59,45 @@ def plot_vaccines_cumulated():
     fig.update_layout(template="plotly_white")
     fig.update_layout(yaxis_range=[0, max(df_A.COUNT.cumsum().values)])
     return fig
+
+
+
+
+
+
+df_ag_nis =pd.read_csv("static/csv/vaccines_age_group_nis5.csv",sep=",",encoding='latin') # last line is NaN
+
+from datetime import datetime, date
+
+import geopandas
+import plotly.express as px
+import pandas as pd
+import numpy as np
+from flask_babel import gettext
+from pages import get_translation
+import json
+
+from graphs import register_plot_for_embedding
+
+
+def vaccine_nis5(age_group):
+    geojson = geopandas.read_file('static/json/communes/be-geojson.json', encoding='utf8')
+
+    fig = px.choropleth_mapbox(df_ag_nis[df_ag_nis.AgeGroup == age_group], geojson=geojson,
+                               locations="NIS5",
+                               color='percent',
+                               range_color=(0, 100),
+                               color_continuous_scale="magma_r",
+                               featureidkey="properties.NIS5",
+                               center={"lat": 50.641111, "lon": 4.668889},
+                               height=600,
+                               mapbox_style="carto-positron", zoom=6)
+    fig.update_geos(fitbounds="locations")
+    fig.layout.coloraxis.colorbar.title = "Percentage of vaccination " + age_group
+    fig.layout.coloraxis.colorbar.titleside = "right"
+    fig.layout.coloraxis.colorbar.ticks = "outside"
+    fig.layout.coloraxis.colorbar.tickmode = "array"
+    fig.update_layout(template="plotly_white", margin=dict(l=0, r=0, t=5, b=0))
+    #fig.update_layout(title="Percentage of vaccination " + age_group)
+
+    return fig
