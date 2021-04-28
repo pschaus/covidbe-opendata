@@ -5,7 +5,7 @@ import dash_html_components as html
 from flask_babel import get_locale, gettext
 
 from graphs.deaths_age_groups import age_groups_death, age_groups_death_pie
-from graphs.vaccines_be import plot_vaccines_cumulated, vaccine_nis5
+from graphs.vaccines_be import plot_vaccines_cumulated, vaccine_nis5, fig_ag_dose_a_c
 from pages import display_graphic
 from pages.sources import source_sciensano, source_statbel, display_source_providers
 
@@ -23,8 +23,16 @@ def display_vaccines():
                               config=dict(locale=str(get_locale())))),
         ]),
         html.H2(get_translation(
-            fr="""Percentage of 1st dose in each municipality per age-group""",
-            en="""Percentage of 1st dose in each municipality per age-group""")),
+            fr="""Percentage of 1st dose (A or C) in each region per age-group""",
+            en="""Percentage of 1st dose (A or C) in each region per age-group""")),
+        dbc.Row([
+            dbc.Col(display_graphic(id='vaccines-age-group-region',
+                                    figure=fig_ag_dose_a_c(),
+                                    config=dict(locale=str(get_locale())))),
+        ]),
+        html.H2(get_translation(
+            fr="""Percentage of 1st dose (A or C) in each municipality per age-group""",
+            en="""Percentage of 1st dose (A or C) in each municipality per age-group""")),
 
         html.H2("85+"),
         dbc.Row([

@@ -18,11 +18,58 @@ import geopandas
 
 df=pd.read_csv('static/csv/be-covid-vaccines.csv') # last line is NaN
 
-df_A = df[df.DOSE == 'A']
+df_A = df.loc[df['DOSE'].isin(['A','C'])]
 df_B = df[df.DOSE == 'B']
 
 df_A = df_A.groupby(['DATE']).agg({'COUNT': 'sum'})
 df_B = df_B.groupby(['DATE']).agg({'COUNT': 'sum'})
+
+df = pd.read_csv('static/csv/be-covid-vaccines.csv')  # last line is NaN
+
+df_AC = df.loc[df['DOSE'].isin(['A', 'C'])]
+
+df_ag = df_AC.groupby(['DATE', 'REGION', 'AGEGROUP']).agg({'COUNT': 'sum'}).reset_index()
+df_ag_regions = pd.read_csv('static/csv/age-group-regions.csv')  # last line is NaN
+df_ag = pd.merge(df_ag, df_ag_regions, left_on=['REGION', 'AGEGROUP'], right_on=['REGION', 'AGEGROUP'])
+df_ag["percent"] = 100 * df_ag['COUNT'] / df_ag['POP']
+
+
+def trace(region, ag, legend=False, color="red"):
+    df_ = df_ag[df_ag.REGION == region]
+    df_ = df_[df_.AGEGROUP == ag]
+
+    return go.Scatter(x=df_.DATE, y=df_.percent.cumsum(), name=region, legendgroup=region, showlegend=legend,
+                      marker_color=color)
+
+
+def add_ag(fig,ag, row, col, legend=False):
+    colors = px.colors.qualitative.Plotly
+    i = 0
+    for r in ['Wallonia', "Flanders", "Brussels"]:
+        fig.add_trace(trace(r, ag, color=colors[i], legend=legend), row, col)
+        i += 1
+
+@register_plot_for_embedding("vaccines_ag_region")
+def fig_ag_dose_a_c():
+    fig = make_subplots(rows=3, cols=2, subplot_titles=('85+', '75-84', '65-74', '55-64', '45-54', '35-44'))
+
+    fig.update_layout(template="plotly_white")
+
+    add_ag(fig,"85+", 1, 1, legend=True)
+    add_ag(fig,"75-84", 1, 2)
+    add_ag(fig,"65-74", 2, 1)
+    add_ag(fig,"55-64", 2, 2)
+    add_ag(fig,"45-54", 3, 1)
+    add_ag(fig,"35-44", 3, 2)
+
+    for i in range(1, 7):
+        fig['layout']['yaxis' + str(i)].update(title='', range=[0, 100], autorange=False)
+
+    fig.update_layout(template="plotly_white", height=600)
+
+    fig.update_layout(yaxis_range=[0, 100])
+    return fig
+
 
 @register_plot_for_embedding("vaccines_daily")
 def plot_vaccines_cumulated():
@@ -32,7 +79,7 @@ def plot_vaccines_cumulated():
     fig = make_subplots(specs=[[{"secondary_y": True, }]], shared_yaxes='all', shared_xaxes='all')
 
     fig.add_trace(
-        go.Scatter(x=df_A.index, y=df_A.COUNT.cumsum(), name=gettext('Cumulated DOSE A')),
+        go.Scatter(x=df_A.index, y=df_A.COUNT.cumsum(), name=gettext('Cumulated DOSE A or C')),
         secondary_y=False,
     )
 
@@ -42,7 +89,7 @@ def plot_vaccines_cumulated():
     )
 
     fig.add_trace(
-        go.Bar(x=df_A.index, y=df_A.COUNT, name=gettext('Daily DOSE A')),
+        go.Bar(x=df_A.index, y=df_A.COUNT, name=gettext('Daily DOSE A or C')),
         secondary_y=True,
     )
 
