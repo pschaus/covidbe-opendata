@@ -524,9 +524,8 @@ def average_age_new_in():
     df_age_hospi = pd.read_csv('static/csv/Belgium COVID-19 Dashboard - Sciensano_Hospitalizations 2_Tijdreeks.csv',
                                keep_default_na=False)
 
-    age_group_min = {"00–05": 0, "06–19": 6, "20–39": 20, "40–59": 40, "60-79": 60, "80–++": 80}
-    age_group_max = {"00–05": 5, "06–19": 19, "20–39": 39, "40–59": 59, "60-79": 79, "80–++": 85}
-
+    age_group_min = {"00–05": 0, "06–19": 6, "20–39": 20, "40–59": 40, "60–79": 60, "80–++": 80}
+    age_group_max = {"00–05": 5, "06–19": 19, "20–39": 39, "40–59": 59, "60–79": 79, "80–++": 85}
     df_age_hospi['age_min'] = df_age_hospi['AgeGroup'].map(age_group_min)
     df_age_hospi['age_max'] = df_age_hospi['AgeGroup'].map(age_group_max)
 

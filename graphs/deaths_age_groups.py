@@ -64,16 +64,21 @@ def age_groups_death():
 def df_avg_age_death():
     df_mortality = pd.read_csv('static/csv/be-covid-mortality.csv', keep_default_na=False)
 
-    fig = make_subplots(rows=6, cols=1, subplot_titles=('0-24', '25-44', '45-64', '65-74', '75-84', '85+'))
+    age_group_weight_min = {'0-24': 0, '25-44': 25, '45-64': 45, '65-74': 65, '75-84': 75, '85+': 85}
+    age_group_weight_max = {'0-24': 24, '25-44': 44, '45-64': 64, '65-74': 74, '75-84': 84, '85+': 90}
 
-    age_group_weight = {'0-24': 24, '25-44': 44, '45-64': 64, '75-84': 84, '85+': 90}
+    df_mortality['weight_min'] = df_mortality['AGEGROUP'].map(age_group_weight_min)
+    df_mortality['weight_max'] = df_mortality['AGEGROUP'].map(age_group_weight_max)
 
-    df_mortality['weight'] = df_mortality['AGEGROUP'].map(age_group_weight)
-    df_mortality['weighteddeaths'] = df_mortality['weight'] * df_mortality['DEATHS']
+
+
+    df_mortality['weighteddeaths_min'] = df_mortality['weight_min'] * df_mortality['DEATHS']
+    df_mortality['weighteddeaths_max'] = df_mortality['weight_max'] * df_mortality['DEATHS']
     df_avg_ag = df_mortality.groupby([df_mortality.DATE]).agg(
-        {'DEATHS': ['sum'], 'weighteddeaths': ['sum']}).reset_index()
+        {'DEATHS': ['sum'], 'weighteddeaths_min': ['sum'], 'weighteddeaths_max': ['sum']}).reset_index()
     df_avg_ag.columns = df_avg_ag.columns.get_level_values(0)
-    df_avg_ag['avg_age'] = df_avg_ag['weighteddeaths'] / df_avg_ag['DEATHS']
+    df_avg_ag['avg_age_min'] = df_avg_ag['weighteddeaths_min'] / df_avg_ag['DEATHS']
+    df_avg_ag['avg_age_max'] = df_avg_ag['weighteddeaths_max'] / df_avg_ag['DEATHS']
 
     return df_avg_ag
 
@@ -85,13 +90,36 @@ df_avg_death = df_avg_age_death()
 def average_age_death():
     fig = go.Figure()
 
-    y = df_avg_death['weighteddeaths'].rolling(14, center=True).sum() / df_avg_death['DEATHS'].rolling(14,
-                                                                                                       center=True).sum()
+    y_min = df_avg_death['weighteddeaths_min'].rolling(14, center=True).sum() / df_avg_death['DEATHS'].rolling(14,
+                                                                                                               center=True).sum()
+    y_max = df_avg_death['weighteddeaths_max'].rolling(14, center=True).sum() / df_avg_death['DEATHS'].rolling(14,
 
-    fig.add_trace(go.Scatter(x=df_avg_death.DATE, y=y))
-    fig.update_layout(template="plotly_white", height=500,
-                      margin=dict(l=0, r=0, t=30, b=0), title=gettext("Average age of covid deaths (rolling 14j)"))
-    fig.update_layout(yaxis_range=[0, 85])
+                                                                                                               center=True).sum()
+    x = df_avg_death.DATE
+
+    fig = go.Figure()
+
+    fig.add_trace(go.Scatter(
+        x=x,
+        y=y_min,
+        fill=None,
+        mode='lines',
+        line_color='indigo',
+        name="lower-bound"
+    ))
+    fig.add_trace(go.Scatter(
+        x=x,
+        y=y_max,
+        fill='tonexty',  # fill area between trace0 and trace1
+        name="upper-bound",
+        mode='lines', line_color='indigo'))
+
+    fig.update_layout(template="plotly_white")
+    fig.update_layout(title='Average age of weekly new hospitalized admissions in Belgium',
+                      xaxis_title='Week',
+                      yaxis_title='Age')
+    fig.update_layout(yaxis=dict(range=[0, 90]))
+
     return fig
 
 
