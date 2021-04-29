@@ -115,7 +115,7 @@ def average_age_death():
         mode='lines', line_color='indigo'))
 
     fig.update_layout(template="plotly_white")
-    fig.update_layout(title='Average age of weekly new hospitalized admissions in Belgium',
+    fig.update_layout(title='Average age of covid deaths Belgium',
                       xaxis_title='Week',
                       yaxis_title='Age')
     fig.update_layout(yaxis=dict(range=[0, 90]))
