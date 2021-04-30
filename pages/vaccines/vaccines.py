@@ -64,5 +64,11 @@ def display_vaccines():
                                     figure=vaccine_nis5('45-54'),
                                     config=dict(locale=str(get_locale())))),
         ]),
+        html.H2("35-44"),
+        dbc.Row([
+            dbc.Col(display_graphic(id='vaccines-35-44',
+                                    figure=vaccine_nis5('35-44'),
+                                    config=dict(locale=str(get_locale())))),
+        ]),
         display_source_providers(source_sciensano),
     ]
