@@ -16,8 +16,6 @@ from zipfile import ZipFile
 import pandas
 import requests
 
-
-
 url = "https://statbel.fgov.be/sites/default/files/files/opendata/deathday/DEMO_DEATH_OPEN.zip"
 content = requests.get(url)
 zf = ZipFile(BytesIO(content.content))
