@@ -17,7 +17,8 @@ import pandas
 import requests
 
 url = "https://statbel.fgov.be/sites/default/files/files/opendata/deathday/DEMO_DEATH_OPEN.zip"
-content = requests.get(url)
+user_agent = {'User-agent': 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)'}
+content = requests.get(url,headers = user_agent)
 zf = ZipFile(BytesIO(content.content))
 
 
