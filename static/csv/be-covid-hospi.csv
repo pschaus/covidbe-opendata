@@ -4558,7 +4558,7 @@
 4556,2021-05-03,WHT,Wallonia,14,546,136,92,12,23,13,Hainaut
 4557,2021-05-03,VLI,Flanders,7,162,49,23,3,12,5,Limburg
 4558,2021-05-03,WLG,Wallonia,12,307,92,54,2,21,0,Liège
-4559,2021-05-03,WLX,Wallonia,3,64,21,16,0,2,0,Luxembourg
+4559,2021-05-03,WLX,Wallonia,3,64,22,16,0,2,0,Luxembourg
 4560,2021-05-03,WNA,Wallonia,6,125,43,30,5,4,0,Namur
 4561,2021-05-03,VOV,Flanders,14,317,111,50,5,16,8,OostVlaanderen
 4562,2021-05-03,VBR,Flanders,6,140,41,27,1,8,4,VlaamsBrabant
@@ -4569,7 +4569,7 @@
 4567,2021-05-04,WHT,Wallonia,14,513,124,86,12,35,39,Hainaut
 4568,2021-05-04,VLI,Flanders,7,161,46,21,3,20,19,Limburg
 4569,2021-05-04,WLG,Wallonia,12,289,88,63,2,13,23,Liège
-4570,2021-05-04,WLX,Wallonia,3,59,20,16,0,7,7,Luxembourg
+4570,2021-05-04,WLX,Wallonia,3,59,21,16,0,7,7,Luxembourg
 4571,2021-05-04,WNA,Wallonia,6,112,42,30,4,4,13,Namur
 4572,2021-05-04,VOV,Flanders,14,294,103,46,5,22,45,OostVlaanderen
 4573,2021-05-04,VBR,Flanders,6,136,43,29,1,14,17,VlaamsBrabant
@@ -4657,7 +4657,7 @@
 4655,2021-05-12,WHT,Wallonia,14,411,106,72,13,32,44,Hainaut
 4656,2021-05-12,VLI,Flanders,7,138,49,25,3,13,20,Limburg
 4657,2021-05-12,WLG,Wallonia,12,216,64,45,2,13,24,Liège
-4658,2021-05-12,WLX,Wallonia,3,41,12,7,0,9,1,Luxembourg
+4658,2021-05-12,WLX,Wallonia,3,41,15,7,0,9,1,Luxembourg
 4659,2021-05-12,WNA,Wallonia,6,85,38,26,4,6,7,Namur
 4660,2021-05-12,VOV,Flanders,14,234,91,39,5,14,12,OostVlaanderen
 4661,2021-05-12,VBR,Flanders,6,100,38,25,2,8,8,VlaamsBrabant
@@ -4751,3 +4751,14 @@
 4749,2021-05-20,VBR,Flanders,6,89,28,18,3,5,0,VlaamsBrabant
 4750,2021-05-20,WBR,Wallonia,2,21,6,4,0,3,2,BrabantWallon
 4751,2021-05-20,VWV,Flanders,11,133,36,22,3,15,22,WestVlaanderen
+4752,2021-05-21,VAN,Flanders,14,215,75,46,4,19,26,Antwerpen
+4753,2021-05-21,BRU,Brussels,15,266,98,79,19,22,33,Brussels
+4754,2021-05-21,WHT,Wallonia,14,337,108,83,12,23,32,Hainaut
+4755,2021-05-21,VLI,Flanders,7,97,34,17,2,10,9,Limburg
+4756,2021-05-21,WLG,Wallonia,12,164,40,26,2,10,11,Liège
+4757,2021-05-21,WLX,Wallonia,3,25,7,2,0,4,2,Luxembourg
+4758,2021-05-21,WNA,Wallonia,6,85,39,28,3,7,7,Namur
+4759,2021-05-21,VOV,Flanders,14,181,66,27,4,7,21,OostVlaanderen
+4760,2021-05-21,VBR,Flanders,6,87,27,19,3,7,9,VlaamsBrabant
+4761,2021-05-21,WBR,Wallonia,2,21,6,5,0,5,5,BrabantWallon
+4762,2021-05-21,VWV,Flanders,11,134,40,22,3,13,14,WestVlaanderen
