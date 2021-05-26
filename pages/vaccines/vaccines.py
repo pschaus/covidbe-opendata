@@ -5,7 +5,7 @@ import dash_html_components as html
 from flask_babel import get_locale, gettext
 
 from graphs.deaths_age_groups import age_groups_death, age_groups_death_pie
-from graphs.vaccines_be import plot_vaccines_cumulated, vaccine_nis5, fig_ag_dose_a_c
+from graphs.vaccines_be import plot_vaccines_cumulated, vaccine_nis5, fig_ag_dose_a_c, show_brand
 from pages import display_graphic
 from pages.sources import source_sciensano, source_statbel, display_source_providers
 
@@ -28,6 +28,14 @@ def display_vaccines():
         dbc.Row([
             dbc.Col(display_graphic(id='vaccines-age-group-region',
                                     figure=fig_ag_dose_a_c(),
+                                    config=dict(locale=str(get_locale())))),
+        ]),
+        html.H2(get_translation(
+            fr="""Total cumulated 1st dose  (A or C) in for each brand""",
+            en="""Total cumulated  1st dose (A or C) in for each brand""")),
+        dbc.Row([
+            dbc.Col(display_graphic(id='vaccines-age-group-region',
+                                    figure=show_brand(),
                                     config=dict(locale=str(get_locale())))),
         ]),
         html.H2(get_translation(
@@ -68,6 +76,12 @@ def display_vaccines():
         dbc.Row([
             dbc.Col(display_graphic(id='vaccines-35-44',
                                     figure=vaccine_nis5('35-44'),
+                                    config=dict(locale=str(get_locale())))),
+        ]),
+        html.H2("18-34"),
+        dbc.Row([
+            dbc.Col(display_graphic(id='vaccines-18-34',
+                                    figure=vaccine_nis5('18-34'),
                                     config=dict(locale=str(get_locale())))),
         ]),
         display_source_providers(source_sciensano),
