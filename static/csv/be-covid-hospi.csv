@@ -4752,7 +4752,7 @@
 4750,2021-05-20,WBR,Wallonia,2,21,6,4,0,3,2,BrabantWallon
 4751,2021-05-20,VWV,Flanders,11,133,36,22,3,15,22,WestVlaanderen
 4752,2021-05-21,VAN,Flanders,14,215,75,46,4,19,26,Antwerpen
-4753,2021-05-21,BRU,Brussels,15,258,98,79,19,22,33,Brussels
+4753,2021-05-21,BRU,Brussels,15,257,98,79,19,22,33,Brussels
 4754,2021-05-21,WHT,Wallonia,14,337,108,83,12,23,32,Hainaut
 4755,2021-05-21,VLI,Flanders,7,97,34,17,2,10,9,Limburg
 4756,2021-05-21,WLG,Wallonia,12,161,40,26,2,10,13,Liège
@@ -4763,7 +4763,7 @@
 4761,2021-05-21,WBR,Wallonia,2,21,6,5,0,5,5,BrabantWallon
 4762,2021-05-21,VWV,Flanders,11,134,40,22,3,13,14,WestVlaanderen
 4763,2021-05-22,VAN,Flanders,14,202,75,42,4,17,31,Antwerpen
-4764,2021-05-22,BRU,Brussels,15,230,98,77,20,12,30,Brussels
+4764,2021-05-22,BRU,Brussels,15,229,98,77,20,12,30,Brussels
 4765,2021-05-22,WHT,Wallonia,14,336,113,80,11,38,32,Hainaut
 4766,2021-05-22,VLI,Flanders,7,80,35,18,2,6,15,Limburg
 4767,2021-05-22,WLG,Wallonia,12,156,38,24,2,13,10,Liège
@@ -4774,10 +4774,10 @@
 4772,2021-05-22,WBR,Wallonia,2,17,5,4,0,0,4,BrabantWallon
 4773,2021-05-22,VWV,Flanders,11,117,39,22,3,16,25,WestVlaanderen
 4774,2021-05-23,VAN,Flanders,14,206,68,43,3,11,7,Antwerpen
-4775,2021-05-23,BRU,Brussels,15,226,95,73,18,16,16,Brussels
+4775,2021-05-23,BRU,Brussels,15,225,95,73,18,16,16,Brussels
 4776,2021-05-23,WHT,Wallonia,14,339,115,72,13,14,12,Hainaut
 4777,2021-05-23,VLI,Flanders,7,80,35,16,2,6,3,Limburg
-4778,2021-05-23,WLG,Wallonia,12,155,41,23,1,9,6,Liège
+4778,2021-05-23,WLG,Wallonia,12,154,41,23,1,9,6,Liège
 4779,2021-05-23,WLX,Wallonia,3,18,7,3,0,0,3,Luxembourg
 4780,2021-05-23,WNA,Wallonia,6,84,40,27,3,5,2,Namur
 4781,2021-05-23,VOV,Flanders,14,173,64,30,4,12,7,OostVlaanderen
@@ -4785,7 +4785,7 @@
 4783,2021-05-23,WBR,Wallonia,2,18,6,5,0,2,1,BrabantWallon
 4784,2021-05-23,VWV,Flanders,11,119,41,22,4,11,16,WestVlaanderen
 4785,2021-05-24,VAN,Flanders,14,209,70,42,3,7,5,Antwerpen
-4786,2021-05-24,BRU,Brussels,15,234,98,73,18,11,4,Brussels
+4786,2021-05-24,BRU,Brussels,15,233,98,73,18,11,4,Brussels
 4787,2021-05-24,WHT,Wallonia,14,342,114,73,13,13,5,Hainaut
 4788,2021-05-24,VLI,Flanders,7,87,35,17,3,11,6,Limburg
 4789,2021-05-24,WLG,Wallonia,12,158,40,22,1,11,3,Liège
@@ -4795,3 +4795,14 @@
 4793,2021-05-24,VBR,Flanders,6,88,31,18,3,2,0,VlaamsBrabant
 4794,2021-05-24,WBR,Wallonia,2,20,5,3,0,3,0,BrabantWallon
 4795,2021-05-24,VWV,Flanders,11,121,41,22,4,7,5,WestVlaanderen
+4796,2021-05-25,VAN,Flanders,14,208,67,37,3,16,19,Antwerpen
+4797,2021-05-25,BRU,Brussels,15,234,97,73,18,18,18,Brussels
+4798,2021-05-25,WHT,Wallonia,14,348,112,75,11,11,8,Hainaut
+4799,2021-05-25,VLI,Flanders,7,91,33,12,2,10,4,Limburg
+4800,2021-05-25,WLG,Wallonia,12,165,40,24,2,7,3,Liège
+4801,2021-05-25,WLX,Wallonia,3,19,6,3,0,3,1,Luxembourg
+4802,2021-05-25,WNA,Wallonia,6,84,35,26,3,4,3,Namur
+4803,2021-05-25,VOV,Flanders,14,166,64,31,3,6,18,OostVlaanderen
+4804,2021-05-25,VBR,Flanders,6,86,31,17,3,3,5,VlaamsBrabant
+4805,2021-05-25,WBR,Wallonia,2,21,4,3,0,2,0,BrabantWallon
+4806,2021-05-25,VWV,Flanders,11,125,42,21,4,10,5,WestVlaanderen
