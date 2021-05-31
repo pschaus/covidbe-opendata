@@ -4840,7 +4840,7 @@
 4838,2021-05-28,WBR,Wallonia,2,14,3,3,0,2,2,BrabantWallon
 4839,2021-05-28,VWV,Flanders,11,101,35,20,4,12,12,WestVlaanderen
 4840,2021-05-29,VAN,Flanders,14,153,64,35,4,6,23,Antwerpen
-4841,2021-05-29,BRU,Brussels,15,188,82,58,10,11,13,Brussels
+4841,2021-05-29,BRU,Brussels,15,184,81,58,10,13,18,Brussels
 4842,2021-05-29,WHT,Wallonia,14,289,99,71,15,13,26,Hainaut
 4843,2021-05-29,VLI,Flanders,7,70,24,13,4,9,10,Limburg
 4844,2021-05-29,WLG,Wallonia,12,141,34,24,1,15,16,Liège
@@ -4849,4 +4849,15 @@
 4847,2021-05-29,VOV,Flanders,14,131,46,26,3,15,29,OostVlaanderen
 4848,2021-05-29,VBR,Flanders,6,61,25,15,1,3,8,VlaamsBrabant
 4849,2021-05-29,WBR,Wallonia,2,13,4,4,0,3,4,BrabantWallon
-4850,2021-05-29,VWV,Flanders,11,88,36,22,4,6,21,WestVlaanderen
+4850,2021-05-29,VWV,Flanders,11,88,36,20,4,6,21,WestVlaanderen
+4851,2021-05-30,VAN,Flanders,14,163,67,36,4,12,2,Antwerpen
+4852,2021-05-30,BRU,Brussels,15,179,81,56,9,9,13,Brussels
+4853,2021-05-30,WHT,Wallonia,14,286,91,64,14,9,12,Hainaut
+4854,2021-05-30,VLI,Flanders,7,71,24,14,4,6,3,Limburg
+4855,2021-05-30,WLG,Wallonia,12,148,33,24,1,11,1,Liège
+4856,2021-05-30,WLX,Wallonia,3,12,3,2,0,2,0,Luxembourg
+4857,2021-05-30,WNA,Wallonia,6,67,35,22,1,5,2,Namur
+4858,2021-05-30,VOV,Flanders,14,135,47,19,3,9,5,OostVlaanderen
+4859,2021-05-30,VBR,Flanders,6,62,24,15,1,2,2,VlaamsBrabant
+4860,2021-05-30,WBR,Wallonia,2,16,4,4,0,1,0,BrabantWallon
+4861,2021-05-30,VWV,Flanders,11,81,34,22,3,3,8,WestVlaanderen
