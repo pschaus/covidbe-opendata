@@ -14,7 +14,8 @@ from graphs import register_plot_for_embedding
 
 
 
-df = pd.read_csv('static/csv/international_hospi.csv')
+df = pd.read_csv('static/csv/international_hospi.csv',parse_dates=['date'])
+
 
 population = {'United Kingdom':66.65,'France':66.99,'Belgium':11.46,'Netherlands':17.28,'Hungary':9.773,
               'Italy':60.36,'Poland':37.9, 'Portugal':10.28, 'Czechia': 10.69, 'Romania':19.190, 'Spain':47.431 }
