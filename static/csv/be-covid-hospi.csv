@@ -4951,7 +4951,7 @@
 4949,2021-06-07,VWV,Flanders,11,74,27,13,2,3,7,WestVlaanderen
 4950,2021-06-08,VAN,Flanders,14,128,45,25,5,13,17,Antwerpen
 4951,2021-06-08,BRU,Brussels,15,159,59,44,8,20,18,Brussels
-4952,2021-06-08,WHT,Wallonia,14,209,71,46,14,21,26,Hainaut
+4952,2021-06-08,WHT,Wallonia,14,209,71,46,14,18,26,Hainaut
 4953,2021-06-08,VLI,Flanders,7,37,15,9,1,1,11,Limburg
 4954,2021-06-08,WLG,Wallonia,12,111,27,16,1,7,12,Liège
 4955,2021-06-08,WLX,Wallonia,3,3,1,1,0,0,2,Luxembourg
@@ -4960,3 +4960,14 @@
 4958,2021-06-08,VBR,Flanders,6,43,16,9,1,1,10,VlaamsBrabant
 4959,2021-06-08,WBR,Wallonia,2,14,2,0,0,2,2,BrabantWallon
 4960,2021-06-08,VWV,Flanders,11,65,25,13,2,5,13,WestVlaanderen
+4961,2021-06-09,VAN,Flanders,14,130,43,21,6,11,19,Antwerpen
+4962,2021-06-09,BRU,Brussels,15,154,58,44,8,8,8,Brussels
+4963,2021-06-09,WHT,Wallonia,14,201,69,47,13,17,19,Hainaut
+4964,2021-06-09,VLI,Flanders,7,34,13,7,1,3,5,Limburg
+4965,2021-06-09,WLG,Wallonia,12,104,25,13,1,8,14,Liège
+4966,2021-06-09,WLX,Wallonia,3,2,1,1,0,0,0,Luxembourg
+4967,2021-06-09,WNA,Wallonia,6,34,23,13,0,1,5,Namur
+4968,2021-06-09,VOV,Flanders,14,74,35,17,3,6,10,OostVlaanderen
+4969,2021-06-09,VBR,Flanders,6,43,15,8,1,2,2,VlaamsBrabant
+4970,2021-06-09,WBR,Wallonia,2,15,3,0,0,4,3,BrabantWallon
+4971,2021-06-09,VWV,Flanders,11,61,24,13,2,5,9,WestVlaanderen
