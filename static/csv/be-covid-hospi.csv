@@ -5192,7 +5192,7 @@
 5190,2021-06-29,WBR,Wallonia,2,5,0,0,0,1,0,BrabantWallon
 5191,2021-06-29,VWV,Flanders,11,15,9,7,1,1,1,WestVlaanderen
 5192,2021-06-30,VAN,Flanders,14,49,17,9,5,3,5,Antwerpen
-5193,2021-06-30,BRU,Brussels,15,68,34,26,5,4,10,Brussels
+5193,2021-06-30,BRU,Brussels,15,67,33,25,4,4,10,Brussels
 5194,2021-06-30,WHT,Wallonia,14,68,35,26,7,3,2,Hainaut
 5195,2021-06-30,VLI,Flanders,7,13,6,2,1,1,2,Limburg
 5196,2021-06-30,WLG,Wallonia,12,26,10,6,1,2,6,Liège
@@ -5201,4 +5201,15 @@
 5199,2021-06-30,VOV,Flanders,14,20,11,9,1,0,5,OostVlaanderen
 5200,2021-06-30,VBR,Flanders,6,28,7,3,0,0,1,VlaamsBrabant
 5201,2021-06-30,WBR,Wallonia,2,4,0,0,0,0,1,BrabantWallon
-5202,2021-06-30,VWV,Flanders,11,13,8,6,1,0,1,WestVlaanderen
+5202,2021-06-30,VWV,Flanders,11,12,7,6,1,0,2,WestVlaanderen
+5203,2021-07-01,VAN,Flanders,14,47,15,9,5,1,5,Antwerpen
+5204,2021-07-01,BRU,Brussels,15,63,32,22,3,2,5,Brussels
+5205,2021-07-01,WHT,Wallonia,14,60,34,22,7,1,7,Hainaut
+5206,2021-07-01,VLI,Flanders,7,7,6,2,0,0,6,Limburg
+5207,2021-07-01,WLG,Wallonia,12,24,9,7,1,0,3,Liège
+5208,2021-07-01,WLX,Wallonia,3,2,0,0,0,0,0,Luxembourg
+5209,2021-07-01,WNA,Wallonia,6,13,8,7,0,0,1,Namur
+5210,2021-07-01,VOV,Flanders,14,18,10,8,1,1,2,OostVlaanderen
+5211,2021-07-01,VBR,Flanders,6,25,5,3,0,2,3,VlaamsBrabant
+5212,2021-07-01,WBR,Wallonia,2,3,0,0,0,0,0,BrabantWallon
+5213,2021-07-01,VWV,Flanders,11,11,7,5,0,0,1,WestVlaanderen
