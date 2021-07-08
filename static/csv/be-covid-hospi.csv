@@ -5224,7 +5224,7 @@
 5222,2021-07-02,VBR,Flanders,6,27,5,3,0,2,0,VlaamsBrabant
 5223,2021-07-02,WBR,Wallonia,2,2,0,0,0,0,1,BrabantWallon
 5224,2021-07-02,VWV,Flanders,11,11,6,4,0,1,0,WestVlaanderen
-5225,2021-07-03,VAN,Flanders,14,45,14,7,5,3,6,Antwerpen
+5225,2021-07-03,VAN,Flanders,14,43,14,7,5,2,6,Antwerpen
 5226,2021-07-03,BRU,Brussels,15,59,31,22,3,3,7,Brussels
 5227,2021-07-03,WHT,Wallonia,14,60,29,19,6,6,5,Hainaut
 5228,2021-07-03,VLI,Flanders,7,5,4,2,0,1,0,Limburg
@@ -5235,7 +5235,7 @@
 5233,2021-07-03,VBR,Flanders,6,20,5,3,0,0,7,VlaamsBrabant
 5234,2021-07-03,WBR,Wallonia,2,2,0,0,0,0,0,BrabantWallon
 5235,2021-07-03,VWV,Flanders,11,14,6,4,0,3,2,WestVlaanderen
-5236,2021-07-04,VAN,Flanders,14,46,14,7,5,2,3,Antwerpen
+5236,2021-07-04,VAN,Flanders,14,43,14,7,5,1,3,Antwerpen
 5237,2021-07-04,BRU,Brussels,15,58,31,22,5,1,2,Brussels
 5238,2021-07-04,WHT,Wallonia,14,60,27,18,6,3,1,Hainaut
 5239,2021-07-04,VLI,Flanders,7,5,4,2,0,0,0,Limburg
@@ -5246,7 +5246,7 @@
 5244,2021-07-04,VBR,Flanders,6,19,5,3,0,1,2,VlaamsBrabant
 5245,2021-07-04,WBR,Wallonia,2,2,0,0,0,0,0,BrabantWallon
 5246,2021-07-04,VWV,Flanders,11,17,6,4,0,4,1,WestVlaanderen
-5247,2021-07-05,VAN,Flanders,14,47,15,9,2,4,1,Antwerpen
+5247,2021-07-05,VAN,Flanders,14,43,15,9,2,3,1,Antwerpen
 5248,2021-07-05,BRU,Brussels,15,54,31,23,5,2,4,Brussels
 5249,2021-07-05,WHT,Wallonia,14,62,25,18,6,1,2,Hainaut
 5250,2021-07-05,VLI,Flanders,7,5,4,2,0,0,0,Limburg
@@ -5257,9 +5257,9 @@
 5255,2021-07-05,VBR,Flanders,6,18,5,3,0,0,1,VlaamsBrabant
 5256,2021-07-05,WBR,Wallonia,2,2,0,0,0,0,0,BrabantWallon
 5257,2021-07-05,VWV,Flanders,11,15,6,4,0,0,2,WestVlaanderen
-5258,2021-07-06,VAN,Flanders,14,44,10,7,1,4,8,Antwerpen
+5258,2021-07-06,VAN,Flanders,14,40,10,7,1,3,7,Antwerpen
 5259,2021-07-06,BRU,Brussels,15,59,28,23,4,6,3,Brussels
-5260,2021-07-06,WHT,Wallonia,14,61,24,17,6,5,3,Hainaut
+5260,2021-07-06,WHT,Wallonia,14,59,23,17,6,5,4,Hainaut
 5261,2021-07-06,VLI,Flanders,7,6,3,2,0,2,1,Limburg
 5262,2021-07-06,WLG,Wallonia,12,20,6,6,1,0,2,Liège
 5263,2021-07-06,WLX,Wallonia,3,2,1,0,0,0,0,Luxembourg
@@ -5268,3 +5268,14 @@
 5266,2021-07-06,VBR,Flanders,6,17,5,3,0,0,1,VlaamsBrabant
 5267,2021-07-06,WBR,Wallonia,2,3,0,0,0,1,0,BrabantWallon
 5268,2021-07-06,VWV,Flanders,11,14,7,4,0,3,4,WestVlaanderen
+5269,2021-07-07,VAN,Flanders,14,37,11,7,1,3,1,Antwerpen
+5270,2021-07-07,BRU,Brussels,15,61,28,22,4,11,6,Brussels
+5271,2021-07-07,WHT,Wallonia,14,60,23,15,5,5,2,Hainaut
+5272,2021-07-07,VLI,Flanders,7,7,3,2,0,1,1,Limburg
+5273,2021-07-07,WLG,Wallonia,12,18,6,6,1,0,2,Liège
+5274,2021-07-07,WLX,Wallonia,3,5,1,1,0,1,0,Luxembourg
+5275,2021-07-07,WNA,Wallonia,6,10,7,5,0,0,1,Namur
+5276,2021-07-07,VOV,Flanders,14,22,10,7,1,2,1,OostVlaanderen
+5277,2021-07-07,VBR,Flanders,6,16,3,2,0,2,3,VlaamsBrabant
+5278,2021-07-07,WBR,Wallonia,2,3,0,0,0,0,0,BrabantWallon
+5279,2021-07-07,VWV,Flanders,11,17,7,4,0,3,0,WestVlaanderen
