@@ -5334,8 +5334,8 @@
 5332,2021-07-12,VBR,Flanders,6,18,2,2,0,2,0,VlaamsBrabant
 5333,2021-07-12,WBR,Wallonia,2,1,0,0,0,0,0,BrabantWallon
 5334,2021-07-12,VWV,Flanders,11,20,7,3,0,3,0,WestVlaanderen
-5335,2021-07-13,VAN,Flanders,14,30,12,6,1,3,7,Antwerpen
-5336,2021-07-13,BRU,Brussels,15,71,29,18,4,7,4,Brussels
+5335,2021-07-13,VAN,Flanders,14,30,12,6,1,3,8,Antwerpen
+5336,2021-07-13,BRU,Brussels,15,73,29,18,4,10,4,Brussels
 5337,2021-07-13,WHT,Wallonia,14,46,17,9,3,5,6,Hainaut
 5338,2021-07-13,VLI,Flanders,7,6,3,2,0,0,1,Limburg
 5339,2021-07-13,WLG,Wallonia,12,13,4,4,0,2,3,Liège
@@ -5345,3 +5345,14 @@
 5343,2021-07-13,VBR,Flanders,6,19,2,2,0,3,2,VlaamsBrabant
 5344,2021-07-13,WBR,Wallonia,2,2,0,0,0,1,0,BrabantWallon
 5345,2021-07-13,VWV,Flanders,11,22,7,3,0,2,0,WestVlaanderen
+5346,2021-07-14,VAN,Flanders,14,27,11,6,1,1,4,Antwerpen
+5347,2021-07-14,BRU,Brussels,15,76,29,19,4,7,5,Brussels
+5348,2021-07-14,WHT,Wallonia,14,44,12,9,3,5,4,Hainaut
+5349,2021-07-14,VLI,Flanders,7,6,1,1,0,2,2,Limburg
+5350,2021-07-14,WLG,Wallonia,12,12,4,4,0,1,1,Liège
+5351,2021-07-14,WLX,Wallonia,3,5,1,1,0,1,0,Luxembourg
+5352,2021-07-14,WNA,Wallonia,6,11,6,5,0,0,0,Namur
+5353,2021-07-14,VOV,Flanders,14,18,10,7,1,1,0,OostVlaanderen
+5354,2021-07-14,VBR,Flanders,6,17,1,1,0,2,5,VlaamsBrabant
+5355,2021-07-14,WBR,Wallonia,2,2,0,0,0,1,1,BrabantWallon
+5356,2021-07-14,VWV,Flanders,11,23,7,4,0,1,0,WestVlaanderen
