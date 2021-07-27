@@ -1,4 +1,4 @@
-from napp import app #important: we need this to start the translation mechanism. A bit hacky.
+from napp_main import app #important: we need this to start the translation mechanism. A bit hacky.
 from flask import g
 import flask_babel
 from graphs import registered_plots
