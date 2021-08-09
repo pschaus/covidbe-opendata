@@ -46,7 +46,10 @@ def gen_layout2():
 
             Chers followers/visiteurs,
 
-            Le site ne sera plus maintenu jusqu'au 9 aout 
+            Le site n'est actuellement plus maintenu 
+            
+            Le code source est disponible ici:
+            https://github.com/pschaus/covidbe-opendata
             
             Guillaume et Pierre
             
@@ -54,7 +57,10 @@ def gen_layout2():
             
             Dear followers/visitors,
 
-            The website will not be maintained till the 9th of August
+            The website is not maintained anymore
+            
+            You'll find the source code here:
+            https://github.com/pschaus/covidbe-opendata
 
             Guillaume and Pierre
             """),
