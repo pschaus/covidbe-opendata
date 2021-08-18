@@ -5709,7 +5709,7 @@
 5707,2021-08-15,WBR,Wallonia,2,7,1,0,0,0,1,BrabantWallon
 5708,2021-08-15,VWV,Flanders,11,35,9,5,2,6,4,WestVlaanderen
 5709,2021-08-16,VAN,Flanders,14,76,16,9,3,9,1,Antwerpen
-5710,2021-08-16,BRU,Brussels,15,163,53,22,4,14,8,Brussels
+5710,2021-08-16,BRU,Brussels,15,163,53,23,4,15,9,Brussels
 5711,2021-08-16,WHT,Wallonia,14,86,25,16,2,5,4,Hainaut
 5712,2021-08-16,VLI,Flanders,7,18,9,5,1,2,1,Limburg
 5713,2021-08-16,WLG,Wallonia,12,53,14,5,0,2,0,Liège
@@ -5718,4 +5718,15 @@
 5716,2021-08-16,VOV,Flanders,14,45,12,6,0,5,2,OostVlaanderen
 5717,2021-08-16,VBR,Flanders,6,27,7,4,0,3,0,VlaamsBrabant
 5718,2021-08-16,WBR,Wallonia,2,7,1,0,0,1,0,BrabantWallon
-5719,2021-08-16,VWV,Flanders,11,34,10,5,2,2,1,WestVlaanderen
+5719,2021-08-16,VWV,Flanders,11,32,10,5,2,2,3,WestVlaanderen
+5720,2021-08-17,VAN,Flanders,14,75,19,10,3,15,15,Antwerpen
+5721,2021-08-17,BRU,Brussels,15,170,54,24,4,26,24,Brussels
+5722,2021-08-17,WHT,Wallonia,14,89,25,16,2,5,4,Hainaut
+5723,2021-08-17,VLI,Flanders,7,21,10,5,1,4,2,Limburg
+5724,2021-08-17,WLG,Wallonia,12,66,15,5,0,13,3,Liège
+5725,2021-08-17,WLX,Wallonia,3,17,3,2,0,1,0,Luxembourg
+5726,2021-08-17,WNA,Wallonia,6,21,7,2,0,0,3,Namur
+5727,2021-08-17,VOV,Flanders,14,42,12,5,0,8,9,OostVlaanderen
+5728,2021-08-17,VBR,Flanders,6,23,7,3,0,2,5,VlaamsBrabant
+5729,2021-08-17,WBR,Wallonia,2,7,1,0,0,1,1,BrabantWallon
+5730,2021-08-17,VWV,Flanders,11,36,9,6,2,9,4,WestVlaanderen
