@@ -553,6 +553,7 @@ BE,Belgium,,,,,,ChIJl5fz7WR9wUcR8g_mObTy60c,2021-08-18,6.0,12.0,88.0,-23.0,-34.0
 BE,Belgium,,,,,,ChIJl5fz7WR9wUcR8g_mObTy60c,2021-08-19,7.0,16.0,98.0,-24.0,-36.0,8.0
 BE,Belgium,,,,,,ChIJl5fz7WR9wUcR8g_mObTy60c,2021-08-20,0.0,13.0,107.0,-20.0,-35.0,7.0
 BE,Belgium,,,,,,ChIJl5fz7WR9wUcR8g_mObTy60c,2021-08-21,-9.0,-1.0,120.0,1.0,6.0,-1.0
+BE,Belgium,,,,,,ChIJl5fz7WR9wUcR8g_mObTy60c,2021-08-22,-4.0,11.0,37.0,-9.0,15.0,0.0
 DE,Germany,,,,,,ChIJa76xwh5ymkcRW-WRjmtd6HU,2020-02-15,6.0,1.0,45.0,10.0,0.0,-1.0
 DE,Germany,,,,,,ChIJa76xwh5ymkcRW-WRjmtd6HU,2020-02-16,7.0,10.0,9.0,6.0,-1.0,0.0
 DE,Germany,,,,,,ChIJa76xwh5ymkcRW-WRjmtd6HU,2020-02-17,2.0,2.0,7.0,1.0,-2.0,0.0
@@ -1107,6 +1108,7 @@ DE,Germany,,,,,,ChIJa76xwh5ymkcRW-WRjmtd6HU,2021-08-18,5.0,14.0,119.0,-13.0,-26.
 DE,Germany,,,,,,ChIJa76xwh5ymkcRW-WRjmtd6HU,2021-08-19,0.0,11.0,116.0,-14.0,-26.0,5.0
 DE,Germany,,,,,,ChIJa76xwh5ymkcRW-WRjmtd6HU,2021-08-20,-1.0,10.0,132.0,-12.0,-26.0,4.0
 DE,Germany,,,,,,ChIJa76xwh5ymkcRW-WRjmtd6HU,2021-08-21,-8.0,0.0,173.0,4.0,2.0,-2.0
+DE,Germany,,,,,,ChIJa76xwh5ymkcRW-WRjmtd6HU,2021-08-22,-3.0,55.0,69.0,0.0,7.0,0.0
 FR,France,,,,,,ChIJMVd4MymgVA0R99lHx5Y__Ws,2020-02-15,-2.0,-1.0,23.0,12.0,-2.0,-1.0
 FR,France,,,,,,ChIJMVd4MymgVA0R99lHx5Y__Ws,2020-02-16,6.0,2.0,9.0,7.0,-1.0,-1.0
 FR,France,,,,,,ChIJMVd4MymgVA0R99lHx5Y__Ws,2020-02-17,1.0,2.0,16.0,-6.0,-15.0,4.0
@@ -1661,6 +1663,7 @@ FR,France,,,,,,ChIJMVd4MymgVA0R99lHx5Y__Ws,2021-08-18,-4.0,26.0,202.0,-15.0,-43.
 FR,France,,,,,,ChIJMVd4MymgVA0R99lHx5Y__Ws,2021-08-19,-3.0,28.0,204.0,-15.0,-46.0,7.0
 FR,France,,,,,,ChIJMVd4MymgVA0R99lHx5Y__Ws,2021-08-20,-10.0,17.0,179.0,-11.0,-46.0,8.0
 FR,France,,,,,,ChIJMVd4MymgVA0R99lHx5Y__Ws,2021-08-21,-19.0,5.0,131.0,16.0,-9.0,-2.0
+FR,France,,,,,,ChIJMVd4MymgVA0R99lHx5Y__Ws,2021-08-22,6.0,41.0,124.0,17.0,11.0,-3.0
 GB,United Kingdom,,,,,,ChIJqZHHQhE7WgIReiWIMkOg-MQ,2020-02-15,-12.0,-7.0,-35.0,-12.0,-4.0,2.0
 GB,United Kingdom,,,,,,ChIJqZHHQhE7WgIReiWIMkOg-MQ,2020-02-16,-7.0,-6.0,-28.0,-7.0,-3.0,1.0
 GB,United Kingdom,,,,,,ChIJqZHHQhE7WgIReiWIMkOg-MQ,2020-02-17,10.0,1.0,24.0,-2.0,-14.0,2.0
@@ -2215,6 +2218,7 @@ GB,United Kingdom,,,,,,ChIJqZHHQhE7WgIReiWIMkOg-MQ,2021-08-18,-3.0,6.0,95.0,-34.
 GB,United Kingdom,,,,,,ChIJqZHHQhE7WgIReiWIMkOg-MQ,2021-08-19,-5.0,7.0,98.0,-33.0,-40.0,9.0
 GB,United Kingdom,,,,,,ChIJqZHHQhE7WgIReiWIMkOg-MQ,2021-08-20,-8.0,5.0,88.0,-29.0,-39.0,7.0
 GB,United Kingdom,,,,,,ChIJqZHHQhE7WgIReiWIMkOg-MQ,2021-08-21,-18.0,-2.0,34.0,-22.0,-9.0,2.0
+GB,United Kingdom,,,,,,ChIJqZHHQhE7WgIReiWIMkOg-MQ,2021-08-22,-10.0,-1.0,72.0,-17.0,-2.0,0.0
 IT,Italy,,,,,,ChIJA9KNRIL-1BIRb15jJFz1LOI,2020-02-15,3.0,-1.0,35.0,9.0,0.0,-1.0
 IT,Italy,,,,,,ChIJA9KNRIL-1BIRb15jJFz1LOI,2020-02-16,3.0,2.0,26.0,11.0,1.0,-2.0
 IT,Italy,,,,,,ChIJA9KNRIL-1BIRb15jJFz1LOI,2020-02-17,0.0,1.0,7.0,3.0,1.0,0.0
@@ -2769,6 +2773,7 @@ IT,Italy,,,,,,ChIJA9KNRIL-1BIRb15jJFz1LOI,2021-08-18,8.0,20.0,225.0,-17.0,-51.0,
 IT,Italy,,,,,,ChIJA9KNRIL-1BIRb15jJFz1LOI,2021-08-19,7.0,19.0,209.0,-18.0,-50.0,5.0
 IT,Italy,,,,,,ChIJA9KNRIL-1BIRb15jJFz1LOI,2021-08-20,-1.0,15.0,186.0,-17.0,-50.0,5.0
 IT,Italy,,,,,,ChIJA9KNRIL-1BIRb15jJFz1LOI,2021-08-21,-11.0,-2.0,135.0,4.0,-23.0,-4.0
+IT,Italy,,,,,,ChIJA9KNRIL-1BIRb15jJFz1LOI,2021-08-22,-9.0,2.0,94.0,9.0,20.0,-6.0
 LU,Luxembourg,,,,,,ChIJRyEhyrlFlUcR75LTAvZg22Q,2020-02-15,-2.0,-1.0,40.0,4.0,-2.0,-2.0
 LU,Luxembourg,,,,,,ChIJRyEhyrlFlUcR75LTAvZg22Q,2020-02-16,-7.0,-1.0,18.0,2.0,-3.0,-1.0
 LU,Luxembourg,,,,,,ChIJRyEhyrlFlUcR75LTAvZg22Q,2020-02-17,-3.0,-3.0,-1.0,-11.0,-22.0,4.0
@@ -3323,6 +3328,7 @@ LU,Luxembourg,,,,,,ChIJRyEhyrlFlUcR75LTAvZg22Q,2021-08-18,-18.0,-2.0,69.0,-28.0,
 LU,Luxembourg,,,,,,ChIJRyEhyrlFlUcR75LTAvZg22Q,2021-08-19,-17.0,-3.0,94.0,-27.0,-44.0,9.0
 LU,Luxembourg,,,,,,ChIJRyEhyrlFlUcR75LTAvZg22Q,2021-08-20,-20.0,-4.0,111.0,-21.0,-46.0,9.0
 LU,Luxembourg,,,,,,ChIJRyEhyrlFlUcR75LTAvZg22Q,2021-08-21,-23.0,-11.0,139.0,14.0,-7.0,-2.0
+LU,Luxembourg,,,,,,ChIJRyEhyrlFlUcR75LTAvZg22Q,2021-08-22,-13.0,10.0,89.0,17.0,15.0,-1.0
 NL,Netherlands,,,,,,ChIJu-SH28MJxkcRnwq9_851obM,2020-02-15,1.0,1.0,11.0,3.0,0.0,0.0
 NL,Netherlands,,,,,,ChIJu-SH28MJxkcRnwq9_851obM,2020-02-16,-10.0,-8.0,-31.0,-5.0,-3.0,2.0
 NL,Netherlands,,,,,,ChIJu-SH28MJxkcRnwq9_851obM,2020-02-17,0.0,-1.0,8.0,-3.0,-5.0,1.0
@@ -3877,6 +3883,7 @@ NL,Netherlands,,,,,,ChIJu-SH28MJxkcRnwq9_851obM,2021-08-18,9.0,10.0,175.0,-33.0,
 NL,Netherlands,,,,,,ChIJu-SH28MJxkcRnwq9_851obM,2021-08-19,3.0,8.0,126.0,-37.0,-44.0,9.0
 NL,Netherlands,,,,,,ChIJu-SH28MJxkcRnwq9_851obM,2021-08-20,3.0,8.0,170.0,-30.0,-41.0,5.0
 NL,Netherlands,,,,,,ChIJu-SH28MJxkcRnwq9_851obM,2021-08-21,-6.0,1.0,170.0,-8.0,1.0,-1.0
+NL,Netherlands,,,,,,ChIJu-SH28MJxkcRnwq9_851obM,2021-08-22,-3.0,8.0,67.0,-18.0,11.0,1.0
 PL,Poland,,,,,,ChIJuwtkpGSZAEcR6lXMScpzdQk,2020-02-15,7.0,-1.0,26.0,4.0,0.0,-1.0
 PL,Poland,,,,,,ChIJuwtkpGSZAEcR6lXMScpzdQk,2020-02-16,12.0,-13.0,18.0,6.0,-2.0,0.0
 PL,Poland,,,,,,ChIJuwtkpGSZAEcR6lXMScpzdQk,2020-02-17,6.0,1.0,20.0,1.0,1.0,0.0
@@ -4431,6 +4438,7 @@ PL,Poland,,,,,,ChIJuwtkpGSZAEcR6lXMScpzdQk,2021-08-18,19.0,30.0,172.0,-3.0,-21.0
 PL,Poland,,,,,,ChIJuwtkpGSZAEcR6lXMScpzdQk,2021-08-19,18.0,31.0,180.0,-3.0,-21.0,1.0
 PL,Poland,,,,,,ChIJuwtkpGSZAEcR6lXMScpzdQk,2021-08-20,10.0,27.0,146.0,-4.0,-21.0,0.0
 PL,Poland,,,,,,ChIJuwtkpGSZAEcR6lXMScpzdQk,2021-08-21,7.0,18.0,204.0,18.0,7.0,-6.0
+PL,Poland,,,,,,ChIJuwtkpGSZAEcR6lXMScpzdQk,2021-08-22,34.0,84.0,201.0,30.0,17.0,-7.0
 PT,Portugal,,,,,,ChIJ1SZCvy0kMgsRQfBOHAlLuCo,2020-02-15,4.0,0.0,21.0,9.0,1.0,-1.0
 PT,Portugal,,,,,,ChIJ1SZCvy0kMgsRQfBOHAlLuCo,2020-02-16,-3.0,2.0,-14.0,3.0,1.0,0.0
 PT,Portugal,,,,,,ChIJ1SZCvy0kMgsRQfBOHAlLuCo,2020-02-17,0.0,3.0,8.0,3.0,3.0,0.0
@@ -4985,6 +4993,7 @@ PT,Portugal,,,,,,ChIJ1SZCvy0kMgsRQfBOHAlLuCo,2021-08-18,23.0,51.0,175.0,-13.0,-3
 PT,Portugal,,,,,,ChIJ1SZCvy0kMgsRQfBOHAlLuCo,2021-08-19,25.0,52.0,177.0,-14.0,-40.0,7.0
 PT,Portugal,,,,,,ChIJ1SZCvy0kMgsRQfBOHAlLuCo,2021-08-20,11.0,48.0,143.0,-15.0,-39.0,8.0
 PT,Portugal,,,,,,ChIJ1SZCvy0kMgsRQfBOHAlLuCo,2021-08-21,1.0,29.0,112.0,0.0,-7.0,-1.0
+PT,Portugal,,,,,,ChIJ1SZCvy0kMgsRQfBOHAlLuCo,2021-08-22,1.0,21.0,90.0,-3.0,7.0,-3.0
 SE,Sweden,,,,,,ChIJ8fA1bTmyXEYRYm-tjaLruCI,2020-02-15,2.0,0.0,3.0,4.0,-2.0,0.0
 SE,Sweden,,,,,,ChIJ8fA1bTmyXEYRYm-tjaLruCI,2020-02-16,-10.0,-7.0,-30.0,-11.0,-5.0,2.0
 SE,Sweden,,,,,,ChIJ8fA1bTmyXEYRYm-tjaLruCI,2020-02-17,-4.0,-3.0,-3.0,-6.0,-6.0,2.0
@@ -5539,3 +5548,4 @@ SE,Sweden,,,,,,ChIJ8fA1bTmyXEYRYm-tjaLruCI,2021-08-18,3.0,13.0,109.0,-29.0,-33.0
 SE,Sweden,,,,,,ChIJ8fA1bTmyXEYRYm-tjaLruCI,2021-08-19,6.0,16.0,149.0,-26.0,-32.0,5.0
 SE,Sweden,,,,,,ChIJ8fA1bTmyXEYRYm-tjaLruCI,2021-08-20,2.0,7.0,158.0,-24.0,-32.0,4.0
 SE,Sweden,,,,,,ChIJ8fA1bTmyXEYRYm-tjaLruCI,2021-08-21,3.0,6.0,203.0,-9.0,10.0,-2.0
+SE,Sweden,,,,,,ChIJ8fA1bTmyXEYRYm-tjaLruCI,2021-08-22,7.0,7.0,184.0,-16.0,12.0,-2.0
