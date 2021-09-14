@@ -6,7 +6,6 @@ from pages import AppMenu, AppLink
 
 from pages.deaths.overmortality import display_overmortality
 from pages.deaths.age_groups import display_age_groups
-from pages.deaths.obituary import display_obituary
 from pages.who.who import display_who
 
 
