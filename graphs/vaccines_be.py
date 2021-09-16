@@ -141,7 +141,7 @@ def vaccine_nis5(age_group):
     fig = px.choropleth_mapbox(df_ag_nis[df_ag_nis.AgeGroup == age_group], geojson=geojson,
                                locations="NIS5",
                                color='percent',
-                               range_color=(0, 100),
+                               range_color=(65, 100),
                                color_continuous_scale="magma_r",
                                featureidkey="properties.NIS5",
                                center={"lat": 50.641111, "lon": 4.668889},
