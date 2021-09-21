@@ -14,10 +14,9 @@ def df_pop():
     df_pop.columns = df_pop.columns.get_level_values(0)
 
     print(df_pop[df_pop.CD_REFNIS  == 11001][0:100])
-    print("---")
 
-    bins= [0,18,35,45,55,65,75,85,120]
-    labels = ['0-17','18-34','35-44','45-54','55-64','65-74','75-84','85+']
+    bins= [12,16,18,25,35,45,55,65,75,85,120]
+    labels = ['12-15','16-17','18-24','25-34','35-44','45-54','55-64','65-74','75-84','85+']
     df_pop['AgeGroup'] = pd.cut(df_pop['CD_AGE'], bins=bins, labels=labels, right=False)
 
     df_pop = df_pop.groupby(by=['CD_REFNIS','AgeGroup']).agg({'MS_POPULATION': ['sum']}).reset_index()
@@ -82,6 +81,8 @@ def vaccines_pop():
 
 
     df = pd.merge(df_vaccines, df_pop, left_on=['NIS5','AGEGROUP'], right_on=['NIS5','AgeGroup'])
+
+    print(df[:100])
 
 
     df['percent'] = 100*df['CUMUL']/df['COUNT']

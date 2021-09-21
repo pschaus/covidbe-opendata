@@ -5829,7 +5829,7 @@
 5827,2021-08-26,VBR,Flanders,6,22,4,1,0,2,4,VlaamsBrabant
 5828,2021-08-26,WBR,Wallonia,2,6,1,1,0,2,0,BrabantWallon
 5829,2021-08-26,VWV,Flanders,11,40,12,5,2,3,4,WestVlaanderen
-5830,2021-08-27,VAN,Flanders,14,81,23,12,3,10,9,Antwerpen
+5830,2021-08-27,VAN,Flanders,14,81,24,12,3,10,9,Antwerpen
 5831,2021-08-27,BRU,Brussels,15,188,69,37,10,17,23,Brussels
 5832,2021-08-27,WHT,Wallonia,14,69,22,12,2,4,10,Hainaut
 5833,2021-08-27,VLI,Flanders,7,25,8,4,0,5,3,Limburg
@@ -5840,7 +5840,7 @@
 5838,2021-08-27,VBR,Flanders,6,22,5,0,0,1,1,VlaamsBrabant
 5839,2021-08-27,WBR,Wallonia,2,5,1,1,0,0,2,BrabantWallon
 5840,2021-08-27,VWV,Flanders,11,39,12,5,2,5,5,WestVlaanderen
-5841,2021-08-28,VAN,Flanders,14,84,21,12,3,11,10,Antwerpen
+5841,2021-08-28,VAN,Flanders,14,84,22,12,3,11,10,Antwerpen
 5842,2021-08-28,BRU,Brussels,15,192,70,38,10,15,19,Brussels
 5843,2021-08-28,WHT,Wallonia,14,76,22,13,2,12,6,Hainaut
 5844,2021-08-28,VLI,Flanders,7,22,9,4,0,3,6,Limburg
@@ -5851,7 +5851,7 @@
 5849,2021-08-28,VBR,Flanders,6,23,5,0,0,2,1,VlaamsBrabant
 5850,2021-08-28,WBR,Wallonia,2,7,2,1,0,1,1,BrabantWallon
 5851,2021-08-28,VWV,Flanders,11,40,12,5,2,5,5,WestVlaanderen
-5852,2021-08-29,VAN,Flanders,14,84,21,13,3,4,6,Antwerpen
+5852,2021-08-29,VAN,Flanders,14,84,22,13,3,4,6,Antwerpen
 5853,2021-08-29,BRU,Brussels,15,201,70,39,11,11,4,Brussels
 5854,2021-08-29,WHT,Wallonia,14,76,21,12,2,7,6,Hainaut
 5855,2021-08-29,VLI,Flanders,7,24,7,4,0,3,0,Limburg
@@ -5862,7 +5862,7 @@
 5860,2021-08-29,VBR,Flanders,6,23,2,1,0,1,2,VlaamsBrabant
 5861,2021-08-29,WBR,Wallonia,2,9,3,1,0,1,0,BrabantWallon
 5862,2021-08-29,VWV,Flanders,11,37,12,7,2,3,1,WestVlaanderen
-5863,2021-08-30,VAN,Flanders,14,91,26,14,3,10,8,Antwerpen
+5863,2021-08-30,VAN,Flanders,14,91,27,14,3,10,8,Antwerpen
 5864,2021-08-30,BRU,Brussels,15,206,68,42,13,13,15,Brussels
 5865,2021-08-30,WHT,Wallonia,14,85,23,12,3,9,0,Hainaut
 5866,2021-08-30,VLI,Flanders,7,28,8,4,0,4,0,Limburg
@@ -5873,7 +5873,7 @@
 5871,2021-08-30,VBR,Flanders,6,24,3,1,0,1,1,VlaamsBrabant
 5872,2021-08-30,WBR,Wallonia,2,7,2,0,0,0,0,BrabantWallon
 5873,2021-08-30,VWV,Flanders,11,43,12,6,2,5,2,WestVlaanderen
-5874,2021-08-31,VAN,Flanders,14,88,25,11,3,8,12,Antwerpen
+5874,2021-08-31,VAN,Flanders,14,88,26,11,3,8,12,Antwerpen
 5875,2021-08-31,BRU,Brussels,15,195,65,40,13,22,40,Brussels
 5876,2021-08-31,WHT,Wallonia,14,83,26,11,3,10,10,Hainaut
 5877,2021-08-31,VLI,Flanders,7,27,7,5,1,4,6,Limburg
@@ -5884,7 +5884,7 @@
 5882,2021-08-31,VBR,Flanders,6,24,2,1,0,4,5,VlaamsBrabant
 5883,2021-08-31,WBR,Wallonia,2,7,2,0,0,1,1,BrabantWallon
 5884,2021-08-31,VWV,Flanders,11,44,11,7,2,4,5,WestVlaanderen
-5885,2021-09-01,VAN,Flanders,14,81,25,12,3,7,15,Antwerpen
+5885,2021-09-01,VAN,Flanders,14,81,26,12,3,7,15,Antwerpen
 5886,2021-09-01,BRU,Brussels,15,209,66,38,12,25,21,Brussels
 5887,2021-09-01,WHT,Wallonia,14,81,23,14,3,6,8,Hainaut
 5888,2021-09-01,VLI,Flanders,7,29,7,4,1,5,3,Limburg
@@ -5895,7 +5895,7 @@
 5893,2021-09-01,VBR,Flanders,6,19,1,1,0,1,7,VlaamsBrabant
 5894,2021-09-01,WBR,Wallonia,2,6,2,0,0,1,3,BrabantWallon
 5895,2021-09-01,VWV,Flanders,11,45,12,6,1,3,5,WestVlaanderen
-5896,2021-09-02,VAN,Flanders,14,87,26,11,3,17,12,Antwerpen
+5896,2021-09-02,VAN,Flanders,14,87,27,11,3,17,12,Antwerpen
 5897,2021-09-02,BRU,Brussels,15,203,66,39,12,21,28,Brussels
 5898,2021-09-02,WHT,Wallonia,14,82,23,13,3,8,6,Hainaut
 5899,2021-09-02,VLI,Flanders,7,30,7,4,1,3,2,Limburg
@@ -5906,7 +5906,7 @@
 5904,2021-09-02,VBR,Flanders,6,22,3,2,0,2,1,VlaamsBrabant
 5905,2021-09-02,WBR,Wallonia,2,6,2,0,0,0,0,BrabantWallon
 5906,2021-09-02,VWV,Flanders,11,38,13,5,1,3,11,WestVlaanderen
-5907,2021-09-03,VAN,Flanders,14,95,25,14,3,9,6,Antwerpen
+5907,2021-09-03,VAN,Flanders,14,95,26,14,3,9,6,Antwerpen
 5908,2021-09-03,BRU,Brussels,15,211,66,39,12,10,12,Brussels
 5909,2021-09-03,WHT,Wallonia,14,87,24,13,4,12,9,Hainaut
 5910,2021-09-03,VLI,Flanders,7,31,6,3,1,3,2,Limburg
@@ -5917,7 +5917,7 @@
 5915,2021-09-03,VBR,Flanders,6,24,7,4,0,1,4,VlaamsBrabant
 5916,2021-09-03,WBR,Wallonia,2,8,3,0,0,2,1,BrabantWallon
 5917,2021-09-03,VWV,Flanders,11,37,13,6,2,5,5,WestVlaanderen
-5918,2021-09-04,VAN,Flanders,14,87,29,17,3,13,21,Antwerpen
+5918,2021-09-04,VAN,Flanders,14,87,30,17,3,13,21,Antwerpen
 5919,2021-09-04,BRU,Brussels,15,206,67,39,12,25,31,Brussels
 5920,2021-09-04,WHT,Wallonia,14,82,28,12,4,5,5,Hainaut
 5921,2021-09-04,VLI,Flanders,7,34,12,2,1,4,3,Limburg
@@ -5928,7 +5928,7 @@
 5926,2021-09-04,VBR,Flanders,6,24,10,3,0,2,1,VlaamsBrabant
 5927,2021-09-04,WBR,Wallonia,2,9,3,0,0,2,1,BrabantWallon
 5928,2021-09-04,VWV,Flanders,11,42,11,5,2,8,2,WestVlaanderen
-5929,2021-09-05,VAN,Flanders,14,86,31,18,3,9,12,Antwerpen
+5929,2021-09-05,VAN,Flanders,14,86,32,18,3,9,12,Antwerpen
 5930,2021-09-05,BRU,Brussels,15,215,69,41,13,17,14,Brussels
 5931,2021-09-05,WHT,Wallonia,14,81,26,15,4,4,3,Hainaut
 5932,2021-09-05,VLI,Flanders,7,33,13,2,1,3,3,Limburg
@@ -5939,7 +5939,7 @@
 5937,2021-09-05,VBR,Flanders,6,25,11,3,0,1,1,VlaamsBrabant
 5938,2021-09-05,WBR,Wallonia,2,9,4,0,0,0,0,BrabantWallon
 5939,2021-09-05,VWV,Flanders,11,42,12,5,2,3,3,WestVlaanderen
-5940,2021-09-06,VAN,Flanders,14,86,30,18,3,6,5,Antwerpen
+5940,2021-09-06,VAN,Flanders,14,86,31,18,3,6,5,Antwerpen
 5941,2021-09-06,BRU,Brussels,15,222,76,40,10,22,24,Brussels
 5942,2021-09-06,WHT,Wallonia,14,91,27,15,4,10,2,Hainaut
 5943,2021-09-06,VLI,Flanders,7,35,10,3,1,4,2,Limburg
@@ -5950,7 +5950,7 @@
 5948,2021-09-06,VBR,Flanders,6,25,10,2,0,1,1,VlaamsBrabant
 5949,2021-09-06,WBR,Wallonia,2,10,4,0,0,0,0,BrabantWallon
 5950,2021-09-06,VWV,Flanders,11,43,12,5,2,1,0,WestVlaanderen
-5951,2021-09-07,VAN,Flanders,14,91,32,19,3,10,9,Antwerpen
+5951,2021-09-07,VAN,Flanders,14,91,33,19,3,10,9,Antwerpen
 5952,2021-09-07,BRU,Brussels,15,217,75,43,11,29,31,Brussels
 5953,2021-09-07,WHT,Wallonia,14,88,20,14,3,12,12,Hainaut
 5954,2021-09-07,VLI,Flanders,7,28,8,3,1,2,9,Limburg
@@ -5961,7 +5961,7 @@
 5959,2021-09-07,VBR,Flanders,6,29,10,2,0,5,2,VlaamsBrabant
 5960,2021-09-07,WBR,Wallonia,2,8,3,0,0,0,2,BrabantWallon
 5961,2021-09-07,VWV,Flanders,11,36,10,4,2,1,3,WestVlaanderen
-5962,2021-09-08,VAN,Flanders,14,95,32,17,3,10,8,Antwerpen
+5962,2021-09-08,VAN,Flanders,14,95,33,17,3,10,8,Antwerpen
 5963,2021-09-08,BRU,Brussels,15,230,74,45,11,24,29,Brussels
 5964,2021-09-08,WHT,Wallonia,14,89,18,12,3,10,12,Hainaut
 5965,2021-09-08,VLI,Flanders,7,28,6,3,1,3,3,Limburg
@@ -5972,7 +5972,7 @@
 5970,2021-09-08,VBR,Flanders,6,23,9,2,0,1,5,VlaamsBrabant
 5971,2021-09-08,WBR,Wallonia,2,7,2,0,0,1,2,BrabantWallon
 5972,2021-09-08,VWV,Flanders,11,40,11,5,2,3,6,WestVlaanderen
-5973,2021-09-09,VAN,Flanders,14,88,30,17,3,11,14,Antwerpen
+5973,2021-09-09,VAN,Flanders,14,88,31,17,3,11,14,Antwerpen
 5974,2021-09-09,BRU,Brussels,15,234,70,43,12,20,27,Brussels
 5975,2021-09-09,WHT,Wallonia,14,92,20,12,3,9,8,Hainaut
 5976,2021-09-09,VLI,Flanders,7,26,7,2,0,2,3,Limburg
@@ -5983,7 +5983,7 @@
 5981,2021-09-09,VBR,Flanders,6,25,9,1,0,3,2,VlaamsBrabant
 5982,2021-09-09,WBR,Wallonia,2,5,2,0,0,0,2,BrabantWallon
 5983,2021-09-09,VWV,Flanders,11,40,13,6,2,3,2,WestVlaanderen
-5984,2021-09-10,VAN,Flanders,14,92,29,18,3,12,9,Antwerpen
+5984,2021-09-10,VAN,Flanders,14,92,30,18,3,12,9,Antwerpen
 5985,2021-09-10,BRU,Brussels,15,222,74,42,12,14,30,Brussels
 5986,2021-09-10,WHT,Wallonia,14,92,22,11,3,9,8,Hainaut
 5987,2021-09-10,VLI,Flanders,7,23,7,1,0,0,3,Limburg
@@ -5994,7 +5994,7 @@
 5992,2021-09-10,VBR,Flanders,6,25,8,2,0,0,0,VlaamsBrabant
 5993,2021-09-10,WBR,Wallonia,2,7,2,0,0,3,1,BrabantWallon
 5994,2021-09-10,VWV,Flanders,11,41,13,6,2,5,5,WestVlaanderen
-5995,2021-09-11,VAN,Flanders,14,76,25,18,2,6,19,Antwerpen
+5995,2021-09-11,VAN,Flanders,14,76,26,18,2,6,19,Antwerpen
 5996,2021-09-11,BRU,Brussels,15,218,70,44,13,14,24,Brussels
 5997,2021-09-11,WHT,Wallonia,14,80,22,12,3,2,13,Hainaut
 5998,2021-09-11,VLI,Flanders,7,23,7,2,0,2,3,Limburg
@@ -6005,7 +6005,7 @@
 6003,2021-09-11,VBR,Flanders,6,28,7,2,0,2,0,VlaamsBrabant
 6004,2021-09-11,WBR,Wallonia,2,6,2,0,0,1,1,BrabantWallon
 6005,2021-09-11,VWV,Flanders,11,43,13,6,2,4,3,WestVlaanderen
-6006,2021-09-12,VAN,Flanders,14,80,25,18,2,9,5,Antwerpen
+6006,2021-09-12,VAN,Flanders,14,80,26,18,2,9,5,Antwerpen
 6007,2021-09-12,BRU,Brussels,15,210,69,45,13,11,19,Brussels
 6008,2021-09-12,WHT,Wallonia,14,82,19,13,2,4,3,Hainaut
 6009,2021-09-12,VLI,Flanders,7,25,7,2,0,3,0,Limburg
@@ -6016,7 +6016,7 @@
 6014,2021-09-12,VBR,Flanders,6,29,8,2,0,2,1,VlaamsBrabant
 6015,2021-09-12,WBR,Wallonia,2,6,1,0,0,0,0,BrabantWallon
 6016,2021-09-12,VWV,Flanders,11,44,13,5,2,1,0,WestVlaanderen
-6017,2021-09-13,VAN,Flanders,14,81,24,16,2,7,5,Antwerpen
+6017,2021-09-13,VAN,Flanders,14,81,25,16,2,7,5,Antwerpen
 6018,2021-09-13,BRU,Brussels,15,215,71,43,11,16,24,Brussels
 6019,2021-09-13,WHT,Wallonia,14,83,21,10,2,4,4,Hainaut
 6020,2021-09-13,VLI,Flanders,7,29,8,3,0,5,1,Limburg
@@ -6027,7 +6027,7 @@
 6025,2021-09-13,VBR,Flanders,6,28,9,2,0,2,1,VlaamsBrabant
 6026,2021-09-13,WBR,Wallonia,2,6,1,0,0,0,0,BrabantWallon
 6027,2021-09-13,VWV,Flanders,11,49,13,5,2,8,1,WestVlaanderen
-6028,2021-09-14,VAN,Flanders,14,78,26,17,2,8,16,Antwerpen
+6028,2021-09-14,VAN,Flanders,14,78,27,17,2,8,16,Antwerpen
 6029,2021-09-14,BRU,Brussels,15,217,68,43,10,29,34,Brussels
 6030,2021-09-14,WHT,Wallonia,14,75,19,12,2,7,15,Hainaut
 6031,2021-09-14,VLI,Flanders,7,27,8,3,0,3,4,Limburg
@@ -6038,7 +6038,7 @@
 6036,2021-09-14,VBR,Flanders,6,26,7,2,0,0,4,VlaamsBrabant
 6037,2021-09-14,WBR,Wallonia,2,10,2,0,0,4,0,BrabantWallon
 6038,2021-09-14,VWV,Flanders,11,49,12,5,2,4,4,WestVlaanderen
-6039,2021-09-15,VAN,Flanders,14,80,26,15,2,8,10,Antwerpen
+6039,2021-09-15,VAN,Flanders,14,80,27,15,2,8,10,Antwerpen
 6040,2021-09-15,BRU,Brussels,15,201,63,41,10,10,31,Brussels
 6041,2021-09-15,WHT,Wallonia,14,81,21,12,2,13,4,Hainaut
 6042,2021-09-15,VLI,Flanders,7,18,5,3,0,2,5,Limburg
@@ -6049,7 +6049,7 @@
 6047,2021-09-15,VBR,Flanders,6,29,8,3,0,4,1,VlaamsBrabant
 6048,2021-09-15,WBR,Wallonia,2,10,3,0,0,0,0,BrabantWallon
 6049,2021-09-15,VWV,Flanders,11,49,12,5,2,5,4,WestVlaanderen
-6050,2021-09-16,VAN,Flanders,14,78,29,17,2,10,13,Antwerpen
+6050,2021-09-16,VAN,Flanders,14,78,31,17,2,10,13,Antwerpen
 6051,2021-09-16,BRU,Brussels,15,217,64,41,11,27,20,Brussels
 6052,2021-09-16,WHT,Wallonia,14,79,22,13,2,4,10,Hainaut
 6053,2021-09-16,VLI,Flanders,7,23,4,2,0,3,1,Limburg
@@ -6071,3 +6071,36 @@
 6069,2021-09-17,VBR,Flanders,6,24,9,6,0,2,5,VlaamsBrabant
 6070,2021-09-17,WBR,Wallonia,2,9,4,1,0,1,2,BrabantWallon
 6071,2021-09-17,VWV,Flanders,11,50,12,6,2,7,5,WestVlaanderen
+6072,2021-09-18,VAN,Flanders,14,84,33,18,3,13,12,Antwerpen
+6073,2021-09-18,BRU,Brussels,15,214,64,41,10,9,26,Brussels
+6074,2021-09-18,WHT,Wallonia,14,81,18,10,2,6,4,Hainaut
+6075,2021-09-18,VLI,Flanders,7,23,6,3,0,2,3,Limburg
+6076,2021-09-18,WLG,Wallonia,12,115,34,20,2,11,13,Liège
+6077,2021-09-18,WLX,Wallonia,3,24,5,3,0,1,1,Luxembourg
+6078,2021-09-18,WNA,Wallonia,6,16,8,3,0,1,2,Namur
+6079,2021-09-18,VOV,Flanders,14,59,23,19,4,3,4,OostVlaanderen
+6080,2021-09-18,VBR,Flanders,6,20,8,7,0,3,7,VlaamsBrabant
+6081,2021-09-18,WBR,Wallonia,2,9,4,1,0,2,2,BrabantWallon
+6082,2021-09-18,VWV,Flanders,11,52,11,4,2,6,3,WestVlaanderen
+6083,2021-09-19,VAN,Flanders,14,84,34,18,3,10,9,Antwerpen
+6084,2021-09-19,BRU,Brussels,15,214,65,41,10,8,12,Brussels
+6085,2021-09-19,WHT,Wallonia,14,78,19,12,2,1,5,Hainaut
+6086,2021-09-19,VLI,Flanders,7,24,5,3,0,0,0,Limburg
+6087,2021-09-19,WLG,Wallonia,12,121,34,18,2,12,7,Liège
+6088,2021-09-19,WLX,Wallonia,3,25,5,3,0,1,0,Luxembourg
+6089,2021-09-19,WNA,Wallonia,6,18,8,3,0,1,0,Namur
+6090,2021-09-19,VOV,Flanders,14,57,23,19,4,1,0,OostVlaanderen
+6091,2021-09-19,VBR,Flanders,6,27,9,6,0,5,0,VlaamsBrabant
+6092,2021-09-19,WBR,Wallonia,2,11,3,1,0,2,0,BrabantWallon
+6093,2021-09-19,VWV,Flanders,11,51,11,4,2,2,3,WestVlaanderen
+6094,2021-09-20,VAN,Flanders,14,84,35,18,3,8,7,Antwerpen
+6095,2021-09-20,BRU,Brussels,15,225,70,43,10,17,15,Brussels
+6096,2021-09-20,WHT,Wallonia,14,75,18,11,2,1,3,Hainaut
+6097,2021-09-20,VLI,Flanders,7,26,6,3,0,2,0,Limburg
+6098,2021-09-20,WLG,Wallonia,12,123,36,17,3,5,5,Liège
+6099,2021-09-20,WLX,Wallonia,3,25,4,3,0,1,0,Luxembourg
+6100,2021-09-20,WNA,Wallonia,6,17,8,3,0,0,0,Namur
+6101,2021-09-20,VOV,Flanders,14,62,22,18,4,5,0,OostVlaanderen
+6102,2021-09-20,VBR,Flanders,6,30,9,6,1,3,0,VlaamsBrabant
+6103,2021-09-20,WBR,Wallonia,2,12,3,1,0,1,0,BrabantWallon
+6104,2021-09-20,VWV,Flanders,11,49,11,4,2,1,2,WestVlaanderen

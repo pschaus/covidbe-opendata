@@ -58,7 +58,7 @@ def add_ag(fig,ag, row, col, legend=False):
 
 @register_plot_for_embedding("vaccines_ag_region")
 def fig_ag_dose_a_c():
-    fig = make_subplots(rows=4, cols=2, subplot_titles=('85+', '75-84', '65-74', '55-64', '45-54', '35-44','18-34'))
+    fig = make_subplots(rows=6, cols=2, subplot_titles=('85+', '75-84', '65-74', '55-64', '45-54', '35-44','25-34','18-24','0-17'))
 
     fig.update_layout(template="plotly_white")
 
@@ -68,9 +68,11 @@ def fig_ag_dose_a_c():
     add_ag(fig,"55-64", 2, 2)
     add_ag(fig,"45-54", 3, 1)
     add_ag(fig,"35-44", 3, 2)
-    add_ag(fig,"18-34", 4, 1)
+    add_ag(fig,"25-34", 4, 1)
+    add_ag(fig,"18-24", 4, 2)
+    add_ag(fig, "0-17", 5, 1)
 
-    for i in range(1, 8):
+    for i in range(1, 9):
         fig['layout']['yaxis' + str(i)].update(title='', range=[0, 100], autorange=False)
 
     fig.update_layout(template="plotly_white", height=700)
