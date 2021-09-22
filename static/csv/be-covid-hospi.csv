@@ -6072,7 +6072,7 @@
 6070,2021-09-17,WBR,Wallonia,2,9,4,1,0,1,2,BrabantWallon
 6071,2021-09-17,VWV,Flanders,11,50,12,6,2,7,5,WestVlaanderen
 6072,2021-09-18,VAN,Flanders,14,84,33,18,3,13,12,Antwerpen
-6073,2021-09-18,BRU,Brussels,15,214,64,41,10,9,26,Brussels
+6073,2021-09-18,BRU,Brussels,15,213,63,41,10,9,26,Brussels
 6074,2021-09-18,WHT,Wallonia,14,81,18,10,2,6,4,Hainaut
 6075,2021-09-18,VLI,Flanders,7,23,6,3,0,2,3,Limburg
 6076,2021-09-18,WLG,Wallonia,12,115,34,20,2,11,13,Liège
@@ -6083,7 +6083,7 @@
 6081,2021-09-18,WBR,Wallonia,2,9,4,1,0,2,2,BrabantWallon
 6082,2021-09-18,VWV,Flanders,11,52,11,4,2,6,3,WestVlaanderen
 6083,2021-09-19,VAN,Flanders,14,84,34,18,3,10,9,Antwerpen
-6084,2021-09-19,BRU,Brussels,15,214,65,41,10,8,12,Brussels
+6084,2021-09-19,BRU,Brussels,15,213,64,41,10,8,12,Brussels
 6085,2021-09-19,WHT,Wallonia,14,78,19,12,2,1,5,Hainaut
 6086,2021-09-19,VLI,Flanders,7,24,5,3,0,0,0,Limburg
 6087,2021-09-19,WLG,Wallonia,12,121,34,18,2,12,7,Liège
@@ -6094,8 +6094,8 @@
 6092,2021-09-19,WBR,Wallonia,2,11,3,1,0,2,0,BrabantWallon
 6093,2021-09-19,VWV,Flanders,11,51,11,4,2,2,3,WestVlaanderen
 6094,2021-09-20,VAN,Flanders,14,84,35,18,3,8,7,Antwerpen
-6095,2021-09-20,BRU,Brussels,15,225,70,43,10,17,15,Brussels
-6096,2021-09-20,WHT,Wallonia,14,75,18,11,2,1,3,Hainaut
+6095,2021-09-20,BRU,Brussels,15,224,69,43,10,17,15,Brussels
+6096,2021-09-20,WHT,Wallonia,14,75,19,12,3,3,4,Hainaut
 6097,2021-09-20,VLI,Flanders,7,26,6,3,0,2,0,Limburg
 6098,2021-09-20,WLG,Wallonia,12,123,36,17,3,5,5,Liège
 6099,2021-09-20,WLX,Wallonia,3,25,4,3,0,1,0,Luxembourg
@@ -6104,3 +6104,14 @@
 6102,2021-09-20,VBR,Flanders,6,30,9,6,1,3,0,VlaamsBrabant
 6103,2021-09-20,WBR,Wallonia,2,12,3,1,0,1,0,BrabantWallon
 6104,2021-09-20,VWV,Flanders,11,49,11,4,2,1,2,WestVlaanderen
+6105,2021-09-21,VAN,Flanders,14,81,33,20,3,5,12,Antwerpen
+6106,2021-09-21,BRU,Brussels,15,211,67,41,10,18,31,Brussels
+6107,2021-09-21,WHT,Wallonia,14,69,19,10,3,9,15,Hainaut
+6108,2021-09-21,VLI,Flanders,7,22,5,4,0,2,2,Limburg
+6109,2021-09-21,WLG,Wallonia,12,120,35,16,2,16,17,Liège
+6110,2021-09-21,WLX,Wallonia,3,23,4,3,0,0,0,Luxembourg
+6111,2021-09-21,WNA,Wallonia,6,16,8,4,0,0,1,Namur
+6112,2021-09-21,VOV,Flanders,14,59,23,15,4,3,5,OostVlaanderen
+6113,2021-09-21,VBR,Flanders,6,32,9,6,0,2,1,VlaamsBrabant
+6114,2021-09-21,WBR,Wallonia,2,10,3,2,0,0,2,BrabantWallon
+6115,2021-09-21,VWV,Flanders,11,41,8,5,2,5,13,WestVlaanderen
