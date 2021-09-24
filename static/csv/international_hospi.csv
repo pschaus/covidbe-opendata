@@ -7645,8 +7645,6 @@ Denmark,Weekly new hospital admissions per 100k,2021-08-29,2021-W34,3.0569679720
 Denmark,Weekly new hospital admissions per 100k,2021-09-05,2021-W35,3.12566388156276,ECDC database compiled from public online sources,
 Denmark,Weekly new hospital admissions per 100k,2021-09-12,2021-W36,2.54174865094114,ECDC database compiled from public online sources,
 Denmark,Weekly new hospital admissions per 100k,2021-09-19,2021-W37,1.5284839860389299,ECDC database compiled from public online sources,
-Denmark,Weekly new ICU admissions per 100k,2021-09-19,2021-W37,0.0171739773712239,"TESSy COVID-19, national daily data",
-Denmark,Weekly new ICU admissions per 100k,2021-09-19,2021-W37,0.0171739773712239,TESSy COVID-19,
 Estonia,Daily hospital occupancy,2020-01-06,2020-W02,1.0,Country_API,https://www.terviseamet.ee/et/koroonaviirus/avaandmed
 Estonia,Daily hospital occupancy,2020-01-18,2020-W03,1.0,Country_API,https://www.terviseamet.ee/et/koroonaviirus/avaandmed
 Estonia,Daily hospital occupancy,2020-02-12,2020-W07,1.0,Country_API,https://www.terviseamet.ee/et/koroonaviirus/avaandmed
