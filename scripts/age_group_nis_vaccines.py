@@ -89,4 +89,30 @@ def vaccines_pop():
 
     df.to_csv('../static/csv/vaccines_age_group_nis5.csv', index=False)
 
+
+def df_vaccine_nis_percentage():
+    df_vaccines = pd.read_csv('../static/csv/be-covid-vaccines-nis.csv', dtype={"NIS5": int})
+
+    df_vaccines["CUMUL"].replace({"<10": "0"}, inplace=True)
+    df_vaccines['CUMUL'] = df_vaccines['CUMUL'].astype(int)
+
+    last_week = df_vaccines.YEAR_WEEK.values[-1]
+
+    df_vaccines = df_vaccines[df_vaccines.YEAR_WEEK == last_week]
+
+    df_vaccines = df_vaccines[df_vaccines.DOSE != 'B']
+
+    df_vaccines = df_vaccines.groupby(by=['YEAR_WEEK', 'NIS5']).agg({'CUMUL': ['sum']}).reset_index()
+    df_vaccines.columns = df_vaccines.columns.get_level_values(0)
+
+    df_pop = pd.read_csv("../static/csv/ins_pop.csv", dtype={"NIS5": int})
+    df_pop = df_pop.loc[(df_pop.NIS5 >= 10000)]
+
+    df5 = pd.merge(df_vaccines, df_pop, left_on='NIS5', right_on='NIS5', how='inner')
+    df5['PERCENT'] = df5['CUMUL'] / df5['POP'] * 100
+    df5 = df5.round({'PERCENT': 2})
+
+    df5.to_csv("../static/csv/vaccines_ins5_percentage.csv")
+
 vaccines_pop()
+df_vaccine_nis_percentage()
