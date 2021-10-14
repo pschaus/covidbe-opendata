@@ -6335,7 +6335,7 @@
 6333,2021-10-11,VBR,Flanders,6,30,10,5,1,1,1,VlaamsBrabant
 6334,2021-10-11,WBR,Wallonia,2,8,5,1,0,2,0,BrabantWallon
 6335,2021-10-11,VWV,Flanders,11,46,11,9,2,4,3,WestVlaanderen
-6336,2021-10-12,VAN,Flanders,14,115,25,12,5,11,9,Antwerpen
+6336,2021-10-12,VAN,Flanders,14,114,26,13,5,12,10,Antwerpen
 6337,2021-10-12,BRU,Brussels,15,201,55,32,7,15,22,Brussels
 6338,2021-10-12,WHT,Wallonia,14,86,19,12,4,4,8,Hainaut
 6339,2021-10-12,VLI,Flanders,7,29,5,3,0,4,3,Limburg
@@ -6346,3 +6346,14 @@
 6344,2021-10-12,VBR,Flanders,6,34,10,5,1,5,2,VlaamsBrabant
 6345,2021-10-12,WBR,Wallonia,2,9,4,1,0,1,0,BrabantWallon
 6346,2021-10-12,VWV,Flanders,11,52,12,8,2,9,4,WestVlaanderen
+6347,2021-10-13,VAN,Flanders,14,118,25,13,5,11,7,Antwerpen
+6348,2021-10-13,BRU,Brussels,15,198,53,32,7,13,28,Brussels
+6349,2021-10-13,WHT,Wallonia,14,88,20,10,4,7,8,Hainaut
+6350,2021-10-13,VLI,Flanders,7,26,5,1,0,3,3,Limburg
+6351,2021-10-13,WLG,Wallonia,12,142,37,15,2,14,9,Liège
+6352,2021-10-13,WLX,Wallonia,3,12,6,5,0,0,1,Luxembourg
+6353,2021-10-13,WNA,Wallonia,6,21,6,3,2,4,4,Namur
+6354,2021-10-13,VOV,Flanders,14,72,22,11,5,4,6,OostVlaanderen
+6355,2021-10-13,VBR,Flanders,6,34,9,4,1,2,2,VlaamsBrabant
+6356,2021-10-13,WBR,Wallonia,2,12,4,1,0,3,0,BrabantWallon
+6357,2021-10-13,VWV,Flanders,11,56,14,9,2,8,7,WestVlaanderen
