@@ -110,8 +110,9 @@ def process_travel_maps():
 
 
 
-process_population()
-process_movement_range()
-process_movement()
-process_colocation()
+
+#process_population()
+#process_movement_range()
+#process_movement()
+#process_colocation()
 process_travel_maps()
