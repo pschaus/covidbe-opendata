@@ -7,16 +7,11 @@ DOWNLOAD_URL = "https://www.gstatic.com/covid19/mobility/Global_Mobility_Report.
 DOWNLOAD_PATH ="../static/csv/google_mobility_report.csv"
 urllib.request.urlretrieve(DOWNLOAD_URL,DOWNLOAD_PATH)
 
-
-
-
 df = pd.read_csv(DOWNLOAD_PATH)
-
 
 df_eu = df[df['country_region_code'].isin(['BE', 'FR','NL','DE','LU','GB','PT','SP','IT','SE','PL'])]
 df_eu = df_eu[df_eu['sub_region_1'].isnull()]
 df_eu.to_csv("../static/csv/google_mobility_report_eu.csv",index=False)
-
 
 
 

@@ -32,7 +32,7 @@ df['TOTAL_IN_PER_100K'] = df['TOTAL_IN'] / df['POP'] * 100000
 
 pop = {'Brussels': 1218255, 'Flanders': 6629143, 'Wallonia': 3645243}
 
-
+df.dropna(inplace=True)
 
 @register_plot_for_embedding("hospi_region_per100k")
 def hospi_region_per100k(column,avg=False):
